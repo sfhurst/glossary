@@ -182,7 +182,7 @@ main {
 }
 
 .iterate-img {
-  padding-left: 0px;
+  padding-left: 10px; /* Move logo position to the right */
   height: 40px;
   width: 40px;
 }
@@ -198,7 +198,7 @@ main {
 .ite-text {
   color: rgba(158, 38, 158, 0.7);
   color: rgba(167, 84, 167, 0.7);
-  text-shadow: 0 0 4px rgb(0, 0, 0), 3px 3px 4px rgb(0, 0, 0);
+  text-shadow: 0 0 2px rgb(0, 0, 0), 1px 1px 2px rgb(0, 0, 0);
   font-family: "Ubuntu", sans-serif;
   font-size: 24px;
   font-weight: bold;
@@ -206,7 +206,7 @@ main {
 .rate-text {
   color: rgba(255, 55, 0, 0.7);
   color: rgba(241, 89, 47, 0.7);
-  text-shadow: 0 0 4px rgb(0, 0, 0), 3px 3px 4px rgb(0, 0, 0);
+  text-shadow: 0 0 2px rgb(0, 0, 0), 1px 1px 2px rgb(0, 0, 0);
   font-family: "Ubuntu", sans-serif;
   font-size: 24px;
   font-weight: bold;
