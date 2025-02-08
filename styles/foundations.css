@@ -1,0 +1,295 @@
+/* ---------------------------- Defaults | Resets --------------------------------- */
+
+:root {
+  /* theme blue-grey*/
+  --main-background: url("../media/light-down-black2.svg");
+  --main-background-overlay: rgb(54 54 54 / 0.9);
+  --main-color: rgb(58 73 95 / 0.9);
+  --text-color: rgb(233 233 233);
+  --content-background-color: rgb(34 34 34 / 0.7);
+
+  /* primary buttons - background */
+  --active-button-color1: rgb(182 182 182);
+  --hover-button-color1: rgb(40 40 65);
+  --inactive-button-color1: rgb(47 47 77);
+  /* primary buttons - text */
+  --active-button-text-color1: rgb(42 42 42);
+  --hover-button-text-color1: var(--text-color);
+  --inactive-button-text-color1: var(--text-color);
+
+  /* secondary buttons - background */
+  --active-button-color2: rgb(200 200 200);
+  --hover-button-color2: rgb(58 88 74);
+  --inactive-button-color2: rgb(65 99 79);
+  /* secondary buttons - text */
+  --active-button-text-color2: rgb(42 42 42);
+  --hover-button-text-color2: var(--text-color);
+  --inactive-button-text-color2: var(--text-color);
+}
+
+html,
+header,
+textarea,
+input,
+button,
+div,
+p,
+li,
+ul {
+  font-family: "Ubuntu", sans-serif;
+  font-family: "DM Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: var(--text-color);
+}
+
+ul {
+  margin: 0 0 0 -15px;
+  /* text-indent: -5px; */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span {
+  font-family: "DM Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ---------------------------- HTML | Body --------------------------------- */
+
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  margin: 0px 10px 10px 10px;
+  margin: 0px 0px 0px 0px;
+  padding: 0;
+  height: 100%;
+  background-image: var(--main-background);
+  background-size: 100px 115px;
+}
+
+/* ---------------------------- Header | Main | Footer --------------------------------- */
+
+.header {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 40px;
+  padding: 10px 0;
+  border: none;
+  border-bottom: solid 2px grey;
+  border-radius: 1px 1px 1px 1px;
+  z-index: 1;
+  overflow: hidden;
+  background-color: var(--main-color);
+  color: var(--text-color);
+}
+
+.header-tab-line {
+  overflow: hidden;
+  border: 1px solid transparent;
+  background-color: transparent;
+  padding: 0 0 0 16px;
+}
+
+/* buttons styled in a separate section. */
+
+main {
+  position: fixed;
+  top: 62px;
+  height: calc(100% - 62px - 57px);
+  width: calc(100% - 20px);
+  width: 100%;
+  overflow-y: auto;
+  background-color: var(--main-background-overlay);
+  color: var(--text-color);
+}
+
+/* main containers styled in a separate section. */
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: calc(100% - 20px); /* minus the padding on both sides */
+  width: 100%;
+  height: 35px;
+  padding: 10px 0;
+  border: none;
+  border-top: solid 2px grey;
+  border-radius: 1px 1px 1px 1px;
+  z-index: 1;
+  overflow: hidden;
+  background-color: var(--main-color);
+  color: var(--text-color);
+}
+
+.footer-spacer {
+  /* sits above footer to add a little blank space for extra scrolling */
+  height: 5px;
+  display: block;
+  margin-top: 5px;
+  background-color: none;
+}
+
+/* ---------------------------- Footer Logo --------------------------------- */
+
+.outer-container {
+  position: absolute;
+  left: 50%; /* Positions the top-left corner inside the parent */
+  transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%); /* Adjusts the position based on width and height (left, top) */
+  width: 320px;
+  height: 30px;
+  cursor: default;
+}
+
+.inner-container {
+  margin: auto;
+  width: 290px;
+  height: 40px;
+  text-align: center;
+  display: flex;
+  padding-left: 0px; /* Margin (auto) and width values allow the object to be centered horizontally inside parent */
+}
+
+.footer-image-holder {
+  /* Logo */
+  width: 30px;
+  height: 60px;
+  margin: -6px 0 0 0;
+  padding: 0 0 0 0;
+  border: 3px solid rgb(12, 158, 158, 0);
+}
+
+.iterate-img {
+  padding-left: 0px;
+  height: 40px;
+  width: 40px;
+}
+
+.footer-text-holder {
+  /* Text */
+  width: 290px;
+  height: 60px;
+  margin: -4px 0 0 0;
+  padding: 4px 0 0 0;
+  border: 3px solid rgba(245, 144, 144, 0);
+}
+.ite-text {
+  color: rgba(158, 38, 158, 0.7);
+  color: rgba(167, 84, 167, 0.7);
+  text-shadow: 0 0 4px rgb(0, 0, 0), 3px 3px 4px rgb(0, 0, 0);
+  font-family: "Ubuntu", sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+}
+.rate-text {
+  color: rgba(255, 55, 0, 0.7);
+  color: rgba(241, 89, 47, 0.7);
+  text-shadow: 0 0 4px rgb(0, 0, 0), 3px 3px 4px rgb(0, 0, 0);
+  font-family: "Ubuntu", sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+}
+.trailing-text {
+  font-size: 12px;
+  color: rgb(224, 224, 224);
+  vertical-align: 2px;
+  text-shadow: 0 0 8px rgb(0, 0, 0), 3px 3px 8px rgb(0, 0, 0);
+}
+
+/* //////////////////////////////////////////////////////////////////////////////////////////// */
+
+/* Layout Styles */
+.layout-container {
+  display: flex;
+  height: calc(100vh - 80px); /* Full viewport height minus header/footer */
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #f4f4f4;
+  border-right: 1px solid #ddd;
+  padding: 10px;
+  transition: width 0.3s;
+  position: relative;
+}
+
+.sidebar.collapsed {
+  width: 60px;
+}
+
+.sidebar-nav {
+  margin-top: 20px;
+}
+
+.sidebar-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 5px;
+  background: #fff;
+  border: none;
+  text-align: left;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.sidebar-button:hover {
+  background: #e8e8e8;
+}
+
+/* Sidebar Toggle Button */
+.sidebar-toggle {
+  position: absolute;
+  top: 10px;
+  right: -20px;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+/* Main Content */
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.content-section {
+  display: none;
+}
+
+.content-section:not(.hidden) {
+  display: block;
+}
+
+/* Hidden Content */
+.hidden {
+  display: none;
+}

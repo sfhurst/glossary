@@ -1,0 +1,464 @@
+/* ---------------------------- Buttons --------------------------------- */
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 8px 16px;
+  margin: 2px 0;
+  transition: 0.3s;
+  background-color: var(--inactive-button-color1);
+  color: var(--inactive-button-text-color1);
+  /* box-shadow: 1px 1px 1px rgb(124 124 124 / 0.5); */
+}
+
+.alt-buttons {
+  background-color: var(--inactive-button-color2);
+  color: var(--inactive-button-text-color2);
+}
+
+/* Change background color of buttons on hover */
+button:hover {
+  background-color: var(--hover-button-color1);
+  color: var(--hover-button-text-color1);
+}
+
+.alt-buttons:hover {
+  background-color: var(--hover-button-color2);
+  color: var(--hover-button-text-color2);
+}
+
+/* Create an active/current tablink class */
+button.active {
+  background-color: var(--active-button-color1);
+  color: var(--active-button-text-color1);
+}
+
+.alt-buttons.active {
+  background-color: var(--active-button-color2);
+  color: var(--active-button-text-color2);
+}
+
+/* ---------------------------- Container --------------------------------- */
+
+.main-content-containers {
+  padding: 10px 20px;
+  text-align: left;
+  height: fit-content;
+  margin: 10px 5px;
+  border: solid 2px grey;
+  border-radius: 1px;
+  background-color: var(--main-color);
+}
+
+.content-container-tabs {
+  min-height: 25px;
+  padding: 5px 10px;
+  border-bottom: solid 2px grey;
+  cursor: default;
+  text-align: left;
+}
+
+.content-container-paragraphs {
+  padding: 12px;
+  background-color: var(--content-background-color);
+}
+
+.content-container-paragraphs-ul {
+  padding: 5px 20px;
+  margin: 0 5px;
+}
+
+.content-container-rating-lines {
+  border-bottom: solid 2px rgba(128, 128, 128, 0.2);
+  display: flex;
+  cursor: default;
+  background-color: var(--content-background-color);
+}
+
+.content-container-rating-numerical {
+  padding: 5px 10px 5px 15px;
+  width: 15px;
+  max-width: 15px;
+  min-width: 15px;
+  background-color: var(--content-background-color);
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+/* Parents the overall condition text and is the description text. */
+.content-container-rating-description-and-condition-bubble {
+  padding: 5px 5px 5px 5px;
+  text-indent: -8px;
+  text-wrap: wrap;
+  color: var(--text-color);
+}
+
+/* The overall condition text. (Good, Fair, Poor) */
+.content-container-rating-condition-bubble {
+  margin: 0 8px 0 5px;
+  padding: 0 5px;
+  font-weight: 500;
+  border-radius: 1px;
+  text-wrap: nowrap;
+  background-color: var(--active-button-color1);
+  color: var(--active-button-text-color1);
+}
+
+.content-container-comment-lines {
+  padding: 0 15px;
+  margin-bottom: 3px;
+  color: rgb(172, 172, 172);
+  text-indent: -15px;
+  border-bottom: solid 2px rgba(128, 128, 128, 0.2);
+  transition: 0.2s;
+  color: var(--text-color);
+}
+
+.content-container-comment-lines:active {
+  color: rgb(123, 131, 189);
+}
+
+.content-container-links-line {
+  min-height: 25px;
+  padding: 20px;
+  padding: 5px;
+  color: var(--text-color);
+  border-top: solid 2px grey;
+  cursor: default;
+  text-align: left;
+}
+
+.content-container-links-line-label {
+  display: inline-block;
+  cursor: default;
+}
+
+.content-container-links-line-links {
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 4px 8px;
+  margin: 0 2px;
+  /* background: rgb(33, 33, 99); */
+  background-color: var(--inactive-button-color1);
+  border-radius: 0px;
+  white-space: nowrap;
+  display: inline-block;
+  user-select: none;
+}
+
+.content-container-links-line-links:hover,
+.content-container-links-line-links:active,
+.content-container-links-line-links:focus {
+  color: var(--text-color);
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.2);
+  background-color: var(--hover-button-color1);
+  border-radius: 1px;
+}
+
+.paragraph-rating {
+  margin: 0 0 5px 0;
+}
+
+/* cards */
+
+.element-content-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.element-content-cards {
+  width: 550px;
+  height: 160px;
+  min-height: fit-content;
+  text-align: left;
+  margin: 10px 5px;
+  padding-bottom: 5px;
+  border: solid 2px grey;
+  border-radius: 1px;
+  background-color: var(--main-color);
+}
+
+.element-content-cards li {
+  margin: 8px 10px;
+}
+
+.element-card-header {
+  margin: -2px -2px 5px -2px;
+  background-color: var(--hover-button-color1);
+  padding: 10px 4px 4px 8px;
+  border-bottom: solid 1px grey;
+  border-radius: 1px;
+}
+
+.element-card-paragraph {
+  text-indent: 0px hanging;
+}
+
+.culvert-content-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.culvert-content-cards {
+  width: 550px;
+  height: 280px;
+  min-height: fit-content;
+  text-align: left;
+  margin: 10px 5px;
+  padding-bottom: 5px;
+  border: solid 2px grey;
+  border-radius: 1px;
+  background-color: var(--main-color);
+}
+
+.culvert-content-cards li {
+  margin: 0px 10px;
+}
+
+.culvert-card-header {
+  margin: -2px -2px 8px -2px;
+  background-color: var(--hover-button-color1);
+  padding: 10px 4px 4px 8px;
+  border-bottom: solid 1px grey;
+  border-radius: 1px;
+}
+
+.culvert-card-paragraph {
+  text-indent: 0px hanging;
+}
+
+.naming-conventions-content-cards-container {
+  display: block;
+  /* flex-wrap: wrap;
+  justify-content: space-around; */
+}
+
+.naming-conventions-card-header {
+  margin: -2px -2px 8px -2px;
+  background-color: var(--hover-button-color1);
+  padding: 10px 4px 4px 8px;
+  border-bottom: solid 1px grey;
+  border-radius: 1px;
+}
+
+.naming-conventions-content-cards {
+  min-height: fit-content;
+  text-align: left;
+  margin: 10px 5px;
+  padding-bottom: 5px;
+  border: solid 2px grey;
+  border-radius: 1px;
+  background-color: var(--main-color);
+}
+
+.naming-conventions-content-cards li {
+  margin: 8px 10px;
+}
+
+.naming-conventions-card-paragraph {
+  text-indent: 0px hanging;
+}
+
+.maintenance-content-cards-container {
+  display: block;
+  /* flex-wrap: wrap;
+  justify-content: space-around; */
+}
+
+.maintenance-card-header {
+  margin: -2px -2px 8px -2px;
+  background-color: var(--hover-button-color1);
+  padding: 10px 4px 4px 4px;
+  border-bottom: solid 1px grey;
+  border-radius: 1px;
+}
+
+.maintenance-content-cards {
+  min-height: fit-content;
+  text-align: left;
+  margin: 10px 5px;
+  padding-bottom: 5px;
+  border: solid 2px grey;
+  border-radius: 1px;
+  background-color: var(--main-color);
+}
+
+.maintenance-content-cards li {
+  margin: 8px 10px;
+}
+
+.maintenance-card-paragraph {
+  text-indent: 0px hanging;
+}
+
+.report-walkthrough-content-cards-container {
+  display: block;
+  /* flex-wrap: wrap;
+  justify-content: space-around; */
+}
+
+.report-walkthrough-card-header {
+  margin: -2px -2px 8px -2px;
+  background-color: var(--hover-button-color1);
+  padding: 10px 4px 4px 8px;
+  border-bottom: solid 1px grey;
+  border-radius: 1px;
+}
+
+.report-walkthrough-content-cards {
+  min-height: fit-content;
+  text-align: left;
+  margin: 10px 5px;
+  padding-bottom: 5px;
+  border: solid 2px grey;
+  border-radius: 1px;
+  background-color: var(--main-color);
+}
+
+.report-walkthrough-content-cards li {
+  margin: 8px 10px;
+}
+
+.report-walkthrough-card-paragraph {
+  text-indent: 0px hanging;
+}
+
+/* maintenance tab*/
+
+.component-maintenance-container {
+  display: flex;
+  background-color: var(--content-background-color);
+  border-bottom: solid 2px rgba(128, 128, 128, 0.2);
+}
+
+.component-maintenance-button1,
+.component-maintenance-button2,
+.component-maintenance-button3,
+.component-maintenance-button4 {
+  margin: 4px 5px;
+}
+
+.component-maintenance-button1 {
+  background-color: gray;
+}
+.component-maintenance-button2 {
+  background-color: rgb(19, 114, 19);
+}
+.component-maintenance-button3 {
+  background-color: rgb(177, 177, 33);
+}
+.component-maintenance-button4 {
+  background-color: rgb(158, 33, 33);
+}
+
+.component-maintenance-item {
+  padding: 12px 0 0 10px;
+}
+
+/* elements tab*/
+
+.elements-segment-header {
+  margin: 8px 0px 0px 0px;
+  background-color: var(--hover-button-color1);
+  padding: 10px 4px 4px 8px;
+  border-bottom: solid 1px grey;
+  border-radius: 1px;
+}
+
+.component-elements-container {
+  display: flex;
+  background-color: var(--content-background-color);
+  border-bottom: solid 2px rgba(128, 128, 128, 0.2);
+}
+
+.component-elements-button2,
+.component-elements-button3,
+.component-elements-button4 {
+  margin: 4px 5px;
+}
+
+.component-elements-button2 {
+  background-color: rgb(177, 177, 33);
+}
+.component-elements-button3 {
+  background-color: rgb(146, 90, 16);
+}
+.component-elements-button4 {
+  background-color: rgb(158, 33, 33);
+}
+
+.component-elements-item {
+  padding: 12px 0 0 10px;
+}
+
+/* Hidden initially */
+.asset-containers,
+.bridge-component-containers,
+.bridge-alignment-containers,
+.bridge-approach-containers,
+.bridge-joints-containers,
+.bridge-railings-containers,
+.bridge-deck-containers,
+.bridge-super-containers,
+.bridge-sub-containers,
+.bridge-bearings-containers,
+.bridge-culvert-containers,
+.bridge-channel-containers,
+.bridge-scour-containers,
+.bridge-overtopping-containers,
+.bridge-wildlife-containers,
+.culvert-item-containers,
+.wall-item-containers,
+.element-content-containers {
+  display: none;
+}
+
+/* textarea */
+
+.textarea-containers {
+  width: 100%;
+  border: none;
+}
+
+.textarea-containers:hover,
+.textarea-containers:focus,
+.textarea-comments:focus {
+  background: rgba(91, 84, 122, 0.1);
+}
+
+.textarea-mirrors {
+  display: grid;
+  margin-left: 0px;
+  /* padding: 3px 5px 0 3px; */
+  text-align: left;
+}
+
+.textarea-mirrors::after {
+  content: attr(data-replicated-value) " ";
+  white-space: pre-wrap;
+  visibility: hidden;
+}
+
+.textarea-comments,
+.textarea-mirrors::after {
+  padding: 3px 5px 5px 3px;
+  padding: 0px;
+  font: inherit;
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.textarea-comments {
+  resize: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: transparent;
+  overflow: hidden;
+  transition: 3s;
+  color: rgb(172, 172, 172);
+  color: var(--text-color);
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewpoint" content="width=device-width" />
+        <title>iterate logo</title>
+        <link rel="icon" href="media/logo-rings-only-orange.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+        <style>
+            html {
+                margin: 0px;
+                padding: 10px;
+                overflow: hidden;
+            }
+
+            body {
+                display: flex;
+                background-color: rgb(179, 179, 179);
+                background: rgb(2,0,36);
+                background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(185,185,185,1) 35%, rgba(0,212,255,1) 100%);
+            }
+
+            .headerdiv1logop {
+                position: absolute;
+                font-family: 'Ubuntu', sans-serif; 
+                font-size: min(max(100px, 20vw), max(100px, 60vh));
+                text-shadow: 0 0 8px rgb(204, 204, 127), -3px 3px 8px rgb(0, 0, 0);
+                container-name: body;
+                top: 45vh; left: 50%;
+                transform: translate(-50%, -50%); /*width,hieght*/
+                margin: 0; 
+                border: 0; 
+                z-index: 2;
+            }
+         
+            .customp {
+                color:rgb(199, 199, 199);
+                position: absolute;
+                font-family: 'Ubuntu', sans-serif; 
+                text-shadow: 0 0 8px rgb(0, 0, 0), -3px 3px 8px rgb(0, 0, 0);
+                top: calc(45vh + (min(max(100px, 20vw), max(100px, 60vh)))/2); left: 50%;
+                transform: translate(-50%, -50%); /*width,hieght*/
+                margin: 0; 
+                border: 0; 
+                font-size: min(max(20px, 4vw), max(20px, 12vh));
+                z-index: 2;
+            }
+
+            .biaslink {text-decoration: none;}
+
+            img {
+                position: absolute;
+                margin-top: 0px;
+                height:90vh;
+            }
+
+            .div1 {
+                flex: 1;
+                /*height:90vh;
+                padding: 10px;
+                background-color:rgb(96, 93, 138); */
+            }
+
+            .div2 {
+                flex: 1;
+                /*height:90vh;
+                padding: 10px;
+                background-color: rgb(27, 27, 27); */
+            }
+        </style>
+    <head>
+    <body>
+        <p class="headerdiv1logop">
+            <a class="biaslink" tabindex="-1" href="https://indot-it.bentley.com/login.aspx" target="_blank">
+                <span style="color:rgb(158, 38, 158);">ite<span style="color:rgb(255, 55, 0);">rate</span></span>
+            </a>
+            <p class="customp"> // fill in the blanks</p>
+        </p>
+        <div class="div1">
+            <img src="media\logo-rings-only-orange.png" />
+        </div>
+        <div class="div2">
+            <img src="media\logo-rings-only-purple.png" />
+        </div>
+        <div class="div1">
+            <img src="media\logo-rings-only-orange.png" />
+        </div>
+        <div class="div2">
+            <img src="media\logo-rings-only-purple.png" />
+        </div>
+        <div class="div1">
+            <img src="media\logo-rings-only-orange.png" />
+        </div>        
+    </body>
+</html>

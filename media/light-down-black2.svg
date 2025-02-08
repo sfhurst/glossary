@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="ddafa2a3-3171-46d8-b551-227c8d9f3609"
+   data-name="Layer 1"
+   viewBox="0 0 64.8 74.8"
+   version="1.1"
+   sodipodi:docname="light-down-black2.svg"
+   inkscape:version="1.3.1 (9b9bdc1480, 2023-11-25, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview8"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="10.90909"
+     inkscape:cx="32.358335"
+     inkscape:cy="37.445835"
+     inkscape:window-width="1452"
+     inkscape:window-height="991"
+     inkscape:window-x="26"
+     inkscape:window-y="23"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="ddafa2a3-3171-46d8-b551-227c8d9f3609" />
+  <defs
+     id="defs1">
+    <style
+       id="style1">.cead7fca-7c9e-4669-ab5c-f63f4f8f7092{fill:#ddd;stroke:#bababa;stroke-miterlimit:10;stroke-width:.2px}</style>
+  </defs>
+  <g
+     id="f259f3a2-a12e-4029-b203-2c77c48f573a"
+     data-name="2"
+     style="fill:#000000;fill-opacity:1;stroke-width:0.4;stroke-dasharray:none;stroke:#bababa;stroke-opacity:1">
+    <path
+       class="cead7fca-7c9e-4669-ab5c-f63f4f8f7092"
+       d="M-6.9 61.5v20.8l-7.2-4.2-7.2 4.2 18 10.4 18-10.4-7.2-4.2-7.2 4.2V61.5l18-10.4v8.3l7.2 4.2V42.8l-18-10.4v8.3l7.2 4.2-18 10.4-18-10.4 7.2-4.2v-8.3l-18 10.4v20.8l7.2-4.2v-8.3l18 10.4z"
+       id="path1"
+       style="fill:#000000;fill-opacity:1;stroke-width:0.4;stroke-dasharray:none;stroke:#bababa;stroke-opacity:1" />
+    <path
+       class="cead7fca-7c9e-4669-ab5c-f63f4f8f7092"
+       d="M-6.9 98.9v20.8l-7.2-4.1-7.2 4.1 18 10.4 18-10.4-7.2-4.1-7.2 4.1V98.9l18-10.4v8.4l7.2 4.1V80.2l-18-10.4v8.3l7.2 4.2-18 10.4-18-10.4 7.2-4.2v-8.3l-18 10.4V101l7.2-4.1v-8.4l18 10.4z"
+       id="path2"
+       style="fill:#000000;fill-opacity:1;stroke-width:0.4;stroke-dasharray:none;stroke:#bababa;stroke-opacity:1" />
+    <path
+       class="cead7fca-7c9e-4669-ab5c-f63f4f8f7092"
+       d="M25.5 80.2V101l-7.2-4.1-7.2 4.1 18 10.4 18-10.4-7.2-4.1-7.2 4.1V80.2l18-10.4v8.3l7.2 4.2V61.5l-18-10.4v8.3l7.2 4.2-18 10.4-18-10.4 7.2-4.2v-8.3L.3 61.5v20.8l7.2-4.2v-8.3l18 10.4zm0-74.8v20.8L18.3 22l-7.2 4.2 18 10.4 18-10.4-7.2-4.2-7.2 4.2V5.4L50.7-5v8.3l7.2 4.1v-20.7l-18-10.4v8.3l7.2 4.1-18 10.4-18-10.4 7.2-4.1v-8.3L.3-13.3V7.4l7.2-4.1V-5l18 10.4z"
+       id="path3"
+       style="fill:#000000;fill-opacity:1;stroke-width:0.4;stroke-dasharray:none;stroke:#bababa;stroke-opacity:1" />
+    <path
+       class="cead7fca-7c9e-4669-ab5c-f63f4f8f7092"
+       d="M25.5 42.8v20.8l-7.2-4.2-7.2 4.2 18 10.4 18-10.4-7.2-4.2-7.2 4.2V42.8l18-10.4v8.3l7.2 4.2V24.1l-18-10.4V22l7.2 4.2-18 10.4-18-10.4 7.2-4.2v-8.3L.3 24.1v20.8l7.2-4.2v-8.3l18 10.4z"
+       id="path4"
+       style="fill:#000000;fill-opacity:1;stroke-width:0.4;stroke-dasharray:none;stroke:#bababa;stroke-opacity:1" />
+    <path
+       class="cead7fca-7c9e-4669-ab5c-f63f4f8f7092"
+       d="M-6.9 24.1v20.8l-7.2-4.2-7.2 4.2 18 10.4 18-10.4-7.2-4.2-7.2 4.2V24.1l18-10.4V22l7.2 4.2V5.4L7.5-5v8.3l7.2 4.1-18 10.4-18-10.4 7.2-4.1V-5l-18 10.4v20.8l7.2-4.2v-8.3l18 10.4z"
+       id="path5"
+       style="fill:#000000;fill-opacity:1;stroke-width:0.4;stroke-dasharray:none;stroke:#bababa;stroke-opacity:1" />
+    <path
+       class="cead7fca-7c9e-4669-ab5c-f63f4f8f7092"
+       d="M-6.9-13.3V7.4l-7.2-4.1-7.2 4.1 18 10.4 18-10.4-7.2-4.1L.3 7.4v-20.7l18-10.4v8.3l7.2 4.1v-20.8l-18-10.4v8.4l7.2 4.1-18 10.4-18-10.4 7.2-4.1v-8.4l-18 10.4v20.8l7.2-4.1v-8.3l18 10.4zm64.8 74.8v20.8l-7.2-4.2-7.2 4.2 18 10.4 18-10.4-7.2-4.2-7.2 4.2V61.5l18-10.4v8.3l7.2 4.2V42.8l-18-10.4v8.3l7.2 4.2-18 10.4-18-10.4 7.2-4.2v-8.3l-18 10.4v20.8l7.2-4.2v-8.3l18 10.4z"
+       id="path6"
+       style="fill:#000000;fill-opacity:1;stroke-width:0.4;stroke-dasharray:none;stroke:#bababa;stroke-opacity:1" />
+    <path
+       class="cead7fca-7c9e-4669-ab5c-f63f4f8f7092"
+       d="M57.9 98.9v20.8l-7.2-4.1-7.2 4.1 18 10.4 18-10.4-7.2-4.1-7.2 4.1V98.9l18-10.4v8.4l7.2 4.1V80.2l-18-10.4v8.3l7.2 4.2-18 10.4-18-10.4 7.2-4.2v-8.3l-18 10.4V101l7.2-4.1v-8.4l18 10.4zm0-74.8v20.8l-7.2-4.2-7.2 4.2 18 10.4 18-10.4-7.2-4.2-7.2 4.2V24.1l18-10.4V22l7.2 4.2V5.4L72.3-5v8.3l7.2 4.1-18 10.4-18-10.4 7.2-4.1V-5l-18 10.4v20.8l7.2-4.2v-8.3l18 10.4z"
+       id="path7"
+       style="fill:#000000;fill-opacity:1;stroke-width:0.4;stroke-dasharray:none;stroke:#bababa;stroke-opacity:1" />
+    <path
+       class="cead7fca-7c9e-4669-ab5c-f63f4f8f7092"
+       d="M57.9-13.3V7.4l-7.2-4.1-7.2 4.1 18 10.4 18-10.4-7.2-4.1-7.2 4.1v-20.7l18-10.4v8.3l7.2 4.1v-20.8l-18-10.4v8.4l7.2 4.1-18 10.4-18-10.4 7.2-4.1v-8.4l-18 10.4v20.8l7.2-4.1v-8.3l18 10.4z"
+       id="path8"
+       style="fill:#000000;fill-opacity:1;stroke-width:0.4;stroke-dasharray:none;stroke:#bababa;stroke-opacity:1" />
+  </g>
+</svg>

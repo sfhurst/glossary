@@ -1,0 +1,43 @@
+dropdownMenus: // Will only export objDropdown
+Exports: RatingMenu1Drk, RatingMenu1Lght, RoadwayAlignmentDrk, RoadwayAlignmentLght, objDropdown
+Holds: Rating tables
+Feeds: ratingForms
+
+modal:
+Exports: linkArray, objModal
+Holds: Links, example comments, component descriptions
+Feeds: ratingForms
+
+SNBI: 
+Exports: objSNBI
+Holds: SNBI fields, character limits, and codes for each item
+Feeds: assetdata
+
+assetdata: 
+Imports: objSNBI
+Exports: objAssetData // This is a populated objSNBI
+Holds: The current asset values
+Feeds: ratingForms
+
+ratingForms: 
+Imports: objAssetData, objDropdown
+Exports: objRatingForms // This is used to create rating form rows
+Holds: This is where everything comes together
+Feeds: ratings
+
+ratings:
+Imports: objRatingForms
+Exports: Nothing
+Holds: Builds final html
+Feeds: The main html
+
+limit server interactions
+
+////////////
+//
+
+1. Maybe there needs to be more object combinations like with the modal object being put in the rating form
+2. Maybe the form order needs to be assigned somewhere else first and everything gets read from that
+3. I don't like how the modal has to assign itself a tab name and then also use that name in its header
+4. I would like links and tabs and body elements to be more flexible
+5. Maybe the modal needs to have page objects. So a tab = a body somehow.
