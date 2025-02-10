@@ -60,6 +60,7 @@ var buttonClasses = [
   "element-item-buttons",
   "culvert-item-buttons",
   "wall-item-buttons",
+  "glossary-item-buttons",
 ];
 
 // Loop through the array and add event listeners to each button class
@@ -167,3 +168,85 @@ function openContent(sectionId) {
   // Show the selected section
   document.getElementById(sectionId).classList.remove("hidden");
 }
+
+// glossaries
+
+function populateGlossaryDefects() {
+  const container = document.querySelector("#glossary-defects-tab .glossary-numeric-ratings-container");
+
+  Object.values(defectDefinitions).forEach((defect) => {
+    // Create card container
+    const card = document.createElement("div");
+    card.classList.add("glossary-content-cards");
+
+    // Create card header
+    const header = document.createElement("div");
+    header.classList.add("glossary-card-header");
+    header.textContent = defect.term;
+
+    // Create card paragraph
+    const paragraph = document.createElement("p");
+    paragraph.classList.add("glossary-card-paragraph");
+    paragraph.textContent = defect.definition;
+
+    // Assemble elements
+    card.appendChild(header);
+    card.appendChild(paragraph);
+    container.appendChild(card);
+  });
+}
+
+function populateGlossaryBridge() {
+  const container2 = document.querySelector("#glossary-bridge-tab .glossary-numeric-ratings-container");
+
+  Object.values(glossaryTerms).forEach((defect2) => {
+    // Create card container
+    const card2 = document.createElement("div");
+    card2.classList.add("glossary-content-cards");
+
+    // Create card header
+    const header2 = document.createElement("div");
+    header2.classList.add("glossary-card-header");
+    header2.textContent = defect2.term;
+
+    // Create card paragraph
+    const paragraph2 = document.createElement("p");
+    paragraph2.classList.add("glossary-card-paragraph");
+    paragraph2.textContent = defect2.definition;
+
+    // Assemble elements
+    card2.appendChild(header2);
+    card2.appendChild(paragraph2);
+    container2.appendChild(card2);
+  });
+}
+
+function populateGlossaryWall() {
+  const container3 = document.querySelector("#glossary-wall-tab .glossary-numeric-ratings-container");
+
+  Object.values(wallTerms).forEach((defect3) => {
+    // Create card container
+    const card3 = document.createElement("div");
+    card3.classList.add("glossary-content-cards");
+
+    // Create card header
+    const header3 = document.createElement("div");
+    header3.classList.add("glossary-card-header");
+    header3.textContent = defect3.term;
+
+    // Create card paragraph
+    const paragraph3 = document.createElement("p");
+    paragraph3.classList.add("glossary-card-paragraph");
+    paragraph3.textContent = defect3.definition;
+
+    // Assemble elements
+    card3.appendChild(header3);
+    card3.appendChild(paragraph3);
+    container3.appendChild(card3);
+  });
+}
+
+// Call function after DOM loads
+document.addEventListener("DOMContentLoaded", populateGlossaryDefects);
+document.addEventListener("DOMContentLoaded", populateGlossaryBridge);
+document.addEventListener("DOMContentLoaded", populateGlossaryWall);

@@ -295,6 +295,66 @@ button.active {
   text-indent: 0px hanging;
 }
 
+/* Wall  */
+
+.wall-content-cards-container {
+  display: block;
+  /* flex-wrap: wrap;
+  justify-content: space-around; */
+}
+
+.wall-card-header {
+  margin: -2px -2px 8px -2px;
+  background-color: var(--hover-button-color1);
+  padding: 10px 4px 4px 8px;
+  border-bottom: solid 1px grey;
+  border-radius: 1px;
+}
+
+.wall-content-cards {
+  min-height: fit-content;
+  text-align: left;
+  margin: 10px 5px;
+  padding-bottom: 5px;
+  border: solid 2px grey;
+  border-radius: 1px;
+  background-color: var(--main-color);
+}
+
+.wall-card-paragraph {
+  text-indent: 0px hanging;
+  padding: 0 10px 5px 10px;
+}
+
+.glossary-content-cards-container {
+  display: block;
+  /* flex-wrap: wrap;
+  justify-content: space-around; */
+}
+
+.glossary-card-header {
+  margin: -2px -2px 8px -2px;
+  background-color: var(--hover-button-color1);
+  padding: 10px 4px 4px 8px;
+  border-bottom: solid 1px grey;
+  border-radius: 1px;
+}
+
+.glossary-content-cards {
+  min-height: fit-content;
+  text-align: left;
+  margin: 10px 5px;
+  padding-bottom: 5px;
+  border: solid 2px grey;
+  border-radius: 1px;
+  background-color: var(--main-color);
+}
+
+.glossary-card-paragraph {
+  text-indent: 0px hanging;
+  padding: 0 10px 5px 10px;
+}
+
 .report-walkthrough-content-cards-container {
   display: block;
   /* flex-wrap: wrap;
@@ -413,6 +473,7 @@ button.active {
 .bridge-wildlife-containers,
 .culvert-item-containers,
 .wall-item-containers,
+.glossary-item-containers,
 .element-content-containers {
   display: none;
 }

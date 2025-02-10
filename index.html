@@ -18,6 +18,8 @@
     <script src="./scripts/modules/bridge_objects.js" defer></script>
     <script src="./scripts/modules/elements.js" defer></script>
     <script src="./scripts/modules/maintenance.js" defer></script>
+    <script src="./scripts/modules/walls.js" defer></script>
+    <script src="./scripts/modules/glossaries.js" defer></script>
     <script type="text/javascript" src="./scripts/scripts.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/dompurify@2.4.0/dist/purify.min.js"></script>
     <!-- Fonts -->
@@ -42,7 +44,8 @@
       <div class="header-tab-line">
         <button class="asset-buttons active" data-target="bridge-asset-tab" data-container-class="asset-containers" data-button-class="asset-buttons">Bridge</button>
         <button class="asset-buttons" data-target="culvert-asset-tab" data-container-class="asset-containers" data-button-class="asset-buttons">Culvert</button>
-        <button class="asset-buttons" data-target="wall-asset-tab" data-container-class="asset-containers" data-button-class="asset-buttons">Wall</button>
+        <button class="asset-buttons" data-target="wall-asset-tab" data-container-class="asset-containers" data-button-class="asset-buttons">Wall</button> |
+        <button class="asset-buttons" data-target="glossary-asset-tab" data-container-class="asset-containers" data-button-class="asset-buttons">Glossaries</button>
       </div>
     </header>
 
@@ -138,10 +141,10 @@
           >
             Maintenance
           </button>
-          |
+          <!-- |
           <button class="bridge-component-buttons" data-target="bridge-review-tab" data-container-class="bridge-component-containers" data-button-class="bridge-component-buttons">
             Review
-          </button>
+          </button> -->
         </div>
         <div id="bridge-alignment-tab" class="bridge-component-containers active" style="display: block">
           <div class="main-content-containers">
@@ -4497,21 +4500,301 @@
 
       <div id="wall-asset-tab" class="asset-containers">
         <div class="main-content-containers">
-          <button class="wall-item-buttons active" data-target="wall-rating-guidelines-tab" data-container-class="wall-item-containers" data-button-class="wall-item-buttons">
-            Rating Guidance
+          <button class="wall-item-buttons active" data-target="wall-rating-primary-tab" data-container-class="wall-item-containers" data-button-class="wall-item-buttons">
+            Rating Guidance - Primary
           </button>
-          <button class="wall-item-buttons" data-target="wall-naming-conventions-tab" data-container-class="wall-item-containers" data-button-class="wall-item-buttons">
-            Naming Convention
+          <button class="wall-item-buttons" data-target="wall-rating-secondary-tab" data-container-class="wall-item-containers" data-button-class="wall-item-buttons">
+            Rating Guidance - Secondary
           </button>
+          <button class="wall-item-buttons" data-target="wall-type-tab" data-container-class="wall-item-containers" data-button-class="wall-item-buttons">Type & Material</button>
         </div>
-        <div id="wall-rating-guidelines-tab" class="wall-item-containers active" style="display: block">
+        <div id="wall-rating-primary-tab" class="wall-item-containers active" style="display: block">
           <div class="wall-numeric-ratings-container">
-            <div class="main-content-containers wall-rating-flex-items">Rating stuff goes here.</div>
+            <div class="main-content-containers wall-rating-flex-items">
+              <div class="content-container-rating-lines">
+                <span class="content-container-rating-numerical">9</span>
+                <p class="content-container-rating-description-and-condition-bubble">
+                  <span class="content-container-rating-condition-bubble">EXCELLENT</span>None or isolated inherent defects. Appears stable.
+                </p>
+              </div>
+              <div class="content-container-rating-lines">
+                <span class="content-container-rating-numerical">8</span>
+                <p class="content-container-rating-description-and-condition-bubble">
+                  <span class="content-container-rating-condition-bubble">VERY GOOD</span>Some inherent defects. Appears stable.
+                </p>
+              </div>
+              <div class="content-container-rating-lines">
+                <span class="content-container-rating-numerical">7</span>
+                <p class="content-container-rating-description-and-condition-bubble">
+                  <span class="content-container-rating-condition-bubble">GOOD</span>Some minor defects. Appears stable. Isolated insignificant movements, separations, or
+                  distortions.
+                </p>
+              </div>
+              <div class="content-container-rating-lines">
+                <span class="content-container-rating-numerical">6</span>
+                <p class="content-container-rating-description-and-condition-bubble">
+                  <span class="content-container-rating-condition-bubble">SATISFACTORY</span>Widespread minor or isolated moderate defects. Appears stable, but widespread
+                  insignificant or isolated minor movements, separations, or distortions visible.
+                </p>
+              </div>
+              <div class="content-container-rating-lines">
+                <span class="content-container-rating-numerical">5</span>
+                <p class="content-container-rating-description-and-condition-bubble">
+                  <span class="content-container-rating-condition-bubble">FAIR</span>Some moderate defects. Some minor movements, separations, or distortions visible. Overall
+                  apparent strength and functionality of the wall is not affected.
+                </p>
+              </div>
+              <div class="content-container-rating-lines">
+                <span class="content-container-rating-numerical">4</span>
+                <p class="content-container-rating-description-and-condition-bubble">
+                  <span class="content-container-rating-condition-bubble">POOR</span>Widespread moderate or isolated major defects. Widespread movements, separations, or
+                  distortions are visible. Overall apparent strength and functionality of the wall is affected.
+                </p>
+              </div>
+              <div class="content-container-rating-lines">
+                <span class="content-container-rating-numerical">3</span>
+                <p class="content-container-rating-description-and-condition-bubble">
+                  <span class="content-container-rating-condition-bubble">SERIOUS</span>Widespread major defects. Widespread movements, separations, or distortions visible.
+                  Strength and functionality detrimentally affected and local failure appears likely.
+                </p>
+              </div>
+              <div class="content-container-rating-lines">
+                <span class="content-container-rating-numerical">2</span>
+                <p class="content-container-rating-description-and-condition-bubble">
+                  <span class="content-container-rating-condition-bubble">CRITICAL</span>Strength and functionality detrimentally affected and isolated local failures present.
+                  Restrictions behind or in front of wall either warranted or in place, and corrective actions needed to keep wall in service.
+                </p>
+              </div>
+              <div class="content-container-rating-lines">
+                <span class="content-container-rating-numerical">1</span>
+                <p class="content-container-rating-description-and-condition-bubble">
+                  <span class="content-container-rating-condition-bubble">IMMINENT FAILURE</span>Wall essentially failed. Areas behind and in front of wall must be closed off due
+                  to serious material movement and loss of retainment. Repair or rehabilitation may return wall to service.
+                </p>
+              </div>
+              <div class="content-container-rating-lines">
+                <span class="content-container-rating-numerical">0</span>
+                <p class="content-container-rating-description-and-condition-bubble">
+                  <span class="content-container-rating-condition-bubble">FAILED</span>Wall failed. Areas behind and in front of wall must be closed off due to serious material
+                  movement and loss of retainment. Wall is beyond corrective action and must be replaced to restore service.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-        <div id="wall-naming-conventions-tab" class="wall-item-containers">
+        <div id="wall-rating-secondary-tab" class="wall-item-containers">
           <div class="wall-numeric-ratings-container">
-            <div class="main-content-containers wall-rating-flex-items">Naming stuff goes here.</div>
+            <div class="main-content-containers wall-rating-flex-items">
+              <div class="content-container-rating-lines">
+                <span class="content-container-rating-numerical">N</span>
+                <p class="content-container-rating-description-and-condition-bubble">
+                  <span class="content-container-rating-condition-bubble">NOT APPLICABLE</span>Retaining wall component is not present.
+                </p>
+              </div>
+
+              <div class="content-container-rating-lines">
+                <span class="content-container-rating-numerical">7</span>
+                <p class="content-container-rating-description-and-condition-bubble">
+                  <span class="content-container-rating-condition-bubble">GOOD</span>Appears predominantly sound, intact, and functioning as intended with little to no visible
+                  deterioration, defects, movements, or adverse issues. Drainage where visible appear open and functioning. Ground surfaces well graded with no visible deformation
+                  or erosion. Little to no vegetation growth either adversely affecting the wall or prohibiting access for inspection.
+                </p>
+              </div>
+
+              <div class="content-container-rating-lines">
+                <span class="content-container-rating-numerical">5</span>
+                <p class="content-container-rating-description-and-condition-bubble">
+                  <span class="content-container-rating-condition-bubble">FAIR</span>Appears predominantly sound and functional. Minor to moderate deterioration, defects, local
+                  minor movement and rotation, or issues visible that are consistent with the wall age. Drainage where visible appear open and functioning with little drainage
+                  erosion. Ground surfaces exhibit some minor to moderate erosion or heave. Vegetation growth is measurable but is not visibly affecting the wall or prohibiting
+                  access for inspection.
+                </p>
+              </div>
+              <div class="content-container-rating-lines">
+                <span class="content-container-rating-numerical">4</span>
+                <p class="content-container-rating-description-and-condition-bubble">
+                  <span class="content-container-rating-condition-bubble">POOR</span>Widespread deterioration, defects, or issues visible such that the apparent strength and
+                  functionality is adversely affected. Major movement or rotation visible. Drainage visibly damaged or not functioning. Backfill leaking from behind the wall.
+                  Ground surfaces noticeably deformed, heaved, or eroded. Vegetation growth is measurable and visibly affecting the wall or prohibiting access for inspection.
+                </p>
+              </div>
+              <div class="content-container-rating-lines">
+                <span class="content-container-rating-numerical">3</span>
+                <p class="content-container-rating-description-and-condition-bubble">
+                  <span class="content-container-rating-condition-bubble">SERIOUS</span>Significant deterioration and issues; major movement or rotation visible; apparent strength
+                  and functionality are detrimentally affected and local failures either appear likely or are already present. Major loss of backfill apparent. Drainage not
+                  functional. Ground surface exhibiting significant distortion, heave, or erosion. Vegetation growth is excessive, impacting wall serviceability, or prohibiting
+                  inspection access.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="wall-type-tab" class="wall-item-containers">
+          <div class="wall-numeric-ratings-container">
+            <div class="wall-content-cards-container">
+              <div class="wall-content-cards">
+                <div class="wall-card-header">Wall Type (Code)</div>
+                <div class="wall-card-paragraph">
+                  <ul>
+                    <li>Mechanically Stabilized Earth (MSE)</li>
+                    <li>Cantilever Semi-Gravity (CSG)</li>
+                    <li>Gravity (G)</li>
+                    <li>Cantilever Drilled Shaft (CDS)</li>
+                    <li>Anchored Drilled Shaft (ADS)</li>
+                    <li>Cantilever Sheet Pile (CSH)</li>
+                    <li>Anchored Sheet Pile (ASH)</li>
+                    <li>Cantilever Soldier Pile (CSP)</li>
+                    <li>Anchored Soldier Pile (ASP)</li>
+                    <li>Modular Block Wall (MBW)</li>
+                    <li>Bin (BN)</li>
+                    <li>Crib (CB)</li>
+                    <li>Other (O)</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="wall-content-cards">
+                <div class="wall-card-header">Material (Code)</div>
+                <div class="wall-card-paragraph">
+                  <ul>
+                    <li>Precast Concrete (PC)</li>
+                    <li>Cast-in-Place Concrete (CIP)</li>
+                    <li>Steel (STL)</li>
+                    <li>Masonry Block (MB)</li>
+                    <li>Stone (ST)</li>
+                    <li>Timber (TM)</li>
+                    <li>Other (O)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="glossary-asset-tab" class="asset-containers">
+        <div class="main-content-containers">
+          <button class="glossary-item-buttons active" data-target="glossary-defects-tab" data-container-class="glossary-item-containers" data-button-class="glossary-item-buttons">
+            Defects & Locations
+          </button>
+          <button class="glossary-item-buttons" data-target="glossary-bridge-tab" data-container-class="glossary-item-containers" data-button-class="glossary-item-buttons">
+            SNBI & Bridge
+          </button>
+          <button class="glossary-item-buttons" data-target="glossary-wall-tab" data-container-class="glossary-item-containers" data-button-class="glossary-item-buttons">
+            Walls
+          </button>
+          <button class="glossary-item-buttons" data-target="glossary-county-tab" data-container-class="glossary-item-containers" data-button-class="glossary-item-buttons">
+            Counties
+          </button>
+        </div>
+        <div id="glossary-defects-tab" class="glossary-item-containers" style="display: block">
+          <div class="glossary-numeric-ratings-container"></div>
+        </div>
+        <div id="glossary-bridge-tab" class="glossary-item-containers">
+          <div class="glossary-numeric-ratings-container"></div>
+        </div>
+        <div id="glossary-wall-tab" class="glossary-item-containers">
+          <div class="glossary-numeric-ratings-container"></div>
+        </div>
+        <div id="glossary-county-tab" class="glossary-item-containers">
+          <div class="glossary-numeric-ratings-container">
+            <div class="glossary-content-cards">
+              <div class="glossary-card-header">County Number - County Name</div>
+              <div class="glossary-card-paragraph">
+                01 - Adams<br />
+                02 - Allen<br />
+                03 - Bartholomew<br />
+                04 - Benton<br />
+                05 - Blackford<br />
+                06 - Boone<br />
+                07 - Brown<br />
+                08 - Carroll<br />
+                09 - Cass<br />
+                10 - Clark<br />
+                11 - Clay<br />
+                12 - Clinton<br />
+                13 - Crawford<br />
+                14 - Daviess<br />
+                15 - Dearborn<br />
+                16 - Decatur<br />
+                17 - Dekalb<br />
+                18 - Delaware<br />
+                19 - Dubois<br />
+                20 - Elkhart<br />
+                21 - Fayette<br />
+                22 - Floyd<br />
+                23 - Fountain<br />
+                24 - Franklin<br />
+                25 - Fulton<br />
+                26 - Gibson<br />
+                27 - Grant<br />
+                28 - Greene<br />
+                29 - Hamilton<br />
+                30 - Hancock<br />
+                31 - Harrison<br />
+                32 - Hendricks<br />
+                33 - Henry<br />
+                34 - Howard<br />
+                35 - Huntington<br />
+                36 - Jackson<br />
+                37 - Jasper<br />
+                38 - Jay<br />
+                39 - Jefferson<br />
+                40 - Jennings<br />
+                41 - Johnson<br />
+                42 - Knox<br />
+                43 - Kosciusko<br />
+                44 - LaGrange<br />
+                45 - Lake<br />
+                46 - LaPorte<br />
+                47 - Lawrence<br />
+                48 - Madison<br />
+                49 - Marion<br />
+                50 - Marshall<br />
+                51 - Martin<br />
+                52 - Miami<br />
+                53 - Monroe<br />
+                54 - Montgomery<br />
+                55 - Morgan<br />
+                56 - Newton<br />
+                57 - Noble<br />
+                58 - Ohio<br />
+                59 - Orange<br />
+                60 - Owen<br />
+                61 - Parke<br />
+                62 - Perry<br />
+                63 - Pike<br />
+                64 - Porter<br />
+                65 - Posey<br />
+                66 - Pulaski<br />
+                67 - Putnam<br />
+                68 - Randolph<br />
+                69 - Ripley<br />
+                70 - Rush<br />
+                71 - St. Joseph<br />
+                72 - Scott<br />
+                73 - Shelby<br />
+                74 - Spencer<br />
+                75 - Starke<br />
+                76 - Steuben<br />
+                77 - Sullivan<br />
+                78 - Switzerland<br />
+                79 - Tippecanoe<br />
+                80 - Tipton<br />
+                81 - Union<br />
+                82 - Vanderburgh<br />
+                83 - Vermillion<br />
+                84 - Vigo<br />
+                85 - Wabash<br />
+                86 - Warren<br />
+                87 - Warrick<br />
+                88 - Washington<br />
+                89 - Wayne<br />
+                90 - Wells<br />
+                91 - White<br />
+                92 - Whitley<br />
+              </div>
+            </div>
           </div>
         </div>
       </div>
