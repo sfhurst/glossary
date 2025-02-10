@@ -9,7 +9,7 @@ const bridgeComponents = [
     category: "Alignment",
     commentary_page_id: "#bridge-alignment-pg1",
     commentary: `<p>
-                  Thissssss item identifies bridges that do not function adequately due to the horizontal or vertical alignment of the bridge and approach roadway. It is not intended
+                  This item identifies bridges that do not function adequately due to the horizontal or vertical alignment of the bridge and approach roadway. It is not intended
                   that the alignment be compared to current standards, but rather to the existing roadway alignment.
                 </p>
                 <br />
