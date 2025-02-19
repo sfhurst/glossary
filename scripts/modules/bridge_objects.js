@@ -7,34 +7,35 @@ const bridgeComponents = [
     frequency: "EI",
     referenece: "SNBI",
     category: "Alignment",
-    commentary_page_id: "#bridge-alignment-pg1",
+    commentary_page_id: "bridge-alignment-pg1",
+    example_comments_page_id: "bridge-alignment-pg3",
     commentary: `<p>
-                  This item identifies bridges that do not function adequately due to the horizontal or vertical alignment of the bridge and approach roadway. It is not intended
-                  that the alignment be compared to current standards, but rather to the existing roadway alignment.
-                </p>
-                <br />
-                <p>
-                  The basic criterion is how the alignment of the bridge and approach roadway relates to the general highway alignment for the section of highway the bridge
-                  carries.
-                </p>
-                <br />
-                <p>Do not consider speed reductions due to the bridge width or intersecting highways when reporting this item.</p>
-                <br />
-                <p>The operating speed reduction is in comparison to the posted speed limit for the highway segment:</p>
-                <ul class="content-container-paragraphs-ul">
-                  <li>Use code G when the operating speed is no different at the bridge than the rest of the highway segment that crosses the bridge.</li>
-                  <li>Use code F when the operating speed is noticeably different at the bridge than the rest of the highway segment that crosses the bridge.</li>
-                  <li>Use code P when the operating speed is substantially different at the bridge than the rest of the highway segment that crosses the bridge.</li>
-                </ul>`,
+    This item identifies bridges that do not function adequately due to the horizontal or vertical alignment of the bridge and approach roadway. It is not intended
+    that the alignment be compared to current standards, but rather to the existing roadway alignment.
+    </p>
+    <br />
+    <p>
+    The basic criterion is how the alignment of the bridge and approach roadway relates to the general highway alignment for the section of highway the bridge
+    carries.
+    </p>
+    <br />
+    <p>Do not consider speed reductions due to the bridge width or intersecting highways when reporting this item.</p>
+    <br />
+    <p>The operating speed reduction is in comparison to the posted speed limit for the highway segment:</p>
+    <ul class="content-container-paragraphs-ul">
+    <li>Use code G when the operating speed is no different at the bridge than the rest of the highway segment that crosses the bridge.</li>
+    <li>Use code F when the operating speed is noticeably different at the bridge than the rest of the highway segment that crosses the bridge.</li>
+    <li>Use code P when the operating speed is substantially different at the bridge than the rest of the highway segment that crosses the bridge.</li>
+    </ul>`,
     example_comments: [
       "No speed reduction necessary.",
-      "A minor reduction of speed is expected due to the roadway geometry.",
-      "Nearby roadway features cause changes in acceleration at the bridge.",
-      "There is an intersection at the north approach.",
-      "The bridge is at a traffic light and carries a portion of the queue.",
-      "The bridge is in a horizontal curve that is superelevated on the west side.",
-      "The bridge is in a sag vertical curve.",
-      "The bridge is in a crest vertical curve.",
+      "A minor reduction of speed is expected due to the roadway geometry. ",
+      "Nearby roadway features cause changes in acceleration at the bridge. ",
+      "There is an intersection at the north approach. ",
+      "The bridge is at a traffic light and carries a portion of the queue. ",
+      "The bridge is in a horizontal curve that is superelevated on the west side. ",
+      "The bridge is in a sag vertical curve. ",
+      "The bridge is in a crest vertical curve. ",
     ],
     rating_table: [
       {
@@ -68,7 +69,8 @@ const bridgeComponents = [
     frequency: "EI",
     referenece: "SNBI",
     category: "Approach",
-    commentary_page_id: "#bridge-approach-pg1",
+    commentary_page_id: "bridge-approach-pg1",
+    example_comments_page_id: "bridge-approach-pg3",
     commentary: `<p>
                   Use destructive or non-destructive testing results or visual condition indicators of materials covering the surfaces being assessed when top is not visible for
                   assessment. Past inspection reports and repair records may also provide supplemental information to aid in the determination of the condition rating.
@@ -157,7 +159,8 @@ const bridgeComponents = [
     frequency: "EI",
     referenece: "SNBI",
     category: "Joints",
-    commentary_page_id: "#bridge-joints-pg4",
+    commentary_page_id: "bridge-joints-pg4",
+    example_comments_page_id: "bridge-joints-pg6",
     commentary: `<p>
                   Terminal joints are designed to accommodate thermal movements of integral and semi-integral abutments by allowing expansion to occur between the approach slabs
                   and the approach pavement. Terminal joints are only required for integral or semi-integral bridges.
@@ -210,7 +213,8 @@ const bridgeComponents = [
     frequency: "EI",
     referenece: "SNBI",
     category: "Joints",
-    commentary_page_id: "#bridge-joints-pg1",
+    commentary_page_id: "bridge-joints-pg1",
+    example_comments_page_id: "bridge-joints-pg3",
     commentary: `<p>
                   This item addresses the condition of all types and shapes of bridge deck joints. The condition assessment includes all aspects of the joints such as any seals,
                   headers (metal or concrete), connections, and other metal members.
@@ -309,7 +313,8 @@ const bridgeComponents = [
     frequency: "EI",
     referenece: "SNBI",
     category: "Railings",
-    commentary_page_id: "#bridge-railings-pg1",
+    commentary_page_id: "bridge-railings-pg1",
+    example_comments_page_id: "bridge-railings-pg3",
     commentary: `<p>
                   This item addresses the condition of all types and shapes of bridge railings (parapets, median barriers, or structure mounted) located on the bridge or that cross
                   over buried structures. The condition assessment includes the portions of the railings, posts, blocking, and curbs that are part of the bridge railing system.
@@ -323,7 +328,11 @@ const bridgeComponents = [
                   Do not consider the condition of protective coatings and other protection systems when determining the condition rating code for this item, except to the extent
                   that problems with the protective coating system are indicative of problems with the underlying railing material.
                 </p>`,
-    example_comments: ["There is no scour present.", "There is minor localized scour at the interior piers.", "The designed countermeasures are in good condition."],
+    example_comments: [
+      "There are no deficiencies to report.",
+      "There is an isolated area of collision damage.",
+      "There are widely spaced hairline vertical cracks in the barrier walls.",
+    ],
     rating_table: [
       {
         code: "N",
@@ -394,7 +403,8 @@ const bridgeComponents = [
     frequency: "EI",
     referenece: "SNBI",
     category: "Railings",
-    commentary_page_id: "#bridge-railings-pg4",
+    commentary_page_id: "bridge-railings-pg4",
+    example_comments_page_id: "bridge-railings-pg6",
     commentary: `<p>
                   This item addresses the condition of the transition from the bridge railing to the approach guardrail. The condition assessment includes the portions of the
                   railings, posts, blocking, and curbs that are part of the bridge railing transitions.
@@ -405,7 +415,7 @@ const bridgeComponents = [
                   Do not consider the condition of protective coatings and other protection systems when determining the condition rating code for this item, except to the extent
                   that problems with the protective coating system are indicative of problems with the underlying railing transition material.
                 </p>`,
-    example_comments: ["There is no scour present.", "There is minor localized scour at the interior piers.", "The designed countermeasures are in good condition."],
+    example_comments: ["There are no deficiencies to report.", "The transition is functioning as designed.", "There is some collision damage in the railing at the transition."],
     rating_table: [
       {
         code: "N",
@@ -475,10 +485,16 @@ const bridgeComponents = [
     frequency: "EI",
     referenece: "SNBI",
     category: "Deck",
-    commentary_page_id: "#bridge-deck-pg4",
+    commentary_page_id: "bridge-deck-pg4",
+    example_comments_page_id: "bridge-deck-pg6",
     commentary: `<p>
                   The type of wearing surface must be considered in order to determine the appropriate condition rating. Please follow the guidance on wearing surfaces provided in
                   Part 7 of the INDOT Bridge Inspection Manual (BIM) linked below.
+                </p>
+                <br>
+                <p>
+                  If the wearing surface is monolithic with the deck, the BIM allows the deck rating to be one higher than the wearing surface. If either rating drops to a 5 or 
+                  below, both the deck and the wearing surface must be rated the same and assigned the lower rating.
                 </p>`,
     example_comments: [
       "The wearing surface is monolithic with the deck. See deck comments.",
@@ -546,7 +562,8 @@ const bridgeComponents = [
     frequency: "EI",
     referenece: "SNBI",
     category: "Deck",
-    commentary_page_id: "#bridge-deck-pg1",
+    commentary_page_id: "bridge-deck-pg1",
+    example_comments_page_id: "bridge-deck-pg3",
     commentary: `<p>This item represents the condition of the deck as determined from the inspection of all deck surfaces (top, underside, and edges).</p>
                 <br />
                 <p>Visual assessments may be supplemented with non-destructive or destructive testing results.</p>
@@ -653,7 +670,8 @@ const bridgeComponents = [
     frequency: "EI",
     referenece: "SNBI",
     category: "Super",
-    commentary_page_id: "#bridge-super-pg1",
+    commentary_page_id: "bridge-super-pg1",
+    example_comments_page_id: "bridge-super-pg3",
     commentary: ` <p>This item represents the condition of the superstructure as determined from the inspection of all superstructure members.</p>
                 <br />
                 <p>
@@ -774,7 +792,8 @@ const bridgeComponents = [
     frequency: "EI",
     referenece: "SNBI",
     category: "Super",
-    commentary_page_id: "#bridge-super-pg4",
+    commentary_page_id: "bridge-super-pg4",
+    example_comments_page_id: "bridge-super-pg6",
     commentary: `<p>Consider surface dulling, chalking, rust and peeling when evaluating the condition rating.</p>
                 <br />
                 <p>At stages of advanced deterioration, consider any section loss in the painted material.</p>`,
@@ -846,7 +865,8 @@ const bridgeComponents = [
     frequency: "EI",
     referenece: "SNBI",
     category: "Bearings",
-    commentary_page_id: "#bridge-bearings-pg1",
+    commentary_page_id: "bridge-bearings-pg1",
+    example_comments_page_id: "bridge-bearings-pg3",
     commentary: `<p>This item addresses the condition of all types and shapes of bridge bearings.</p>
                 <br />
                 <p>
@@ -941,7 +961,8 @@ const bridgeComponents = [
     frequency: "EI",
     referenece: "SNBI",
     category: "Sub",
-    commentary_page_id: "#bridge-sub-pg1",
+    commentary_page_id: "bridge-sub-pg1",
+    example_comments_page_id: "bridge-sub-pg3",
     commentary: `<p>This item addresses the condition of piers, abutments, piles, footings, and other substructure members.</p>
                 <br />
                 <p>
@@ -1059,7 +1080,8 @@ const bridgeComponents = [
     frequency: "EI",
     referenece: "SNBI",
     category: "Sub",
-    commentary_page_id: "#bridge-sub-pg4",
+    commentary_page_id: "bridge-sub-pg4",
+    example_comments_page_id: "bridge-sub-pg6",
     commentary: `<p>
                   Consider settlement and cracking in the slopewall and any voids that may cause defects in the abutment or approach slab. Use any indicators present to determine
                   the stability of the soil beneath the slopewall.
@@ -1098,7 +1120,7 @@ const bridgeComponents = [
     frequency: "EI",
     referenece: "SNBI",
     category: "Culvert",
-    commentary_page_id: "#bridge-culvert-pg1",
+    commentary_page_id: "bridge-culvert-pg1",
     commentary: `<p>This item addresses the condition of culverts. The condition assessment includes footings, piles, and other foundation members when present.</p>
                 <br />
     
@@ -1221,7 +1243,8 @@ const bridgeComponents = [
     frequency: "EI",
     referenece: "SNBI",
     category: "Channel",
-    commentary_page_id: "#bridge-channel-pg1",
+    commentary_page_id: "bridge-channel-pg1",
+    example_comments_page_id: "bridge-channel-pg3",
     commentary: `<p>
                   This item is used to provide a condition rating for the channel at the bridge. Consider the channel upstream and downstream only insofar as it threatens the
                   bridge and approach roadway.
@@ -1322,7 +1345,8 @@ const bridgeComponents = [
     frequency: "EI",
     referenece: "SNBI",
     category: "Channel",
-    commentary_page_id: "#bridge-channel-pg4",
+    commentary_page_id: "bridge-channel-pg4",
+    example_comments_page_id: "bridge-channel-pg6",
     commentary: `<p>This item is used to provide a condition rating for channel protection devices.</p>
                 <br />
     
@@ -1427,7 +1451,8 @@ const bridgeComponents = [
     frequency: "EI",
     referenece: "SNBI",
     category: "Scour",
-    commentary_page_id: "#bridge-scour-pg1",
+    commentary_page_id: "bridge-scour-pg1",
+    example_comments_page_id: "bridge-scour-pg3",
     commentary: `<p>Refer to Item B.AP.03 (Scour Vulnerability) to verify if the bridge has been determined to be stable or unstable for appraised scour conditions.</p>
                 <br />
     
@@ -1511,7 +1536,8 @@ const bridgeComponents = [
     frequency: "I",
     referenece: "SNBI",
     category: "Scour",
-    commentary_page_id: "#bridge-scour-pg4",
+    commentary_page_id: "bridge-scour-pg4",
+    example_comments_page_id: "bridge-scour-pg6",
     commentary: `<p>The intent of this item is to report the status and vulnerability determination from scour appraisals required by the NBIS.</p>
                 <br />
     
@@ -1595,7 +1621,8 @@ const bridgeComponents = [
     frequency: "EI",
     referenece: "SNBI",
     category: "Overtopping",
-    commentary_page_id: "#bridge-overtopping-pg1",
+    commentary_page_id: "bridge-overtopping-pg1",
+    example_comments_page_id: "bridge-overtopping-pg3",
     commentary: `<p>An overtopping occurrence is when the waterway overtops the riding surface carried on the bridge.</p>
                 <br />
     
@@ -1672,7 +1699,7 @@ const bridgeComponents = [
     frequency: "EI",
     referenece: "SNBI",
     category: "Wildlife",
-    commentary_page_id: "#bridge-wildlife-pg1",
+    commentary_page_id: "bridge-wildlife-pg1",
     commentary: `<p>Information on cliff swallows can be found in Part 9 of the INDOT BIM and in the INDOT Protected Species Guidance. Both documents are linked below.</p>`,
     example_comments: ["No swallows or nests were observed.", "Swallows and/or nests were observed."],
     rating_table: [
@@ -1697,7 +1724,7 @@ const bridgeComponents = [
     frequency: "EI",
     referenece: "SNBI",
     category: "Wildlife",
-    commentary_page_id: "#bridge-wildlife-pg4",
+    commentary_page_id: "bridge-wildlife-pg4",
     commentary: `<p>Information on bats can be found in Part 9 of the INDOT BIM and in the INDOT Protected Species Guidance. Both documents are linked below.</p>
                 <br />
                 <p>

@@ -12,7 +12,12 @@ button {
   /* box-shadow: 1px 1px 1px rgb(124 124 124 / 0.5); */
 }
 
-.alt-buttons {
+.alt1-buttons {
+  background-color: var(--inactive-button-color3);
+  color: var(--inactive-button-text-color3);
+}
+
+.alt2-buttons {
   background-color: var(--inactive-button-color2);
   color: var(--inactive-button-text-color2);
 }
@@ -23,7 +28,12 @@ button:hover {
   color: var(--hover-button-text-color1);
 }
 
-.alt-buttons:hover {
+.alt1-buttons:hover {
+  background-color: var(--hover-button-color3);
+  color: var(--hover-button-text-color3);
+}
+
+.alt2-buttons:hover {
   background-color: var(--hover-button-color2);
   color: var(--hover-button-text-color2);
 }
@@ -34,7 +44,12 @@ button.active {
   color: var(--active-button-text-color1);
 }
 
-.alt-buttons.active {
+.alt1-buttons.active {
+  background-color: var(--active-button-color2);
+  color: var(--active-button-text-color2);
+}
+
+.alt2-buttons.active {
   background-color: var(--active-button-color2);
   color: var(--active-button-text-color2);
 }
@@ -81,7 +96,8 @@ button.active {
   width: 15px;
   max-width: 15px;
   min-width: 15px;
-  background-color: var(--content-background-color);
+  /* background-color: var(--content-background-color); */
+  background-color: none;
   font-weight: 500;
   color: var(--text-color);
 }
@@ -522,4 +538,52 @@ button.active {
   transition: 3s;
   color: rgb(172, 172, 172);
   color: var(--text-color);
+}
+
+/*  */
+.category {
+  margin: 5px;
+}
+
+.comment-builder-selector {
+  margin: 0px 0px 0px 0px;
+  background-color: var(--hover-button-color1);
+  padding: 10px 4px 4px 8px;
+  border-bottom: solid 1px grey;
+  border-radius: 1px;
+}
+
+.comment-builder-option-list {
+  list-style-type: none;
+  padding: 5px;
+  margin-bottom: 0px;
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  display: flex;
+  background-color: var(--content-background-color);
+  border-bottom: solid 2px rgba(128, 128, 128, 0.2);
+}
+
+.comment-builder-option {
+  padding: 4px 8px;
+  background-color: var(--inactive-button-color1);
+  background-color: rgba(167, 84, 167, 0.247);
+  color: var(--inactive-button-text-color1);
+  border: 1px solid #cccccc7a;
+  cursor: pointer;
+}
+
+.comment-builder-option-list .selected {
+  background-color: rgba(241, 89, 47, 0.589);
+  color: var(--inactive-button-text-color1);
+  border: 1px solid #cccccc7a;
+}
+
+#output {
+  margin-top: 10px;
+}
+
+.highlight {
+  background-color: rgba(255, 255, 0, 0.185);
 }

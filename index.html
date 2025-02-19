@@ -20,6 +20,9 @@
     <script src="./scripts/modules/maintenance.js" defer></script>
     <script src="./scripts/modules/walls.js" defer></script>
     <script src="./scripts/modules/glossaries.js" defer></script>
+    <script src="./scripts/modules/asset_data.js" defer></script>
+    <script src="./scripts/modules/defects.js" defer></script>
+    <script src="./scripts/modules/comment_builder.js" defer></script>
     <script type="text/javascript" src="./scripts/scripts.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/dompurify@2.4.0/dist/purify.min.js"></script>
     <!-- Fonts -->
@@ -141,15 +144,15 @@
           >
             Maintenance
           </button>
-          <!-- |
+          |
           <button class="bridge-component-buttons" data-target="bridge-review-tab" data-container-class="bridge-component-containers" data-button-class="bridge-component-buttons">
             Review
-          </button> -->
+          </button>
         </div>
-        <div id="bridge-alignment-tab" class="bridge-component-containers active" style="display: block">
+        <div id="bridge-alignment-tab" class="bridge-component-containers" style="display: block"> 
           <div class="main-content-containers">
             <button
-              class="bridge-alignment-buttons"
+              class="bridge-alignment-buttons  alt1-buttons"
               data-target="bridge-alignment-pg1"
               data-container-class="bridge-alignment-containers"
               data-button-class="bridge-alignment-buttons"
@@ -157,7 +160,7 @@
               Approach Roadway Alignment (B.AP.01)
             </button>
             <button
-              class="bridge-alignment-buttons active"
+              class="bridge-alignment-buttons alt1-buttons active"
               data-target="bridge-alignment-pg2"
               data-container-class="bridge-alignment-containers"
               data-button-class="bridge-alignment-buttons"
@@ -165,7 +168,7 @@
               Rating Table
             </button>
             <button
-              class="bridge-alignment-buttons"
+              class="bridge-alignment-buttons alt1-buttons"
               data-target="bridge-alignment-pg3"
               data-container-class="bridge-alignment-containers"
               data-button-class="bridge-alignment-buttons"
@@ -206,27 +209,27 @@
               </div>
             </div>
 
-            <div id="bridge-alignment-pg2" class="bridge-alignment-containers active" style="display: block">
-              <div class="content-container-rating-lines">
+            <div id="bridge-alignment-pg2" class="bridge-alignment-containers" style="display: block">
+              <div class="content-container-rating-lines" data-category="B.AP.01">
                 <span class="content-container-rating-numerical">N</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">NOT APPLICABLE</span>The bridge does not carry vehicular traffic and does not have an operating speed.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.AP.01">
                 <span class="content-container-rating-numerical">G</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">GOOD</span>The operating speed at the bridge is no different than the rest of the highway segment.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.AP.01">
                 <span class="content-container-rating-numerical">F</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">FAIR</span>The operating speed at the bridge is noticeably different compared to the rest of the highway
                   segment.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.AP.01">
                 <span class="content-container-rating-numerical">P</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">POOR</span>The operating speed at the bridge is substantially different compared to the rest of the
@@ -292,7 +295,14 @@
             <div class="content-container-paragraphs">
               <div class="textarea-containers">
                 <div class="textarea-mirrors">
-                  <textarea id="BAP01-textarea" class="textarea-comments" name="Approach Roadway Alignment" rows="1" oninput="expandTextarea(event, 'BAP01-textarea')"></textarea>
+                  <textarea
+                    id="BAP01-textarea"
+                    class="textarea-comments"
+                    name="Approach Roadway Alignment"
+                    rows="1"
+                    data-category="B.AP.01"
+                    oninput="expandTextarea(event, 'BAP01-textarea')"
+                  ></textarea>
                 </div>
               </div>
             </div>
@@ -300,19 +310,22 @@
         </div>
         <div id="bridge-approach-slabs-tab" class="bridge-component-containers">
           <div class="main-content-containers">
-            <button class="bridge-approach-buttons" data-target="bridge-approach-pg1" data-container-class="bridge-approach-containers" data-button-class="bridge-approach-buttons">
+            <button class="bridge-approach-buttons alt1-buttons" data-target="bridge-approach-pg1" data-container-class="bridge-approach-containers" data-button-class="bridge-approach-buttons">
               Approach Slabs (B.C.01b)
             </button>
             <button
-              class="bridge-approach-buttons active"
+              class="bridge-approach-buttons alt1-buttons active"
               data-target="bridge-approach-pg2"
               data-container-class="bridge-approach-containers"
-              data-button-class="bridge-approach-buttons"
+              data-button-class="bridge-approach-buttons alt1-buttons"
             >
               Rating Table
             </button>
-            <button class="bridge-approach-buttons" data-target="bridge-approach-pg3" data-container-class="bridge-approach-containers" data-button-class="bridge-approach-buttons">
+            <button class="bridge-approach-buttons alt1-buttons" data-target="bridge-approach-pg3" data-container-class="bridge-approach-containers" data-button-class="bridge-approach-buttons">
               Example Comments
+            </button>
+            <button class="bridge-approach-buttons alt1-buttons" data-target="bridge-approach-pg6" data-container-class="bridge-approach-containers" data-button-class="bridge-approach-buttons">
+              Comment Builder
             </button>
             |
             <button class="bridge-approach-buttons" data-target="bridge-approach-pg4" data-container-class="bridge-approach-containers" data-button-class="bridge-approach-buttons">
@@ -335,62 +348,62 @@
                 <p>Consider the roughness and ride provided by the approach slab.</p>
               </div>
             </div>
-            <div id="bridge-approach-pg2" class="bridge-approach-containers active" style="display: block">
-              <div class="content-container-rating-lines">
+            <div id="bridge-approach-pg2" class="bridge-approach-containers" style="display: block">
+              <div class="content-container-rating-lines" data-category="B.C.01b">
                 <span class="content-container-rating-numerical">N</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">NOT APPLICABLE</span>Bridge does not have approach slabs.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.01b">
                 <span class="content-container-rating-numerical">9</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">EXCELLENT</span>Isolated inherent defects.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.01b">
                 <span class="content-container-rating-numerical">8</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">VERY GOOD</span>Some inherent defects.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.01b">
                 <span class="content-container-rating-numerical">7</span>
                 <p class="content-container-rating-description-and-condition-bubble"><span class="content-container-rating-condition-bubble">GOOD</span>Some minor defects.</p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.01b">
                 <span class="content-container-rating-numerical">6</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">SATISFACTORY</span>Widespread minor or isolated moderate defects.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.01b">
                 <span class="content-container-rating-numerical">5</span>
                 <p class="content-container-rating-description-and-condition-bubble"><span class="content-container-rating-condition-bubble">FAIR</span>Some moderate defects.</p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.01b">
                 <span class="content-container-rating-numerical">4</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">POOR</span>Widespread moderate or isolated major defects.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.01b">
                 <span class="content-container-rating-numerical">3</span>
                 <p class="content-container-rating-description-and-condition-bubble"><span class="content-container-rating-condition-bubble">SERIOUS</span>Some major defects.</p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.01b">
                 <span class="content-container-rating-numerical">2</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">CRITICAL</span>Widespread major defects.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.01b">
                 <span class="content-container-rating-numerical">1</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">IMMINENT FAILURE</span>Approach slabs have failed and are ineffective.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.01b">
                 <span class="content-container-rating-numerical">0</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">FAILED</span>Approach slabs have failed and present a safety hazard.
@@ -409,6 +422,26 @@
                 <p class="content-container-comment-lines">There is minor settlement of the approach slabs.</p>
                 <p class="content-container-comment-lines">No significant settlement has occurred.</p>
               </div>
+            </div>
+            <div id="bridge-approach-pg6" class="bridge-approach-containers"> <!-- new work -->
+              <p class="comment-builder-selector">Select Defect:</p>
+              <div id="defect-options-bridge-approach-pg6" class="comment-builder-option-list"></div>
+              
+              <p class="comment-builder-selector">Select Symptomatic Defect (Optional):</p>
+              <div id="symptom-options-bridge-approach-pg6" class="comment-builder-option-list"></div>
+              
+              <p class="comment-builder-selector">Select Frequency:</p>
+              <div id="occurrence-options-bridge-approach-pg6" class="comment-builder-option-list"></div>
+              
+              <p class="comment-builder-selector">Select Severity:</p>
+              <div id="severity-options-bridge-approach-pg6" class="comment-builder-option-list"></div>
+              
+              <p class="comment-builder-selector">Select Location (Optional/Multiple):</p>
+              <div id="position-options-bridge-approach-pg6" class="comment-builder-option-list"></div>
+              <div id="location-options-bridge-approach-pg6" class="comment-builder-option-list"></div>
+              
+              <p class="comment-builder-selector">Generated Comment:</p>
+              <p id="generated-comment-bridge-approach-pg6" class="comment-builder-option-list">Select options to generate a comment.</p>
             </div>
             <div id="bridge-approach-pg4" class="bridge-approach-containers">
               <div id="approach-elements-container">
@@ -455,7 +488,14 @@
             <div class="content-container-paragraphs">
               <div class="textarea-containers">
                 <div class="textarea-mirrors">
-                  <textarea id="BC01b-textarea" class="textarea-comments" name="Approach Slab" rows="1" oninput="expandTextarea(event, 'BC01b-textarea')"></textarea>
+                  <textarea
+                    id="BC01b-textarea"
+                    class="textarea-comments"
+                    name="Approach Slab"
+                    rows="1"
+                    data-category="B.C.01b"
+                    oninput="expandTextarea(event, 'BC01b-textarea')"
+                  ></textarea>
                 </div>
               </div>
             </div>
@@ -463,17 +503,17 @@
         </div>
         <div id="bridge-joints-tab" class="bridge-component-containers">
           <div class="main-content-containers">
-            <button class="bridge-joints-buttons" data-target="bridge-joints-pg1" data-container-class="bridge-joints-containers" data-button-class="bridge-joints-buttons">
+            <button class="bridge-joints-buttons alt1-buttons" data-target="bridge-joints-pg1" data-container-class="bridge-joints-containers" data-button-class="bridge-joints-buttons">
               Bridge Joints (B.C.08)
             </button>
-            <button class="bridge-joints-buttons active" data-target="bridge-joints-pg2" data-container-class="bridge-joints-containers" data-button-class="bridge-joints-buttons">
+            <button class="bridge-joints-buttons alt1-buttons active" data-target="bridge-joints-pg2" data-container-class="bridge-joints-containers" data-button-class="bridge-joints-buttons">
               Rating Table
             </button>
-            <button class="bridge-joints-buttons" data-target="bridge-joints-pg3" data-container-class="bridge-joints-containers" data-button-class="bridge-joints-buttons">
+            <button class="bridge-joints-buttons alt1-buttons" data-target="bridge-joints-pg3" data-container-class="bridge-joints-containers" data-button-class="bridge-joints-buttons">
               Example Comments
-            </button>
+            </button> |
             <button
-              class="bridge-joints-buttons alt-buttons"
+              class="bridge-joints-buttons alt2-buttons"
               data-target="bridge-joints-pg4"
               data-container-class="bridge-joints-containers"
               data-button-class="bridge-joints-buttons"
@@ -481,7 +521,7 @@
               Terminal Joints (B.C.08a)
             </button>
             <button
-              class="bridge-joints-buttons alt-buttons"
+              class="bridge-joints-buttons alt2-buttons"
               data-target="bridge-joints-pg5"
               data-container-class="bridge-joints-containers"
               data-button-class="bridge-joints-buttons"
@@ -489,7 +529,7 @@
               Rating Table
             </button>
             <button
-              class="bridge-joints-buttons alt-buttons"
+              class="bridge-joints-buttons alt2-buttons"
               data-target="bridge-joints-pg6"
               data-container-class="bridge-joints-containers"
               data-button-class="bridge-joints-buttons"
@@ -522,62 +562,62 @@
                 <p>In cases where the joint is not visible, the condition can be assessed based on other indirect indicators of the condition.</p>
               </div>
             </div>
-            <div id="bridge-joints-pg2" class="bridge-joints-containers active" style="display: block">
-              <div class="content-container-rating-lines">
+            <div id="bridge-joints-pg2" class="bridge-joints-containers" style="display: block">
+              <div class="content-container-rating-lines" data-category="B.C.08">
                 <span class="content-container-rating-numerical">N</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">NOT APPLICABLE</span>Bridge does not have deck joints.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.08">
                 <span class="content-container-rating-numerical">9</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">EXCELLENT</span>Isolated inherent defects.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.08">
                 <span class="content-container-rating-numerical">8</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">VERY GOOD</span>Some inherent defects.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.08">
                 <span class="content-container-rating-numerical">7</span>
                 <p class="content-container-rating-description-and-condition-bubble"><span class="content-container-rating-condition-bubble">GOOD</span>Some minor defects.</p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.08">
                 <span class="content-container-rating-numerical">6</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">SATISFACTORY</span>Widespread minor or isolated moderate defects.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.08">
                 <span class="content-container-rating-numerical">5</span>
                 <p class="content-container-rating-description-and-condition-bubble"><span class="content-container-rating-condition-bubble">FAIR</span>Some moderate defects.</p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.08">
                 <span class="content-container-rating-numerical">4</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">POOR</span>Widespread moderate or isolated major defects.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.08">
                 <span class="content-container-rating-numerical">3</span>
                 <p class="content-container-rating-description-and-condition-bubble"><span class="content-container-rating-condition-bubble">SERIOUS</span>Some major defects.</p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.08">
                 <span class="content-container-rating-numerical">2</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">CRITICAL</span>Widespread major defects.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.08">
                 <span class="content-container-rating-numerical">1</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">IMMINENT FAILURE</span>Joints have failed and are ineffective.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.08">
                 <span class="content-container-rating-numerical">0</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">FAILED</span>Joints have failed and present a safety hazard.
@@ -620,26 +660,26 @@
               </div>
             </div>
             <div id="bridge-joints-pg5" class="bridge-joints-containers">
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.08a">
                 <span class="content-container-rating-numerical">N</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">NOT APPLICABLE</span>The bridge abutments are not integral or semi-integral. The bridge does not have
                   terminal joints.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.08a">
                 <span class="content-container-rating-numerical">G</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">GOOD</span>The terminal joints do not need maintenance, and meet the current standards.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.08a">
                 <span class="content-container-rating-numerical">F</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">FAIR</span>The terminal joints do not need maintenance, but do not meet the current standards.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.08a">
                 <span class="content-container-rating-numerical">P</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">POOR</span>The terminal joints need maintenance.
@@ -710,7 +750,14 @@
             <div class="content-container-paragraphs">
               <div class="textarea-containers">
                 <div class="textarea-mirrors">
-                  <textarea id="BC08-textarea" class="textarea-comments" name="Bridge Joints" rows="1" oninput="expandTextarea(event, 'BC08-textarea')"></textarea>
+                  <textarea
+                    id="BC08-textarea"
+                    class="textarea-comments"
+                    name="Bridge Joints"
+                    rows="1"
+                    data-category="B.C.08"
+                    oninput="expandTextarea(event, 'BC08-textarea')"
+                  ></textarea>
                 </div>
               </div>
             </div>
@@ -720,7 +767,14 @@
             <div class="content-container-paragraphs">
               <div class="textarea-containers">
                 <div class="textarea-mirrors">
-                  <textarea id="BC08a-textarea" class="textarea-comments" name="Terminal Joints" rows="1" oninput="expandTextarea(event, 'BC08a-textarea')"></textarea>
+                  <textarea
+                    id="BC08a-textarea"
+                    class="textarea-comments"
+                    name="Terminal Joints"
+                    rows="1"
+                    data-category="B.C.08a"
+                    oninput="expandTextarea(event, 'BC08a-textarea')"
+                  ></textarea>
                 </div>
               </div>
             </div>
@@ -728,22 +782,22 @@
         </div>
         <div id="bridge-railings-tab" class="bridge-component-containers">
           <div class="main-content-containers">
-            <button class="bridge-railings-buttons" data-target="bridge-railings-pg1" data-container-class="bridge-railings-containers" data-button-class="bridge-railings-buttons">
+            <button class="bridge-railings-buttons alt1-buttons" data-target="bridge-railings-pg1" data-container-class="bridge-railings-containers" data-button-class="bridge-railings-buttons">
               Bridge Railings (B.C.05)
             </button>
             <button
-              class="bridge-railings-buttons active"
+              class="bridge-railings-buttons alt1-buttons active"
               data-target="bridge-railings-pg2"
               data-container-class="bridge-railings-containers"
-              data-button-class="bridge-railings-buttons"
+              data-button-class="bridge-railings-buttons alt1-buttons"
             >
               Rating Table
             </button>
-            <button class="bridge-railings-buttons" data-target="bridge-railings-pg3" data-container-class="bridge-railings-containers" data-button-class="bridge-railings-buttons">
+            <button class="bridge-railings-buttons alt1-buttons" data-target="bridge-railings-pg3" data-container-class="bridge-railings-containers" data-button-class="bridge-railings-buttons">
               Example Comments
-            </button>
+            </button> |
             <button
-              class="bridge-railings-buttons alt-buttons"
+              class="bridge-railings-buttons alt2-buttons"
               data-target="bridge-railings-pg4"
               data-container-class="bridge-railings-containers"
               data-button-class="bridge-railings-buttons"
@@ -751,7 +805,7 @@
               Bridge Railing Transitions (B.C.06)
             </button>
             <button
-              class="bridge-railings-buttons alt-buttons"
+              class="bridge-railings-buttons alt2-buttons"
               data-target="bridge-railings-pg5"
               data-container-class="bridge-railings-containers"
               data-button-class="bridge-railings-buttons"
@@ -759,7 +813,7 @@
               Rating Table
             </button>
             <button
-              class="bridge-railings-buttons alt-buttons"
+              class="bridge-railings-buttons alt2-buttons"
               data-target="bridge-railings-pg6"
               data-container-class="bridge-railings-containers"
               data-button-class="bridge-railings-buttons"
@@ -792,70 +846,70 @@
                 </p>
               </div>
             </div>
-            <div id="bridge-railings-pg2" class="bridge-railings-containers active" style="display: block">
-              <div class="content-container-rating-lines">
+            <div id="bridge-railings-pg2" class="bridge-railings-containers" style="display: block">
+              <div class="content-container-rating-lines" data-category="B.C.05">
                 <span class="content-container-rating-numerical">N</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">NOT APPLICABLE</span>Component does not exist.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.05">
                 <span class="content-container-rating-numerical">9</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">EXCELLENT</span>Isolated inherent defects.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.05">
                 <span class="content-container-rating-numerical">8</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">VERY GOOD</span>Some inherent defects.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.05">
                 <span class="content-container-rating-numerical">7</span>
                 <p class="content-container-rating-description-and-condition-bubble"><span class="content-container-rating-condition-bubble">GOOD</span>Some minor defects.</p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.05">
                 <span class="content-container-rating-numerical">6</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">SATISFACTORY</span>Widespread minor or isolated moderate defects.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.05">
                 <span class="content-container-rating-numerical">5</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">FAIR</span>Some moderate defects; strength and performance of the component are not affected.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.05">
                 <span class="content-container-rating-numerical">4</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">POOR</span>Widespread moderate or isolated major defects; strength and/or performance of the component is
                   affected.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.05">
                 <span class="content-container-rating-numerical">3</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">SERIOUS</span>Major defects; strength and/or performance of the component is seriously affected. Condition
                   typically necessitates more frequent monitoring, load restrictions, and/or corrective actions.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.05">
                 <span class="content-container-rating-numerical">2</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">CRITICAL</span>Major defects; component is severely compromised. Condition typically necessitates frequent
                   monitoring, significant load restrictions, and/or corrective actions in order to keep the bridge open.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.05">
                 <span class="content-container-rating-numerical">1</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">IMMINENT FAILURE</span>Bridge is closed to traffic due to component condition. Repair or rehabilitation
                   may return the bridge to service.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.05">
                 <span class="content-container-rating-numerical">0</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">FAILED</span>Bridge is closed due to component condition, and is beyond corrective action. Replacement is
@@ -863,14 +917,14 @@
                 </p>
               </div>
             </div>
-            <div id="bridge-railings-pg3" class="bridge-railings-containers active">
+            <div id="bridge-railings-pg3" class="bridge-railings-containers">
               <div class="content-container-paragraphs">
                 <p class="content-container-comment-lines">There are no deficiencies to report.</p>
                 <p class="content-container-comment-lines">There is an isolated area of collision damage.</p>
                 <p class="content-container-comment-lines">There are widely spaced hairline vertical cracks in the barrier walls.</p>
               </div>
             </div>
-            <div id="bridge-railings-pg4" class="bridge-railings-containers active">
+            <div id="bridge-railings-pg4" class="bridge-railings-containers">
               <div class="content-container-paragraphs">
                 <p>
                   This item addresses the condition of the transition from the bridge railing to the approach guardrail. The condition assessment includes the portions of the
@@ -884,70 +938,70 @@
                 </p>
               </div>
             </div>
-            <div id="bridge-railings-pg5" class="bridge-railings-containers active">
-              <div class="content-container-rating-lines">
+            <div id="bridge-railings-pg5" class="bridge-railings-containers">
+              <div class="content-container-rating-lines" data-category="B.C.06">
                 <span class="content-container-rating-numerical">N</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">NOT APPLICABLE</span>Component does not exist.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.06">
                 <span class="content-container-rating-numerical">9</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">EXCELLENT</span>Isolated inherent defects.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.06">
                 <span class="content-container-rating-numerical">8</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">VERY GOOD</span>Some inherent defects.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.06">
                 <span class="content-container-rating-numerical">7</span>
                 <p class="content-container-rating-description-and-condition-bubble"><span class="content-container-rating-condition-bubble">GOOD</span>Some minor defects.</p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.06">
                 <span class="content-container-rating-numerical">6</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">SATISFACTORY</span>Widespread minor or isolated moderate defects.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.06">
                 <span class="content-container-rating-numerical">5</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">FAIR</span>Some moderate defects; strength and performance of the component are not affected.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.06">
                 <span class="content-container-rating-numerical">4</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">POOR</span>Widespread moderate or isolated major defects; strength and/or performance of the component is
                   affected.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.06">
                 <span class="content-container-rating-numerical">3</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">SERIOUS</span>Major defects; strength and/or performance of the component is seriously affected. Condition
                   typically necessitates more frequent monitoring, load restrictions, and/or corrective actions.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.06">
                 <span class="content-container-rating-numerical">2</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">CRITICAL</span>Major defects; component is severely compromised. Condition typically necessitates frequent
                   monitoring, significant load restrictions, and/or corrective actions in order to keep the bridge open.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.06">
                 <span class="content-container-rating-numerical">1</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">IMMINENT FAILURE</span>Bridge is closed to traffic due to component condition. Repair or rehabilitation
                   may return the bridge to service.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.06">
                 <span class="content-container-rating-numerical">0</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">FAILED</span>Bridge is closed due to component condition, and is beyond corrective action. Replacement is
@@ -955,7 +1009,7 @@
                 </p>
               </div>
             </div>
-            <div id="bridge-railings-pg6" class="bridge-railings-containers active">
+            <div id="bridge-railings-pg6" class="bridge-railings-containers">
               <div class="content-container-paragraphs">
                 <p class="content-container-comment-lines">There are no deficiencies to report.</p>
                 <p class="content-container-comment-lines">The transition is functioning as designed.</p>
@@ -1019,7 +1073,14 @@
             <div class="content-container-paragraphs">
               <div class="textarea-containers">
                 <div class="textarea-mirrors">
-                  <textarea id="BC05-textarea" class="textarea-comments" name="Bridge Railing" rows="1" oninput="expandTextarea(event, 'BC05-textarea')"></textarea>
+                  <textarea
+                    id="BC05-textarea"
+                    class="textarea-comments"
+                    name="Bridge Railing"
+                    rows="1"
+                    data-category="B.C.05"
+                    oninput="expandTextarea(event, 'BC05-textarea')"
+                  ></textarea>
                 </div>
               </div>
             </div>
@@ -1029,7 +1090,14 @@
             <div class="content-container-paragraphs">
               <div class="textarea-containers">
                 <div class="textarea-mirrors">
-                  <textarea id="BC06-textarea" class="textarea-comments" name="Bridge Railing Transitions" rows="1" oninput="expandTextarea(event, 'BC06-textarea')"></textarea>
+                  <textarea
+                    id="BC06-textarea"
+                    class="textarea-comments"
+                    name="Bridge Railing Transitions"
+                    rows="1"
+                    data-category="B.C.06"
+                    oninput="expandTextarea(event, 'BC06-textarea')"
+                  ></textarea>
                 </div>
               </div>
             </div>
@@ -1037,23 +1105,29 @@
         </div>
         <div id="bridge-deck-tab" class="bridge-component-containers">
           <div class="main-content-containers">
-            <button class="bridge-deck-buttons" data-target="bridge-deck-pg1" data-container-class="bridge-deck-containers" data-button-class="bridge-deck-buttons">
+            <button class="bridge-deck-buttons alt1-buttons" data-target="bridge-deck-pg1" data-container-class="bridge-deck-containers" data-button-class="bridge-deck-buttons">
               Deck (B.C.01)
             </button>
-            <button class="bridge-deck-buttons active" data-target="bridge-deck-pg2" data-container-class="bridge-deck-containers" data-button-class="bridge-deck-buttons">
+            <button class="bridge-deck-buttons alt1-buttons active" data-target="bridge-deck-pg2" data-container-class="bridge-deck-containers" data-button-class="bridge-deck-buttons">
               Rating Table
             </button>
-            <button class="bridge-deck-buttons" data-target="bridge-deck-pg3" data-container-class="bridge-deck-containers" data-button-class="bridge-deck-buttons">
+            <button class="bridge-deck-buttons alt1-buttons" data-target="bridge-deck-pg3" data-container-class="bridge-deck-containers" data-button-class="bridge-deck-buttons">
               Example Comments
             </button>
-            <button class="bridge-deck-buttons alt-buttons" data-target="bridge-deck-pg4" data-container-class="bridge-deck-containers" data-button-class="bridge-deck-buttons">
+            <button class="bridge-deck-buttons alt1-buttons" data-target="bridge-deck-pg9" data-container-class="bridge-deck-containers" data-button-class="bridge-deck-buttons">
+              Comment Builder
+            </button> |
+            <button class="bridge-deck-buttons alt2-buttons" data-target="bridge-deck-pg4" data-container-class="bridge-deck-containers" data-button-class="bridge-deck-buttons">
               Wearing Surface (B.C.01a)
             </button>
-            <button class="bridge-deck-buttons alt-buttons" data-target="bridge-deck-pg5" data-container-class="bridge-deck-containers" data-button-class="bridge-deck-buttons">
+            <button class="bridge-deck-buttons alt2-buttons" data-target="bridge-deck-pg5" data-container-class="bridge-deck-containers" data-button-class="bridge-deck-buttons">
               Rating Table
             </button>
-            <button class="bridge-deck-buttons alt-buttons" data-target="bridge-deck-pg6" data-container-class="bridge-deck-containers" data-button-class="bridge-deck-buttons">
+            <button class="bridge-deck-buttons alt2-buttons" data-target="bridge-deck-pg6" data-container-class="bridge-deck-containers" data-button-class="bridge-deck-buttons">
               Example Comments
+            </button>
+            <button class="bridge-deck-buttons alt2-buttons" data-target="bridge-deck-pg10" data-container-class="bridge-deck-containers" data-button-class="bridge-deck-buttons">
+              Comment Builder
             </button>
             |
             <button class="bridge-deck-buttons" data-target="bridge-deck-pg7" data-container-class="bridge-deck-containers" data-button-class="bridge-deck-buttons">
@@ -1088,72 +1162,74 @@
                 </p>
                 <br />
                 <p>The deck and superstructure condition ratings are the same for slab bridges.</p>
+                <br />
+                <p>If the deck condition rating drops to a 3 or below than the frequency cannot be more than 12 months.</p>
               </div>
             </div>
-            <div id="bridge-deck-pg2" class="bridge-deck-containers active" style="display: block">
-              <div class="content-container-rating-lines">
+            <div id="bridge-deck-pg2" class="bridge-deck-containers" style="display: block">
+              <div class="content-container-rating-lines" data-category="B.C.01">
                 <span class="content-container-rating-numerical">N</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">NOT APPLICABLE</span>Component does not exist.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.01">
                 <span class="content-container-rating-numerical">9</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">EXCELLENT</span>Isolated inherent defects.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.01">
                 <span class="content-container-rating-numerical">8</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">VERY GOOD</span>Some inherent defects.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.01">
                 <span class="content-container-rating-numerical">7</span>
                 <p class="content-container-rating-description-and-condition-bubble"><span class="content-container-rating-condition-bubble">GOOD</span>Some minor defects.</p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.01">
                 <span class="content-container-rating-numerical">6</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">SATISFACTORY</span>Widespread minor or isolated moderate defects.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.01">
                 <span class="content-container-rating-numerical">5</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">FAIR</span>Some moderate defects; strength and performance of the component are not affected.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.01">
                 <span class="content-container-rating-numerical">4</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">POOR</span>Widespread moderate or isolated major defects; strength and/or performance of the component is
                   affected.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.01">
                 <span class="content-container-rating-numerical">3</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">SERIOUS</span>Major defects; strength and/or performance of the component is seriously affected. Condition
                   typically necessitates more frequent monitoring, load restrictions, and/or corrective actions.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.01">
                 <span class="content-container-rating-numerical">2</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">CRITICAL</span>Major defects; component is severely compromised. Condition typically necessitates frequent
                   monitoring, significant load restrictions, and/or corrective actions in order to keep the bridge open.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.01">
                 <span class="content-container-rating-numerical">1</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">IMMINENT FAILURE</span>Bridge is closed to traffic due to component condition. Repair or rehabilitation
                   may return the bridge to service.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.01">
                 <span class="content-container-rating-numerical">0</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">FAILED</span>Bridge is closed due to component condition, and is beyond corrective action. Replacement is
@@ -1184,57 +1260,89 @@
                 </p>
               </div>
             </div>
+            <div id="bridge-deck-pg9" class="bridge-deck-containers"> <!-- new work -->
+              <p class="comment-builder-selector">Select Defect:</p>
+              <div id="defect-options-bridge-deck-pg9" class="comment-builder-option-list"></div>
+              
+              <p class="comment-builder-selector">Select Symptomatic Defect (Optional):</p>
+              <div id="symptom-options-bridge-deck-pg9" class="comment-builder-option-list"></div>
+              
+              <p class="comment-builder-selector">Select Frequency:</p>
+              <div id="occurrence-options-bridge-deck-pg9" class="comment-builder-option-list"></div>
+              
+              <p class="comment-builder-selector">Select Severity:</p>
+              <div id="severity-options-bridge-deck-pg9" class="comment-builder-option-list"></div>
+              
+              <p class="comment-builder-selector">Select Location (Optional/Multiple):</p>
+              <div id="position-options-bridge-deck-pg9" class="comment-builder-option-list"></div>
+              <div id="position1-options-bridge-deck-pg9" class="comment-builder-option-list"></div>
+              <div id="position2-options-bridge-deck-pg9" class="comment-builder-option-list"></div>
+              <div id="location-options-bridge-deck-pg9" class="comment-builder-option-list"></div>
+              
+              <p class="comment-builder-selector">Generated Comment:</p>
+              <p id="generated-comment-bridge-deck-pg9" class="comment-builder-option-list">Select options to generate a comment.</p>
+          </div>
             <div id="bridge-deck-pg4" class="bridge-deck-containers">
               <div class="content-container-paragraphs">
                 <p>
                   The type of wearing surface must be considered in order to determine the appropriate condition rating. Please follow the guidance on wearing surfaces provided in
                   Part 7 of the INDOT Bridge Inspection Manual (BIM) linked below.
                 </p>
+                <br>
+                <p>
+                  If the wearing surface is monolithic with the deck, the BIM allows the deck rating to be one higher than the wearing surface. If either rating drops to a 5 or 
+                  below, both the deck and the wearing surface must be rated the same and assigned the lower rating.
+                </p>
+                <br>
+                <p>
+                  If there is not a protective membrane between a bituminous wearing surface and a structural deck, 
+                  the wearing surface cannot be rated higher than a 4.
+                </p>
               </div>
             </div>
             <div id="bridge-deck-pg5" class="bridge-deck-containers">
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.01a">
                 <span class="content-container-rating-numerical">N</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">NOT APPLICABLE</span>Component does not exist.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.01a">
                 <span class="content-container-rating-numerical">9</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">EXCELLENT</span>Isolated inherent defects.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.01a">
                 <span class="content-container-rating-numerical">8</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">VERY GOOD</span>Some inherent defects.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.01a">
                 <span class="content-container-rating-numerical">7</span>
                 <p class="content-container-rating-description-and-condition-bubble"><span class="content-container-rating-condition-bubble">GOOD</span>Some minor defects.</p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.01a">
                 <span class="content-container-rating-numerical">6</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">SATISFACTORY</span>Widespread minor or isolated moderate defects.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.01a">
                 <span class="content-container-rating-numerical">5</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">FAIR</span>Some moderate defects; strength and performance of the component are not affected.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.01a">
                 <span class="content-container-rating-numerical">4</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">POOR</span>Widespread moderate or isolated major defects; strength and/or performance of the component is
                   affected.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.01a">
                 <span class="content-container-rating-numerical">3</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">SERIOUS</span>Major defects; strength and/or performance of the component is seriously affected. Condition
@@ -1260,6 +1368,28 @@
                 <p class="content-container-comment-lines">There are scattered areas of peeling in less than 5% of the total surface area.</p>
               </div>
             </div>
+            <div id="bridge-deck-pg10" class="bridge-deck-containers"> <!-- new work -->
+              <p class="comment-builder-selector">Select Defect:</p>
+              <div id="defect-options-bridge-deck-pg10" class="comment-builder-option-list"></div>
+              
+              <p class="comment-builder-selector">Select Symptomatic Defect (Optional):</p>
+              <div id="symptom-options-bridge-deck-pg10" class="comment-builder-option-list"></div>
+              
+              <p class="comment-builder-selector">Select Frequency:</p>
+              <div id="occurrence-options-bridge-deck-pg10" class="comment-builder-option-list"></div>
+              
+              <p class="comment-builder-selector">Select Severity:</p>
+              <div id="severity-options-bridge-deck-pg10" class="comment-builder-option-list"></div>
+              
+              <p class="comment-builder-selector">Select Location (Optional/Multiple):</p>
+              <div id="position-options-bridge-deck-pg10" class="comment-builder-option-list"></div>
+              <div id="position1-options-bridge-deck-pg10" class="comment-builder-option-list"></div>
+              <div id="position2-options-bridge-deck-pg10" class="comment-builder-option-list"></div>
+              <div id="location-options-bridge-deck-pg10" class="comment-builder-option-list"></div>
+              
+              <p class="comment-builder-selector">Generated Comment:</p>
+              <p id="generated-comment-bridge-deck-pg10" class="comment-builder-option-list">Select options to generate a comment.</p>
+          </div>
             <div id="bridge-deck-pg7" class="bridge-deck-containers">
               <div id="deck-elements-container">
                 <!-- Populated dynamically by bridgeElements loop in element.js -->
@@ -1322,7 +1452,7 @@
             <div class="content-container-paragraphs">
               <div class="textarea-containers">
                 <div class="textarea-mirrors">
-                  <textarea id="BC01-textarea" class="textarea-comments" name="Deck" rows="1" oninput="expandTextarea(event, 'BC01-textarea')"></textarea>
+                  <textarea id="BC01-textarea" class="textarea-comments" name="Deck" rows="1" data-category="B.C.01" oninput="expandTextarea(event, 'BC01-textarea')"></textarea>
                 </div>
               </div>
             </div>
@@ -1332,7 +1462,14 @@
             <div class="content-container-paragraphs">
               <div class="textarea-containers">
                 <div class="textarea-mirrors">
-                  <textarea id="BC01a-textarea" class="textarea-comments" name="Wearing Surface" rows="1" oninput="expandTextarea(event, 'BC01a-textarea')"></textarea>
+                  <textarea
+                    id="BC01a-textarea"
+                    class="textarea-comments"
+                    name="Wearing Surface"
+                    rows="1"
+                    data-category="B.C.01a"
+                    oninput="expandTextarea(event, 'BC01a-textarea')"
+                  ></textarea>
                 </div>
               </div>
             </div>
@@ -1340,22 +1477,22 @@
         </div>
         <div id="bridge-super-tab" class="bridge-component-containers">
           <div class="main-content-containers">
-            <button class="bridge-super-buttons" data-target="bridge-super-pg1" data-container-class="bridge-super-containers" data-button-class="bridge-super-buttons">
+            <button class="bridge-super-buttons alt1-buttons" data-target="bridge-super-pg1" data-container-class="bridge-super-containers" data-button-class="bridge-super-buttons">
               Superstructure (B.C.02)
             </button>
-            <button class="bridge-super-buttons active" data-target="bridge-super-pg2" data-container-class="bridge-super-containers" data-button-class="bridge-super-buttons">
+            <button class="bridge-super-buttons alt1-buttons active" data-target="bridge-super-pg2" data-container-class="bridge-super-containers" data-button-class="bridge-super-buttons">
               Rating Table
             </button>
-            <button class="bridge-super-buttons" data-target="bridge-super-pg3" data-container-class="bridge-super-containers" data-button-class="bridge-super-buttons">
+            <button class="bridge-super-buttons alt1-buttons" data-target="bridge-super-pg3" data-container-class="bridge-super-containers" data-button-class="bridge-super-buttons">
               Example Comments
-            </button>
-            <button class="bridge-super-buttons alt-buttons" data-target="bridge-super-pg4" data-container-class="bridge-super-containers" data-button-class="bridge-super-buttons">
+            </button> |
+            <button class="bridge-super-buttons alt2-buttons" data-target="bridge-super-pg4" data-container-class="bridge-super-containers" data-button-class="bridge-super-buttons">
               Paint (B.C.02a)
             </button>
-            <button class="bridge-super-buttons alt-buttons" data-target="bridge-super-pg5" data-container-class="bridge-super-containers" data-button-class="bridge-super-buttons">
+            <button class="bridge-super-buttons alt2-buttons" data-target="bridge-super-pg5" data-container-class="bridge-super-containers" data-button-class="bridge-super-buttons">
               Rating Table
             </button>
-            <button class="bridge-super-buttons alt-buttons" data-target="bridge-super-pg6" data-container-class="bridge-super-containers" data-button-class="bridge-super-buttons">
+            <button class="bridge-super-buttons alt2-buttons" data-target="bridge-super-pg6" data-container-class="bridge-super-containers" data-button-class="bridge-super-buttons">
               Example Comments
             </button>
             |
@@ -1409,72 +1546,76 @@
                   the scour appraisal, scour is considered when reporting the code for this item. In this case, observed conditions also indicate a need to reevaluate Item B.AP.03
                   (Scour Vulnerability). Observed scour that is less than the tolerable limit determined in the scour appraisal does not affect this item.
                 </p>
+                <br />
+                <p>The deck and superstructure condition ratings are the same for slab bridges.</p>
+                <br />
+                <p>If the superstructure condition rating drops to a 3 or below than the frequency cannot be more than 12 months.</p>
               </div>
             </div>
-            <div id="bridge-super-pg2" class="bridge-super-containers active" style="display: block">
-              <div class="content-container-rating-lines">
+            <div id="bridge-super-pg2" class="bridge-super-containers" style="display: block">
+              <div class="content-container-rating-lines" data-category="B.C.02">
                 <span class="content-container-rating-numerical">N</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">NOT APPLICABLE</span>Component does not exist.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.02">
                 <span class="content-container-rating-numerical">9</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">EXCELLENT</span>Isolated inherent defects.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.02">
                 <span class="content-container-rating-numerical">8</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">VERY GOOD</span>Some inherent defects.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.02">
                 <span class="content-container-rating-numerical">7</span>
                 <p class="content-container-rating-description-and-condition-bubble"><span class="content-container-rating-condition-bubble">GOOD</span>Some minor defects.</p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.02">
                 <span class="content-container-rating-numerical">6</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">SATISFACTORY</span>Widespread minor or isolated moderate defects.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.02">
                 <span class="content-container-rating-numerical">5</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">FAIR</span>Some moderate defects; strength and performance of the component are not affected.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.02">
                 <span class="content-container-rating-numerical">4</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">POOR</span>Widespread moderate or isolated major defects; strength and/or performance of the component is
                   affected.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.02">
                 <span class="content-container-rating-numerical">3</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">SERIOUS</span>Major defects; strength and/or performance of the component is seriously affected. Condition
                   typically necessitates more frequent monitoring, load restrictions, and/or corrective actions.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.02">
                 <span class="content-container-rating-numerical">2</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">CRITICAL</span>Major defects; component is severely compromised. Condition typically necessitates frequent
                   monitoring, significant load restrictions, and/or corrective actions in order to keep the bridge open.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.02">
                 <span class="content-container-rating-numerical">1</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">IMMINENT FAILURE</span>Bridge is closed to traffic due to component condition. Repair or rehabilitation
                   may return the bridge to service.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.02">
                 <span class="content-container-rating-numerical">0</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">FAILED</span>Bridge is closed due to component condition, and is beyond corrective action. Replacement is
@@ -1503,65 +1644,65 @@
               </div>
             </div>
             <div id="bridge-super-pg5" class="bridge-super-containers">
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.02a">
                 <span class="content-container-rating-numerical">N</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">NOT APPLICABLE</span>Component does not exist.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.02a">
                 <span class="content-container-rating-numerical">9</span>
                 <p class="content-container-rating-description-and-condition-bubble"><span class="content-container-rating-condition-bubble">EXCELLENT</span>Newly painted.</p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.02a">
                 <span class="content-container-rating-numerical">8</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">VERY GOOD</span>There is very minor surface dulling.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.02a">
                 <span class="content-container-rating-numerical">7</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">GOOD</span>There is minor chalking and surface dulling.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.02a">
                 <span class="content-container-rating-numerical">6</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">SATISFACTORY</span>There are minor areas of rust and chalking.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.02a">
                 <span class="content-container-rating-numerical">5</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">FAIR</span>There are areas of light rust and minor peeling.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.02a">
                 <span class="content-container-rating-numerical">4</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">POOR</span>There are large areas of light rust and peeling with some pitting.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.02a">
                 <span class="content-container-rating-numerical">3</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">SERIOUS</span>There is greater than 40% loss of paint and large areas of section loss.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.02a">
                 <span class="content-container-rating-numerical">2</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">CRITICAL</span>There is greater than 60% loss of paint and large areas of measurable section loss.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.02a">
                 <span class="content-container-rating-numerical">1</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">IMMINENT FAILURE</span>There is greater than 75% loss of paint and large areas of measurable section loss.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.02a">
                 <span class="content-container-rating-numerical">0</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">FAILED</span>The paint has failed and is no longer protecting the bridge.
@@ -1629,7 +1770,14 @@
             <div class="content-container-paragraphs">
               <div class="textarea-containers">
                 <div class="textarea-mirrors">
-                  <textarea id="BC02-textarea" class="textarea-comments" name="Superstructure" rows="1" oninput="expandTextarea(event, 'BC02-textarea')"></textarea>
+                  <textarea
+                    id="BC02-textarea"
+                    class="textarea-comments"
+                    name="Superstructure"
+                    rows="1"
+                    data-category="B.C.02"
+                    oninput="expandTextarea(event, 'BC02-textarea')"
+                  ></textarea>
                 </div>
               </div>
             </div>
@@ -1639,7 +1787,14 @@
             <div class="content-container-paragraphs">
               <div class="textarea-containers">
                 <div class="textarea-mirrors">
-                  <textarea id="BC02a-textarea" class="textarea-comments" name="Paint" rows="1" oninput="expandTextarea(event, 'BC02a-textarea')"></textarea>
+                  <textarea
+                    id="BC02a-textarea"
+                    class="textarea-comments"
+                    name="Paint"
+                    rows="1"
+                    data-category="B.C.02a"
+                    oninput="expandTextarea(event, 'BC02a-textarea')"
+                  ></textarea>
                 </div>
               </div>
             </div>
@@ -1647,18 +1802,18 @@
         </div>
         <div id="bridge-bearings-tab" class="bridge-component-containers">
           <div class="main-content-containers">
-            <button class="bridge-bearings-buttons" data-target="bridge-bearings-pg1" data-container-class="bridge-bearings-containers" data-button-class="bridge-bearings-buttons">
+            <button class="bridge-bearings-buttons alt1-buttons" data-target="bridge-bearings-pg1" data-container-class="bridge-bearings-containers" data-button-class="bridge-bearings-buttons">
               Bridge Bearings (B.C.07)
             </button>
             <button
-              class="bridge-bearings-buttons active"
+              class="bridge-bearings-buttons alt1-buttons active"
               data-target="bridge-bearings-pg2"
               data-container-class="bridge-bearings-containers"
-              data-button-class="bridge-bearings-buttons"
+              data-button-class="bridge-bearings-buttons alt1-buttons"
             >
               Rating Table
             </button>
-            <button class="bridge-bearings-buttons" data-target="bridge-bearings-pg3" data-container-class="bridge-bearings-containers" data-button-class="bridge-bearings-buttons">
+            <button class="bridge-bearings-buttons alt1-buttons" data-target="bridge-bearings-pg3" data-container-class="bridge-bearings-containers" data-button-class="bridge-bearings-buttons">
               Example Comments
             </button>
             |
@@ -1685,70 +1840,70 @@
                 </p>
               </div>
             </div>
-            <div id="bridge-bearings-pg2" class="bridge-bearings-containers active" style="display: block">
-              <div class="content-container-rating-lines">
+            <div id="bridge-bearings-pg2" class="bridge-bearings-containers" style="display: block">
+              <div class="content-container-rating-lines" data-category="B.C.07">
                 <span class="content-container-rating-numerical">N</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">NOT APPLICABLE</span>Component does not exist.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.07">
                 <span class="content-container-rating-numerical">9</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">EXCELLENT</span>Isolated inherent defects.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.07">
                 <span class="content-container-rating-numerical">8</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">VERY GOOD</span>Some inherent defects.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.07">
                 <span class="content-container-rating-numerical">7</span>
                 <p class="content-container-rating-description-and-condition-bubble"><span class="content-container-rating-condition-bubble">GOOD</span>Some minor defects.</p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.07">
                 <span class="content-container-rating-numerical">6</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">SATISFACTORY</span>Widespread minor or isolated moderate defects.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.07">
                 <span class="content-container-rating-numerical">5</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">FAIR</span>Some moderate defects; strength and performance of the component are not affected.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.07">
                 <span class="content-container-rating-numerical">4</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">POOR</span>Widespread moderate or isolated major defects; strength and/or performance of the component is
                   affected.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.07">
                 <span class="content-container-rating-numerical">3</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">SERIOUS</span>Major defects; strength and/or performance of the component is seriously affected. Condition
                   typically necessitates more frequent monitoring, load restrictions, and/or corrective actions.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.07">
                 <span class="content-container-rating-numerical">2</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">CRITICAL</span>Major defects; component is severely compromised. Condition typically necessitates frequent
                   monitoring, significant load restrictions, and/or corrective actions in order to keep the bridge open.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.07">
                 <span class="content-container-rating-numerical">1</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">IMMINENT FAILURE</span>Bridge is closed to traffic due to component condition. Repair or rehabilitation
                   may return the bridge to service.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.07">
                 <span class="content-container-rating-numerical">0</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">FAILED</span>Bridge is closed due to component condition, and is beyond corrective action. Replacement is
@@ -1826,7 +1981,14 @@
             <div class="content-container-paragraphs">
               <div class="textarea-containers">
                 <div class="textarea-mirrors">
-                  <textarea id="BC07-textarea" class="textarea-comments" name="Bridge Bearings" rows="1" oninput="expandTextarea(event, 'BC07-textarea')"></textarea>
+                  <textarea
+                    id="BC07-textarea"
+                    class="textarea-comments"
+                    name="Bridge Bearings"
+                    rows="1"
+                    data-category="B.C.07"
+                    oninput="expandTextarea(event, 'BC07-textarea')"
+                  ></textarea>
                 </div>
               </div>
             </div>
@@ -1834,22 +1996,22 @@
         </div>
         <div id="bridge-sub-tab" class="bridge-component-containers">
           <div class="main-content-containers">
-            <button class="bridge-sub-buttons" data-target="bridge-sub-pg1" data-container-class="bridge-sub-containers" data-button-class="bridge-sub-buttons">
+            <button class="bridge-sub-buttons alt1-buttons" data-target="bridge-sub-pg1" data-container-class="bridge-sub-containers" data-button-class="bridge-sub-buttons">
               Substructure (B.C.03)
             </button>
-            <button class="bridge-sub-buttons active" data-target="bridge-sub-pg2" data-container-class="bridge-sub-containers" data-button-class="bridge-sub-buttons">
+            <button class="bridge-sub-buttons alt1-buttons active" data-target="bridge-sub-pg2" data-container-class="bridge-sub-containers" data-button-class="bridge-sub-buttons">
               Rating Table
             </button>
-            <button class="bridge-sub-buttons" data-target="bridge-sub-pg3" data-container-class="bridge-sub-containers" data-button-class="bridge-sub-buttons">
+            <button class="bridge-sub-buttons alt1-buttons" data-target="bridge-sub-pg3" data-container-class="bridge-sub-containers" data-button-class="bridge-sub-buttons">
               Example Comments
-            </button>
-            <button class="bridge-sub-buttons alt-buttons" data-target="bridge-sub-pg4" data-container-class="bridge-sub-containers" data-button-class="bridge-sub-buttons">
+            </button> |
+            <button class="bridge-sub-buttons alt2-buttons" data-target="bridge-sub-pg4" data-container-class="bridge-sub-containers" data-button-class="bridge-sub-buttons">
               Slopewall (B.C.03a)
             </button>
-            <button class="bridge-sub-buttons alt-buttons" data-target="bridge-sub-pg5" data-container-class="bridge-sub-containers" data-button-class="bridge-sub-buttons">
+            <button class="bridge-sub-buttons alt2-buttons" data-target="bridge-sub-pg5" data-container-class="bridge-sub-containers" data-button-class="bridge-sub-buttons">
               Rating Table
             </button>
-            <button class="bridge-sub-buttons alt-buttons" data-target="bridge-sub-pg6" data-container-class="bridge-sub-containers" data-button-class="bridge-sub-buttons">
+            <button class="bridge-sub-buttons alt2-buttons" data-target="bridge-sub-pg6" data-container-class="bridge-sub-containers" data-button-class="bridge-sub-buttons">
               Example Comments
             </button>
             |
@@ -1898,72 +2060,77 @@
                   In this case, observed conditions also indicate a need to reevaluate Item B.AP.03 (Scour Vulnerability). Observed scour that is less than the tolerable limit
                   determined in the scour appraisal does not affect this item.
                 </p>
+                <br />
+                <br />
+                <p>If the scour condition rating is a 2 or below then the substructure condition rating must be equal.</p>
+                <br>
+                <p>If the substructure condition rating drops to a 3 or below than the frequency cannot be more than 12 months.</p>
               </div>
             </div>
-            <div id="bridge-sub-pg2" class="bridge-sub-containers active" style="display: block">
-              <div class="content-container-rating-lines">
+            <div id="bridge-sub-pg2" class="bridge-sub-containers" style="display: block">
+              <div class="content-container-rating-lines" data-category="B.C.03">
                 <span class="content-container-rating-numerical">N</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">NOT APPLICABLE</span>Component does not exist.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.03">
                 <span class="content-container-rating-numerical">9</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">EXCELLENT</span>Isolated inherent defects.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.03">
                 <span class="content-container-rating-numerical">8</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">VERY GOOD</span>Some inherent defects.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.03">
                 <span class="content-container-rating-numerical">7</span>
                 <p class="content-container-rating-description-and-condition-bubble"><span class="content-container-rating-condition-bubble">GOOD</span>Some minor defects.</p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.03">
                 <span class="content-container-rating-numerical">6</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">SATISFACTORY</span>Widespread minor or isolated moderate defects.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.03">
                 <span class="content-container-rating-numerical">5</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">FAIR</span>Some moderate defects; strength and performance of the component are not affected.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.03">
                 <span class="content-container-rating-numerical">4</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">POOR</span>Widespread moderate or isolated major defects; strength and/or performance of the component is
                   affected.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.03">
                 <span class="content-container-rating-numerical">3</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">SERIOUS</span>Major defects; strength and/or performance of the component is seriously affected. Condition
                   typically necessitates more frequent monitoring, load restrictions, and/or corrective actions.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.03">
                 <span class="content-container-rating-numerical">2</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">CRITICAL</span>Major defects; component is severely compromised. Condition typically necessitates frequent
                   monitoring, significant load restrictions, and/or corrective actions in order to keep the bridge open.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.03">
                 <span class="content-container-rating-numerical">1</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">IMMINENT FAILURE</span>Bridge is closed to traffic due to component condition. Repair or rehabilitation
                   may return the bridge to service.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.03">
                 <span class="content-container-rating-numerical">0</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">FAILED</span>Bridge is closed due to component condition, and is beyond corrective action. Replacement is
@@ -1993,17 +2160,17 @@
               </div>
             </div>
             <div id="bridge-sub-pg5" class="bridge-sub-containers">
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.03a">
                 <span class="content-container-rating-numerical">N</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">NOT APPLICABLE</span>Bridge does not have slopewalls.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.03a">
                 <span class="content-container-rating-numerical">G</span>
                 <p class="content-container-rating-description-and-condition-bubble"><span class="content-container-rating-condition-bubble">GOOD</span>Some minor defects.</p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.03a">
                 <span class="content-container-rating-numerical">P</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">POOR</span>Widespread moderate or isolated major defects.
@@ -2069,7 +2236,14 @@
             <div class="content-container-paragraphs">
               <div class="textarea-containers">
                 <div class="textarea-mirrors">
-                  <textarea id="BC03-textarea" class="textarea-comments" name="Substructure" rows="1" oninput="expandTextarea(event, 'BC03-textarea')"></textarea>
+                  <textarea
+                    id="BC03-textarea"
+                    class="textarea-comments"
+                    name="Substructure"
+                    rows="1"
+                    data-category="B.C.03"
+                    oninput="expandTextarea(event, 'BC03-textarea')"
+                  ></textarea>
                 </div>
               </div>
             </div>
@@ -2079,7 +2253,14 @@
             <div class="content-container-paragraphs">
               <div class="textarea-containers">
                 <div class="textarea-mirrors">
-                  <textarea id="BC03a-textarea" class="textarea-comments" name="Slopewall" rows="1" oninput="expandTextarea(event, 'BC03a-textarea')"></textarea>
+                  <textarea
+                    id="BC03a-textarea"
+                    class="textarea-comments"
+                    name="Slopewall"
+                    rows="1"
+                    data-category="B.C.03a"
+                    oninput="expandTextarea(event, 'BC03a-textarea')"
+                  ></textarea>
                 </div>
               </div>
             </div>
@@ -2087,18 +2268,18 @@
         </div>
         <div id="bridge-culvert-tab" class="bridge-component-containers">
           <div class="main-content-containers">
-            <button class="bridge-culvert-buttons" data-target="bridge-culvert-pg1" data-container-class="bridge-culvert-containers" data-button-class="bridge-culvert-buttons">
+            <button class="bridge-culvert-buttons alt1-buttons" data-target="bridge-culvert-pg1" data-container-class="bridge-culvert-containers" data-button-class="bridge-culvert-buttons">
               Culvert (B.C.04)
             </button>
             <button
-              class="bridge-culvert-buttons active"
+              class="bridge-culvert-buttons alt1-buttons active"
               data-target="bridge-culvert-pg2"
               data-container-class="bridge-culvert-containers"
-              data-button-class="bridge-culvert-buttons"
+              data-button-class="bridge-culvert-buttons alt1-buttons"
             >
               Rating Table
             </button>
-            <button class="bridge-culvert-buttons" data-target="bridge-culvert-pg3" data-container-class="bridge-culvert-containers" data-button-class="bridge-culvert-buttons">
+            <button class="bridge-culvert-buttons alt1-buttons" data-target="bridge-culvert-pg3" data-container-class="bridge-culvert-containers" data-button-class="bridge-culvert-buttons">
               Example Comments
             </button>
             |
@@ -2151,72 +2332,74 @@
                   In this case, observed conditions also indicate a need to reevaluate Item B.AP.03 (Scour Vulnerability). Observed scour that is less than the tolerable limit
                   determined in the scour appraisal does not affect this item.
                 </p>
+                <br />
+                <p>If the culvert condition rating drops to a 3 or below than the frequency cannot be more than 12 months.</p>
               </div>
             </div>
-            <div id="bridge-culvert-pg2" class="bridge-culvert-containers active" style="display: block">
-              <div class="content-container-rating-lines">
+            <div id="bridge-culvert-pg2" class="bridge-culvert-containers" style="display: block">
+              <div class="content-container-rating-lines" data-category="B.C.04">
                 <span class="content-container-rating-numerical">N</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">NOT APPLICABLE</span>Component does not exist.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.04">
                 <span class="content-container-rating-numerical">9</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">EXCELLENT</span>Isolated inherent defects.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.04">
                 <span class="content-container-rating-numerical">8</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">VERY GOOD</span>Some inherent defects.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.04">
                 <span class="content-container-rating-numerical">7</span>
                 <p class="content-container-rating-description-and-condition-bubble"><span class="content-container-rating-condition-bubble">GOOD</span>Some minor defects.</p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.04">
                 <span class="content-container-rating-numerical">6</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">SATISFACTORY</span>Widespread minor or isolated moderate defects.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.04">
                 <span class="content-container-rating-numerical">5</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">FAIR</span>Some moderate defects; strength and performance of the component are not affected.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.04">
                 <span class="content-container-rating-numerical">4</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">POOR</span>Widespread moderate or isolated major defects; strength and/or performance of the component is
                   affected.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.04">
                 <span class="content-container-rating-numerical">3</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">SERIOUS</span>Major defects; strength and/or performance of the component is seriously affected. Condition
                   typically necessitates more frequent monitoring, load restrictions, and/or corrective actions.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.04">
                 <span class="content-container-rating-numerical">2</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">CRITICAL</span>Major defects; component is severely compromised. Condition typically necessitates frequent
                   monitoring, significant load restrictions, and/or corrective actions in order to keep the bridge open.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.04">
                 <span class="content-container-rating-numerical">1</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">IMMINENT FAILURE</span>Bridge is closed to traffic due to component condition. Repair or rehabilitation
                   may return the bridge to service.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.04">
                 <span class="content-container-rating-numerical">0</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">FAILED</span>Bridge is closed due to component condition, and is beyond corrective action. Replacement is
@@ -2290,7 +2473,7 @@
             <div class="content-container-paragraphs">
               <div class="textarea-containers">
                 <div class="textarea-mirrors">
-                  <textarea id="BC04-textarea" class="textarea-comments" name="Culvert" rows="1" oninput="expandTextarea(event, 'BC04-textarea')"></textarea>
+                  <textarea id="BC04-textarea" class="textarea-comments" name="Culvert" rows="1" data-category="B.C.04" oninput="expandTextarea(event, 'BC04-textarea')"></textarea>
                 </div>
               </div>
             </div>
@@ -2298,22 +2481,22 @@
         </div>
         <div id="bridge-channel-tab" class="bridge-component-containers">
           <div class="main-content-containers">
-            <button class="bridge-channel-buttons" data-target="bridge-channel-pg1" data-container-class="bridge-channel-containers" data-button-class="bridge-channel-buttons">
+            <button class="bridge-channel-buttons alt1-buttons" data-target="bridge-channel-pg1" data-container-class="bridge-channel-containers" data-button-class="bridge-channel-buttons">
               Channel (B.C.09)
             </button>
             <button
-              class="bridge-channel-buttons active"
+              class="bridge-channel-buttons alt1-buttons active"
               data-target="bridge-channel-pg2"
               data-container-class="bridge-channel-containers"
-              data-button-class="bridge-channel-buttons"
+              data-button-class="bridge-channel-buttons alt1-buttons"
             >
               Rating Table
             </button>
-            <button class="bridge-channel-buttons" data-target="bridge-channel-pg3" data-container-class="bridge-channel-containers" data-button-class="bridge-channel-buttons">
+            <button class="bridge-channel-buttons alt1-buttons" data-target="bridge-channel-pg3" data-container-class="bridge-channel-containers" data-button-class="bridge-channel-buttons">
               Example Comments
-            </button>
+            </button> |
             <button
-              class="bridge-channel-buttons alt-buttons"
+              class="bridge-channel-buttons alt2-buttons"
               data-target="bridge-channel-pg4"
               data-container-class="bridge-channel-containers"
               data-button-class="bridge-channel-buttons"
@@ -2321,7 +2504,7 @@
               Channel Protection (B.C.10)
             </button>
             <button
-              class="bridge-channel-buttons alt-buttons"
+              class="bridge-channel-buttons alt2-buttons"
               data-target="bridge-channel-pg5"
               data-container-class="bridge-channel-containers"
               data-button-class="bridge-channel-buttons"
@@ -2329,7 +2512,7 @@
               Rating Table
             </button>
             <button
-              class="bridge-channel-buttons alt-buttons"
+              class="bridge-channel-buttons alt2-buttons"
               data-target="bridge-channel-pg6"
               data-container-class="bridge-channel-containers"
               data-button-class="bridge-channel-buttons"
@@ -2359,67 +2542,67 @@
                 </p>
               </div>
             </div>
-            <div id="bridge-channel-pg2" class="bridge-channel-containers active" style="display: block">
-              <div class="content-container-rating-lines">
+            <div id="bridge-channel-pg2" class="bridge-channel-containers" style="display: block">
+              <div class="content-container-rating-lines" data-category="B.C.09">
                 <span class="content-container-rating-numerical">N</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">NOT APPLICABLE</span>Bridge does not cross over water.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.09">
                 <span class="content-container-rating-numerical">9</span>
                 <p class="content-container-rating-description-and-condition-bubble"><span class="content-container-rating-condition-bubble">EXCELLENT</span>No defects.</p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.09">
                 <span class="content-container-rating-numerical">8</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">VERY GOOD</span>Inherent defects only.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.09">
                 <span class="content-container-rating-numerical">7</span>
                 <p class="content-container-rating-description-and-condition-bubble"><span class="content-container-rating-condition-bubble">GOOD</span>Some minor defects.</p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.09">
                 <span class="content-container-rating-numerical">6</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">SATISFACTORY</span>Widespread minor or isolated moderate defects.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.09">
                 <span class="content-container-rating-numerical">5</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">FAIR</span>Moderate defects; bridge and approach roadway are not threatened.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.09">
                 <span class="content-container-rating-numerical">4</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">POOR</span>Widespread moderate or isolated major defects; bridge and/or approach roadway is threatened.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.09">
                 <span class="content-container-rating-numerical">3</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">SERIOUS</span>Major defects; bridge or approach roadway is seriously threatened. Condition typically
                   necessitates more frequent monitoring, load restrictions, and/or corrective actions.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.09">
                 <span class="content-container-rating-numerical">2</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">CRITICAL</span>Major defects. Bridge or approach roadway is severely threatened. Condition typically
                   necessitates frequent monitoring, significant load restrictions, and/or corrective actions in order to keep the bridge open.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.09">
                 <span class="content-container-rating-numerical">1</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">IMMINENT FAILURE</span>Bridge is closed to traffic due to channel condition. Channel rehabilitation may
                   return the bridge to service.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.09">
                 <span class="content-container-rating-numerical">0</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">FAILED</span>Bridge is closed due to channel condition, and is beyond corrective action. Bridge location
@@ -2471,66 +2654,66 @@
               </div>
             </div>
             <div id="bridge-channel-pg5" class="bridge-channel-containers">
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.10">
                 <span class="content-container-rating-numerical">N</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">NOT APPLICABLE</span>Bridge does not cross over water or channel protection devices do not exist.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.10">
                 <span class="content-container-rating-numerical">9</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">EXCELLENT</span>Isolated inherent defects.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.10">
                 <span class="content-container-rating-numerical">8</span>
                 <p class="content-container-rating-description-and-condition-bubble"><span class="content-container-rating-condition-bubble">VERY GOOD</span>Some minor defects.</p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.10">
                 <span class="content-container-rating-numerical">7</span>
                 <p class="content-container-rating-description-and-condition-bubble"><span class="content-container-rating-condition-bubble">GOOD</span>Some minor defects.</p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.10">
                 <span class="content-container-rating-numerical">6</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">SATISFACTORY</span>Widespread minor or isolated moderate defects.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.10">
                 <span class="content-container-rating-numerical">5</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">FAIR</span>Some moderate defects; performance of the channel protection is not affected.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.10">
                 <span class="content-container-rating-numerical">4</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">POOR</span>Widespread moderate or isolated major defects; performance of channel protection is affected.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.10">
                 <span class="content-container-rating-numerical">3</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">SERIOUS</span>Major defects; performance of channel protection is seriously affected. Condition typically
                   necessitates more frequent monitoring or corrective actions.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.10">
                 <span class="content-container-rating-numerical">2</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">CRITICAL</span>Major defects; channel protection is severely compromised. Condition typically necessitates
                   more frequent monitoring or corrective actions.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.10">
                 <span class="content-container-rating-numerical">1</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">IMMINENT FAILURE</span>Channel protection has failed, but corrective action could restore it to working
                   condition.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.10">
                 <span class="content-container-rating-numerical">0</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">FAILED</span>Channel protection is beyond repair and must be replaced.
@@ -2608,7 +2791,7 @@
             <div class="content-container-paragraphs">
               <div class="textarea-containers">
                 <div class="textarea-mirrors">
-                  <textarea id="BC09-textarea" class="textarea-comments" name="Channel" rows="1" oninput="expandTextarea(event, 'BC09-textarea')"></textarea>
+                  <textarea id="BC09-textarea" class="textarea-comments" name="Channel" rows="1" data-category="B.C.09" oninput="expandTextarea(event, 'BC09-textarea')"></textarea>
                 </div>
               </div>
             </div>
@@ -2618,7 +2801,14 @@
             <div class="content-container-paragraphs">
               <div class="textarea-containers">
                 <div class="textarea-mirrors">
-                  <textarea id="BC10-textarea" class="textarea-comments" name="Channel Protection" rows="1" oninput="expandTextarea(event, 'BC10-textarea')"></textarea>
+                  <textarea
+                    id="BC10-textarea"
+                    class="textarea-comments"
+                    name="Channel Protection"
+                    rows="1"
+                    data-category="B.C.10"
+                    oninput="expandTextarea(event, 'BC10-textarea')"
+                  ></textarea>
                 </div>
               </div>
             </div>
@@ -2626,22 +2816,22 @@
         </div>
         <div id="bridge-scour-tab" class="bridge-component-containers">
           <div class="main-content-containers">
-            <button class="bridge-scour-buttons" data-target="bridge-scour-pg1" data-container-class="bridge-scour-containers" data-button-class="bridge-scour-buttons">
+            <button class="bridge-scour-buttons alt1-buttons" data-target="bridge-scour-pg1" data-container-class="bridge-scour-containers" data-button-class="bridge-scour-buttons">
               Scour (B.C.11)
             </button>
-            <button class="bridge-scour-buttons active" data-target="bridge-scour-pg2" data-container-class="bridge-scour-containers" data-button-class="bridge-scour-buttons">
+            <button class="bridge-scour-buttons alt1-buttons active" data-target="bridge-scour-pg2" data-container-class="bridge-scour-containers" data-button-class="bridge-scour-buttons">
               Rating Table
             </button>
-            <button class="bridge-scour-buttons" data-target="bridge-scour-pg3" data-container-class="bridge-scour-containers" data-button-class="bridge-scour-buttons">
+            <button class="bridge-scour-buttons alt1-buttons" data-target="bridge-scour-pg3" data-container-class="bridge-scour-containers" data-button-class="bridge-scour-buttons">
               Example Comments
-            </button>
-            <button class="bridge-scour-buttons alt-buttons" data-target="bridge-scour-pg4" data-container-class="bridge-scour-containers" data-button-class="bridge-scour-buttons">
+            </button> |
+            <button class="bridge-scour-buttons alt2-buttons" data-target="bridge-scour-pg4" data-container-class="bridge-scour-containers" data-button-class="bridge-scour-buttons">
               Scour Vulnerability (B.AP.03)
             </button>
-            <button class="bridge-scour-buttons alt-buttons" data-target="bridge-scour-pg5" data-container-class="bridge-scour-containers" data-button-class="bridge-scour-buttons">
+            <button class="bridge-scour-buttons alt2-buttons" data-target="bridge-scour-pg5" data-container-class="bridge-scour-containers" data-button-class="bridge-scour-buttons">
               Rating Table
             </button>
-            <button class="bridge-scour-buttons alt-buttons" data-target="bridge-scour-pg6" data-container-class="bridge-scour-containers" data-button-class="bridge-scour-buttons">
+            <button class="bridge-scour-buttons alt2-buttons" data-target="bridge-scour-pg6" data-container-class="bridge-scour-containers" data-button-class="bridge-scour-buttons">
               Example Comments
             </button>
           </div>
@@ -2661,70 +2851,72 @@
                   When observed conditions are not consistent with the scour design or the assumptions used in the scour appraisal, this indicates a need to reevaluate Item B.AP.03
                   (Scour Vulnerability).
                 </p>
+                <br />
+                <p>If the scour condition rating is a 2 or below then the substructure condition rating must be equal.</p>
               </div>
             </div>
-            <div id="bridge-scour-pg2" class="bridge-scour-containers active" style="display: block">
-              <div class="content-container-rating-lines">
+            <div id="bridge-scour-pg2" class="bridge-scour-containers" style="display: block">
+              <div class="content-container-rating-lines" data-category="B.C.11">
                 <span class="content-container-rating-numerical">N</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">NOT APPLICABLE</span>Bridge does not cross over water.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.11">
                 <span class="content-container-rating-numerical">9</span>
                 <p class="content-container-rating-description-and-condition-bubble"><span class="content-container-rating-condition-bubble">EXCELLENT</span>No scour.</p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.11">
                 <span class="content-container-rating-numerical">8</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">VERY GOOD</span>Insignificant scour.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.11">
                 <span class="content-container-rating-numerical">7</span>
                 <p class="content-container-rating-description-and-condition-bubble"><span class="content-container-rating-condition-bubble">GOOD</span>Some minor scour.</p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.11">
                 <span class="content-container-rating-numerical">6</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">SATISFACTORY</span>Widespread minor or isolated moderate scour.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.11">
                 <span class="content-container-rating-numerical">5</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">FAIR</span>Moderate scour; strength and stability of the bridge are not affected.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.11">
                 <span class="content-container-rating-numerical">4</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">POOR</span>Widespread moderate or isolated major scour; strength and/or stability of the bridge is
                   affected.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.11">
                 <span class="content-container-rating-numerical">3</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">SERIOUS</span>Major scour; strength and/or stability of the bridge is seriously affected. Condition
                   typically necessitates more frequent monitoring, load restrictions, and/or corrective actions.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.11">
                 <span class="content-container-rating-numerical">2</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">CRITICAL</span>Major scour; strength and/or stability of the bridge is severely compromised. Condition
                   typically necessitates frequent monitoring, significant load restrictions, and/or corrective actions to keep the bridge open.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.11">
                 <span class="content-container-rating-numerical">1</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">IMMINENT FAILURE</span>Bridge is closed to traffic due to scour condition. Channel rehabilitation may
                   return the bridge to service.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.C.11">
                 <span class="content-container-rating-numerical">0</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">FAILED</span>Bridge is closed due to scour condition, and is beyond corrective action. Bridge replacement
@@ -2778,47 +2970,47 @@
               </div>
             </div>
             <div id="bridge-scour-pg5" class="bridge-scour-containers">
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.AP.03">
                 <span class="content-container-rating-numerical">0</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">NOT COMPLETE</span>Scour appraisal has not been completed.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.AP.03">
                 <span class="content-container-rating-numerical">A</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">STABLE</span>Scour appraisal completed. Bridge determined to be stable for scour.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.AP.03">
                 <span class="content-container-rating-numerical">B</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">COUNTERMEASURES</span>Scour appraisal completed. Bridge determined to be stable for scour, dependent upon
                   designed, and functioning countermeasures.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.AP.03">
                 <span class="content-container-rating-numerical">C</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">TEMPORARY COUNTERMEASURES</span>Scour appraisal completed. Bridge could become unstable for scour.
                   Temporary (not designed) countermeasure installed to mitigate scour. Bridge is scour critical.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.AP.03">
                 <span class="content-container-rating-numerical">D</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">UNSTABLE</span>Scour appraisal completed. Bridge is, or may become, unstable for scour. Bridge is scour
                   critical.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.AP.03">
                 <span class="content-container-rating-numerical">E</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">NOT COMPLETED</span>Scour appraisal has not been completed. Temporary (not designed) countermeasure
                   installed to mitigate scour.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.AP.03">
                 <span class="content-container-rating-numerical">U</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">UNKNOWN</span>Scour appraisal has not been completed due to unknown foundations.
@@ -2882,7 +3074,7 @@
             <div class="content-container-paragraphs">
               <div class="textarea-containers">
                 <div class="textarea-mirrors">
-                  <textarea id="BC11-textarea" class="textarea-comments" name="Scour" rows="1" oninput="expandTextarea(event, 'BC11-textarea')"></textarea>
+                  <textarea id="BC11-textarea" class="textarea-comments" name="Scour" rows="1" data-category="B.C.11" oninput="expandTextarea(event, 'BC11-textarea')"></textarea>
                 </div>
               </div>
             </div>
@@ -2892,7 +3084,14 @@
             <div class="content-container-paragraphs">
               <div class="textarea-containers">
                 <div class="textarea-mirrors">
-                  <textarea id="BAP03-textarea" class="textarea-comments" name="Scour Vulnerability" rows="1" oninput="expandTextarea(event, 'BAP03-textarea')"></textarea>
+                  <textarea
+                    id="BAP03-textarea"
+                    class="textarea-comments"
+                    name="Scour Vulnerability"
+                    rows="1"
+                    data-category="B.AP.03"
+                    oninput="expandTextarea(event, 'BAP03-textarea')"
+                  ></textarea>
                 </div>
               </div>
             </div>
@@ -2901,7 +3100,7 @@
         <div id="bridge-overtopping-tab" class="bridge-component-containers">
           <div class="main-content-containers">
             <button
-              class="bridge-overtopping-buttons"
+              class="bridge-overtopping-buttons alt1-buttons"
               data-target="bridge-overtopping-pg1"
               data-container-class="bridge-overtopping-containers"
               data-button-class="bridge-overtopping-buttons"
@@ -2909,7 +3108,7 @@
               Overtopping Likelihood (B.AP.02)
             </button>
             <button
-              class="bridge-overtopping-buttons active"
+              class="bridge-overtopping-buttons alt1-buttons active"
               data-target="bridge-overtopping-pg2"
               data-container-class="bridge-overtopping-containers"
               data-button-class="bridge-overtopping-buttons"
@@ -2917,7 +3116,7 @@
               Rating Table
             </button>
             <button
-              class="bridge-overtopping-buttons"
+              class="bridge-overtopping-buttons alt1-buttons"
               data-target="bridge-overtopping-pg3"
               data-container-class="bridge-overtopping-containers"
               data-button-class="bridge-overtopping-buttons"
@@ -2945,50 +3144,50 @@
                 <p>This item does not apply to the likelihood of the waterway overtopping approach roadways.</p>
               </div>
             </div>
-            <div id="bridge-overtopping-pg2" class="bridge-overtopping-containers active" style="display: block">
-              <div class="content-container-rating-lines">
+            <div id="bridge-overtopping-pg2" class="bridge-overtopping-containers" style="display: block">
+              <div class="content-container-rating-lines" data-category="B.AP.02">
                 <span class="content-container-rating-numerical">N</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">NOT APPLICABLE</span>Bridge does not cross over water.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.AP.02">
                 <span class="content-container-rating-numerical">0</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">NEVER</span>The bridge is never overtopped.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.AP.02">
                 <span class="content-container-rating-numerical">1</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">REMOTE</span>Once every 100 years or less frequently.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.AP.02">
                 <span class="content-container-rating-numerical">2</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">VERY LOW</span>Once every 51 to 99 years.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.AP.02">
                 <span class="content-container-rating-numerical">3</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">LOW</span>Once every 26 to 50 years.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.AP.02">
                 <span class="content-container-rating-numerical">4</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">MODERATE</span>Once every 11 to 25 years.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.AP.02">
                 <span class="content-container-rating-numerical">5</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">HIGH</span>Once every 3 to 10 years.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.AP.02">
                 <span class="content-container-rating-numerical">6</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">VERY HIGH</span>Once every 2 years or more frequently.
@@ -3045,7 +3244,14 @@
             <div class="content-container-paragraphs">
               <div class="textarea-containers">
                 <div class="textarea-mirrors">
-                  <textarea id="BAP02-textarea" class="textarea-comments" name="Overtopping Likelihood" rows="1" oninput="expandTextarea(event, 'BAP02-textarea')"></textarea>
+                  <textarea
+                    id="BAP02-textarea"
+                    class="textarea-comments"
+                    name="Overtopping Likelihood"
+                    rows="1"
+                    data-category="B.AP.02"
+                    oninput="expandTextarea(event, 'BAP02-textarea')"
+                  ></textarea>
                 </div>
               </div>
             </div>
@@ -3053,19 +3259,19 @@
         </div>
         <div id="bridge-wildlife-tab" class="bridge-component-containers">
           <div class="main-content-containers">
-            <button class="bridge-wildlife-buttons" data-target="bridge-wildlife-pg1" data-container-class="bridge-wildlife-containers" data-button-class="bridge-wildlife-buttons">
+            <button class="bridge-wildlife-buttons alt1-buttons" data-target="bridge-wildlife-pg1" data-container-class="bridge-wildlife-containers" data-button-class="bridge-wildlife-buttons">
               Cliff Swallows
             </button>
             <button
-              class="bridge-wildlife-buttons active"
+              class="bridge-wildlife-buttons alt1-buttons active"
               data-target="bridge-wildlife-pg2"
               data-container-class="bridge-wildlife-containers"
               data-button-class="bridge-wildlife-buttons"
             >
               Rating Table
-            </button>
+            </button> |
             <button
-              class="bridge-wildlife-buttons alt-buttons"
+              class="bridge-wildlife-buttons alt2-buttons"
               data-target="bridge-wildlife-pg3"
               data-container-class="bridge-wildlife-containers"
               data-button-class="bridge-wildlife-buttons"
@@ -3073,7 +3279,7 @@
               Bats
             </button>
             <button
-              class="bridge-wildlife-buttons alt-buttons"
+              class="bridge-wildlife-buttons alt2-buttons"
               data-target="bridge-wildlife-pg4"
               data-container-class="bridge-wildlife-containers"
               data-button-class="bridge-wildlife-buttons"
@@ -3087,14 +3293,14 @@
                 <p>Information on cliff swallows can be found in Part 9 of the INDOT BIM and in the INDOT Protected Species Guidance. Both documents are linked below.</p>
               </div>
             </div>
-            <div id="bridge-wildlife-pg2" class="bridge-wildlife-containers active" style="display: block">
-              <div class="content-container-rating-lines">
+            <div id="bridge-wildlife-pg2" class="bridge-wildlife-containers" style="display: block">
+              <div class="content-container-rating-lines" data-category="B.MAD.Swallows">
                 <span class="content-container-rating-numerical">N</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">NO</span>No cliff swallows or nests were observed.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.MAD.Swallows">
                 <span class="content-container-rating-numerical">Y</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">YES</span>Cliff swallows and/or nests were observed.
@@ -3112,13 +3318,13 @@
               </div>
             </div>
             <div id="bridge-wildlife-pg4" class="bridge-wildlife-containers">
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.MAD.Bats">
                 <span class="content-container-rating-numerical">N</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">NO</span>No bats were seen or heard.
                 </p>
               </div>
-              <div class="content-container-rating-lines">
+              <div class="content-container-rating-lines" data-category="B.MAD.Bats">
                 <span class="content-container-rating-numerical">Y</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">YES</span>Bats and/or guano were observed.
@@ -3214,7 +3420,7 @@
             <!-- <div class="content-container-tabs"></div> -->
           </div>
 
-          <div id="element-elements-tab" class="element-content-containers active" style="display: block">
+          <div id="element-elements-tab" class="element-content-containers" style="display: block">
             <div class="main-content-containers">
               <div id="element-components-container">
                 <!-- Populated dynamically by bridgeElements loop in element.js -->
@@ -3797,7 +4003,155 @@
         </div>
         <div id="bridge-review-tab" class="bridge-component-containers">
           <div class="main-content-containers">
-            <!-- <div class="content-container-tabs"></div> -->
+            <!-- comments: -->
+              <div class="content-container-rating-lines" data-category="B.AP.01">
+                <span class="content-container-rating-numerical"></span>
+                <p class="content-container-rating-description-and-condition-bubble">
+                  <span class="content-container-rating-condition-bubble">Approach Roadway Alignment (B.AP.01)</span>
+                  <span class="textarea-content-here"></span>
+                </p>
+              </div>
+              <div class="content-container-rating-lines" data-category="B.C.01b">
+                <span class="content-container-rating-numerical"></span>
+                <p class="content-container-rating-description-and-condition-bubble">
+                  <span class="content-container-rating-condition-bubble">Approach Slabs (B.C.01b)</span>
+                  <span class="textarea-content-here"></span>
+                </p>
+              </div>
+              <div class="content-container-rating-lines" data-category="B.C.08">
+                <span class="content-container-rating-numerical"></span>
+                <p class="content-container-rating-description-and-condition-bubble">
+                  <span class="content-container-rating-condition-bubble">Bridge Joints (B.C.08)</span>
+                  <span class="textarea-content-here"></span>
+                </p>
+              </div>
+              <div class="content-container-rating-lines" data-category="B.C.08a">
+                <span class="content-container-rating-numerical"></span>
+                <p class="content-container-rating-description-and-condition-bubble">
+                  <span class="content-container-rating-condition-bubble">Terminal Joints (B.C.08a)</span>
+                  <span class="textarea-content-here"></span>
+                </p>
+              </div>
+              <div class="content-container-rating-lines" data-category="B.C.05">
+                <span class="content-container-rating-numerical"></span>
+                <p class="content-container-rating-description-and-condition-bubble">
+                  <span class="content-container-rating-condition-bubble">Bridge Railings (B.C.05)</span>
+                  <span class="textarea-content-here"></span>
+                </p>
+              </div>
+              <div class="content-container-rating-lines" data-category="B.C.06">
+                <span class="content-container-rating-numerical"></span>
+                <p class="content-container-rating-description-and-condition-bubble">
+                  <span class="content-container-rating-condition-bubble">Bridge Railing Transitions (B.C.06)</span>
+                  <span class="textarea-content-here"></span>
+                </p>
+              </div>
+              <div class="content-container-rating-lines" data-category="B.C.01">
+                <span class="content-container-rating-numerical"></span>
+                <p class="content-container-rating-description-and-condition-bubble">
+                  <span class="content-container-rating-condition-bubble">Deck (B.C.01)</span>
+                  <span class="textarea-content-here"></span>
+                </p>
+              </div>
+              <div class="content-container-rating-lines" data-category="B.C.01a">
+                <span class="content-container-rating-numerical"></span>
+                <p class="content-container-rating-description-and-condition-bubble">
+                  <span class="content-container-rating-condition-bubble">Wearing Surface (B.C.01a)</span>
+                  <span class="textarea-content-here"></span>
+                </p>
+              </div>
+              <div class="content-container-rating-lines" data-category="B.C.02">
+                <span class="content-container-rating-numerical"></span>
+                <p class="content-container-rating-description-and-condition-bubble">
+                  <span class="content-container-rating-condition-bubble">Superstructure (B.C.02)</span>
+                  <span class="textarea-content-here"></span>
+                </p>
+              </div>
+              <div class="content-container-rating-lines" data-category="B.C.02a">
+                <span class="content-container-rating-numerical"></span>
+                <p class="content-container-rating-description-and-condition-bubble">
+                  <span class="content-container-rating-condition-bubble">Paint (B.C.02a)</span>
+                  <span class="textarea-content-here"></span>
+                </p>
+              </div>
+              <div class="content-container-rating-lines" data-category="B.C.07">
+                <span class="content-container-rating-numerical"></span>
+                <p class="content-container-rating-description-and-condition-bubble">
+                  <span class="content-container-rating-condition-bubble">Bridge Bearings (B.C.07)</span>
+                  <span class="textarea-content-here"></span>
+                </p>
+              </div>
+              <div class="content-container-rating-lines" data-category="B.C.03">
+                <span class="content-container-rating-numerical"></span>
+                <p class="content-container-rating-description-and-condition-bubble">
+                  <span class="content-container-rating-condition-bubble">Substructure (B.C.03)</span>
+                  <span class="textarea-content-here"></span>
+                </p>
+              </div>
+              <div class="content-container-rating-lines" data-category="B.C.03a">
+                <span class="content-container-rating-numerical"></span>
+                <p class="content-container-rating-description-and-condition-bubble">
+                  <span class="content-container-rating-condition-bubble">Slopewall (B.C.03a)</span>
+                  <span class="textarea-content-here"></span>
+                </p>
+              </div>
+              <div class="content-container-rating-lines" data-category="B.C.04">
+                <span class="content-container-rating-numerical"></span>
+                <p class="content-container-rating-description-and-condition-bubble">
+                  <span class="content-container-rating-condition-bubble">Culvert (B.C.04)</span>
+                  <span class="textarea-content-here"></span>
+                </p>
+              </div>
+              <div class="content-container-rating-lines" data-category="B.C.09">
+                <span class="content-container-rating-numerical"></span>
+                <p class="content-container-rating-description-and-condition-bubble">
+                  <span class="content-container-rating-condition-bubble">Channel (B.C.09)</span>
+                  <span class="textarea-content-here"></span>
+                </p>
+              </div>
+              <div class="content-container-rating-lines" data-category="B.C.10">
+                <span class="content-container-rating-numerical"></span>
+                <p class="content-container-rating-description-and-condition-bubble">
+                  <span class="content-container-rating-condition-bubble">Channel Protection (B.C.10)</span>
+                  <span class="textarea-content-here"></span>
+                </p>
+              </div>
+              <div class="content-container-rating-lines" data-category="B.C.11">
+                <span class="content-container-rating-numerical"></span>
+                <p class="content-container-rating-description-and-condition-bubble">
+                  <span class="content-container-rating-condition-bubble">Scour (B.C.11)</span>
+                  <span class="textarea-content-here"></span>
+                </p>
+              </div>
+              <div class="content-container-rating-lines" data-category="B.AP.03">
+                <span class="content-container-rating-numerical"></span>
+                <p class="content-container-rating-description-and-condition-bubble">
+                  <span class="content-container-rating-condition-bubble">Scour Vulnerability (B.AP.03)</span>
+                  <span class="textarea-content-here"></span>
+                </p>
+              </div>
+              <div class="content-container-rating-lines" data-category="B.AP.02">
+                <span class="content-container-rating-numerical"></span>
+                <p class="content-container-rating-description-and-condition-bubble">
+                  <span class="content-container-rating-condition-bubble">Overtopping Likelihood (B.AP.02)</span>
+                  <span class="textarea-content-here"></span>
+                </p>
+              </div>
+              <div class="content-container-rating-lines" data-category="B.MAD.Swallows">
+                <span class="content-container-rating-numerical"></span>
+                <p class="content-container-rating-description-and-condition-bubble">
+                  <span class="content-container-rating-condition-bubble">Cliff Swallows</span>
+                  <span class="textarea-content-here"></span>
+                </p>
+              </div>
+              <div class="content-container-rating-lines" data-category="B.MAD.Bats">
+                <span class="content-container-rating-numerical"></span>
+                <p class="content-container-rating-description-and-condition-bubble">
+                  <span class="content-container-rating-condition-bubble">Bats</span>
+                  <span class="textarea-content-here"></span>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -3826,8 +4180,11 @@
           <button class="culvert-item-buttons" data-target="culvert-report-walkthrough-tab" data-container-class="culvert-item-containers" data-button-class="culvert-item-buttons">
             Report Walkthrough
           </button>
+          <button class="culvert-item-buttons" data-target="culvert-example-comments-tab" data-container-class="culvert-item-containers" data-button-class="culvert-item-buttons">
+            Example Comments
+          </button>
         </div>
-        <div id="culvert-rating-guidance-concrete-tab" class="culvert-item-containers active" style="display: block">
+        <div id="culvert-rating-guidance-concrete-tab" class="culvert-item-containers" style="display: block">
           <div class="culvert-content-cards-container">
             <div class="culvert-content-cards">
               <p class="culvert-card-header">9 (72-month frequency)</p>
@@ -4496,19 +4853,74 @@
             </div>
           </div>
         </div>
+        <div id="culvert-example-comments-tab" class="culvert-item-containers">
+          <div class="main-content-containers">
+            <div class="content-container-paragraphs">
+              <p class="content-container-comment-lines">There are no deficiencies to report.</p>
+              <p class="content-container-comment-lines">There is minor corrosion in the flow line.</p>
+              <p class="content-container-comment-lines">There is moderate corrosion with minor pitting in the invert.</p>
+              <p class="content-container-comment-lines">No perforations are visible.</p>
+              <p class="content-container-comment-lines">There are minor deformations to the pipe shape.</p>
+              <p class="content-container-comment-lines">There are minor perforations with rust scaling throughout the flow line.</p>
+              <p class="content-container-comment-lines">There is complete section loss in the pipe invert on the north end for 20'.</p>
+              <p class="content-container-comment-lines">The pipe is pulling fill.</p>
+              <p class="content-container-comment-lines">There is minor sediment in the bottom of the pipe.</p>
+              <p class="content-container-comment-lines">The pipe has been lined.</p>
+              <p class="content-container-comment-lines">The liner is in good condition.</p>
+              <p class="content-container-comment-lines">The culvert is a concrete box widened by CMPs.</p>
+            </div>
+          </div>
+        </div>
+        <div class="main-content-containers">
+          <p class="paragraph-rating">Culvert Comments:</p>
+          <div class="content-container-paragraphs">
+            <div class="textarea-containers">
+              <div class="textarea-mirrors">
+                <textarea id="Culvert-textarea" class="textarea-comments" name="Culvert" rows="1" oninput="expandTextarea(event, 'Culvert-textarea')"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div id="wall-asset-tab" class="asset-containers">
         <div class="main-content-containers">
-          <button class="wall-item-buttons active" data-target="wall-rating-primary-tab" data-container-class="wall-item-containers" data-button-class="wall-item-buttons">
+          <button class="wall-item-buttons active" data-target="wall-inspection-tab" data-container-class="wall-item-containers" data-button-class="wall-item-buttons">
+            Wall Inspections
+          </button>
+          <button class="wall-item-buttons" data-target="wall-rating-primary-tab" data-container-class="wall-item-containers" data-button-class="wall-item-buttons">
             Rating Guidance - Primary
           </button>
           <button class="wall-item-buttons" data-target="wall-rating-secondary-tab" data-container-class="wall-item-containers" data-button-class="wall-item-buttons">
             Rating Guidance - Secondary
           </button>
           <button class="wall-item-buttons" data-target="wall-type-tab" data-container-class="wall-item-containers" data-button-class="wall-item-buttons">Type & Material</button>
+          <button class="wall-item-buttons" data-target="wall-comments-tab" data-container-class="wall-item-containers" data-button-class="wall-item-buttons">
+            Example Comments
+          </button>
         </div>
-        <div id="wall-rating-primary-tab" class="wall-item-containers active" style="display: block">
+        <div id="wall-inspection-tab" class="wall-item-containers" style="display: block">
+          <div class="main-content-containers">
+            <div class="content-container-paragraphs">
+              <p>
+                The INDOT retaining wall inspection process is not intended to be a thorough evaluation of a
+                retaining wall’s overall structural integrity or geotechnical stability. Rather, the inspection is to
+                report the apparent visible physical condition of the retaining wall and its components, its drainage
+                system as applicable, and the ground and embankment conditions above the retained height and
+                along the exposed face of the wall.
+              </p>
+              <br />
+              <p>
+                The retaining wall inspector shall provide condition ratings for both the retaining wall as a whole
+                and its components, collect photographs, measurements, and inspection notes documenting both
+                the overall typical conditions and suspect areas exhibiting deterioration or issues, report
+                maintenance needs and recommendations, and provide a general recommendation of whether the
+                wall condition warrants a more thorough investigation by retaining wall specialists.
+              </p>
+            </div>
+        </div>
+        </div>
+        <div id="wall-rating-primary-tab" class="wall-item-containers">
           <div class="wall-numeric-ratings-container">
             <div class="main-content-containers wall-rating-flex-items">
               <div class="content-container-rating-lines">
@@ -4666,6 +5078,30 @@
                     <li>Other (O)</li>
                   </ul>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="wall-comments-tab" class="wall-item-containers">
+          <div class="main-content-containers">
+            <div class="content-container-paragraphs">
+              <p class="content-container-comment-lines">There are no deficiencies to report.</p>
+              <p class="content-container-comment-lines">There are no apparent structural deficiencies.</p>
+              <p class="content-container-comment-lines">
+                This inspection is not intended to be a thorough evaluation of the retaining wall's overall structural integrity or geotechnical stability.
+              </p>
+              <p class="content-container-comment-lines">
+                The full extent of the deterioration cannot be determined. The wall should be more thoroughly evaluated by a retaining wall specialist.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="main-content-containers">
+          <p class="paragraph-rating">Wall Comments:</p>
+          <div class="content-container-paragraphs">
+            <div class="textarea-containers">
+              <div class="textarea-mirrors">
+                <textarea id="Wall-textarea" class="textarea-comments" name="Wall" rows="1" oninput="expandTextarea(event, 'Wall-textarea')"></textarea>
               </div>
             </div>
           </div>

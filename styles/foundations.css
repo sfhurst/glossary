@@ -25,6 +25,15 @@
   --active-button-text-color2: rgb(42 42 42);
   --hover-button-text-color2: var(--text-color);
   --inactive-button-text-color2: var(--text-color);
+
+  /* secondary buttons - background */
+  --active-button-color3: rgb(200 200 200);
+  --hover-button-color3: rgb(88, 83, 58);
+  --inactive-button-color3: rgb(97, 99, 65);
+  /* secondary buttons - text */
+  --active-button-text-color3: rgb(42 42 42);
+  --hover-button-text-color3: var(--text-color);
+  --inactive-button-text-color3: var(--text-color);
 }
 
 html,
