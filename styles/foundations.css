@@ -302,3 +302,70 @@ main {
 .hidden {
   display: none;
 }
+
+/* Header search box test setup */
+.header-tab-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 15px 0 10px; /* Add padding to keep content from touching the edges */
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  margin-right: 20px; /* Adjust this value as needed */
+}
+
+.search-box {
+  padding: 5px;
+  /* border: 1px solid #ccc; */
+  border-radius: 4px;
+  width: 80px; /* Adjust width as needed */
+  background-color: var(--active-button-color1);
+  color: var(--active-button-text-color1);
+}
+
+.searchTitle {
+  padding: 0 10px;
+  color: var(--text-color);
+}
+
+@media (max-width: 700px) {
+  /* Adjust 600px to your needs */
+  .search-container {
+    display: none;
+  }
+}
+
+.buttonHeader {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  margin: 2px 8px 2px 0;
+  transition: 0.3s;
+  background-color: var(--inactive-button-color1);
+  color: var(--inactive-button-text-color1);
+  /* border: 2px solid #ccc; */
+  border-radius: 10px;
+
+  cursor: pointer;
+  user-select: none;
+  transition: 0.25s;
+  font-weight: 500;
+}
+
+.buttonHeader:hover {
+  color: rgb(234, 30, 30);
+  color: rgb(45, 45, 168);
+  color: rgb(202, 199, 18);
+}
+
+.buttonHeader:active {
+  /* transform: rotate(20deg); */
+  left: 4px;
+  top: 0px;
+  color: rgb(234, 30, 30);
+}

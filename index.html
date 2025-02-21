@@ -45,10 +45,16 @@
       <!-- <div style="display: flex; height: 40px; line-height: 40px; vertical-align: middle; margin-left: 10px">Bridge | Culvert | Walls</div>
       <div style="display: flex; height: 40px; line-height: 40px; vertical-align: middle; margin-left: 10px">Superstructure | Reinforced Concrete Slab | Spalling</div> -->
       <div class="header-tab-line">
-        <button class="asset-buttons active" data-target="bridge-asset-tab" data-container-class="asset-containers" data-button-class="asset-buttons">Bridge</button>
-        <button class="asset-buttons" data-target="culvert-asset-tab" data-container-class="asset-containers" data-button-class="asset-buttons">Culvert</button>
-        <button class="asset-buttons" data-target="wall-asset-tab" data-container-class="asset-containers" data-button-class="asset-buttons">Wall</button> |
-        <button class="asset-buttons" data-target="glossary-asset-tab" data-container-class="asset-containers" data-button-class="asset-buttons">Glossaries</button>
+        <div class="left-buttons">
+          <button class="asset-buttons active" data-target="bridge-asset-tab" data-container-class="asset-containers" data-button-class="asset-buttons">Bridge</button>
+          <button class="asset-buttons" data-target="culvert-asset-tab" data-container-class="asset-containers" data-button-class="asset-buttons">Culvert</button>
+          <button class="asset-buttons" data-target="wall-asset-tab" data-container-class="asset-containers" data-button-class="asset-buttons">Wall</button> |
+          <button class="asset-buttons" data-target="glossary-asset-tab" data-container-class="asset-containers" data-button-class="asset-buttons">Glossaries</button>
+        </div>
+        <div class="search-container">
+          <span id="searchID" class="searchTitle"></span><button class="buttonHeader material-symbols-outlined" style="display: none" type="button">location_on</button
+          ><input type="text" class="search-box" placeholder="Asset #" />
+        </div>
       </div>
     </header>
 
@@ -149,10 +155,10 @@
             Review
           </button>
         </div>
-        <div id="bridge-alignment-tab" class="bridge-component-containers" style="display: block"> 
+        <div id="bridge-alignment-tab" class="bridge-component-containers" style="display: block">
           <div class="main-content-containers">
             <button
-              class="bridge-alignment-buttons  alt1-buttons"
+              class="bridge-alignment-buttons alt1-buttons"
               data-target="bridge-alignment-pg1"
               data-container-class="bridge-alignment-containers"
               data-button-class="bridge-alignment-buttons"
@@ -310,7 +316,12 @@
         </div>
         <div id="bridge-approach-slabs-tab" class="bridge-component-containers">
           <div class="main-content-containers">
-            <button class="bridge-approach-buttons alt1-buttons" data-target="bridge-approach-pg1" data-container-class="bridge-approach-containers" data-button-class="bridge-approach-buttons">
+            <button
+              class="bridge-approach-buttons alt1-buttons"
+              data-target="bridge-approach-pg1"
+              data-container-class="bridge-approach-containers"
+              data-button-class="bridge-approach-buttons"
+            >
               Approach Slabs (B.C.01b)
             </button>
             <button
@@ -321,10 +332,20 @@
             >
               Rating Table
             </button>
-            <button class="bridge-approach-buttons alt1-buttons" data-target="bridge-approach-pg3" data-container-class="bridge-approach-containers" data-button-class="bridge-approach-buttons">
+            <button
+              class="bridge-approach-buttons alt1-buttons"
+              data-target="bridge-approach-pg3"
+              data-container-class="bridge-approach-containers"
+              data-button-class="bridge-approach-buttons"
+            >
               Example Comments
             </button>
-            <button class="bridge-approach-buttons alt1-buttons" data-target="bridge-approach-pg6" data-container-class="bridge-approach-containers" data-button-class="bridge-approach-buttons">
+            <button
+              class="bridge-approach-buttons alt1-buttons"
+              data-target="bridge-approach-pg6"
+              data-container-class="bridge-approach-containers"
+              data-button-class="bridge-approach-buttons"
+            >
               Comment Builder
             </button>
             |
@@ -423,23 +444,24 @@
                 <p class="content-container-comment-lines">No significant settlement has occurred.</p>
               </div>
             </div>
-            <div id="bridge-approach-pg6" class="bridge-approach-containers"> <!-- new work -->
+            <div id="bridge-approach-pg6" class="bridge-approach-containers">
+              <!-- new work -->
               <p class="comment-builder-selector">Select Defect:</p>
               <div id="defect-options-bridge-approach-pg6" class="comment-builder-option-list"></div>
-              
+
               <p class="comment-builder-selector">Select Symptomatic Defect (Optional):</p>
               <div id="symptom-options-bridge-approach-pg6" class="comment-builder-option-list"></div>
-              
+
               <p class="comment-builder-selector">Select Frequency:</p>
               <div id="occurrence-options-bridge-approach-pg6" class="comment-builder-option-list"></div>
-              
+
               <p class="comment-builder-selector">Select Severity:</p>
               <div id="severity-options-bridge-approach-pg6" class="comment-builder-option-list"></div>
-              
+
               <p class="comment-builder-selector">Select Location (Optional/Multiple):</p>
               <div id="position-options-bridge-approach-pg6" class="comment-builder-option-list"></div>
               <div id="location-options-bridge-approach-pg6" class="comment-builder-option-list"></div>
-              
+
               <p class="comment-builder-selector">Generated Comment:</p>
               <p id="generated-comment-bridge-approach-pg6" class="comment-builder-option-list">Select options to generate a comment.</p>
             </div>
@@ -503,15 +525,31 @@
         </div>
         <div id="bridge-joints-tab" class="bridge-component-containers">
           <div class="main-content-containers">
-            <button class="bridge-joints-buttons alt1-buttons" data-target="bridge-joints-pg1" data-container-class="bridge-joints-containers" data-button-class="bridge-joints-buttons">
+            <button
+              class="bridge-joints-buttons alt1-buttons"
+              data-target="bridge-joints-pg1"
+              data-container-class="bridge-joints-containers"
+              data-button-class="bridge-joints-buttons"
+            >
               Bridge Joints (B.C.08)
             </button>
-            <button class="bridge-joints-buttons alt1-buttons active" data-target="bridge-joints-pg2" data-container-class="bridge-joints-containers" data-button-class="bridge-joints-buttons">
+            <button
+              class="bridge-joints-buttons alt1-buttons active"
+              data-target="bridge-joints-pg2"
+              data-container-class="bridge-joints-containers"
+              data-button-class="bridge-joints-buttons"
+            >
               Rating Table
             </button>
-            <button class="bridge-joints-buttons alt1-buttons" data-target="bridge-joints-pg3" data-container-class="bridge-joints-containers" data-button-class="bridge-joints-buttons">
+            <button
+              class="bridge-joints-buttons alt1-buttons"
+              data-target="bridge-joints-pg3"
+              data-container-class="bridge-joints-containers"
+              data-button-class="bridge-joints-buttons"
+            >
               Example Comments
-            </button> |
+            </button>
+            |
             <button
               class="bridge-joints-buttons alt2-buttons"
               data-target="bridge-joints-pg4"
@@ -782,7 +820,12 @@
         </div>
         <div id="bridge-railings-tab" class="bridge-component-containers">
           <div class="main-content-containers">
-            <button class="bridge-railings-buttons alt1-buttons" data-target="bridge-railings-pg1" data-container-class="bridge-railings-containers" data-button-class="bridge-railings-buttons">
+            <button
+              class="bridge-railings-buttons alt1-buttons"
+              data-target="bridge-railings-pg1"
+              data-container-class="bridge-railings-containers"
+              data-button-class="bridge-railings-buttons"
+            >
               Bridge Railings (B.C.05)
             </button>
             <button
@@ -793,9 +836,15 @@
             >
               Rating Table
             </button>
-            <button class="bridge-railings-buttons alt1-buttons" data-target="bridge-railings-pg3" data-container-class="bridge-railings-containers" data-button-class="bridge-railings-buttons">
+            <button
+              class="bridge-railings-buttons alt1-buttons"
+              data-target="bridge-railings-pg3"
+              data-container-class="bridge-railings-containers"
+              data-button-class="bridge-railings-buttons"
+            >
               Example Comments
-            </button> |
+            </button>
+            |
             <button
               class="bridge-railings-buttons alt2-buttons"
               data-target="bridge-railings-pg4"
@@ -1108,7 +1157,12 @@
             <button class="bridge-deck-buttons alt1-buttons" data-target="bridge-deck-pg1" data-container-class="bridge-deck-containers" data-button-class="bridge-deck-buttons">
               Deck (B.C.01)
             </button>
-            <button class="bridge-deck-buttons alt1-buttons active" data-target="bridge-deck-pg2" data-container-class="bridge-deck-containers" data-button-class="bridge-deck-buttons">
+            <button
+              class="bridge-deck-buttons alt1-buttons active"
+              data-target="bridge-deck-pg2"
+              data-container-class="bridge-deck-containers"
+              data-button-class="bridge-deck-buttons"
+            >
               Rating Table
             </button>
             <button class="bridge-deck-buttons alt1-buttons" data-target="bridge-deck-pg3" data-container-class="bridge-deck-containers" data-button-class="bridge-deck-buttons">
@@ -1116,7 +1170,8 @@
             </button>
             <button class="bridge-deck-buttons alt1-buttons" data-target="bridge-deck-pg9" data-container-class="bridge-deck-containers" data-button-class="bridge-deck-buttons">
               Comment Builder
-            </button> |
+            </button>
+            |
             <button class="bridge-deck-buttons alt2-buttons" data-target="bridge-deck-pg4" data-container-class="bridge-deck-containers" data-button-class="bridge-deck-buttons">
               Wearing Surface (B.C.01a)
             </button>
@@ -1260,44 +1315,42 @@
                 </p>
               </div>
             </div>
-            <div id="bridge-deck-pg9" class="bridge-deck-containers"> <!-- new work -->
+            <div id="bridge-deck-pg9" class="bridge-deck-containers">
+              <!-- new work -->
               <p class="comment-builder-selector">Select Defect:</p>
               <div id="defect-options-bridge-deck-pg9" class="comment-builder-option-list"></div>
-              
+
               <p class="comment-builder-selector">Select Symptomatic Defect (Optional):</p>
               <div id="symptom-options-bridge-deck-pg9" class="comment-builder-option-list"></div>
-              
+
               <p class="comment-builder-selector">Select Frequency:</p>
               <div id="occurrence-options-bridge-deck-pg9" class="comment-builder-option-list"></div>
-              
+
               <p class="comment-builder-selector">Select Severity:</p>
               <div id="severity-options-bridge-deck-pg9" class="comment-builder-option-list"></div>
-              
+
               <p class="comment-builder-selector">Select Location (Optional/Multiple):</p>
               <div id="position-options-bridge-deck-pg9" class="comment-builder-option-list"></div>
               <div id="position1-options-bridge-deck-pg9" class="comment-builder-option-list"></div>
               <div id="position2-options-bridge-deck-pg9" class="comment-builder-option-list"></div>
               <div id="location-options-bridge-deck-pg9" class="comment-builder-option-list"></div>
-              
+
               <p class="comment-builder-selector">Generated Comment:</p>
               <p id="generated-comment-bridge-deck-pg9" class="comment-builder-option-list">Select options to generate a comment.</p>
-          </div>
+            </div>
             <div id="bridge-deck-pg4" class="bridge-deck-containers">
               <div class="content-container-paragraphs">
                 <p>
                   The type of wearing surface must be considered in order to determine the appropriate condition rating. Please follow the guidance on wearing surfaces provided in
                   Part 7 of the INDOT Bridge Inspection Manual (BIM) linked below.
                 </p>
-                <br>
+                <br />
                 <p>
-                  If the wearing surface is monolithic with the deck, the BIM allows the deck rating to be one higher than the wearing surface. If either rating drops to a 5 or 
+                  If the wearing surface is monolithic with the deck, the BIM allows the deck rating to be one higher than the wearing surface. If either rating drops to a 5 or
                   below, both the deck and the wearing surface must be rated the same and assigned the lower rating.
                 </p>
-                <br>
-                <p>
-                  If there is not a protective membrane between a bituminous wearing surface and a structural deck, 
-                  the wearing surface cannot be rated higher than a 4.
-                </p>
+                <br />
+                <p>If there is not a protective membrane between a bituminous wearing surface and a structural deck, the wearing surface cannot be rated higher than a 4.</p>
               </div>
             </div>
             <div id="bridge-deck-pg5" class="bridge-deck-containers">
@@ -1368,28 +1421,29 @@
                 <p class="content-container-comment-lines">There are scattered areas of peeling in less than 5% of the total surface area.</p>
               </div>
             </div>
-            <div id="bridge-deck-pg10" class="bridge-deck-containers"> <!-- new work -->
+            <div id="bridge-deck-pg10" class="bridge-deck-containers">
+              <!-- new work -->
               <p class="comment-builder-selector">Select Defect:</p>
               <div id="defect-options-bridge-deck-pg10" class="comment-builder-option-list"></div>
-              
+
               <p class="comment-builder-selector">Select Symptomatic Defect (Optional):</p>
               <div id="symptom-options-bridge-deck-pg10" class="comment-builder-option-list"></div>
-              
+
               <p class="comment-builder-selector">Select Frequency:</p>
               <div id="occurrence-options-bridge-deck-pg10" class="comment-builder-option-list"></div>
-              
+
               <p class="comment-builder-selector">Select Severity:</p>
               <div id="severity-options-bridge-deck-pg10" class="comment-builder-option-list"></div>
-              
+
               <p class="comment-builder-selector">Select Location (Optional/Multiple):</p>
               <div id="position-options-bridge-deck-pg10" class="comment-builder-option-list"></div>
               <div id="position1-options-bridge-deck-pg10" class="comment-builder-option-list"></div>
               <div id="position2-options-bridge-deck-pg10" class="comment-builder-option-list"></div>
               <div id="location-options-bridge-deck-pg10" class="comment-builder-option-list"></div>
-              
+
               <p class="comment-builder-selector">Generated Comment:</p>
               <p id="generated-comment-bridge-deck-pg10" class="comment-builder-option-list">Select options to generate a comment.</p>
-          </div>
+            </div>
             <div id="bridge-deck-pg7" class="bridge-deck-containers">
               <div id="deck-elements-container">
                 <!-- Populated dynamically by bridgeElements loop in element.js -->
@@ -1477,22 +1531,53 @@
         </div>
         <div id="bridge-super-tab" class="bridge-component-containers">
           <div class="main-content-containers">
-            <button class="bridge-super-buttons alt1-buttons" data-target="bridge-super-pg1" data-container-class="bridge-super-containers" data-button-class="bridge-super-buttons">
+            <button
+              class="bridge-super-buttons alt1-buttons"
+              data-target="bridge-super-pg1"
+              data-container-class="bridge-super-containers"
+              data-button-class="bridge-super-buttons"
+            >
               Superstructure (B.C.02)
             </button>
-            <button class="bridge-super-buttons alt1-buttons active" data-target="bridge-super-pg2" data-container-class="bridge-super-containers" data-button-class="bridge-super-buttons">
+            <button
+              class="bridge-super-buttons alt1-buttons active"
+              data-target="bridge-super-pg2"
+              data-container-class="bridge-super-containers"
+              data-button-class="bridge-super-buttons"
+            >
               Rating Table
             </button>
-            <button class="bridge-super-buttons alt1-buttons" data-target="bridge-super-pg3" data-container-class="bridge-super-containers" data-button-class="bridge-super-buttons">
+            <button
+              class="bridge-super-buttons alt1-buttons"
+              data-target="bridge-super-pg3"
+              data-container-class="bridge-super-containers"
+              data-button-class="bridge-super-buttons"
+            >
               Example Comments
-            </button> |
-            <button class="bridge-super-buttons alt2-buttons" data-target="bridge-super-pg4" data-container-class="bridge-super-containers" data-button-class="bridge-super-buttons">
+            </button>
+            |
+            <button
+              class="bridge-super-buttons alt2-buttons"
+              data-target="bridge-super-pg4"
+              data-container-class="bridge-super-containers"
+              data-button-class="bridge-super-buttons"
+            >
               Paint (B.C.02a)
             </button>
-            <button class="bridge-super-buttons alt2-buttons" data-target="bridge-super-pg5" data-container-class="bridge-super-containers" data-button-class="bridge-super-buttons">
+            <button
+              class="bridge-super-buttons alt2-buttons"
+              data-target="bridge-super-pg5"
+              data-container-class="bridge-super-containers"
+              data-button-class="bridge-super-buttons"
+            >
               Rating Table
             </button>
-            <button class="bridge-super-buttons alt2-buttons" data-target="bridge-super-pg6" data-container-class="bridge-super-containers" data-button-class="bridge-super-buttons">
+            <button
+              class="bridge-super-buttons alt2-buttons"
+              data-target="bridge-super-pg6"
+              data-container-class="bridge-super-containers"
+              data-button-class="bridge-super-buttons"
+            >
               Example Comments
             </button>
             |
@@ -1802,7 +1887,12 @@
         </div>
         <div id="bridge-bearings-tab" class="bridge-component-containers">
           <div class="main-content-containers">
-            <button class="bridge-bearings-buttons alt1-buttons" data-target="bridge-bearings-pg1" data-container-class="bridge-bearings-containers" data-button-class="bridge-bearings-buttons">
+            <button
+              class="bridge-bearings-buttons alt1-buttons"
+              data-target="bridge-bearings-pg1"
+              data-container-class="bridge-bearings-containers"
+              data-button-class="bridge-bearings-buttons"
+            >
               Bridge Bearings (B.C.07)
             </button>
             <button
@@ -1813,7 +1903,12 @@
             >
               Rating Table
             </button>
-            <button class="bridge-bearings-buttons alt1-buttons" data-target="bridge-bearings-pg3" data-container-class="bridge-bearings-containers" data-button-class="bridge-bearings-buttons">
+            <button
+              class="bridge-bearings-buttons alt1-buttons"
+              data-target="bridge-bearings-pg3"
+              data-container-class="bridge-bearings-containers"
+              data-button-class="bridge-bearings-buttons"
+            >
               Example Comments
             </button>
             |
@@ -2004,7 +2099,8 @@
             </button>
             <button class="bridge-sub-buttons alt1-buttons" data-target="bridge-sub-pg3" data-container-class="bridge-sub-containers" data-button-class="bridge-sub-buttons">
               Example Comments
-            </button> |
+            </button>
+            |
             <button class="bridge-sub-buttons alt2-buttons" data-target="bridge-sub-pg4" data-container-class="bridge-sub-containers" data-button-class="bridge-sub-buttons">
               Slopewall (B.C.03a)
             </button>
@@ -2063,7 +2159,7 @@
                 <br />
                 <br />
                 <p>If the scour condition rating is a 2 or below then the substructure condition rating must be equal.</p>
-                <br>
+                <br />
                 <p>If the substructure condition rating drops to a 3 or below than the frequency cannot be more than 12 months.</p>
               </div>
             </div>
@@ -2268,7 +2364,12 @@
         </div>
         <div id="bridge-culvert-tab" class="bridge-component-containers">
           <div class="main-content-containers">
-            <button class="bridge-culvert-buttons alt1-buttons" data-target="bridge-culvert-pg1" data-container-class="bridge-culvert-containers" data-button-class="bridge-culvert-buttons">
+            <button
+              class="bridge-culvert-buttons alt1-buttons"
+              data-target="bridge-culvert-pg1"
+              data-container-class="bridge-culvert-containers"
+              data-button-class="bridge-culvert-buttons"
+            >
               Culvert (B.C.04)
             </button>
             <button
@@ -2279,7 +2380,12 @@
             >
               Rating Table
             </button>
-            <button class="bridge-culvert-buttons alt1-buttons" data-target="bridge-culvert-pg3" data-container-class="bridge-culvert-containers" data-button-class="bridge-culvert-buttons">
+            <button
+              class="bridge-culvert-buttons alt1-buttons"
+              data-target="bridge-culvert-pg3"
+              data-container-class="bridge-culvert-containers"
+              data-button-class="bridge-culvert-buttons"
+            >
               Example Comments
             </button>
             |
@@ -2481,7 +2587,12 @@
         </div>
         <div id="bridge-channel-tab" class="bridge-component-containers">
           <div class="main-content-containers">
-            <button class="bridge-channel-buttons alt1-buttons" data-target="bridge-channel-pg1" data-container-class="bridge-channel-containers" data-button-class="bridge-channel-buttons">
+            <button
+              class="bridge-channel-buttons alt1-buttons"
+              data-target="bridge-channel-pg1"
+              data-container-class="bridge-channel-containers"
+              data-button-class="bridge-channel-buttons"
+            >
               Channel (B.C.09)
             </button>
             <button
@@ -2492,9 +2603,15 @@
             >
               Rating Table
             </button>
-            <button class="bridge-channel-buttons alt1-buttons" data-target="bridge-channel-pg3" data-container-class="bridge-channel-containers" data-button-class="bridge-channel-buttons">
+            <button
+              class="bridge-channel-buttons alt1-buttons"
+              data-target="bridge-channel-pg3"
+              data-container-class="bridge-channel-containers"
+              data-button-class="bridge-channel-buttons"
+            >
               Example Comments
-            </button> |
+            </button>
+            |
             <button
               class="bridge-channel-buttons alt2-buttons"
               data-target="bridge-channel-pg4"
@@ -2816,22 +2933,53 @@
         </div>
         <div id="bridge-scour-tab" class="bridge-component-containers">
           <div class="main-content-containers">
-            <button class="bridge-scour-buttons alt1-buttons" data-target="bridge-scour-pg1" data-container-class="bridge-scour-containers" data-button-class="bridge-scour-buttons">
+            <button
+              class="bridge-scour-buttons alt1-buttons"
+              data-target="bridge-scour-pg1"
+              data-container-class="bridge-scour-containers"
+              data-button-class="bridge-scour-buttons"
+            >
               Scour (B.C.11)
             </button>
-            <button class="bridge-scour-buttons alt1-buttons active" data-target="bridge-scour-pg2" data-container-class="bridge-scour-containers" data-button-class="bridge-scour-buttons">
+            <button
+              class="bridge-scour-buttons alt1-buttons active"
+              data-target="bridge-scour-pg2"
+              data-container-class="bridge-scour-containers"
+              data-button-class="bridge-scour-buttons"
+            >
               Rating Table
             </button>
-            <button class="bridge-scour-buttons alt1-buttons" data-target="bridge-scour-pg3" data-container-class="bridge-scour-containers" data-button-class="bridge-scour-buttons">
+            <button
+              class="bridge-scour-buttons alt1-buttons"
+              data-target="bridge-scour-pg3"
+              data-container-class="bridge-scour-containers"
+              data-button-class="bridge-scour-buttons"
+            >
               Example Comments
-            </button> |
-            <button class="bridge-scour-buttons alt2-buttons" data-target="bridge-scour-pg4" data-container-class="bridge-scour-containers" data-button-class="bridge-scour-buttons">
+            </button>
+            |
+            <button
+              class="bridge-scour-buttons alt2-buttons"
+              data-target="bridge-scour-pg4"
+              data-container-class="bridge-scour-containers"
+              data-button-class="bridge-scour-buttons"
+            >
               Scour Vulnerability (B.AP.03)
             </button>
-            <button class="bridge-scour-buttons alt2-buttons" data-target="bridge-scour-pg5" data-container-class="bridge-scour-containers" data-button-class="bridge-scour-buttons">
+            <button
+              class="bridge-scour-buttons alt2-buttons"
+              data-target="bridge-scour-pg5"
+              data-container-class="bridge-scour-containers"
+              data-button-class="bridge-scour-buttons"
+            >
               Rating Table
             </button>
-            <button class="bridge-scour-buttons alt2-buttons" data-target="bridge-scour-pg6" data-container-class="bridge-scour-containers" data-button-class="bridge-scour-buttons">
+            <button
+              class="bridge-scour-buttons alt2-buttons"
+              data-target="bridge-scour-pg6"
+              data-container-class="bridge-scour-containers"
+              data-button-class="bridge-scour-buttons"
+            >
               Example Comments
             </button>
           </div>
@@ -3259,7 +3407,12 @@
         </div>
         <div id="bridge-wildlife-tab" class="bridge-component-containers">
           <div class="main-content-containers">
-            <button class="bridge-wildlife-buttons alt1-buttons" data-target="bridge-wildlife-pg1" data-container-class="bridge-wildlife-containers" data-button-class="bridge-wildlife-buttons">
+            <button
+              class="bridge-wildlife-buttons alt1-buttons"
+              data-target="bridge-wildlife-pg1"
+              data-container-class="bridge-wildlife-containers"
+              data-button-class="bridge-wildlife-buttons"
+            >
               Cliff Swallows
             </button>
             <button
@@ -3269,7 +3422,8 @@
               data-button-class="bridge-wildlife-buttons"
             >
               Rating Table
-            </button> |
+            </button>
+            |
             <button
               class="bridge-wildlife-buttons alt2-buttons"
               data-target="bridge-wildlife-pg3"
@@ -3377,6 +3531,7 @@
             >
           </div>
         </div>
+        <!-- Review Work -->
         <div id="bridge-elements-tab" class="bridge-component-containers">
           <div class="main-content-containers">
             <button
@@ -4001,156 +4156,186 @@
             </div>
           </div>
         </div>
+        <!-- Review Work -->
         <div id="bridge-review-tab" class="bridge-component-containers">
           <div class="main-content-containers">
-            <!-- comments: -->
-              <div class="content-container-rating-lines" data-category="B.AP.01">
-                <span class="content-container-rating-numerical"></span>
-                <p class="content-container-rating-description-and-condition-bubble">
-                  <span class="content-container-rating-condition-bubble">Approach Roadway Alignment (B.AP.01)</span>
-                  <span class="textarea-content-here"></span>
-                </p>
+            <button class="review-item-buttons active" data-target="review-ratings-tab" data-container-class="review-content-containers" data-button-class="review-item-buttons">
+              Ratings & Comments
+            </button>
+            <button class="review-item-buttons" data-target="review-summary-tab" data-container-class="review-content-containers" data-button-class="review-item-buttons">
+              Summary
+            </button>
+            <button class="review-item-buttons" data-target="review-data-tab" data-container-class="review-content-containers" data-button-class="review-item-buttons">
+              Asset Data
+            </button>
+          </div>
+
+          <div id="review-ratings-tab" class="review-content-containers" style="display: block">
+            <div class="main-content-containers">
+              <div id="review-components-container">
+                <p class="review-card-header">Ratings | Component | Comment</p>
+                <div class="content-container-rating-lines" data-category="B.AP.01">
+                  <span class="content-container-rating-numerical"></span>
+                  <p class="content-container-rating-description-and-condition-bubble">
+                    <span class="content-container-rating-condition-bubble">Approach Roadway Alignment (B.AP.01)</span>
+                    <span class="textarea-content-here"></span>
+                  </p>
+                </div>
+                <div class="content-container-rating-lines" data-category="B.C.01b">
+                  <span class="content-container-rating-numerical"></span>
+                  <p class="content-container-rating-description-and-condition-bubble">
+                    <span class="content-container-rating-condition-bubble">Approach Slabs (B.C.01b)</span>
+                    <span class="textarea-content-here"></span>
+                  </p>
+                </div>
+                <div class="content-container-rating-lines" data-category="B.C.08">
+                  <span class="content-container-rating-numerical"></span>
+                  <p class="content-container-rating-description-and-condition-bubble">
+                    <span class="content-container-rating-condition-bubble">Bridge Joints (B.C.08)</span>
+                    <span class="textarea-content-here"></span>
+                  </p>
+                </div>
+                <div class="content-container-rating-lines" data-category="B.C.08a">
+                  <span class="content-container-rating-numerical"></span>
+                  <p class="content-container-rating-description-and-condition-bubble">
+                    <span class="content-container-rating-condition-bubble">Terminal Joints (B.C.08a)</span>
+                    <span class="textarea-content-here"></span>
+                  </p>
+                </div>
+                <div class="content-container-rating-lines" data-category="B.C.05">
+                  <span class="content-container-rating-numerical"></span>
+                  <p class="content-container-rating-description-and-condition-bubble">
+                    <span class="content-container-rating-condition-bubble">Bridge Railings (B.C.05)</span>
+                    <span class="textarea-content-here"></span>
+                  </p>
+                </div>
+                <div class="content-container-rating-lines" data-category="B.C.06">
+                  <span class="content-container-rating-numerical"></span>
+                  <p class="content-container-rating-description-and-condition-bubble">
+                    <span class="content-container-rating-condition-bubble">Bridge Railing Transitions (B.C.06)</span>
+                    <span class="textarea-content-here"></span>
+                  </p>
+                </div>
+                <div class="content-container-rating-lines" data-category="B.C.01">
+                  <span class="content-container-rating-numerical"></span>
+                  <p class="content-container-rating-description-and-condition-bubble">
+                    <span class="content-container-rating-condition-bubble">Deck (B.C.01)</span>
+                    <span class="textarea-content-here"></span>
+                  </p>
+                </div>
+                <div class="content-container-rating-lines" data-category="B.C.01a">
+                  <span class="content-container-rating-numerical"></span>
+                  <p class="content-container-rating-description-and-condition-bubble">
+                    <span class="content-container-rating-condition-bubble">Wearing Surface (B.C.01a)</span>
+                    <span class="textarea-content-here"></span>
+                  </p>
+                </div>
+                <div class="content-container-rating-lines" data-category="B.C.02">
+                  <span class="content-container-rating-numerical"></span>
+                  <p class="content-container-rating-description-and-condition-bubble">
+                    <span class="content-container-rating-condition-bubble">Superstructure (B.C.02)</span>
+                    <span class="textarea-content-here"></span>
+                  </p>
+                </div>
+                <div class="content-container-rating-lines" data-category="B.C.02a">
+                  <span class="content-container-rating-numerical"></span>
+                  <p class="content-container-rating-description-and-condition-bubble">
+                    <span class="content-container-rating-condition-bubble">Paint (B.C.02a)</span>
+                    <span class="textarea-content-here"></span>
+                  </p>
+                </div>
+                <div class="content-container-rating-lines" data-category="B.C.07">
+                  <span class="content-container-rating-numerical"></span>
+                  <p class="content-container-rating-description-and-condition-bubble">
+                    <span class="content-container-rating-condition-bubble">Bridge Bearings (B.C.07)</span>
+                    <span class="textarea-content-here"></span>
+                  </p>
+                </div>
+                <div class="content-container-rating-lines" data-category="B.C.03">
+                  <span class="content-container-rating-numerical"></span>
+                  <p class="content-container-rating-description-and-condition-bubble">
+                    <span class="content-container-rating-condition-bubble">Substructure (B.C.03)</span>
+                    <span class="textarea-content-here"></span>
+                  </p>
+                </div>
+                <div class="content-container-rating-lines" data-category="B.C.03a">
+                  <span class="content-container-rating-numerical"></span>
+                  <p class="content-container-rating-description-and-condition-bubble">
+                    <span class="content-container-rating-condition-bubble">Slopewall (B.C.03a)</span>
+                    <span class="textarea-content-here"></span>
+                  </p>
+                </div>
+                <div class="content-container-rating-lines" data-category="B.C.04">
+                  <span class="content-container-rating-numerical"></span>
+                  <p class="content-container-rating-description-and-condition-bubble">
+                    <span class="content-container-rating-condition-bubble">Culvert (B.C.04)</span>
+                    <span class="textarea-content-here"></span>
+                  </p>
+                </div>
+                <div class="content-container-rating-lines" data-category="B.C.09">
+                  <span class="content-container-rating-numerical"></span>
+                  <p class="content-container-rating-description-and-condition-bubble">
+                    <span class="content-container-rating-condition-bubble">Channel (B.C.09)</span>
+                    <span class="textarea-content-here"></span>
+                  </p>
+                </div>
+                <div class="content-container-rating-lines" data-category="B.C.10">
+                  <span class="content-container-rating-numerical"></span>
+                  <p class="content-container-rating-description-and-condition-bubble">
+                    <span class="content-container-rating-condition-bubble">Channel Protection (B.C.10)</span>
+                    <span class="textarea-content-here"></span>
+                  </p>
+                </div>
+                <div class="content-container-rating-lines" data-category="B.C.11">
+                  <span class="content-container-rating-numerical"></span>
+                  <p class="content-container-rating-description-and-condition-bubble">
+                    <span class="content-container-rating-condition-bubble">Scour (B.C.11)</span>
+                    <span class="textarea-content-here"></span>
+                  </p>
+                </div>
+                <div class="content-container-rating-lines" data-category="B.AP.03">
+                  <span class="content-container-rating-numerical"></span>
+                  <p class="content-container-rating-description-and-condition-bubble">
+                    <span class="content-container-rating-condition-bubble">Scour Vulnerability (B.AP.03)</span>
+                    <span class="textarea-content-here"></span>
+                  </p>
+                </div>
+                <div class="content-container-rating-lines" data-category="B.AP.02">
+                  <span class="content-container-rating-numerical"></span>
+                  <p class="content-container-rating-description-and-condition-bubble">
+                    <span class="content-container-rating-condition-bubble">Overtopping Likelihood (B.AP.02)</span>
+                    <span class="textarea-content-here"></span>
+                  </p>
+                </div>
+                <div class="content-container-rating-lines" data-category="B.MAD.Swallows">
+                  <span class="content-container-rating-numerical"></span>
+                  <p class="content-container-rating-description-and-condition-bubble">
+                    <span class="content-container-rating-condition-bubble">Cliff Swallows</span>
+                    <span class="textarea-content-here"></span>
+                  </p>
+                </div>
+                <div class="content-container-rating-lines" data-category="B.MAD.Bats">
+                  <span class="content-container-rating-numerical"></span>
+                  <p class="content-container-rating-description-and-condition-bubble">
+                    <span class="content-container-rating-condition-bubble">Bats</span>
+                    <span class="textarea-content-here"></span>
+                  </p>
+                </div>
               </div>
-              <div class="content-container-rating-lines" data-category="B.C.01b">
-                <span class="content-container-rating-numerical"></span>
-                <p class="content-container-rating-description-and-condition-bubble">
-                  <span class="content-container-rating-condition-bubble">Approach Slabs (B.C.01b)</span>
-                  <span class="textarea-content-here"></span>
-                </p>
+            </div>
+          </div>
+          <div id="review-summary-tab" class="review-content-containers" style="display: block">
+            <div class="main-content-containers">
+              <div id="review-components-container">
+                <div class="content-container-paragraphs">
+                  <p>Please search the asset number to generate a summary.</p>
+                </div>
               </div>
-              <div class="content-container-rating-lines" data-category="B.C.08">
-                <span class="content-container-rating-numerical"></span>
-                <p class="content-container-rating-description-and-condition-bubble">
-                  <span class="content-container-rating-condition-bubble">Bridge Joints (B.C.08)</span>
-                  <span class="textarea-content-here"></span>
-                </p>
-              </div>
-              <div class="content-container-rating-lines" data-category="B.C.08a">
-                <span class="content-container-rating-numerical"></span>
-                <p class="content-container-rating-description-and-condition-bubble">
-                  <span class="content-container-rating-condition-bubble">Terminal Joints (B.C.08a)</span>
-                  <span class="textarea-content-here"></span>
-                </p>
-              </div>
-              <div class="content-container-rating-lines" data-category="B.C.05">
-                <span class="content-container-rating-numerical"></span>
-                <p class="content-container-rating-description-and-condition-bubble">
-                  <span class="content-container-rating-condition-bubble">Bridge Railings (B.C.05)</span>
-                  <span class="textarea-content-here"></span>
-                </p>
-              </div>
-              <div class="content-container-rating-lines" data-category="B.C.06">
-                <span class="content-container-rating-numerical"></span>
-                <p class="content-container-rating-description-and-condition-bubble">
-                  <span class="content-container-rating-condition-bubble">Bridge Railing Transitions (B.C.06)</span>
-                  <span class="textarea-content-here"></span>
-                </p>
-              </div>
-              <div class="content-container-rating-lines" data-category="B.C.01">
-                <span class="content-container-rating-numerical"></span>
-                <p class="content-container-rating-description-and-condition-bubble">
-                  <span class="content-container-rating-condition-bubble">Deck (B.C.01)</span>
-                  <span class="textarea-content-here"></span>
-                </p>
-              </div>
-              <div class="content-container-rating-lines" data-category="B.C.01a">
-                <span class="content-container-rating-numerical"></span>
-                <p class="content-container-rating-description-and-condition-bubble">
-                  <span class="content-container-rating-condition-bubble">Wearing Surface (B.C.01a)</span>
-                  <span class="textarea-content-here"></span>
-                </p>
-              </div>
-              <div class="content-container-rating-lines" data-category="B.C.02">
-                <span class="content-container-rating-numerical"></span>
-                <p class="content-container-rating-description-and-condition-bubble">
-                  <span class="content-container-rating-condition-bubble">Superstructure (B.C.02)</span>
-                  <span class="textarea-content-here"></span>
-                </p>
-              </div>
-              <div class="content-container-rating-lines" data-category="B.C.02a">
-                <span class="content-container-rating-numerical"></span>
-                <p class="content-container-rating-description-and-condition-bubble">
-                  <span class="content-container-rating-condition-bubble">Paint (B.C.02a)</span>
-                  <span class="textarea-content-here"></span>
-                </p>
-              </div>
-              <div class="content-container-rating-lines" data-category="B.C.07">
-                <span class="content-container-rating-numerical"></span>
-                <p class="content-container-rating-description-and-condition-bubble">
-                  <span class="content-container-rating-condition-bubble">Bridge Bearings (B.C.07)</span>
-                  <span class="textarea-content-here"></span>
-                </p>
-              </div>
-              <div class="content-container-rating-lines" data-category="B.C.03">
-                <span class="content-container-rating-numerical"></span>
-                <p class="content-container-rating-description-and-condition-bubble">
-                  <span class="content-container-rating-condition-bubble">Substructure (B.C.03)</span>
-                  <span class="textarea-content-here"></span>
-                </p>
-              </div>
-              <div class="content-container-rating-lines" data-category="B.C.03a">
-                <span class="content-container-rating-numerical"></span>
-                <p class="content-container-rating-description-and-condition-bubble">
-                  <span class="content-container-rating-condition-bubble">Slopewall (B.C.03a)</span>
-                  <span class="textarea-content-here"></span>
-                </p>
-              </div>
-              <div class="content-container-rating-lines" data-category="B.C.04">
-                <span class="content-container-rating-numerical"></span>
-                <p class="content-container-rating-description-and-condition-bubble">
-                  <span class="content-container-rating-condition-bubble">Culvert (B.C.04)</span>
-                  <span class="textarea-content-here"></span>
-                </p>
-              </div>
-              <div class="content-container-rating-lines" data-category="B.C.09">
-                <span class="content-container-rating-numerical"></span>
-                <p class="content-container-rating-description-and-condition-bubble">
-                  <span class="content-container-rating-condition-bubble">Channel (B.C.09)</span>
-                  <span class="textarea-content-here"></span>
-                </p>
-              </div>
-              <div class="content-container-rating-lines" data-category="B.C.10">
-                <span class="content-container-rating-numerical"></span>
-                <p class="content-container-rating-description-and-condition-bubble">
-                  <span class="content-container-rating-condition-bubble">Channel Protection (B.C.10)</span>
-                  <span class="textarea-content-here"></span>
-                </p>
-              </div>
-              <div class="content-container-rating-lines" data-category="B.C.11">
-                <span class="content-container-rating-numerical"></span>
-                <p class="content-container-rating-description-and-condition-bubble">
-                  <span class="content-container-rating-condition-bubble">Scour (B.C.11)</span>
-                  <span class="textarea-content-here"></span>
-                </p>
-              </div>
-              <div class="content-container-rating-lines" data-category="B.AP.03">
-                <span class="content-container-rating-numerical"></span>
-                <p class="content-container-rating-description-and-condition-bubble">
-                  <span class="content-container-rating-condition-bubble">Scour Vulnerability (B.AP.03)</span>
-                  <span class="textarea-content-here"></span>
-                </p>
-              </div>
-              <div class="content-container-rating-lines" data-category="B.AP.02">
-                <span class="content-container-rating-numerical"></span>
-                <p class="content-container-rating-description-and-condition-bubble">
-                  <span class="content-container-rating-condition-bubble">Overtopping Likelihood (B.AP.02)</span>
-                  <span class="textarea-content-here"></span>
-                </p>
-              </div>
-              <div class="content-container-rating-lines" data-category="B.MAD.Swallows">
-                <span class="content-container-rating-numerical"></span>
-                <p class="content-container-rating-description-and-condition-bubble">
-                  <span class="content-container-rating-condition-bubble">Cliff Swallows</span>
-                  <span class="textarea-content-here"></span>
-                </p>
-              </div>
-              <div class="content-container-rating-lines" data-category="B.MAD.Bats">
-                <span class="content-container-rating-numerical"></span>
-                <p class="content-container-rating-description-and-condition-bubble">
-                  <span class="content-container-rating-condition-bubble">Bats</span>
-                  <span class="textarea-content-here"></span>
-                </p>
-              </div>
+            </div>
+          </div>
+          <div id="review-data-tab" class="review-content-containers" style="display: block">
+            <div class="main-content-containers">
+              <div id="review-components-container"></div>
             </div>
           </div>
         </div>
@@ -4903,22 +5088,18 @@
           <div class="main-content-containers">
             <div class="content-container-paragraphs">
               <p>
-                The INDOT retaining wall inspection process is not intended to be a thorough evaluation of a
-                retaining wall’s overall structural integrity or geotechnical stability. Rather, the inspection is to
-                report the apparent visible physical condition of the retaining wall and its components, its drainage
-                system as applicable, and the ground and embankment conditions above the retained height and
-                along the exposed face of the wall.
+                The INDOT retaining wall inspection process is not intended to be a thorough evaluation of a retaining wall’s overall structural integrity or geotechnical
+                stability. Rather, the inspection is to report the apparent visible physical condition of the retaining wall and its components, its drainage system as applicable,
+                and the ground and embankment conditions above the retained height and along the exposed face of the wall.
               </p>
               <br />
               <p>
-                The retaining wall inspector shall provide condition ratings for both the retaining wall as a whole
-                and its components, collect photographs, measurements, and inspection notes documenting both
-                the overall typical conditions and suspect areas exhibiting deterioration or issues, report
-                maintenance needs and recommendations, and provide a general recommendation of whether the
-                wall condition warrants a more thorough investigation by retaining wall specialists.
+                The retaining wall inspector shall provide condition ratings for both the retaining wall as a whole and its components, collect photographs, measurements, and
+                inspection notes documenting both the overall typical conditions and suspect areas exhibiting deterioration or issues, report maintenance needs and recommendations,
+                and provide a general recommendation of whether the wall condition warrants a more thorough investigation by retaining wall specialists.
               </p>
             </div>
-        </div>
+          </div>
         </div>
         <div id="wall-rating-primary-tab" class="wall-item-containers">
           <div class="wall-numeric-ratings-container">
