@@ -690,7 +690,7 @@ function generateInspectionReport(assetNumber) {
   const scourStatus = assetNumber["Scour Analysis Status:"];
   const scourDetermination = assetNumber["Scour Analysis Determination:"];
   const scourSafety = assetNumber["Scour Critical Safety Status:"];
-  const scourVulnerability = assetNumber["(B.AP.03) Scour Vulnerability"] || 0;
+  const scourVulnerability = assetNumber["(B.AP.03) Scour Vulnerability"] || "";
   const channelValue = assetNumber["(61) Channel / Channel Protection:"];
   const approachSpans = assetNumber["(46) Number of Approach Spans:"] || 0;
   const mainSpans = assetNumber["(45) Number of Spans in Main Unit:"];
