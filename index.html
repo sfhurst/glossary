@@ -23,6 +23,7 @@
     <script src="./scripts/modules/asset_data.js" defer></script>
     <script src="./scripts/modules/defects.js" defer></script>
     <script src="./scripts/modules/comment_builder.js" defer></script>
+    <script src="./scripts/modules/asset_loaders.js" defer></script>
     <script type="text/javascript" src="./scripts/scripts.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/dompurify@2.4.0/dist/purify.min.js"></script>
     <!-- Fonts -->
@@ -4328,7 +4329,18 @@
             <div class="main-content-containers">
               <div id="review-components-container">
                 <div class="content-container-paragraphs">
-                  <p>Please search the asset number to generate a summary.</p>
+                  <div class="textarea-containers">
+                    <div class="textarea-mirrors">
+                      <textarea
+                        id="summary-textarea"
+                        placeholder="Please search the asset number to generate a summary."
+                        class="textarea-comments"
+                        name="summary"
+                        rows="1"
+                        oninput="expandTextarea(event, 'summary-textarea')"
+                      ></textarea>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
