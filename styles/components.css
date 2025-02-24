@@ -1,4 +1,4 @@
-/* ---------------------------- Buttons --------------------------------- */
+/* ::: ---------------------------- General | Buttons --------------------------------- */
 
 button {
   border: none;
@@ -55,7 +55,50 @@ button.active {
   color: var(--active-button-text-color2);
 }
 
-/* ---------------------------- Container --------------------------------- */
+.button-icon {
+  opacity: 0;
+  cursor: default;
+  transition: 0.8s;
+  /* position: absolute; */
+}
+
+.asset-update-text {
+  margin-left: 20px;
+  color: rgba(233 233 233 / 0.6);
+}
+
+@media (max-width: 1400px) {
+  /* Adjust 600px to your needs */
+  .asset-update-text {
+    display: none;
+  }
+}
+
+/* ::: ---------------------------- General | Containers --------------------------------- */
+
+/* Hidden initially */
+.asset-containers,
+.bridge-component-containers,
+.bridge-alignment-containers,
+.bridge-approach-containers,
+.bridge-joints-containers,
+.bridge-railings-containers,
+.bridge-deck-containers,
+.bridge-super-containers,
+.bridge-sub-containers,
+.bridge-bearings-containers,
+.bridge-culvert-containers,
+.bridge-channel-containers,
+.bridge-scour-containers,
+.bridge-overtopping-containers,
+.bridge-wildlife-containers,
+.culvert-item-containers,
+.wall-item-containers,
+.glossary-item-containers,
+.element-content-containers,
+.review-content-containers {
+  display: none;
+}
 
 .main-content-containers {
   padding: 10px 20px;
@@ -178,333 +221,7 @@ button.active {
   margin: 0 0 5px 0;
 }
 
-/* cards */
-
-.element-content-cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.element-content-cards {
-  width: 550px;
-  height: 160px;
-  min-height: fit-content;
-  text-align: left;
-  margin: 10px 5px;
-  padding-bottom: 5px;
-  border: solid 2px grey;
-  border-radius: 1px;
-  background-color: var(--main-color);
-}
-
-.element-content-cards li {
-  margin: 8px 10px;
-}
-
-.element-card-header {
-  margin: -2px -2px 5px -2px;
-  background-color: var(--hover-button-color1);
-  padding: 10px 4px 4px 8px;
-  border-bottom: solid 1px grey;
-  border-radius: 1px;
-}
-
-.element-card-paragraph {
-  text-indent: 0px hanging;
-}
-
-.review-card-header {
-  margin: -2px -2px 0px -2px;
-  background-color: var(--hover-button-color1);
-  padding: 10px 4px 4px 8px;
-  border-bottom: solid 1px grey;
-  border-radius: 1px;
-}
-
-.culvert-content-cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.culvert-content-cards {
-  width: 550px;
-  height: 280px;
-  min-height: fit-content;
-  text-align: left;
-  margin: 10px 5px;
-  padding-bottom: 5px;
-  border: solid 2px grey;
-  border-radius: 1px;
-  background-color: var(--main-color);
-}
-
-.culvert-content-cards li {
-  margin: 0px 10px;
-}
-
-.culvert-card-header {
-  margin: -2px -2px 8px -2px;
-  background-color: var(--hover-button-color1);
-  padding: 10px 4px 4px 8px;
-  border-bottom: solid 1px grey;
-  border-radius: 1px;
-}
-
-.culvert-card-paragraph {
-  text-indent: 0px hanging;
-}
-
-.naming-conventions-content-cards-container {
-  display: block;
-  /* flex-wrap: wrap;
-  justify-content: space-around; */
-}
-
-.naming-conventions-card-header {
-  margin: -2px -2px 8px -2px;
-  background-color: var(--hover-button-color1);
-  padding: 10px 4px 4px 8px;
-  border-bottom: solid 1px grey;
-  border-radius: 1px;
-}
-
-.naming-conventions-content-cards {
-  min-height: fit-content;
-  text-align: left;
-  margin: 10px 5px;
-  padding-bottom: 5px;
-  border: solid 2px grey;
-  border-radius: 1px;
-  background-color: var(--main-color);
-}
-
-.naming-conventions-content-cards li {
-  margin: 8px 10px;
-}
-
-.naming-conventions-card-paragraph {
-  text-indent: 0px hanging;
-}
-
-.maintenance-content-cards-container {
-  display: block;
-  /* flex-wrap: wrap;
-  justify-content: space-around; */
-}
-
-.maintenance-card-header {
-  margin: -2px -2px 8px -2px;
-  background-color: var(--hover-button-color1);
-  padding: 10px 4px 4px 4px;
-  border-bottom: solid 1px grey;
-  border-radius: 1px;
-}
-
-.maintenance-content-cards {
-  min-height: fit-content;
-  text-align: left;
-  margin: 10px 5px;
-  padding-bottom: 5px;
-  border: solid 2px grey;
-  border-radius: 1px;
-  background-color: var(--main-color);
-}
-
-.maintenance-content-cards li {
-  margin: 8px 10px;
-}
-
-.maintenance-card-paragraph {
-  text-indent: 0px hanging;
-}
-
-/* Wall  */
-
-.wall-content-cards-container {
-  display: block;
-  /* flex-wrap: wrap;
-  justify-content: space-around; */
-}
-
-.wall-card-header {
-  margin: -2px -2px 8px -2px;
-  background-color: var(--hover-button-color1);
-  padding: 10px 4px 4px 8px;
-  border-bottom: solid 1px grey;
-  border-radius: 1px;
-}
-
-.wall-content-cards {
-  min-height: fit-content;
-  text-align: left;
-  margin: 10px 5px;
-  padding-bottom: 5px;
-  border: solid 2px grey;
-  border-radius: 1px;
-  background-color: var(--main-color);
-}
-
-.wall-card-paragraph {
-  text-indent: 0px hanging;
-  padding: 0 10px 5px 10px;
-}
-
-.glossary-content-cards-container {
-  display: block;
-  /* flex-wrap: wrap;
-  justify-content: space-around; */
-}
-
-.glossary-card-header {
-  margin: -2px -2px 8px -2px;
-  background-color: var(--hover-button-color1);
-  padding: 10px 4px 4px 8px;
-  border-bottom: solid 1px grey;
-  border-radius: 1px;
-}
-
-.glossary-content-cards {
-  min-height: fit-content;
-  text-align: left;
-  margin: 10px 5px;
-  padding-bottom: 5px;
-  border: solid 2px grey;
-  border-radius: 1px;
-  background-color: var(--main-color);
-}
-
-.glossary-card-paragraph {
-  text-indent: 0px hanging;
-  padding: 0 10px 5px 10px;
-}
-
-.report-walkthrough-content-cards-container {
-  display: block;
-  /* flex-wrap: wrap;
-  justify-content: space-around; */
-}
-
-.report-walkthrough-card-header {
-  margin: -2px -2px 8px -2px;
-  background-color: var(--hover-button-color1);
-  padding: 10px 4px 4px 8px;
-  border-bottom: solid 1px grey;
-  border-radius: 1px;
-}
-
-.report-walkthrough-content-cards {
-  min-height: fit-content;
-  text-align: left;
-  margin: 10px 5px;
-  padding-bottom: 5px;
-  border: solid 2px grey;
-  border-radius: 1px;
-  background-color: var(--main-color);
-}
-
-.report-walkthrough-content-cards li {
-  margin: 8px 10px;
-}
-
-.report-walkthrough-card-paragraph {
-  text-indent: 0px hanging;
-}
-
-/* maintenance tab*/
-
-.component-maintenance-container {
-  display: flex;
-  background-color: var(--content-background-color);
-  border-bottom: solid 2px rgba(128, 128, 128, 0.2);
-}
-
-.component-maintenance-button1,
-.component-maintenance-button2,
-.component-maintenance-button3,
-.component-maintenance-button4 {
-  margin: 4px 5px;
-}
-
-.component-maintenance-button1 {
-  background-color: gray;
-}
-.component-maintenance-button2 {
-  background-color: rgb(19, 114, 19);
-}
-.component-maintenance-button3 {
-  background-color: rgb(177, 177, 33);
-}
-.component-maintenance-button4 {
-  background-color: rgb(158, 33, 33);
-}
-
-.component-maintenance-item {
-  padding: 12px 0 0 10px;
-}
-
-/* elements tab*/
-
-.elements-segment-header {
-  margin: 8px 0px 0px 0px;
-  background-color: var(--hover-button-color1);
-  padding: 10px 4px 4px 8px;
-  border-bottom: solid 1px grey;
-  border-radius: 1px;
-}
-
-.component-elements-container {
-  display: flex;
-  background-color: var(--content-background-color);
-  border-bottom: solid 2px rgba(128, 128, 128, 0.2);
-}
-
-.component-elements-button2,
-.component-elements-button3,
-.component-elements-button4 {
-  margin: 4px 5px;
-}
-
-.component-elements-button2 {
-  background-color: rgb(177, 177, 33);
-}
-.component-elements-button3 {
-  background-color: rgb(146, 90, 16);
-}
-.component-elements-button4 {
-  background-color: rgb(158, 33, 33);
-}
-
-.component-elements-item {
-  padding: 12px 0 0 10px;
-}
-
-/* Hidden initially */
-.asset-containers,
-.bridge-component-containers,
-.bridge-alignment-containers,
-.bridge-approach-containers,
-.bridge-joints-containers,
-.bridge-railings-containers,
-.bridge-deck-containers,
-.bridge-super-containers,
-.bridge-sub-containers,
-.bridge-bearings-containers,
-.bridge-culvert-containers,
-.bridge-channel-containers,
-.bridge-scour-containers,
-.bridge-overtopping-containers,
-.bridge-wildlife-containers,
-.culvert-item-containers,
-.wall-item-containers,
-.glossary-item-containers,
-.element-content-containers,
-.review-item-containers {
-  display: none;
-}
-
-/* textarea */
+/* ::: ---------------------------- General | Textarea --------------------------------- */
 
 .textarea-containers {
   width: 100%;
@@ -550,10 +267,106 @@ button.active {
   color: var(--text-color);
 }
 
-/*  */
-.category {
-  margin: 5px;
+.asset-data-container-header {
+  margin: -2px -2px 0px -2px;
+  margin: 20px 15px 0;
+  background-color: var(--hover-button-color1);
+  padding: 10px 4px 4px 8px;
+  border-bottom: solid 1px grey;
+  border-radius: 1px;
 }
+
+.asset-data-content-containers {
+  padding: 10px 20px;
+  text-align: left;
+  height: fit-content;
+  margin: 0 15px 10px 15px;
+  border: solid 2px grey;
+  border-radius: 1px;
+  background-color: var(--main-color);
+}
+
+.textarea-containers2 {
+  width: 100%;
+  border: none;
+}
+
+.textarea-containers2:hover,
+.textarea-containers2:focus,
+.textarea-comments2:focus {
+  background: rgba(91, 84, 122, 0.1);
+}
+
+.textarea-mirrors2 {
+  display: grid;
+  margin-left: 0px;
+  /* padding: 3px 5px 0 3px; */
+  text-align: left;
+}
+
+.textarea-mirrors2::after {
+  content: attr(data-replicated-value) " ";
+  white-space: pre-wrap;
+  visibility: hidden;
+}
+
+.textarea-comments2,
+.textarea-mirrors2::after {
+  padding: 3px 5px 5px 3px;
+  padding: 0px;
+  font: inherit;
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.textarea-comments2 {
+  resize: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: transparent;
+  overflow: hidden;
+  transition: 3s;
+  color: rgb(172, 172, 172);
+  color: var(--text-color);
+}
+
+.textarea2-group-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Automatically adjusts to create even columns */
+  gap: 20px; /* Adds consistent spacing between the boxes */
+  padding: 20px; /* Adds padding around the container */
+}
+
+.textarea2-group {
+  height: 160px; /* Consistent height for all boxes */
+  text-align: left;
+  padding: 10px; /* Adds padding inside each box */
+  border: solid 2px grey;
+  border-radius: 5px; /* Slightly rounds the corners for better appearance */
+  background-color: var(--main-color);
+  box-sizing: border-box; /* Ensures padding doesn't affect the overall width */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .textarea2-group-container {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjusts for smaller screen sizes */
+  }
+}
+
+@media (max-width: 480px) {
+  .textarea2-group-container {
+    grid-template-columns: 1fr; /* Stacks the boxes vertically on very small screens */
+  }
+}
+
+.paragraph-rating2 {
+  margin: 0 0 5px 0;
+}
+
+/* ::: ---------------------------- Bridge | Comment Builder --------------------------------- */
 
 .comment-builder-selector {
   margin: 0px 0px 0px 0px;
@@ -590,10 +403,337 @@ button.active {
   border: 1px solid #cccccc7a;
 }
 
-#output {
-  margin-top: 10px;
+/* ::: ---------------------------- Bridge | Elements --------------------------------- */
+
+.element-content-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
+
+.element-content-cards {
+  width: 550px;
+  height: 160px;
+  min-height: fit-content;
+  text-align: left;
+  margin: 10px 5px;
+  padding-bottom: 5px;
+  border: solid 2px grey;
+  border-radius: 1px;
+  background-color: var(--main-color);
+}
+
+.element-content-cards li {
+  margin: 8px 10px;
+}
+
+.element-card-header {
+  margin: -2px -2px 5px -2px;
+  background-color: var(--hover-button-color1);
+  padding: 10px 4px 4px 8px;
+  border-bottom: solid 1px grey;
+  border-radius: 1px;
+}
+
+.element-card-paragraph {
+  text-indent: 0px hanging;
+}
+
+/* ::: ---------------------------- Bridge | Elements | JS --------------------------------- */
+
+.elements-segment-header {
+  margin: 8px 0px 0px 0px;
+  background-color: var(--hover-button-color1);
+  padding: 10px 4px 4px 8px;
+  border-bottom: solid 1px grey;
+  border-radius: 1px;
+}
+
+.component-elements-container {
+  display: flex;
+  background-color: var(--content-background-color);
+  border-bottom: solid 2px rgba(128, 128, 128, 0.2);
+}
+
+.component-elements-button2,
+.component-elements-button3,
+.component-elements-button4 {
+  margin: 4px 5px;
+}
+
+.component-elements-button2 {
+  background-color: rgb(177, 177, 33);
+}
+.component-elements-button3 {
+  background-color: rgb(146, 90, 16);
+}
+.component-elements-button4 {
+  background-color: rgb(158, 33, 33);
+}
+
+.component-elements-item {
+  padding: 12px 0 0 10px;
+}
+
+/* ::: ---------------------------- Bridge | Maintenance --------------------------------- */
+
+.maintenance-content-cards-container {
+  display: block;
+  /* flex-wrap: wrap;
+  justify-content: space-around; */
+}
+
+.maintenance-card-header {
+  margin: -2px -2px 8px -2px;
+  background-color: var(--hover-button-color1);
+  padding: 10px 4px 4px 4px;
+  border-bottom: solid 1px grey;
+  border-radius: 1px;
+}
+
+.maintenance-content-cards {
+  min-height: fit-content;
+  text-align: left;
+  margin: 10px 5px;
+  padding-bottom: 5px;
+  border: solid 2px grey;
+  border-radius: 1px;
+  background-color: var(--main-color);
+}
+
+.maintenance-content-cards li {
+  margin: 8px 10px;
+}
+
+.maintenance-card-paragraph {
+  text-indent: 0px hanging;
+}
+
+/* ::: ---------------------------- Bridge | Maintenance | JS --------------------------------- */
+
+.component-maintenance-container {
+  display: flex;
+  background-color: var(--content-background-color);
+  border-bottom: solid 2px rgba(128, 128, 128, 0.2);
+}
+
+.component-maintenance-button1,
+.component-maintenance-button2,
+.component-maintenance-button3,
+.component-maintenance-button4 {
+  margin: 4px 5px;
+}
+
+.component-maintenance-button1 {
+  background-color: gray;
+}
+.component-maintenance-button2 {
+  background-color: rgb(19, 114, 19);
+}
+.component-maintenance-button3 {
+  background-color: rgb(177, 177, 33);
+}
+.component-maintenance-button4 {
+  background-color: rgb(158, 33, 33);
+}
+
+.component-maintenance-item {
+  padding: 12px 0 0 10px;
+}
+
+/* ::: ---------------------------- Bridge | Review --------------------------------- */
+
+.review-card-header {
+  margin: -2px -2px 0px -2px;
+  background-color: var(--hover-button-color1);
+  padding: 10px 4px 4px 8px;
+  border-bottom: solid 1px grey;
+  border-radius: 1px;
+}
+
+/* ::: ---------------------------- Culvert | Rating Guidance --------------------------------- */
+
+.culvert-content-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.culvert-content-cards {
+  width: 550px;
+  height: 280px;
+  min-height: fit-content;
+  text-align: left;
+  margin: 10px 5px;
+  padding-bottom: 5px;
+  border: solid 2px grey;
+  border-radius: 1px;
+  background-color: var(--main-color);
+}
+
+.culvert-content-cards li {
+  margin: 0px 10px;
+}
+
+.culvert-card-header {
+  margin: -2px -2px 8px -2px;
+  background-color: var(--hover-button-color1);
+  padding: 10px 4px 4px 8px;
+  border-bottom: solid 1px grey;
+  border-radius: 1px;
+}
+
+.culvert-card-paragraph {
+  text-indent: 0px hanging;
+}
+
+/* ::: ---------------------------- Culvert | Naming Convention --------------------------------- */
+
+.naming-conventions-content-cards-container {
+  display: block;
+  /* flex-wrap: wrap;
+  justify-content: space-around; */
+}
+
+.naming-conventions-card-header {
+  margin: -2px -2px 8px -2px;
+  background-color: var(--hover-button-color1);
+  padding: 10px 4px 4px 8px;
+  border-bottom: solid 1px grey;
+  border-radius: 1px;
+}
+
+.naming-conventions-content-cards {
+  min-height: fit-content;
+  text-align: left;
+  margin: 10px 5px;
+  padding-bottom: 5px;
+  border: solid 2px grey;
+  border-radius: 1px;
+  background-color: var(--main-color);
+}
+
+.naming-conventions-content-cards li {
+  margin: 8px 10px;
+}
+
+.naming-conventions-card-paragraph {
+  text-indent: 0px hanging;
+}
+
+/* ::: ---------------------------- Culvert | Report Walkthrough --------------------------------- */
+
+.report-walkthrough-content-cards-container {
+  display: block;
+  /* flex-wrap: wrap;
+  justify-content: space-around; */
+}
+
+.report-walkthrough-card-header {
+  margin: -2px -2px 8px -2px;
+  background-color: var(--hover-button-color1);
+  padding: 10px 4px 4px 8px;
+  border-bottom: solid 1px grey;
+  border-radius: 1px;
+}
+
+.report-walkthrough-content-cards {
+  min-height: fit-content;
+  text-align: left;
+  margin: 10px 5px;
+  padding-bottom: 5px;
+  border: solid 2px grey;
+  border-radius: 1px;
+  background-color: var(--main-color);
+}
+
+.report-walkthrough-content-cards li {
+  margin: 8px 10px;
+}
+
+.report-walkthrough-card-paragraph {
+  text-indent: 0px hanging;
+}
+
+/* ::: ---------------------------- Wall | General --------------------------------- */
+
+.wall-content-cards-container {
+  display: block;
+  /* flex-wrap: wrap;
+  justify-content: space-around; */
+}
+
+.wall-card-header {
+  margin: -2px -2px 8px -2px;
+  background-color: var(--hover-button-color1);
+  padding: 10px 4px 4px 8px;
+  border-bottom: solid 1px grey;
+  border-radius: 1px;
+}
+
+.wall-content-cards {
+  min-height: fit-content;
+  text-align: left;
+  margin: 10px 5px;
+  padding-bottom: 5px;
+  border: solid 2px grey;
+  border-radius: 1px;
+  background-color: var(--main-color);
+}
+
+.wall-card-paragraph {
+  text-indent: 0px hanging;
+  padding: 0 10px 5px 10px;
+}
+
+/* ::: ---------------------------- Glossaries --------------------------------- */
+
+.glossary-content-cards-container {
+  display: block;
+  /* flex-wrap: wrap;
+  justify-content: space-around; */
+}
+
+.glossary-card-header {
+  margin: -2px -2px 8px -2px;
+  background-color: var(--hover-button-color1);
+  padding: 10px 4px 4px 8px;
+  border-bottom: solid 1px grey;
+  border-radius: 1px;
+}
+
+.glossary-content-cards {
+  min-height: fit-content;
+  text-align: left;
+  margin: 10px 5px;
+  padding-bottom: 5px;
+  border: solid 2px grey;
+  border-radius: 1px;
+  background-color: var(--main-color);
+}
+
+.glossary-card-paragraph {
+  text-indent: 0px hanging;
+  padding: 0 10px 5px 10px;
+}
+
+/* ::: ---------------------------- Not Sorted | Working --------------------------------- */
 
 .highlight {
   background-color: rgba(255, 255, 0, 0.185);
+}
+
+.light-placeholder::placeholder {
+  color: #fff; /* light texty */
+  opacity: 0.6; /* Ensures full opacity */
+}
+
+/* ::: ---------------------------- Unknown --------------------------------- */
+
+.category {
+  margin: 5px;
+}
+
+#output {
+  margin-top: 10px;
 }

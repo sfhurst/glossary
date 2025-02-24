@@ -1,0 +1,94 @@
+Identification:
+"Asset Number": "000030",
+"Asset Name": "(1)56-15-01300 B",
+"(90) Inspection Date:": "07/12/2023",
+"(91) Designated Inspection Frequency:": 24,
+"(41) Structure Open/Posted/Closed:": "A",
+"(113) Scour Critical Bridges:": "7",
+"(B.AP.03) Scour Vulnerability": "BCE-T",
+"(104) Highway System of Inventory Route:": 0.0,
+
+Location & Routes:
+"Contact(s)": "Seymour",
+"(2) Highway Agency District:": 5.0,
+"Inv Route #": "1",
+"(3) County Code:": 15,
+"(16) Latitude:": 39.19487,
+"(17) Longitude:": -84.908134,
+"(7) Facility Carried:": "SR 1",
+"(6) Features Intersected:": "BRUSHY FORK",
+"Reference Post:": 9.0,
+"Offset:": 0.215,
+"(30) Year of Average Daily Traffic:": 2014.0,
+"(29) Average Daily Traffic:": 4241.0,
+
+Material & Type:
+"(46) Number of Approach Spans:": 0,
+"(44A) Structure Type, Approach Spans: Kind of Material:": 0,
+"(44B) Structure Type, Approach Spans: Type of Design": 0,
+"(45) Number of Spans in Main Unit:": 1,
+"(43A) Structure Type, Main: Kind of Material:": 1,
+"(43B) Structure Type, Main: Type of Design:": 11,
+"(108A) Wearing Surface Protection System: Wearing Surface": "6",
+"(108B) Wearing Surface Protection System: Deck Membrane": "0",
+"(108C) Wearing Surface Protection System: Deck Protection": "0",
+"(107) Deck Structure Type:": "1",
+
+Primary Condition:
+"(58) Deck:": "6",
+"(59) Superstructure:": "6",
+"(60) Substructure:": "7",
+"(62) Culverts:": "N",
+
+Secondary Condition:
+"(72) Approach Roadway Alignment:": 8.0,
+"Approach Slabs - Present?": "N",
+"(58.05) Approach Slabs:": null,
+"(58.06) Terminal Joints:": "N",
+"(58.04) Bridge Joints:": "N",
+"(58.02) Bridge Joint Type:": "N",
+"(58.01) Wearing Surface:": "7",
+"MAD-Paint Year": null,
+"(59.01) Paint:": "N",
+"MAD Paint": null,
+"(59.02) Bridge Bearings:": null,
+"Mad - Bearing Type": null,
+"Concrete Slopewall:": "N",
+
+"MAD-Bats": "N",
+"MAD-Swallows": "N",
+"(36A) Bridge Railings:": "0",
+"(36B) Transitions:": "0",
+
+Channel:
+"(61) Channel / Channel Protection:": "7",
+"Scour Analysis Status:": "A",
+"Scour Analysis Determination:": "A",
+"Scour Critical Safety Status:": "A",
+"Scour Analysis Comment": null,
+"(71) Waterway Adequacy:": "7",
+
+"(31) DeprecatedDesign Load": "4",
+
+Inspection Requirements:
+"(92AA) Critical Feature Inspection: NSTM Insp Required?": "N",
+"(92A) Critical Feature Inspection: NSTM Insp Frequency?": null,
+"(92CC) Critical Feature Inspection: Special Insp Required?": "N",
+"(92C) Critical Features: Special Insp Frequency?": null,
+"(92BB) Critical Feature Inspection: Underwater Insp Required?": "N",
+"(92B) Critical Feature Inspection: Underwater Insp Frequency?": null,
+
+Bridge Geometry:
+"(51) Brdg Rdwy Width Curb-To-Curb:": 44.1,
+"(52) Deck Width, Out-To-Out:": 47.3,
+"(49) Structure Length:": 52.0,
+"(34) Skew:": 0,
+
+Hyperlink: "https://itams.sixense.co/assets/e6ce2039-c4a3-4208-97e5-d799d4ed827d",
+
+Checks:
+Slab
+Membrane
+Monolithic
+element
+scour Critical

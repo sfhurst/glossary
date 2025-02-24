@@ -1,7 +1,9 @@
+<!-- ::::: --------------------------- Code Practices --------------------------- -->
 <!-- IDs are strictly coded and changes will impact js code. IDs are not used for styling. A unique class that matches the ID can be used for this purpose. -->
 <!-- HTML is for layout purposes only. JS eventListeners are used for calling functions. Any inline CSS or JS are for development and testing. -->
 <!-- IDs are not used in the Template Literals. Template Literals are often repeated items. If IDs are used in Template Lieterals it should be noted. -->
 <!-- Comments should be used in the HTML to show where Template Literals are used to build HTML. -->
+<!-- Comment bookmarks are as follows: :: = Pages, ::: = Tabs, :::: = Assets, ::::: = Layout Sections -->
 
 <!DOCTYPE html>
 <html lang="en-US">
@@ -40,7 +42,7 @@
   </head>
 
   <body>
-    <!-- ------------------------------------------------------------- Header ------------------------------------------------------------- -->
+    <!-- ::::: --------------------------- Header --------------------------- -->
 
     <header class="header">
       <!-- <div style="display: flex; height: 40px; line-height: 40px; vertical-align: middle; margin-left: 10px">Bridge | Culvert | Walls</div>
@@ -53,16 +55,16 @@
           <button class="asset-buttons" data-target="glossary-asset-tab" data-container-class="asset-containers" data-button-class="asset-buttons">Glossaries</button>
         </div>
         <div class="search-container">
-          <span id="searchID" class="searchTitle"></span><button class="buttonHeader material-symbols-outlined" style="display: none" type="button">location_on</button
+          <span id="searchID" class="search-title"></span><button id="button-map-link" class="button-icon material-symbols-outlined" type="button">location_on</button
           ><input type="text" class="search-box" placeholder="Asset #" />
         </div>
       </div>
     </header>
 
-    <!-- ------------------------------------------------------------- Main ------------------------------------------------------------- -->
+    <!-- ::::: --------------------------- Main --------------------------- -->
 
     <main>
-      <!-- Tab content -->
+      <!-- :::: Bridge Asset Tab -->
       <div id="bridge-asset-tab" class="asset-containers" style="display: block">
         <div class="main-content-containers">
           <button
@@ -156,6 +158,7 @@
             Review
           </button>
         </div>
+        <!-- ::: Bridge Alignment Tab -->
         <div id="bridge-alignment-tab" class="bridge-component-containers" style="display: block">
           <div class="main-content-containers">
             <button
@@ -193,6 +196,7 @@
             </button>
           </div>
           <div class="main-content-containers">
+            <!-- :: Bridge Alignment Tab Page 1 -->
             <div id="bridge-alignment-pg1" class="bridge-alignment-containers">
               <div class="content-container-paragraphs">
                 <p>
@@ -215,7 +219,7 @@
                 </ul>
               </div>
             </div>
-
+            <!-- :: Bridge Alignment Tab Page 2 -->
             <div id="bridge-alignment-pg2" class="bridge-alignment-containers" style="display: block">
               <div class="content-container-rating-lines" data-category="B.AP.01">
                 <span class="content-container-rating-numerical">N</span>
@@ -244,7 +248,7 @@
                 </p>
               </div>
             </div>
-
+            <!-- :: Bridge Alignment Tab Page 3 -->
             <div id="bridge-alignment-pg3" class="bridge-alignment-containers">
               <div class="content-container-paragraphs">
                 <p class="content-container-comment-lines">No speed reduction necessary.</p>
@@ -257,7 +261,7 @@
                 <p class="content-container-comment-lines">The bridge is in a crest vertical curve.</p>
               </div>
             </div>
-
+            <!-- :: Bridge Alignment Tab Page 4 -->
             <div id="bridge-alignment-pg4" class="bridge-alignment-containers">
               <div id="alignment-maintenance-container">
                 <!-- Populated dynamically by maintenanceTasks loop in maintenance.js -->
@@ -315,6 +319,7 @@
             </div>
           </div>
         </div>
+        <!-- ::: Bridge Approach Slabs Tab -->
         <div id="bridge-approach-slabs-tab" class="bridge-component-containers">
           <div class="main-content-containers">
             <button
@@ -358,6 +363,7 @@
             </button>
           </div>
           <div class="main-content-containers">
+            <!-- :: Bridge Approach Slabs Page 1 -->
             <div id="bridge-approach-pg1" class="bridge-approach-containers">
               <div class="content-container-paragraphs">
                 <p>
@@ -370,6 +376,7 @@
                 <p>Consider the roughness and ride provided by the approach slab.</p>
               </div>
             </div>
+            <!-- :: Bridge Approach Slabs Page 2 -->
             <div id="bridge-approach-pg2" class="bridge-approach-containers" style="display: block">
               <div class="content-container-rating-lines" data-category="B.C.01b">
                 <span class="content-container-rating-numerical">N</span>
@@ -432,6 +439,7 @@
                 </p>
               </div>
             </div>
+            <!-- :: Bridge Approach Slabs Page 3 -->
             <div id="bridge-approach-pg3" class="bridge-approach-containers">
               <div class="content-container-paragraphs">
                 <p class="content-container-comment-lines">There are no deficiencies to report.</p>
@@ -445,8 +453,9 @@
                 <p class="content-container-comment-lines">No significant settlement has occurred.</p>
               </div>
             </div>
+            <!-- :: Bridge Approach Slabs Page 6 -->
             <div id="bridge-approach-pg6" class="bridge-approach-containers">
-              <!-- new work -->
+              <!-- ::: -->
               <p class="comment-builder-selector">Select Defect:</p>
               <div id="defect-options-bridge-approach-pg6" class="comment-builder-option-list"></div>
 
@@ -466,11 +475,13 @@
               <p class="comment-builder-selector">Generated Comment:</p>
               <p id="generated-comment-bridge-approach-pg6" class="comment-builder-option-list">Select options to generate a comment.</p>
             </div>
+            <!-- :: Bridge Approach Slabs Page 4 -->
             <div id="bridge-approach-pg4" class="bridge-approach-containers">
               <div id="approach-elements-container">
                 <!-- Populated dynamically by bridgeElements loop in element.js -->
               </div>
             </div>
+            <!-- :: Bridge Approach Slabs Page 5 -->
             <div id="bridge-approach-pg5" class="bridge-approach-containers">
               <div id="approach-maintenance-container">
                 <!-- Populated dynamically by maintenanceTasks loop in maintenance.js -->
@@ -524,6 +535,7 @@
             </div>
           </div>
         </div>
+        <!-- ::: Bridge Joints Tab -->
         <div id="bridge-joints-tab" class="bridge-component-containers">
           <div class="main-content-containers">
             <button
@@ -584,6 +596,7 @@
             </button>
           </div>
           <div class="main-content-containers">
+            <!-- :: Bridge Joints Tab Page 1 -->
             <div id="bridge-joints-pg1" class="bridge-joints-containers">
               <div class="content-container-paragraphs">
                 <p>
@@ -601,6 +614,7 @@
                 <p>In cases where the joint is not visible, the condition can be assessed based on other indirect indicators of the condition.</p>
               </div>
             </div>
+            <!-- :: Bridge Joints Tab Page 2 -->
             <div id="bridge-joints-pg2" class="bridge-joints-containers" style="display: block">
               <div class="content-container-rating-lines" data-category="B.C.08">
                 <span class="content-container-rating-numerical">N</span>
@@ -663,6 +677,7 @@
                 </p>
               </div>
             </div>
+            <!-- :: Bridge Joints Tab Page 3 -->
             <div id="bridge-joints-pg3" class="bridge-joints-containers">
               <div class="content-container-paragraphs">
                 <p class="content-container-comment-lines">There are no deficiencies to report.</p>
@@ -679,6 +694,7 @@
                 <p class="content-container-comment-lines">The joints are full of debris.</p>
               </div>
             </div>
+            <!-- :: Bridge Joints Tab Page 4 -->
             <div id="bridge-joints-pg4" class="bridge-joints-containers">
               <div class="content-container-paragraphs">
                 <p>
@@ -698,6 +714,7 @@
                 <p>Do not consider if the terminal joint meets the current standard.</p>
               </div>
             </div>
+            <!-- :: Bridge Joints Tab Page 5 -->
             <div id="bridge-joints-pg5" class="bridge-joints-containers">
               <div class="content-container-rating-lines" data-category="B.C.08a">
                 <span class="content-container-rating-numerical">N</span>
@@ -725,6 +742,7 @@
                 </p>
               </div>
             </div>
+            <!-- :: Bridge Joints Tab Page 6 -->
             <div id="bridge-joints-pg6" class="bridge-joints-containers">
               <div class="content-container-paragraphs">
                 <p class="content-container-comment-lines">The terminal joints are in good condition.</p>
@@ -732,11 +750,13 @@
                 <p class="content-container-comment-lines">There are no terminal joints at either end.</p>
               </div>
             </div>
+            <!-- :: Bridge Joints Tab Page 7 -->
             <div id="bridge-joints-pg7" class="bridge-joints-containers">
               <div id="joints-elements-container">
                 <!-- Populated dynamically by bridgeElements loop in element.js -->
               </div>
             </div>
+            <!-- :: Bridge Joints Tab Page 8 -->
             <div id="bridge-joints-pg8" class="bridge-joints-containers">
               <div id="joints-maintenance-container">
                 <!-- Populated dynamically by maintenanceTasks loop in maintenance.js -->
@@ -819,6 +839,7 @@
             </div>
           </div>
         </div>
+        <!-- ::: Bridge Railings Tab -->
         <div id="bridge-railings-tab" class="bridge-component-containers">
           <div class="main-content-containers">
             <button
@@ -879,6 +900,7 @@
             </button>
           </div>
           <div class="main-content-containers">
+            <!-- :: Bridge Railings Tab Page 1 -->
             <div id="bridge-railings-pg1" class="bridge-railings-containers">
               <div class="content-container-paragraphs">
                 <p>
@@ -896,6 +918,7 @@
                 </p>
               </div>
             </div>
+            <!-- :: Bridge Railings Tab Page 2 -->
             <div id="bridge-railings-pg2" class="bridge-railings-containers" style="display: block">
               <div class="content-container-rating-lines" data-category="B.C.05">
                 <span class="content-container-rating-numerical">N</span>
@@ -967,6 +990,7 @@
                 </p>
               </div>
             </div>
+            <!-- :: Bridge Railings Tab Page 3 -->
             <div id="bridge-railings-pg3" class="bridge-railings-containers">
               <div class="content-container-paragraphs">
                 <p class="content-container-comment-lines">There are no deficiencies to report.</p>
@@ -974,6 +998,7 @@
                 <p class="content-container-comment-lines">There are widely spaced hairline vertical cracks in the barrier walls.</p>
               </div>
             </div>
+            <!-- :: Bridge Railings Tab Page 4 -->
             <div id="bridge-railings-pg4" class="bridge-railings-containers">
               <div class="content-container-paragraphs">
                 <p>
@@ -988,6 +1013,7 @@
                 </p>
               </div>
             </div>
+            <!-- :: Bridge Railings Tab Page 5 -->
             <div id="bridge-railings-pg5" class="bridge-railings-containers">
               <div class="content-container-rating-lines" data-category="B.C.06">
                 <span class="content-container-rating-numerical">N</span>
@@ -1059,6 +1085,7 @@
                 </p>
               </div>
             </div>
+            <!-- :: Bridge Railings Tab Page 6 -->
             <div id="bridge-railings-pg6" class="bridge-railings-containers">
               <div class="content-container-paragraphs">
                 <p class="content-container-comment-lines">There are no deficiencies to report.</p>
@@ -1066,11 +1093,13 @@
                 <p class="content-container-comment-lines">There is some collision damage in the railing at the transition.</p>
               </div>
             </div>
+            <!-- :: Bridge Railings Tab Page 7 -->
             <div id="bridge-railings-pg7" class="bridge-railings-containers">
               <div id="railings-elements-container">
                 <!-- Populated dynamically by bridgeElements loop in element.js -->
               </div>
             </div>
+            <!-- :: Bridge Railings Tab Page 8 -->
             <div id="bridge-railings-pg8" class="bridge-railings-containers">
               <div id="railings-maintenance-container">
                 <!-- Populated dynamically by maintenanceTasks loop in maintenance.js -->
@@ -1153,6 +1182,7 @@
             </div>
           </div>
         </div>
+        <!-- ::: Bridge Deck Tab -->
         <div id="bridge-deck-tab" class="bridge-component-containers">
           <div class="main-content-containers">
             <button class="bridge-deck-buttons alt1-buttons" data-target="bridge-deck-pg1" data-container-class="bridge-deck-containers" data-button-class="bridge-deck-buttons">
@@ -1194,6 +1224,7 @@
             </button>
           </div>
           <div class="main-content-containers">
+            <!-- :: Bridge Deck Tab Page 1 -->
             <div id="bridge-deck-pg1" class="bridge-deck-containers">
               <div class="content-container-paragraphs">
                 <p>This item represents the condition of the deck as determined from the inspection of all deck surfaces (top, underside, and edges).</p>
@@ -1222,6 +1253,7 @@
                 <p>If the deck condition rating drops to a 3 or below than the frequency cannot be more than 12 months.</p>
               </div>
             </div>
+            <!-- :: Bridge Deck Tab Page 2 -->
             <div id="bridge-deck-pg2" class="bridge-deck-containers" style="display: block">
               <div class="content-container-rating-lines" data-category="B.C.01">
                 <span class="content-container-rating-numerical">N</span>
@@ -1293,6 +1325,7 @@
                 </p>
               </div>
             </div>
+            <!-- :: Bridge Deck Tab Page 3 -->
             <div id="bridge-deck-pg3" class="bridge-deck-containers">
               <div class="content-container-paragraphs">
                 <p class="content-container-comment-lines">There are no deficiencies to report.</p>
@@ -1316,8 +1349,9 @@
                 </p>
               </div>
             </div>
+            <!-- :: Bridge Deck Tab Page 9 -->
             <div id="bridge-deck-pg9" class="bridge-deck-containers">
-              <!-- new work -->
+              <!-- ::: -->
               <p class="comment-builder-selector">Select Defect:</p>
               <div id="defect-options-bridge-deck-pg9" class="comment-builder-option-list"></div>
 
@@ -1339,6 +1373,7 @@
               <p class="comment-builder-selector">Generated Comment:</p>
               <p id="generated-comment-bridge-deck-pg9" class="comment-builder-option-list">Select options to generate a comment.</p>
             </div>
+            <!-- :: Bridge Deck Tab Page 4 -->
             <div id="bridge-deck-pg4" class="bridge-deck-containers">
               <div class="content-container-paragraphs">
                 <p>
@@ -1354,6 +1389,7 @@
                 <p>If there is not a protective membrane between a bituminous wearing surface and a structural deck, the wearing surface cannot be rated higher than a 4.</p>
               </div>
             </div>
+            <!-- :: Bridge Deck Tab Page 5 -->
             <div id="bridge-deck-pg5" class="bridge-deck-containers">
               <div class="content-container-rating-lines" data-category="B.C.01a">
                 <span class="content-container-rating-numerical">N</span>
@@ -1404,6 +1440,7 @@
                 </p>
               </div>
             </div>
+            <!-- :: Bridge Deck Tab Page 6 -->
             <div id="bridge-deck-pg6" class="bridge-deck-containers">
               <div class="content-container-paragraphs">
                 <p class="content-container-comment-lines">The wearing surface is monolithic with the deck. See deck comments.</p>
@@ -1422,8 +1459,9 @@
                 <p class="content-container-comment-lines">There are scattered areas of peeling in less than 5% of the total surface area.</p>
               </div>
             </div>
+            <!-- :: Bridge Deck Tab Page 10 -->
             <div id="bridge-deck-pg10" class="bridge-deck-containers">
-              <!-- new work -->
+              <!-- ::: -->
               <p class="comment-builder-selector">Select Defect:</p>
               <div id="defect-options-bridge-deck-pg10" class="comment-builder-option-list"></div>
 
@@ -1445,6 +1483,7 @@
               <p class="comment-builder-selector">Generated Comment:</p>
               <p id="generated-comment-bridge-deck-pg10" class="comment-builder-option-list">Select options to generate a comment.</p>
             </div>
+            <!-- :: Bridge Deck Tab Page 7 -->
             <div id="bridge-deck-pg7" class="bridge-deck-containers">
               <div id="deck-elements-container">
                 <!-- Populated dynamically by bridgeElements loop in element.js -->
@@ -1455,6 +1494,7 @@
                 <!-- Populated dynamically by bridgeElements loop in element.js -->
               </div>
             </div>
+            <!-- :: Bridge Deck Tab Page 8 -->
             <div id="bridge-deck-pg8" class="bridge-deck-containers">
               <div id="deck-maintenance-container">
                 <!-- Populated dynamically by maintenanceTasks loop in maintenance.js -->
@@ -1530,6 +1570,7 @@
             </div>
           </div>
         </div>
+        <!-- ::: Bridge Super Tab -->
         <div id="bridge-super-tab" class="bridge-component-containers">
           <div class="main-content-containers">
             <button
@@ -1590,6 +1631,7 @@
             </button>
           </div>
           <div class="main-content-containers">
+            <!-- :: Bridge Super Tab Page 1 -->
             <div id="bridge-super-pg1" class="bridge-super-containers">
               <div class="content-container-paragraphs">
                 <p>This item represents the condition of the superstructure as determined from the inspection of all superstructure members.</p>
@@ -1638,6 +1680,7 @@
                 <p>If the superstructure condition rating drops to a 3 or below than the frequency cannot be more than 12 months.</p>
               </div>
             </div>
+            <!-- :: Bridge Super Tab Page 2 -->
             <div id="bridge-super-pg2" class="bridge-super-containers" style="display: block">
               <div class="content-container-rating-lines" data-category="B.C.02">
                 <span class="content-container-rating-numerical">N</span>
@@ -1709,6 +1752,7 @@
                 </p>
               </div>
             </div>
+            <!-- :: Bridge Super Tab Page 3 -->
             <div id="bridge-super-pg3" class="bridge-super-containers">
               <div class="content-container-paragraphs">
                 <p class="content-container-comment-lines">There are no deficiencies to report.</p>
@@ -1722,6 +1766,7 @@
                 <p class="content-container-comment-lines">There is a moderate, diagonal crack running up toward the center of the beam (indicating shear failure).</p>
               </div>
             </div>
+            <!-- :: Bridge Super Tab Page 4 -->
             <div id="bridge-super-pg4" class="bridge-super-containers">
               <div class="content-container-paragraphs">
                 <p>Consider surface dulling, chalking, rust and peeling when evaluating the condition rating.</p>
@@ -1729,6 +1774,7 @@
                 <p>At stages of advanced deterioration, consider any section loss in the painted material.</p>
               </div>
             </div>
+            <!-- :: Bridge Super Tab Page 5 -->
             <div id="bridge-super-pg5" class="bridge-super-containers">
               <div class="content-container-rating-lines" data-category="B.C.02a">
                 <span class="content-container-rating-numerical">N</span>
@@ -1795,12 +1841,14 @@
                 </p>
               </div>
             </div>
+            <!-- :: Bridge Super Tab Page 6 -->
             <div id="bridge-super-pg6" class="bridge-super-containers">
               <div class="content-container-paragraphs">
                 <p class="content-container-comment-lines">There is minor chalking and surface dulling throughout.</p>
                 <p class="content-container-comment-lines">There are scattered areas of light rust and minor peeling.</p>
               </div>
             </div>
+            <!-- :: Bridge Super Tab Page 7 -->
             <div id="bridge-super-pg7" class="bridge-super-containers">
               <div id="super-elements-container">
                 <!-- Populated dynamically by bridgeElements loop in element.js -->
@@ -1811,7 +1859,7 @@
                 <!-- Populated dynamically by bridgeElements loop in element.js -->
               </div>
             </div>
-
+            <!-- :: Bridge Super Tab Page 8 -->
             <div id="bridge-super-pg8" class="bridge-super-containers">
               <div id="super-maintenance-container">
                 <!-- Populated dynamically by maintenanceTasks loop in maintenance.js -->
@@ -1886,6 +1934,7 @@
             </div>
           </div>
         </div>
+        <!-- ::: Bridge Bearings Tab -->
         <div id="bridge-bearings-tab" class="bridge-component-containers">
           <div class="main-content-containers">
             <button
@@ -1921,6 +1970,7 @@
             </button>
           </div>
           <div class="main-content-containers">
+            <!-- :: Bridge Bearings Tab Page 1 -->
             <div id="bridge-bearings-pg1" class="bridge-bearings-containers">
               <div class="content-container-paragraphs">
                 <p>This item addresses the condition of all types and shapes of bridge bearings.</p>
@@ -1936,6 +1986,7 @@
                 </p>
               </div>
             </div>
+            <!-- :: Bridge Bearings Tab Page 2 -->
             <div id="bridge-bearings-pg2" class="bridge-bearings-containers" style="display: block">
               <div class="content-container-rating-lines" data-category="B.C.07">
                 <span class="content-container-rating-numerical">N</span>
@@ -2007,6 +2058,7 @@
                 </p>
               </div>
             </div>
+            <!-- :: Bridge Bearings Tab Page 3 -->
             <div id="bridge-bearings-pg3" class="bridge-bearings-containers">
               <div class="content-container-paragraphs">
                 <p class="content-container-comment-lines">The bearings are adequately positioned beneath the bridge beams and fully supported by the substructure.</p>
@@ -2027,12 +2079,13 @@
                 <p class="content-container-comment-lines">The bridge has integral abutments.</p>
               </div>
             </div>
+            <!-- :: Bridge Bearings Tab Page 4 -->
             <div id="bridge-bearings-pg4" class="bridge-bearings-containers">
               <div id="bearings-elements-container">
                 <!-- Populated dynamically by bridgeElements loop in element.js -->
               </div>
             </div>
-
+            <!-- :: Bridge Bearings Tab Page 5 -->
             <div id="bridge-bearings-pg5" class="bridge-bearings-containers">
               <div id="bearings-maintenance-container">
                 <!-- Populated dynamically by maintenanceTasks loop in maintenance.js -->
@@ -2090,6 +2143,7 @@
             </div>
           </div>
         </div>
+        <!-- ::: Bridge Sub Tab -->
         <div id="bridge-sub-tab" class="bridge-component-containers">
           <div class="main-content-containers">
             <button class="bridge-sub-buttons alt1-buttons" data-target="bridge-sub-pg1" data-container-class="bridge-sub-containers" data-button-class="bridge-sub-buttons">
@@ -2116,6 +2170,7 @@
             <button class="bridge-sub-buttons" data-target="bridge-sub-pg8" data-container-class="bridge-sub-containers" data-button-class="bridge-sub-buttons">Maintenance</button>
           </div>
           <div class="main-content-containers">
+            <!-- :: Bridge Sub Tab Page 1 -->
             <div id="bridge-sub-pg1" class="bridge-sub-containers">
               <div class="content-container-paragraphs">
                 <p>This item addresses the condition of piers, abutments, piles, footings, and other substructure members.</p>
@@ -2164,6 +2219,7 @@
                 <p>If the substructure condition rating drops to a 3 or below than the frequency cannot be more than 12 months.</p>
               </div>
             </div>
+            <!-- :: Bridge Sub Tab Page 2 -->
             <div id="bridge-sub-pg2" class="bridge-sub-containers" style="display: block">
               <div class="content-container-rating-lines" data-category="B.C.03">
                 <span class="content-container-rating-numerical">N</span>
@@ -2235,6 +2291,7 @@
                 </p>
               </div>
             </div>
+            <!-- :: Bridge Sub Tab Page 3 -->
             <div id="bridge-sub-pg3" class="bridge-sub-containers">
               <div class="content-container-paragraphs">
                 <p class="content-container-comment-lines">There are no deficiencies to report.</p>
@@ -2248,6 +2305,7 @@
                 <p class="content-container-comment-lines">There is a wide-width, horizontal crack (indicating settlement) running the length of the west abutment.</p>
               </div>
             </div>
+            <!-- :: Bridge Sub Tab Page 4 -->
             <div id="bridge-sub-pg4" class="bridge-sub-containers">
               <div class="content-container-paragraphs">
                 <p>
@@ -2256,6 +2314,7 @@
                 </p>
               </div>
             </div>
+            <!-- :: Bridge Sub Tab Page 5 -->
             <div id="bridge-sub-pg5" class="bridge-sub-containers">
               <div class="content-container-rating-lines" data-category="B.C.03a">
                 <span class="content-container-rating-numerical">N</span>
@@ -2274,6 +2333,7 @@
                 </p>
               </div>
             </div>
+            <!-- :: Bridge Sub Tab Page 6 -->
             <div id="bridge-sub-pg6" class="bridge-sub-containers">
               <div class="content-container-paragraphs">
                 <p class="content-container-comment-lines">The slopewalls are in good condition.</p>
@@ -2283,12 +2343,13 @@
                 <p class="content-container-comment-lines">There are no obvious structural deficiencies in the MSE walls.</p>
               </div>
             </div>
+            <!-- :: Bridge Sub Tab Page 7 -->
             <div id="bridge-sub-pg7" class="bridge-sub-containers">
               <div id="sub-elements-container">
                 <!-- Populated dynamically by bridgeElements loop in element.js -->
               </div>
             </div>
-
+            <!-- :: Bridge Sub Tab Page 8 -->
             <div id="bridge-sub-pg8" class="bridge-sub-containers">
               <div id="sub-maintenance-container">
                 <!-- Populated dynamically by maintenanceTasks loop in maintenance.js -->
@@ -2363,6 +2424,7 @@
             </div>
           </div>
         </div>
+        <!-- ::: Bridge Culvert Tab -->
         <div id="bridge-culvert-tab" class="bridge-component-containers">
           <div class="main-content-containers">
             <button
@@ -2398,6 +2460,7 @@
             </button>
           </div>
           <div class="main-content-containers">
+            <!-- :: Bridge Culvert Tab Page 1 -->
             <div id="bridge-culvert-pg1" class="bridge-culvert-containers">
               <div class="content-container-paragraphs">
                 <p>This item addresses the condition of culverts. The condition assessment includes footings, piles, and other foundation members when present.</p>
@@ -2443,6 +2506,7 @@
                 <p>If the culvert condition rating drops to a 3 or below than the frequency cannot be more than 12 months.</p>
               </div>
             </div>
+            <!-- :: Bridge Culvert Tab Page 2 -->
             <div id="bridge-culvert-pg2" class="bridge-culvert-containers" style="display: block">
               <div class="content-container-rating-lines" data-category="B.C.04">
                 <span class="content-container-rating-numerical">N</span>
@@ -2514,6 +2578,7 @@
                 </p>
               </div>
             </div>
+            <!-- :: Bridge Culvert Tab Page 3 -->
             <div id="bridge-culvert-pg3" class="bridge-culvert-containers">
               <div class="content-container-paragraphs">
                 <p class="content-container-comment-lines">There are no deficiencies to report.</p>
@@ -2530,12 +2595,13 @@
                 <p class="content-container-comment-lines">The culvert is a concrete box widened by CMPs.</p>
               </div>
             </div>
+            <!-- :: Bridge Culvert Tab Page 4 -->
             <div id="bridge-culvert-pg4" class="bridge-culvert-containers">
               <div id="culvert-elements-container">
                 <!-- Populated dynamically by bridgeElements loop in element.js -->
               </div>
             </div>
-
+            <!-- :: Bridge Culvert Tab Page 5 -->
             <div id="bridge-culvert-pg5" class="bridge-culvert-containers">
               <div id="culvert-maintenance-container">
                 <!-- Populated dynamically by maintenanceTasks loop in maintenance.js -->
@@ -2586,6 +2652,7 @@
             </div>
           </div>
         </div>
+        <!-- ::: Bridge Channel Tab -->
         <div id="bridge-channel-tab" class="bridge-component-containers">
           <div class="main-content-containers">
             <button
@@ -2643,6 +2710,7 @@
             </button>
           </div>
           <div class="main-content-containers">
+            <!-- :: Bridge Channel Tab Page 1 -->
             <div id="bridge-channel-pg1" class="bridge-channel-containers">
               <div class="content-container-paragraphs">
                 <p>
@@ -2660,6 +2728,7 @@
                 </p>
               </div>
             </div>
+            <!-- :: Bridge Channel Tab Page 2 -->
             <div id="bridge-channel-pg2" class="bridge-channel-containers" style="display: block">
               <div class="content-container-rating-lines" data-category="B.C.09">
                 <span class="content-container-rating-numerical">N</span>
@@ -2728,6 +2797,7 @@
                 </p>
               </div>
             </div>
+            <!-- :: Bridge Channel Tab Page 3 -->
             <div id="bridge-channel-pg3" class="bridge-channel-containers">
               <div class="content-container-paragraphs">
                 <p class="content-container-comment-lines">There are no deficiencies to report.</p>
@@ -2747,6 +2817,7 @@
                 <p class="content-container-comment-lines">There is channel aggradation and sediment deposits on the east side of Pier 2 under Span B.</p>
               </div>
             </div>
+            <!-- :: Bridge Channel Tab Page 4 -->
             <div id="bridge-channel-pg4" class="bridge-channel-containers">
               <div class="content-container-paragraphs">
                 <p>This item is used to provide a condition rating for channel protection devices.</p>
@@ -2771,6 +2842,7 @@
                 </p>
               </div>
             </div>
+            <!-- :: Bridge Channel Tab Page 5 -->
             <div id="bridge-channel-pg5" class="bridge-channel-containers">
               <div class="content-container-rating-lines" data-category="B.C.10">
                 <span class="content-container-rating-numerical">N</span>
@@ -2838,6 +2910,7 @@
                 </p>
               </div>
             </div>
+            <!-- :: Bridge Channel Tab Page 6 -->
             <div id="bridge-channel-pg6" class="bridge-channel-containers">
               <div class="content-container-paragraphs">
                 <p class="content-container-comment-lines">There are no deficiencies to report.</p>
@@ -2857,6 +2930,7 @@
                 <p class="content-container-comment-lines">There is channel aggradation and sediment deposits on the east side of Pier 2 under Span B.</p>
               </div>
             </div>
+            <!-- :: Bridge Channel Tab Page 7 -->
             <div id="bridge-channel-pg7" class="bridge-channel-containers">
               <div id="channel-maintenance-container">
                 <!-- Populated dynamically by maintenanceTasks loop in maintenance.js -->
@@ -2932,6 +3006,7 @@
             </div>
           </div>
         </div>
+        <!-- ::: Bridge Scour Tab -->
         <div id="bridge-scour-tab" class="bridge-component-containers">
           <div class="main-content-containers">
             <button
@@ -2985,6 +3060,7 @@
             </button>
           </div>
           <div class="main-content-containers">
+            <!-- :: Bridge Scour Tab Page 1 -->
             <div id="bridge-scour-pg1" class="bridge-scour-containers">
               <div class="content-container-paragraphs">
                 <p>Refer to Item B.AP.03 (Scour Vulnerability) to verify if the bridge has been determined to be stable or unstable for appraised scour conditions.</p>
@@ -3004,6 +3080,7 @@
                 <p>If the scour condition rating is a 2 or below then the substructure condition rating must be equal.</p>
               </div>
             </div>
+            <!-- :: Bridge Scour Tab Page 2 -->
             <div id="bridge-scour-pg2" class="bridge-scour-containers" style="display: block">
               <div class="content-container-rating-lines" data-category="B.C.11">
                 <span class="content-container-rating-numerical">N</span>
@@ -3073,6 +3150,7 @@
                 </p>
               </div>
             </div>
+            <!-- :: Bridge Scour Tab Page 3 -->
             <div id="bridge-scour-pg3" class="bridge-scour-containers">
               <div class="content-container-paragraphs">
                 <p class="content-container-comment-lines">There is no scour present.</p>
@@ -3080,6 +3158,7 @@
                 <p class="content-container-comment-lines">The designed countermeasures are in good condition.</p>
               </div>
             </div>
+            <!-- :: Bridge Scour Tab Page 4 -->
             <div id="bridge-scour-pg4" class="bridge-scour-containers">
               <div class="content-container-paragraphs">
                 <p>The intent of this item is to report the status and vulnerability determination from scour appraisals required by the NBIS.</p>
@@ -3118,6 +3197,7 @@
                 <p>Use code C for bridges that could become unstable for the potential scour, and temporary countermeasures are installed that were not designed.</p>
               </div>
             </div>
+            <!-- :: Bridge Scour Tab Page 5 -->
             <div id="bridge-scour-pg5" class="bridge-scour-containers">
               <div class="content-container-rating-lines" data-category="B.AP.03">
                 <span class="content-container-rating-numerical">0</span>
@@ -3141,8 +3221,8 @@
               <div class="content-container-rating-lines" data-category="B.AP.03">
                 <span class="content-container-rating-numerical">C</span>
                 <p class="content-container-rating-description-and-condition-bubble">
-                  <span class="content-container-rating-condition-bubble">TEMPORARY COUNTERMEASURES</span>Scour appraisal completed. Bridge could become unstable for scour.
-                  Temporary (not designed) countermeasure installed to mitigate scour. Bridge is scour critical.
+                  <span class="content-container-rating-condition-bubble">TEMPORARY COUNTERMEASURES - UNSTABLE</span>Scour appraisal completed. Bridge could become unstable for
+                  scour. Temporary (not designed) countermeasure installed to mitigate scour. Bridge is scour critical.
                 </p>
               </div>
               <div class="content-container-rating-lines" data-category="B.AP.03">
@@ -3155,8 +3235,8 @@
               <div class="content-container-rating-lines" data-category="B.AP.03">
                 <span class="content-container-rating-numerical">E</span>
                 <p class="content-container-rating-description-and-condition-bubble">
-                  <span class="content-container-rating-condition-bubble">NOT COMPLETED</span>Scour appraisal has not been completed. Temporary (not designed) countermeasure
-                  installed to mitigate scour.
+                  <span class="content-container-rating-condition-bubble">NOT COMPLETE - TEMPORARY COUNTERMEASURES</span>Scour appraisal has not been completed. Temporary (not
+                  designed) countermeasure installed to mitigate scour.
                 </p>
               </div>
               <div class="content-container-rating-lines" data-category="B.AP.03">
@@ -3166,6 +3246,7 @@
                 </p>
               </div>
             </div>
+            <!-- :: Bridge Scour Tab Page 6 -->
             <div id="bridge-scour-pg6" class="bridge-scour-containers">
               <div class="content-container-paragraphs">
                 <p class="content-container-comment-lines">There is no scour present.</p>
@@ -3246,6 +3327,7 @@
             </div>
           </div>
         </div>
+        <!-- ::: Bridge Overtopping Tab -->
         <div id="bridge-overtopping-tab" class="bridge-component-containers">
           <div class="main-content-containers">
             <button
@@ -3274,6 +3356,7 @@
             </button>
           </div>
           <div class="main-content-containers">
+            <!-- :: Bridge Overtopping Tab Page 1 -->
             <div id="bridge-overtopping-pg1" class="bridge-overtopping-containers">
               <div class="content-container-paragraphs">
                 <p>An overtopping occurrence is when the waterway overtops the riding surface carried on the bridge.</p>
@@ -3293,6 +3376,7 @@
                 <p>This item does not apply to the likelihood of the waterway overtopping approach roadways.</p>
               </div>
             </div>
+            <!-- :: Bridge Overtopping Tab Page 2 -->
             <div id="bridge-overtopping-pg2" class="bridge-overtopping-containers" style="display: block">
               <div class="content-container-rating-lines" data-category="B.AP.02">
                 <span class="content-container-rating-numerical">N</span>
@@ -3343,6 +3427,7 @@
                 </p>
               </div>
             </div>
+            <!-- :: Bridge Overtopping Tab Page 3 -->
             <div id="bridge-overtopping-pg3" class="bridge-overtopping-containers">
               <div class="content-container-paragraphs">
                 <p class="content-container-comment-lines">The Q100/HW elevation is significantly below the low structure elevation.</p>
@@ -3406,6 +3491,7 @@
             </div>
           </div>
         </div>
+        <!-- ::: Bridge Wildlife Tab -->
         <div id="bridge-wildlife-tab" class="bridge-component-containers">
           <div class="main-content-containers">
             <button
@@ -3443,11 +3529,13 @@
             </button>
           </div>
           <div class="main-content-containers">
+            <!-- :: Bridge Wildlife Tab Page 1 -->
             <div id="bridge-wildlife-pg1" class="bridge-wildlife-containers">
               <div class="content-container-paragraphs">
                 <p>Information on cliff swallows can be found in Part 9 of the INDOT BIM and in the INDOT Protected Species Guidance. Both documents are linked below.</p>
               </div>
             </div>
+            <!-- :: Bridge Wildlife Tab Page 2 -->
             <div id="bridge-wildlife-pg2" class="bridge-wildlife-containers" style="display: block">
               <div class="content-container-rating-lines" data-category="B.MAD.Swallows">
                 <span class="content-container-rating-numerical">N</span>
@@ -3462,6 +3550,7 @@
                 </p>
               </div>
             </div>
+            <!-- :: Bridge Wildlife Tab Page 3 -->
             <div id="bridge-wildlife-pg3" class="bridge-wildlife-containers">
               <div class="content-container-paragraphs">
                 <p>Information on bats can be found in Part 9 of the INDOT BIM and in the INDOT Protected Species Guidance. Both documents are linked below.</p>
@@ -3532,7 +3621,7 @@
             >
           </div>
         </div>
-        <!-- Review Work -->
+        <!-- ::: Bridge Elements Tab -->
         <div id="bridge-elements-tab" class="bridge-component-containers">
           <div class="main-content-containers">
             <button
@@ -3573,9 +3662,8 @@
             >
               Wearing Surface
             </button>
-            <!-- <div class="content-container-tabs"></div> -->
           </div>
-
+          <!-- :: Bridge Elements Tab Page 1 -->
           <div id="element-elements-tab" class="element-content-containers" style="display: block">
             <div class="main-content-containers">
               <div id="element-components-container">
@@ -3583,7 +3671,7 @@
               </div>
             </div>
           </div>
-
+          <!-- :: Bridge Elements Tab Page 2 -->
           <div id="element-concrete-tab" class="element-content-containers">
             <div class="element-content-cards-container">
               <div class="element-content-cards">
@@ -3675,6 +3763,7 @@
               </div>
             </div>
           </div>
+          <!-- :: Bridge Elements Tab Page 3 -->
           <div id="element-steel-tab" class="element-content-containers">
             <div class="element-content-cards-container">
               <div class="element-content-cards">
@@ -3728,6 +3817,7 @@
               </div>
             </div>
           </div>
+          <!-- :: Bridge Elements Tab Page 4 -->
           <div id="element-masonry-tab" class="element-content-containers">
             <div class="element-content-cards-container">
               <div class="element-content-cards">
@@ -3817,6 +3907,7 @@
               </div>
             </div>
           </div>
+          <!-- :: Bridge Elements Tab Page 5 -->
           <div id="element-timber-tab" class="element-content-containers">
             <div class="element-content-cards-container">
               <div class="element-content-cards">
@@ -3897,6 +3988,7 @@
               </div>
             </div>
           </div>
+          <!-- :: Bridge Elements Tab Page 6 -->
           <div id="element-bearings-tab" class="element-content-containers">
             <div class="element-content-cards-container">
               <div class="element-content-cards">
@@ -3976,6 +4068,7 @@
               </div>
             </div>
           </div>
+          <!-- :: Bridge Elements Tab Page 7 -->
           <div id="element-joints-tab" class="element-content-containers">
             <div class="element-content-cards-container">
               <div class="element-content-cards">
@@ -4055,6 +4148,7 @@
               </div>
             </div>
           </div>
+          <!-- :: Bridge Elements Tab Page 8 -->
           <div id="element-paint-tab" class="element-content-containers">
             <div class="element-content-cards-container">
               <div class="element-content-cards">
@@ -4106,6 +4200,7 @@
               </div>
             </div>
           </div>
+          <!-- :: Bridge Elements Tab Page 9 -->
           <div id="element-wearing-surface-tab" class="element-content-containers">
             <div class="element-content-cards-container">
               <div class="element-content-cards">
@@ -4150,6 +4245,7 @@
             </div>
           </div>
         </div>
+        <!-- ::: Bridge Maintenance Tab -->
         <div id="bridge-maintenance-tab" class="bridge-component-containers">
           <div class="main-content-containers">
             <div id="maintenance-container">
@@ -4157,7 +4253,7 @@
             </div>
           </div>
         </div>
-        <!-- Review Work -->
+        <!-- ::: Bridge Review Tab -->
         <div id="bridge-review-tab" class="bridge-component-containers">
           <div class="main-content-containers">
             <button class="review-item-buttons active" data-target="review-ratings-tab" data-container-class="review-content-containers" data-button-class="review-item-buttons">
@@ -4167,13 +4263,13 @@
               Summary
             </button>
             <button class="review-item-buttons" data-target="review-data-tab" data-container-class="review-content-containers" data-button-class="review-item-buttons">
-              Asset Data
-            </button>
+              Asset Data</button
+            ><span id="asset-updated" class="asset-update-text">The ratings and comments are generated by actions on the corresponding component pages.</span>
           </div>
-
+          <!-- :: Bridge Review Tab Page 1 -->
           <div id="review-ratings-tab" class="review-content-containers" style="display: block">
             <div class="main-content-containers">
-              <div id="review-components-container">
+              <div class="review-components-container">
                 <p class="review-card-header">Ratings | Component | Comment</p>
                 <div class="content-container-rating-lines" data-category="B.AP.01">
                   <span class="content-container-rating-numerical"></span>
@@ -4325,16 +4421,17 @@
               </div>
             </div>
           </div>
-          <div id="review-summary-tab" class="review-content-containers" style="display: block">
+          <!-- :: Bridge Review Tab Page 2 -->
+          <div id="review-summary-tab" class="review-content-containers">
             <div class="main-content-containers">
-              <div id="review-components-container">
+              <div class="review-components-container">
                 <div class="content-container-paragraphs">
                   <div class="textarea-containers">
                     <div class="textarea-mirrors">
                       <textarea
                         id="summary-textarea"
                         placeholder="Please search the asset number to generate a summary."
-                        class="textarea-comments"
+                        class="textarea-comments light-placeholder"
                         name="summary"
                         rows="1"
                         oninput="expandTextarea(event, 'summary-textarea')"
@@ -4345,14 +4442,626 @@
               </div>
             </div>
           </div>
-          <div id="review-data-tab" class="review-content-containers" style="display: block">
-            <div class="main-content-containers">
-              <div id="review-components-container"></div>
+          <!-- :: Bridge Review Tab Page 3 -->
+          <!-- ::: -->
+          <div id="review-data-tab" class="review-content-containers">
+            <p class="asset-data-container-header">Identification:</p>
+            <div class="asset-data-content-containers">
+              <div class="review-components-container textarea2-group-container">
+                <!-- Asset Name -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">Asset Name:</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-assetName" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Asset Number -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">Asset Number:</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-assetNumberNBI" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Inspection Date -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">Inspection Completion Date:</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-inspectionDate" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Inspection Frequency -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">Inspection Interval:</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-inspectionFrequency" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Due Date -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">Inspection Due Date:</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-inspectionDueDate" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Structure Open/Posted/Closed -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">Structure Open/Posted/Closed:</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-postedValue" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Scour Vulnerability -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">Scour Vulnerability:</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-scourVulnerability" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Scour Critical Bridges -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">Scour Critical:</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-scourCritical" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Average Daily Traffic -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">Average Daily Traffic:</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-adtValue" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Year of Average Daily Traffic -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">Year of Average Daily Traffic:</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-adtYear" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Highway System of Inventory Route -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">Highway System of Inventory Route:</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-highwaySystem" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Channel -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">Channel:</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-channelValue" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="asset-data-container-header">Location:</p>
+            <div class="asset-data-content-containers">
+              <div class="review-components-container textarea2-group-container">
+                <!-- Contact -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">Contacts:</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-contact" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Highway Agency District -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">District:</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-highwayAgencyDistrict" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Inv Route # -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">Route:</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-invRoute" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- County Code -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">County:</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-countyCode" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Reference Post -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">Reference Post:</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-referencePostOffset" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Facility Carried -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">Facility Carried:</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-facilityCarried" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Features Intersected -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">Features Intersected:</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-featuresIntersected" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Latitude -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">Latitude:</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-latValue" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Longitude -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">Longitude:</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-longValue" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="asset-data-container-header">Inspections:</p>
+            <div class="asset-data-content-containers">
+              <div class="review-components-container textarea2-group-container">
+                <!-- NSTM Inspection Required -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">NSTM Inspection Required</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-nstmInspRequired" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- NSTM Insp Frequency -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">NSTM Inspection Frequency</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-nstmInspFrequency" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- (93A) Critical Feature Inspection Date: NSTM Insp Date -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">NSTM Inspection Due Date:</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-nstmInspDate" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Special Inspection Required -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">Special Inspection Required</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-specialInspRequired" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Special Insp Frequency -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">Special Inspection Frequency</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-specialInspFrequency" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- (93C) Critical Feature Inspection Date: Special Insp Date -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">Special Inspection Due Date:</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-specialInspDate" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Underwater Inspection Required -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">Underwater Inspection Required</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-underwaterInspRequired" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Underwater Insp Frequency -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">Underwater Inspection Frequency</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-underwaterInspFrequency" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- (93B) Critical Feature Inspection: Underwater Insp Date -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">Underwater Inspection Due Date:</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-underwaterInspDate" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="asset-data-container-header">Primary Ratings:</p>
+            <div class="asset-data-content-containers">
+              <div class="review-components-container textarea2-group-container">
+                <!-- Deck -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">Deck:</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-deck" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Superstructure -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">Superstructure:</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-superstructure" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Substructure -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">Substructure:</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-substructure" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Culverts -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">Culvert:</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-culvert" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Lowest -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">Lowest Condition Rating Code (B.C.13):</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-lowestValue" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="asset-data-container-header">Material & Type:</p>
+            <div class="asset-data-content-containers">
+              <div class="review-components-container textarea2-group-container">
+                <!-- (45) Number of Spans in Main Unit -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">Number Of Main Spans:</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-mainSpans" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- (43A) Structure Type, Main: Kind of Material -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">Main Spans: Material:</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-mainMatType" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- (43B) Structure Type, Main: Type of Design -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">Main Spans: Design:</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-mainDesignType" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- (107) Deck Structure Type -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">Deck Structure Type:</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-deckStructureType" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- (108A) Wearing Surface Protection System: Wearing Surface -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">Type Of Wearing Surface:</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-wearingSurfaceType" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Approach Spans -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">Number Of Approach Spans:</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-approachSpans" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- (44A) Structure Type, Approach Spans: Kind of Material -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">Approach Spans: Material:</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-approachMatType" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- (44B) Structure Type, Approach Spans: Type of Design -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">Approach Spans: Design:</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-approachDesignType" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- (108B) Wearing Surface Protection System: Deck Membrane -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">Type Of Deck Membrane:</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-deckMembraneType" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- (108C) Wearing Surface Protection System: Deck Protection -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">Type Of Deck Protection:</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-deckProtectionType" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="asset-data-container-header">Geometry:</p>
+            <div class="asset-data-content-containers">
+              <div class="review-components-container textarea2-group-container">
+                <!-- Bridge Roadway Width Curb-To-Curb -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">Roadway Width Curb-To-Curb:</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-brdgWidthCurbToCurb" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Deck Width, Out-To-Out -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">Deck Width Out-To-Out:</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-deckWidthOutToOut" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Structure Length -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">Structure Length:</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-structureLength" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Skew -->
+                <div class="textarea-group">
+                  <p class="paragraph-rating2">Skew:</p>
+                  <div class="content-container-paragraphs">
+                    <div class="textarea-containers2">
+                      <div class="textarea-mirrors2">
+                        <textarea id="asset-textarea-skewValue" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- :::: Culvert Asset Tab -->
       <div id="culvert-asset-tab" class="asset-containers">
         <div class="main-content-containers">
           <button
@@ -4381,6 +5090,7 @@
             Example Comments
           </button>
         </div>
+        <!-- :: Culvert Rating Guidance Concrete Tab -->
         <div id="culvert-rating-guidance-concrete-tab" class="culvert-item-containers" style="display: block">
           <div class="culvert-content-cards-container">
             <div class="culvert-content-cards">
@@ -4615,6 +5325,7 @@
             <div class="culvert-content-cards"><p class="culvert-card-header">Links:</p></div>
           </div>
         </div>
+        <!-- :: Culvert Rating Guidance Steel Tab -->
         <div id="culvert-rating-guidance-steel-tab" class="culvert-item-containers">
           <div class="culvert-content-cards-container">
             <div class="culvert-content-cards">
@@ -4855,6 +5566,7 @@
             <div class="culvert-content-cards"><p class="culvert-card-header">Links:</p></div>
           </div>
         </div>
+        <!-- :: Culvert Naming Convention Tab -->
         <div id="culvert-naming-convention-tab" class="culvert-item-containers">
           <div class="naming-conventions-content-cards-container">
             <div class="naming-conventions-content-cards">
@@ -4892,6 +5604,7 @@
             </div>
           </div>
         </div>
+        <!-- :: Culvert Report Walkthrough Tab -->
         <div id="culvert-report-walkthrough-tab" class="culvert-item-containers">
           <div class="report-walkthrough-content-cards-container">
             <div class="report-walkthrough-content-cards">
@@ -5050,6 +5763,7 @@
             </div>
           </div>
         </div>
+        <!-- :: Culvert Rating Guidance Concrete Tab -->
         <div id="culvert-example-comments-tab" class="culvert-item-containers">
           <div class="main-content-containers">
             <div class="content-container-paragraphs">
@@ -5080,6 +5794,7 @@
         </div>
       </div>
 
+      <!-- :::: Wall Asset Tab -->
       <div id="wall-asset-tab" class="asset-containers">
         <div class="main-content-containers">
           <button class="wall-item-buttons active" data-target="wall-inspection-tab" data-container-class="wall-item-containers" data-button-class="wall-item-buttons">
@@ -5096,6 +5811,7 @@
             Example Comments
           </button>
         </div>
+        <!-- :: Wall Inspection Tab -->
         <div id="wall-inspection-tab" class="wall-item-containers" style="display: block">
           <div class="main-content-containers">
             <div class="content-container-paragraphs">
@@ -5113,6 +5829,7 @@
             </div>
           </div>
         </div>
+        <!-- :: Wall Rating Primary Tab -->
         <div id="wall-rating-primary-tab" class="wall-item-containers">
           <div class="wall-numeric-ratings-container">
             <div class="main-content-containers wall-rating-flex-items">
@@ -5187,6 +5904,7 @@
             </div>
           </div>
         </div>
+        <!-- :: Wall Rating Secondary Tab -->
         <div id="wall-rating-secondary-tab" class="wall-item-containers">
           <div class="wall-numeric-ratings-container">
             <div class="main-content-containers wall-rating-flex-items">
@@ -5235,6 +5953,7 @@
             </div>
           </div>
         </div>
+        <!-- :: Wall Type Tab -->
         <div id="wall-type-tab" class="wall-item-containers">
           <div class="wall-numeric-ratings-container">
             <div class="wall-content-cards-container">
@@ -5275,6 +5994,7 @@
             </div>
           </div>
         </div>
+        <!-- :: Wall Comments Tab -->
         <div id="wall-comments-tab" class="wall-item-containers">
           <div class="main-content-containers">
             <div class="content-container-paragraphs">
@@ -5301,6 +6021,7 @@
         </div>
       </div>
 
+      <!-- :::: Glossary Tab -->
       <div id="glossary-asset-tab" class="asset-containers">
         <div class="main-content-containers">
           <button class="glossary-item-buttons active" data-target="glossary-defects-tab" data-container-class="glossary-item-containers" data-button-class="glossary-item-buttons">
@@ -5316,15 +6037,19 @@
             Counties
           </button>
         </div>
+        <!-- :: Glossary Defects Tab -->
         <div id="glossary-defects-tab" class="glossary-item-containers" style="display: block">
           <div class="glossary-numeric-ratings-container"></div>
         </div>
+        <!-- :: Glossary Bridge Tab -->
         <div id="glossary-bridge-tab" class="glossary-item-containers">
           <div class="glossary-numeric-ratings-container"></div>
         </div>
+        <!-- :: Glossary Wall Tab -->
         <div id="glossary-wall-tab" class="glossary-item-containers">
           <div class="glossary-numeric-ratings-container"></div>
         </div>
+        <!-- :: Glossary County Tab -->
         <div id="glossary-county-tab" class="glossary-item-containers">
           <div class="glossary-numeric-ratings-container">
             <div class="glossary-content-cards">
@@ -5431,7 +6156,7 @@
       <div class="footer-spacer"></div>
     </main>
 
-    <!-- ------------------------------------------------------------- Footer ------------------------------------------------------------- -->
+    <!-- ::::: --------------------------- Footer --------------------------- -->
 
     <footer class="footer">
       <div class="outer-container">
