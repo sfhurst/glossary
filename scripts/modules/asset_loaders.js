@@ -77,7 +77,7 @@ function generateSummary(assetNumber) {
   const membraneResponse =
     assetValues.underfillValue === "N" && (assetValues.deckStructureType === "1" || assetValues.deckStructureType === "2") && assetValues.wearingSurfaceType === "6"
       ? ["0", "8", "N"].includes(assetValues.membraneValue)
-        ? "There is not an agency-approved protective membrane between the concrete deck and the bituminous wearing surface. As a result, the wearing surface rating must be a 4, as outlined in Part 7 of the INDOT Bridge Inspection Manual."
+        ? "There is not an agency-approved protective membrane between the concrete deck and the bituminous wearing surface. As a result, the wearing surface rating must be a 4, as outlined in Part 7 of INDOT's 2020 Bridge Inspection Manual."
         : "There is an agency-approved protective membrane between the concrete deck and the bituminous wearing surface."
       : "";
 
