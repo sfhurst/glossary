@@ -40,6 +40,17 @@
     <!-- Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
   </head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6Q10KZ4LKS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-6Q10KZ4LKS");
+  </script>
 
   <body>
     <!-- ::::: --------------------------- Header --------------------------- -->
@@ -5788,6 +5799,22 @@
             <div class="textarea-containers">
               <div class="textarea-mirrors">
                 <textarea id="Culvert-textarea" class="textarea-comments" name="Culvert" rows="1" oninput="expandTextarea(event, 'Culvert-textarea')"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="main-content-containers">
+          <p class="paragraph-rating">Channel Comments:</p>
+          <div class="content-container-paragraphs">
+            <div class="textarea-containers">
+              <div class="textarea-mirrors">
+                <textarea
+                  id="CulvertChannel-textarea"
+                  class="textarea-comments"
+                  name="CulvertChannel"
+                  rows="1"
+                  oninput="expandTextarea(event, 'CulvertChannel-textarea')"
+                ></textarea>
               </div>
             </div>
           </div>
