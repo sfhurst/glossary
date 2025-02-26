@@ -22,7 +22,8 @@
     <script src="./scripts/modules/maintenance.js" defer></script>
     <script src="./scripts/modules/walls.js" defer></script>
     <script src="./scripts/modules/glossaries.js" defer></script>
-    <script src="./scripts/modules/asset_data.js" defer></script>
+    <script src="./data/asset_data.js" defer></script>
+    <script src="./data/history.js" defer></script>
     <script src="./scripts/modules/defects.js" defer></script>
     <script src="./scripts/modules/comment_builder.js" defer></script>
     <script src="./scripts/modules/asset_loaders.js" defer></script>
@@ -865,7 +866,7 @@
               class="bridge-railings-buttons alt1-buttons active"
               data-target="bridge-railings-pg2"
               data-container-class="bridge-railings-containers"
-              data-button-class="bridge-railings-buttons alt1-buttons"
+              data-button-class="bridge-railings-buttons"
             >
               Rating Table
             </button>
@@ -2678,7 +2679,7 @@
               class="bridge-channel-buttons alt1-buttons active"
               data-target="bridge-channel-pg2"
               data-container-class="bridge-channel-containers"
-              data-button-class="bridge-channel-buttons alt1-buttons"
+              data-button-class="bridge-channel-buttons"
             >
               Rating Table
             </button>
@@ -4452,6 +4453,36 @@
                 </div>
               </div>
             </div>
+            <div class="main-content-containers">
+              <h3 class="content-container-links-line-label">Links:</h3>
+              <a class="content-container-links-line-links" rel="noopener noreferrer" target="”_tab”" href="https://www.fhwa.dot.gov/bridge/snbi/snbi_march_2022_publication.pdf"
+                >SNBI</a
+              >
+              <a
+                class="content-container-links-line-links"
+                rel="noopener noreferrer"
+                target="”_tab”"
+                href="https://www.in.gov/dot/div/contracts/standards/bridge_inspection/inspector_manual/index.htm"
+                >BIM</a
+              >
+              <a
+                id="footerStop"
+                class="content-container-links-line-links"
+                rel="noopener noreferrer"
+                target="”_tab”"
+                href="https://www.in.gov/dot/div/contracts/standards/bridge_inspection/pubs/1995%20Recording%20and%20Coding%20Guide%20for%20the%20Structural%20Inventory%20and%20Appraisal%20of%20the%20Nations%20Bridges.pdf"
+                >Coding Guide</a
+              >
+              <a
+                id="footerStop"
+                class="content-container-links-line-links"
+                rel="noopener noreferrer"
+                target="”_tab”"
+                href="https://www.in.gov/dot/div/contracts/standards/drawings/index.html"
+                >Standard Drawings</a
+              >
+              <a id="footerStop" class="content-container-links-line-links" rel="noopener noreferrer" target="”_tab”" href="https://spms.indot.in.gov/spms/Dashboard/Home">SPMS</a>
+            </div>
           </div>
           <!-- :: Bridge Review Tab Page 3 -->
           <!-- ::: -->
@@ -4562,6 +4593,11 @@
                     <div class="textarea-containers2">
                       <div class="textarea-mirrors2">
                         <textarea id="asset-textarea-adtValue" rows="1" class="textarea-comments2"></textarea>
+                      </div>
+                      <div class="adt-icon-container">
+                        <a href="https://indot.public.ms2soft.com/tcds/tsearch.asp?loc=indot&mod=tcds" target="_blank">
+                          <button class="material-symbols-outlined adt-icon" type="button">search</button>
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -4909,7 +4945,7 @@
 
                 <!-- (43A) Structure Type, Main: Kind of Material -->
                 <div class="textarea-group">
-                  <p class="paragraph-rating2">Main Spans: Material:</p>
+                  <p class="paragraph-rating2">Main Spans - Material:</p>
                   <div class="content-container-paragraphs">
                     <div class="textarea-containers2">
                       <div class="textarea-mirrors2">
@@ -4921,7 +4957,7 @@
 
                 <!-- (43B) Structure Type, Main: Type of Design -->
                 <div class="textarea-group">
-                  <p class="paragraph-rating2">Main Spans: Design:</p>
+                  <p class="paragraph-rating2">Main Spans - Design:</p>
                   <div class="content-container-paragraphs">
                     <div class="textarea-containers2">
                       <div class="textarea-mirrors2">
@@ -4969,7 +5005,7 @@
 
                 <!-- (44A) Structure Type, Approach Spans: Kind of Material -->
                 <div class="textarea-group">
-                  <p class="paragraph-rating2">Approach Spans: Material:</p>
+                  <p class="paragraph-rating2">Approach Spans - Material:</p>
                   <div class="content-container-paragraphs">
                     <div class="textarea-containers2">
                       <div class="textarea-mirrors2">
@@ -4981,7 +5017,7 @@
 
                 <!-- (44B) Structure Type, Approach Spans: Type of Design -->
                 <div class="textarea-group">
-                  <p class="paragraph-rating2">Approach Spans: Design:</p>
+                  <p class="paragraph-rating2">Approach Spans - Design:</p>
                   <div class="content-container-paragraphs">
                     <div class="textarea-containers2">
                       <div class="textarea-mirrors2">
@@ -5003,13 +5039,13 @@
                   </div>
                 </div>
 
-                <!-- (108C) Wearing Surface Protection System: Deck Protection -->
+                <!-- (58.01) Wearing Surface -->
                 <div class="textarea-group">
-                  <p class="paragraph-rating2">Type Of Deck Protection:</p>
+                  <p class="paragraph-rating2">Wearing Surface Rating:</p>
                   <div class="content-container-paragraphs">
                     <div class="textarea-containers2">
                       <div class="textarea-mirrors2">
-                        <textarea id="asset-textarea-deckProtectionType" rows="1" class="textarea-comments2"></textarea>
+                        <textarea id="asset-textarea-wearingSurface" rows="1" class="textarea-comments2"></textarea>
                       </div>
                     </div>
                   </div>
@@ -6057,8 +6093,11 @@
           <button class="glossary-item-buttons" data-target="glossary-bridge-tab" data-container-class="glossary-item-containers" data-button-class="glossary-item-buttons">
             SNBI & Bridge
           </button>
+          <button class="glossary-item-buttons" data-target="glossary-culvert-tab" data-container-class="glossary-item-containers" data-button-class="glossary-item-buttons">
+            Culvert
+          </button>
           <button class="glossary-item-buttons" data-target="glossary-wall-tab" data-container-class="glossary-item-containers" data-button-class="glossary-item-buttons">
-            Walls
+            Wall
           </button>
           <button class="glossary-item-buttons" data-target="glossary-county-tab" data-container-class="glossary-item-containers" data-button-class="glossary-item-buttons">
             Counties
@@ -6070,6 +6109,10 @@
         </div>
         <!-- :: Glossary Bridge Tab -->
         <div id="glossary-bridge-tab" class="glossary-item-containers">
+          <div class="glossary-numeric-ratings-container"></div>
+        </div>
+        <!-- :: Glossary Culvert Tab -->
+        <div id="glossary-culvert-tab" class="glossary-item-containers">
           <div class="glossary-numeric-ratings-container"></div>
         </div>
         <!-- :: Glossary Wall Tab -->

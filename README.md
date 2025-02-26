@@ -11,7 +11,12 @@ A tabbed inspection manual with built-in report tools
   - [Requirements](#requirements)
   - [Data Updates](#data-updates)
 - [Code Practices](#code-practices)
+  - [Webpage Layout](#webpage-layout)
+  - [How to Use](#how-to-use)
+  - [Offline Usage](#offline-usage)
 - [Usage](#usage)
+- [Technologies](#technologies)
+- [License](#license)
 
 ## Overview
 
@@ -105,6 +110,14 @@ The **Bridge Inspection Report Companion Tool** is organized into a tabbed inter
 - Since the tool is fully functional locally, you can open the `index.html` file in any modern browser and start using it immediately, without needing a server or internet connection.
 
 This tool simplifies the inspection report writing process by consolidating all the necessary resources into one interface, making it easier for inspectors and engineers to create comprehensive and accurate reports.
+
+## Technologies
+
+- **HTML, CSS, JavaScript** – Core technologies for building the web interface.
+- **ZURB Foundation** – Responsive front-end framework used for styling and layout.
+- **GitHub Pages** – Hosting platform for serving the tool.
+- **jsDelivr** – CDN for delivering external libraries efficiently.
+- **Google Fonts API** – Used for typography and font styling.
 
 ## License
 

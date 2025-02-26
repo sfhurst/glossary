@@ -55,13 +55,6 @@ button.active {
   color: var(--active-button-text-color2);
 }
 
-.button-icon {
-  opacity: 0;
-  cursor: default;
-  transition: 0.8s;
-  /* position: absolute; */
-}
-
 .asset-update-text {
   margin-left: 20px;
   color: rgba(233 233 233 / 0.6);
@@ -289,6 +282,7 @@ button.active {
 .textarea-containers2 {
   width: 100%;
   border: none;
+  position: relative; /* Required for positioning the icon */
 }
 
 .textarea-containers2:hover,
@@ -300,7 +294,6 @@ button.active {
 .textarea-mirrors2 {
   display: grid;
   margin-left: 0px;
-  /* padding: 3px 5px 0 3px; */
   text-align: left;
 }
 
@@ -328,6 +321,39 @@ button.active {
   transition: 3s;
   color: rgb(172, 172, 172);
   color: var(--text-color);
+}
+
+.adt-icon-container {
+  position: absolute;
+  right: -15px; /* Position the icon to the right edge */
+  top: 50%;
+  transform: translateY(-50%); /* Center vertically */
+}
+
+.adt-icon {
+  font-size: 18px; /* Adjust size as needed */
+  font-weight: 500;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  margin: 2px 8px 2px 0;
+  background-color: var(--inactive-button-color1);
+  color: var(--inactive-button-text-color1);
+  border-radius: 10px;
+  user-select: none;
+  transition: 0.8s;
+}
+
+.adt-icon:hover {
+  color: var(--color-yellow);
+}
+
+.adt-icon:active {
+  /* transform: rotate(20deg); */
+  left: 4px;
+  top: 0px;
+  color: var(--color-red);
 }
 
 .textarea2-group-container {
@@ -522,19 +548,44 @@ button.active {
 .component-maintenance-button3,
 .component-maintenance-button4 {
   margin: 4px 5px;
+  background-color: rgba(128, 128, 128, 0); /* Default transparent background */
+  border: solid 2px;
+  transition: background-color 0.3s ease; /* Smooth transition for background change */
 }
 
+/* Button states for maintenance buttons */
 .component-maintenance-button1 {
-  background-color: gray;
+  border: solid 2px rgba(128, 128, 128, 0.3);
+  background-color: rgba(128, 128, 128, 0.3);
 }
 .component-maintenance-button2 {
-  background-color: rgb(19, 114, 19);
+  border: solid 2px rgba(19, 114, 19, 0.3);
+  background-color: rgba(19, 114, 19, 0.3);
 }
 .component-maintenance-button3 {
-  background-color: rgb(177, 177, 33);
+  border: solid 2px rgba(177, 177, 33, 0.3);
+  background-color: rgba(177, 177, 33, 0.3);
 }
 .component-maintenance-button4 {
-  background-color: rgb(158, 33, 33);
+  border: solid 2px rgba(158, 33, 33, 0.3);
+  background-color: rgba(158, 33, 33, 0.3);
+}
+
+.component-maintenance-button1.active-maintenance {
+  background-color: rgba(128, 128, 128, 1);
+  border: solid 2px rgba(128, 128, 128, 1);
+}
+.component-maintenance-button2.active-maintenance {
+  background-color: rgba(19, 114, 19, 1);
+  border: solid 2px rgba(19, 114, 19, 1);
+}
+.component-maintenance-button3.active-maintenance {
+  background-color: rgba(177, 177, 33, 1);
+  border: solid 2px rgba(177, 177, 33, 1);
+}
+.component-maintenance-button4.active-maintenance {
+  background-color: rgba(158, 33, 33, 1);
+  border: solid 2px rgba(158, 33, 33, 1);
 }
 
 .component-maintenance-item {

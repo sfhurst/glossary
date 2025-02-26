@@ -181,19 +181,17 @@ body {
 .button-icon {
   border: none;
   outline: none;
-  cursor: pointer;
   padding: 4px 8px;
   margin: 2px 8px 2px 0;
-  transition: 0.3s;
   background-color: var(--inactive-button-color1);
   color: var(--inactive-button-text-color1);
   /* border: 2px solid #ccc; */
   border-radius: 10px;
-
-  cursor: pointer;
+  cursor: default;
   user-select: none;
-  transition: 0.25s;
   font-weight: 500;
+  opacity: 0;
+  transition: 0.8s;
 }
 
 .button-icon:hover {

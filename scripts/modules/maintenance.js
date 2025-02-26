@@ -1,3 +1,5 @@
+// 1. Define Maintenance Task Categories
+// Each array contains objects with a task number and name, categorized by bridge components.
 const alignmentMaintenanceTasks = [
   { number: 2, name: "Attenuator Repair", },
   { number: 14, name: "Signage Install / Signage Repair", },
@@ -55,6 +57,8 @@ const channelMaintenanceTasks = [
   { number: 10, name: "Erosion Control / Riprap", },
 ];
 
+// 2. Group Tasks with Associated Containers
+// Each category is mapped to a container ID where the tasks will be displayed in the HTML.
 const maintenanceTasks = [
   { tasks: alignmentMaintenanceTasks, containerID: "alignment-maintenance-container" },
   { tasks: approachMaintenanceTasks, containerID: "approach-maintenance-container" },
@@ -68,7 +72,8 @@ const maintenanceTasks = [
   { tasks: channelMaintenanceTasks, containerID: "channel-maintenance-container" },
 ]
 
-// Loop through each component in the maintenanceTasks array and add a header row to the container
+// 3. Generate Task Elements in the DOM
+// Loops through each maintenance category and adds corresponding elements to the DOM.
 maintenanceTasks.forEach(component => {
   const maintenancePageContainer = document.getElementById(component.containerID);
 
@@ -112,6 +117,8 @@ maintenanceTasks.forEach(component => {
 
 });
 
+// 4. Define Repair Task List
+// Creates a standardized list of repair task names with dynamically assigned numbers.
 const repairTaskNames = [
   "Approach Repair",
   "Attenuator Repair",
@@ -133,7 +140,7 @@ const repairTaskNames = [
   "Superstructure Repair"
 ];
 
-// Dynamically assign numbers to each task
+// Assign numbers to repair tasks dynamically
 const repairTasks = repairTaskNames.map((name, index) => ({
   number: index + 1,  // Dynamically assign the number starting from 1
   name: name
@@ -143,24 +150,24 @@ const repairTasks = repairTaskNames.map((name, index) => ({
 
 // console.log(bridgeElements[9].elements[5].name)
 
-// Reference the container whose innerHTML is being dynamically created
+// 5. Generate Repair Tasks in the DOM
 const maintenanceContainter = document.getElementById('maintenance-container');
 
-// Clear out the innerHTML so you can work out the js (remove when working)
+// Clear existing content
 maintenanceContainter.innerHTML = '';
 
-// Create a header
+// Create and append header
 const header = document.createElement('div');
 header.className = 'elements-segment-header';
 header.textContent = "Maintenance Items:";
 maintenanceContainter.appendChild(header);
 
-// Loop through each repair and add an repairContainer row to the container
+// Loop through each repair task and generate UI elements
 repairTasks.forEach(repairItem => {
   const repairContainer = document.createElement('div');
   repairContainer.className = 'component-maintenance-container';
 
-  // Add the child buttons for deficiencies to repairContainer row
+  // Create deficiency buttons
   for (let i = 1; i <= 4; i++) {
     const button = document.createElement('button');
     button.id = `bridge-maintenance-bt${repairItem.number}-${i}`;
@@ -182,13 +189,13 @@ repairTasks.forEach(repairItem => {
     repairContainer.appendChild(button);
   }
 
-  // Add the repair name to the repairContainer row
+  // Add repair task name
   const item = document.createElement('div');
   item.className = 'component-maintenance-item';
   item.textContent = `${repairItem.name}`;
   repairContainer.appendChild(item);
 
-  // Add the repairContainer to the container
+  // Append to main container
   maintenanceContainter.appendChild(repairContainer);
 });
 

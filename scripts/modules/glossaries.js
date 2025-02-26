@@ -649,3 +649,63 @@ const indianaCounties = [
   { number: 91, name: "White" },
   { number: 92, name: "Whitley" },
 ];
+
+const culvertTerms = [
+  { term: "Abrasion", definition: "Wearing or grinding away of material by water containing sand, gravel, or stones." },
+  {
+    term: "Abrasive Condition",
+    definition: "The presence of granular material accompanied with a stream gradient or flow sufficient to cause movement of the granular material in the streambed.",
+  },
+  { term: "Barrel", definition: "The main body of a culvert structure that transports water beneath the roadway." },
+  {
+    term: "Blistering",
+    definition: "Process of water infiltrating the first layer of a fiberglass-reinforced plastic large culvert structure causing bubbles to form near the surface.",
+  },
+  { term: "Channel", definition: "A waterway used to transport water from one location to another." },
+  { term: "Corrosion", definition: "Deterioration or dissolution of a material by chemical or electrochemical reaction with the surrounding environment." },
+  { term: "Cover", definition: "The depth of backfill present between the top of a culvert structure and the base layer of the roadway." },
+  {
+    term: "Culvert",
+    definition:
+      "A structure located beneath a roadway where it intersects with a waterway. The structure provides a structural function of support to the roadway above while allowing waterway movement through the embankment below.",
+  },
+  { term: "Deflection", definition: "Change in the original or specified vertical or horizontal measurement of a culvert structure." },
+  { term: "Delamination", definition: "Separation of a layer of concrete generally through internal cracking parallel to the concrete surface." },
+  { term: "Deterioration", definition: "Decline in quality over time due to chemical or physical wearing." },
+  { term: "Differential Settlement", definition: "Uneven settlement between footings or supports." },
+  { term: "Efflorescence", definition: "Deposits of salts on the surface of a porous material caused by the migration of salt-laden water to the surface." },
+  { term: "Embankment", definition: "Soil constructed above the natural ground surface that encases a culvert structure and supports a roadway." },
+  { term: "Erosion", definition: "The removal of a material or surface over time by flowing water." },
+  { term: "Exfiltration", definition: "The process of water exiting a culvert structure and entering the surrounding soil through unintended openings." },
+  { term: "Flexible Culvert", definition: "A culvert that relies on a consistent application of pressure from the surrounding soil envelope to develop structural strength." },
+  { term: "Galvanization", definition: "Application of zinc coating along the surface of a structure." },
+  { term: "Infiltration", definition: "The process of water or backfill material entering the culvert structure through unintended openings." },
+  { term: "Inlet", definition: "The initial 5 ft of the upstream end of a culvert structure." },
+  { term: "Invert", definition: "The bottom or lowest region along the internal surface of a pipe." },
+  {
+    term: "Joint",
+    definition: "Connection where two sections of a culvert structure meet. Additional material may be present to ensure a watertight connection between sections.",
+  },
+  {
+    term: "Large Culvert",
+    definition: "A culvert structure with a measured span length between 4 ft and 20 ft as measured perpendicular to the centerline of the parent roadway.",
+  },
+  { term: "Outlet", definition: "The final 5 ft of the downstream end of a culvert structure." },
+  { term: "Piping", definition: "The process of erosion along the exterior perimeter of a culvert barrel." },
+  { term: "Pressure Head", definition: "Height of water above a plane or point of reference." },
+  { term: "Rehabilitation", definition: "Repairing a culvert to return it to its initial condition or better." },
+  { term: "Replacement", definition: "Removal of existing structure and construction of a new culvert." },
+  { term: "Rigid Culvert", definition: "A culvert that relies on internal material properties to develop structural strength." },
+  { term: "Scaling", definition: "Disintegration of cement paste caused by chemical attacks or freeze-thaw cycles that erode the concrete surface." },
+  { term: "Scour", definition: "Erosion of the streambed of a channel where it meets the inlet and outlet of a culvert structure." },
+  { term: "Section Loss", definition: "Loss of a material’s thickness caused by chemical or physical degradation." },
+  { term: "Slabbing", definition: "Straightening of rounded concrete sections accompanied by cracking and/or spalls." },
+  { term: "Soil Envelope", definition: "Soil or backfill encasing a culvert structure and applying pressure due to the weight of the soil." },
+  { term: "Spalling", definition: "Separation of surface concrete due to fractures within the material." },
+  { term: "Spring Line", definition: "A line connecting the outermost points along the sides of a large culvert structure." },
+  {
+    term: "Undermining",
+    definition: "Erosion process that removes material from below and threatens the structural integrity of the above member; typically occurs around footings and other supports.",
+  },
+  { term: "Vertical Offset", definition: "Displacement of an object from its original position in the vertical direction." },
+];

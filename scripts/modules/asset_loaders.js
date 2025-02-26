@@ -1,3 +1,13 @@
+// Table of Contents
+// ::: Get the code and code description | getCodeDescription(variable, code)
+// ::: Asset Search Box | console.log(getGoogleMapsLink(latValue, longValue)) | updateMapButton(latValue, longValue) | displaySummary(asset)
+// ::: generateSummary(assetNumber) | extractAssetDetails(assetNumber) | populateTextareas(assetNumber)
+// ::: displaySummary() | generateSummary() | expandTextarea({ target: contentContainer }, "summary-textarea")
+// ::: getGoogleMapsLink(latValue, longValue)
+// ::: updateMapButton(latValue, longValue)
+// ::: populateTextareas(assetNumber) | getCodeDescription(variable, code) 
+// ::: extractAssetDetails(assetNumber)
+
 // ::: -------------------------------------------------------- Get the code and code description --------------------------------------------------------
 function getCodeDescription(variable, code) {
   const category = bridgeData.find((item) => item.variable == variable);
@@ -10,32 +20,60 @@ function getCodeDescription(variable, code) {
 }
 
 // ::: -------------------------------------------------------- Asset Search Box --------------------------------------------------------
+
+// Global variable to store the formatted history
+let formattedHistory = "";
+let searchValue = ""; // Declare outside to track its value
+
 // Event Listener Setup (Triggers on Enter Key)
 document.querySelector(".search-box").addEventListener("keydown", function (event) {
   if (event.key !== "Enter") return; // Ensures only Enter triggers the search
   event.preventDefault();
 
   // Retrieves the Search Input Value
-  let searchValue = this.value.trim().toLowerCase();
+  searchValue = this.value.trim().toLowerCase();
 
-  // Handles "random" Keyword: If user enters "random", pick a random asset number
+  // Handles "random" Keyword: If user enters "random", keep it as "random" in the search box
   if (searchValue === "random") {
-    searchValue = jsonData[Math.floor(Math.random() * jsonData.length)]["Asset Number"];
+    // Keep "random" in the search box, no modification needed
+    this.value = "random"; // Ensures "random" stays in the search box
+    // Pick a random asset number for searching
+    searchValue = assetData[Math.floor(Math.random() * assetData.length)]["Asset Number"];
+  } else if (/^\d+$/.test(searchValue)) {
+    // If the input is purely numeric, pad with leading zeros to make it 6 digits
+    searchValue = searchValue.padStart(6, "0");
+    this.value = searchValue;  // Update the search box with the padded value
   }
 
-  // Searches for the Asset in jsonData
-  const asset = jsonData.find((item) => item["Asset Number"].toLowerCase() === searchValue);
+  // Searches for the Asset in assetData
+  const asset = assetData.find((item) => item["Asset Number"].toLowerCase() === searchValue);
 
   // Handles Not Found Case
   const searchID = document.getElementById("searchID");
 
   if (!asset) {
-    searchID.textContent = "Asset not found. Please enter the full asset number with any leading zeros.";
+    searchID.textContent = "Asset not found.";
+    searchValue = ""; // Reset searchValue if no match is found
     return;
   }
 
   // Extracts required asset data. This is not used outside this function. The asset is what gets passed and it holds everything.
   const { "Asset Name": assetName, "(16) Latitude:": latValue, "(17) Longitude:": longValue, Hyperlink: hyperlink } = asset;
+
+
+  ///////////////////////////
+
+  // Look for history data related to this asset number
+  const assetHistory = historyData[searchValue]; // Get the history from historyData
+
+  // Format history if it exists
+  if (assetHistory && assetHistory.length > 0) {
+    formattedHistory = `History:\n${assetHistory.join("\n")}`;
+  } else {
+    formattedHistory = "";
+  }
+
+  ///////////////////////////
 
   // Logs Google Maps Link for Debugging
   console.log(getGoogleMapsLink(latValue, longValue));
@@ -59,7 +97,7 @@ document.querySelector(".search-box").addEventListener("keydown", function (even
 function generateSummary(assetNumber) {
   // Extract necessary data from the asset object using descriptive variable names
   const assetValues = extractAssetDetails(assetNumber); // Returns the new asset data
-
+  
   // Populate textareas on Review | Asset Data
   // Call the function and capture the returned values
   const { lowestValue, lowestComponent } = populateTextareas(assetNumber); // Returns lowestValue and lowestComponent
@@ -210,19 +248,46 @@ function generateSummary(assetNumber) {
   const cardinalResponse = "All directions in this report are based on the roadway direction of travel and not compass readings. ";
 
   const channelResponse = assetValues.channelValue === "N" ? `The bridge is not over water.` : "";
+  const formattedHistoryResponse = formattedHistory !== "" ? `\n\n${formattedHistory}` : "";
 
+  let formattedMaintenanceComments = maintenanceArray
+    .map(item => {
+      let comment = `A ${item.category.toLowerCase()} deficiency was submitted for ${item.name.toLowerCase().replace(/\brepair\b/g, "repairs").replace(/\bseal\b/g, "sealing").replace(/\bpatch\b/g, "patching")}.`;
+      return comment.replace(/red deficiency/g, "critical find"); // Replace all instances of "red deficiency"
+    })
+    .join("\n");
+
+  const maintenanceResponse = maintenanceArray.length !== 0  
+  ? formattedMaintenanceComments  
+  : "There are no open maintenance items.";
+  
   // Combine all information into a structured summary
   const generalPara = `${spansResponse} ${wearingSurfaceTypesResponse} ${membraneResponse} ${adtResponse} The structure is ${postedResponse} and ${elementResponse}. ${scourTypesResponse} ${channelResponse} ${cardinalResponse}`;
   const generalParaCleaned = generalPara.replace(/\s{2,}/g, " ");
-  const generalNotes = `General Inspection Notes:\n${generalParaCleaned}\n\n${conditionResponse}\n\nMaintenance / Recommendations:\nThere are no open maintenance items.`;
+  const generalNotes = `General Inspection Notes:\n${generalParaCleaned}\n\n${conditionResponse}\n\nMaintenance / Recommendations:\n${maintenanceResponse}${formattedHistoryResponse}`;
 
   // Final notes is returned as the answer to the generateSummary(assetNumber);
   return generalNotes;
 }
 
 // ::: ---------------------------- displaySummary() ---------------------------------
+/**
+ * Generates a detailed bridge condition summary based on the asset number.
+ * Function Details:
+ * 1. Extracts asset details using `extractAssetDetails()`.
+ * 2. Populates textareas for review and retrieves the lowest condition rating using `populateTextareas()`.
+ * 3. Calculates span counts (approach + main spans).
+ * 4. Determines if the bridge is posted or not.
+ * 5. Checks if the bridge requires an element-level inspection.
+ * 6. Assesses whether the bridge has an approved membrane.
+ * 7. Maps numerical condition ratings to descriptive phrases.
+ * 8. Converts numerical structure types into readable descriptions (material, design, deck type, wearing surface).
+ * 9. Evaluates the bridge's scour vulnerability based on predefined classifications.
+ * 10. Constructs multiple descriptive sentences summarizing key attributes of the bridge.
+ */
 // Put the summary in the textarea on the review page and copy it to the clipboard when that textarea is clicked
 function displaySummary(assetNumber) {
+  
   // Generate the report using the previous function
   const generalNotes = generateSummary(assetNumber); // Wants the notes returned
 
@@ -445,12 +510,14 @@ function populateTextareas(assetNumber) {
   const wearingSurfaceTypeText = getCodeDescription("wearingSurfaceType", assetValues.wearingSurfaceType);
   const deckMembraneTypeText = getCodeDescription("deckMembraneType", assetValues.deckMembraneType);
   const deckProtectionTypeText = getCodeDescription("deckProtectionType", assetValues.deckProtectionType);
+
   const deckStructureTypeText = getCodeDescription("deckStructureType", assetValues.deckStructureType);
   const deckText = getCodeDescription("deck", assetValues.deck);
   const superstructureText = getCodeDescription("superstructure", assetValues.superstructure);
   const substructureText = getCodeDescription("substructure", assetValues.substructure);
   const culvertText = getCodeDescription("culvert", assetValues.culvert);
   const lowestValueText = getCodeDescription("lowestValue", lowestValue);
+  const wearingSurfaceText = getCodeDescription("deck", assetValues.wearingSurface);
 
   // List of variables and their corresponding IDs in the form
   const fields = [
@@ -502,7 +569,8 @@ function populateTextareas(assetNumber) {
     { id: "mainDesignType", value: mainDesignTypeText },
     { id: "wearingSurfaceType", value: wearingSurfaceTypeText },
     { id: "deckMembraneType", value: deckMembraneTypeText },
-    { id: "deckProtectionType", value: deckProtectionTypeText },
+    // { id: "deckProtectionType", value: deckProtectionTypeText },
+    { id: "wearingSurface", value: wearingSurfaceText },//
     { id: "deckStructureType", value: deckStructureTypeText },
 
     { id: "brdgWidthCurbToCurb", value: assetValues.brdgWidthCurbToCurb },
