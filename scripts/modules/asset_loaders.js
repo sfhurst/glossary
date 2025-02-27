@@ -5,7 +5,7 @@
 // ::: displaySummary() | generateSummary() | expandTextarea({ target: contentContainer }, "summary-textarea")
 // ::: getGoogleMapsLink(latValue, longValue)
 // ::: updateMapButton(latValue, longValue)
-// ::: populateTextareas(assetNumber) | getCodeDescription(variable, code) 
+// ::: populateTextareas(assetNumber) | getCodeDescription(variable, code)
 // ::: extractAssetDetails(assetNumber)
 
 // ::: -------------------------------------------------------- Get the code and code description --------------------------------------------------------
@@ -42,7 +42,7 @@ document.querySelector(".search-box").addEventListener("keydown", function (even
   } else if (/^\d+$/.test(searchValue)) {
     // If the input is purely numeric, pad with leading zeros to make it 6 digits
     searchValue = searchValue.padStart(6, "0");
-    this.value = searchValue;  // Update the search box with the padded value
+    this.value = searchValue; // Update the search box with the padded value
   }
 
   // Searches for the Asset in assetData
@@ -59,7 +59,6 @@ document.querySelector(".search-box").addEventListener("keydown", function (even
 
   // Extracts required asset data. This is not used outside this function. The asset is what gets passed and it holds everything.
   const { "Asset Name": assetName, "(16) Latitude:": latValue, "(17) Longitude:": longValue, Hyperlink: hyperlink } = asset;
-
 
   ///////////////////////////
 
@@ -97,7 +96,7 @@ document.querySelector(".search-box").addEventListener("keydown", function (even
 function generateSummary(assetNumber) {
   // Extract necessary data from the asset object using descriptive variable names
   const assetValues = extractAssetDetails(assetNumber); // Returns the new asset data
-  
+
   // Populate textareas on Review | Asset Data
   // Call the function and capture the returned values
   const { lowestValue, lowestComponent } = populateTextareas(assetNumber); // Returns lowestValue and lowestComponent
@@ -121,16 +120,16 @@ function generateSummary(assetNumber) {
 
   // Condition Descriptions
   const conditionDescriptions = {
-    0: "failed). The roadway has been closed.",
-    1: "imminent failure). The roadway has been closed.",
-    2: "critical condition). This rating is because of XXXXX",
-    3: "serious condition). This rating is because of XXXXX",
-    4: "poor condition). This rating is because of XXXXX",
-    5: "fair condition). This rating is because of XXXXX",
-    6: "satisfactory condition). This rating is because of XXXXX",
-    7: "good condition). This rating is for minor defects of no structural significance.",
-    8: "very good condition). There are no deficiencies to report.",
-    9: "excellent condition). There are no deficiencies to report.",
+    0: "(failed). The roadway has been closed.",
+    1: "(imminent failure). The roadway has been closed.",
+    2: "(critical condition). This rating is for XXXXX",
+    3: "(serious condition). This rating is for XXXXX",
+    4: "(poor condition). This rating is for XXXXX",
+    5: "(fair condition). This rating is for XXXXX",
+    6: "(satisfactory condition). This rating is for XXXXX",
+    7: "(good condition). This rating is for minor defects of no structural significance.",
+    8: "(very good condition). There are no deficiencies to report.",
+    9: "(excellent condition). There are no deficiencies to report.",
   };
   const conditionDescription = conditionDescriptions[lowestValue] || "";
 
@@ -234,7 +233,8 @@ function generateSummary(assetNumber) {
   // Scour status and vulnerability response mapping based on provided values
   const scourTypesResponse = scourTypes[assetValues.scourVulnerability] || "";
 
-  const conditionResponse = `The lowest condition rating (B.C.13) for the bridge is the ${lowestComponent} rating of ${lowestValue} (${conditionDescription}`;
+  // const conditionResponse = `The lowest condition rating (B.C.13) for the bridge is the a ${lowestComponent} rating of ${lowestValue} ${conditionDescription}`.replace("a 8", "an 8");
+  const conditionResponse = `The lowest condition rating (B.C.13) for the bridge is a ${lowestValue} ${conditionDescription}`.replace("a 8", "an 8");
 
   const approachSpansPlural = assetValues.approachSpans === 1 ? "span" : "spans";
   const mainSpansPlural = assetValues.mainSpans === 1 ? "span" : "spans";
@@ -251,16 +251,18 @@ function generateSummary(assetNumber) {
   const formattedHistoryResponse = formattedHistory !== "" ? `\n\n${formattedHistory}` : "";
 
   let formattedMaintenanceComments = maintenanceArray
-    .map(item => {
-      let comment = `A ${item.category.toLowerCase()} deficiency was submitted for ${item.name.toLowerCase().replace(/\brepair\b/g, "repairs").replace(/\bseal\b/g, "sealing").replace(/\bpatch\b/g, "patching")}.`;
+    .map((item) => {
+      let comment = `A ${item.category.toLowerCase()} deficiency was submitted for ${item.name
+        .toLowerCase()
+        .replace(/\brepair\b/g, "repairs")
+        .replace(/\bseal\b/g, "sealing")
+        .replace(/\bpatch\b/g, "patching")}.`;
       return comment.replace(/red deficiency/g, "critical find"); // Replace all instances of "red deficiency"
     })
     .join("\n");
 
-  const maintenanceResponse = maintenanceArray.length !== 0  
-  ? formattedMaintenanceComments  
-  : "There are no open maintenance items.";
-  
+  const maintenanceResponse = maintenanceArray.length !== 0 ? formattedMaintenanceComments : "There are no open maintenance items.";
+
   // Combine all information into a structured summary
   const generalPara = `${spansResponse} ${wearingSurfaceTypesResponse} ${membraneResponse} ${adtResponse} The structure is ${postedResponse} and ${elementResponse}. ${scourTypesResponse} ${channelResponse} ${cardinalResponse}`;
   const generalParaCleaned = generalPara.replace(/\s{2,}/g, " ");
@@ -287,7 +289,6 @@ function generateSummary(assetNumber) {
  */
 // Put the summary in the textarea on the review page and copy it to the clipboard when that textarea is clicked
 function displaySummary(assetNumber) {
-  
   // Generate the report using the previous function
   const generalNotes = generateSummary(assetNumber); // Wants the notes returned
 
@@ -570,7 +571,7 @@ function populateTextareas(assetNumber) {
     { id: "wearingSurfaceType", value: wearingSurfaceTypeText },
     { id: "deckMembraneType", value: deckMembraneTypeText },
     // { id: "deckProtectionType", value: deckProtectionTypeText },
-    { id: "wearingSurface", value: wearingSurfaceText },//
+    { id: "wearingSurface", value: wearingSurfaceText }, //
     { id: "deckStructureType", value: deckStructureTypeText },
 
     { id: "brdgWidthCurbToCurb", value: assetValues.brdgWidthCurbToCurb },
