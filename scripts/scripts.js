@@ -1,4 +1,5 @@
-const dataDate = "02/23/2025"; // Date iTAMS data was output
+const dataDate = "02/27/2025"; // Date iTAMS data was output
+document.querySelector("#asset-updated").textContent = `These are populated when an asset number is searched. The asset data was last updated on ${dataDate}.`;
 
 // Table of Contents
 // :::: (HTML Injection)
@@ -670,4 +671,155 @@ window.addEventListener("load", function () {
   const loadTimeInMilliseconds = performance.now();
   const loadTimeInSeconds = loadTimeInMilliseconds / 1000;
   console.log(`Page loaded in ${loadTimeInSeconds.toFixed(2)} seconds`);
+});
+
+// Seymour routes
+const district2Assets = assetData.filter((asset) => asset["(2) Highway Agency District:"] === 2);
+const uniqueInvRoutes = new Set(district2Assets.map((asset) => asset["Inv Route #"]));
+console.log(`Number of unique routes in Seymour: ${uniqueInvRoutes.size}`);
+
+// District assets
+const districtCounts = assetData.reduce((acc, asset) => {
+  const district = asset["(2) Highway Agency District:"]; // Get district value
+
+  if (district !== undefined) {
+    acc[district] = (acc[district] || 0) + 1; // Count occurrences
+  }
+
+  return acc;
+}, {});
+
+console.log(districtCounts);
+
+// :::: (Error Log) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+function findAssetErrors(assetData) {
+  let errors = {
+    freq: [],
+    super: [],
+    deck: [],
+    sub: [],
+    wearing: [],
+  };
+
+  assetData.forEach((assetNumber) => {
+    let assetValues = {
+      assetNumberNBI: assetNumber["Asset Number"],
+      deck: assetNumber["(58) Deck:"],
+      inspectionFrequency: assetNumber["(91) Designated Inspection Frequency:"],
+      superstructure: assetNumber["(59) Superstructure:"],
+      substructure: assetNumber["(60) Substructure:"],
+      scourCritical: parseFloat(assetNumber["(113) Scour Critical Bridges:"]),
+      mainDesignType: assetNumber["(43B) Structure Type, Main: Type of Design:"],
+      wearingSurfaceType: assetNumber["(108A) Wearing Surface Protection System: Wearing Surface"],
+      wearingSurface: assetNumber["(58.01) Wearing Surface:"],
+      deckStructureType: assetNumber["(107) Deck Structure Type:"],
+      underfillValue: assetNumber["(62) Culverts:"],
+      membraneValue: assetNumber["(108B) Wearing Surface Protection System: Deck Membrane"],
+    };
+
+    let lowestValue = Math.min(assetValues.deck, assetValues.superstructure, assetValues.substructure);
+
+    // Error Check: Frequency
+    if (parseFloat(lowestValue) < 4 && parseFloat(assetValues.inspectionFrequency) > 12) {
+      errors.freq.push(assetValues.assetNumberNBI);
+    }
+
+    // Error Check: Superstructure mismatch with main design type
+    if (parseFloat(assetValues.deck) !== parseFloat(assetValues.superstructure) && ["1", "01", 1].includes(assetValues.mainDesignType)) {
+      errors.super.push(assetValues.assetNumberNBI);
+    }
+
+    // Error Check: Deck vs Wearing Surface
+    if (assetValues.wearingSurfaceType === "1") {
+      const deckRating = parseInt(assetValues.deck, 10);
+      const wearingSurfaceRating = parseInt(assetValues.wearingSurface, 10);
+
+      if (deckRating <= 5 || wearingSurfaceRating <= 5) {
+        if (deckRating !== wearingSurfaceRating) {
+          errors.deck.push(assetValues.assetNumberNBI);
+        }
+      } else {
+        if (deckRating !== wearingSurfaceRating && deckRating !== wearingSurfaceRating + 1) {
+          errors.deck.push(assetValues.assetNumberNBI);
+        }
+      }
+    }
+
+    // Error Check: Scour Critical vs Substructure
+    if (assetValues.scourCritical <= 2) {
+      const scourCritical = parseFloat(assetValues.scourCritical);
+      const sub = parseFloat(assetValues.substructure);
+
+      if (sub > scourCritical) {
+        errors.sub.push(assetValues.assetNumberNBI);
+      }
+    }
+
+    // Error Check: Wearing Surface
+    if (
+      assetValues.underfillValue === "N" &&
+      ["1", "2"].includes(assetValues.deckStructureType) &&
+      assetValues.wearingSurfaceType === "6" &&
+      ["0", "8", "N"].includes(assetValues.membraneValue)
+    ) {
+      errors.wearing.push(assetValues.assetNumberNBI);
+    }
+  });
+
+  return errors;
+}
+
+// Example usage:
+const assetErrors = findAssetErrors(assetData);
+console.log(assetErrors);
+
+// :::: Not Sorted | Working /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Function to create and display the popup
+// Function to create and display the popup
+function showErrorPopup(button, message) {
+  // Create the temporary popup div
+  let errorPopup = document.createElement("div");
+  errorPopup.classList.add("error-popup");
+  errorPopup.innerText = message;
+
+  // Append the popup to the body
+  document.body.appendChild(errorPopup);
+
+  // Get the .textarea-group that contains the button
+  let group = button.closest(".textarea-group");
+
+  // Get the position of the .textarea-group
+  let groupRect = group.getBoundingClientRect();
+
+  // Position it below the .textarea-group and center it
+  errorPopup.style.left = `${groupRect.left + window.scrollX + groupRect.width / 2 - errorPopup.offsetWidth / 2}px`;
+  errorPopup.style.top = `${groupRect.bottom + window.scrollY + 10}px`; // Slightly below the group
+
+  // Remove popup after 3 seconds
+  setTimeout(() => {
+    errorPopup.remove();
+  }, 3000);
+}
+
+// Add event listeners for each error button
+document.querySelector("#error-freq button").addEventListener("click", function () {
+  showErrorPopup(this, "Inspection Frequency Error: When the lowest rating is below 4, the frequency must be 12 months or less.");
+});
+
+document.querySelector("#error-super button").addEventListener("click", function () {
+  showErrorPopup(this, "Deck Slab Error: The deck and superstructure ratings must match for slab bridges.");
+});
+
+document.querySelector("#error-deck button").addEventListener("click", function () {
+  showErrorPopup(this, "Monolithic Error: When the deck or wearing surface rating is below 6, they must match; otherwise, the wearing surface rating can be one less.");
+});
+
+document.querySelector("#error-sub button").addEventListener("click", function () {
+  showErrorPopup(this, "Scour Error: When the scour rating is below 3, the substructure rating must be the same or lower.");
+});
+
+document.querySelector("#error-wearing button").addEventListener("click", function () {
+  showErrorPopup(this, "Membrane Error: When there is no membrane between a concrete deck and a bituminous wearing surface, the wearing surface rating must be below 5.");
 });

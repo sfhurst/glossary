@@ -323,14 +323,16 @@ button.active {
   color: var(--text-color);
 }
 
-.adt-icon-container {
+.asset-icon-container,
+.error-icon-container {
   position: absolute;
   right: -15px; /* Position the icon to the right edge */
   top: 50%;
   transform: translateY(-50%); /* Center vertically */
 }
 
-.adt-icon {
+.asset-icon,
+.error-icon {
   font-size: 18px; /* Adjust size as needed */
   font-weight: 500;
   border: none;
@@ -338,18 +340,38 @@ button.active {
   cursor: pointer;
   padding: 4px 8px;
   margin: 2px 8px 2px 0;
-  background-color: var(--inactive-button-color1);
-  color: var(--inactive-button-text-color1);
   border-radius: 10px;
   user-select: none;
   transition: 0.8s;
 }
 
-.adt-icon:hover {
+.asset-icon {
+  background-color: var(--inactive-button-color1);
+  color: var(--inactive-button-text-color1);
+}
+
+.error-icon {
+  background-color: rgba(158, 33, 33, 0.3);
+  color: var(--inactive-button-text-color1);
+}
+
+.asset-icon:hover {
   color: var(--color-yellow);
 }
 
-.adt-icon:active {
+.error-icon:hover {
+  background-color: rgba(158, 33, 33, 0.1);
+  color: var(--color-yellow);
+}
+
+.asset-icon:active {
+  /* transform: rotate(20deg); */
+  left: 4px;
+  top: 0px;
+  color: var(--color-red);
+}
+
+.error-icon:active {
   /* transform: rotate(20deg); */
   left: 4px;
   top: 0px;
@@ -777,6 +799,22 @@ button.active {
 .light-placeholder::placeholder {
   color: #fff; /* light texty */
   opacity: 0.6; /* Ensures full opacity */
+}
+
+.error-popup {
+  position: absolute;
+  background-color: rgb(80, 50, 60);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  max-width: 300px;
+  word-wrap: break-word;
+
+  /* Optional adjustments for smoother appearance */
+  transition: opacity 0.3s ease;
 }
 
 /* ::: ---------------------------- Unknown --------------------------------- */

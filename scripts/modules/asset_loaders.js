@@ -1,15 +1,32 @@
 // Table of Contents
 // ::: Get the code and code description | getCodeDescription(variable, code)
+// Uses the assetValues variables to find their discriptions
+
 // ::: Asset Search Box | console.log(getGoogleMapsLink(latValue, longValue)) | updateMapButton(latValue, longValue) | displaySummary(asset)
+//
+
 // ::: generateSummary(assetNumber) | extractAssetDetails(assetNumber) | populateTextareas(assetNumber)
+//
+
 // ::: displaySummary() | generateSummary() | expandTextarea({ target: contentContainer }, "summary-textarea")
+//
+
 // ::: getGoogleMapsLink(latValue, longValue)
+//
+
 // ::: updateMapButton(latValue, longValue)
+//
+
 // ::: populateTextareas(assetNumber) | getCodeDescription(variable, code)
+//
+
 // ::: extractAssetDetails(assetNumber)
+// This takes the asset object that holds all the data and converts it to a list a variables accessible through assetValues.XXXXX_VARIABLE_NAME_HERE
 
 // ::: -------------------------------------------------------- Get the code and code description --------------------------------------------------------
 function getCodeDescription(variable, code) {
+  // Example Usage: const postedValueText = getCodeDescription("postedValue", assetValues.postedValue);
+
   const category = bridgeData.find((item) => item.variable == variable);
   if (!category) return "Category not found";
 
@@ -77,6 +94,9 @@ document.querySelector(".search-box").addEventListener("keydown", function (even
   // Logs Google Maps Link for Debugging
   console.log(getGoogleMapsLink(latValue, longValue));
 
+  // Hides the error icons in the asset data page
+  hideAllErrors();
+
   // Updates Map Button and Generates Summary
   updateMapButton(latValue, longValue); // No return needed
   // generateSummary(asset); // No return needed // Called again from displaySummary and returns notes
@@ -90,6 +110,12 @@ document.querySelector(".search-box").addEventListener("keydown", function (even
     window.open(hyperlink, "_blank");
   });
 });
+
+function hideAllErrors() {
+  document.querySelectorAll('[id^="error-"]').forEach((element) => {
+    element.style.display = "none";
+  });
+}
 
 // ::: ---------------------------- generateSummary() ---------------------------------
 // Function to generate a summary for an asset based on its attributes
@@ -493,6 +519,55 @@ function populateTextareas(assetNumber) {
     lowestComponent = lowest.field;
   }
 
+  ////////////////////////////////////////
+
+  // Error Checks
+  if (parseFloat(lowestValue) < 4 && parseFloat(assetValues.inspectionFrequency) > 12) {
+    document.querySelector("#error-freq").style.display = "block";
+  }
+
+  if (assetValues.deck !== assetValues.superstructure && (assetValues.mainDesignType === "1" || assetValues.mainDesignType === "01" || assetValues.mainDesignType === 1)) {
+    document.querySelector("#error-super").style.display = "block";
+  }
+
+  if (assetValues.wearingSurfaceType === "1") {
+    const deckRating = parseInt(assetValues.deck, 10); // Assuming deck is a string
+    const wearingSurfaceRating = parseInt(assetValues.wearingSurface, 10); // Assuming wearing surface is a string
+
+    if (deckRating <= 5 || wearingSurfaceRating <= 5) {
+      // Ratings should be the same if either is 5 or below
+      if (deckRating !== wearingSurfaceRating) {
+        document.querySelector("#error-deck").style.display = "block";
+      }
+    } else {
+      // Wearing surface is >= 6, deck can be 1 higher (max 9)
+      if (deckRating !== wearingSurfaceRating && deckRating !== wearingSurfaceRating + 1) {
+        document.querySelector("#error-deck").style.display = "block";
+      }
+    }
+  }
+
+  if (parseFloat(assetValues.scourCritical, 10) <= 2) {
+    const scourCritical = parseFloat(assetValues.scourCritical, 10);
+    const sub = parseFloat(assetValues.substructure, 10);
+
+    // If scourCritical is less than or equal to 2, sub must be less than or equal to scourCritical
+    if (sub > scourCritical) {
+      document.querySelector("#error-sub").style.display = "block";
+    }
+  }
+
+  if (
+    assetValues.underfillValue === "N" &&
+    (assetValues.deckStructureType === "1" || assetValues.deckStructureType === "2") &&
+    assetValues.wearingSurfaceType === "6" &&
+    ["0", "8", "N"].includes(assetValues.membraneValue)
+  ) {
+    document.querySelector("#error-wearing").style.display = "block";
+  }
+
+  ////////////////////////////////////////
+
   const channelValueText = assetValues.channelValue === "N" || assetValues.channelValue === "" ? "No" : "Yes";
   const nstmInspRequiredText = assetValues.nstmInspRequired === "N" || assetValues.nstmInspRequired === "" ? "No" : "Yes";
   const specialInspRequiredText = assetValues.specialInspRequired === "N" || assetValues.specialInspRequired === "" ? "No" : "Yes";
@@ -595,6 +670,7 @@ function populateTextareas(assetNumber) {
   };
 }
 
+// Exports this as assetValues const so you can use them assetValues.adtValue
 function extractAssetDetails(assetNumber) {
   return {
     assetName: assetNumber["Asset Name"],
@@ -605,7 +681,7 @@ function extractAssetDetails(assetNumber) {
     scourVulnerability: assetNumber["(B.AP.03) Scour Vulnerability"] || "",
     scourCritical: assetNumber["(113) Scour Critical Bridges:"],
     adtValue: assetNumber["(29) Average Daily Traffic:"]?.toLocaleString() || "",
-    adtYear: " " + assetNumber["(30) Year of Average Daily Traffic:"],
+    adtYear: assetNumber["(30) Year of Average Daily Traffic:"],
     highwaySystem: assetNumber["(104) Highway System of Inventory Route:"],
     channelValue: assetNumber["(61) Channel / Channel Protection:"],
 
