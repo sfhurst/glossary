@@ -1,27 +1,35 @@
 // Table of Contents
+/*
+
 // ::: Get the code and code description | getCodeDescription(variable, code)
-// Uses the assetValues variables to find their discriptions
+          Uses the assetValues variables to find each variables code and discriptions in the bridge_objects.js
+          Uses bridgeData array/object
 
 // ::: Asset Search Box | console.log(getGoogleMapsLink(latValue, longValue)) | updateMapButton(latValue, longValue) | displaySummary(asset)
-//
+          When the search box receives a value this is triggered.
 
 // ::: generateSummary(assetNumber) | extractAssetDetails(assetNumber) | populateTextareas(assetNumber)
-//
+          Creates the summary
 
 // ::: displaySummary() | generateSummary() | expandTextarea({ target: contentContainer }, "summary-textarea")
-//
+          Shows the summary on the summary page
 
 // ::: getGoogleMapsLink(latValue, longValue)
-//
+          This creates the map link
 
 // ::: updateMapButton(latValue, longValue)
-//
+          This updates the map link
 
 // ::: populateTextareas(assetNumber) | getCodeDescription(variable, code)
-//
+          Adds the textarea comments to the review pages 
 
 // ::: extractAssetDetails(assetNumber)
-// This takes the asset object that holds all the data and converts it to a list a variables accessible through assetValues.XXXXX_VARIABLE_NAME_HERE
+          This takes the asset object that holds all the data and converts it to a list a variables accessible through assetValues.XXXXX_VARIABLE_NAME_HERE
+
+// ::: copySummaryTextareaContent()
+          Copy the summary when it is clicked. 
+
+*/
 
 // ::: -------------------------------------------------------- Get the code and code description --------------------------------------------------------
 function getCodeDescription(variable, code) {
@@ -115,6 +123,7 @@ function hideAllErrors() {
   document.querySelectorAll('[id^="error-"]').forEach((element) => {
     element.style.display = "none";
   });
+  document.getElementById("asset-error-button").style.display = "none";
 }
 
 // ::: ---------------------------- generateSummary() ---------------------------------
@@ -325,60 +334,40 @@ function displaySummary(assetNumber) {
   if (summaryTab) {
     const contentContainer = document.getElementById("summary-textarea");
     contentContainer.value = generalNotes; // Insert generalNotes here
-    // Call the expandTextarea function manually
+    // Call the expandTextarea function manually to change the size of the textarea to fit the content
     expandTextarea({ target: contentContainer }, "summary-textarea"); // No return needed
 
-    // Add click event listener to copy text
+    // Add click event listener to copy summary text to clipboard
     contentContainer.onclick = function (event) {
       // Create a temporary element to extract text without HTML tags
       const tempElement = document.createElement("div");
       tempElement.innerHTML = generalNotes;
 
-      // Extract the text from the temporary element
-      let plainText = tempElement.textContent || tempElement.innerText;
+      // Create a "Copied" message element
+      const copiedMessage = document.createElement("div");
+      copiedMessage.textContent = "Copied";
 
-      // Remove leading/trailing whitespace
-      plainText = plainText.replace(/^\s+/g, "").replace(/\s+$/g, "");
+      // Style the "Copied" message
+      copiedMessage.style.position = "fixed"; // Use fixed positioning
+      copiedMessage.style.top = "15px"; // Position it a bit below the top
+      copiedMessage.style.left = "50%"; // Center horizontally
+      copiedMessage.style.transform = "translateX(-50%)"; // Adjust for perfect centering
 
-      // Remove extra newlines between paragraphs
-      plainText = plainText.replace(/\n+/g, "\n");
+      copiedMessage.style.backgroundColor = "rgba(67 84 167 / 0.9)";
+      copiedMessage.style.color = "#fff";
+      copiedMessage.style.padding = "5px 5px";
+      copiedMessage.style.borderRadius = "4px";
+      copiedMessage.style.fontSize = "14px";
+      copiedMessage.style.zIndex = "9999"; // Ensure it's above other content
 
-      // Remove extra spaces within lines
-      plainText = plainText.replace(/\s+/g, " ").trim();
+      document.body.appendChild(copiedMessage);
 
-      // Ensure newlines only between the sections
-      plainText = plainText.replace(/(General Inspection Notes: )/g, "$1\n"); // Add a newline after the heading
-      plainText = plainText.replace(/(Maintenance \/ Recommendations: )/g, "\n\n$1\n"); // Add a newline before and after the heading
+      // Remove the "Copied" message after 2 seconds
+      setTimeout(() => {
+        copiedMessage.remove();
+      }, 850);
 
-      // Copy the cleaned-up plain text to clipboard
-      navigator.clipboard
-        .writeText(plainText)
-        .then(() => {
-          // Create a "Copied" message element
-          const copiedMessage = document.createElement("div");
-          copiedMessage.textContent = "Copied";
-
-          // Style the "Copied" message
-          copiedMessage.style.position = "fixed"; // Use fixed positioning
-          copiedMessage.style.top = "15px"; // Position it a bit below the top
-          copiedMessage.style.left = "50%"; // Center horizontally
-          copiedMessage.style.transform = "translateX(-50%)"; // Adjust for perfect centering
-
-          copiedMessage.style.backgroundColor = "rgba(67 84 167 / 0.9)";
-          copiedMessage.style.color = "#fff";
-          copiedMessage.style.padding = "5px 5px";
-          copiedMessage.style.borderRadius = "4px";
-          copiedMessage.style.fontSize = "14px";
-          copiedMessage.style.zIndex = "9999"; // Ensure it's above other content
-
-          document.body.appendChild(copiedMessage);
-
-          // Remove the "Copied" message after 2 seconds
-          setTimeout(() => {
-            copiedMessage.remove();
-          }, 850);
-        })
-        .catch((err) => console.error("Error copying text: ", err));
+      copySummaryTextareaContent();
     };
   }
 }
@@ -521,15 +510,23 @@ function populateTextareas(assetNumber) {
 
   ////////////////////////////////////////
 
-  // Error Checks
+  let anyError = 0;
+
+  // Error Checks for icons
+
+  // Freq
   if (parseFloat(lowestValue) < 4 && parseFloat(assetValues.inspectionFrequency) > 12) {
     document.querySelector("#error-freq").style.display = "block";
+    anyError = 1;
   }
 
+  // Slab
   if (assetValues.deck !== assetValues.superstructure && (assetValues.mainDesignType === "1" || assetValues.mainDesignType === "01" || assetValues.mainDesignType === 1)) {
     document.querySelector("#error-super").style.display = "block";
+    anyError = 1;
   }
 
+  // Monolithic
   if (assetValues.wearingSurfaceType === "1") {
     const deckRating = parseInt(assetValues.deck, 10); // Assuming deck is a string
     const wearingSurfaceRating = parseInt(assetValues.wearingSurface, 10); // Assuming wearing surface is a string
@@ -538,15 +535,18 @@ function populateTextareas(assetNumber) {
       // Ratings should be the same if either is 5 or below
       if (deckRating !== wearingSurfaceRating) {
         document.querySelector("#error-deck").style.display = "block";
+        anyError = 1;
       }
     } else {
       // Wearing surface is >= 6, deck can be 1 higher (max 9)
       if (deckRating !== wearingSurfaceRating && deckRating !== wearingSurfaceRating + 1) {
         document.querySelector("#error-deck").style.display = "block";
+        anyError = 1;
       }
     }
   }
 
+  // Socur and Sub
   if (parseFloat(assetValues.scourCritical, 10) <= 2) {
     const scourCritical = parseFloat(assetValues.scourCritical, 10);
     const sub = parseFloat(assetValues.substructure, 10);
@@ -554,16 +554,24 @@ function populateTextareas(assetNumber) {
     // If scourCritical is less than or equal to 2, sub must be less than or equal to scourCritical
     if (sub > scourCritical) {
       document.querySelector("#error-sub").style.display = "block";
+      anyError = 1;
     }
   }
 
   if (
+    parseFloat(assetValues.wearingSurface, 10) > 4 &&
     assetValues.underfillValue === "N" &&
     (assetValues.deckStructureType === "1" || assetValues.deckStructureType === "2") &&
     assetValues.wearingSurfaceType === "6" &&
     ["0", "8", "N"].includes(assetValues.membraneValue)
   ) {
     document.querySelector("#error-wearing").style.display = "block";
+    anyError = 1;
+  }
+
+  // Asset error icon
+  if (anyError === 1) {
+    document.getElementById("asset-error-button").style.display = "block";
   }
 
   ////////////////////////////////////////
@@ -670,7 +678,8 @@ function populateTextareas(assetNumber) {
   };
 }
 
-// Exports this as assetValues const so you can use them assetValues.adtValue
+// ::: ---------------------------- extractAssetDetails() ---------------------------------
+// Exports this as assetValues const so you can use them like assetValues.adtValue
 function extractAssetDetails(assetNumber) {
   return {
     assetName: assetNumber["Asset Name"],
@@ -752,4 +761,16 @@ function extractAssetDetails(assetNumber) {
     bridgeRailings: assetNumber["(36A) Bridge Railings:"],
     transitions: assetNumber["(36B) Transitions:"],
   };
+}
+
+// ::: ---------------------------- copySummaryTextareaContent() ---------------------------------
+// Copy the summary to the clipboard when it is clicked
+function copySummaryTextareaContent() {
+  let textarea = document.getElementById("summary-textarea");
+
+  // Select the textarea content
+  textarea.select();
+
+  // Copy to clipboard
+  navigator.clipboard.writeText(textarea.value);
 }

@@ -578,6 +578,8 @@ function handleHighlight(event) {
     // Capture the data-category from the clicked item's data-category attribute
     const dataCategory = clickedItem.getAttribute("data-category");
 
+    updateObjectRatings(`${numericalValue}`, dataCategory);
+
     // Now, find the matching element inside #bridge-review-tab
     const bridgeReviewTab = document.getElementById("bridge-review-tab");
 
@@ -823,3 +825,45 @@ document.querySelector("#error-sub button").addEventListener("click", function (
 document.querySelector("#error-wearing button").addEventListener("click", function () {
   showErrorPopup(this, "Membrane Error: When there is no membrane between a concrete deck and a bituminous wearing surface, the wearing surface rating must be below 5.");
 });
+
+function updateObjectRatings(numericalValue, dataCategory) {
+  if (searchValue !== "") {
+    const asset = assetData.find((item) => item["Asset Number"].toLowerCase() === searchValue);
+
+    if (dataCategory === "B.C.01") {
+      if (asset) {
+        asset["(58) Deck:"] = numericalValue;
+        hideAllErrors();
+        displaySummary(asset);
+      }
+    }
+    if (dataCategory === "B.C.02") {
+      if (asset) {
+        asset["(59) Superstructure:"] = numericalValue;
+        hideAllErrors();
+        displaySummary(asset);
+      }
+    }
+    if (dataCategory === "B.C.03") {
+      if (asset) {
+        asset["(60) Substructure:"] = numericalValue;
+        hideAllErrors();
+        displaySummary(asset);
+      }
+    }
+    if (dataCategory === "B.C.04") {
+      if (asset) {
+        asset["(62) Culverts:"] = numericalValue;
+        hideAllErrors();
+        displaySummary(asset);
+      }
+    }
+    if (dataCategory === "B.C.01a") {
+      if (asset) {
+        asset["(58.01) Wearing Surface:"] = numericalValue;
+        hideAllErrors();
+        displaySummary(asset);
+      }
+    }
+  }
+}
