@@ -143,7 +143,7 @@ function generateSummary(assetNumber) {
   const postedResponse = (assetValues.postedValue === "A" ? "not posted" : "posted").toLowerCase();
 
   // Determine whether an element-level inspection is required based on highway system type
-  const elementResponse = (assetValues.highwaySystem === "1" ? "requires an element level inspection" : "does not require an element level inspection").toLowerCase();
+  const elementResponse = (assetValues.highwaySystem === 1 ? "requires an element level inspection" : "does not require an element level inspection").toLowerCase();
 
   // Generate the membrane description if certain conditions are met (e.g., wearing surface and deck type)
   const membraneResponse =

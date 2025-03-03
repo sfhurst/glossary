@@ -760,6 +760,7 @@ function findAssetErrors(assetData) {
 
     // Error Check: Wearing Surface
     if (
+      parseFloat(assetValues.wearingSurface, 10) > 4 &&
       assetValues.underfillValue === "N" &&
       ["1", "2"].includes(assetValues.deckStructureType) &&
       assetValues.wearingSurfaceType === "6" &&
@@ -778,7 +779,6 @@ console.log(assetErrors);
 
 // :::: Not Sorted | Working /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// Function to create and display the popup
 // Function to create and display the popup
 function showErrorPopup(button, message) {
   // Create the temporary popup div
@@ -826,6 +826,7 @@ document.querySelector("#error-wearing button").addEventListener("click", functi
   showErrorPopup(this, "Membrane Error: When there is no membrane between a concrete deck and a bituminous wearing surface, the wearing surface rating must be below 5.");
 });
 
+// Update summary when changing ratings
 function updateObjectRatings(numericalValue, dataCategory) {
   if (searchValue !== "") {
     const asset = assetData.find((item) => item["Asset Number"].toLowerCase() === searchValue);
@@ -866,4 +867,6 @@ function updateObjectRatings(numericalValue, dataCategory) {
       }
     }
   }
+  // add scour change
+  // add freq change
 }
