@@ -569,6 +569,10 @@ function populateTextareas(assetObject) {
 
   let anyError = 0;
 
+  // Reset textareas
+  document.getElementById("BC02-textarea").value = "";
+  document.getElementById("BC01a-textarea").value = "";
+
   // Freq
   if (parseFloat(lowestValue) < 4 && parseFloat(assetValues.inspectionFrequency) > 12) {
     document.querySelector("#error-freq").style.display = "block";
@@ -576,13 +580,17 @@ function populateTextareas(assetObject) {
   }
 
   // Slab
-  if (assetValues.deck !== assetValues.superstructure && (assetValues.mainDesignType === "1" || assetValues.mainDesignType === "01" || assetValues.mainDesignType === 1)) {
-    document.querySelector("#error-super").style.display = "block";
-    anyError = 1;
+  if (assetValues.mainDesignType === "1" || assetValues.mainDesignType === "01" || assetValues.mainDesignType === 1) {
+    document.getElementById("BC02-textarea").value = "The superstructure is a deck/slab. See the deck comments. ";
+    if (assetValues.deck !== assetValues.superstructure) {
+      document.querySelector("#error-super").style.display = "block";
+      anyError = 1;
+    }
   }
 
   // Monolithic
   if (assetValues.wearingSurfaceType === "1") {
+    document.getElementById("BC01a-textarea").value = "The wearing surface is monolithic with the deck. ";
     const deckRating = parseInt(assetValues.deck, 10); // Assuming deck is a string
     const wearingSurfaceRating = parseInt(assetValues.wearingSurface, 10); // Assuming wearing surface is a string
 
@@ -615,14 +623,16 @@ function populateTextareas(assetObject) {
 
   // Membrane
   if (
-    parseFloat(assetValues.wearingSurface, 10) > 4 &&
     assetValues.underfillValue === "N" &&
     (assetValues.deckStructureType === "1" || assetValues.deckStructureType === "2") &&
     assetValues.wearingSurfaceType === "6" &&
     ["0", "8", "N"].includes(assetValues.membraneValue)
   ) {
-    document.querySelector("#error-wearing").style.display = "block";
-    anyError = 1;
+    document.getElementById("BC01a-textarea").value = "The bridge has a bituminous wearing surface and the deck is not protected by an agency approved membrane. ";
+    if (parseFloat(assetValues.wearingSurface, 10) > 4) {
+      document.querySelector("#error-wearing").style.display = "block";
+      anyError = 1;
+    }
   }
 
   // Asset error icon
