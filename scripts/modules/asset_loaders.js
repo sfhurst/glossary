@@ -2,13 +2,15 @@
 
 // Table of Contents
 
-General Functionality:
+// ::: General Functionality:
+
 1. Takes an asset value entered in a search box and loads in the asset data
 2. The generateSummary() and populateTextareas() are extensive
 3. The generateSummary() function primarily builds the generalData constant to add to the summary tab
 4. The populateTextareas() function primarily builds and adds the data to the Asset Data tab
 
-// ::: External Functions Notes
+// ::: External Functions Notes:
+
 The updateObjectRatings() function is in the scripts.js.
 It is triggered by the handleHighlight() function also in the scripts.js
 It calls the hideAllErrors() and displaySummary() text make corrections when certain information is updated.
@@ -52,7 +54,7 @@ displaySummary(assetObject):
 1. Immediately calls the generateSummary() function to set the generalNotes constant
 2. Add the generalNotes value to the #summary-textarea
 3. Expand the size of the summary textarea if needed by calling the expandTextarea() function
-4. Set the onclick event listener for the summary textarea to use the copySummaryTextareaContent() function
+4. Set the ondblclick event listener for the summary textarea to use the copySummaryTextareaContent() function
 
 generateSummary(assetObject):
 > Trigger: displaySummary()
@@ -99,7 +101,7 @@ copySummaryTextareaContent():
 
 */
 
-// ::: ---------------------------- Asset Search Box ---------------------------------
+// ::: ---------------------------- Asset Search Box ----------------------------
 
 // Global variable to store the formatted history
 let formattedHistory = "";
@@ -170,7 +172,7 @@ document.querySelector(".search-box").addEventListener("keydown", function (even
   });
 });
 
-// ::: ---------------------------- hideAllErrors() ---------------------------------
+// ::: ---------------------------- hideAllErrors() ----------------------------
 
 function hideAllErrors() {
   document.querySelectorAll('[id^="error-"]').forEach((element) => {
@@ -179,7 +181,7 @@ function hideAllErrors() {
   document.getElementById("asset-error-button").style.display = "none";
 }
 
-// ::: ---------------------------- updateMapButton() ---------------------------------
+// ::: ---------------------------- updateMapButton() ----------------------------
 
 function updateMapButton(latValue, longValue) {
   let url = getGoogleMapsLink(latValue, longValue);
@@ -195,7 +197,7 @@ function updateMapButton(latValue, longValue) {
   document.getElementById("button-map-link").style.cursor = "pointer"; // Adds hand pointer
 }
 
-// ::: ---------------------------- getGoogleMapsLink() ---------------------------------
+// ::: ---------------------------- getGoogleMapsLink() ----------------------------
 
 function getGoogleMapsLink(latValue, longValue) {
   // Determine latitude direction
@@ -223,7 +225,7 @@ function getGoogleMapsLink(latValue, longValue) {
   return url;
 }
 
-// ::: ---------------------------- displaySummary() ---------------------------------
+// ::: ---------------------------- displaySummary() ----------------------------
 
 function displaySummary(assetObject) {
   // Generate the report using the previous function
@@ -240,7 +242,7 @@ function displaySummary(assetObject) {
     expandTextarea({ target: contentContainer }, "summary-textarea"); // No return needed
 
     // Add click event listener to copy summary text to clipboard
-    contentContainer.onclick = function (event) {
+    contentContainer.ondblclick = function (event) {
       // Create a temporary element to extract text without HTML tags
       const tempElement = document.createElement("div");
       tempElement.innerHTML = generalNotes;
@@ -274,7 +276,20 @@ function displaySummary(assetObject) {
   }
 }
 
-// ::: ---------------------------- generateSummary() ---------------------------------
+// ::: ---------------------------- copySummaryTextareaContent() ----------------------------
+
+// Copy the summary to the clipboard when it is clicked
+function copySummaryTextareaContent() {
+  let textarea = document.getElementById("summary-textarea");
+
+  // Select the textarea content
+  // textarea.select();
+
+  // Copy to clipboard
+  navigator.clipboard.writeText(textarea.value);
+}
+
+// ::: ---------------------------- generateSummary() ----------------------------
 
 function generateSummary(assetObject) {
   // Extract necessary data from the asset object using descriptive variable names
@@ -455,7 +470,8 @@ function generateSummary(assetObject) {
   return generalNotes;
 }
 
-// ::: ---------------------------- populateTextareas() ---------------------------------
+// ::: ---------------------------- populateTextareas() ----------------------------
+
 // Populate textareas on Review | Asset Data
 function populateTextareas(assetObject) {
   // Extract necessary data from the asset object using descriptive variable names
@@ -718,7 +734,8 @@ function populateTextareas(assetObject) {
   };
 }
 
-// ::: -------------------------------------------------------- Get the code and code description --------------------------------------------------------
+// ::: ---------------------------- getCodeDescription() ----------------------------
+
 function getCodeDescription(variable, code) {
   // Uses the variable name to lookup the code and description in the bridgeData array/object
   // This is for populating the asset data textareas so they display the information in a clean, controlled way
@@ -732,7 +749,8 @@ function getCodeDescription(variable, code) {
   return variable === "scourCritical" ? valueEntry.description : `${valueEntry.code} - ${valueEntry.description}`;
 }
 
-// ::: ---------------------------- extractAssetDetails() ---------------------------------
+// ::: ---------------------------- extractAssetDetails() ----------------------------
+
 // Exports this as assetValues const so you can use them like assetValues.adtValue
 function extractAssetDetails(assetObject) {
   return {
@@ -815,16 +833,4 @@ function extractAssetDetails(assetObject) {
     bridgeRailings: assetObject["(36A) Bridge Railings:"],
     transitions: assetObject["(36B) Transitions:"],
   };
-}
-
-// ::: ---------------------------- copySummaryTextareaContent() ---------------------------------
-// Copy the summary to the clipboard when it is clicked
-function copySummaryTextareaContent() {
-  let textarea = document.getElementById("summary-textarea");
-
-  // Select the textarea content
-  textarea.select();
-
-  // Copy to clipboard
-  navigator.clipboard.writeText(textarea.value);
 }
