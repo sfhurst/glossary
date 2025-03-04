@@ -1,50 +1,105 @@
-// Table of Contents
 /*
 
-// ::: Get the code and code description | getCodeDescription(variable, code)
-          Uses the assetValues variables to find each variables code and discriptions in the bridge_objects.js
-          Uses bridgeData array/object
+// Table of Contents
 
-// ::: Asset Search Box | console.log(getGoogleMapsLink(latValue, longValue)) | updateMapButton(latValue, longValue) | displaySummary(asset)
-          When the search box receives a value this is triggered.
+General Functionality:
+1. Takes an asset value entered in a search box and loads in the asset data
+2. The generateSummary() and populateTextareas() are extensive
+3. The generateSummary() function primarily builds the generalData constant to add to the summary tab
+4. The populateTextareas() function primarily builds and adds the data to the Asset Data tab
 
-// ::: generateSummary(assetNumber) | extractAssetDetails(assetNumber) | populateTextareas(assetNumber)
-          Creates the summary
+// ::: External Functions Notes
+The updateObjectRatings() function is in the scripts.js.
+It is triggered by the handleHighlight() function also in the scripts.js
+It calls the hideAllErrors() and displaySummary() text make corrections when certain information is updated.
 
-// ::: displaySummary() | generateSummary() | expandTextarea({ target: contentContainer }, "summary-textarea")
-          Shows the summary on the summary page
+// ::: Event Listeners
 
-// ::: getGoogleMapsLink(latValue, longValue)
-          This creates the map link
+Asset Search Box:
+> Trigger: Enter keydown from the asset search box
+1. Searches the assetData array in the asset_data.js for an object with the asset number entered
+2. Creates the assetObject from the object containing the asset number searched
+3. Searches the historyData array in the history.js for any documented history
+4. Hides any error icons that were previously displayed by calling the hideAllErrors() function
+5. Updates the map link icon button to hold the correct map link  by calling the updateMapButton() function
+6. Launches the function chain that creates the summary by calling the displaySummary() function
+7. Sets the iTAMS hyperlink and displays the bridge name next to the ssearch box
+> Calls: getGoogleMapsLink(), hideAllErrors(), updateMapButton(), displaySummary()
 
-// ::: updateMapButton(latValue, longValue)
-          This updates the map link
 
-// ::: populateTextareas(assetNumber) | getCodeDescription(variable, code)
-          Adds the textarea comments to the review pages 
+// ::: Functions
 
-// ::: extractAssetDetails(assetNumber)
-          This takes the asset object that holds all the data and converts it to a list a variables accessible through assetValues.XXXXX_VARIABLE_NAME_HERE
+hideAllErrors():
+> Trigger: Asset Search Box, updateObjectRatings()
+1. Hides any error icons that were previously displayed 
 
-// ::: copySummaryTextareaContent()
-          Copy the summary when it is clicked. 
+updateMapButton(latValue, longValue):
+> Trigger: Asset Search Box
+> Calls: getGoogleMapsLink()
+1. Immediately calls the getGoogleMapsLink() to build the url
+2. Sets the url to the map link icon button
+3. Shows the map link icon button if it is not already visible
+
+getGoogleMapsLink(latValue, longValue):
+> Trigger: updateMapButton()
+1. Builds the map link from the latitude and longitude values of the assetObject
+2. Logs the Google Maps link to the console
+3. Returns a map link to the updateMapButton() function
+
+displaySummary(assetObject):
+> Trigger: Asset Search Box, updateObjectRatings()
+> Calls: generateSummary(), expandTextarea(), copySummaryTextareaContent()
+1. Immediately calls the generateSummary() function to set the generalNotes constant
+2. Add the generalNotes value to the #summary-textarea
+3. Expand the size of the summary textarea if needed by calling the expandTextarea() function
+4. Set the onclick event listener for the summary textarea to use the copySummaryTextareaContent() function
+
+generateSummary(assetObject):
+> Trigger: displaySummary()
+> Calls: extractAssetDetails(), populateTextareas()
+1. Immediately calls the extractAssetDetails() function to get variables from the assetObject
+2. Immediately calls the populateTextareas() function to build and populate the Asset Tab values under the Review tab
+3. Gets the number of spans
+4. Creates simple summary responses
+5. Sets up response objects for complex responses
+6. Creates complex responses
+7. Assembles responses into a text block and stores in the generalNotes constant
+8. Returns the generalNotes constant to be used in the summary textarea
+
+extractAssetDetails(assetObject):
+Trigger: generateSummary(), populateTextareas()
+1. Converts the asset data (assetObject) into usable variables that populate the populateTextareas() and generateSummary() functions
+
+populateTextareas(assetObject):
+> Trigger: generateSummary()
+> Calls: extractAssetDetails(), getCodeDescription()
+1. Immediately calls the extractAssetDetails() function to get variables from the assetObject (duplicate action from the generateSummary() function)
+2. Creates a variable the holds the full RP
+3. Calculates the due dates of the different inspection types
+4. Gets the lowest rating value and component
+5. Runs error checks and displays the appropriate error icon
+6. Sets variables for searching the bridgeData array for the appropriate object
+7. Gets the code and description using the getCodeDescription() function for the corresponding object from the bridgeData array
+8. Builds a fields array to hold objects by variable name equating to the id of the textarea
+9. Populates the Asset Data tab under the Review tab with the formatted codes and descriptions using the field array
+10. Returns the lowest value and component to the generateSummary() function
+
+getCodeDescription(variable, code):
+> Trigger: populateTextareas()
+1. Uses the variable name to lookup the code and description in the bridgeData array/object
+2. Returns the formatted text to the assigned variable in the populateTextareas() function
+
+expandTextarea({ target: contentContainer }, "summary-textarea"):
+> Trigger: displaySummary()
+1. Expands the summary textarea to show all lines of text 
+
+copySummaryTextareaContent():
+> Trigger: displaySummary()
+1. Copies the summary textarea text for pasting into another page
 
 */
 
-// ::: -------------------------------------------------------- Get the code and code description --------------------------------------------------------
-function getCodeDescription(variable, code) {
-  // Example Usage: const postedValueText = getCodeDescription("postedValue", assetValues.postedValue);
-
-  const category = bridgeData.find((item) => item.variable == variable);
-  if (!category) return "Category not found";
-
-  const valueEntry = category.values.find((entry) => entry.code == code);
-  if (!valueEntry) return "";
-
-  return variable === "scourCritical" ? valueEntry.description : `${valueEntry.code} - ${valueEntry.description}`;
-}
-
-// ::: -------------------------------------------------------- Asset Search Box --------------------------------------------------------
+// ::: ---------------------------- Asset Search Box ---------------------------------
 
 // Global variable to store the formatted history
 let formattedHistory = "";
@@ -71,19 +126,19 @@ document.querySelector(".search-box").addEventListener("keydown", function (even
   }
 
   // Searches for the Asset in assetData
-  const asset = assetData.find((item) => item["Asset Number"].toLowerCase() === searchValue);
+  const assetObject = assetData.find((item) => item["Asset Number"].toLowerCase() === searchValue);
 
   // Handles Not Found Case
   const searchID = document.getElementById("searchID");
 
-  if (!asset) {
+  if (!assetObject) {
     searchID.textContent = "Asset not found.";
     searchValue = ""; // Reset searchValue if no match is found
     return;
   }
 
   // Extracts required asset data. This is not used outside this function. The asset is what gets passed and it holds everything.
-  const { "Asset Name": assetName, "(16) Latitude:": latValue, "(17) Longitude:": longValue, Hyperlink: hyperlink } = asset;
+  const { "Asset Name": assetName, "(16) Latitude:": latValue, "(17) Longitude:": longValue, Hyperlink: hyperlink } = assetObject;
 
   ///////////////////////////
 
@@ -99,16 +154,12 @@ document.querySelector(".search-box").addEventListener("keydown", function (even
 
   ///////////////////////////
 
-  // Logs Google Maps Link for Debugging
-  console.log(getGoogleMapsLink(latValue, longValue));
-
   // Hides the error icons in the asset data page
   hideAllErrors();
 
   // Updates Map Button and Generates Summary
   updateMapButton(latValue, longValue); // No return needed
-  // generateSummary(asset); // No return needed // Called again from displaySummary and returns notes
-  displaySummary(asset); // No return needed
+  displaySummary(assetObject); // No return needed
 
   // Updates Search UI Element and Adds Clickable Hyperlink
   searchID.textContent = assetName;
@@ -119,6 +170,8 @@ document.querySelector(".search-box").addEventListener("keydown", function (even
   });
 });
 
+// ::: ---------------------------- hideAllErrors() ---------------------------------
+
 function hideAllErrors() {
   document.querySelectorAll('[id^="error-"]').forEach((element) => {
     element.style.display = "none";
@@ -126,15 +179,110 @@ function hideAllErrors() {
   document.getElementById("asset-error-button").style.display = "none";
 }
 
+// ::: ---------------------------- updateMapButton() ---------------------------------
+
+function updateMapButton(latValue, longValue) {
+  let url = getGoogleMapsLink(latValue, longValue);
+
+  let mapButton = document.getElementById("button-map-link");
+
+  // Set the button to open the map link when clicked
+  mapButton.onclick = function () {
+    window.open(url, "_blank");
+  };
+
+  document.getElementById("button-map-link").style.opacity = "1";
+  document.getElementById("button-map-link").style.cursor = "pointer"; // Adds hand pointer
+}
+
+// ::: ---------------------------- getGoogleMapsLink() ---------------------------------
+
+function getGoogleMapsLink(latValue, longValue) {
+  // Determine latitude direction
+  let latDir = latValue >= 0 ? "N" : "S";
+  let absLat = Math.abs(latValue);
+  let latD = Math.floor(absLat);
+  let latM = Math.floor((absLat - latD) * 60);
+  let latS = (((absLat - latD) * 60 - latM) * 60).toFixed(2);
+
+  // Determine longitude direction
+  let lonDir = longValue >= 0 ? "E" : "W";
+  let absLon = Math.abs(longValue);
+  let lonD = Math.floor(absLon);
+  let lonM = Math.floor((absLon - lonD) * 60);
+  let lonS = (((absLon - lonD) * 60 - lonM) * 60).toFixed(2);
+
+  // Construct formatted coordinates
+  let sLat = `${latD}°${latM}'${latS}"${latDir}`;
+  let sLon = `${lonD}°${lonM}'${lonS}"${lonDir}`;
+
+  // Construct Google Maps URL
+  let url = `https://www.google.com/maps/place/${latValue},${longValue}/@${latValue},${longValue},17z`;
+  console.log(url);
+
+  return url;
+}
+
+// ::: ---------------------------- displaySummary() ---------------------------------
+
+function displaySummary(assetObject) {
+  // Generate the report using the previous function
+  const generalNotes = generateSummary(assetObject); // Wants the notes returned
+
+  // Find the container where you want to insert the report
+  const summaryTab = document.getElementById("review-summary-tab");
+
+  // Insert the generated report into the <p> element
+  if (summaryTab) {
+    const contentContainer = document.getElementById("summary-textarea");
+    contentContainer.value = generalNotes; // Insert generalNotes here
+    // Call the expandTextarea function manually to change the size of the textarea to fit the content
+    expandTextarea({ target: contentContainer }, "summary-textarea"); // No return needed
+
+    // Add click event listener to copy summary text to clipboard
+    contentContainer.onclick = function (event) {
+      // Create a temporary element to extract text without HTML tags
+      const tempElement = document.createElement("div");
+      tempElement.innerHTML = generalNotes;
+
+      // Create a "Copied" message element
+      const copiedMessage = document.createElement("div");
+      copiedMessage.textContent = "Copied";
+
+      // Style the "Copied" message
+      copiedMessage.style.position = "fixed"; // Use fixed positioning
+      copiedMessage.style.top = "15px"; // Position it a bit below the top
+      copiedMessage.style.left = "50%"; // Center horizontally
+      copiedMessage.style.transform = "translateX(-50%)"; // Adjust for perfect centering
+
+      copiedMessage.style.backgroundColor = "rgba(67 84 167 / 0.9)";
+      copiedMessage.style.color = "#fff";
+      copiedMessage.style.padding = "5px 5px";
+      copiedMessage.style.borderRadius = "4px";
+      copiedMessage.style.fontSize = "14px";
+      copiedMessage.style.zIndex = "9999"; // Ensure it's above other content
+
+      document.body.appendChild(copiedMessage);
+
+      // Remove the "Copied" message after 2 seconds
+      setTimeout(() => {
+        copiedMessage.remove();
+      }, 850);
+
+      copySummaryTextareaContent();
+    };
+  }
+}
+
 // ::: ---------------------------- generateSummary() ---------------------------------
-// Function to generate a summary for an asset based on its attributes
-function generateSummary(assetNumber) {
+
+function generateSummary(assetObject) {
   // Extract necessary data from the asset object using descriptive variable names
-  const assetValues = extractAssetDetails(assetNumber); // Returns the new asset data
+  const assetValues = extractAssetDetails(assetObject); // Returns the new asset data
 
   // Populate textareas on Review | Asset Data
   // Call the function and capture the returned values
-  const { lowestValue, lowestComponent } = populateTextareas(assetNumber); // Returns lowestValue and lowestComponent
+  const { lowestValue, lowestComponent } = populateTextareas(assetObject); // Returns lowestValue and lowestComponent
 
   // Calculate the total span count (approach + main spans)
   const spanCount = assetValues.approachSpans + assetValues.mainSpans;
@@ -303,130 +451,20 @@ function generateSummary(assetNumber) {
   const generalParaCleaned = generalPara.replace(/\s{2,}/g, " ");
   const generalNotes = `General Inspection Notes:\n${generalParaCleaned}\n\n${conditionResponse}\n\nMaintenance / Recommendations:\n${maintenanceResponse}${formattedHistoryResponse}`;
 
-  // Final notes is returned as the answer to the generateSummary(assetNumber);
+  // Final notes is returned as the answer to the generateSummary(assetObject);
   return generalNotes;
-}
-
-// ::: ---------------------------- displaySummary() ---------------------------------
-/**
- * Generates a detailed bridge condition summary based on the asset number.
- * Function Details:
- * 1. Extracts asset details using `extractAssetDetails()`.
- * 2. Populates textareas for review and retrieves the lowest condition rating using `populateTextareas()`.
- * 3. Calculates span counts (approach + main spans).
- * 4. Determines if the bridge is posted or not.
- * 5. Checks if the bridge requires an element-level inspection.
- * 6. Assesses whether the bridge has an approved membrane.
- * 7. Maps numerical condition ratings to descriptive phrases.
- * 8. Converts numerical structure types into readable descriptions (material, design, deck type, wearing surface).
- * 9. Evaluates the bridge's scour vulnerability based on predefined classifications.
- * 10. Constructs multiple descriptive sentences summarizing key attributes of the bridge.
- */
-// Put the summary in the textarea on the review page and copy it to the clipboard when that textarea is clicked
-function displaySummary(assetNumber) {
-  // Generate the report using the previous function
-  const generalNotes = generateSummary(assetNumber); // Wants the notes returned
-
-  // Find the container where you want to insert the report
-  const summaryTab = document.getElementById("review-summary-tab");
-
-  // Insert the generated report into the <p> element
-  if (summaryTab) {
-    const contentContainer = document.getElementById("summary-textarea");
-    contentContainer.value = generalNotes; // Insert generalNotes here
-    // Call the expandTextarea function manually to change the size of the textarea to fit the content
-    expandTextarea({ target: contentContainer }, "summary-textarea"); // No return needed
-
-    // Add click event listener to copy summary text to clipboard
-    contentContainer.onclick = function (event) {
-      // Create a temporary element to extract text without HTML tags
-      const tempElement = document.createElement("div");
-      tempElement.innerHTML = generalNotes;
-
-      // Create a "Copied" message element
-      const copiedMessage = document.createElement("div");
-      copiedMessage.textContent = "Copied";
-
-      // Style the "Copied" message
-      copiedMessage.style.position = "fixed"; // Use fixed positioning
-      copiedMessage.style.top = "15px"; // Position it a bit below the top
-      copiedMessage.style.left = "50%"; // Center horizontally
-      copiedMessage.style.transform = "translateX(-50%)"; // Adjust for perfect centering
-
-      copiedMessage.style.backgroundColor = "rgba(67 84 167 / 0.9)";
-      copiedMessage.style.color = "#fff";
-      copiedMessage.style.padding = "5px 5px";
-      copiedMessage.style.borderRadius = "4px";
-      copiedMessage.style.fontSize = "14px";
-      copiedMessage.style.zIndex = "9999"; // Ensure it's above other content
-
-      document.body.appendChild(copiedMessage);
-
-      // Remove the "Copied" message after 2 seconds
-      setTimeout(() => {
-        copiedMessage.remove();
-      }, 850);
-
-      copySummaryTextareaContent();
-    };
-  }
-}
-
-// ::: ---------------------------- getGoogleMapsLink() ---------------------------------
-// Google Maps
-function getGoogleMapsLink(latValue, longValue) {
-  // Determine latitude direction
-  let latDir = latValue >= 0 ? "N" : "S";
-  let absLat = Math.abs(latValue);
-  let latD = Math.floor(absLat);
-  let latM = Math.floor((absLat - latD) * 60);
-  let latS = (((absLat - latD) * 60 - latM) * 60).toFixed(2);
-
-  // Determine longitude direction
-  let lonDir = longValue >= 0 ? "E" : "W";
-  let absLon = Math.abs(longValue);
-  let lonD = Math.floor(absLon);
-  let lonM = Math.floor((absLon - lonD) * 60);
-  let lonS = (((absLon - lonD) * 60 - lonM) * 60).toFixed(2);
-
-  // Construct formatted coordinates
-  let sLat = `${latD}°${latM}'${latS}"${latDir}`;
-  let sLon = `${lonD}°${lonM}'${lonS}"${lonDir}`;
-
-  // Construct Google Maps URL
-  let url = `https://www.google.com/maps/place/${latValue},${longValue}/@${latValue},${longValue},17z`;
-
-  return url;
-}
-
-// ::: ---------------------------- updateMapButton() ---------------------------------
-function updateMapButton(latValue, longValue) {
-  let mapButton = document.getElementById("button-map-link");
-  let url = getGoogleMapsLink(latValue, longValue);
-
-  // Set the button to open the map link when clicked
-  mapButton.onclick = function () {
-    window.open(url, "_blank");
-  };
-
-  // Make the button visible
-  // mapButton.style.display = "inline-block"; // or "block" depending on layout
-
-  document.getElementById("button-map-link").style.opacity = "1";
-  document.getElementById("button-map-link").style.cursor = "pointer"; // Adds hand pointer
-  // document.getElementById("button-map-link").style.position = "static"; // Reset position
 }
 
 // ::: ---------------------------- populateTextareas() ---------------------------------
 // Populate textareas on Review | Asset Data
-function populateTextareas(assetNumber) {
+function populateTextareas(assetObject) {
   // Extract necessary data from the asset object using descriptive variable names
-  const assetValues = extractAssetDetails(assetNumber); // Returns the new asset data
+  const assetValues = extractAssetDetails(assetObject); // Returns the new asset data
 
   // Set full RP
   const referencePostOffset = assetValues.referencePost + assetValues.offsetValue;
 
-  // Routine Due date
+  // :: Calculate due dates ////////////////////////////////////////
   // Create a new Date object based on the inspectionDate to avoid modifying the original
   const tempDate = assetValues.inspectionDate ? new Date(assetValues.inspectionDate) : null;
   const tempNSTMDate = assetValues.nstmInspDate ? new Date(assetValues.nstmInspDate) : null;
@@ -441,7 +479,7 @@ function populateTextareas(assetNumber) {
   let formattedUnderwaterDueDate = "";
   let underwaterDueDate = "";
 
-  // Add the frequency to the inspection date
+  // Determine the next due date for the routine inspection
   if (assetValues.inspectionDate) {
     tempDate.setMonth(tempDate.getMonth() + assetValues.inspectionFrequency);
     tempDate.setMonth(tempDate.getMonth() + 1);
@@ -450,6 +488,7 @@ function populateTextareas(assetNumber) {
     inspectionDueDate = formattedInspectionDueDate;
   }
 
+  // Determine the next due date for the NSTM inspection
   if (assetValues.nstmInspDate) {
     tempNSTMDate.setMonth(tempNSTMDate.getMonth() + assetValues.nstmInspFrequency);
     tempNSTMDate.setMonth(tempNSTMDate.getMonth() + 1);
@@ -458,6 +497,7 @@ function populateTextareas(assetNumber) {
     nstmDueDate = formattedNSTMDueDate;
   }
 
+  // Determine the next due date for the special inspection
   if (assetValues.specialInspDate) {
     tempSpecialDate.setMonth(tempSpecialDate.getMonth() + assetValues.specialInspFrequency);
     tempSpecialDate.setMonth(tempSpecialDate.getMonth() + 1);
@@ -469,6 +509,7 @@ function populateTextareas(assetNumber) {
     specialDueDate = formattedSpecialDueDate;
   }
 
+  // Determine the next due date for the underwater inspection
   if (assetValues.underwaterInspDate) {
     tempUnderwaterDate.setMonth(tempUnderwaterDate.getMonth() + assetValues.underwaterInspFrequency);
     tempUnderwaterDate.setMonth(tempUnderwaterDate.getMonth() + 1);
@@ -480,7 +521,7 @@ function populateTextareas(assetNumber) {
     underwaterDueDate = formattedUnderwaterDueDate;
   }
 
-  // Get lowest value
+  // :: Get lowest value ////////////////////////////////////////
   // Extract numeric values, excluding any non-numeric strings (e.g., "N")
   // Define the fields and their respective values
   const values = [
@@ -508,11 +549,9 @@ function populateTextareas(assetNumber) {
     lowestComponent = lowest.field;
   }
 
-  ////////////////////////////////////////
+  // :: Error checks for icon display ////////////////////////////////////////
 
   let anyError = 0;
-
-  // Error Checks for icons
 
   // Freq
   if (parseFloat(lowestValue) < 4 && parseFloat(assetValues.inspectionFrequency) > 12) {
@@ -558,6 +597,7 @@ function populateTextareas(assetNumber) {
     }
   }
 
+  // Membrane
   if (
     parseFloat(assetValues.wearingSurface, 10) > 4 &&
     assetValues.underfillValue === "N" &&
@@ -574,7 +614,7 @@ function populateTextareas(assetNumber) {
     document.getElementById("asset-error-button").style.display = "block";
   }
 
-  ////////////////////////////////////////
+  // :: Setup variables and get code descriptions ////////////////////////////////////////
 
   const channelValueText = assetValues.channelValue === "N" || assetValues.channelValue === "" ? "No" : "Yes";
   const nstmInspRequiredText = assetValues.nstmInspRequired === "N" || assetValues.nstmInspRequired === "" ? "No" : "Yes";
@@ -678,88 +718,102 @@ function populateTextareas(assetNumber) {
   };
 }
 
+// ::: -------------------------------------------------------- Get the code and code description --------------------------------------------------------
+function getCodeDescription(variable, code) {
+  // Uses the variable name to lookup the code and description in the bridgeData array/object
+  // This is for populating the asset data textareas so they display the information in a clean, controlled way
+
+  const category = bridgeData.find((item) => item.variable == variable);
+  if (!category) return "Category not found"; // Not likely since function is directly called
+
+  const valueEntry = category.values.find((entry) => entry.code == code);
+  if (!valueEntry) return ""; // Not likely since function is directly called
+
+  return variable === "scourCritical" ? valueEntry.description : `${valueEntry.code} - ${valueEntry.description}`;
+}
+
 // ::: ---------------------------- extractAssetDetails() ---------------------------------
 // Exports this as assetValues const so you can use them like assetValues.adtValue
-function extractAssetDetails(assetNumber) {
+function extractAssetDetails(assetObject) {
   return {
-    assetName: assetNumber["Asset Name"],
-    assetNumberNBI: assetNumber["Asset Number"],
-    inspectionDate: assetNumber["(90) Inspection Date:"],
-    inspectionFrequency: assetNumber["(91) Designated Inspection Frequency:"],
-    postedValue: assetNumber["(41) Structure Open/Posted/Closed:"],
-    scourVulnerability: assetNumber["(B.AP.03) Scour Vulnerability"] || "",
-    scourCritical: assetNumber["(113) Scour Critical Bridges:"],
-    adtValue: assetNumber["(29) Average Daily Traffic:"]?.toLocaleString() || "",
-    adtYear: assetNumber["(30) Year of Average Daily Traffic:"],
-    highwaySystem: assetNumber["(104) Highway System of Inventory Route:"],
-    channelValue: assetNumber["(61) Channel / Channel Protection:"],
+    assetName: assetObject["Asset Name"],
+    assetNumberNBI: assetObject["Asset Number"],
+    inspectionDate: assetObject["(90) Inspection Date:"],
+    inspectionFrequency: assetObject["(91) Designated Inspection Frequency:"],
+    postedValue: assetObject["(41) Structure Open/Posted/Closed:"],
+    scourVulnerability: assetObject["(B.AP.03) Scour Vulnerability"] || "",
+    scourCritical: assetObject["(113) Scour Critical Bridges:"],
+    adtValue: assetObject["(29) Average Daily Traffic:"]?.toLocaleString() || "",
+    adtYear: assetObject["(30) Year of Average Daily Traffic:"],
+    highwaySystem: assetObject["(104) Highway System of Inventory Route:"],
+    channelValue: assetObject["(61) Channel / Channel Protection:"],
 
-    contact: assetNumber["Contact(s)"],
-    highwayAgencyDistrict: assetNumber["(2) Highway Agency District:"],
-    invRoute: assetNumber["Inv Route #"],
-    countyCode: assetNumber["(3) County Code:"],
-    referencePost: assetNumber["Reference Post:"],
-    offsetValue: assetNumber["Offset:"],
-    latValue: assetNumber["(16) Latitude:"],
-    longValue: assetNumber["(17) Longitude:"],
-    facilityCarried: assetNumber["(7) Facility Carried:"],
-    featuresIntersected: assetNumber["(6) Features Intersected:"],
+    contact: assetObject["Contact(s)"],
+    highwayAgencyDistrict: assetObject["(2) Highway Agency District:"],
+    invRoute: assetObject["Inv Route #"],
+    countyCode: assetObject["(3) County Code:"],
+    referencePost: assetObject["Reference Post:"],
+    offsetValue: assetObject["Offset:"],
+    latValue: assetObject["(16) Latitude:"],
+    longValue: assetObject["(17) Longitude:"],
+    facilityCarried: assetObject["(7) Facility Carried:"],
+    featuresIntersected: assetObject["(6) Features Intersected:"],
 
-    deck: assetNumber["(58) Deck:"],
-    superstructure: assetNumber["(59) Superstructure:"],
-    substructure: assetNumber["(60) Substructure:"],
-    culvert: assetNumber["(62) Culverts:"],
+    deck: assetObject["(58) Deck:"],
+    superstructure: assetObject["(59) Superstructure:"],
+    substructure: assetObject["(60) Substructure:"],
+    culvert: assetObject["(62) Culverts:"],
 
-    approachSpans: assetNumber["(46) Number of Approach Spans:"] || 0,
-    approachMatType: assetNumber["(44A) Structure Type, Approach Spans: Kind of Material:"],
-    approachDesignType: assetNumber["(44B) Structure Type, Approach Spans: Type of Design"],
-    mainSpans: assetNumber["(45) Number of Spans in Main Unit:"],
-    mainMatType: assetNumber["(43A) Structure Type, Main: Kind of Material:"],
-    mainDesignType: assetNumber["(43B) Structure Type, Main: Type of Design:"],
-    wearingSurfaceType: assetNumber["(108A) Wearing Surface Protection System: Wearing Surface"],
-    deckMembraneType: assetNumber["(108B) Wearing Surface Protection System: Deck Membrane"],
-    deckProtectionType: assetNumber["(108C) Wearing Surface Protection System: Deck Protection"],
-    deckStructureType: assetNumber["(107) Deck Structure Type:"],
+    approachSpans: assetObject["(46) Number of Approach Spans:"] || 0,
+    approachMatType: assetObject["(44A) Structure Type, Approach Spans: Kind of Material:"],
+    approachDesignType: assetObject["(44B) Structure Type, Approach Spans: Type of Design"],
+    mainSpans: assetObject["(45) Number of Spans in Main Unit:"],
+    mainMatType: assetObject["(43A) Structure Type, Main: Kind of Material:"],
+    mainDesignType: assetObject["(43B) Structure Type, Main: Type of Design:"],
+    wearingSurfaceType: assetObject["(108A) Wearing Surface Protection System: Wearing Surface"],
+    deckMembraneType: assetObject["(108B) Wearing Surface Protection System: Deck Membrane"],
+    deckProtectionType: assetObject["(108C) Wearing Surface Protection System: Deck Protection"],
+    deckStructureType: assetObject["(107) Deck Structure Type:"],
 
-    bridgeJointType: assetNumber["(58.02) Bridge Joint Type:"],
-    scourStatus: assetNumber["Scour Analysis Status:"],
-    scourDetermination: assetNumber["Scour Analysis Determination:"],
-    scourSafety: assetNumber["Scour Critical Safety Status:"],
+    bridgeJointType: assetObject["(58.02) Bridge Joint Type:"],
+    scourStatus: assetObject["Scour Analysis Status:"],
+    scourDetermination: assetObject["Scour Analysis Determination:"],
+    scourSafety: assetObject["Scour Critical Safety Status:"],
 
-    nstmInspRequired: assetNumber["(92AA) Critical Feature Inspection: NSTM Insp Required?"],
-    nstmInspFrequency: assetNumber["(92A) Critical Feature Inspection: NSTM Insp Frequency?"],
-    nstmInspDate: assetNumber["(93A) Critical Feature Inspection Date: NSTM Insp Date"] || "",
-    specialInspRequired: assetNumber["(92CC) Critical Feature Inspection: Special Insp Required?"],
-    specialInspFrequency: assetNumber["(92C) Critical Features: Special Insp Frequency?"],
-    specialInspDate: assetNumber["(93C) Critical Feature Inspection Date: Special Insp Date"] || "",
-    underwaterInspRequired: assetNumber["(92BB) Critical Feature Inspection: Underwater Insp Required?"],
-    underwaterInspFrequency: assetNumber["(92B) Critical Feature Inspection: Underwater Insp Frequency?"],
-    underwaterInspDate: assetNumber["(93B) Critical Feature Inspection: Underwater Insp Date"] || "",
+    nstmInspRequired: assetObject["(92AA) Critical Feature Inspection: NSTM Insp Required?"],
+    nstmInspFrequency: assetObject["(92A) Critical Feature Inspection: NSTM Insp Frequency?"],
+    nstmInspDate: assetObject["(93A) Critical Feature Inspection Date: NSTM Insp Date"] || "",
+    specialInspRequired: assetObject["(92CC) Critical Feature Inspection: Special Insp Required?"],
+    specialInspFrequency: assetObject["(92C) Critical Features: Special Insp Frequency?"],
+    specialInspDate: assetObject["(93C) Critical Feature Inspection Date: Special Insp Date"] || "",
+    underwaterInspRequired: assetObject["(92BB) Critical Feature Inspection: Underwater Insp Required?"],
+    underwaterInspFrequency: assetObject["(92B) Critical Feature Inspection: Underwater Insp Frequency?"],
+    underwaterInspDate: assetObject["(93B) Critical Feature Inspection: Underwater Insp Date"] || "",
 
-    brdgWidthCurbToCurb: assetNumber["(51) Brdg Rdwy Width Curb-To-Curb:"],
-    deckWidthOutToOut: assetNumber["(52) Deck Width, Out-To-Out:"],
-    structureLength: assetNumber["(49) Structure Length:"],
-    skewValue: assetNumber["(34) Skew:"],
+    brdgWidthCurbToCurb: assetObject["(51) Brdg Rdwy Width Curb-To-Curb:"],
+    deckWidthOutToOut: assetObject["(52) Deck Width, Out-To-Out:"],
+    structureLength: assetObject["(49) Structure Length:"],
+    skewValue: assetObject["(34) Skew:"],
 
-    hyperlink: assetNumber["Hyperlink"],
+    hyperlink: assetObject["Hyperlink"],
 
-    underfillValue: assetNumber["(62) Culverts:"],
-    membraneValue: assetNumber["(108B) Wearing Surface Protection System: Deck Membrane"],
-    approachRoadwayAlignment: assetNumber["(72) Approach Roadway Alignment:"],
-    terminalJoints: assetNumber["(58.06) Terminal Joints:"],
-    approachSlabs: assetNumber["(58.05) Approach Slabs:"],
-    bridgeJoints: assetNumber["(58.04) Bridge Joints:"],
-    wearingSurface: assetNumber["(58.01) Wearing Surface:"],
-    bridgeBearings: assetNumber["(59.02) Bridge Bearings:"],
-    madPaint: assetNumber["MAD Paint"],
-    concreteSlopewall: assetNumber["Concrete Slopewall:"],
-    scourAnalysisComment: assetNumber["Scour Analysis Comment:"],
-    waterwayAdequacy: assetNumber["(71) Waterway Adequacy:"],
-    deprecatedDesignLoad: assetNumber["(31) DeprecatedDesign Load"],
-    madBats: assetNumber["MAD-Bats"],
-    madSwallows: assetNumber["MAD-Swallows"],
-    bridgeRailings: assetNumber["(36A) Bridge Railings:"],
-    transitions: assetNumber["(36B) Transitions:"],
+    underfillValue: assetObject["(62) Culverts:"],
+    membraneValue: assetObject["(108B) Wearing Surface Protection System: Deck Membrane"],
+    approachRoadwayAlignment: assetObject["(72) Approach Roadway Alignment:"],
+    terminalJoints: assetObject["(58.06) Terminal Joints:"],
+    approachSlabs: assetObject["(58.05) Approach Slabs:"],
+    bridgeJoints: assetObject["(58.04) Bridge Joints:"],
+    wearingSurface: assetObject["(58.01) Wearing Surface:"],
+    bridgeBearings: assetObject["(59.02) Bridge Bearings:"],
+    madPaint: assetObject["MAD Paint"],
+    concreteSlopewall: assetObject["Concrete Slopewall:"],
+    scourAnalysisComment: assetObject["Scour Analysis Comment:"],
+    waterwayAdequacy: assetObject["(71) Waterway Adequacy:"],
+    deprecatedDesignLoad: assetObject["(31) DeprecatedDesign Load"],
+    madBats: assetObject["MAD-Bats"],
+    madSwallows: assetObject["MAD-Swallows"],
+    bridgeRailings: assetObject["(36A) Bridge Railings:"],
+    transitions: assetObject["(36B) Transitions:"],
   };
 }
 

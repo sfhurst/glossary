@@ -28,14 +28,14 @@ function setSafeHTML(container, unsafeHTML) {
 // ::: ------------------------------ Insert the alignment pg1 commentary into the content container (HTML Injection) ------------------------------
 // This is still generated in the index.html and can be deleted. It isn't necessary to sanitize page load items, only textarea items that get used in other areas.
 // This should be deleted once the concept is completed for textareas.
-document.addEventListener("DOMContentLoaded", function () {
-  const container = document.querySelector("#bridge-alignment-pg1 .content-container-paragraphs");
+//**// document.addEventListener("DOMContentLoaded", function () {
+//**// const container = document.querySelector("#bridge-alignment-pg1 .content-container-paragraphs");
 
-  // Use the setSafeHTML function to insert sanitized content
-  const unsafeHTML = bridgeComponents[0].commentary; // The raw HTML content to be inserted
-  // container.innerHTML = unsafeHTML;
-  setSafeHTML(container, unsafeHTML); // Insert sanitized HTML into the container
-});
+// Use the setSafeHTML function to insert sanitized content
+//**// const unsafeHTML = bridgeComponents[0].commentary; // The raw HTML content to be inserted
+// container.innerHTML = unsafeHTML;
+//**// setSafeHTML(container, unsafeHTML); // Insert sanitized HTML into the container
+//**// });
 
 // :::: (Text Content Insertion) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

@@ -1,5 +1,5 @@
 // Uses defects.js
-// The handleTabClick function in the scripts.js handles the active comment builder tab
+// The handleTabClick() function in the scripts.js handles the active comment builder tab
 
 // Function to populate the options for a given category (e.g., defects, symptoms, etc.)
 function populateOptions(category, options) {
