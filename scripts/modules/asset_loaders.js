@@ -72,19 +72,20 @@ extractAssetDetails(assetObject):
 Trigger: generateSummary(), populateTextareas()
 1. Converts the asset data (assetObject) into usable variables that populate the populateTextareas() and generateSummary() functions
 
-populateTextareas(assetObject):
+populateTextareas(assetObject):     ///// Working to split the functionality up with smaller functions
 > Trigger: generateSummary()
 > Calls: extractAssetDetails(), getCodeDescription()
 1. Immediately calls the extractAssetDetails() function to get variables from the assetObject (duplicate action from the generateSummary() function)
 2. Creates a variable the holds the full RP
 3. Calculates the due dates of the different inspection types
-4. Gets the lowest rating value and component
-5. Runs error checks and displays the appropriate error icon
-6. Sets variables for searching the bridgeData array for the appropriate object
-7. Gets the code and description using the getCodeDescription() function for the corresponding object from the bridgeData array
-8. Builds a fields array to hold objects by variable name equating to the id of the textarea
-9. Populates the Asset Data tab under the Review tab with the formatted codes and descriptions using the field array
-10. Returns the lowest value and component to the generateSummary() function
+4. Gets the lowest rating value and component //// New Function
+5. Resets the textareas to blank //// New Function
+6. Runs error checks and displays the appropriate error icon //// New Function
+7. Sets variables for searching the bridgeData array for the appropriate object
+8. Gets the code and description using the getCodeDescription() function for the corresponding object from the bridgeData array
+9. Builds a fields array to hold objects by variable name equating to the id of the textarea
+10. Populates the Asset Data tab under the Review tab with the formatted codes and descriptions using the field array
+11. Returns the lowest value and component to the generateSummary() function
 
 getCodeDescription(variable, code):
 > Trigger: populateTextareas()
@@ -101,16 +102,29 @@ copySummaryTextareaContent():
 
 */
 
+// console.time("Speed Test");
+// console.timeEnd("Speed Test");
+
 // ::: ---------------------------- Asset Search Box ----------------------------
 
 // Global variable to store the formatted history
 let formattedHistory = "";
 let searchValue = ""; // Declare outside to track its value
+let resetComments = 0; // To track if comments need refreshed
+
+let assetObject = null;
+
+// If there are valid values, find the lowest value and the corresponding field
+let lowestValue = null;
+let lowestComponent = null;
 
 // Event Listener Setup (Triggers on Enter Key)
 document.querySelector(".search-box").addEventListener("keydown", function (event) {
   if (event.key !== "Enter") return; // Ensures only Enter triggers the search
   event.preventDefault();
+
+  // Reset Comments variable
+  resetComments = 0;
 
   // Retrieves the Search Input Value
   searchValue = this.value.trim().toLowerCase();
@@ -128,7 +142,7 @@ document.querySelector(".search-box").addEventListener("keydown", function (even
   }
 
   // Searches for the Asset in assetData
-  const assetObject = assetData.find((item) => item["Asset Number"].toLowerCase() === searchValue);
+  assetObject = JSON.parse(JSON.stringify(assetData.find((item) => item["Asset Number"].toLowerCase() === searchValue)));
 
   // Handles Not Found Case
   const searchID = document.getElementById("searchID");
@@ -281,9 +295,6 @@ function displaySummary(assetObject) {
 // Copy the summary to the clipboard when it is clicked
 function copySummaryTextareaContent() {
   let textarea = document.getElementById("summary-textarea");
-
-  // Select the textarea content
-  // textarea.select();
 
   // Copy to clipboard
   navigator.clipboard.writeText(textarea.value);
@@ -537,108 +548,9 @@ function populateTextareas(assetObject) {
     underwaterDueDate = formattedUnderwaterDueDate;
   }
 
-  // :: Get lowest value ////////////////////////////////////////
-  // Extract numeric values, excluding any non-numeric strings (e.g., "N")
-  // Define the fields and their respective values
-  const values = [
-    { field: "deck", value: assetValues.deck },
-    { field: "superstructure", value: assetValues.superstructure },
-    { field: "substructure", value: assetValues.substructure },
-    { field: "culvert", value: assetValues.culvert },
-  ];
-
-  // Filter out non-numeric values and "N"
-  const validValues = values.filter((item) => !isNaN(item.value) && item.value !== "N");
-
-  // If there are valid values, find the lowest value and the corresponding field
-  let lowestValue = null;
-  let lowestComponent = null;
-
-  if (validValues.length > 0) {
-    // Get the lowest value and the corresponding field
-    const lowest = validValues.reduce((min, current) => {
-      return current.value < min.value ? current : min;
-    });
-
-    // Set the lowestValue and lowestComponent variables
-    lowestValue = lowest.value;
-    lowestComponent = lowest.field;
-  }
-
-  // :: Error checks for icon display ////////////////////////////////////////
-
-  let anyError = 0;
-
-  // Reset textareas
-  document.getElementById("BC02-textarea").value = "";
-  document.getElementById("BC01a-textarea").value = "";
-
-  // Freq
-  if (parseFloat(lowestValue) < 4 && parseFloat(assetValues.inspectionFrequency) > 12) {
-    document.querySelector("#error-freq").style.display = "block";
-    anyError = 1;
-  }
-
-  // Slab
-  if (assetValues.mainDesignType === "1" || assetValues.mainDesignType === "01" || assetValues.mainDesignType === 1) {
-    document.getElementById("BC02-textarea").value = "The superstructure is a deck/slab. See the deck comments. ";
-    if (assetValues.deck !== assetValues.superstructure) {
-      document.querySelector("#error-super").style.display = "block";
-      anyError = 1;
-    }
-  }
-
-  // Monolithic
-  if (assetValues.wearingSurfaceType === "1") {
-    document.getElementById("BC01a-textarea").value = "The wearing surface is monolithic with the deck. ";
-    const deckRating = parseInt(assetValues.deck, 10); // Assuming deck is a string
-    const wearingSurfaceRating = parseInt(assetValues.wearingSurface, 10); // Assuming wearing surface is a string
-
-    if (deckRating <= 5 || wearingSurfaceRating <= 5) {
-      // Ratings should be the same if either is 5 or below
-      if (deckRating !== wearingSurfaceRating) {
-        document.querySelector("#error-deck").style.display = "block";
-        anyError = 1;
-      }
-    } else {
-      // Wearing surface is >= 6, deck can be 1 higher (max 9)
-      if (deckRating !== wearingSurfaceRating && deckRating !== wearingSurfaceRating + 1) {
-        document.querySelector("#error-deck").style.display = "block";
-        anyError = 1;
-      }
-    }
-  }
-
-  // Socur and Sub
-  if (parseFloat(assetValues.scourCritical, 10) <= 2) {
-    const scourCritical = parseFloat(assetValues.scourCritical, 10);
-    const sub = parseFloat(assetValues.substructure, 10);
-
-    // If scourCritical is less than or equal to 2, sub must be less than or equal to scourCritical
-    if (sub > scourCritical) {
-      document.querySelector("#error-sub").style.display = "block";
-      anyError = 1;
-    }
-  }
-
-  // Membrane
-  if (
-    assetValues.underfillValue === "N" &&
-    (assetValues.deckStructureType === "1" || assetValues.deckStructureType === "2") &&
-    assetValues.wearingSurfaceType === "6" &&
-    ["0", "8", "N"].includes(assetValues.membraneValue)
-  ) {
-    document.getElementById("BC01a-textarea").value = "The bridge has a bituminous wearing surface and the deck is not protected by an agency approved membrane. ";
-    if (parseFloat(assetValues.wearingSurface, 10) > 4) {
-      document.querySelector("#error-wearing").style.display = "block";
-      anyError = 1;
-    }
-  }
-
-  // Asset error icon
-  if (anyError === 1) {
-    document.getElementById("asset-error-button").style.display = "block";
-  }
+  lowestValueDetermination(assetObject);
+  resetBridgeComponentTextareas(assetObject);
+  errorIconDisplay(assetObject, lowestValue);
 
   // :: Setup variables and get code descriptions ////////////////////////////////////////
 
@@ -843,4 +755,143 @@ function extractAssetDetails(assetObject) {
     bridgeRailings: assetObject["(36A) Bridge Railings:"],
     transitions: assetObject["(36B) Transitions:"],
   };
+}
+
+// ::: ---------------------------- populateTextareas() Functions ----------------------------
+
+function lowestValueDetermination(assetObject) {
+  // Extract necessary data from the asset object using descriptive variable names
+  const assetValues = extractAssetDetails(assetObject); // Returns the new asset data
+
+  // :: Get lowest value ////////////////////////////////////////
+  // Extract numeric values, excluding any non-numeric strings (e.g., "N")
+  // Define the fields and their respective values
+  const values = [
+    { field: "deck", value: assetValues.deck },
+    { field: "superstructure", value: assetValues.superstructure },
+    { field: "substructure", value: assetValues.substructure },
+    { field: "culvert", value: assetValues.culvert },
+  ];
+
+  // Filter out non-numeric values and "N"
+  const validValues = values.filter((item) => !isNaN(item.value) && item.value !== "N");
+
+  if (validValues.length > 0) {
+    // Get the lowest value and the corresponding field
+    const lowest = validValues.reduce((min, current) => {
+      return current.value < min.value ? current : min;
+    });
+
+    // Set the lowestValue and lowestComponent variables
+    lowestValue = lowest.value;
+    lowestComponent = lowest.field;
+  }
+}
+
+function resetBridgeComponentTextareas(assetObject) {
+  // Extract necessary data from the asset object using descriptive variable names
+  const assetValues = extractAssetDetails(assetObject); // Returns the new asset data
+
+  // Reset textareas
+  if (resetComments === 0) {
+    document.querySelectorAll(".reset-comments").forEach((textarea) => {
+      textarea.value = "";
+    });
+
+    resetComments = 1;
+
+    if (assetValues.mainDesignType === "1" || assetValues.mainDesignType === "01" || assetValues.mainDesignType === 1) {
+      document.getElementById("BC02-textarea").value = "The superstructure is a deck/slab. See the deck comments. ";
+    }
+
+    if (assetValues.wearingSurfaceType === "1") {
+      document.getElementById("BC01a-textarea").value = "The wearing surface is monolithic with the deck. ";
+    }
+
+    if (
+      assetValues.underfillValue === "N" &&
+      (assetValues.deckStructureType === "1" || assetValues.deckStructureType === "2") &&
+      assetValues.wearingSurfaceType === "6" &&
+      ["0", "8", "N"].includes(assetValues.membraneValue)
+    ) {
+      document.getElementById("BC01a-textarea").value = "The bridge has a bituminous wearing surface and the deck is not protected by an agency approved membrane. ";
+    }
+  }
+}
+
+function errorIconDisplay(assetObject, lowestValue) {
+  // Extract necessary data from the asset object using descriptive variable names
+  const assetValues = extractAssetDetails(assetObject); // Returns the new asset data
+
+  // :: Error checks for icon display ////////////////////////////////////////
+
+  let anyError = 0;
+
+  // Freq
+  if (parseFloat(lowestValue) < 4 && parseFloat(assetValues.inspectionFrequency) > 12) {
+    document.querySelector("#error-freq").style.display = "block";
+    anyError = 1;
+  }
+
+  // Slab
+  if (assetValues.mainDesignType === "1" || assetValues.mainDesignType === "01" || assetValues.mainDesignType === 1) {
+    if (assetValues.deck !== assetValues.superstructure) {
+      document.querySelector("#error-super").style.display = "block";
+      anyError = 1;
+    }
+  }
+
+  // Monolithic
+  if (assetValues.wearingSurfaceType === "1") {
+    const deckRating = parseInt(assetValues.deck, 10); // Assuming deck is a string
+    const wearingSurfaceRating = parseInt(assetValues.wearingSurface, 10); // Assuming wearing surface is a string
+
+    if (deckRating <= 5 || wearingSurfaceRating <= 5) {
+      // Ratings should be the same if either is 5 or below
+      if (deckRating !== wearingSurfaceRating) {
+        document.querySelector("#error-deck").style.display = "block";
+        anyError = 1;
+      }
+    } else {
+      // Wearing surface is >= 6, deck can be 1 higher (max 9)
+      if (deckRating !== wearingSurfaceRating && deckRating !== wearingSurfaceRating + 1) {
+        document.querySelector("#error-deck").style.display = "block";
+        anyError = 1;
+      }
+    }
+  }
+
+  // Socur and Sub
+  if (parseFloat(assetValues.scourCritical, 10) <= 2) {
+    const scourCritical = parseFloat(assetValues.scourCritical, 10);
+    const sub = parseFloat(assetValues.substructure, 10);
+
+    // If scourCritical is less than or equal to 2, sub must be less than or equal to scourCritical
+    if (sub > scourCritical) {
+      document.querySelector("#error-sub").style.display = "block";
+      anyError = 1;
+    }
+  }
+
+  // Membrane
+  if (
+    assetValues.underfillValue === "N" &&
+    (assetValues.deckStructureType === "1" || assetValues.deckStructureType === "2") &&
+    assetValues.wearingSurfaceType === "6" &&
+    ["0", "8", "N"].includes(assetValues.membraneValue)
+  ) {
+    if (parseFloat(assetValues.wearingSurface, 10) > 4) {
+      document.querySelector("#error-wearing").style.display = "block";
+      anyError = 1;
+    }
+  }
+
+  // Asset error icon
+  if (anyError === 1) {
+    document.getElementById("asset-error-button").style.display = "block";
+  }
+}
+
+function buildAssetValuesObject() {
+  // create assetValues here and pop in fields like lowestValue and fullRP
 }

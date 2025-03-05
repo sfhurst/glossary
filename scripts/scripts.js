@@ -695,7 +695,7 @@ console.log(districtCounts);
 
 // :::: (Error Log) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-function findAssetErrors(assetData) {
+function findAssetErrors() {
   let errors = {
     freq: [],
     super: [],
@@ -773,9 +773,7 @@ function findAssetErrors(assetData) {
   return errors;
 }
 
-// Example usage:
-const assetErrors = findAssetErrors(assetData);
-console.log(assetErrors);
+console.log(findAssetErrors());
 
 // :::: Not Sorted | Working /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -829,41 +827,39 @@ document.querySelector("#error-wearing button").addEventListener("click", functi
 // Update summary when changing ratings
 function updateObjectRatings(numericalValue, dataCategory) {
   if (searchValue !== "") {
-    const asset = assetData.find((item) => item["Asset Number"].toLowerCase() === searchValue);
-
     if (dataCategory === "B.C.01") {
-      if (asset) {
-        asset["(58) Deck:"] = numericalValue;
+      if (assetObject) {
+        assetObject["(58) Deck:"] = numericalValue;
         hideAllErrors();
-        displaySummary(asset);
+        displaySummary(assetObject);
       }
     }
     if (dataCategory === "B.C.02") {
-      if (asset) {
-        asset["(59) Superstructure:"] = numericalValue;
+      if (assetObject) {
+        assetObject["(59) Superstructure:"] = numericalValue;
         hideAllErrors();
-        displaySummary(asset);
+        displaySummary(assetObject);
       }
     }
     if (dataCategory === "B.C.03") {
-      if (asset) {
-        asset["(60) Substructure:"] = numericalValue;
+      if (assetObject) {
+        assetObject["(60) Substructure:"] = numericalValue;
         hideAllErrors();
-        displaySummary(asset);
+        displaySummary(assetObject);
       }
     }
     if (dataCategory === "B.C.04") {
-      if (asset) {
-        asset["(62) Culverts:"] = numericalValue;
+      if (assetObject) {
+        assetObject["(62) Culverts:"] = numericalValue;
         hideAllErrors();
-        displaySummary(asset);
+        displaySummary(assetObject);
       }
     }
     if (dataCategory === "B.C.01a") {
-      if (asset) {
-        asset["(58.01) Wearing Surface:"] = numericalValue;
+      if (assetObject) {
+        assetObject["(58.01) Wearing Surface:"] = numericalValue;
         hideAllErrors();
-        displaySummary(asset);
+        displaySummary(assetObject);
       }
     }
   }

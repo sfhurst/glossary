@@ -27,7 +27,7 @@
     <script src="./scripts/modules/defects.js" defer></script>
     <script src="./scripts/modules/comment_builder.js" defer></script>
     <script src="./scripts/modules/asset_loaders.js" defer></script>
-    <script type="text/javascript" src="./scripts/scripts.js" defer></script>
+    <script src="./scripts/scripts.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/dompurify@2.4.0/dist/purify.min.js"></script>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -328,7 +328,7 @@
                 <div class="textarea-mirrors">
                   <textarea
                     id="BAP01-textarea"
-                    class="textarea-comments"
+                    class="textarea-comments reset-comments"
                     name="Approach Roadway Alignment"
                     rows="1"
                     data-category="B.AP.01"
@@ -544,7 +544,7 @@
                 <div class="textarea-mirrors">
                   <textarea
                     id="BC01b-textarea"
-                    class="textarea-comments"
+                    class="textarea-comments reset-comments"
                     name="Approach Slab"
                     rows="1"
                     data-category="B.C.01b"
@@ -745,15 +745,11 @@
               </div>
               <div class="content-container-rating-lines" data-category="B.C.08a">
                 <span class="content-container-rating-numerical">G</span>
-                <p class="content-container-rating-description-and-condition-bubble">
-                  <span class="content-container-rating-condition-bubble">GOOD</span>The terminal joints do not need maintenance, and meet the current standards.
-                </p>
+                <p class="content-container-rating-description-and-condition-bubble"><span class="content-container-rating-condition-bubble">GOOD</span>Some minor defects.</p>
               </div>
               <div class="content-container-rating-lines" data-category="B.C.08a">
                 <span class="content-container-rating-numerical">F</span>
-                <p class="content-container-rating-description-and-condition-bubble">
-                  <span class="content-container-rating-condition-bubble">FAIR</span>The terminal joints do not need maintenance, but do not meet the current standards.
-                </p>
+                <p class="content-container-rating-description-and-condition-bubble"><span class="content-container-rating-condition-bubble">FAIR</span>Some moderate defects.</p>
               </div>
               <div class="content-container-rating-lines" data-category="B.C.08a">
                 <span class="content-container-rating-numerical">P</span>
@@ -831,7 +827,7 @@
                 <div class="textarea-mirrors">
                   <textarea
                     id="BC08-textarea"
-                    class="textarea-comments"
+                    class="textarea-comments reset-comments"
                     name="Bridge Joints"
                     rows="1"
                     data-category="B.C.08"
@@ -848,7 +844,7 @@
                 <div class="textarea-mirrors">
                   <textarea
                     id="BC08a-textarea"
-                    class="textarea-comments"
+                    class="textarea-comments reset-comments"
                     name="Terminal Joints"
                     rows="1"
                     data-category="B.C.08a"
@@ -1016,6 +1012,7 @@
                 <p class="content-container-comment-lines">There are no deficiencies to report.</p>
                 <p class="content-container-comment-lines">There is an isolated area of collision damage.</p>
                 <p class="content-container-comment-lines">There are widely spaced hairline vertical cracks in the barrier walls.</p>
+                <p class="content-container-comment-lines">There are intermittently spaced hairline vertical cracks with efflorescence in the barrier walls.</p>
               </div>
             </div>
             <!-- :: Bridge Railings Tab Page 4 -->
@@ -1174,7 +1171,7 @@
                 <div class="textarea-mirrors">
                   <textarea
                     id="BC05-textarea"
-                    class="textarea-comments"
+                    class="textarea-comments reset-comments"
                     name="Bridge Railing"
                     rows="1"
                     data-category="B.C.05"
@@ -1191,7 +1188,7 @@
                 <div class="textarea-mirrors">
                   <textarea
                     id="BC06-textarea"
-                    class="textarea-comments"
+                    class="textarea-comments reset-comments"
                     name="Bridge Railing Transitions"
                     rows="1"
                     data-category="B.C.06"
@@ -1367,6 +1364,10 @@
                 <p class="content-container-comment-lines">
                   There are large areas of deep spalling with exposed rebar exhibiting moderate section loss on the underside of the deck.
                 </p>
+                <p class="content-container-comment-lines">Water is penetrating the deck.</p>
+                <p class="content-container-comment-lines">Water is penetrating the deck as evidenced by the efflorescence between the box beams.</p>
+                <p class="content-container-comment-lines">There are no obvious signs of water contacting or moving through the deck.</p>
+                <p class="content-container-comment-lines">There is not sufficient evidence to suggest that water is moving through the deck or to warrant a lower rating.</p>
               </div>
             </div>
             <!-- :: Bridge Deck Tab Page 9 -->
@@ -1567,7 +1568,14 @@
             <div class="content-container-paragraphs">
               <div class="textarea-containers">
                 <div class="textarea-mirrors">
-                  <textarea id="BC01-textarea" class="textarea-comments" name="Deck" rows="1" data-category="B.C.01" oninput="expandTextarea(event, 'BC01-textarea')"></textarea>
+                  <textarea
+                    id="BC01-textarea"
+                    class="textarea-comments reset-comments"
+                    name="Deck"
+                    rows="1"
+                    data-category="B.C.01"
+                    oninput="expandTextarea(event, 'BC01-textarea')"
+                  ></textarea>
                 </div>
               </div>
             </div>
@@ -1579,7 +1587,7 @@
                 <div class="textarea-mirrors">
                   <textarea
                     id="BC01a-textarea"
-                    class="textarea-comments"
+                    class="textarea-comments reset-comments"
                     name="Wearing Surface"
                     rows="1"
                     data-category="B.C.01a"
@@ -1928,7 +1936,7 @@
                 <div class="textarea-mirrors">
                   <textarea
                     id="BC02-textarea"
-                    class="textarea-comments"
+                    class="textarea-comments reset-comments"
                     name="Superstructure"
                     rows="1"
                     data-category="B.C.02"
@@ -1945,7 +1953,7 @@
                 <div class="textarea-mirrors">
                   <textarea
                     id="BC02a-textarea"
-                    class="textarea-comments"
+                    class="textarea-comments reset-comments"
                     name="Paint"
                     rows="1"
                     data-category="B.C.02a"
@@ -2154,7 +2162,7 @@
                 <div class="textarea-mirrors">
                   <textarea
                     id="BC07-textarea"
-                    class="textarea-comments"
+                    class="textarea-comments reset-comments"
                     name="Bridge Bearings"
                     rows="1"
                     data-category="B.C.07"
@@ -2349,9 +2357,13 @@
                 <p class="content-container-rating-description-and-condition-bubble"><span class="content-container-rating-condition-bubble">GOOD</span>Some minor defects.</p>
               </div>
               <div class="content-container-rating-lines" data-category="B.C.03a">
+                <span class="content-container-rating-numerical">F</span>
+                <p class="content-container-rating-description-and-condition-bubble"><span class="content-container-rating-condition-bubble">Fair</span>Some moderate defects.</p>
+              </div>
+              <div class="content-container-rating-lines" data-category="B.C.03a">
                 <span class="content-container-rating-numerical">P</span>
                 <p class="content-container-rating-description-and-condition-bubble">
-                  <span class="content-container-rating-condition-bubble">POOR</span>Widespread moderate or isolated major defects.
+                  <span class="content-container-rating-condition-bubble">POOR</span>The slopewalls need maintenance.
                 </p>
               </div>
             </div>
@@ -2418,7 +2430,7 @@
                 <div class="textarea-mirrors">
                   <textarea
                     id="BC03-textarea"
-                    class="textarea-comments"
+                    class="textarea-comments reset-comments"
                     name="Substructure"
                     rows="1"
                     data-category="B.C.03"
@@ -2435,7 +2447,7 @@
                 <div class="textarea-mirrors">
                   <textarea
                     id="BC03a-textarea"
-                    class="textarea-comments"
+                    class="textarea-comments reset-comments"
                     name="Slopewall"
                     rows="1"
                     data-category="B.C.03a"
@@ -2668,7 +2680,14 @@
             <div class="content-container-paragraphs">
               <div class="textarea-containers">
                 <div class="textarea-mirrors">
-                  <textarea id="BC04-textarea" class="textarea-comments" name="Culvert" rows="1" data-category="B.C.04" oninput="expandTextarea(event, 'BC04-textarea')"></textarea>
+                  <textarea
+                    id="BC04-textarea"
+                    class="textarea-comments reset-comments"
+                    name="Culvert"
+                    rows="1"
+                    data-category="B.C.04"
+                    oninput="expandTextarea(event, 'BC04-textarea')"
+                  ></textarea>
                 </div>
               </div>
             </div>
@@ -3005,7 +3024,14 @@
             <div class="content-container-paragraphs">
               <div class="textarea-containers">
                 <div class="textarea-mirrors">
-                  <textarea id="BC09-textarea" class="textarea-comments" name="Channel" rows="1" data-category="B.C.09" oninput="expandTextarea(event, 'BC09-textarea')"></textarea>
+                  <textarea
+                    id="BC09-textarea"
+                    class="textarea-comments reset-comments"
+                    name="Channel"
+                    rows="1"
+                    data-category="B.C.09"
+                    oninput="expandTextarea(event, 'BC09-textarea')"
+                  ></textarea>
                 </div>
               </div>
             </div>
@@ -3017,7 +3043,7 @@
                 <div class="textarea-mirrors">
                   <textarea
                     id="BC10-textarea"
-                    class="textarea-comments"
+                    class="textarea-comments reset-comments"
                     name="Channel Protection"
                     rows="1"
                     data-category="B.C.10"
@@ -3271,9 +3297,9 @@
             <!-- :: Bridge Scour Tab Page 6 -->
             <div id="bridge-scour-pg6" class="bridge-scour-containers">
               <div class="content-container-paragraphs">
-                <p class="content-container-comment-lines">There is no scour present.</p>
-                <p class="content-container-comment-lines">There is minor localized scour at the interior piers.</p>
-                <p class="content-container-comment-lines">The designed countermeasures are in good condition.</p>
+                <p class="content-container-comment-lines">The bridge is not scour critical.</p>
+                <p class="content-container-comment-lines">The bridge is scour critical.</p>
+                <p class="content-container-comment-lines">The scour vulnerabilty status is undetermined.</p>
               </div>
             </div>
           </div>
@@ -3327,7 +3353,14 @@
             <div class="content-container-paragraphs">
               <div class="textarea-containers">
                 <div class="textarea-mirrors">
-                  <textarea id="BC11-textarea" class="textarea-comments" name="Scour" rows="1" data-category="B.C.11" oninput="expandTextarea(event, 'BC11-textarea')"></textarea>
+                  <textarea
+                    id="BC11-textarea"
+                    class="textarea-comments reset-comments"
+                    name="Scour"
+                    rows="1"
+                    data-category="B.C.11"
+                    oninput="expandTextarea(event, 'BC11-textarea')"
+                  ></textarea>
                 </div>
               </div>
             </div>
@@ -3339,7 +3372,7 @@
                 <div class="textarea-mirrors">
                   <textarea
                     id="BAP03-textarea"
-                    class="textarea-comments"
+                    class="textarea-comments reset-comments"
                     name="Scour Vulnerability"
                     rows="1"
                     data-category="B.AP.03"
@@ -3503,7 +3536,7 @@
                 <div class="textarea-mirrors">
                   <textarea
                     id="BAP02-textarea"
-                    class="textarea-comments"
+                    class="textarea-comments reset-comments"
                     name="Overtopping Likelihood"
                     rows="1"
                     data-category="B.AP.02"
