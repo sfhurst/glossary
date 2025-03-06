@@ -332,6 +332,7 @@ const bridgeComponents = [
       "There are no deficiencies to report.",
       "There is an isolated area of collision damage.",
       "There are widely spaced hairline vertical cracks in the barrier walls.",
+      "There are intermittently spaced hairline vertical cracks with efflorescence in the barrier walls.",
     ],
     rating_table: [
       {
@@ -507,7 +508,7 @@ const bridgeComponents = [
       "There is a 2' by 2', shallow-depth spall in the center of the wearing surface.",
       "There is a 1' longitudinal by 6\" transverse, deep spall in the southbound lane of Span B.",
       "There are numerous areas of bituminous and concrete patching throughout the wearing surface.",
-      "There is no waterproofing membrane between the deck and the wearing surface, therefore the wearing surface must be rated a 4 or less.",
+      "The concrete bridge deck has a bituminous wearing surface and is not protected by an agency-approved membrane; therefore, the wearing surface rating must be a 4 or less.",
       "There are scattered areas of peeling in less than 5% of the total surface area.",
     ],
     rating_table: [
@@ -722,6 +723,10 @@ const bridgeComponents = [
       "There are exposed strands in Beam 1 at the west abutment.",
       "There is a large spall in the load path of Beam 1 at the west abutment.",
       "There is a moderate, diagonal crack running up toward the center of the beam (indicating shear failure).",
+      "Water is penetrating the deck.",
+      "Water is penetrating the deck as evidenced by the efflorescence between the box beams.",
+      "There are no obvious signs of water contacting or moving through the deck.",
+      "There is not sufficient evidence to suggest that water is moving through the deck or to warrant a lower rating.",
     ],
     rating_table: [
       {
@@ -1121,6 +1126,7 @@ const bridgeComponents = [
     referenece: "SNBI",
     category: "Culvert",
     commentary_page_id: "bridge-culvert-pg1",
+    example_comments_page_id: "bridge-culvert-pg3",
     commentary: `<p>This item addresses the condition of culverts. The condition assessment includes footings, piles, and other foundation members when present.</p>
                 <br />
     
@@ -1261,7 +1267,7 @@ const bridgeComponents = [
     example_comments: [
       "There are no deficiencies to report.",
       "The bridge is not over water.",
-      "The channel condition is not impacting the roadway or the bridge.",
+      "The channel condition does not threaten the roadway or the bridge.",
       "Under normal conditions the shallow, low-velocity channel flows from south to north through Span B.",
       "Under normal conditions the wide, deep, low-velocity channel flows from north to south through Span B.",
       "Under normal conditions the channel cannot be entered without additional precautions.",
@@ -1370,7 +1376,7 @@ const bridgeComponents = [
     example_comments: [
       "There are no deficiencies to report.",
       "The bridge is not over water.",
-      "The channel condition is not impacting the roadway or the bridge.",
+      "The channel protection condition does not threaten the roadway or the bridge.",
       "Under normal conditions the shallow, low-velocity channel flows from south to north through Span B.",
       "Under normal conditions the wide, deep, low-velocity channel flows from north to south through Span B.",
       "Under normal conditions the channel cannot be entered without additional precautions.",
@@ -1572,7 +1578,12 @@ const bridgeComponents = [
                 <br />
     
                 <p>Use code C for bridges that could become unstable for the potential scour, and temporary countermeasures are installed that were not designed.</p>`,
-    example_comments: ["There is no scour present.", "There is minor localized scour at the interior piers.", "The designed countermeasures are in good condition."],
+    example_comments: [
+      "The bridge is not scour critical.",
+      "The bridge is scour critical.",
+      "The designed countermeasures are in good condition.",
+      "The scour vulnerabilty status is undetermined.",
+    ],
     rating_table: [
       {
         code: "0",

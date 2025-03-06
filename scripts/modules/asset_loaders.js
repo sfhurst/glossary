@@ -112,7 +112,7 @@ let formattedHistory = "";
 let searchValue = ""; // Declare outside to track its value
 let resetComments = 0; // To track if comments need refreshed
 
-let assetObject = null;
+let assetObject = null; // Declared globally to only generate on asset loads and use a copy otherwise
 
 // If there are valid values, find the lowest value and the corresponding field
 let lowestValue = null;
@@ -143,6 +143,7 @@ document.querySelector(".search-box").addEventListener("keydown", function (even
 
   // Searches for the Asset in assetData
   assetObject = JSON.parse(JSON.stringify(assetData.find((item) => item["Asset Number"].toLowerCase() === searchValue)));
+  resetBridgeComponentTextareas(assetObject);
 
   // Handles Not Found Case
   const searchID = document.getElementById("searchID");
@@ -549,7 +550,7 @@ function populateTextareas(assetObject) {
   }
 
   lowestValueDetermination(assetObject);
-  resetBridgeComponentTextareas(assetObject);
+  // resetBridgeComponentTextareas(assetObject);
   errorIconDisplay(assetObject, lowestValue);
 
   // :: Setup variables and get code descriptions ////////////////////////////////////////
@@ -789,34 +790,155 @@ function lowestValueDetermination(assetObject) {
 }
 
 function resetBridgeComponentTextareas(assetObject) {
-  // Extract necessary data from the asset object using descriptive variable names
-  const assetValues = extractAssetDetails(assetObject); // Returns the new asset data
+  const assetValues = extractAssetDetails(assetObject); // Get new asset data
+  let wearingSurfaceMonolithic = "";
+  // Reset all textareas and spans first
+  document.querySelectorAll(".reset-comments").forEach((textarea) => {
+    textarea.value = "";
+  });
 
-  // Reset textareas
+  document.querySelectorAll(".textarea-content-here").forEach((span) => {
+    span.textContent = "";
+  });
+
+  // Remove the 'highlight' class from all rows
+  document.querySelectorAll(".content-container-rating-lines").forEach((row) => {
+    row.classList.remove("highlight");
+  });
+
+  // Reset all numerical values in the review page
+  resetReviewPageNumericalValues();
+
   if (resetComments === 0) {
-    document.querySelectorAll(".reset-comments").forEach((textarea) => {
-      textarea.value = "";
-    });
-
     resetComments = 1;
 
-    if (assetValues.mainDesignType === "1" || assetValues.mainDesignType === "01" || assetValues.mainDesignType === 1) {
-      document.getElementById("BC02-textarea").value = "The superstructure is a deck/slab. See the deck comments. ";
+    // Update text dynamically based on asset values
+    if (assetValues.wearingSurfaceType === "1") {
+      wearingSurfaceMonolithic = "The wearing surface is monolithic with the deck. ";
+      updateComponentText("B.C.01a", wearingSurfaceMonolithic, String(assetValues.wearingSurface));
+    }
+    if (assetValues.wearingSurfaceType === "3") {
+      wearingSurfaceMonolithic = "The bridge has a latex-modified wearing surface. ";
+      updateComponentText("B.C.01a", wearingSurfaceMonolithic, String(assetValues.wearingSurface));
+    }
+    if (assetValues.wearingSurfaceType === "5") {
+      wearingSurfaceMonolithic = "The bridge has a thin deck overlay. ";
+      updateComponentText("B.C.01a", wearingSurfaceMonolithic, String(assetValues.wearingSurface));
     }
 
-    if (assetValues.wearingSurfaceType === "1") {
-      document.getElementById("BC01a-textarea").value = "The wearing surface is monolithic with the deck. ";
+    // Check and update for B.C.01a (wearingSurface)
+    if (assetValues.wearingSurface === "8" || String(assetValues.wearingSurface) === "9") {
+      updateComponentText("B.C.01a", `${wearingSurfaceMonolithic}There are no deficiencies to report. `, String(assetValues.wearingSurface));
+      highlightRowIfMatches("B.C.01a", String(assetValues.wearingSurface));
+    } else {
+      updateComponentText("B.C.01a", wearingSurfaceMonolithic, String(assetValues.wearingSurface));
+      highlightRowIfMatches("B.C.01a", String(assetValues.wearingSurface));
     }
 
     if (
       assetValues.underfillValue === "N" &&
-      (assetValues.deckStructureType === "1" || assetValues.deckStructureType === "2") &&
+      ["1", "2"].includes(assetValues.deckStructureType) &&
       assetValues.wearingSurfaceType === "6" &&
       ["0", "8", "N"].includes(assetValues.membraneValue)
     ) {
-      document.getElementById("BC01a-textarea").value = "The bridge has a bituminous wearing surface and the deck is not protected by an agency approved membrane. ";
+      updateComponentText(
+        "B.C.01a",
+        "The concrete bridge deck has a bituminous wearing surface and is not protected by an agency-approved membrane; therefore, the wearing surface rating must be a 4 or less. "
+      );
     }
+
+    // Check and update for B.C.01 (deck)
+    if (assetValues.deck === "8" || String(assetValues.deck) === "9") {
+      updateComponentText("B.C.01", "There are no deficiencies to report. ", String(assetValues.deck));
+      highlightRowIfMatches("B.C.01", String(assetValues.deck));
+    } else {
+      updateComponentText("B.C.01", "", String(assetValues.deck));
+      highlightRowIfMatches("B.C.01", String(assetValues.deck));
+    }
+
+    // Check and update for B.C.02 (superstructure)
+    if (assetValues.superstructure === "8" || String(assetValues.superstructure) === "9") {
+      updateComponentText("B.C.02", "There are no deficiencies to report. ", String(assetValues.superstructure));
+      highlightRowIfMatches("B.C.02", String(assetValues.superstructure));
+    } else {
+      updateComponentText("B.C.02", "", String(assetValues.superstructure));
+      highlightRowIfMatches("B.C.02", String(assetValues.superstructure));
+    }
+
+    // Check and update for B.C.03 (substructure)
+    if (assetValues.substructure === "8" || String(assetValues.substructure) === "9") {
+      updateComponentText("B.C.03", "There are no deficiencies to report. ", String(assetValues.substructure));
+      highlightRowIfMatches("B.C.03", String(assetValues.substructure));
+    } else {
+      updateComponentText("B.C.03", "", String(assetValues.substructure));
+      highlightRowIfMatches("B.C.03", String(assetValues.substructure));
+    }
+
+    // Check and update for B.C.04 (culvert)
+    if (assetValues.culvert === "8" || String(assetValues.culvert) === "9") {
+      updateComponentText("B.C.04", "There are no deficiencies to report. ", String(assetValues.culvert));
+      highlightRowIfMatches("B.C.04", String(assetValues.culvert));
+    } else {
+      updateComponentText("B.C.04", "", String(assetValues.culvert));
+      highlightRowIfMatches("B.C.04", String(assetValues.culvert));
+    }
+
+    // Check and update for B.C.09 (channel)
+    if (assetValues.channelValue === "8" || String(assetValues.channelValue) === "9") {
+      updateComponentText("B.C.09", "There are no deficiencies to report. ", String(assetValues.channelValue));
+      highlightRowIfMatches("B.C.09", String(assetValues.channelValue));
+    } else {
+      updateComponentText("B.C.09", "", String(assetValues.channelValue));
+      highlightRowIfMatches("B.C.09", String(assetValues.channelValue));
+    }
+
+    if (["1", "01", 1].includes(assetValues.mainDesignType)) {
+      updateComponentText("B.C.02", "The superstructure is a deck/slab. See the deck comments. ");
+    }
+
+    // Update and highlight for B.AP.01 (speed reduction)
+    updateComponentText("B.AP.01", "No speed reduction necessary. ", "G");
+    // highlightRowIfMatches("B.AP.01", String(assetValues.speedReduction));
+    highlightRowIfMatches("B.AP.01", "G");
   }
+}
+
+function resetReviewPageNumericalValues() {
+  const reviewNumericalSpans = document.querySelectorAll("#review-ratings-tab .content-container-rating-numerical");
+  reviewNumericalSpans.forEach((span) => {
+    span.textContent = ""; // Reset the numerical value
+  });
+}
+
+// Helper function to update the text content of both textarea and span
+function updateComponentText(dataCategory, text, numericalValue = null) {
+  const textarea = document.querySelector(`textarea[data-category="${dataCategory}"]`);
+  if (textarea) textarea.value = text;
+
+  const span = document.querySelector(`.content-container-rating-lines[data-category="${dataCategory}"] .textarea-content-here`);
+  if (span) span.textContent = text;
+
+  if (numericalValue !== null) {
+    // Update the numerical value in the review ratings tab
+    const reviewNumericalSpan = document.querySelector(`#review-ratings-tab .content-container-rating-lines[data-category="${dataCategory}"] .content-container-rating-numerical`);
+    if (reviewNumericalSpan) reviewNumericalSpan.textContent = numericalValue;
+  }
+}
+
+// Helper function to highlight the row based on the dataCategory and value in assetValues
+function highlightRowIfMatches(dataCategory, value) {
+  // Find all rows with the specific data-category (e.g., B.AP.01), but exclude rows inside the review page container
+  const rows = document.querySelectorAll(`.content-container-rating-lines[data-category="${dataCategory}"]:not(#review-ratings-tab .content-container-rating-lines)`);
+
+  rows.forEach((row) => {
+    const numericalValueSpan = row.querySelector(".content-container-rating-numerical");
+    const numericalValue = numericalValueSpan ? numericalValueSpan.textContent.trim() : null;
+
+    // If the numerical value matches the value we're checking for, add the highlight class
+    if (numericalValue === value) {
+      row.classList.add("highlight");
+    }
+  });
 }
 
 function errorIconDisplay(assetObject, lowestValue) {
