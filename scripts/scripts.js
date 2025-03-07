@@ -469,8 +469,11 @@ var buttonClasses = [
   "element-item-buttons",
   "culvert-item-buttons",
   "wall-item-buttons",
+  "misc-component-buttons",
   "glossary-item-buttons",
+  "district-item-buttons",
   "review-item-buttons",
+  "settings-item-buttons",
 ];
 
 // ::: ------------------------------ Loop Through Button Classes and Add Event Listeners (Page Button Clicks) ------------------------------
@@ -680,100 +683,299 @@ const district2Assets = assetData.filter((asset) => asset["(2) Highway Agency Di
 const uniqueInvRoutes = new Set(district2Assets.map((asset) => asset["Inv Route #"]));
 console.log(`Number of unique routes in Seymour: ${uniqueInvRoutes.size}`);
 
-// District assets
-const districtCounts = assetData.reduce((acc, asset) => {
+// Mapping district numbers to district names
+const districtIdMap = {
+  1: "crawfordsville",
+  2: "fortwayne",
+  3: "greenfield",
+  4: "laporte",
+  5: "seymour",
+  6: "vincennes",
+  7: "toll",
+};
+
+// Compute district counts & NSTM inspection counts
+const districtCounts = {};
+const nstmCounts = {};
+const specialCounts = {};
+const underwaterCounts = {};
+const elementCounts = {};
+const reducedIntervalCounts = {};
+const extendedIntervalCounts = {};
+const postedCounts = {};
+const scourCounts = {};
+
+// Initialize total counts
+let totalRoutine = 0;
+let totalNstm = 0;
+let totalSpecial = 0;
+let totalUnderwater = 0;
+let totalElement = 0;
+let totalReducedInterval = 0;
+let totalExtendedInterval = 0;
+let totalPosted = 0;
+let totalScour = 0;
+
+assetData.forEach((asset) => {
   const district = asset["(2) Highway Agency District:"]; // Get district value
+  const nstmRequired = asset["(92AA) Critical Feature Inspection: NSTM Insp Required?"]; // Check NSTM
+  const specialRequired = asset["(92CC) Critical Feature Inspection: Special Insp Required?"]; // Check special
+  const underwaterRequired = asset["(92BB) Critical Feature Inspection: Underwater Insp Required?"]; // Check underwater
+  const elementRequired = asset["(104) Highway System of Inventory Route:"]; // Check element
+  const frequencyRequired = asset["(91) Designated Inspection Frequency:"]; // Check frequency
+  const postedRequired = asset["(41) Structure Open/Posted/Closed:"]; // Check posted
+  const scourRequired = asset["(B.AP.03) Scour Vulnerability"]; // Check scour critical
 
   if (district !== undefined) {
-    acc[district] = (acc[district] || 0) + 1; // Count occurrences
-  }
+    districtCounts[district] = (districtCounts[district] || 0) + 1;
+    totalRoutine++; // Increment total routine count
 
-  return acc;
-}, {});
+    if (nstmRequired === "Y") {
+      nstmCounts[district] = (nstmCounts[district] || 0) + 1;
+      totalNstm++; // Increment total NSTM count
+    }
+
+    if (specialRequired === "Y") {
+      specialCounts[district] = (specialCounts[district] || 0) + 1;
+      totalSpecial++; // Increment total special count
+    }
+
+    if (underwaterRequired === "Y") {
+      underwaterCounts[district] = (underwaterCounts[district] || 0) + 1;
+      totalUnderwater++; // Increment total underwater count
+    }
+
+    if (elementRequired === 1) {
+      elementCounts[district] = (elementCounts[district] || 0) + 1;
+      totalElement++; // Increment total element count
+    }
+
+    if (frequencyRequired < 24) {
+      reducedIntervalCounts[district] = (reducedIntervalCounts[district] || 0) + 1;
+      totalReducedInterval++; // Increment total reduced interval count
+    }
+
+    if (frequencyRequired > 24) {
+      extendedIntervalCounts[district] = (extendedIntervalCounts[district] || 0) + 1;
+      totalExtendedInterval++; // Increment total extended interval count
+    }
+
+    if (postedRequired !== "A") {
+      postedCounts[district] = (postedCounts[district] || 0) + 1;
+      totalPosted++; // Increment total posted count
+    }
+
+    if (!["A", "B", "AB-T"].includes(scourRequired)) {
+      scourCounts[district] = (scourCounts[district] || 0) + 1;
+      totalScour++; // Increment total scour count
+    }
+  }
+});
+
+// Function to update textareas dynamically
+function updateTextarea(district, type, value) {
+  let districtName = districtIdMap[district]; // Get district name
+  if (!districtName) districtName = "all"; // If no district, send to "all"
+
+  const textareaId = `${districtName}-textarea-${type}`; // Generate ID
+  const textarea = document.getElementById(textareaId);
+  if (textarea) {
+    textarea.value = value; // Update the textarea value
+  }
+}
+
+// Update the corresponding district textareas
+Object.entries(districtCounts).forEach(([district, count]) => {
+  updateTextarea(district, "routine", count);
+});
+Object.entries(nstmCounts).forEach(([district, count]) => {
+  updateTextarea(district, "nstm", count);
+});
+Object.entries(specialCounts).forEach(([district, count]) => {
+  updateTextarea(district, "special", count);
+});
+Object.entries(underwaterCounts).forEach(([district, count]) => {
+  updateTextarea(district, "underwater", count);
+});
+Object.entries(elementCounts).forEach(([district, count]) => {
+  updateTextarea(district, "element", count);
+});
+Object.entries(reducedIntervalCounts).forEach(([district, count]) => {
+  updateTextarea(district, "reducedinterval", count);
+});
+Object.entries(extendedIntervalCounts).forEach(([district, count]) => {
+  updateTextarea(district, "extendedinterval", count);
+});
+Object.entries(postedCounts).forEach(([district, count]) => {
+  updateTextarea(district, "posted", count);
+});
+Object.entries(scourCounts).forEach(([district, count]) => {
+  updateTextarea(district, "scour", count);
+});
+
+// Update the corresponding district textareas
+Object.entries(districtCounts).forEach(([district, count]) => {
+  updateTextarea(district, "routine", count);
+
+  // Calculate bridge share: (routine inspections per inspector) / 2
+  const inspectors = district === "3" ? 6 : 4; // Greenfield (3) has 6 inspectors, others have 4
+  const bridgeShare = Math.ceil(count / inspectors / 2); // Divide by inspectors, then by 2
+
+  updateTextarea(district, "bridgeshare", bridgeShare); // Update bridge share
+});
+
+// Update total textareas
+updateTextarea("all", "routine", totalRoutine);
+updateTextarea("all", "nstm", totalNstm);
+updateTextarea("all", "special", totalSpecial);
+updateTextarea("all", "underwater", totalUnderwater);
+updateTextarea("all", "element", totalElement);
+updateTextarea("all", "reducedinterval", totalReducedInterval);
+updateTextarea("all", "extendedinterval", totalExtendedInterval);
+updateTextarea("all", "posted", totalPosted);
+updateTextarea("all", "scour", totalScour);
 
 console.log(districtCounts);
 
 // :::: (Error Log) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-function findAssetErrors() {
-  let errors = {
-    freq: [],
-    super: [],
-    deck: [],
-    sub: [],
-    wearing: [],
+// Function to count errors per district and update textareas
+function findAndUpdateAssetErrors() {
+  let errorCounts = {
+    freq: {},
+    super: {},
+    deck: {},
+    sub: {},
+    wearing: {},
   };
 
-  assetData.forEach((assetNumber) => {
+  let errorAssets = {
+    freq: {},
+    super: {},
+    deck: {},
+    sub: {},
+    wearing: {},
+  };
+
+  assetData.forEach((asset) => {
+    const district = asset["(2) Highway Agency District:"];
+    const status = asset["(41) Structure Open/Posted/Closed:"]; // Check status
+    if (status === "K" || district === undefined) return; // Exclude if status is "K"
+
+    let assetNumber = asset["Asset Number"]; // Store asset number
+
+    // Extract necessary values
     let assetValues = {
-      assetNumberNBI: assetNumber["Asset Number"],
-      deck: assetNumber["(58) Deck:"],
-      inspectionFrequency: assetNumber["(91) Designated Inspection Frequency:"],
-      superstructure: assetNumber["(59) Superstructure:"],
-      substructure: assetNumber["(60) Substructure:"],
-      scourCritical: parseFloat(assetNumber["(113) Scour Critical Bridges:"]),
-      mainDesignType: assetNumber["(43B) Structure Type, Main: Type of Design:"],
-      wearingSurfaceType: assetNumber["(108A) Wearing Surface Protection System: Wearing Surface"],
-      wearingSurface: assetNumber["(58.01) Wearing Surface:"],
-      deckStructureType: assetNumber["(107) Deck Structure Type:"],
-      underfillValue: assetNumber["(62) Culverts:"],
-      membraneValue: assetNumber["(108B) Wearing Surface Protection System: Deck Membrane"],
+      deck: parseFloat(asset["(58) Deck:"]),
+      inspectionFrequency: parseFloat(asset["(91) Designated Inspection Frequency:"]),
+      superstructure: parseFloat(asset["(59) Superstructure:"]),
+      substructure: parseFloat(asset["(60) Substructure:"]),
+      scourCritical: parseFloat(asset["(113) Scour Critical Bridges:"]),
+      mainDesignType: asset["(43B) Structure Type, Main: Type of Design:"],
+      wearingSurfaceType: asset["(108A) Wearing Surface Protection System: Wearing Surface"],
+      wearingSurface: parseFloat(asset["(58.01) Wearing Surface:"]),
+      deckStructureType: asset["(107) Deck Structure Type:"],
+      underfillValue: asset["(62) Culverts:"],
+      membraneValue: asset["(108B) Wearing Surface Protection System: Deck Membrane"],
     };
 
     let lowestValue = Math.min(assetValues.deck, assetValues.superstructure, assetValues.substructure);
 
-    // Error Check: Frequency
-    if (parseFloat(lowestValue) < 4 && parseFloat(assetValues.inspectionFrequency) > 12) {
-      errors.freq.push(assetValues.assetNumberNBI);
+    // Error Check: Frequency Error
+    if (lowestValue < 4 && assetValues.inspectionFrequency > 12) {
+      errorCounts.freq[district] = (errorCounts.freq[district] || 0) + 1;
+      errorAssets.freq[district] = errorAssets.freq[district] || [];
+      errorAssets.freq[district].push(assetNumber);
     }
 
-    // Error Check: Superstructure mismatch with main design type
-    if (parseFloat(assetValues.deck) !== parseFloat(assetValues.superstructure) && ["1", "01", 1].includes(assetValues.mainDesignType)) {
-      errors.super.push(assetValues.assetNumberNBI);
+    // Error Check: Deck/Slab Error
+    if (assetValues.deck !== assetValues.superstructure && ["1", "01", 1].includes(assetValues.mainDesignType)) {
+      errorCounts.super[district] = (errorCounts.super[district] || 0) + 1;
+      errorAssets.super[district] = errorAssets.super[district] || [];
+      errorAssets.super[district].push(assetNumber);
     }
 
-    // Error Check: Deck vs Wearing Surface
+    // Error Check: Monolithic Error
     if (assetValues.wearingSurfaceType === "1") {
-      const deckRating = parseInt(assetValues.deck, 10);
-      const wearingSurfaceRating = parseInt(assetValues.wearingSurface, 10);
-
-      if (deckRating <= 5 || wearingSurfaceRating <= 5) {
-        if (deckRating !== wearingSurfaceRating) {
-          errors.deck.push(assetValues.assetNumberNBI);
+      if (assetValues.deck <= 5 || assetValues.wearingSurface <= 5) {
+        if (assetValues.deck !== assetValues.wearingSurface) {
+          errorCounts.deck[district] = (errorCounts.deck[district] || 0) + 1;
+          errorAssets.deck[district] = errorAssets.deck[district] || [];
+          errorAssets.deck[district].push(assetNumber);
         }
       } else {
-        if (deckRating !== wearingSurfaceRating && deckRating !== wearingSurfaceRating + 1) {
-          errors.deck.push(assetValues.assetNumberNBI);
+        if (assetValues.deck !== assetValues.wearingSurface && assetValues.deck !== assetValues.wearingSurface + 1) {
+          errorCounts.deck[district] = (errorCounts.deck[district] || 0) + 1;
+          errorAssets.deck[district] = errorAssets.deck[district] || [];
+          errorAssets.deck[district].push(assetNumber);
         }
       }
     }
 
-    // Error Check: Scour Critical vs Substructure
-    if (assetValues.scourCritical <= 2) {
-      const scourCritical = parseFloat(assetValues.scourCritical);
-      const sub = parseFloat(assetValues.substructure);
-
-      if (sub > scourCritical) {
-        errors.sub.push(assetValues.assetNumberNBI);
-      }
+    // Error Check: Scour/Sub Error
+    if (assetValues.scourCritical <= 2 && assetValues.substructure > assetValues.scourCritical) {
+      errorCounts.sub[district] = (errorCounts.sub[district] || 0) + 1;
+      errorAssets.sub[district] = errorAssets.sub[district] || [];
+      errorAssets.sub[district].push(assetNumber);
     }
 
-    // Error Check: Wearing Surface
+    // Error Check: Membrane Error
     if (
-      parseFloat(assetValues.wearingSurface, 10) > 4 &&
+      assetValues.wearingSurface > 4 &&
       assetValues.underfillValue === "N" &&
       ["1", "2"].includes(assetValues.deckStructureType) &&
       assetValues.wearingSurfaceType === "6" &&
       ["0", "8", "N"].includes(assetValues.membraneValue)
     ) {
-      errors.wearing.push(assetValues.assetNumberNBI);
+      errorCounts.wearing[district] = (errorCounts.wearing[district] || 0) + 1;
+      errorAssets.wearing[district] = errorAssets.wearing[district] || [];
+      errorAssets.wearing[district].push(assetNumber);
     }
   });
 
-  return errors;
+  // Update textareas for each district
+  Object.entries(errorCounts.freq).forEach(([district, count]) => {
+    updateTextarea(district, "error-frequency", count);
+  });
+  Object.entries(errorCounts.super).forEach(([district, count]) => {
+    updateTextarea(district, "error-monolithic", count);
+  });
+  Object.entries(errorCounts.deck).forEach(([district, count]) => {
+    updateTextarea(district, "error-deckslab", count);
+  });
+  Object.entries(errorCounts.sub).forEach(([district, count]) => {
+    updateTextarea(district, "error-scoursub", count);
+  });
+  Object.entries(errorCounts.wearing).forEach(([district, count]) => {
+    updateTextarea(district, "error-membrane", count);
+  });
+
+  // Calculate the sum for each error type and send it to the corresponding textareas
+  let totalFreqErrors = Object.values(errorCounts.freq).reduce((sum, count) => sum + count, 0);
+  let totalSuperErrors = Object.values(errorCounts.super).reduce((sum, count) => sum + count, 0);
+  let totalDeckErrors = Object.values(errorCounts.deck).reduce((sum, count) => sum + count, 0);
+  let totalSubErrors = Object.values(errorCounts.sub).reduce((sum, count) => sum + count, 0);
+  let totalWearingErrors = Object.values(errorCounts.wearing).reduce((sum, count) => sum + count, 0);
+
+  // Update the sum of errors in the respective textareas
+  document.getElementById("all-textarea-error-frequency").value = totalFreqErrors;
+  document.getElementById("all-textarea-error-monolithic").value = totalSuperErrors;
+  document.getElementById("all-textarea-error-deckslab").value = totalDeckErrors;
+  document.getElementById("all-textarea-error-scoursub").value = totalSubErrors;
+  document.getElementById("all-textarea-error-membrane").value = totalWearingErrors;
+
+  // Log error asset numbers by district and error type
+  console.log("Errors by District and Type:");
+  Object.entries(errorAssets).forEach(([errorType, districts]) => {
+    console.log(`\n${errorType.toUpperCase()} Errors:`);
+    Object.entries(districts).forEach(([district, assets]) => {
+      console.log(`  District ${district}:`, assets);
+    });
+  });
 }
 
-console.log(findAssetErrors());
+// Call the function to process errors and update the UI
+findAndUpdateAssetErrors();
 
 // :::: Not Sorted | Working /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -800,7 +1002,32 @@ function showErrorPopup(button, message) {
   // Remove popup after 3 seconds
   setTimeout(() => {
     errorPopup.remove();
-  }, 3000);
+  }, 5000);
+}
+
+function showAssetErrorPopup(message) {
+  let button = document.getElementById("asset-error-button");
+  if (!button) return; // Exit if the button doesn't exist
+
+  // Create the temporary popup div
+  let errorPopup = document.createElement("div");
+  errorPopup.classList.add("error-popup");
+  errorPopup.innerText = message;
+
+  // Append the popup to the body
+  document.body.appendChild(errorPopup);
+
+  // Get the position of the button
+  let buttonRect = button.getBoundingClientRect();
+
+  // Position it below the button and center it
+  errorPopup.style.left = `${buttonRect.left + window.scrollX + buttonRect.width / 2 - errorPopup.offsetWidth / 2}px`;
+  errorPopup.style.top = `${buttonRect.bottom + window.scrollY + 10}px`; // Slightly below the button
+
+  // Remove popup after 3 seconds
+  setTimeout(() => {
+    errorPopup.remove();
+  }, 2000);
 }
 
 // Add event listeners for each error button
@@ -822,6 +1049,10 @@ document.querySelector("#error-sub button").addEventListener("click", function (
 
 document.querySelector("#error-wearing button").addEventListener("click", function () {
   showErrorPopup(this, "Membrane Error: When there is no membrane between a concrete deck and a bituminous wearing surface, the wearing surface rating must be below 5.");
+});
+
+document.querySelector("#asset-error-button").addEventListener("click", function () {
+  showAssetErrorPopup(errorString);
 });
 
 // Update summary when changing ratings

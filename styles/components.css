@@ -87,7 +87,10 @@ button.active {
 .bridge-wildlife-containers,
 .culvert-item-containers,
 .wall-item-containers,
+.misc-component-containers,
 .glossary-item-containers,
+.district-item-containers,
+.settings-item-containers,
 .element-content-containers,
 .review-content-containers {
   display: none;
@@ -360,7 +363,7 @@ button.active {
 }
 
 .error-icon:hover {
-  background-color: rgba(158, 33, 33, 0.1);
+  background-color: rgba(158, 33, 33, 0.4);
   color: var(--color-yellow);
 }
 
@@ -394,8 +397,9 @@ button.active {
 }
 
 .main-error-icon:hover {
-  background-color: rgba(158, 33, 33, 0.3);
+  background-color: rgba(158, 33, 33, 0.4);
   color: var(--inactive-button-text-color1);
+  color: var(--color-yellow);
 }
 
 .textarea2-group-container {

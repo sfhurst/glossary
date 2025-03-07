@@ -111,6 +111,7 @@ copySummaryTextareaContent():
 let formattedHistory = "";
 let searchValue = ""; // Declare outside to track its value
 let resetComments = 0; // To track if comments need refreshed
+let errorString = "";
 
 let assetObject = null; // Declared globally to only generate on asset loads and use a copy otherwise
 
@@ -948,11 +949,13 @@ function errorIconDisplay(assetObject, lowestValue) {
   // :: Error checks for icon display ////////////////////////////////////////
 
   let anyError = 0;
+  errorString = "";
 
   // Freq
   if (parseFloat(lowestValue) < 4 && parseFloat(assetValues.inspectionFrequency) > 12) {
     document.querySelector("#error-freq").style.display = "block";
     anyError = 1;
+    errorString = "Inspection Frequency Error";
   }
 
   // Slab
@@ -960,6 +963,11 @@ function errorIconDisplay(assetObject, lowestValue) {
     if (assetValues.deck !== assetValues.superstructure) {
       document.querySelector("#error-super").style.display = "block";
       anyError = 1;
+      if (errorString !== "") {
+        errorString = errorString + " | Deck Slab Error";
+      } else {
+        errorString = "Deck Slab Error";
+      }
     }
   }
 
@@ -973,12 +981,22 @@ function errorIconDisplay(assetObject, lowestValue) {
       if (deckRating !== wearingSurfaceRating) {
         document.querySelector("#error-deck").style.display = "block";
         anyError = 1;
+        if (errorString !== "") {
+          errorString = errorString + " | Monolithic Error";
+        } else {
+          errorString = "Monolithic Error";
+        }
       }
     } else {
       // Wearing surface is >= 6, deck can be 1 higher (max 9)
       if (deckRating !== wearingSurfaceRating && deckRating !== wearingSurfaceRating + 1) {
         document.querySelector("#error-deck").style.display = "block";
         anyError = 1;
+        if (errorString !== "") {
+          errorString = errorString + " | Monolithic Error";
+        } else {
+          errorString = "Monolithic Error";
+        }
       }
     }
   }
@@ -992,6 +1010,11 @@ function errorIconDisplay(assetObject, lowestValue) {
     if (sub > scourCritical) {
       document.querySelector("#error-sub").style.display = "block";
       anyError = 1;
+      if (errorString !== "") {
+        errorString = errorString + " | Scour Error";
+      } else {
+        errorString = "Scour Error";
+      }
     }
   }
 
@@ -1005,6 +1028,11 @@ function errorIconDisplay(assetObject, lowestValue) {
     if (parseFloat(assetValues.wearingSurface, 10) > 4) {
       document.querySelector("#error-wearing").style.display = "block";
       anyError = 1;
+      if (errorString !== "") {
+        errorString = errorString + " | Membrane Error";
+      } else {
+        errorString = "Membrane Error";
+      }
     }
   }
 
