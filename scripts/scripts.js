@@ -765,7 +765,7 @@ assetData.forEach((asset) => {
       totalPosted++; // Increment total posted count
     }
 
-    if (!["A", "B", "AB-T"].includes(scourRequired)) {
+    if (scourRequired !== null && scourRequired !== "N" && !["A", "B", "AB-T"].includes(scourRequired)) {
       scourCounts[district] = (scourCounts[district] || 0) + 1;
       totalScour++; // Increment total scour count
     }
