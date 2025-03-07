@@ -938,10 +938,10 @@ function findAndUpdateAssetErrors() {
     updateTextarea(district, "error-frequency", count);
   });
   Object.entries(errorCounts.super).forEach(([district, count]) => {
-    updateTextarea(district, "error-monolithic", count);
+    updateTextarea(district, "error-deckslab", count);
   });
   Object.entries(errorCounts.deck).forEach(([district, count]) => {
-    updateTextarea(district, "error-deckslab", count);
+    updateTextarea(district, "error-monolithic", count);
   });
   Object.entries(errorCounts.sub).forEach(([district, count]) => {
     updateTextarea(district, "error-scoursub", count);
