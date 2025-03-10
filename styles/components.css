@@ -217,6 +217,10 @@ button.active {
   margin: 0 0 5px 0;
 }
 
+.glossary-numeric-ratings-container {
+  margin: 20px 10px 0 10px;
+}
+
 /* ::: ---------------------------- General | Textarea --------------------------------- */
 
 .textarea-containers {

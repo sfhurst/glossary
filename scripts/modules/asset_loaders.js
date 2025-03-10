@@ -256,6 +256,7 @@ function displaySummary(assetObject) {
     contentContainer.value = generalNotes; // Insert generalNotes here
     // Call the expandTextarea function manually to change the size of the textarea to fit the content
     expandTextarea({ target: contentContainer }, "summary-textarea"); // No return needed
+    expandTextarea({ target: contentContainer }, "submittal-textarea"); // No return needed
 
     // Add click event listener to copy summary text to clipboard
     contentContainer.ondblclick = function (event) {
@@ -308,144 +309,52 @@ function generateSummary(assetObject) {
   // Extract necessary data from the asset object using descriptive variable names
   const assetValues = extractAssetDetails(assetObject); // Returns the new asset data
 
-  // Populate textareas on Review | Asset Data
+  // Populate textareas on Bridge/Review/Asset Data
   // Call the function and capture the returned values
   const { lowestValue, lowestComponent } = populateTextareas(assetObject); // Returns lowestValue and lowestComponent
 
-  // Calculate the total span count (approach + main spans)
+  // Span Count | Calculate the total span count (approach + main spans)
   const spanCount = assetValues.approachSpans + assetValues.mainSpans;
 
-  // Generate the "Posted" status based on the posted value
-  const postedResponse = (assetValues.postedValue === "A" ? "not posted" : "posted").toLowerCase();
+  // Inspection Types | Determine what other inspection types are required
+  const inspectionTypeResponse = inspectionTypeResponseFunction(assetValues);
 
-  // Determine whether an element-level inspection is required based on highway system type
-  const elementResponse = (assetValues.highwaySystem === 1 ? "requires an element level inspection" : "does not require an element level inspection").toLowerCase();
+  // Posted & ADT | Determine the posted status based on the posted value
+  let adtResponse = "";
+  let postedResponse = "";
+  ({ postedResponse, adtResponse } = postedResponseFunction(assetValues));
 
-  // Generate the membrane description if certain conditions are met (e.g., wearing surface and deck type)
-  const membraneResponse =
-    assetValues.underfillValue === "N" && (assetValues.deckStructureType === "1" || assetValues.deckStructureType === "2") && assetValues.wearingSurfaceType === "6"
-      ? ["0", "8", "N"].includes(assetValues.membraneValue)
-        ? "There is not an agency-approved protective membrane between the concrete deck and the bituminous wearing surface. As a result, the wearing surface rating must be a 4, as outlined in Part 7 of INDOT's 2020 Bridge Inspection Manual."
-        : "There is an agency-approved protective membrane between the concrete deck and the bituminous wearing surface."
-      : "";
+  // Element | Determine whether an element-level inspection is required based on highway system type
+  const elementResponse = elementResponseFunction(assetValues);
 
-  // Condition Descriptions
-  const conditionDescriptions = {
-    0: "(failed). The roadway has been closed.",
-    1: "(imminent failure). The roadway has been closed.",
-    2: "(critical condition). This rating is for XXXXX",
-    3: "(serious condition). This rating is for XXXXX",
-    4: "(poor condition). This rating is for XXXXX",
-    5: "(fair condition). This rating is for XXXXX",
-    6: "(satisfactory condition). This rating is for XXXXX",
-    7: "(good condition). This rating is for minor defects of no structural significance.",
-    8: "(very good condition). There are no deficiencies to report.",
-    9: "(excellent condition). There are no deficiencies to report.",
-  };
-  const conditionDescription = conditionDescriptions[lowestValue] || "";
+  // Membrane | Generate the membrane description if certain conditions are met (e.g., wearing surface and deck type)
+  const membraneResponse = membraneResponseFunction(assetValues);
 
-  // Structure Type, Main: Kind of Material/Design - Mapping integer values to material types
-  const mainMatTypes = {
-    0: "Other",
-    1: "Concrete",
-    2: "Concrete continuous",
-    3: "Steel",
-    4: "Steel continuous",
-    5: "Prestressed concrete",
-    6: "Prestressed concrete continuous",
-    7: "Wood",
-    8: "Masonry",
-    9: "Aluminum, Wrought Iron, or Cast Iron",
-  };
-  const mainMatTypesResponse = (mainMatTypes[assetValues.mainMatType] || "").toLowerCase();
+  // Lowest Condition | Generate the response for the lowest condition
+  const lowestRatingResponse = lowestRatingResponseFunction(lowestValue);
 
-  // Structure Type, Approach Spans: Kind of Material/Design (same mapping as main material types)
-  const approachMatTypes = mainMatTypes;
-  const approachMatTypesResponse = (approachMatTypes[assetValues.approachMatType] || "").toLowerCase();
+  // Material Types | Determine the material type of the bridge - mapping integer values to material types
+  const { mainMatTypesResponse, approachMatTypesResponse } = structureMaterialResponseFunction(assetValues);
 
-  // Structure Type, Main: Type of Design/Construction - Mapping integer values to design types
-  const mainDesignTypes = {
-    0: "Other",
-    1: "Slab",
-    2: "Multi-beam",
-    3: "Girder and Floorbeam",
-    4: "Tee Beam",
-    5: "Multi-Box Beam",
-    6: "Spread Box Beam",
-    7: "Frame",
-    9: "Deck truss",
-    10: "Thru Truss",
-    11: "Deck Arch",
-    12: "Thru Arch",
-    13: "Suspension",
-    14: "Stayed Girder",
-    16: "Bascule (Movable)",
-    19: "Culvert",
-    20: "Mixed type",
-    21: "Segmental Box Girder",
-    22: "Channel Beam",
-  };
-  const mainDesignTypesResponse = (mainDesignTypes[assetValues.mainDesignType] || "").toLowerCase();
+  // Structure Types | Determine the design type of the bridge - mapping integer values to material types
+  const { mainDesignTypesResponse, approachDesignTypesResponse } = structureDesignResponseFunction(assetValues);
 
-  // Structure Type, Approach Spans: Type of Design/Construction (same mapping as main design types)
-  const approachDesignTypes = mainDesignTypes;
-  const approachDesignTypesResponse = (approachDesignTypes[assetValues.approachDesignType] || "").toLowerCase();
+  // Deck Type
+  const deckStructureTypesResponse = deckStructureTypesResponseFunction(assetValues);
 
-  // Deck Structure Type - Mapping integer values to deck types
-  const deckStructureTypes = {
-    1: "With A Concrete Cast-in-Place deck",
-    2: "With A Concrete Precast Panels deck",
-    3: "With An Open Grating deck",
-    4: "With A Closed Grating deck",
-    5: "With A Steel Plate (includes orthotropic) deck",
-    6: "With A Corrugated Steel deck",
-    7: "With An Aluminum deck",
-    8: "With A Wood deck",
-    9: "With An Other deck",
-    N: "and does not have a structural deck",
-  };
-  const deckStructureTypesResponse = (deckStructureTypes[assetValues.deckStructureType] || "").toLowerCase();
+  // Wearing Surface Type
+  const wearingSurfaceTypesResponse = wearingSurfaceTypesResponseFunction(assetValues);
 
-  // Type of Wearing Surface - Mapping integer values to surface types
-  const wearingSurfaceTypes = {
-    0: "The bridge does not have a wearing surface.",
-    1: "The bridge has a monolithic concrete wearing surface.",
-    2: "The bridge has an integral concrete wearing surface.",
-    3: "The bridge has a latex-modified (or similar additive) wearing surface.",
-    4: "The bridge has a low slump concrete wearing surface.",
-    5: "The bridge has an epoxy overlay wearing surface.",
-    6: "The bridge has a bituminous wearing surface.",
-    7: "The bridge has a wood wearing surface.",
-    8: "The bridge has a gravel wearing surface.",
-    9: "The bridge has an other wearing surface.",
-    N: "",
-  };
-  const wearingSurfaceTypesResponse = wearingSurfaceTypes[assetValues.wearingSurfaceType] || "";
+  // Scour | Determine the scour and generate a response
+  const scourTypesResponse = scourTypesResponseFunction(assetValues);
 
-  // Scour types - Mapping various scour vulnerability codes to descriptions
-  const scourTypes = {
-    0: "The scour appraisal has not been completed by the scour appraisal team, and the scour vulnerability is unknown.",
-    A: "The scour appraisal has been completed, and the bridge has been determined to be stable for scour.",
-    B: "The scour appraisal has been completed, and the bridge has been determined to be stable for scour, dependent on designed and functioning countermeasures.",
-    C: "The scour appraisal has been completed, and the bridge could become unstable for scour. Temporary countermeasures have been installed to mitigate scour, but the bridge remains scour critical.",
-    D: "The scour appraisal has been completed, and the bridge is, or may become, unstable for scour. The bridge is scour critical.",
-    E: "The scour appraisal has not been completed by the scour appraisal team. Temporary countermeasures have been installed to mitigate scour, but the scour vulnerability remains undetermined.",
-    U: "The scour appraisal has not been completed by the scour appraisal team due to unknown foundations, and the scour vulnerability is unknown.",
-    "AB-T":
-      "Scour vulnerability is coded AB-T, a temporary classification indicating the bridge is stable for scour, possibly due to countermeasures. The final scour vulnerability rating could be A or B, meaning the bridge is not considered scour critical.",
+  // Orientation
+  const cardinalResponse = cardinalResponseFunction(assetValues);
 
-    "BCE-T":
-      "Scour vulnerability is coded BCE-T, a temporary classification indicating the bridge has undesigned scour countermeasures in place. The final scour vulnerability rating could be B, C, or E. Since C and E are scour critical, the bridge's status remains uncertain.",
+  // CHannel
+  const channelResponse = assetValues.channelValue === "N" ? `The bridge is not over water.` : "";
 
-    "CD-T":
-      "Scour vulnerability is coded CD-T, a temporary classification indicating the bridge is unstable for theoretical scour, regardless of any undesigned countermeasures. The final scour vulnerability rating could be C or D, both of which are scour critical.",
-  };
-
-  // Scour status and vulnerability response mapping based on provided values
-  const scourTypesResponse = scourTypes[assetValues.scourVulnerability] || "";
-
-  // const conditionResponse = `The lowest condition rating (B.C.13) for the bridge is the a ${lowestComponent} rating of ${lowestValue} ${conditionDescription}`.replace("a 8", "an 8");
-  const conditionResponse = `The lowest condition rating (B.C.13) for the bridge is a ${lowestValue} ${conditionDescription}`.replace("a 8", "an 8");
+  ////
 
   const approachSpansPlural = assetValues.approachSpans === 1 ? "span" : "spans";
   const mainSpansPlural = assetValues.mainSpans === 1 ? "span" : "spans";
@@ -455,12 +364,7 @@ function generateSummary(assetObject) {
   const ms3c = `The main structure has a ${assetValues.mainSpans}-span, ${mainMatTypesResponse} ${mainDesignTypesResponse} design ${deckStructureTypesResponse}.`;
   const spansResponse = assetValues.approachSpans > 0 ? `${ms3a} ${ms3b} ${ms3c}` : `${ms2}`;
 
-  const adtResponse = assetValues.adtValue ? `The ${assetValues.adtYear} ADT is ${assetValues.adtValue} vpd.` : "";
-  const cardinalResponse = "All directions in this report are based on the roadway direction of travel and not compass readings. ";
-
-  const channelResponse = assetValues.channelValue === "N" ? `The bridge is not over water.` : "";
-  const formattedHistoryResponse = formattedHistory !== "" ? `\n\n${formattedHistory}` : "";
-
+  // Maintenance
   let formattedMaintenanceComments = maintenanceArray
     .map((item) => {
       let comment = `A ${item.category.toLowerCase()} deficiency was submitted for ${item.name
@@ -472,15 +376,61 @@ function generateSummary(assetObject) {
     })
     .join("\n");
 
+  // History
+  const formattedHistoryResponse = formattedHistory !== "" ? `\n\n${formattedHistory}` : "";
+
   const maintenanceResponse = maintenanceArray.length !== 0 ? formattedMaintenanceComments : "There are no open maintenance items.";
 
-  // Combine all information into a structured summary
-  const generalPara = `${spansResponse} ${wearingSurfaceTypesResponse} ${membraneResponse} ${adtResponse} The structure is ${postedResponse} and ${elementResponse}. ${scourTypesResponse} ${channelResponse} ${cardinalResponse}`;
+  /////////////////////////////////////////// Combine all information into a structured summary
+  const generalPara = `${spansResponse} ${wearingSurfaceTypesResponse} ${membraneResponse} The structure is ${postedResponse}${adtResponse}. ${elementResponse}. ${scourTypesResponse} ${channelResponse} ${inspectionTypeResponse} ${cardinalResponse}`;
   const generalParaCleaned = generalPara.replace(/\s{2,}/g, " ");
-  const generalNotes = `General Inspection Notes:\n${generalParaCleaned}\n\n${conditionResponse}\n\nMaintenance / Recommendations:\n${maintenanceResponse}${formattedHistoryResponse}`;
+  const generalNotes = `General Inspection Notes:\n${generalParaCleaned}\n\n${lowestRatingResponse}\n\nMaintenance / Recommendations:\n${maintenanceResponse}${formattedHistoryResponse}`;
+
+  const updatedGeneralNotes = generalNotes
+    .replace(
+      "The bridge is not over water. The bridge does not require an NSTM or special inspection.",
+      "The bridge is not over water and does not require an NSTM or special inspection."
+    )
+    .replace("a other", "an other")
+    .replace("other other", "other");
+
+  /////////////////////////////////////////// Submittal Response for submitting report
+
+  const scourTypesSubmittal = {
+    0: "review scour, ",
+    A: "not scour critical, ",
+    B: "not scour critical, ",
+    C: "scour critical, ",
+    D: "scour critical, ",
+    E: "review scour, ",
+    U: "review scour, ",
+    "AB-T": "not scour critical, ",
+    "BCE-T": "review scour, ",
+    "CD-T": "scour critical, ",
+  };
+
+  const elementSubmittalResponse = assetValues.highwaySystem === 1 ? "Element, " : "Not element, ";
+  const scourCriticalSubmittalResponse = scourTypesSubmittal[assetValues.scourVulnerability] || "not over water, ";
+  const postedSubmittalResponse = assetValues.postedValue === "A" ? "not posted" : "posted";
+
+  let formattedSubmittalMaintenanceComments = maintenanceArray
+    .map((item) => {
+      let comment = `A ${item.category.toLowerCase()} deficiency was submitted for ${item.name
+        .toLowerCase()
+        .replace(/\brepair\b/g, "repairs")
+        .replace(/\bseal\b/g, "sealing")
+        .replace(/\bpatch\b/g, "patching")}.`;
+      return comment.replace(/red deficiency/g, "critical find"); // Replace all instances of "red deficiency"
+    })
+    .join(" ");
+
+  const maintenanceSubmittalResponse = maintenanceArray.length !== 0 ? `. ${formattedSubmittalMaintenanceComments}` : ", no maintenance.";
+
+  const submittalResponse = `Completed Items 6 and 7. All other items will be systematically updated within the FHWA's grace period, which expires at the end of 2027. ${elementSubmittalResponse}${scourCriticalSubmittalResponse}${postedSubmittalResponse}${maintenanceSubmittalResponse}`;
+  document.getElementById("submittal-textarea").value = submittalResponse;
 
   // Final notes is returned as the answer to the generateSummary(assetObject);
-  return generalNotes;
+  return updatedGeneralNotes;
 }
 
 // ::: ---------------------------- populateTextareas() ----------------------------
@@ -1044,4 +994,242 @@ function errorIconDisplay(assetObject, lowestValue) {
 
 function buildAssetValuesObject() {
   // create assetValues here and pop in fields like lowestValue and fullRP
+}
+
+// ::: ---------------------------- Response Functions for generateSummary() ----------------------------
+
+// Posted | Determine the posted status based on the posted value
+function postedResponseFunction(assetValues) {
+  const postedResponse = (assetValues.postedValue === "A" ? "not posted" : "posted").toLowerCase();
+  const adtResponse = assetValues.adtValue ? `, and the ${assetValues.adtYear} ADT is ${assetValues.adtValue} vpd` : "";
+
+  return { postedResponse, adtResponse }; // Returning an object with both values
+}
+
+// Element | Determine whether an element-level inspection is required based on highway system type
+function elementResponseFunction(assetValues) {
+  const positiveResponses = [
+    "The highway carries an NHS route; therefore, element data is reported",
+    "Since the highway carries an NHS route, element data is reported",
+    "Element data is reported because the highway carries an NHS route",
+    "Because the highway carries an NHS route, element data is reported",
+    "The highway carries an NHS route, so element data is reported",
+  ];
+
+  const negativeResponses = [
+    "The highway does not carry an NHS route, so element data is not reported",
+    "Because the highway does not carry an NHS route, element data is not reported",
+    "Element data is not reported as the highway does not carry an NHS route",
+    "Since the highway does not carry an NHS route, element data is not reported",
+    "The highway does not carry an NHS route; therefore, element data is not reported",
+  ];
+
+  const elementResponse =
+    assetValues.highwaySystem === 1
+      ? positiveResponses[Math.floor(Math.random() * positiveResponses.length)] // Randomize the positive response
+      : negativeResponses[Math.floor(Math.random() * negativeResponses.length)]; // Randomize the negative response
+
+  return elementResponse;
+}
+
+// Inspection Types | Determine what other inspection types are required
+function inspectionTypeResponseFunction(assetValues) {
+  const inspections = [];
+
+  if (assetValues.nstmInspRequired === "Y") inspections.push("an NSTM");
+  if (assetValues.specialInspRequired === "Y") inspections.push("a special");
+  if (assetValues.underwaterInspRequired === "Y" && assetValues.channelValue !== "N") inspections.push("an underwater");
+
+  let inspectionTypeResponse = "";
+
+  if (assetValues.channelValue !== "N") {
+    inspectionTypeResponse = inspections.length
+      ? `The bridge requires ${inspections.join(", ").replace(/, ([^,]*)$/, ", and $1")} inspection.`
+      : "The bridge does not require an NSTM, special, or underwater inspection.";
+  } else {
+    inspectionTypeResponse = inspections.length
+      ? `The bridge requires ${inspections.join(", ").replace(/, ([^,]*)$/, ", and $1")} inspection.`
+      : "The bridge does not require an NSTM or special inspection.";
+  }
+
+  return inspectionTypeResponse;
+}
+
+// Membrane | Generate the membrane description if certain conditions are met (e.g., wearing surface and deck type)
+function membraneResponseFunction(assetValues) {
+  const membraneResponse =
+    assetValues.underfillValue === "N" && (assetValues.deckStructureType === "1" || assetValues.deckStructureType === "2") && assetValues.wearingSurfaceType === "6"
+      ? ["0", "8", "N"].includes(assetValues.membraneValue)
+        ? "There is not an agency-approved protective membrane between the concrete deck and the bituminous wearing surface. As a result, the wearing surface rating must be a 4, as outlined in Part 7 of INDOT's 2020 Bridge Inspection Manual."
+        : "There is an agency-approved protective membrane between the concrete deck and the bituminous wearing surface."
+      : "";
+
+  return membraneResponse;
+}
+
+// Lowest Condition | Generate the response for the lowest condition
+function lowestRatingResponseFunction(lowestValue) {
+  // Condition Descriptions
+  const conditionDescriptions = {
+    0: "(failed). The roadway has been closed.",
+    1: "(imminent failure). The roadway has been closed.",
+    2: "(critical condition). This rating is for XXXXX",
+    3: "(serious condition). This rating is for XXXXX",
+    4: "(poor condition). This rating is for XXXXX",
+    5: "(fair condition). This rating is for XXXXX",
+    6: "(satisfactory condition). This rating is for XXXXX",
+    7: "(good condition). This rating is for minor defects of no structural significance.",
+    8: "(very good condition). There are no deficiencies to report.",
+    9: "(excellent condition). There are no deficiencies to report.",
+  };
+  const conditionDescriptionResponse = conditionDescriptions[lowestValue] || "";
+  const lowestRatingResponse = `The lowest condition rating (B.C.13) for the bridge is a ${lowestValue} ${conditionDescriptionResponse}`.replace("a 8", "an 8");
+
+  return lowestRatingResponse;
+}
+
+// Material Types | Determine the material type of the bridge - mapping integer values to material types
+function structureMaterialResponseFunction(assetValues) {
+  const mainMatTypes = {
+    0: "Other",
+    1: "Concrete",
+    2: "Concrete continuous",
+    3: "Steel",
+    4: "Steel continuous",
+    5: "Prestressed concrete",
+    6: "Prestressed concrete continuous",
+    7: "Wood",
+    8: "Masonry",
+    9: "Aluminum, Wrought Iron, or Cast Iron",
+  };
+  const mainMatTypesResponse = (mainMatTypes[assetValues.mainMatType] || "").toLowerCase();
+
+  // Structure Type, Approach Spans: Kind of Material/Design (same mapping as main material types)
+  const approachMatTypes = mainMatTypes;
+  const approachMatTypesResponse = (approachMatTypes[assetValues.approachMatType] || "").toLowerCase();
+
+  return { mainMatTypesResponse, approachMatTypesResponse };
+}
+
+// Structure Types | Determine the design type of the bridge - mapping integer values to material types
+function structureDesignResponseFunction(assetValues) {
+  const mainDesignTypes = {
+    0: "Other",
+    1: "Slab",
+    2: "Multi-beam",
+    3: "Girder and Floorbeam",
+    4: "Tee Beam",
+    5: "Multi-Box Beam",
+    6: "Spread Box Beam",
+    7: "Frame",
+    9: "Deck truss",
+    10: "Thru Truss",
+    11: "Deck Arch",
+    12: "Thru Arch",
+    13: "Suspension",
+    14: "Stayed Girder",
+    16: "Bascule (Movable)",
+    19: "Culvert",
+    20: "Mixed type",
+    21: "Segmental Box Girder",
+    22: "Channel Beam",
+  };
+  const mainDesignTypesResponse = (mainDesignTypes[assetValues.mainDesignType] || "").toLowerCase();
+
+  // Structure Type, Approach Spans: Type of Design/Construction (same mapping as main design types)
+  const approachDesignTypes = mainDesignTypes;
+  const approachDesignTypesResponse = (approachDesignTypes[assetValues.approachDesignType] || "").toLowerCase();
+
+  return { mainDesignTypesResponse, approachDesignTypesResponse };
+}
+
+// Deck Type
+function deckStructureTypesResponseFunction(assetValues) {
+  // Deck Structure Type - Mapping integer values to deck types
+  const deckStructureTypes = {
+    1: "With A Concrete Cast-in-Place deck",
+    2: "With A Concrete Precast Panels deck",
+    3: "With An Open Grating deck",
+    4: "With A Closed Grating deck",
+    5: "With A Steel Plate (includes orthotropic) deck",
+    6: "With A Corrugated Steel deck",
+    7: "With An Aluminum deck",
+    8: "With A Wood deck",
+    9: "With An Other deck",
+    N: "and does not have a structural deck",
+  };
+  const deckStructureTypesResponse = (deckStructureTypes[assetValues.deckStructureType] || "").toLowerCase();
+
+  return deckStructureTypesResponse;
+}
+
+// Wearing Surface Type
+function wearingSurfaceTypesResponseFunction(assetValues) {
+  // Type of Wearing Surface - Mapping integer values to surface types
+  const wearingSurfaceTypes = {
+    0: "The bridge does not have a wearing surface.",
+    1: "The bridge has a monolithic concrete wearing surface.",
+    2: "The bridge has an integral concrete wearing surface.",
+    3: "The bridge has a latex-modified (or similar additive) wearing surface.",
+    4: "The bridge has a low slump concrete wearing surface.",
+    5: "The bridge has an epoxy overlay wearing surface.",
+    6: "The bridge has a bituminous wearing surface.",
+    7: "The bridge has a wood wearing surface.",
+    8: "The bridge has a gravel wearing surface.",
+    9: "The bridge has an other wearing surface.",
+    N: "",
+  };
+  const wearingSurfaceTypesResponse = wearingSurfaceTypes[assetValues.wearingSurfaceType] || "";
+
+  return wearingSurfaceTypesResponse;
+}
+
+// Scour | Determine the scour and generate a response
+function scourTypesResponseFunction(assetValues) {
+  // Scour types - Mapping various scour vulnerability codes to descriptions
+  const scourTypes = {
+    0: "The scour appraisal has not been completed by the scour appraisal team, and the scour vulnerability is unknown.",
+    A: "The scour appraisal has been completed, and the bridge has been determined to be stable for scour.",
+    B: "The scour appraisal has been completed, and the bridge has been determined to be stable for scour, dependent on designed and functioning countermeasures.",
+    C: "The scour appraisal has been completed, and the bridge could become unstable for scour. Temporary countermeasures have been installed to mitigate scour, but the bridge remains scour critical.",
+    D: "The scour appraisal has been completed, and the bridge is, or may become, unstable for scour. The bridge is scour critical.",
+    E: "The scour appraisal has not been completed by the scour appraisal team. Temporary countermeasures have been installed to mitigate scour, but the scour vulnerability remains undetermined.",
+    U: "The scour appraisal has not been completed by the scour appraisal team due to unknown foundations, and the scour vulnerability is unknown.",
+    "AB-T":
+      "Scour vulnerability is coded AB-T, a temporary classification indicating the bridge is stable for scour, possibly due to countermeasures. The final scour vulnerability rating could be A or B, meaning the bridge is not considered scour critical.",
+
+    "BCE-T":
+      "Scour vulnerability is coded BCE-T, a temporary classification indicating the bridge has undesigned scour countermeasures in place. The final scour vulnerability rating could be B, C, or E. Since C and E are scour critical, the bridge's status remains uncertain.",
+
+    "CD-T":
+      "Scour vulnerability is coded CD-T, a temporary classification indicating the bridge is unstable for theoretical scour, regardless of any undesigned countermeasures. The final scour vulnerability rating could be C or D, both of which are scour critical.",
+  };
+
+  const scourTypesResponse = scourTypes[assetValues.scourVulnerability] || "";
+
+  return scourTypesResponse;
+}
+
+function cardinalResponseFunction() {
+  const cardinalResponses = [
+    "All directions in this report are based on the roadway direction of travel and not compass readings. ",
+    "All directions in this report are based on the roadway direction of travel, not compass readings. ",
+    "Directions in this report follow the roadway's travel direction rather than compass bearings. ",
+    "This report uses the roadway direction of travel for all directions, not traditional compass points. ",
+    "Roadway direction of travel, not compass orientation, determines the directions used in this report. ",
+    "For consistency, directions in this report are based on travel direction rather than compass headings.",
+  ];
+
+  // Increase the likelihood of the first item being selected
+  const randomValue = Math.random();
+  let cardinalResponse;
+
+  if (randomValue < 0.4) {
+    // 60% chance for the first value
+    cardinalResponse = cardinalResponses[0];
+  } else {
+    cardinalResponse = cardinalResponses[Math.floor(Math.random() * cardinalResponses.length)];
+  }
+
+  return cardinalResponse;
 }

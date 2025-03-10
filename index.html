@@ -208,8 +208,18 @@
             >
               Maintenance
             </button>
+            |
+            <button
+              id="alignment-glossary-button"
+              class="bridge-alignment-buttons"
+              data-target="bridge-alignment-pg5"
+              data-container-class="bridge-alignment-containers"
+              data-button-class="bridge-alignment-buttons"
+            >
+              Glossary
+            </button>
           </div>
-          <div class="main-content-containers">
+          <div id="alignment-main-content-container" class="main-content-containers">
             <!-- :: Bridge Alignment Tab Page 1 -->
             <div id="bridge-alignment-pg1" class="bridge-alignment-containers">
               <div class="content-container-paragraphs">
@@ -278,6 +288,12 @@
             <div id="bridge-alignment-pg4" class="bridge-alignment-containers">
               <div id="alignment-maintenance-container">
                 <!-- Populated dynamically by maintenanceTasks loop in maintenance.js -->
+              </div>
+            </div>
+            <!-- :: Bridge Alignment Tab Page 5 -->
+            <div id="bridge-alignment-pg5" class="bridge-alignment-containers">
+              <div id="alignment-glossary-container">
+                <!-- See bridge_objects.js -->
               </div>
             </div>
           </div>
@@ -2634,8 +2650,18 @@
             <button class="bridge-channel-buttons" data-target="bridge-channel-pg7" data-container-class="bridge-channel-containers" data-button-class="bridge-channel-buttons">
               Maintenance
             </button>
+            |
+            <button
+              id="channel-glossary-button"
+              class="bridge-channel-buttons"
+              data-target="bridge-channel-pg8"
+              data-container-class="bridge-channel-containers"
+              data-button-class="bridge-channel-buttons"
+            >
+              Glossary
+            </button>
           </div>
-          <div class="main-content-containers">
+          <div id="channel-main-content-container" class="main-content-containers">
             <!-- :: Bridge Channel Tab Page 1 -->
             <div id="bridge-channel-pg1" class="bridge-channel-containers">
               <div class="content-container-paragraphs">
@@ -2832,6 +2858,12 @@
             <div id="bridge-channel-pg7" class="bridge-channel-containers">
               <div id="channel-maintenance-container">
                 <!-- Populated dynamically by maintenanceTasks loop in maintenance.js -->
+              </div>
+            </div>
+            <!-- :: Bridge Channel Tab Page 7 -->
+            <div id="bridge-channel-pg8" class="bridge-channel-containers">
+              <div id="channel-glossary-container">
+                <!-- See bridge_objects.js -->
               </div>
             </div>
           </div>
@@ -4350,6 +4382,22 @@
                         oninput="expandTextarea(event, 'summary-textarea')"
                       ></textarea>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="main-content-containers">
+              <p class="paragraph-rating">Submittal Comments:</p>
+              <div class="content-container-paragraphs">
+                <div class="textarea-containers">
+                  <div class="textarea-mirrors">
+                    <textarea
+                      id="submittal-textarea"
+                      class="textarea-comments reset-comments"
+                      name="submittal"
+                      rows="1"
+                      oninput="expandTextarea(event, 'submittal-textarea')"
+                    ></textarea>
                   </div>
                 </div>
               </div>

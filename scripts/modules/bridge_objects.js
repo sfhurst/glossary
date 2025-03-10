@@ -28,15 +28,22 @@ const bridgeComponents = [
     <li>Use code P when the operating speed is substantially different at the bridge than the rest of the highway segment that crosses the bridge.</li>
     </ul>`,
     example_comments: [
-      "No speed reduction necessary.",
-      "A minor reduction of speed is expected due to the roadway geometry. ",
-      "Nearby roadway features cause changes in acceleration at the bridge. ",
-      "There is an intersection at the north approach. ",
-      "The bridge is at a traffic light and carries a portion of the queue. ",
-      "The bridge is in a horizontal curve that is superelevated on the west side. ",
-      "The bridge is in a sag vertical curve. ",
-      "The bridge is in a crest vertical curve. ",
+      "No speed reduction is necessary.",
+      "A minor speed reduction is expected due to roadway geometry.",
+      "A significant speed reduction is expected due to roadway geometry.",
+      "Nearby roadway features influence acceleration at the bridge.",
+      "An intersection is present at the north approach.",
+      "The bridge is at a traffic light and carries part of the queue.",
+      "The bridge is in a superelevated horizontal curve on the west side.",
+      "The bridge is in a sag vertical curve.",
+      "The bridge is in a crest vertical curve.",
+      "The bridge is on a tangent alignment.",
+      "The bridge is on a skewed alignment.",
+      "Lane shifts occur at the bridge approaches.",
+      "The roadway narrows at the bridge.",
+      "The bridge alignment may limit sight distance.",
     ],
+
     rating_table: [
       {
         code: "N",
@@ -58,6 +65,35 @@ const bridgeComponents = [
         condition: "POOR",
         description: "The operating speed at the bridge is substantially different compared to the rest of the highway segment.",
       },
+    ],
+
+    glossary_page_id: "bridge-alignment-pg5",
+    glossary: [
+      { term: "Alignment", definition: "The horizontal and vertical positioning of the roadway or bridge within a defined corridor or location." },
+      { term: "Approach Roadway Alignment", definition: "The section of the roadway leading up to the bridge, which includes the horizontal and vertical alignment of the road." },
+      {
+        term: "Crest Vertical Curve",
+        definition: "A curve in the roadway profile that connects an ascending grade to a descending grade, typically used to smooth transitions at the crest of a hill.",
+      },
+      { term: "Cross Slope", definition: "The slope of the roadway surface perpendicular to the direction of travel, designed to allow for proper drainage of water." },
+      { term: "Curve Length", definition: "The length of a curved section of the roadway or bridge, typically measured along the centerline." },
+      { term: "Horizontal Alignment", definition: "The layout of the roadway in the horizontal plane, including curves, tangents, and transitions." },
+      { term: "Horizontal Curve Radius", definition: "The radius of a curve in the roadway or bridge, determining the sharpness or gentleness of the curve." },
+      { term: "Line of Sight", definition: "The unobstructed view along the roadway, crucial for driver safety, allowing the driver to see upcoming curves or obstacles." },
+      {
+        term: "Right-of-Way",
+        definition:
+          "The land designated for the roadway and its components, including the traveled way, shoulders, and any additional space required for construction and maintenance.",
+      },
+      {
+        term: "Sag Vertical Curve",
+        definition: "A curve in the roadway profile that connects a descending grade to an ascending grade, typically used to smooth transitions at the bottom of a dip or valley.",
+      },
+      { term: "Superelevation", definition: "The banking of the roadway at curves to counteract centrifugal force and improve vehicle stability." },
+      { term: "Transition Curve", definition: "A curve that gradually changes the curvature of the road to provide a smoother transition between straight and curved sections." },
+      { term: "Vertical Alignment", definition: "The configuration of the roadway in the vertical plane, including grades, curves, and elevations." },
+      { term: "Vertical Grade", definition: "The slope or incline of the roadway along the vertical plane, expressed as a percentage." },
+      { term: "Vertical Curve", definition: "A curve in the vertical alignment of the roadway, typically used to transition between different grades." },
     ],
   },
 
@@ -81,6 +117,7 @@ const bridgeComponents = [
                 <p>Consider the roughness and ride provided by the approach slab.</p>`,
     example_comments: [
       "There are no deficiencies to report.",
+      "The surface is smooth with no rideability issues.",
       "The approach slabs are in good condition.",
       "The approach slabs have been covered with bituminous material.",
       "There are sealed cracks in the approach slabs.",
@@ -89,6 +126,7 @@ const bridgeComponents = [
       "There is a void under the south approach slab at the southwest corner of the bridge.",
       "There is minor settlement of the approach slabs.",
       "No significant settlement has occurred.",
+      "The approach slabs appear to be level and stable with no signs of shifting.",
     ],
     rating_table: [
       {
@@ -178,6 +216,8 @@ const bridgeComponents = [
                 <p>Do not consider if the terminal joint meets the current standard.</p>`,
     example_comments: [
       "The terminal joints are in good condition.",
+      "The terminal joints are 2-foot-wide strips of hot mix asphalt placed at the ends of the bridge.",
+      "The bridge has integral or semi-integral abutments but no designated terminal joints; the construction joints at the end of the approach slabs function as terminal joints.",
       "The terminal joints present a rough transition to the bridge.",
       "There are no terminal joints at either end.",
     ],
@@ -234,17 +274,17 @@ const bridgeComponents = [
                 </p>`,
     example_comments: [
       "There are no deficiencies to report.",
+      "The expansion joints are functioning as designed.",
       "The bridge has integral abutments.",
       "The bridge has semi-integral abutments.",
-      "There are minor- to moderate-width, diagonal cracks propagating from the joint areas.",
       "The joints are partially full of debris.",
       "There are areas of the joints that have been repaired with pourable material.",
-      "The joints are leaking.",
+      "There is some leaking at the expansion joints.",
       "The joints are leaking throughout.",
       "There are several punctures and a loss of adhesion with the nosing in both the north and south joints.",
       "The joints have multiple areas that have lost adhesion.",
       "The joints have a loss of adhesion throughout.",
-      "The joints are full of debris.",
+      "The joints are full of debris, which may impact their functionality.",
     ],
     rating_table: [
       {
@@ -331,8 +371,10 @@ const bridgeComponents = [
     example_comments: [
       "There are no deficiencies to report.",
       "There is an isolated area of collision damage.",
-      "There are widely spaced hairline vertical cracks in the barrier walls.",
-      "There are intermittently spaced hairline vertical cracks with efflorescence in the barrier walls.",
+      "There are widely spaced hairline vertical cracks in the concrete barrier walls.",
+      "There are intermittently spaced hairline vertical cracks with efflorescence in the concrete barrier walls.",
+      "The steel railings are anchored into the exterior box beams.",
+      "There is some minor corrosion in the steel railings.",
     ],
     rating_table: [
       {
@@ -416,7 +458,12 @@ const bridgeComponents = [
                   Do not consider the condition of protective coatings and other protection systems when determining the condition rating code for this item, except to the extent
                   that problems with the protective coating system are indicative of problems with the underlying railing transition material.
                 </p>`,
-    example_comments: ["There are no deficiencies to report.", "The transition is functioning as designed.", "There is some collision damage in the railing at the transition."],
+    example_comments: [
+      "There are no deficiencies to report.",
+      "The transition is functioning as designed.",
+      "There is some collision damage in the railing at the transition.",
+      "To accomadate other roadway features, the transition railings are designed as attenuators.",
+    ],
     rating_table: [
       {
         code: "N",
@@ -498,9 +545,9 @@ const bridgeComponents = [
                   below, both the deck and the wearing surface must be rated the same and assigned the lower rating.
                 </p>`,
     example_comments: [
-      "The wearing surface is monolithic with the deck. See deck comments.",
+      "The wearing surface is monolithic with the deck.",
       "There are no deficiencies to report.",
-      "There are isolated, inherent shrinkage cracks in the latex-modified wearing surface.",
+      "There are isolated inherent shrinkage cracks in the latex-modified wearing surface.",
       "There are sealed cracks in the wearing surface.",
       "There is map cracking throughout the bituminous wearing surface.",
       "There are unsealed cracks visible across less than 10% of the total surface area.",
@@ -802,7 +849,15 @@ const bridgeComponents = [
     commentary: `<p>Consider surface dulling, chalking, rust and peeling when evaluating the condition rating.</p>
                 <br />
                 <p>At stages of advanced deterioration, consider any section loss in the painted material.</p>`,
-    example_comments: ["There is minor chalking and surface dulling throughout.", "There are scattered areas of light rust and minor peeling."],
+    example_comments: [
+      "The steel beams of the superstructure have a protective coating.",
+      "The piles are painted.",
+      "There is minor chalking and surface dulling throughout.",
+      "There are some areas of light rust and minor peeling.",
+      "There is moderate to heavy rust at the ends of the beams under the joints.",
+      "There are some areas where the protective coating is no longer effective, and corrosion has initiated.",
+      "The protective coating is no longer effective.",
+    ],
     rating_table: [
       {
         code: "N",
@@ -1009,12 +1064,20 @@ const bridgeComponents = [
                 </p>`,
     example_comments: [
       "There are no deficiencies to report.",
+      "The substructure appears generally stable with no major distress noted.",
+      "There is no significant movement or displacement in the substructure.",
+      "The piers show evidence of minor settlement, but they appear stable.",
       "There is minor staining on the interior piers and in the abutment backwalls.",
       "There is light scaling throughout the interior piers.",
-      "There are isolated, minor-width, vertical cracks in the interior piers and in the abutment backwalls.",
-      "There are several, shallow-depth spalls in the piers and abutments.",
+      "There are isolated minor-width vertical cracks in the interior piers and in the abutment backwalls.",
+      "There are several shallow-depth spalls in the piers and abutments.",
       "There is an area of moderate spalling in the Pier 2 pier cap near the bearing area of Beams 1 and 2. There is still good bearing beneath the beams.",
-      "There is a wide-width, horizontal crack (indicating settlement) running the length of the west abutment.",
+      "There are several vertical cracks in the south abutment backwall, but no displacement has been observed.",
+      "The abutment footing is showing signs of minor undermining due to scour.",
+      "There is moderate erosion at the east abutment due to drainage and runoff issues.",
+      "There is moderate scour at the upstream end of Pier 2 where it is directly impacted by the channel.",
+      "The foundation piles are exposed due to erosion on the north side of the bridge.",
+      "There is a wide-width horizontal crack (indicating settlement) running the length of the west abutment.",
     ],
     rating_table: [
       {
@@ -1088,15 +1151,22 @@ const bridgeComponents = [
     commentary_page_id: "bridge-sub-pg4",
     example_comments_page_id: "bridge-sub-pg6",
     commentary: `<p>
-                  Consider settlement and cracking in the slopewall and any voids that may cause defects in the abutment or approach slab. Use any indicators present to determine
+                  Consider settlement and cracking in the slopewall and any voids that may cause defects in the abutment or approach slab. Use any visible indicators to assess
                   the stability of the soil beneath the slopewall.
                 </p>`,
     example_comments: [
+      "The slopewall appears to be stable with no visible signs of distress or movement.",
       "The slopewalls are in good condition.",
-      "The east slopewall has wide cracking.",
-      "There is moderate erosion under the east slopewall.",
       "The structure has MSE walls.",
       "There are no obvious structural deficiencies in the MSE walls.",
+      "The slopewall exhibits minor settlement, but there are no signs of structural instability.",
+      "There are minor voids present behind the slopewall, but they do not appear to be affecting stability.",
+      "There is moderate erosion under the east slopewall.",
+      "There is noticeable tilting at the east slopewall, which may indicate soil instability beneath it.",
+      "The east slopewall has wide cracking.",
+      "There is evidence of soil slumping behind the slopewall, potentially indicating instability.",
+      "There is evidence of significant cracking along the slopewall, indicating potential movement.",
+      "The slopewall is overgrown with vegetation, which may be hiding potential issues.",
     ],
     rating_table: [
       {
@@ -1168,17 +1238,20 @@ const bridgeComponents = [
                 </p>`,
     example_comments: [
       "There are no deficiencies to report.",
-      "There is minor corrosion in the flow line.",
-      "There is moderate corrosion with minor pitting in the invert.",
-      "No perforations are visible.",
-      "There are minor deformations to the pipe shape.",
-      "There are minor perforations with rust scaling throughout the flow line.",
-      "There is complete section loss in the pipe invert on the north end for 20'.",
-      "The pipe is pulling fill.",
-      "There is minor sediment in the bottom of the pipe.",
       "The pipe has been lined.",
       "The liner is in good condition.",
-      "The culvert is a concrete box widened by CMPs.",
+      "No perforations are visible.",
+      "There is minor sediment in the bottom of the pipe.",
+      "There is minor leaking between the segments.",
+      "There are minor deformations to the pipe shape.",
+      "There is minor corrosion in the flow line.",
+      "There are minor perforations with rust scaling throughout the flow line.",
+      "There is moderate corrosion with minor pitting in the invert.",
+      "The pipe is pulling fill.",
+      "There is complete section loss in the pipe invert on the north end for 20'.",
+      "There is some minor- to moderate-width cracking with efflorescence in the barrel.",
+      "There is cracking and efflorescence in the spandrel wall.",
+      "There is minor cracking with heavy efflorescence at the outer edge of the arch ring.",
     ],
     rating_table: [
       {
@@ -1268,18 +1341,21 @@ const bridgeComponents = [
       "There are no deficiencies to report.",
       "The bridge is not over water.",
       "The channel condition does not threaten the roadway or the bridge.",
-      "Under normal conditions the shallow, low-velocity channel flows from south to north through Span B.",
-      "Under normal conditions the wide, deep, low-velocity channel flows from north to south through Span B.",
-      "Under normal conditions the channel cannot be entered without additional precautions.",
+      "Under normal conditions, the shallow, low-velocity channel flows from south to north through Span B.",
+      "Under normal conditions, the wide, deep, low-velocity channel flows from north to south through Span B.",
+      "The channel is free of significant debris accumulation that would obstruct flow.",
+      "The channel’s thalweg is at a safe distance from the bridge, indicating a low likelihood of scour or erosion affecting the bridge’s integrity.",
+      "The channel alignment is stable, with no signs of shifting that would alter flow patterns or jeopardize the bridge’s foundation.",
       "Flow direction varies with rising and receding water levels.",
-      "The channel is protected with riprap.",
-      "The banks of the channel are protected with riprap.",
-      "The banks are well vegetated.",
-      "Most of the riprap under Spans A and C has washed away.",
       "There are localized areas of minor erosion.",
       "There is erosion in the west bank under Span A.",
       "There is degradation of the channel under Span B.",
       "There is channel aggradation and sediment deposits on the east side of Pier 2 under Span B.",
+      "There is drift accumulation at the upstream end of the channel near the bridge.",
+      "Accumulated debris has caused localized flow obstruction in the channel.",
+      "Water flow is occasionally blocked by fallen trees or large debris in the channel.",
+      "There are signs of minor channel migration near Pier 1, but it does not currently pose a threat.",
+      "The freeboard is adequate, allowing for normal water flow without risk of overtopping the bridge deck during typical flow conditions.",
     ],
     rating_table: [
       {
@@ -1341,6 +1417,208 @@ const bridgeComponents = [
           "Bridge is closed due to channel condition, and is beyond corrective action. Bridge location or design can no longer accommodate the channel, and bridge replacement is needed to restore service.",
       },
     ],
+    glossary_page_id: "bridge-channel-pg8",
+    glossary: [
+      {
+        term: "Aggradation",
+        definition: "The process of sediment deposition that raises the level of a riverbed or streambed, often due to reduced water flow or velocity.",
+      },
+      {
+        term: "Armoring",
+        definition:
+          "The process of applying protective materials, such as riprap, concrete, or steel, to embankments, shorelines, or structures to prevent erosion. Armoring aims to resist the forces of water, wind, or ice, protecting the surface from degradation and maintaining stability.",
+      },
+      {
+        term: "Articulating Concrete Blocks",
+        definition: "Pre-cast, interlocking concrete units used to form erosion-resistant surfaces.",
+      },
+      {
+        term: "Bedload",
+        definition: "The sediment that moves along the bottom of a river or streambed, contributing to scour and erosion.",
+      },
+      {
+        term: "Bendway Weirs",
+        definition: "A type of river training structure used to guide water flow along a river bend, reducing bank erosion and scour.",
+      },
+      {
+        term: "Cavitation",
+        definition:
+          "The formation of vapor bubbles in the water that collapse near a surface, leading to localized erosion, often seen around hydraulic structures like gates or valves.",
+      },
+
+      {
+        term: "Channel Bed",
+        definition: "The bottom surface of a channel, often composed of rock, sediment, or soil, through which the flow of water moves.",
+      },
+
+      {
+        term: "Channel Migration",
+        definition:
+          "The natural process by which a river or stream shifts its course over time, typically due to erosion on one bank and deposition on the opposite bank. This movement can alter the shape and location of the channel, impacting surrounding areas.",
+      },
+
+      {
+        term: "Check Dams",
+        definition: "Small structures used in rivers or streams to slow the flow of water and reduce erosion.",
+      },
+      {
+        term: "Confluence",
+        definition: "The point at which two or more streams or rivers meet, often forming a larger channel or river.",
+      },
+      {
+        term: "Concrete Slope Paving",
+        definition: "A protective layer of concrete used to stabilize slopes and prevent erosion.",
+      },
+      {
+        term: "Cut Bank",
+        definition: "The outer bank of a meander, where erosion is most active, often forming steep, vertical walls.",
+      },
+      {
+        term: "Degradation",
+        definition: "The process of erosion or removal of sediment from the riverbed or streambed, leading to a lowering of the watercourse or shoreline.",
+      },
+
+      {
+        term: "Designed Scour Countermeasures",
+        definition:
+          "Engineered channel armoring specifically designed to address scour vulnerability. These measures use materials like concrete blocks, gabions, or riprap, carefully planned and calculated based on flow rate, water velocity, soil properties, and site conditions to effectively mitigate erosion and protect vulnerable areas.",
+      },
+
+      {
+        term: "Drop Structures",
+        definition: "A river training feature that is placed in the channel to control the flow of water and reduce scouring effects on the streambed.",
+      },
+      {
+        term: "Erosion",
+        definition: "The gradual removal of soil, rock, or other surface materials by natural forces such as wind, water, or ice. Scour is a type of erosion.",
+      },
+
+      {
+        term: "Floodplain",
+        definition: "The flat, often expansive area adjacent to a channel that is subject to periodic flooding, typically formed by sediment deposition during high-water events.",
+      },
+      {
+        term: "Flow Line",
+        definition:
+          "The path that water follows as it moves through a system, often represented as the line of steepest descent along a channel. It indicates the direction of water movement and is used in hydrology and fluid dynamics.",
+      },
+
+      {
+        term: "Freeboard",
+        definition: "The vertical distance between the water surface and the lowest structural component of a bridge, ensuring clearance during high water levels.",
+      },
+
+      {
+        term: "Gabion Mattresses",
+        definition: "A riverbank protection system made of mesh baskets filled with rocks, providing stability and preventing erosion.",
+      },
+      {
+        term: "Grouted Riprap",
+        definition: "A type of riprap that is bonded together with grout to form a more stable, cohesive surface.",
+      },
+      {
+        term: "Grout-Filled Mats",
+        definition: "A protective matting system filled with grout to stabilize riverbanks and prevent erosion.",
+      },
+      {
+        term: "Guide Banks",
+        definition: "A type of river training countermeasure designed to direct flow away from the banks and toward the center of the channel.",
+      },
+      {
+        term: "Headcutting",
+        definition: "The erosion of the upstream end of a channel, often occurring when a sudden drop in elevation (such as a waterfall) leads to rapid erosion and deepening.",
+      },
+
+      {
+        term: "Instability",
+        definition: "The condition in which a channel or bank is prone to failure due to erosion, over saturation, or improper structural design.",
+      },
+
+      {
+        term: "Meander",
+        definition: "A curve or bend in a channel, typically occurring in low-gradient rivers or streams, where the water flow erodes one bank and deposits sediment on the other.",
+      },
+      {
+        term: "Point Bar",
+        definition: "A crescent-shaped deposit of sediment on the inside of a meander curve, formed by the slower flow of water.",
+      },
+      {
+        term: "Piping",
+        definition: "The erosion caused by the flow of water through soil or sediment, creating underground channels and leading to the collapse of the surface material.",
+      },
+      {
+        term: "Pressure Head",
+        definition:
+          "The height of a column of water that represents the potential energy of water due to pressure. It is used to quantify the pressure at a specific point in a system, often in relation to its ability to move or flow.",
+      },
+      {
+        term: "Revetment Riprap",
+        definition:
+          "A form of erosion control using a layer of riprap placed along the base of a slope or shoreline. Revetment riprap acts as a protective armor to prevent undermining and scour by dissipating wave or water flow energy, typically used in more permanent applications.",
+      },
+      {
+        term: "Riprap",
+        definition: "Loose stone or rock material placed along embankments, shorelines, or riverbeds to prevent erosion.",
+      },
+      {
+        term: "Rill Erosion",
+        definition: "Shallow, small channels formed on the soil surface by the concentrated flow of water, often caused by rainfall or surface runoff.",
+      },
+
+      {
+        term: "Scour",
+        definition:
+          "Localized erosion caused by the force of flowing water around structures like bridge piers, abutments, or embankments, often leading to foundation instability.",
+      },
+
+      {
+        term: "Sediment Deposition",
+        definition: "The accumulation of eroded materials such as sand, silt, or gravel within a channel, typically occurring when the flow velocity decreases.",
+      },
+      {
+        term: "Sloughing",
+        definition: "The gradual removal or collapse of soil, rock, or vegetation from the banks or bed of a channel due to erosion or instability.",
+      },
+      {
+        term: "Splash Erosion",
+        definition: "Erosion caused by the impact of raindrops dislodging small soil particles, which are then carried away by water or wind.",
+      },
+      {
+        term: "Spurs",
+        definition: "A river training countermeasure that extends from the bank to control flow direction and reduce erosion by deflecting water away from vulnerable areas.",
+      },
+
+      {
+        term: "Temporary Scour Countermeasures",
+        definition:
+          "Short-term erosion control methods, often involving the use of loosely placed materials like riprap, gravel, or dumped rock, to protect vulnerable areas from scour and erosion until more permanent solutions can be implemented.",
+      },
+
+      {
+        term: "Thalweg",
+        definition: "The line of lowest elevation within a channel, often following the natural flow path of water, marking the deepest part of the channel.",
+      },
+
+      {
+        term: "Undercutting",
+        definition: "The erosion of the base of a channel's bank or bed, causing instability and leading to the collapse or sloughing of the bank material.",
+      },
+      {
+        term: "Waterline",
+        definition:
+          "The line that marks the level of water in a body of water, typically used to indicate the boundary between the air and the water. It can also refer to the design level of water in a container or vessel.",
+      },
+
+      {
+        term: "Widening",
+        definition: "The increase in the horizontal width of a channel, typically caused by bank erosion or undercutting.",
+      },
+      {
+        term: "Undermining",
+        definition:
+          "The erosion process where material is removed from beneath a structure or support, leading to a loss of stability and potential failure of the overlying or surrounding elements. This commonly occurs around foundations, footings, or piers.",
+      },
+    ],
   },
 
   // Channel Protection
@@ -1375,20 +1653,20 @@ const bridgeComponents = [
                 </p>`,
     example_comments: [
       "There are no deficiencies to report.",
-      "The bridge is not over water.",
-      "The channel protection condition does not threaten the roadway or the bridge.",
-      "Under normal conditions the shallow, low-velocity channel flows from south to north through Span B.",
-      "Under normal conditions the wide, deep, low-velocity channel flows from north to south through Span B.",
-      "Under normal conditions the channel cannot be entered without additional precautions.",
-      "Flow direction varies with rising and receding water levels.",
-      "The channel is protected with riprap.",
-      "The banks of the channel are protected with riprap.",
+      "The channel does not impact any substructure components, and the banks under the bridge are protected with riprap.",
+      "The interior piers are protected with riprap.",
+      "The abutments are protected with riprap.",
+      "The riprap is in good condition along the bridge approaches and does not show signs of significant erosion.",
+      "The riprap appears to be functioning well in stabilizing the banks and reducing erosion.",
+      "Channel protection measures, such as rock riprap, appear effective in reducing erosion along the banks.",
+      "No signs of scour around the riprap protection were observed during inspection.",
+      "Vegetative growth along the banks is helping to stabilize the soil in some areas.",
       "The banks are well vegetated.",
+      "Localized riprap displacement has occurred due to the increase in flow from high water.",
+      "There is visible erosion near the end of the riprap protection under Span B.",
+      "Some sections of the riprap are displaced and require adjustment to maintain effectiveness.",
       "Most of the riprap under Spans A and C has washed away.",
-      "There are localized areas of minor erosion.",
-      "There is erosion in the west bank under Span A.",
-      "There is degradation of the channel under Span B.",
-      "There is channel aggradation and sediment deposits on the east side of Pier 2 under Span B.",
+      "The channel protection is ineffective; a yellow maintenance deficiency was submitted for erosion control.",
     ],
     rating_table: [
       {
@@ -1472,7 +1750,13 @@ const bridgeComponents = [
                   When observed conditions are not consistent with the scour design or the assumptions used in the scour appraisal, this indicates a need to reevaluate Item B.AP.03
                   (Scour Vulnerability).
                 </p>`,
-    example_comments: ["There is no scour present.", "There is minor localized scour at the interior piers.", "The designed countermeasures are in good condition."],
+    example_comments: [
+      "There is no scour present.",
+      "There is minor localized scour at the interior piers.",
+      "The designed countermeasures are in good condition.",
+      "There is moderate scour at the base of the upstream piers, but it does not appear to affect the stability of the structure.",
+      "Scour has exposed the top of the footing at Pier 2, but no undermining was found.",
+    ],
     rating_table: [
       {
         code: "N",
@@ -1583,6 +1867,14 @@ const bridgeComponents = [
       "The bridge is scour critical.",
       "The designed countermeasures are in good condition.",
       "The scour vulnerabilty status is undetermined.",
+      "The bridge is stable with no current scour vulnerability.",
+      "The bridge is identified as scour critical with no effective countermeasures in place.",
+      "The scour vulnerability status is undetermined pending further assessment.",
+      "The bridge has functioning countermeasures in place, mitigating scour risk effectively.",
+      "Scour vulnerability status is confirmed as not critical, based on the latest appraisal.",
+      "The bridge is potentially vulnerable to scour; temporary countermeasures have been installed.",
+      "Scour conditions are not critical, but further monitoring is recommended.",
+      "The bridge is not currently at risk of instability due to scour.",
     ],
     rating_table: [
       {

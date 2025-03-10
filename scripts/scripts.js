@@ -210,6 +210,50 @@ function populateCountyGlossary() {
 // Call the function once the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", populateCountyGlossary);
 
+// ::: ------------------------------ Populate glossary tabs for bridge components (Text Content Insertion)  ------------------------------
+
+function buildGlossaries(bridgeComponents) {
+  // Loop through each glossary_page_id in the bridgeComponents array
+  bridgeComponents.forEach((component) => {
+    const glossaryPageId = component.glossary_page_id;
+    const glossaryItems = component.glossary || [];
+
+    // Find the container for the corresponding page by id
+    const container = document.getElementById(glossaryPageId);
+
+    if (container) {
+      // Clear the container before adding new content
+      container.innerHTML = "";
+
+      // Iterate over the glossary items and create a card for each
+      glossaryItems.forEach((item) => {
+        // Create the card container
+        const card = document.createElement("div");
+        card.classList.add("glossary-content-cards");
+
+        // Create the header for the card with the glossary term
+        const header = document.createElement("div");
+        header.classList.add("glossary-card-header");
+        header.textContent = item.term;
+
+        // Create the paragraph for the card with the glossary definition
+        const paragraph = document.createElement("p");
+        paragraph.classList.add("glossary-card-paragraph");
+        paragraph.textContent = item.definition;
+
+        // Assemble the card elements
+        card.appendChild(header);
+        card.appendChild(paragraph);
+
+        // Append the card to the container
+        container.appendChild(card);
+      });
+    }
+  });
+}
+
+buildGlossaries(bridgeComponents);
+
 // ::: ------------------------------ Populate example comments for bridge components (Text Content Insertion)  ------------------------------
 function updateExampleComments() {
   bridgeComponents.forEach((component) => {
@@ -1097,3 +1141,64 @@ function updateObjectRatings(numericalValue, dataCategory) {
   // add scour change
   // add freq change
 }
+
+// :::: (Bridge Component Glossary Tabs) ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Function to adjust styles for glossary containers dynamically
+function adjustContainerStyles(event) {
+  const clickedButton = event.target;
+
+  // Extract section prefix dynamically from button ID (e.g., "channel-glossary-button" → "channel")
+  const match = clickedButton.id.match(/^(.*?)-glossary-button$/) || clickedButton.className.match(/bridge-(.*?)-buttons/);
+
+  if (!match) return; // Exit if the button doesn't match expected patterns
+
+  const sectionPrefix = match[1]; // Extracted section name (e.g., "alignment", "channel")
+  const glossaryContainer = document.getElementById(`${sectionPrefix}-main-content-container`);
+
+  if (!glossaryContainer) return; // Exit if container isn't found
+
+  // Check if the clicked button is the glossary button
+  const isGlossaryButton = clickedButton.id === `${sectionPrefix}-glossary-button`;
+
+  if (isGlossaryButton) {
+    // Apply glossary styles
+    glossaryContainer.style.padding = "0";
+    glossaryContainer.style.backgroundColor = "transparent";
+    glossaryContainer.style.border = "none";
+    glossaryContainer.style.margin = "20px 10px 20px 10px";
+  } else {
+    // Revert to default styles for other buttons
+    glossaryContainer.style.padding = "10px 20px";
+    glossaryContainer.style.textAlign = "left";
+    glossaryContainer.style.height = "fit-content";
+    glossaryContainer.style.margin = "10px 5px";
+    glossaryContainer.style.border = "solid 2px grey";
+    glossaryContainer.style.borderRadius = "1px";
+    glossaryContainer.style.backgroundColor = "var(--main-color)";
+  }
+}
+
+// Function to initialize event listeners dynamically
+function initializeGlossaryStyleAdjustment() {
+  // Select all glossary buttons
+  const allGlossaryButtons = document.querySelectorAll("[id$='-glossary-button']");
+
+  allGlossaryButtons.forEach((button) => {
+    button.addEventListener("click", adjustContainerStyles);
+
+    // Extract section prefix dynamically
+    const match = button.id.match(/^(.*?)-glossary-button$/);
+    if (match) {
+      const sectionPrefix = match[1];
+      const otherButtons = document.querySelectorAll(`.bridge-${sectionPrefix}-buttons`);
+
+      otherButtons.forEach((otherButton) => {
+        otherButton.addEventListener("click", adjustContainerStyles);
+      });
+    }
+  });
+}
+
+// Auto-initialize for all sections
+initializeGlossaryStyleAdjustment();
