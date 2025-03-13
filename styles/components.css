@@ -217,10 +217,6 @@ button.active {
   margin: 0 0 5px 0;
 }
 
-.glossary-numeric-ratings-container {
-  margin: 20px 10px 0 10px;
-}
-
 /* ::: ---------------------------- General | Textarea --------------------------------- */
 
 .textarea-containers {
@@ -795,14 +791,6 @@ button.active {
   justify-content: space-around; */
 }
 
-.glossary-card-header {
-  margin: -2px -2px 8px -2px;
-  background-color: var(--hover-button-color1);
-  padding: 10px 4px 4px 8px;
-  border-bottom: solid 1px grey;
-  border-radius: 1px;
-}
-
 .glossary-content-cards {
   min-height: fit-content;
   text-align: left;
@@ -813,11 +801,55 @@ button.active {
   background-color: var(--main-color);
 }
 
+.glossary-card-header {
+  margin: -2px -2px 8px -2px;
+  background-color: var(--hover-button-color1);
+  padding: 10px 4px 4px 8px;
+  border-bottom: solid 1px grey;
+  border-radius: 1px;
+  cursor: default;
+}
+
 .glossary-card-paragraph {
   text-indent: 0px hanging;
   padding: 0 10px 5px 10px;
+  cursor: default;
 }
 
+.glossary-term-link {
+  color: inherit; /* Keeps the text color unchanged */
+  text-decoration: none; /* Removes underline */
+  cursor: pointer;
+}
+
+/* New styling */
+
+/* Some weird margin stuff going on here */
+
+.glossary-content-cards {
+  min-height: fit-content;
+  text-align: left;
+  margin: -8px 0;
+  padding-bottom: 10px;
+  border: None;
+  background-color: transparent;
+}
+
+.glossary-card-header {
+  margin: 8px 0px 0px 0px;
+  background-color: var(--hover-button-color1);
+  padding: 10px 4px 4px 8px;
+  border-bottom: solid 1px grey;
+  border-radius: 1px;
+}
+
+.glossary-card-paragraph {
+  background-color: var(--content-background-color);
+  border-bottom: solid 2px rgba(128, 128, 128, 0.2);
+  text-indent: 0px hanging;
+  padding: 5px 10px 5px 10px;
+  cursor: default;
+}
 /* ::: ---------------------------- Not Sorted | Working --------------------------------- */
 
 .highlight {

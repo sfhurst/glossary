@@ -20,15 +20,15 @@ const defectDefinitions = {
       "Damage or deterioration is significant, and the strength or performance is adversely affected. Examples would be similar in type to moderate defects but of greater magnitude and severity that, upon reporting, would require a structural or geotechnical review.",
   },
   Isolated: {
-    term: "Isolated",
+    term: "Isolated Defects",
     definition: "Defect is visible in one or few incident locations.",
   },
   Widespread: {
-    term: "Widespread",
+    term: "Widespread Defects",
     definition: "Defect is visible across many incident locations.",
   },
   Some: {
-    term: "Some",
+    term: "Some Defects",
     definition: "Defect visibility is more than isolated and less than widespread.",
   },
 };
@@ -219,7 +219,7 @@ const glossaryTerms = {
   loadPathRedundancy: {
     term: "Load Path Redundancy",
     definition:
-      "A redundancy that exists based on the number of primary load-carrying members between points of support, such that fracture of the cross section at one location of a member will not cause a portion of or the entire bridge to collapse.",
+      "A redundancy that exists based on the number of primary load-carrying members between points of support, such that fracture of the cross-section at one location of a member will not cause a portion of or the entire bridge to collapse.",
   },
   loadPosting: {
     term: "Load Posting",
@@ -442,7 +442,7 @@ const glossaryTerms = {
   systemRedundancy: {
     term: "System Redundancy",
     definition:
-      "A redundancy that exists in a bridge system without load path redundancy, such that fracture of the cross section at one location of a primary member will not cause a portion of or the entire bridge to collapse. (23 CFR 650.305)",
+      "A redundancy that exists in a bridge system without load path redundancy, such that fracture of the cross-section at one location of a primary member will not cause a portion of or the entire bridge to collapse. (23 CFR 650.305)",
   },
   teamLeader: {
     term: "Team Leader",
@@ -472,6 +472,186 @@ const glossaryTerms = {
       "Foundations of bridges over waterways where complete details are unknown because either the foundation type and depth are unknown, or the foundation type is known, but its depth is unknown, and therefore cannot be appraised for scour vulnerability. (23 CFR 650.305)",
   },
 };
+
+const wallTerms = {
+  Anchor: {
+    term: "Anchor",
+    definition:
+      "A tendon, tendon bundle, rod, or bar element that is installed into the ground through the wall and anchored into stable material well behind potentially unstable soil, then tensioned and attached to the wall to provide additional resistance to earth pressures. Anchors are also referred to as Tie-Backs or Ground Anchors.",
+  },
+  BinWall: {
+    term: "Bin Wall",
+    definition:
+      "A type of gravity retaining wall consisting of bins typically fabricated from metal or concrete, filled with granular soil material, and then placed adjacent and atop of one another. The individual bins are typically placed in a non-interlocking manner.",
+  },
+  CantileverSemiGravity: {
+    term: "Cantilever Semi-Gravity",
+    definition:
+      "A type of retaining wall that has a vertical stem wall that is structurally connected to a base slab, or footing. The base slab may be either bearing directly on underlying foundation soil or supported on piles. The vertical stem wall is typically reinforced concrete or reinforced, solid-grouted concrete masonry block, while the base slab is reinforced concrete. The combined weight of the retaining wall itself and the soil mass on the base slab provides overall stability against earth pressures, while the stem wall behaves as a vertical cantilever member that is reinforced at the base of the wall providing cantilever resistance to lateral earth pressures.",
+  },
+  CribWall: {
+    term: "Crib Wall",
+    definition:
+      "A type of gravity retaining wall consisting of interlocking elements of timber, metal, or precast concrete arranged in the form of bins (or cribwork) and filled with granular soil material. Crib walls gain their stability not only from their weight but also to some extent from the strength of fill within the bins.",
+  },
+  DrilledShaft: {
+    term: "Drilled Shaft",
+    definition:
+      "A structural element constructed using an auger to drill into a soil mass to remove soil and then filling the drilled void with concrete. Drilled shafts used for retaining wall construction are typically built as Secant Walls (consisting of overlapping or intersecting drilled shafts), Soldier Walls (consisting of spaced drilled shafts with lagging), or Tangent Walls (consisting of drilled shafts placed side-by-side and touching one another, but not overlapping).",
+  },
+  Gabion: {
+    term: "Gabion",
+    definition:
+      "A cage, wire container, cylinder, or similar type box filled with rocks, broken concrete, or granular soil used in retaining wall and erosion control applications.",
+  },
+  GravityWall: {
+    term: "Gravity Wall",
+    definition:
+      "A wall typically built with stone masonry, mass concrete, or other heavy material that depends on its overall mass, or weight, to resist earth pressure from behind.",
+  },
+  Lagging: {
+    term: "Lagging",
+    definition:
+      "Structural members that are typically timber, steel, or concrete that are installed behind, between or in front of piles or drilled shafts to support and retain the soil material between spaced piles. Timber lagging is typically used for temporary construction while steel or concrete lagging is typically used for permanent construction.",
+  },
+  ModularBlockWall: {
+    term: "Modular Block Wall",
+    definition:
+      "A gravity wall built using interlocking blocks that are typically masonry, concrete, or concrete masonry units (CMU) to resist earth pressure from behind. Some modular block walls may also use artificial reinforcing similar to MSE walls.",
+  },
+  MSE: {
+    term: "MSE",
+    definition:
+      "Mechanically stabilized earth, sometimes referred to as reinforced soil, is a soil mass embankment constructed with artificial reinforcing that typically consist of either geosynthetics or steel material. When used as retaining walls, MSE walls are designed as gravity walls built with multiple layers of horizontal reinforcing in granular backfill connected to wall face components.",
+  },
+  Pile: {
+    term: "Pile",
+    definition: "A structural element driven or drilled into the ground to resist vertical and/or horizontal loads. Piles are usually rolled steel shapes, concrete, or timber.",
+  },
+  RetainingWall: {
+    term: "Retaining Wall",
+    definition:
+      "A permanent, relatively rigid structure that supports a soil mass at slopes steeper than their angle of rest to provide usable space both above and in front of the wall.",
+  },
+  SheetPileWall: {
+    term: "Sheet Pile Wall",
+    definition:
+      "A cantilever wall built using interlocking plate piles fabricated from pressed or molded steel sheet metal to provide structural resistance to lateral earth pressures. Such walls can be fully cantilevered or include anchors for additional resistance.",
+  },
+  SoilNails: {
+    term: "Soil Nails",
+    definition: "Steel rods providing soil reinforcement into embankments that are either grouted into drilled holes or driven into soil at close spacing.",
+  },
+  SoldierPileWall: {
+    term: "Soldier Pile Wall",
+    definition:
+      "A cantilever wall built using piles, typically rolled steel shapes and installed at regular intervals (nominally 6 to 10 foot spacings) to provide structural resistance to lateral earth pressures. Lagging is then placed between the soldier piles to both support and retain the soil material between piles and to transfer those lateral earth pressures to the soldier piles. Such walls can be fully cantilevered or include anchors for additional resistance.",
+  },
+};
+
+const compoundTerms = [
+  { term: "Arch Ring", definition: "The curved, topmost portion of an arch that carries the compressive load across the span of the bridge, ensuring structural stability." },
+  { term: "Backwall", definition: "The vertical wall at the rear of an abutment that retains the roadway fill behind a bridge." },
+  {
+    term: "Backwater",
+    definition: "The increase in the upstream water elevation resulting from an obstruction to flow, such as a bridge and/or embankment placed in the floodplain.",
+  },
+  {
+    term: "Centerline",
+    definition:
+      "The yellow painted line, or the imaginary line, that separates traffic moving in opposite directions on a roadway. It serves as a visual guide for drivers, indicating the boundary between lanes of traffic going in opposite directions.",
+  },
+  { term: "Clear Zone", definition: "The area along a roadway that is kept free of obstacles, designed to provide a safe space for vehicles that leave the road." },
+  { term: "Crash Wall", definition: "A reinforced protective wall built around bridge piers or critical infrastructure to absorb and deflect vehicle impacts." },
+  { term: "Cross Bracing", definition: "A system of diagonal braces used to strengthen and stabilize the bridge structure, typically placed between girders or beams." },
+  { term: "Cross-Section", definition: "A view or diagram representing a vertical or horizontal cut through an object, structure, or terrain to show internal features." },
+  { term: "Cross Slope", definition: "The slope of the roadway surface perpendicular to the direction of travel, designed to allow for proper drainage of water." },
+  {
+    term: "Crossover",
+    definition:
+      "A designated area or path, often a short roadway, that allows vehicles to cross a median or divider to access opposing roadways or areas. Crossovers are commonly found on divided highways or interstates to provide access between different sides of the road.",
+  },
+  {
+    term: "Crosswalk",
+    definition:
+      "A designated area on a road or street, marked to provide a safer path for pedestrians to cross. It typically consists of painted lines or markings to make the crossing more visible to drivers.",
+  },
+  { term: "Downspout", definition: "A drainage component that directs water from the bridge deck to a designated drainage system." },
+  {
+    term: "Downstream",
+    definition:
+      "The direction in which water flows away from the source or higher elevation. In engineering, it refers to structures, impacts, or conditions occurring after the point of interest in the flow path.",
+  },
+  { term: "Earthwork", definition: "The process of moving, excavating, or compacting soil, rock, or other materials to prepare a site for construction or engineering projects." },
+  { term: "Eastbound, Westbound, Northbound, Southbound", definition: "Moving in the indicated direction, typically referring to traffic lanes or transportation routes." },
+  {
+    term: "Floodplain",
+    definition: "The flat, often expansive area adjacent to a channel that is subject to periodic flooding, typically formed by sediment deposition during high-water events.",
+  },
+  { term: "Flow Line", definition: "The lowest point within a channel, pipe, or culvert where water is expected to flow under normal conditions." },
+  {
+    term: "Freeboard",
+    definition: "The clearance between the bottom of the superstructure and the design high-water elevation.",
+  },
+  { term: "Groundwater", definition: "Water located beneath the Earth's surface in soil pores and rock formations, supplying wells and springs." },
+  { term: "Headwall", definition: "A retaining wall at the end of a culvert or bridge opening that stabilizes the structure and prevents erosion." },
+  { term: "Jobsite", definition: "A location where construction, maintenance, or engineering work is actively taking place." },
+  {
+    term: "Keystone",
+    definition: "The central, topmost stone or concrete block of an arch that locks the other blocks or sections in place, crucial for the arch’s structural integrity.",
+  },
+  { term: "LaPorte", definition: "The INDOT district name and county name are written as one word with a capital P: LaPorte. The city name is written as two words: La Porte." },
+  { term: "Line of Sight", definition: "The unobstructed view along the roadway, crucial for driver safety, allowing the driver to see upcoming curves or obstacles." },
+  { term: "Load-Bearing", definition: "A structural element, such as a wall or beam, that supports and transfers loads from above to the foundation or other supporting members." },
+  { term: "Off-ramp", definition: "A roadway that allows vehicles to exit a highway or freeway." },
+  { term: "On-ramp", definition: "A roadway that allows vehicles to enter a highway or freeway." },
+  { term: "Overpass", definition: "A bridge or elevated structure that allows a road, railway, or pedestrian path to cross over another roadway or obstacle." },
+  {
+    term: "Post-Tensioned",
+    definition: "A type of concrete construction where the concrete is tensioned after it has been poured, typically using steel tendons to enhance its strength.",
+  },
+  { term: "Railroad", definition: "A system of tracks along which trains are guided, often including the associated infrastructure like stations and bridges." },
+  { term: "Rebar", definition: "Short for 'reinforcing bar,' a steel bar used to strengthen concrete structures by providing tensile support." },
+  {
+    term: "Riprap",
+    definition: "Loose stone or rock material placed along embankments, shorelines, or riverbeds to prevent erosion.",
+  },
+  {
+    term: "Right-of-Way",
+    definition:
+      "The land designated for the roadway and its components, including the traveled way, shoulders, and any additional space required for construction and maintenance.",
+  },
+  { term: "Roadside", definition: "The area adjacent to the edge of a roadway, often including shoulders, ditches, and vegetation." },
+  { term: "Sidewalk", definition: "A paved path for pedestrians along the side of a roadway, typically made of concrete or asphalt." },
+  {
+    term: "Slipforming",
+    definition:
+      "A construction method where concrete is poured continuously into a form that is gradually moved upwards as the concrete hardens. This technique is commonly used for constructing barrier walls. Horizontal cracking can sometimes occur over time due to shrinkage, temperature changes, or the weight of the concrete during curing. If the curing process isn't properly controlled, or if there is uneven setting or stress distribution, it can lead to the formation of cracks along the horizontal plane of the wall.",
+  },
+  { term: "Slopewall", definition: "A protective concrete or riprap covering placed on embankments to prevent soil erosion near bridges and culverts." },
+  { term: "Snowdrift", definition: "A deep accumulation of snow formed by wind movement and deposition." },
+  { term: "Snowplow", definition: "A vehicle or equipment used to remove snow from roadways and highways." },
+  { term: "Snowstorm", definition: "A weather event characterized by heavy snowfall and reduced visibility." },
+  {
+    term: "Springline",
+    definition:
+      "The horizontal line at which the arch ring begins to curve from the abutment, marking the transition between the arch ring and the abutments. The horizontal distance between two springlines is the span distance.",
+  },
+  { term: "Stormwater", definition: "Water from precipitation that flows over surfaces and is managed through drainage systems to prevent flooding and erosion." },
+  { term: "Subdistrict", definition: "A smaller administrative division within a larger district, often used in transportation planning." },
+  { term: "Superelevation", definition: "The banking of the roadway at curves to counteract centrifugal force and improve vehicle stability." },
+  { term: "Underdrain", definition: "A drainage system placed below the surface of the ground to remove excess water and prevent soil erosion or saturation." },
+  { term: "Underground", definition: "Refers to structures or utilities located below the surface, such as tunnels, pipelines, or electrical wiring." },
+  { term: "Underpass", definition: "A passage that allows vehicles, pedestrians, or water to travel beneath a road, railway, or other obstruction." },
+  {
+    term: "Upstream",
+    definition:
+      "The direction opposite to the flow of water in a river, stream, or drainage system, moving toward the source or higher elevation. In engineering, it refers to structures, impacts, or conditions occurring before the point of interest in the flow path.",
+  },
+  { term: "Waterline", definition: "The elevation or mark indicating the typical level of water in a stream, river, or other water body near a structure." },
+  { term: "Watershed", definition: "An area of land that drains all precipitation and runoff to a common outlet, such as a river, bay, or other body of water." },
+  { term: "Wingwall", definition: "A sidewall extending from an abutment or headwall that helps retain soil and direct water flow away from a bridge or culvert." },
+];
 
 const bridgeTerms = [
   { term: "Abutment", definition: "A structure that supports the end of a bridge and transfers loads to the ground." },
@@ -505,7 +685,11 @@ const bridgeTerms = [
   { term: "Post-Tensioning", definition: "A technique where steel tendons are tensioned after the concrete has hardened." },
   { term: "Precast Concrete", definition: "Concrete components cast and cured off-site before installation." },
   { term: "Prestressed Concrete", definition: "Concrete that has been pre-tensioned or post-tensioned to improve strength." },
-  { term: "Shear Crack", definition: "A diagonal crack in a structural member caused by shear forces, often near supports or high-stress areas." },
+  {
+    term: "Shear Crack",
+    definition:
+      "A diagonal crack in a structural member caused by shear forces, often forming near supports and extending upward toward the midpoint of the member. Shear cracks indicate significant structural stress and can compromise the integrity of the member if not addressed.",
+  },
   { term: "Stringer", definition: "A longitudinal beam supporting the deck and transferring load to the main girders." },
   { term: "Substructure", definition: "The part of a bridge below the deck, including piers, abutments, and foundations." },
   { term: "Superstructure", definition: "The part of the bridge above the substructure, including the deck and supporting elements." },
@@ -710,63 +894,29 @@ const culvertTerms = [
   { term: "Vertical Offset", definition: "Displacement of an object from its original position in the vertical direction." },
 ];
 
+// List of needs: Welds,
+
 const words = [
-  { term: "Abutment", definition: "A structure that supports the end of a bridge and transfers loads to the foundation." },
-  { term: "Approach Slab", definition: "A reinforced concrete slab that provides a smooth transition between the roadway and the bridge deck." },
-  { term: "Backwall", definition: "The vertical wall at the rear of an abutment that retains the roadway fill behind a bridge." },
-  { term: "Bearing Pad", definition: "A pad placed between the bridge superstructure and substructure to accommodate movement and distribute loads." },
-  { term: "Bridge Deck", definition: "The roadway surface of a bridge, typically made of concrete or steel." },
-  { term: "Centerline", definition: "A continuous line marking the center of a roadway, dividing opposing lanes of traffic." },
-  { term: "Crossover", definition: "A temporary or permanent roadway connection allowing traffic to switch between lanes or directions, often used in construction zones." },
-  { term: "Deck Joint", definition: "A joint in the bridge deck that allows for expansion, contraction, and movement due to temperature changes or load variations." },
-  { term: "Deck Slab", definition: "The reinforced concrete slab forming the bridge deck, providing structural support for traffic loads." },
-  { term: "Downspout", definition: "A drainage component that directs water from the bridge deck to a designated drainage system." },
-  { term: "Downspouts", definition: "Pipes or channels that direct water from a bridge deck to the drainage system below, preventing water accumulation." },
-  { term: "Expansion Joint", definition: "A structural joint that allows movement caused by thermal expansion, contraction, or other forces." },
-  { term: "Flow Line", definition: "The lowest point within a channel, pipe, or culvert where water is expected to flow under normal conditions." },
-  { term: "Footing", definition: "The foundation element of a bridge that distributes loads to the ground." },
-  { term: "Girder Line", definition: "The alignment of girders supporting the bridge deck." },
-  { term: "Headwall", definition: "A retaining wall at the end of a culvert or bridge opening that stabilizes the structure and prevents erosion." },
+  {
+    term: "Local Public Agency (LPA)",
+    definition:
+      "A government entity at the local level, such as a city, county, or municipality, responsible for the planning, design, construction, and maintenance of transportation infrastructure, including roads and bridges. LPAs handle more localized projects, often with funding or coordination from state or federal agencies.",
+  },
   { term: "Jobsite", definition: "A location where construction, maintenance, or engineering work is actively taking place." },
   { term: "LaPorte", definition: "The INDOT district name and county name are written as one word with a capital P: LaPorte. The city name is written as two words: La Porte." },
   { term: "Live Load", definition: "The dynamic loads on a bridge caused by vehicles, pedestrians, wind, and other temporary forces." },
-  { term: "Off-ramp", definition: "A roadway that allows vehicles to exit a highway or freeway." },
-  { term: "On-ramp", definition: "A roadway that allows vehicles to enter a highway or freeway." },
-  { term: "Parapet", definition: "A low protective barrier along the edge of a bridge, designed to prevent vehicles or pedestrians from falling off." },
-  { term: "Passerby", definition: "A person who passes by a specific location, such as a roadway or construction site." },
-  { term: "Passersby", definition: "Plural of passerby; multiple people passing by a location." },
-  { term: "Pier Cap", definition: "The upper part of a bridge pier that distributes loads from the superstructure to the pier columns." },
-  { term: "Pile Cap", definition: "A reinforced concrete slab that connects multiple foundation piles, distributing loads more effectively." },
-  { term: "Retaining Wall", definition: "A wall designed to resist soil pressure and prevent erosion or collapse of embankments." },
-  { term: "Right-of-Way", definition: "The legal right to pass over or use a specific section of land for transportation purposes." },
-  { term: "Riprap", definition: "Layered rock or concrete placed along shorelines, slopes, or embankments to prevent erosion." },
   { term: "Road School", definition: "A formal program or event focused on transportation and roadway engineering education." },
-  { term: "Scour Hole", definition: "An erosion pit or depression formed by the movement of water around a bridge foundation." },
-  { term: "Shear Crack", definition: "A diagonal crack in a bridge component, typically caused by excessive shear stress near supports." },
-  { term: "Slopewall", definition: "A protective concrete or riprap covering placed on embankments to prevent soil erosion near bridges and culverts." },
   { term: "Snowdrift", definition: "A deep accumulation of snow formed by wind movement and deposition." },
   { term: "Snowplow", definition: "A vehicle or equipment used to remove snow from roadways and highways." },
   { term: "Snowstorm", definition: "A weather event characterized by heavy snowfall and reduced visibility." },
-  { term: "Steel Girder", definition: "A large steel beam used to support a bridge deck and distribute loads to the substructure." },
   { term: "Subdistrict", definition: "A smaller administrative division within a larger district, often used in transportation planning." },
-  { term: "Superstructure Span", definition: "The portion of the bridge above the substructure that supports traffic loads." },
-  { term: "Traffic Barrier", definition: "A safety barrier used to separate lanes, protect vehicles, and prevent roadway departures." },
-  { term: "Waterline", definition: "The elevation or mark indicating the typical level of water in a stream, river, or other water body near a structure." },
-  { term: "Wingwall", definition: "A sidewall extending from an abutment or headwall that helps retain soil and direct water flow away from a bridge or culvert." },
-  { term: "Jacking Frame", definition: "A structural frame used to support and distribute loads when lifting or lowering bridge components during maintenance or construction." },
-  {
-    term: "Curtain Wall",
-    definition: "A non-load-bearing exterior wall or barrier designed to protect structures from environmental elements while allowing for controlled drainage.",
-  },
-  { term: "Crash Wall", definition: "A reinforced protective wall built around bridge piers or critical infrastructure to absorb and deflect vehicle impacts." },
-  { term: "Pier Wall", definition: "A vertical structural element that supports bridge spans and transfers loads to the foundation, often part of a pier system." },
-  { term: "Bridge Seat", definition: "The upper surface of an abutment or pier where bridge bearings rest, providing support for the superstructure." },
 
-  { term: "Diaphragm", definition: "A structural element that distributes loads across the width of a bridge, preventing distortion or movement of the deck." },
-  { term: "Cross Bracing", definition: "A system of diagonal braces used to strengthen and stabilize the bridge structure, typically placed between girders or beams." },
-  { term: "Sway Bracing", definition: "Bracing used to resist lateral forces that cause side-to-side movement of a structure, improving its stability." },
-  { term: "Springline", definition: "The point on an arch where the curve begins to rise from the supports, marking the transition from the span to the abutments." },
-  { term: "Keystone", definition: "The central, topmost stone in an arch that locks all other stones into place and allows the arch to bear weight." },
+  // Channel Stuff
+
+  { term: "Flow Line", definition: "The lowest point within a channel, pipe, or culvert where water is expected to flow under normal conditions." },
+  { term: "Waterline", definition: "The elevation or mark indicating the typical level of water in a stream, river, or other water body near a structure." },
+  { term: "Riprap", definition: "Layered rock or concrete placed along shorelines, slopes, or embankments to prevent erosion." },
+  { term: "Scour Hole", definition: "An erosion pit or depression formed by the movement of water around a bridge foundation." },
   {
     term: "Freeboard",
     definition: "The vertical distance between the water surface and the lowest structural component of a bridge, ensuring clearance during high water levels.",
@@ -858,70 +1008,23 @@ const words = [
     definition:
       "The formation of vapor bubbles in the water that collapse near a surface, leading to localized erosion, often seen around hydraulic structures like gates or valves.",
   },
-  {
-    term: "Underfill Concrete Arch",
-    definition:
-      "A type of bridge structure consisting of a concrete arch with a fill material placed underneath the arch to support and distribute the load, providing stability and reducing the amount of material required for the arch.",
-  },
-  { term: "Arch Ring", definition: "The curved, topmost portion of an arch that carries the compressive load across the span of the bridge, ensuring structural stability." },
-  {
-    term: "Keystone",
-    definition: "The central, topmost stone or concrete block of an arch that locks the other blocks or sections in place, crucial for the arch’s structural integrity.",
-  },
-  {
-    term: "Spandrel Wall",
-    definition: "The vertical wall or partition that supports the arch ring and fills the space between the arch and the roadbed, providing additional stability to the structure.",
-  },
-  {
-    term: "Underfill Material",
-    definition: "A material, such as compacted soil or granular aggregate, placed beneath the arch ring to help distribute loads evenly and enhance the bridge’s stability.",
-  },
-  {
-    term: "Abutment",
-    definition: "A support structure at either end of the bridge that holds the ends of the arch in place and transfers the loads from the bridge to the ground.",
-  },
-  {
-    term: "Abutment Backfill",
-    definition: "The material placed behind the abutment, typically soil or granular fill, that helps support the weight of the bridge and ensures the arch remains stable.",
-  },
-  { term: "Rise", definition: "The vertical distance from the base of the arch to the highest point of the arch, influencing the curvature and load distribution of the arch." },
-  { term: "Span", definition: "The horizontal distance between the supports (abutments) of the arch, determining the size and shape of the arch structure." },
-  {
-    term: "Hinge",
-    definition:
-      "A structural component in some concrete arches that allows slight movement or rotation due to changes in temperature or load variations, typically placed at the base or supports of the arch.",
-  },
-  {
-    term: "Springline",
-    definition: "The horizontal line at which the arch ring begins to curve from the abutment, marking the transition between the arch and the supporting structure.",
-  },
-  {
-    term: "Arch Crown",
-    definition: "The highest point of the arch, located at the center of the span, which experiences compressive forces that help distribute loads across the arch structure.",
-  },
-  { term: "Intrados", definition: "The inner surface of the arch ring, which is in compression and typically carries the load from the bridge deck." },
-  { term: "Extrados", definition: "The outer surface of the arch ring, which is under tension and provides the structural shape for the arch." },
-  { term: "Arch Springing", definition: "The point or line at which the arch ring meets the abutments, where the arch begins to support the load from the bridge." },
-  { term: "Pier", definition: "A vertical support structure located in the water or at the midspan of the arch bridge, used to provide additional support for the arch." },
-  {
-    term: "Barrel",
-    definition: "The curved, continuous part of an arch bridge, typically referring to the overall length or span of the arch that supports the load.",
-  },
 ];
 
+// Channel Protection
+
 const channelProtectionItems = [
+  { term: "Articulating Concrete Blocks", definition: "Pre-cast, interlocking concrete units used to form erosion-resistant surfaces." },
+  { term: "Bendway Weirs", definition: "A type of river training structure used to guide water flow along a river bend, reducing bank erosion and scour." },
+  { term: "Check Dams", definition: "Small structures used in rivers or streams to slow the flow of water and reduce erosion." },
+  { term: "Concrete Slope Paving", definition: "A protective layer of concrete used to stabilize slopes and prevent erosion." },
+  { term: "Drop Structures", definition: "A river training feature that is placed in the channel to control the flow of water and reduce scouring effects on the streambed." },
+  { term: "Guide Banks", definition: "A type of river training countermeasure designed to direct flow away from the banks and toward the center of the channel." },
+  { term: "Gabion Mattresses", definition: "A riverbank protection system made of mesh baskets filled with rocks, providing stability and preventing erosion." },
+  { term: "Grout-Filled Mats", definition: "A protective matting system filled with grout to stabilize riverbanks and prevent erosion." },
+  { term: "Grouted Riprap", definition: "A type of riprap that is bonded together with grout to form a more stable, cohesive surface." },
+  { term: "Riprap", definition: "Loose stone or rock material placed along embankments, shorelines, or riverbeds to prevent erosion." },
   {
     term: "Spurs",
     definition: "A river training countermeasure that extends from the bank to control flow direction and reduce erosion by deflecting water away from vulnerable areas.",
   },
-  { term: "Bendway Weirs", definition: "A type of river training structure used to guide water flow along a river bend, reducing bank erosion and scour." },
-  { term: "Guide Banks", definition: "A type of river training countermeasure designed to direct flow away from the banks and toward the center of the channel." },
-  { term: "Drop Structures", definition: "A river training feature that is placed in the channel to control the flow of water and reduce scouring effects on the streambed." },
-  { term: "Check Dams", definition: "Small structures used in rivers or streams to slow the flow of water and reduce erosion." },
-  { term: "Riprap", definition: "Loose stone or rock material placed along embankments, shorelines, or riverbeds to prevent erosion." },
-  { term: "Grouted Riprap", definition: "A type of riprap that is bonded together with grout to form a more stable, cohesive surface." },
-  { term: "Concrete Slope Paving", definition: "A protective layer of concrete used to stabilize slopes and prevent erosion." },
-  { term: "Articulating Concrete Blocks", definition: "Pre-cast, interlocking concrete units used to form erosion-resistant surfaces." },
-  { term: "Gabion Mattresses", definition: "A riverbank protection system made of mesh baskets filled with rocks, providing stability and preventing erosion." },
-  { term: "Grout-Filled Mats", definition: "A protective matting system filled with grout to stabilize riverbanks and prevent erosion." },
 ];

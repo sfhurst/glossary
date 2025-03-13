@@ -52,7 +52,17 @@ function populateGlossaryDefects() {
     // Create the header for the card with the defect term
     const header = document.createElement("div");
     header.classList.add("glossary-card-header");
-    header.textContent = defect.term;
+
+    // Create the hidden link for the term
+    const link = document.createElement("a");
+    let search = defect.search || `What is "${defect.term}" in bridge design?`; // Search query
+    link.classList.add("glossary-term-link");
+    link.textContent = defect.term;
+    link.href = `https://www.google.com/search?q=${encodeURIComponent(search)}`;
+    link.target = "_blank";
+
+    // Append the link inside the header div
+    header.appendChild(link);
 
     // Create a paragraph for the card with the defect definition
     const paragraph = document.createElement("p");
@@ -83,7 +93,17 @@ function populateGlossaryBridge() {
     // Create the header for the card with the defect term
     const header2 = document.createElement("div");
     header2.classList.add("glossary-card-header");
-    header2.textContent = defect2.term;
+
+    // Create the hidden link for the term
+    const link2 = document.createElement("a");
+    let search2 = defect2.search || `What is "${defect2.term}" in bridge design?`; // Search query
+    link2.classList.add("glossary-term-link");
+    link2.textContent = defect2.term;
+    link2.href = `https://www.google.com/search?q=${encodeURIComponent(search2)}`;
+    link2.target = "_blank";
+
+    // Append the link inside the header div
+    header2.appendChild(link2);
 
     // Create the paragraph for the card with the defect definition
     const paragraph2 = document.createElement("p");
@@ -99,7 +119,7 @@ function populateGlossaryBridge() {
 
 document.addEventListener("DOMContentLoaded", populateGlossaryBridge);
 
-// ::: ------------------------------ Populate glossary with bridge definitions (Text Content Insertion)  ------------------------------
+// ::: ------------------------------ Populate glossary with culvert definitions (Text Content Insertion)  ------------------------------
 function populateGlossaryCulvert() {
   const container2 = document.querySelector("#glossary-culvert-tab .glossary-numeric-ratings-container");
 
@@ -112,7 +132,17 @@ function populateGlossaryCulvert() {
     // Create the header for the card with the defect term
     const header2 = document.createElement("div");
     header2.classList.add("glossary-card-header");
-    header2.textContent = defect2.term;
+
+    // Create the hidden link for the term
+    const link2 = document.createElement("a");
+    let search2 = defect2.search || `What is "${defect2.term}" in culvert design?`; // Search query
+    link2.classList.add("glossary-term-link");
+    link2.textContent = defect2.term;
+    link2.href = `https://www.google.com/search?q=${encodeURIComponent(search2)}`;
+    link2.target = "_blank";
+
+    // Append the link inside the header div
+    header2.appendChild(link2);
 
     // Create the paragraph for the card with the defect definition
     const paragraph2 = document.createElement("p");
@@ -141,7 +171,17 @@ function populateGlossaryWall() {
     // Create the header for the card with the defect term
     const header3 = document.createElement("div");
     header3.classList.add("glossary-card-header");
-    header3.textContent = defect3.term;
+
+    // Create the hidden link for the term
+    const link3 = document.createElement("a");
+    let search3 = defect3.search || `What is "${defect3.term}" in retaining wall design?`; // Search query
+    link3.classList.add("glossary-term-link");
+    link3.textContent = defect3.term;
+    link3.href = `https://www.google.com/search?q=${encodeURIComponent(search3)}`;
+    link3.target = "_blank";
+
+    // Append the link inside the header div
+    header3.appendChild(link3);
 
     // Create the paragraph for the card with the defect definition
     const paragraph3 = document.createElement("p");
@@ -156,6 +196,45 @@ function populateGlossaryWall() {
 }
 
 document.addEventListener("DOMContentLoaded", populateGlossaryWall);
+
+// ::: ------------------------------ Populate glossary with compound word definitions (Text Content Insertion)  ------------------------------
+function populateGlossaryCompound() {
+  const container3 = document.querySelector("#glossary-compounds-tab .glossary-numeric-ratings-container");
+
+  // Loop through each glossary term and create a glossary card for each
+  compoundTerms.forEach((defect3) => {
+    // Create the card container
+    const card3 = document.createElement("div");
+    card3.classList.add("glossary-content-cards");
+
+    // Create the header for the card with the defect term
+    const header3 = document.createElement("div");
+    header3.classList.add("glossary-card-header");
+
+    // Create the hidden link for the term
+    const link3 = document.createElement("a");
+    let search3 = defect3.search || `What is "${defect3.term}" in bridge design?`; // Search query
+    link3.classList.add("glossary-term-link");
+    link3.textContent = defect3.term;
+    link3.href = `https://www.google.com/search?q=${encodeURIComponent(search3)}`;
+    link3.target = "_blank";
+
+    // Append the link inside the header div
+    header3.appendChild(link3);
+
+    // Create the paragraph for the card with the defect definition
+    const paragraph3 = document.createElement("p");
+    paragraph3.classList.add("glossary-card-paragraph");
+    paragraph3.textContent = defect3.definition;
+
+    // Assemble the card elements
+    card3.appendChild(header3);
+    card3.appendChild(paragraph3);
+    container3.appendChild(card3);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", populateGlossaryCompound);
 
 // ::: ------------------------------ Populate glossary with counties (Text Content Insertion)  ------------------------------
 // This is still generated in the index.html and can be deleted.
@@ -181,6 +260,12 @@ function populateCountyGlossary() {
       const countyItem = document.createElement("div");
       countyItem.classList.add("county-item");
 
+      // Create a link element wrapping the county info
+      const link = document.createElement("a");
+      link.classList.add("glossary-term-link");
+      link.href = `https://www.google.com/maps?q=${encodeURIComponent(description + " County, Indiana")}`;
+      link.target = "_blank"; // Open in a new tab
+
       // Create a span for the code
       const codeSpan = document.createElement("span");
       codeSpan.classList.add("county-code");
@@ -194,10 +279,13 @@ function populateCountyGlossary() {
       descriptionSpan.classList.add("county-description");
       descriptionSpan.textContent = description;
 
-      // Append the code, dash, and description spans to the county item
-      countyItem.appendChild(codeSpan);
-      countyItem.appendChild(dashText); // Append the dash text node
-      countyItem.appendChild(descriptionSpan);
+      // Append the code, dash, and description spans to the link
+      link.appendChild(codeSpan);
+      link.appendChild(dashText); // Append the dash text node
+      link.appendChild(descriptionSpan);
+
+      // Append the link to the county item
+      countyItem.appendChild(link);
 
       // Append the county item to the container
       container.appendChild(countyItem);
@@ -231,10 +319,20 @@ function buildGlossaries(bridgeComponents) {
         const card = document.createElement("div");
         card.classList.add("glossary-content-cards");
 
-        // Create the header for the card with the glossary term
+        // Create the header container for the card with the glossary term
         const header = document.createElement("div");
         header.classList.add("glossary-card-header");
-        header.textContent = item.term;
+
+        // Create the hidden link for the term
+        const link = document.createElement("a");
+        let search = item.search || `What is "${item.term}" in highway design?`;
+        link.classList.add("glossary-term-link");
+        link.textContent = item.term;
+        link.href = `https://www.google.com/search?q=${encodeURIComponent(search)}`;
+        link.target = "_blank";
+
+        // Append the link inside the header div
+        header.appendChild(link);
 
         // Create the paragraph for the card with the glossary definition
         const paragraph = document.createElement("p");
@@ -1141,64 +1239,3 @@ function updateObjectRatings(numericalValue, dataCategory) {
   // add scour change
   // add freq change
 }
-
-// :::: (Bridge Component Glossary Tabs) ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-// Function to adjust styles for glossary containers dynamically
-function adjustContainerStyles(event) {
-  const clickedButton = event.target;
-
-  // Extract section prefix dynamically from button ID (e.g., "channel-glossary-button" → "channel")
-  const match = clickedButton.id.match(/^(.*?)-glossary-button$/) || clickedButton.className.match(/bridge-(.*?)-buttons/);
-
-  if (!match) return; // Exit if the button doesn't match expected patterns
-
-  const sectionPrefix = match[1]; // Extracted section name (e.g., "alignment", "channel")
-  const glossaryContainer = document.getElementById(`${sectionPrefix}-main-content-container`);
-
-  if (!glossaryContainer) return; // Exit if container isn't found
-
-  // Check if the clicked button is the glossary button
-  const isGlossaryButton = clickedButton.id === `${sectionPrefix}-glossary-button`;
-
-  if (isGlossaryButton) {
-    // Apply glossary styles
-    glossaryContainer.style.padding = "0";
-    glossaryContainer.style.backgroundColor = "transparent";
-    glossaryContainer.style.border = "none";
-    glossaryContainer.style.margin = "20px 10px 20px 10px";
-  } else {
-    // Revert to default styles for other buttons
-    glossaryContainer.style.padding = "10px 20px";
-    glossaryContainer.style.textAlign = "left";
-    glossaryContainer.style.height = "fit-content";
-    glossaryContainer.style.margin = "10px 5px";
-    glossaryContainer.style.border = "solid 2px grey";
-    glossaryContainer.style.borderRadius = "1px";
-    glossaryContainer.style.backgroundColor = "var(--main-color)";
-  }
-}
-
-// Function to initialize event listeners dynamically
-function initializeGlossaryStyleAdjustment() {
-  // Select all glossary buttons
-  const allGlossaryButtons = document.querySelectorAll("[id$='-glossary-button']");
-
-  allGlossaryButtons.forEach((button) => {
-    button.addEventListener("click", adjustContainerStyles);
-
-    // Extract section prefix dynamically
-    const match = button.id.match(/^(.*?)-glossary-button$/);
-    if (match) {
-      const sectionPrefix = match[1];
-      const otherButtons = document.querySelectorAll(`.bridge-${sectionPrefix}-buttons`);
-
-      otherButtons.forEach((otherButton) => {
-        otherButton.addEventListener("click", adjustContainerStyles);
-      });
-    }
-  });
-}
-
-// Auto-initialize for all sections
-initializeGlossaryStyleAdjustment();

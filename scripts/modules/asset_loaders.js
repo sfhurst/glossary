@@ -411,6 +411,7 @@ function generateSummary(assetObject) {
 
   const elementSubmittalResponse = assetValues.highwaySystem === 1 ? "Element, " : "Not element, ";
   const scourCriticalSubmittalResponse = scourTypesSubmittal[assetValues.scourVulnerability] || "not over water, ";
+  const scourVulnerabilitySubmittalResponse = scourCriticalSubmittalResponse !== "not over water, " ? "Please update the scour vulnerability rating." : "";
   const postedSubmittalResponse = assetValues.postedValue === "A" ? "not posted" : "posted";
 
   let formattedSubmittalMaintenanceComments = maintenanceArray
@@ -426,7 +427,7 @@ function generateSummary(assetObject) {
 
   const maintenanceSubmittalResponse = maintenanceArray.length !== 0 ? `. ${formattedSubmittalMaintenanceComments}` : ", no maintenance.";
 
-  const submittalResponse = `Completed Items 6 and 7. All other items will be systematically updated within the FHWA's grace period, which expires at the end of 2027. ${elementSubmittalResponse}${scourCriticalSubmittalResponse}${postedSubmittalResponse}${maintenanceSubmittalResponse}`;
+  const submittalResponse = `Completed Items 6 and 7. All other items will be systematically updated within the FHWA's grace period, which expires at the end of 2027. ${elementSubmittalResponse}${scourCriticalSubmittalResponse}${postedSubmittalResponse}${maintenanceSubmittalResponse} ${scourVulnerabilitySubmittalResponse}`;
   document.getElementById("submittal-textarea").value = submittalResponse;
 
   // Final notes is returned as the answer to the generateSummary(assetObject);

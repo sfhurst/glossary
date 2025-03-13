@@ -69,17 +69,47 @@ const bridgeComponents = [
 
     glossary_page_id: "bridge-alignment-pg5",
     glossary: [
-      { term: "Alignment", definition: "The horizontal and vertical positioning of the roadway or bridge within a defined corridor or location." },
-      { term: "Approach Roadway Alignment", definition: "The section of the roadway leading up to the bridge, which includes the horizontal and vertical alignment of the road." },
+      {
+        term: "Annual Average Daily Traffic (AADT)",
+        definition: "The total annual volume of traffic passing a point or segment of a highway in both directions divided by the number of days in a year.",
+        search: `What is "Annual Average Daily Traffic" in transportation engineering?`,
+      },
+      {
+        term: "Annual Average Daily Truck Traffic (AADTT)",
+        definition: "The total annual volume of truck traffic passing a point or segment of a highway in both directions divided by the number of days in a year.",
+        search: `What is "Annual Average Daily Truck Traffic" in transportation engineering?`,
+      },
+      {
+        term: "Approach Roadway Alignment",
+        definition:
+          "The portion of the roadway leading up to a bridge, consisting of horizontal and vertical curves and grades. It provides a predictable path for drivers and ensures a smooth, safe transition to the bridge. Properly constructed approach roadways minimize abrupt changes in direction or slope, maintaining vehicle comfort and safety.",
+      },
+      {
+        term: "Centerline",
+        definition:
+          "The yellow painted line, or the imaginary line, that separates traffic moving in opposite directions on a roadway. It serves as a visual guide for drivers, indicating the boundary between lanes of traffic going in opposite directions.",
+      },
       {
         term: "Crest Vertical Curve",
         definition: "A curve in the roadway profile that connects an ascending grade to a descending grade, typically used to smooth transitions at the crest of a hill.",
       },
       { term: "Cross Slope", definition: "The slope of the roadway surface perpendicular to the direction of travel, designed to allow for proper drainage of water." },
+      {
+        term: "Crossover",
+        definition:
+          "A designated area or path, often a short roadway, that allows vehicles to cross a median or divider to access opposing roadways or areas. Crossovers are commonly found on divided highways or interstates to provide access between different sides of the road.",
+      },
+      {
+        term: "Crosswalk",
+        definition:
+          "A designated area on a road or street, marked to provide a safer path for pedestrians to cross. It typically consists of painted lines or markings to make the crossing more visible to drivers.",
+      },
       { term: "Curve Length", definition: "The length of a curved section of the roadway or bridge, typically measured along the centerline." },
       { term: "Horizontal Alignment", definition: "The layout of the roadway in the horizontal plane, including curves, tangents, and transitions." },
       { term: "Horizontal Curve Radius", definition: "The radius of a curve in the roadway or bridge, determining the sharpness or gentleness of the curve." },
       { term: "Line of Sight", definition: "The unobstructed view along the roadway, crucial for driver safety, allowing the driver to see upcoming curves or obstacles." },
+      { term: "Off-ramp", definition: "A roadway that allows vehicles to exit a highway or freeway." },
+      { term: "On-ramp", definition: "A roadway that allows vehicles to enter a highway or freeway." },
       {
         term: "Right-of-Way",
         definition:
@@ -117,16 +147,15 @@ const bridgeComponents = [
                 <p>Consider the roughness and ride provided by the approach slab.</p>`,
     example_comments: [
       "There are no deficiencies to report.",
-      "The surface is smooth with no rideability issues.",
-      "The approach slabs are in good condition.",
-      "The approach slabs have been covered with bituminous material.",
+      "No significant settlement has occurred.",
+      "There are no deficiencies to report. No significant settlement has occurred, and there are no ride quality issues.",
+      "The approach slabs have been covered with an overlay.",
+      "The approach slabs appear to be level and stable with no signs of shifting.",
       "There are sealed cracks in the approach slabs.",
       "There are sound concrete patches in the approach slabs.",
       "There is a bituminous patch in the north approach slab.",
       "There is a void under the south approach slab at the southwest corner of the bridge.",
       "There is minor settlement of the approach slabs.",
-      "No significant settlement has occurred.",
-      "The approach slabs appear to be level and stable with no signs of shifting.",
     ],
     rating_table: [
       {
@@ -187,6 +216,8 @@ const bridgeComponents = [
         description: "Approach slabs have failed and present a safety hazard.",
       },
     ],
+    glossary_page_id: "bridge-approach-pg7",
+    glossary: [{ term: "Approach Slab", definition: "A reinforced concrete slab that provides a smooth transition between the roadway and the bridge deck." }],
   },
 
   // Terminal
@@ -216,8 +247,9 @@ const bridgeComponents = [
                 <p>Do not consider if the terminal joint meets the current standard.</p>`,
     example_comments: [
       "The terminal joints are in good condition.",
-      "The terminal joints are 2-foot-wide strips of hot mix asphalt placed at the ends of the bridge.",
+      "The bridge has HMA terminal joints.",
       "The bridge has integral or semi-integral abutments but no designated terminal joints; the construction joints at the end of the approach slabs function as terminal joints.",
+      "The west construction joint is slightly raised due to thermal expansion and compression from the approach slab, creating a slight unevenness in the roadway.",
       "The terminal joints present a rough transition to the bridge.",
       "There are no terminal joints at either end.",
     ],
@@ -343,6 +375,92 @@ const bridgeComponents = [
         description: "Joints have failed and present a safety hazard.",
       },
     ],
+    glossary_page_id: "bridge-joints-pg9",
+    glossary: [
+      { term: "Adhesion", definition: "The ability of a sealant or material to bond to a surface and remain attached under stress or movement." },
+      {
+        term: "Armor (Two Steel Angles) Joint",
+        definition:
+          "A joint made of two steel angles designed to provide a protective barrier and allow some movement while maintaining a seal. Steel angles can suffer from corrosion, lack flexibility, and may lead to leakage if the sealant is improperly applied.",
+      },
+      {
+        term: "Asphalt Plug Joint",
+        definition: "A joint system that uses a flexible asphalt-based material to accommodate small movements while providing a smooth riding surface.",
+      },
+
+      {
+        term: "Compression Seal (BS) Joint",
+        definition:
+          "A joint system that uses a flexible seal material that compresses to close the gap between two bridge sections. This joint prevents water and debris infiltration by maintaining a tight seal during movement. Over time, compression seals can lose flexibility, accumulate debris, and suffer from misalignment, leading to ineffective sealing and water leakage.",
+      },
+      {
+        term: "Construction Joint",
+        definition:
+          "A joint used in the construction process to separate different phases of work, typically where two sections of a structure meet. It allows for the continuation of construction while providing a defined break between sections, but may require additional treatment to prevent movement or water infiltration.",
+      },
+      { term: "Crumb Rubber", definition: "Recycled rubber from scrap tires, often used as an additive in asphalt to enhance flexibility and durability." },
+      {
+        term: "Expansion Joint",
+        definition:
+          "A joint designed to accommodate movement in a structure due to thermal expansion, contraction, or other forces, preventing damage by allowing parts of the structure to shift independently.",
+      },
+      { term: "HMA (Hot Mix Asphalt)", definition: "A combination of asphalt binder and aggregates heated and mixed to form a durable pavement material." },
+      {
+        term: "Integral Abutment (IA or 1A) Jointless",
+        definition:
+          "A design where the abutment and superstructure are connected without a physical joint, often functioning as a construction joint. While it minimizes maintenance, it may not accommodate thermal expansion or contraction, potentially leading to cracking and structural deformation over time.",
+      },
+
+      { term: "Joint Sealant", definition: "A material used to fill and seal joints to prevent water infiltration and debris accumulation." },
+      {
+        term: "Modular Joint",
+        definition:
+          "A joint system made of prefabricated components designed to allow movement while maintaining a seal, often used in large bridges with high movement requirements. Modular joints are complex systems with many moving parts, making them more prone to malfunction and requiring expensive installation and maintenance.",
+      },
+      {
+        term: "Nosing",
+        definition:
+          "The rounded or beveled edge at the intersection of a joint, such as an expansion or contraction joint. It helps protect the joint from damage and wear, allowing for smoother transitions between sections and reducing the risk of cracking by distributing stress more evenly.",
+      },
+      {
+        term: "Open Joint",
+        definition:
+          "A simple, unsealed joint that allows for unrestricted movement but leaves the bridge vulnerable to water and debris infiltration. Open joints are prone to water infiltration, debris accumulation, and additional structural stress due to the lack of sealing.",
+      },
+      {
+        term: "Polymer Modified Asphalt (LDI and PaveTech) Joint",
+        definition:
+          "A joint filled with polymer-modified asphalt, designed to accommodate movement while providing sealing and protection against water infiltration. Polymer-modified asphalt can degrade over time from UV exposure, crack under stress, and take longer to cure, delaying repairs.",
+      },
+
+      {
+        term: "Poured Silicone (XJS) Joint",
+        definition:
+          "A joint filled with a poured silicone material, often used for narrow-width joints that need flexibility and sealing properties. Poured silicone joints are limited to narrow-width applications, degrade under UV exposure, and may fail to bond properly if not installed correctly.",
+      },
+      {
+        term: "Relief Joint",
+        definition:
+          "A joint designed to relieve internal stresses in a structure, often created to control cracking caused by shrinkage, thermal expansion, or other forces. It allows controlled movement or cracking at specific locations to prevent damage to the overall structure.",
+      },
+      {
+        term: "Sliding Steel Plate Joint",
+        definition:
+          "A joint system that uses steel plates that slide over each other to allow movement while maintaining a seal. Steel plates are prone to corrosion, require maintenance and lubrication to avoid jamming, and have limited movement capacity in extreme temperatures.",
+      },
+      {
+        term: "Strip Seal (SS) Joint",
+        definition:
+          "A joint system consisting of a steel extrusion and a flexible neoprene gland that accommodates movement while maintaining a seal. Strip seals are effective at preventing water infiltration but have limited movement capacity. If the gland is damaged or dislodged, water intrusion can lead to deck deterioration. Improper installation or debris buildup can also compromise performance.",
+      },
+
+      { term: "Terminal Joint", definition: "A joint located at the end of a bridge deck or approach slab, designed to accommodate expansion and contraction." },
+      {
+        term: "Tooth (Finger) Joint",
+        definition:
+          "A mechanical joint where two interlocking finger-like projections fit together to accommodate relative movement between bridge sections. Finger joints can create noise under traffic, collect debris leading to clogging, and suffer from misalignment during installation, causing uneven wear.",
+      },
+    ],
   },
 
   // Railings
@@ -373,6 +491,7 @@ const bridgeComponents = [
       "There is an isolated area of collision damage.",
       "There are widely spaced hairline vertical cracks in the concrete barrier walls.",
       "There are intermittently spaced hairline vertical cracks with efflorescence in the concrete barrier walls.",
+      "There is horizontal cracking in the concrete barrier walls.",
       "The steel railings are anchored into the exterior box beams.",
       "There is some minor corrosion in the steel railings.",
     ],
@@ -433,6 +552,160 @@ const bridgeComponents = [
         code: "0",
         condition: "FAILED",
         description: "Bridge is closed due to component condition, and is beyond corrective action. Replacement is required to restore service.",
+      },
+    ],
+    glossary_page_id: "bridge-railings-pg9",
+    glossary: [
+      {
+        term: "Anchoring Systems",
+        definition: "Systems that secure the guardrail to the ground, preventing displacement during an impact.",
+      },
+      {
+        term: "Asymmetric Barrier Design",
+        definition:
+          "A barrier design in which the shape, size, or orientation of the guardrail or barrier varies on each side to account for differing road conditions, clear zones, or traffic flow. Asymmetric barriers are commonly used in situations where one side of the barrier faces a more hazardous area, such as a steep drop-off, requiring enhanced protection.",
+      },
+
+      {
+        term: "Attenuators",
+        definition: "Crash barriers designed to absorb and dissipate the energy of an impacting vehicle, reducing the severity of collisions.",
+      },
+      {
+        term: "Breakaway Cable Terminal",
+        definition:
+          "A safety device used in guardrail systems designed to absorb impact energy by allowing the terminal to break away upon vehicle collision. It typically consists of a cable system that slows and redirects the vehicle, minimizing injury and damage while preventing the guardrail from becoming a rigid obstruction.",
+      },
+
+      {
+        term: "Breakaway Wooden Posts",
+        definition:
+          "Wooden posts used in guardrail systems designed to break away upon impact. These posts help to reduce the transfer of energy during a collision, minimizing vehicle damage and injury risk. Typically found in areas with low traffic volume where flexibility and safety are prioritized.",
+      },
+
+      {
+        term: "Bridge Railing",
+        definition:
+          "A protective barrier installed on bridges to prevent vehicles and pedestrians from leaving the structure. Designed to meet specific structural and safety requirements, it balances impact resistance, visibility, and load considerations.",
+      },
+
+      {
+        term: "Cable Barrier System",
+        definition:
+          "A flexible guardrail system consisting of multiple strands of tensioned steel cable supported by posts. Designed to absorb impact by deflecting vehicles, it is often more cost-effective and easier to repair than rigid barriers, making it a common choice for medians and roadsides.",
+      },
+
+      {
+        term: "Concrete Barrier Wall",
+        definition:
+          "A rigid, high-impact-resistant concrete structure used to separate traffic or protect roadways and bridges. Common types include the New Jersey barrier, F-shape barrier, and single-slope barrier, each designed to manage vehicle impact and reduce rollover risk.",
+      },
+      {
+        term: "Deflector Plate",
+        definition:
+          "A plate installed on guardrails or barriers designed to direct or deflect the impact of a vehicle away from a hazard or obstruction. Typically used to redirect a vehicle’s path and reduce the risk of injury or damage during a collision.",
+      },
+
+      {
+        term: "Delineators",
+        definition:
+          "Reflective markers mounted on flexible or rigid posts to guide drivers by indicating road alignment, lane boundaries, or hazards. They are commonly used along curves, ramps, and medians for enhanced nighttime and low-visibility conditions.",
+      },
+
+      {
+        term: "End Treatment",
+        definition: "Specially designed components at the end of guardrails that minimize the risk of injury or vehicle damage during impact.",
+      },
+      {
+        term: "Flare",
+        definition:
+          "A curved or angled section of a guardrail system at the end of a barrier, designed to gradually direct traffic away from the hazard or prevent vehicles from impacting the end of the guardrail. Commonly used at the ends of roadways, ramps, or bridges for safer transitions.",
+      },
+
+      {
+        term: "Guardrail Post",
+        definition: "Vertical supports that hold the rail in place, typically made of steel, wood, or concrete and anchored in the ground.",
+      },
+      {
+        term: "Guardrail Rail",
+        definition: "The main horizontal part of the guardrail that absorbs the force of a collision. It can be W-beam, box beam, or thrie beam, depending on the type.",
+      },
+      {
+        term: "Guide Rail Brackets",
+        definition: "Attach the rail to the posts, allowing for flexing and movement to absorb impact.",
+      },
+      {
+        term: "Indiana Type 5 Aluminum Bridge Railing",
+        definition:
+          "An aluminum bridge railing system used in Indiana, featuring horizontal aluminum rails supported by vertical posts. Designed for durability, corrosion resistance, and visibility, it provides both vehicular and pedestrian protection while maintaining a lightweight structure.",
+      },
+      {
+        term: "Parabolic Offsets",
+        definition:
+          "Curved offsets used in guardrail and barrier systems to gradually redirect vehicles and reduce impact forces. The parabolic shape helps to guide the vehicle away from the hazard in a controlled manner, improving safety and minimizing the risk of severe collisions.",
+      },
+
+      {
+        term: "Parapet",
+        definition:
+          "A low protective wall along the edge of a bridge, roadway, or structure, designed to prevent vehicles or pedestrians from falling off. It can be made of concrete, masonry, or metal and may also serve as a structural or aesthetic element.",
+      },
+
+      {
+        term: "Sand Container",
+        definition:
+          "A container filled with sand, typically used in construction or highway safety applications. In guardrail systems, sand containers are sometimes used as impact-absorbing barriers or as part of a temporary protective system to help dissipate the energy of a vehicle during a collision.",
+      },
+
+      {
+        term: "Scupper",
+        definition:
+          "An opening in a bridge deck or parapet designed to drain water off the structure, preventing ponding and reducing the risk of deterioration caused by moisture buildup.",
+      },
+      {
+        term: "Slipforming",
+        definition:
+          "A construction method where concrete is poured continuously into a form that is gradually moved upwards as the concrete hardens. This technique is commonly used for constructing barrier walls. Horizontal cracking can sometimes occur over time due to shrinkage, temperature changes, or the weight of the concrete during curing. If the curing process isn't properly controlled, or if there is uneven setting or stress distribution, it can lead to the formation of cracks along the horizontal plane of the wall.",
+      },
+
+      {
+        term: "Steel Tube Bridge Railing",
+        definition:
+          "A bridge railing system made of steel tubes, designed to provide vehicle and pedestrian protection while maintaining visibility. Commonly used for its strength, durability, and ability to accommodate aesthetic or architectural designs.",
+      },
+
+      {
+        term: "Thrie Beam Guardrail",
+        definition: "A guardrail similar to the W-beam but with an additional flange for extra strength, used in higher-risk locations.",
+      },
+      { term: "Traffic Barrier", definition: "A safety barrier used to separate lanes, protect vehicles, and prevent roadway departures." },
+      {
+        term: "Transition Railing",
+        definition: "A section of guardrail used to smoothly transition between different types of guardrails, ensuring seamless vehicle redirection.",
+      },
+      {
+        term: "Turned-Down End Terminal",
+        definition:
+          "A type of guardrail end terminal designed with a downward-curved end to redirect vehicles safely upon impact. This design helps to reduce the risk of vehicle penetration or severe damage, allowing for a more controlled deceleration and safer collision outcome.",
+      },
+      {
+        term: "W-Beam Guardrail",
+        definition: "A common guardrail type with a W-shaped cross-section, typically used on highways. It’s effective in absorbing impact and redirecting vehicles.",
+      },
+      {
+        term: "TGB Transition",
+        definition:
+          "A guardrail transition system that connects rigid concrete bridge railings with W-Beam approach rails using a Thrie Beam segment. This transition ensures a smooth, safe connection between the rigid concrete barrier and the flexible W-Beam rail, while leveraging the Thrie Beam segment to accommodate the shift in barrier type.",
+      },
+
+      {
+        term: "WGB Transition",
+        definition:
+          "A guardrail transition system used to connect rigid concrete bridge railings to W-beam approach rails. This transition ensures a smooth and safe shift between the more rigid concrete barrier and the flexible W-beam rail, enhancing vehicle containment and impact absorption.",
+      },
+      {
+        term: "WT Transition",
+        definition:
+          "A guardrail transition system designed to connect Thrie Beam bridge rail to W-Beam approach guardrail. This transition provides a smooth and safe connection between the rigid Thrie Beam barrier and the more flexible W-Beam rail, ensuring proper vehicle containment and impact resistance.",
       },
     ],
   },
@@ -641,135 +914,13 @@ const bridgeComponents = [
       "The deck underside is concealed by stay-in-place forms and the copings are protected from runoff by concrete barrier walls.",
       "The deck underside is concealed by stay-in-place forms and the top of the deck by an epoxy overlay.",
       "No corrosion was found in the stay-in-place forms and the copings are in good condition.",
-      "The copings are exposed to runoff beneath the metal guardrail.",
+      "The copings are exposed to runoff beneath the metal guardrails.",
       "The copings have isolated hairline cracks and isolated areas of staining.",
       "There is minor- to moderate-depth delamination in the underside of the deck in Span A between Beams 2 and 3.",
       "There are scattered areas of minor corrosion in the stay-in-place forms.",
       "There are moderate spalls, delamination, and exposed rebar around the deck drains.",
       "There is heavy spalling with multiple layers of exposed rebar exhibiting moderate section loss along the north coping in all spans.",
       "There are large areas of deep spalling with exposed rebar exhibiting moderate section loss on the underside of the deck.",
-    ],
-    rating_table: [
-      {
-        code: "N",
-        condition: "NOT APPLICABLE",
-        description: "Component does not exist.",
-      },
-      {
-        code: "9",
-        condition: "EXCELLENT",
-        description: "Isolated inherent defects.",
-      },
-      {
-        code: "8",
-        condition: "VERY GOOD",
-        description: "Some inherent defects.",
-      },
-      {
-        code: "7",
-        condition: "GOOD",
-        description: "Some minor defects.",
-      },
-      {
-        code: "6",
-        condition: "SATISFACTORY",
-        description: "Widespread minor or isolated moderate defects.",
-      },
-      {
-        code: "5",
-        condition: "FAIR",
-        description: "Some moderate defects; strength and performance of the component are not affected.",
-      },
-      {
-        code: "4",
-        condition: "POOR",
-        description: "Widespread moderate or isolated major defects; strength and/or performance of the component is affected.",
-      },
-      {
-        code: "3",
-        condition: "SERIOUS",
-        description:
-          "Major defects; strength and/or performance of the component is seriously affected. Condition typically necessitates more frequent monitoring, load restrictions, and/or corrective actions.",
-      },
-      {
-        code: "2",
-        condition: "CRITICAL",
-        description:
-          "Major defects; component is severely compromised. Condition typically necessitates frequent monitoring, significant load restrictions, and/or corrective actions in order to keep the bridge open.",
-      },
-      {
-        code: "1",
-        condition: "IMMINENT FAILURE",
-        description: "Bridge is closed to traffic due to component condition. Repair or rehabilitation may return the bridge to service.",
-      },
-      {
-        code: "0",
-        condition: "FAILED",
-        description: "Bridge is closed due to component condition, and is beyond corrective action. Replacement is required to restore service.",
-      },
-    ],
-  },
-
-  // Super
-  {
-    name: "Superstructure",
-    item_id: "B.C.02",
-    format: "AN (1)",
-    frequency: "EI",
-    referenece: "SNBI",
-    category: "Super",
-    commentary_page_id: "bridge-super-pg1",
-    example_comments_page_id: "bridge-super-pg3",
-    commentary: ` <p>This item represents the condition of the superstructure as determined from the inspection of all superstructure members.</p>
-                <br />
-                <p>
-                  Consider primary load carrying members when determining the condition rating code for this item, which includes cross-frames and diaphragms for curved girder
-                  bridges. Consider secondary members only if they adversely impact the primary members. Visual assessments may be supplemented with non-destructive or destructive
-                  testing results.
-                </p>
-                <br />
-                <p>The superstructure includes:</p>
-                <ul class="content-container-paragraphs-ul">
-                  <li>members above the bearings for bridges with non-integral superstructure and substructure;</li>
-                  <li>girders/beams for integral superstructures;</li>
-                  <li>members above the spring line for arch bridges;</li>
-                  <li>slabs of concrete rigid frame bridges; and</li>
-                  <li>legs, knees and girders for concrete and steel rigid K-Frame or Delta-Frame bridges.</li>
-                </ul>
-                <br />
-                <p>Consider the condition of integral headwalls and wingwalls to the first expansion joint.</p>
-                <br />
-                <p>
-                  Do not consider the condition of bearings when determining the condition rating code for this item except to the extent that the bearings are causing distress in
-                  the superstructure.
-                </p>
-                <br />
-                <p>
-                  Do not consider the condition of protective coating systems when determining the condition rating code for this item except to the extent that problems with the
-                  protective coating system are indicative of problems with the underlying superstructure material. A well-formed patina on weathering steel is considered a
-                  protective coating and is not considered a defect.
-                </p>
-                <br />
-                <p>
-                  Do not consider the presence of drift, debris, and soil accumulation when determining the condition rating code for this item, except to the extent that these
-                  items are causing distress in the superstructure.
-                </p>
-                <br />
-                <p>
-                  Superstructure types without substructures may be affected by scour. When observed conditions are not consistent with the scour design or the assumptions used in
-                  the scour appraisal, scour is considered when reporting the code for this item. In this case, observed conditions also indicate a need to reevaluate Item B.AP.03
-                  (Scour Vulnerability). Observed scour that is less than the tolerable limit determined in the scour appraisal does not affect this item.
-                </p>`,
-    example_comments: [
-      "There are no deficiencies to report.",
-      "The superstructure is a deck/slab. See the deck comments.",
-      "There is minor cracking and delamination in the beam ends at the abutments beneath the joints.",
-      "There are scattered areas of minor pitting in the steel beams.",
-      "There is heavy section loss and rust scale in the beam ends at the abutments under the joints.",
-      "There is a moderate perforation in the web of Beam 1 at the west abutment.",
-      "There are exposed strands in Beam 1 at the west abutment.",
-      "There is a large spall in the load path of Beam 1 at the west abutment.",
-      "There is a moderate, diagonal crack running up toward the center of the beam (indicating shear failure).",
       "Water is penetrating the deck.",
       "Water is penetrating the deck as evidenced by the efflorescence between the box beams.",
       "There are no obvious signs of water contacting or moving through the deck.",
@@ -832,6 +983,188 @@ const bridgeComponents = [
         code: "0",
         condition: "FAILED",
         description: "Bridge is closed due to component condition, and is beyond corrective action. Replacement is required to restore service.",
+      },
+    ],
+    glossary_page_id: "bridge-deck-pg11",
+    glossary: [
+      { term: "Bridge Deck", definition: "The roadway surface of a bridge, typically made of concrete or steel." },
+      { term: "Deck Joint", definition: "A joint in the bridge deck that allows for expansion, contraction, and movement due to temperature changes or load variations." },
+      { term: "Deck Slab", definition: "The reinforced concrete slab forming the bridge deck, providing structural support for traffic loads." },
+      { term: "Downspout", definition: "A drainage component that directs water from the bridge deck to a designated drainage system." },
+      { term: "Expansion Joint", definition: "A structural joint that allows movement caused by thermal expansion, contraction, or other forces." },
+    ],
+  },
+
+  // Super
+  {
+    name: "Superstructure",
+    item_id: "B.C.02",
+    format: "AN (1)",
+    frequency: "EI",
+    referenece: "SNBI",
+    category: "Super",
+    commentary_page_id: "bridge-super-pg1",
+    example_comments_page_id: "bridge-super-pg3",
+    commentary: ` <p>This item represents the condition of the superstructure as determined from the inspection of all superstructure members.</p>
+                <br />
+                <p>
+                  Consider primary load carrying members when determining the condition rating code for this item, which includes cross-frames and diaphragms for curved girder
+                  bridges. Consider secondary members only if they adversely impact the primary members. Visual assessments may be supplemented with non-destructive or destructive
+                  testing results.
+                </p>
+                <br />
+                <p>The superstructure includes:</p>
+                <ul class="content-container-paragraphs-ul">
+                  <li>members above the bearings for bridges with non-integral superstructure and substructure;</li>
+                  <li>girders/beams for integral superstructures;</li>
+                  <li>members above the spring line for arch bridges;</li>
+                  <li>slabs of concrete rigid frame bridges; and</li>
+                  <li>legs, knees and girders for concrete and steel rigid K-Frame or Delta-Frame bridges.</li>
+                </ul>
+                <br />
+                <p>Consider the condition of integral headwalls and wingwalls to the first expansion joint.</p>
+                <br />
+                <p>
+                  Do not consider the condition of bearings when determining the condition rating code for this item except to the extent that the bearings are causing distress in
+                  the superstructure.
+                </p>
+                <br />
+                <p>
+                  Do not consider the condition of protective coating systems when determining the condition rating code for this item except to the extent that problems with the
+                  protective coating system are indicative of problems with the underlying superstructure material. A well-formed patina on weathering steel is considered a
+                  protective coating and is not considered a defect.
+                </p>
+                <br />
+                <p>
+                  Do not consider the presence of drift, debris, and soil accumulation when determining the condition rating code for this item, except to the extent that these
+                  items are causing distress in the superstructure.
+                </p>
+                <br />
+                <p>
+                  Superstructure types without substructures may be affected by scour. When observed conditions are not consistent with the scour design or the assumptions used in
+                  the scour appraisal, scour is considered when reporting the code for this item. In this case, observed conditions also indicate a need to reevaluate Item B.AP.03
+                  (Scour Vulnerability). Observed scour that is less than the tolerable limit determined in the scour appraisal does not affect this item.
+                </p>`,
+    example_comments: [
+      "There are no deficiencies to report.",
+      "The superstructure is a deck/slab. See the deck comments.",
+
+      "The steel beams are painted, with no defects in the protective coating.",
+      "There are some areas of minor pitting in the lower flanges, but no active corrosion. ",
+      "There is heavy section loss and rust scale in the beam ends at the abutments under the joints.",
+
+      "There is minor cracking and delamination in the beam ends at the abutments beneath the joints.",
+      "There are exposed strands in Beam 1 at the west abutment.",
+
+      "There is a moderate, diagonal crack running up toward the center of the beam (indicating shear failure).",
+    ],
+    rating_table: [
+      {
+        code: "N",
+        condition: "NOT APPLICABLE",
+        description: "Component does not exist.",
+      },
+      {
+        code: "9",
+        condition: "EXCELLENT",
+        description: "Isolated inherent defects.",
+      },
+      {
+        code: "8",
+        condition: "VERY GOOD",
+        description: "Some inherent defects.",
+      },
+      {
+        code: "7",
+        condition: "GOOD",
+        description: "Some minor defects.",
+      },
+      {
+        code: "6",
+        condition: "SATISFACTORY",
+        description: "Widespread minor or isolated moderate defects.",
+      },
+      {
+        code: "5",
+        condition: "FAIR",
+        description: "Some moderate defects; strength and performance of the component are not affected.",
+      },
+      {
+        code: "4",
+        condition: "POOR",
+        description: "Widespread moderate or isolated major defects; strength and/or performance of the component is affected.",
+      },
+      {
+        code: "3",
+        condition: "SERIOUS",
+        description:
+          "Major defects; strength and/or performance of the component is seriously affected. Condition typically necessitates more frequent monitoring, load restrictions, and/or corrective actions.",
+      },
+      {
+        code: "2",
+        condition: "CRITICAL",
+        description:
+          "Major defects; component is severely compromised. Condition typically necessitates frequent monitoring, significant load restrictions, and/or corrective actions in order to keep the bridge open.",
+      },
+      {
+        code: "1",
+        condition: "IMMINENT FAILURE",
+        description: "Bridge is closed to traffic due to component condition. Repair or rehabilitation may return the bridge to service.",
+      },
+      {
+        code: "0",
+        condition: "FAILED",
+        description: "Bridge is closed due to component condition, and is beyond corrective action. Replacement is required to restore service.",
+      },
+    ],
+    glossary_page_id: "bridge-super-pg9",
+    glossary: [
+      {
+        term: "Cover Plate",
+        definition: "A steel plate welded or bolted to the flange of a beam or girder to increase its load-carrying capacity and reduce stress in high-moment regions.",
+      },
+      { term: "Cross Bracing", definition: "A system of diagonal braces used to strengthen and stabilize the bridge structure, typically placed between girders or beams." },
+      {
+        term: "Curtain Wall",
+        definition:
+          "A vertical barrier on a bridge, typically positioned perpendicular to the beams, designed to protect the interior of the bridge structure from debris, water, or other external elements. It is commonly used in areas like piers or abutments.",
+      },
+      { term: "Diaphragm", definition: "A structural element that distributes loads across the width of a bridge, preventing distortion or movement of the deck." },
+      { term: "Girder Line", definition: "The alignment of girders supporting the bridge deck." },
+      {
+        term: "Jacking Frame",
+        definition:
+          "A diaphragm, typically found on a steel beam or steel girder bridge, designed to accommodate the loads required to support the bridge during bearing replacement. These are typically only included at support locations and will be more robust than a typical diaphragm.",
+      },
+      {
+        term: "Longitudinal Stiffener",
+        definition: "A stiffener placed parallel to the length of a structural member to improve its resistance to bending and buckling under load.",
+      },
+      {
+        term: "Shear Crack",
+        definition:
+          "A diagonal crack in a structural member caused by shear forces, often forming near supports and extending upward toward the midpoint of the member. Shear cracks indicate significant structural stress and can compromise the integrity of the member if not addressed.",
+      },
+      {
+        term: "Shear Key",
+        definition:
+          "A recessed or protruding element cast into concrete or built into structural joints to improve shear resistance and prevent movement between connected components.",
+      },
+      {
+        term: "Splice Plate",
+        definition: "A steel plate used to join two structural members end-to-end, transferring loads across the connection and maintaining continuity in the structure.",
+      },
+      { term: "Steel Girder", definition: "A large steel beam used to support a bridge deck and distribute loads to the substructure." },
+      {
+        term: "Stiffener",
+        definition:
+          "A structural element, typically a plate or rib, used to reinforce and increase the rigidity of beams, girders, or other members to prevent deformation or buckling.",
+      },
+      { term: "Superstructure Span", definition: "The portion of the bridge above the substructure that supports traffic loads." },
+      { term: "Sway Bracing", definition: "Bracing used to resist lateral forces that cause side-to-side movement of a structure, improving its stability." },
+      {
+        term: "Transverse Stiffener",
+        definition: "A stiffener installed perpendicular to the length of a structural member to resist web buckling and improve shear capacity.",
       },
     ],
   },
@@ -1011,6 +1344,8 @@ const bridgeComponents = [
         description: "Bridge is closed due to component condition, and is beyond corrective action. Replacement is required to restore service.",
       },
     ],
+    glossary_page_id: "bridge-bearings-pg6",
+    glossary: [{ term: "Bearing Pad", definition: "A pad placed between the bridge superstructure and substructure to accommodate movement and distribute loads." }],
   },
 
   // Sub
@@ -1137,6 +1472,35 @@ const bridgeComponents = [
         condition: "FAILED",
         description: "Bridge is closed due to component condition, and is beyond corrective action. Replacement is required to restore service.",
       },
+    ],
+    glossary_page_id: "bridge-sub-pg9",
+    glossary: [
+      { term: "Abutment", definition: "A structure that supports the end of a bridge and transfers loads to the foundation." },
+      { term: "Backwall", definition: "The vertical wall at the rear of an abutment that retains the roadway fill behind a bridge." },
+      { term: "Bridge Seat", definition: "The upper surface of an abutment or pier where bridge bearings rest, providing support for the superstructure." },
+      { term: "Crash Wall", definition: "A reinforced protective wall built around bridge piers or critical infrastructure to absorb and deflect vehicle impacts." },
+      { term: "Footing", definition: "The foundation element of a bridge that distributes loads to the ground." },
+      { term: "Headwall", definition: "A retaining wall at the end of a culvert or bridge opening that stabilizes the structure and prevents erosion." },
+      {
+        term: "MSE",
+        definition:
+          "Mechanically stabilized earth, sometimes referred to as reinforced soil, is a soil mass embankment constructed with artificial reinforcing that typically consist of either geosynthetics or steel material. When used as retaining walls, MSE walls are designed as gravity walls built with multiple layers of horizontal reinforcing in granular backfill connected to wall face components.",
+      },
+      { term: "Pier Cap", definition: "The upper part of a bridge pier that distributes loads from the superstructure to the pier columns." },
+      { term: "Pier Wall", definition: "A vertical structural element that supports bridge spans and transfers loads to the foundation, often part of a pier system." },
+      {
+        term: "Pile",
+        definition:
+          "A structural element driven or drilled into the ground to resist vertical and/or horizontal loads. Piles are usually rolled steel shapes, concrete, or timber.",
+      },
+      { term: "Pile Cap", definition: "A reinforced concrete slab that connects multiple foundation piles, distributing loads more effectively." },
+      {
+        term: "Retaining Wall",
+        definition:
+          "A permanent, relatively rigid structure that supports a soil mass at slopes steeper than their angle of rest to provide usable space both above and in front of the wall.",
+      },
+      { term: "Slopewall", definition: "A protective concrete or riprap covering placed on embankments to prevent soil erosion near bridges and culverts." },
+      { term: "Wingwall", definition: "A sidewall extending from an abutment or headwall that helps retain soil and direct water flow away from a bridge or culvert." },
     ],
   },
 
@@ -1312,6 +1676,115 @@ const bridgeComponents = [
         description: "Bridge is closed due to component condition, and is beyond corrective action. Replacement is required to restore service.",
       },
     ],
+    glossary_page_id: "bridge-culvert-pg6",
+    glossary: [
+      { term: "Abrasion", definition: "Wearing or grinding away of material by water containing sand, gravel, or stones." },
+      {
+        term: "Abrasive Condition",
+        definition: "The presence of granular material accompanied with a stream gradient or flow sufficient to cause movement of the granular material in the streambed.",
+      },
+      {
+        term: "Abutment",
+        definition: "A support structure at either end of the bridge that holds the ends of the arch in place and transfers the loads from the bridge to the ground.",
+      },
+      {
+        term: "Abutment Backfill",
+        definition: "The material placed behind the abutment, typically soil or granular fill, that helps support the weight of the bridge and ensures the arch remains stable.",
+      },
+      {
+        term: "Arch Crown",
+        definition: "The highest point of the arch, located at the center of the span, which experiences compressive forces that help distribute loads across the arch structure.",
+      },
+      { term: "Arch Ring", definition: "The curved, topmost portion of an arch that carries the compressive load across the span of the bridge, ensuring structural stability." },
+      { term: "Arch Springing", definition: "The point or line at which the arch ring meets the abutments, where the arch begins to support the load from the bridge." },
+      {
+        term: "Barrel (Arch)",
+        definition: "The curved, continuous part of an arch bridge, typically referring to the overall length or span of the arch that supports the load.",
+      },
+      { term: "Barrel (Culvert)", definition: "The main body of a culvert structure that transports water beneath the roadway." },
+      {
+        term: "Blistering",
+        definition: "Process of water infiltrating the first layer of a fiberglass-reinforced plastic large culvert structure causing bubbles to form near the surface.",
+      },
+      { term: "Channel", definition: "A waterway used to transport water from one location to another." },
+      { term: "Corrosion", definition: "Deterioration or dissolution of a material by chemical or electrochemical reaction with the surrounding environment." },
+      { term: "Cover", definition: "The depth of backfill present between the top of a culvert structure and the base layer of the roadway." },
+      {
+        term: "Culvert",
+        definition:
+          "A structure located beneath a roadway where it intersects with a waterway. The structure provides a structural function of support to the roadway above while allowing waterway movement through the embankment below.",
+      },
+      { term: "Deflection", definition: "Change in the original or specified vertical or horizontal measurement of a culvert structure." },
+      { term: "Delamination", definition: "Separation of a layer of concrete generally through internal cracking parallel to the concrete surface." },
+      { term: "Deterioration", definition: "Decline in quality over time due to chemical or physical wearing." },
+      { term: "Differential Settlement", definition: "Uneven settlement between footings or supports." },
+      { term: "Efflorescence", definition: "Deposits of salts on the surface of a porous material caused by the migration of salt-laden water to the surface." },
+      { term: "Embankment", definition: "Soil constructed above the natural ground surface that encases a culvert structure and supports a roadway." },
+      { term: "Erosion", definition: "The removal of a material or surface over time by flowing water." },
+      { term: "Exfiltration", definition: "The process of water exiting a culvert structure and entering the surrounding soil through unintended openings." },
+      { term: "Extrados", definition: "The outer surface of the arch ring, which is under tension and provides the structural shape for the arch." },
+      { term: "Flexible Culvert", definition: "A culvert that relies on a consistent application of pressure from the surrounding soil envelope to develop structural strength." },
+      { term: "Galvanization", definition: "Application of zinc coating along the surface of a structure." },
+      { term: "Infiltration", definition: "The process of water or backfill material entering the culvert structure through unintended openings." },
+      { term: "Inlet", definition: "The initial 5 ft of the upstream end of a culvert structure." },
+      { term: "Intrados", definition: "The inner surface of the arch ring, which is in compression and typically carries the load from the bridge deck." },
+      { term: "Invert", definition: "The bottom or lowest region along the internal surface of a pipe." },
+      {
+        term: "Joint",
+        definition: "Connection where two sections of a culvert structure meet. Additional material may be present to ensure a watertight connection between sections.",
+      },
+      {
+        term: "Keystone",
+        definition: "The central, topmost stone or concrete block of an arch that locks the other blocks or sections in place, crucial for the arch’s structural integrity.",
+      },
+      {
+        term: "Large Culvert",
+        definition: "A culvert structure with a measured span length between 4 ft and 20 ft as measured perpendicular to the centerline of the parent roadway.",
+      },
+      { term: "Outlet", definition: "The final 5 ft of the downstream end of a culvert structure." },
+      { term: "Pier", definition: "A vertical support structure located in the water or at the midspan of the arch bridge, used to provide additional support for the arch." },
+      { term: "Piping", definition: "The process of erosion along the exterior perimeter of a culvert barrel." },
+      { term: "Pressure Head", definition: "Height of water above a plane or point of reference." },
+      { term: "Rehabilitation", definition: "Repairing a culvert to return it to its initial condition or better." },
+      { term: "Replacement", definition: "Removal of existing structure and construction of a new culvert." },
+      { term: "Rigid Culvert", definition: "A culvert that relies on internal material properties to develop structural strength." },
+      {
+        term: "Rise",
+        definition: "The vertical distance from the base of the arch to the highest point of the arch, influencing the curvature and load distribution of the arch.",
+      },
+      { term: "Scaling", definition: "Disintegration of cement paste caused by chemical attacks or freeze-thaw cycles that erode the concrete surface." },
+      { term: "Scour", definition: "Erosion of the streambed of a channel where it meets the inlet and outlet of a culvert structure." },
+      { term: "Section Loss", definition: "Loss of a material’s thickness caused by chemical or physical degradation." },
+      { term: "Slabbing", definition: "Straightening of rounded concrete sections accompanied by cracking and/or spalls." },
+      { term: "Soil Envelope", definition: "Soil or backfill encasing a culvert structure and applying pressure due to the weight of the soil." },
+      { term: "Spalling", definition: "Separation of surface concrete due to fractures within the material." },
+      { term: "Span", definition: "The horizontal distance between the supports (abutments) of the arch, determining the size and shape of the arch structure." },
+      {
+        term: "Spandrel Wall",
+        definition:
+          "The vertical wall or partition that supports the arch ring and fills the space between the arch and the roadbed, providing additional stability to the structure.",
+      },
+      {
+        term: "Springline",
+        definition:
+          "The horizontal line at which the arch ring begins to curve from the abutment, marking the transition between the arch ring and the abutments. The horizontal distance between two springlines is the span distance.",
+      },
+      {
+        term: "Underfill Concrete Arch",
+        definition:
+          "A type of bridge structure consisting of a concrete arch with a fill material placed underneath the arch to support and distribute the load, providing stability and reducing the amount of material required for the arch.",
+      },
+      {
+        term: "Underfill Material",
+        definition: "A material, such as compacted soil or granular aggregate, placed beneath the arch ring to help distribute loads evenly and enhance the bridge’s stability.",
+      },
+      {
+        term: "Undermining",
+        definition:
+          "Erosion process that removes material from below and threatens the structural integrity of the above member; typically occurs around footings and other supports.",
+      },
+      { term: "Vertical Offset", definition: "Displacement of an object from its original position in the vertical direction." },
+    ],
   },
 
   // Channel
@@ -1433,8 +1906,16 @@ const bridgeComponents = [
         definition: "Pre-cast, interlocking concrete units used to form erosion-resistant surfaces.",
       },
       {
+        term: "Backwater",
+        definition: "The increase in the upstream water elevation resulting from an obstruction to flow, such as a bridge and/or embankment placed in the floodplain.",
+      },
+      {
         term: "Bedload",
         definition: "The sediment that moves along the bottom of a river or streambed, contributing to scour and erosion.",
+      },
+      {
+        term: "Bedrock",
+        definition: "The solid rock layer beneath soil, sand or silt.",
       },
       {
         term: "Bendway Weirs",
@@ -1497,15 +1978,10 @@ const bridgeComponents = [
         term: "Floodplain",
         definition: "The flat, often expansive area adjacent to a channel that is subject to periodic flooding, typically formed by sediment deposition during high-water events.",
       },
-      {
-        term: "Flow Line",
-        definition:
-          "The path that water follows as it moves through a system, often represented as the line of steepest descent along a channel. It indicates the direction of water movement and is used in hydrology and fluid dynamics.",
-      },
-
+      { term: "Flow Line", definition: "The lowest point within a channel, pipe, or culvert where water is expected to flow under normal conditions." },
       {
         term: "Freeboard",
-        definition: "The vertical distance between the water surface and the lowest structural component of a bridge, ensuring clearance during high water levels.",
+        definition: "The clearance between the bottom of the superstructure and the design high-water elevation.",
       },
 
       {
@@ -1552,6 +2028,10 @@ const bridgeComponents = [
           "The height of a column of water that represents the potential energy of water due to pressure. It is used to quantify the pressure at a specific point in a system, often in relation to its ability to move or flow.",
       },
       {
+        term: "Revetment",
+        definition: "A facing of masonry or stones to protect an embankment from erosion.",
+      },
+      {
         term: "Revetment Riprap",
         definition:
           "A form of erosion control using a layer of riprap placed along the base of a slope or shoreline. Revetment riprap acts as a protective armor to prevent undermining and scour by dissipating wave or water flow energy, typically used in more permanent applications.",
@@ -1564,20 +2044,24 @@ const bridgeComponents = [
         term: "Rill Erosion",
         definition: "Shallow, small channels formed on the soil surface by the concentrated flow of water, often caused by rainfall or surface runoff.",
       },
-
       {
         term: "Scour",
         definition:
           "Localized erosion caused by the force of flowing water around structures like bridge piers, abutments, or embankments, often leading to foundation instability.",
       },
-
       {
         term: "Sediment Deposition",
         definition: "The accumulation of eroded materials such as sand, silt, or gravel within a channel, typically occurring when the flow velocity decreases.",
       },
       {
+        term: "Sheet Pile",
+        definition:
+          "A long, thin structural member, typically made of steel, with interlocking edges driven into the ground to form a continuous wall. Used to retain earth or water and resist lateral pressure, it is commonly used for bridge abutments, cofferdams, channel protection, and temporary excavation support.",
+      },
+      {
         term: "Sloughing",
-        definition: "The gradual removal or collapse of soil, rock, or vegetation from the banks or bed of a channel due to erosion or instability.",
+        definition:
+          "The downward movement or collapse of soil, rock, or embankment material due to erosion, saturation, or loss of support. Sloughing can occur on slopes, embankments, or channel banks, potentially compromising stability and requiring corrective measures such as drainage improvements, soil reinforcement, or protective armoring.",
       },
       {
         term: "Splash Erosion",
@@ -1603,11 +2087,7 @@ const bridgeComponents = [
         term: "Undercutting",
         definition: "The erosion of the base of a channel's bank or bed, causing instability and leading to the collapse or sloughing of the bank material.",
       },
-      {
-        term: "Waterline",
-        definition:
-          "The line that marks the level of water in a body of water, typically used to indicate the boundary between the air and the water. It can also refer to the design level of water in a container or vessel.",
-      },
+      { term: "Waterline", definition: "The elevation or mark indicating the typical level of water in a stream, river, or other water body near a structure." },
 
       {
         term: "Widening",
@@ -1653,6 +2133,7 @@ const bridgeComponents = [
                 </p>`,
     example_comments: [
       "There are no deficiencies to report.",
+      "All channel protection measures appear to be functioning as intended.",
       "The channel does not impact any substructure components, and the banks under the bridge are protected with riprap.",
       "The interior piers are protected with riprap.",
       "The abutments are protected with riprap.",
@@ -1814,6 +2295,215 @@ const bridgeComponents = [
         code: "0",
         condition: "FAILED",
         description: "Bridge is closed due to scour condition, and is beyond corrective action. Bridge replacement is needed to restore service.",
+      },
+    ],
+    glossary_page_id: "bridge-scour-pg7",
+    glossary: [
+      {
+        term: "Aggradation",
+        definition: "The process of sediment deposition that raises the level of a riverbed or streambed, often due to reduced water flow or velocity.",
+      },
+      {
+        term: "Armoring",
+        definition:
+          "The process of applying protective materials, such as riprap, concrete, or steel, to embankments, shorelines, or structures to prevent erosion. Armoring aims to resist the forces of water, wind, or ice, protecting the surface from degradation and maintaining stability.",
+      },
+      {
+        term: "Articulating Concrete Blocks",
+        definition: "Pre-cast, interlocking concrete units used to form erosion-resistant surfaces.",
+      },
+      {
+        term: "Backwater",
+        definition: "The increase in the upstream water elevation resulting from an obstruction to flow, such as a bridge and/or embankment placed in the floodplain.",
+      },
+      {
+        term: "Bedload",
+        definition: "The sediment that moves along the bottom of a river or streambed, contributing to scour and erosion.",
+      },
+      {
+        term: "Bedrock",
+        definition: "The solid rock layer beneath soil, sand or silt.",
+      },
+      {
+        term: "Bendway Weirs",
+        definition: "A type of river training structure used to guide water flow along a river bend, reducing bank erosion and scour.",
+      },
+      {
+        term: "Cavitation",
+        definition:
+          "The formation of vapor bubbles in the water that collapse near a surface, leading to localized erosion, often seen around hydraulic structures like gates or valves.",
+      },
+
+      {
+        term: "Channel Bed",
+        definition: "The bottom surface of a channel, often composed of rock, sediment, or soil, through which the flow of water moves.",
+      },
+
+      {
+        term: "Channel Migration",
+        definition:
+          "The natural process by which a river or stream shifts its course over time, typically due to erosion on one bank and deposition on the opposite bank. This movement can alter the shape and location of the channel, impacting surrounding areas.",
+      },
+
+      {
+        term: "Check Dams",
+        definition: "Small structures used in rivers or streams to slow the flow of water and reduce erosion.",
+      },
+      {
+        term: "Confluence",
+        definition: "The point at which two or more streams or rivers meet, often forming a larger channel or river.",
+      },
+      {
+        term: "Concrete Slope Paving",
+        definition: "A protective layer of concrete used to stabilize slopes and prevent erosion.",
+      },
+      {
+        term: "Cut Bank",
+        definition: "The outer bank of a meander, where erosion is most active, often forming steep, vertical walls.",
+      },
+      {
+        term: "Degradation",
+        definition: "The process of erosion or removal of sediment from the riverbed or streambed, leading to a lowering of the watercourse or shoreline.",
+      },
+
+      {
+        term: "Designed Scour Countermeasures",
+        definition:
+          "Engineered channel armoring specifically designed to address scour vulnerability. These measures use materials like concrete blocks, gabions, or riprap, carefully planned and calculated based on flow rate, water velocity, soil properties, and site conditions to effectively mitigate erosion and protect vulnerable areas.",
+      },
+
+      {
+        term: "Drop Structures",
+        definition: "A river training feature that is placed in the channel to control the flow of water and reduce scouring effects on the streambed.",
+      },
+      {
+        term: "Erosion",
+        definition: "The gradual removal of soil, rock, or other surface materials by natural forces such as wind, water, or ice. Scour is a type of erosion.",
+      },
+
+      {
+        term: "Floodplain",
+        definition: "The flat, often expansive area adjacent to a channel that is subject to periodic flooding, typically formed by sediment deposition during high-water events.",
+      },
+      { term: "Flow Line", definition: "The lowest point within a channel, pipe, or culvert where water is expected to flow under normal conditions." },
+      {
+        term: "Freeboard",
+        definition: "The clearance between the bottom of the superstructure and the design high-water elevation.",
+      },
+
+      {
+        term: "Gabion Mattresses",
+        definition: "A riverbank protection system made of mesh baskets filled with rocks, providing stability and preventing erosion.",
+      },
+      {
+        term: "Grouted Riprap",
+        definition: "A type of riprap that is bonded together with grout to form a more stable, cohesive surface.",
+      },
+      {
+        term: "Grout-Filled Mats",
+        definition: "A protective matting system filled with grout to stabilize riverbanks and prevent erosion.",
+      },
+      {
+        term: "Guide Banks",
+        definition: "A type of river training countermeasure designed to direct flow away from the banks and toward the center of the channel.",
+      },
+      {
+        term: "Headcutting",
+        definition: "The erosion of the upstream end of a channel, often occurring when a sudden drop in elevation (such as a waterfall) leads to rapid erosion and deepening.",
+      },
+
+      {
+        term: "Instability",
+        definition: "The condition in which a channel or bank is prone to failure due to erosion, over saturation, or improper structural design.",
+      },
+
+      {
+        term: "Meander",
+        definition: "A curve or bend in a channel, typically occurring in low-gradient rivers or streams, where the water flow erodes one bank and deposits sediment on the other.",
+      },
+      {
+        term: "Point Bar",
+        definition: "A crescent-shaped deposit of sediment on the inside of a meander curve, formed by the slower flow of water.",
+      },
+      {
+        term: "Piping",
+        definition: "The erosion caused by the flow of water through soil or sediment, creating underground channels and leading to the collapse of the surface material.",
+      },
+      {
+        term: "Pressure Head",
+        definition:
+          "The height of a column of water that represents the potential energy of water due to pressure. It is used to quantify the pressure at a specific point in a system, often in relation to its ability to move or flow.",
+      },
+      {
+        term: "Revetment",
+        definition: "A facing of masonry or stones to protect an embankment from erosion.",
+      },
+      {
+        term: "Revetment Riprap",
+        definition:
+          "A form of erosion control using a layer of riprap placed along the base of a slope or shoreline. Revetment riprap acts as a protective armor to prevent undermining and scour by dissipating wave or water flow energy, typically used in more permanent applications.",
+      },
+      {
+        term: "Riprap",
+        definition: "Loose stone or rock material placed along embankments, shorelines, or riverbeds to prevent erosion.",
+      },
+      {
+        term: "Rill Erosion",
+        definition: "Shallow, small channels formed on the soil surface by the concentrated flow of water, often caused by rainfall or surface runoff.",
+      },
+      {
+        term: "Scour",
+        definition:
+          "Localized erosion caused by the force of flowing water around structures like bridge piers, abutments, or embankments, often leading to foundation instability.",
+      },
+      {
+        term: "Sediment Deposition",
+        definition: "The accumulation of eroded materials such as sand, silt, or gravel within a channel, typically occurring when the flow velocity decreases.",
+      },
+      {
+        term: "Sheet Pile",
+        definition:
+          "A long, thin structural member, typically made of steel, with interlocking edges driven into the ground to form a continuous wall. Used to retain earth or water and resist lateral pressure, it is commonly used for bridge abutments, cofferdams, channel protection, and temporary excavation support.",
+      },
+      {
+        term: "Sloughing",
+        definition:
+          "The downward movement or collapse of soil, rock, or embankment material due to erosion, saturation, or loss of support. Sloughing can occur on slopes, embankments, or channel banks, potentially compromising stability and requiring corrective measures such as drainage improvements, soil reinforcement, or protective armoring.",
+      },
+      {
+        term: "Splash Erosion",
+        definition: "Erosion caused by the impact of raindrops dislodging small soil particles, which are then carried away by water or wind.",
+      },
+      {
+        term: "Spurs",
+        definition: "A river training countermeasure that extends from the bank to control flow direction and reduce erosion by deflecting water away from vulnerable areas.",
+      },
+
+      {
+        term: "Temporary Scour Countermeasures",
+        definition:
+          "Short-term erosion control methods, often involving the use of loosely placed materials like riprap, gravel, or dumped rock, to protect vulnerable areas from scour and erosion until more permanent solutions can be implemented.",
+      },
+
+      {
+        term: "Thalweg",
+        definition: "The line of lowest elevation within a channel, often following the natural flow path of water, marking the deepest part of the channel.",
+      },
+
+      {
+        term: "Undercutting",
+        definition: "The erosion of the base of a channel's bank or bed, causing instability and leading to the collapse or sloughing of the bank material.",
+      },
+      { term: "Waterline", definition: "The elevation or mark indicating the typical level of water in a stream, river, or other water body near a structure." },
+
+      {
+        term: "Widening",
+        definition: "The increase in the horizontal width of a channel, typically caused by bank erosion or undercutting.",
+      },
+      {
+        term: "Undermining",
+        definition:
+          "The erosion process where material is removed from beneath a structure or support, leading to a loss of stability and potential failure of the overlying or surrounding elements. This commonly occurs around foundations, footings, or piers.",
       },
     ],
   },
