@@ -1,5 +1,6 @@
 const dataDate = "02/27/2025"; // Date iTAMS data was output
 document.querySelector("#asset-updated").textContent = `These are populated when an asset number is searched. The asset data was last updated on ${dataDate}.`;
+document.querySelector("#user-local-storage").textContent = `User information is saved in the browser's local storage by completing the fields. Clear the browser cache to remove.`;
 
 // Table of Contents
 // :::: (HTML Injection)
@@ -44,7 +45,7 @@ function populateGlossaryDefects() {
   const container = document.querySelector("#glossary-defects-tab .glossary-numeric-ratings-container");
 
   // Loop through each defect definition and create a glossary card for each
-  Object.values(defectDefinitions).forEach((defect) => {
+  defectDefinitions.forEach((defect) => {
     // Create a container for each glossary card
     const card = document.createElement("div");
     card.classList.add("glossary-content-cards");
@@ -55,10 +56,11 @@ function populateGlossaryDefects() {
 
     // Create the hidden link for the term
     const link = document.createElement("a");
-    let search = defect.search || `What is "${defect.term}" in bridge design?`; // Search query
+    let search = defect.search || `What is "${defect.term}" in ${defect.discipline}?`; // Search query
     link.classList.add("glossary-term-link");
     link.textContent = defect.term;
-    link.href = `https://www.google.com/search?q=${encodeURIComponent(search)}`;
+    // If defect.link exists, use it; otherwise, fall back to Google search
+    link.href = defect.link || `https://www.google.com/search?q=${encodeURIComponent(search)}`;
     link.target = "_blank";
 
     // Append the link inside the header div
@@ -85,7 +87,7 @@ function populateGlossaryBridge() {
   const container2 = document.querySelector("#glossary-bridge-tab .glossary-numeric-ratings-container");
 
   // Loop through each glossary term and create a glossary card for each
-  Object.values(glossaryTerms).forEach((defect2) => {
+  glossaryTerms.forEach((defect2) => {
     // Create the card container
     const card2 = document.createElement("div");
     card2.classList.add("glossary-content-cards");
@@ -96,10 +98,11 @@ function populateGlossaryBridge() {
 
     // Create the hidden link for the term
     const link2 = document.createElement("a");
-    let search2 = defect2.search || `What is "${defect2.term}" in bridge design?`; // Search query
+    let search2 = defect2.search || `What is "${defect2.term}" in ${defect2.discipline}?`; // Search query
     link2.classList.add("glossary-term-link");
     link2.textContent = defect2.term;
-    link2.href = `https://www.google.com/search?q=${encodeURIComponent(search2)}`;
+    // If defect2.link exists, use it; otherwise, fall back to Google search
+    link2.href = defect2.link || `https://www.google.com/search?q=${encodeURIComponent(search2)}`;
     link2.target = "_blank";
 
     // Append the link inside the header div
@@ -124,7 +127,7 @@ function populateGlossaryCulvert() {
   const container2 = document.querySelector("#glossary-culvert-tab .glossary-numeric-ratings-container");
 
   // Loop through each glossary term and create a glossary card for each
-  Object.values(culvertTerms).forEach((defect2) => {
+  culvertTerms.forEach((defect2) => {
     // Create the card container
     const card2 = document.createElement("div");
     card2.classList.add("glossary-content-cards");
@@ -135,10 +138,11 @@ function populateGlossaryCulvert() {
 
     // Create the hidden link for the term
     const link2 = document.createElement("a");
-    let search2 = defect2.search || `What is "${defect2.term}" in culvert design?`; // Search query
+    let search2 = defect2.search || `What is "${defect2.term}" in ${defect2.discipline}?`; // Search query
     link2.classList.add("glossary-term-link");
     link2.textContent = defect2.term;
-    link2.href = `https://www.google.com/search?q=${encodeURIComponent(search2)}`;
+    // If defect2.link exists, use it; otherwise, fall back to Google search
+    link2.href = defect2.link || `https://www.google.com/search?q=${encodeURIComponent(search2)}`;
     link2.target = "_blank";
 
     // Append the link inside the header div
@@ -163,7 +167,7 @@ function populateGlossaryWall() {
   const container3 = document.querySelector("#glossary-wall-tab .glossary-numeric-ratings-container");
 
   // Loop through each glossary term and create a glossary card for each
-  Object.values(wallTerms).forEach((defect3) => {
+  wallTerms.forEach((defect3) => {
     // Create the card container
     const card3 = document.createElement("div");
     card3.classList.add("glossary-content-cards");
@@ -174,10 +178,11 @@ function populateGlossaryWall() {
 
     // Create the hidden link for the term
     const link3 = document.createElement("a");
-    let search3 = defect3.search || `What is "${defect3.term}" in retaining wall design?`; // Search query
+    let search3 = defect3.search || `What is "${defect3.term}" in ${defect3.discipline}?`; // Search query
     link3.classList.add("glossary-term-link");
     link3.textContent = defect3.term;
-    link3.href = `https://www.google.com/search?q=${encodeURIComponent(search3)}`;
+    // If defect3.link exists, use it; otherwise, fall back to Google search
+    link3.href = defect3.link || `https://www.google.com/search?q=${encodeURIComponent(search3)}`;
     link3.target = "_blank";
 
     // Append the link inside the header div
@@ -213,10 +218,11 @@ function populateGlossaryCompound() {
 
     // Create the hidden link for the term
     const link3 = document.createElement("a");
-    let search3 = defect3.search || `What is "${defect3.term}" in bridge design?`; // Search query
+    let search3 = defect3.search || `What is "${defect3.term}" in ${defect3.discipline}?`; // Search query
     link3.classList.add("glossary-term-link");
     link3.textContent = defect3.term;
-    link3.href = `https://www.google.com/search?q=${encodeURIComponent(search3)}`;
+    // If defect3.link exists, use it; otherwise, fall back to Google search
+    link3.href = defect3.link || `https://www.google.com/search?q=${encodeURIComponent(search3)}`;
     link3.target = "_blank";
 
     // Append the link inside the header div
@@ -649,6 +655,19 @@ function handleTabClick(event) {
     // If "review-ratings-tab" is clicked, clear the asset-updated message
     if (target === "review-data-tab") {
       document.getElementById("asset-updated").textContent = `These are populated when an asset number is searched. The asset data was last updated on ${dataDate}.`;
+    }
+
+    if (target === "settings-user-tab") {
+      document.querySelector(
+        "#user-local-storage"
+      ).textContent = `User information is saved in the browser's local storage by completing the fields. Clear the browser cache to remove.`;
+    }
+    if (target === "settings-global-tab") {
+      document.querySelector("#user-local-storage").textContent = `Global features are under development.`;
+      // `Global settings are saved in the browser's local storage by completing the fields. Clear the browser cache to remove.`
+    }
+    if (target === "settings-help-tab") {
+      document.querySelector("#user-local-storage").textContent = `The help section is under development.`;
     }
 
     // If two or more comment builders hold the active view on their tabs then select the correct one to be active
@@ -1239,3 +1258,88 @@ function updateObjectRatings(numericalValue, dataCategory) {
   // add scour change
   // add freq change
 }
+
+// :::: (Local Storage) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Function to store user textareas to browser (Save on change)
+function saveOnChange(event) {
+  localStorage.setItem(event.target.id, event.target.value);
+}
+
+// Function to load saved values from localStorage
+function loadSavedValues() {
+  document.querySelectorAll("textarea").forEach((textarea) => {
+    let savedValue = localStorage.getItem(textarea.id);
+    if (savedValue !== null) {
+      textarea.value = savedValue;
+    }
+    textarea.addEventListener("input", saveOnChange); // Listen for any changes
+  });
+}
+
+// Object to store predefined data based on the input
+const data = {
+  sh: {
+    name: "Stephen Hurst",
+    number: "317-509-6407",
+    email: "shurst1@indot.in.gov",
+    teamleader: "IN000422-2027",
+  },
+  mf: {
+    name: "Matthew Ference",
+    number: "317-452-5067",
+    email: "mference@indot.in.gov",
+    teamleader: "IN000237-2027",
+  },
+  jw: {
+    name: "Jessica Waggoner",
+    number: "812-530-6727",
+    email: "jwaggoner1@indot.in.gov",
+    teamleader: "IN000402-2029",
+  },
+  ce: {
+    name: "Chris Everman",
+    number: "812-345-8240",
+    email: "ceverman@indot.in.gov",
+    teamleader: "IN000114-2029",
+  },
+  // Add more key-value pairs as needed
+};
+
+// Load saved values on page load
+window.addEventListener("load", loadSavedValues);
+
+// Event listener for populating predefined data on Enter press
+document.getElementById("user-textarea-name").addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault(); // Prevent newline
+
+    const inputValue = this.value.toLowerCase().trim();
+
+    // Only populate and save if matching data is found
+    if (data[inputValue]) {
+      document.getElementById("user-textarea-name").value = data[inputValue].name;
+      document.getElementById("user-textarea-number").value = data[inputValue].number;
+      document.getElementById("user-textarea-email").value = data[inputValue].email;
+      document.getElementById("user-textarea-teamleader").value = data[inputValue].teamleader;
+
+      // Manually trigger save for the updated values in localStorage
+      localStorage.setItem("user-textarea-name", data[inputValue].name);
+      localStorage.setItem("user-textarea-number", data[inputValue].number);
+      localStorage.setItem("user-textarea-email", data[inputValue].email);
+      localStorage.setItem("user-textarea-teamleader", data[inputValue].teamleader);
+    }
+  }
+});
+
+// Handle double-click to copy text from textareas to clipboard
+document.querySelectorAll("[id^='user-textarea']").forEach((textarea) => {
+  textarea.addEventListener("dblclick", function () {
+    navigator.clipboard
+      .writeText(this.value)
+      .then(() => {})
+      .catch((err) => {
+        console.error("Error copying text:", err);
+      });
+  });
+});
