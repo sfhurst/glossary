@@ -242,6 +242,46 @@ function populateGlossaryCompound() {
 
 document.addEventListener("DOMContentLoaded", populateGlossaryCompound);
 
+// ::: ------------------------------ Populate glossary with compound word definitions (Text Content Insertion)  ------------------------------
+function populateGlossaryAll() {
+  const container3 = document.querySelector("#glossary-all-tab .glossary-numeric-ratings-container");
+
+  // Loop through each glossary term and create a glossary card for each
+  glossaryAllTerms.forEach((defect3) => {
+    // Create the card container
+    const card3 = document.createElement("div");
+    card3.classList.add("glossary-content-cards");
+
+    // Create the header for the card with the defect term
+    const header3 = document.createElement("div");
+    header3.classList.add("glossary-card-header");
+
+    // Create the hidden link for the term
+    const link3 = document.createElement("a");
+    let search3 = defect3.search || `What is "${defect3.term}" in ${defect3.discipline}?`; // Search query
+    link3.classList.add("glossary-term-link");
+    link3.textContent = defect3.term;
+    // If defect3.link exists, use it; otherwise, fall back to Google search
+    link3.href = defect3.link || `https://www.google.com/search?q=${encodeURIComponent(search3)}`;
+    link3.target = "_blank";
+
+    // Append the link inside the header div
+    header3.appendChild(link3);
+
+    // Create the paragraph for the card with the defect definition
+    const paragraph3 = document.createElement("p");
+    paragraph3.classList.add("glossary-card-paragraph");
+    paragraph3.textContent = defect3.definition;
+
+    // Assemble the card elements
+    card3.appendChild(header3);
+    card3.appendChild(paragraph3);
+    container3.appendChild(card3);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", populateGlossaryAll);
+
 // ::: ------------------------------ Populate glossary with counties (Text Content Insertion)  ------------------------------
 // This is still generated in the index.html and can be deleted.
 // Function to populate the county glossary
@@ -844,6 +884,10 @@ const district2Assets = assetData.filter((asset) => asset["(2) Highway Agency Di
 const uniqueInvRoutes = new Set(district2Assets.map((asset) => asset["Inv Route #"]));
 console.log(`Number of unique routes in Seymour: ${uniqueInvRoutes.size}`);
 
+// Glossary Terms
+const count = glossaryAllTerms.length;
+console.log(`Number of unique glossary terms: ${count}`);
+
 // Mapping district numbers to district names
 const districtIdMap = {
   1: "crawfordsville",
@@ -1268,7 +1312,7 @@ function saveOnChange(event) {
 
 // Function to load saved values from localStorage
 function loadSavedValues() {
-  document.querySelectorAll("textarea").forEach((textarea) => {
+  document.querySelectorAll("[id^='user-textarea']").forEach((textarea) => {
     let savedValue = localStorage.getItem(textarea.id);
     if (savedValue !== null) {
       textarea.value = savedValue;

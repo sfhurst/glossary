@@ -465,7 +465,7 @@
                   <span class="content-container-rating-condition-bubble">NOT APPLICABLE</span>Bridge does not have approach slabs.
                 </p>
               </div>
-              <div class="content-container-rating-lines" data-category="B.C.01b">
+              <!-- <div class="content-container-rating-lines" data-category="B.C.01b">
                 <span class="content-container-rating-numerical">9</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">EXCELLENT</span>Isolated inherent defects.
@@ -476,28 +476,28 @@
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">VERY GOOD</span>Some inherent defects.
                 </p>
-              </div>
+              </div> -->
               <div class="content-container-rating-lines" data-category="B.C.01b">
-                <span class="content-container-rating-numerical">7</span>
+                <span class="content-container-rating-numerical">G</span>
                 <p class="content-container-rating-description-and-condition-bubble"><span class="content-container-rating-condition-bubble">GOOD</span>Some minor defects.</p>
               </div>
-              <div class="content-container-rating-lines" data-category="B.C.01b">
+              <!-- <div class="content-container-rating-lines" data-category="B.C.01b">
                 <span class="content-container-rating-numerical">6</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">SATISFACTORY</span>Widespread minor or isolated moderate defects.
                 </p>
-              </div>
+              </div> -->
               <div class="content-container-rating-lines" data-category="B.C.01b">
-                <span class="content-container-rating-numerical">5</span>
+                <span class="content-container-rating-numerical">F</span>
                 <p class="content-container-rating-description-and-condition-bubble"><span class="content-container-rating-condition-bubble">FAIR</span>Some moderate defects.</p>
               </div>
               <div class="content-container-rating-lines" data-category="B.C.01b">
-                <span class="content-container-rating-numerical">4</span>
+                <span class="content-container-rating-numerical">P</span>
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">POOR</span>Widespread moderate or isolated major defects.
                 </p>
               </div>
-              <div class="content-container-rating-lines" data-category="B.C.01b">
+              <!-- <div class="content-container-rating-lines" data-category="B.C.01b">
                 <span class="content-container-rating-numerical">3</span>
                 <p class="content-container-rating-description-and-condition-bubble"><span class="content-container-rating-condition-bubble">SERIOUS</span>Some major defects.</p>
               </div>
@@ -518,7 +518,7 @@
                 <p class="content-container-rating-description-and-condition-bubble">
                   <span class="content-container-rating-condition-bubble">FAILED</span>Approach slabs have failed and present a safety hazard.
                 </p>
-              </div>
+              </div> -->
             </div>
             <!-- :: Bridge Approach Slabs Page 3 -->
             <div id="bridge-approach-pg3" class="bridge-approach-containers">
@@ -4480,11 +4480,11 @@
             <button class="review-item-buttons active" data-target="review-data-tab" data-container-class="review-content-containers" data-button-class="review-item-buttons">
               Asset Data
             </button>
-            <button class="review-item-buttons" data-target="review-ratings-tab" data-container-class="review-content-containers" data-button-class="review-item-buttons">
-              Ratings & Comments
-            </button>
             <button class="review-item-buttons" data-target="review-summary-tab" data-container-class="review-content-containers" data-button-class="review-item-buttons">
               Summary
+            </button>
+            <button class="review-item-buttons" data-target="review-ratings-tab" data-container-class="review-content-containers" data-button-class="review-item-buttons">
+              Ratings & Comments
             </button>
             <span id="asset-updated" class="asset-update-text"></span>
           </div>
@@ -6406,22 +6406,25 @@
               data-container-class="glossary-item-containers"
               data-button-class="glossary-item-buttons"
             >
-              Defects & Locations
+              Defects
             </button>
             <button class="glossary-item-buttons" data-target="glossary-bridge-tab" data-container-class="glossary-item-containers" data-button-class="glossary-item-buttons">
-              SNBI & Bridge
+              SNBI
             </button>
             <button class="glossary-item-buttons" data-target="glossary-culvert-tab" data-container-class="glossary-item-containers" data-button-class="glossary-item-buttons">
-              Culvert
+              Culvert Manual
             </button>
             <button class="glossary-item-buttons" data-target="glossary-wall-tab" data-container-class="glossary-item-containers" data-button-class="glossary-item-buttons">
-              Wall
+              Wall Manual
             </button>
             <button class="glossary-item-buttons" data-target="glossary-county-tab" data-container-class="glossary-item-containers" data-button-class="glossary-item-buttons">
               Counties
             </button>
             <button class="glossary-item-buttons" data-target="glossary-compounds-tab" data-container-class="glossary-item-containers" data-button-class="glossary-item-buttons">
               Compound Words
+            </button>
+            <button class="glossary-item-buttons" data-target="glossary-all-tab" data-container-class="glossary-item-containers" data-button-class="glossary-item-buttons">
+              Full Glossary
             </button>
           </div>
           <!-- :: Glossary Defects Tab -->
@@ -6492,6 +6495,10 @@
             </div>
             <!-- :: Glossary Compound Words Tab -->
             <div id="glossary-compounds-tab" class="glossary-item-containers">
+              <div class="glossary-numeric-ratings-container"></div>
+            </div>
+            <!-- :: Glossary Full Tab -->
+            <div id="glossary-all-tab" class="glossary-item-containers">
               <div class="glossary-numeric-ratings-container"></div>
             </div>
           </div>
@@ -8198,16 +8205,13 @@
         </div>
       </div>
 
-      <!-- Crack Gauge -->
+      <!-- Crack Gauge
       <div class="crack-gauge">
         <div class="tick" style="width: 0.012in; left: 15px"></div>
-
         <div class="tick" style="width: 0.016in; left: 30px"></div>
-
         <div class="tick" style="width: 0.02in; left: 45px"></div>
-
         <div class="tick" style="width: 0.04in; left: 60px"></div>
-      </div>
+      </div> -->
     </footer>
   </body>
 </html>
