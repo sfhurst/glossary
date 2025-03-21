@@ -848,6 +848,17 @@ function resetBridgeComponentTextareas(assetObject) {
       updateComponentText("B.C.02", "The superstructure is a deck/slab. See the deck comments. ");
     }
 
+    // Check and update for B.AP.11 (Scour Critical)
+    if (["A", "B", "AB-T"].includes(assetValues.scourVulnerability)) {
+      updateComponentText("B.AP.03", "The bridge is not scour critical. ");
+    } else if (["C", "D", "CD-T"].includes(assetValues.scourVulnerability)) {
+      updateComponentText("B.AP.03", "The bridge is scour critical. ");
+    } else if (["N", "", null, undefined].includes(assetValues.scourVulnerability)) {
+      updateComponentText("B.AP.03", "");
+    } else {
+      updateComponentText("B.AP.03", "The scour vulnerability status is undetermined. ");
+    }
+
     // Update and highlight for B.AP.01 (speed reduction)
     updateComponentText("B.AP.01", "No speed reduction necessary. ", "G");
     // highlightRowIfMatches("B.AP.01", String(assetValues.speedReduction));
