@@ -1633,109 +1633,26 @@ const indianaCounties = [
 // List of needs: Welds,
 /* 
 
-Approach Span
-Asphalt
-Beam
-Bearing
-Bent
-Berm
-Box Beam
-Built-Up Member
-Cantilever
-Cantilevered Span
-Chalking
-Compression
-Concrete Girder
-Construction Joint
-Continuous Span
-Corbel
-Core Sample
-Crack Arrest Hole
-Cross-Section
-Cut / Fill
-Datum
-Dead Load
-Discharge
-Elevation
-Expansion
-Eyebar
-Fatigue
-Fatigue Categories
-Fatigue Crack
-Flange
-Fracture
-Fracture Critical Member (FCM)
-Geotextile
-Girder
-Grade
-Hands-On
-Hanger
-Heave
-Historic
-Honeycombing
-I-Beam
-Integral Abutment
-Interior Piers
-Lateral Bracing
-Latex-Modified Overlay
-Live Load
-Local Public Agency (LPA)
-Local Scour
-Longitudinal Cracking
+Contraction Scour
+Pin and Hinge Assemblies
 Lower Chord
-Map Cracking
-Minor-Width Cracking
-Moderate-Width Cracking
-Moment
-Normal Pool
-Pattern Cracking
-Prestressed
-Prestressed Concrete
-Profile
-Q100 HW
-Q100 Scour
-Random Cracking
-Relief Joint
-Retrofit
-Rigid Overlay
-Runoff
-Rutting
-Sacrificial Concrete
-Sawcut
-Scour Analysis 
-Scour Hole
-Scour Vulnerability 
-Semi-Integral Abutment 
-Settlement
-Shear Force
-Shear Studs
-Simple Span
-Skew
-Slope
-Spread Box Beams 
-Strand
-Stringer
-Superstructure
-Surface Dulling
-Surface Polishing 
-Surface Thinning 
-Suspension Bridge
-Tendon
-Tension
-Thin Deck Overlay 
-Tie Girder
-Tining
-Torsion
-Tower
-Transverse Cracking
-Triaxial Restraint
-Tributary
-Truss
-Upper Chord
-Wear
-Web
-Wide Cracking
-Wind Erosion
+Buckling
+Necking
+Aggregate
+Cement
+Silt
+Shale
+Limestone
+Portal
+Weep Hole
+Additional Treatment
+Cable Boots
+Grommets
+Cable Terminations
+Widening
+Critical Find
+Urgent Critical Find
+Severe Critical Find
 
 */
 

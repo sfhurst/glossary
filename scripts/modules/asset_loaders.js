@@ -629,6 +629,7 @@ function getCodeDescription(variable, code) {
 // Exports this as assetValues const so you can use them like assetValues.adtValue
 function extractAssetDetails(assetObject) {
   return {
+    // Identification
     assetName: assetObject["Asset Name"],
     assetNumberNBI: assetObject["Asset Number"],
     inspectionDate: assetObject["(90) Inspection Date:"],
@@ -641,6 +642,7 @@ function extractAssetDetails(assetObject) {
     highwaySystem: assetObject["(104) Highway System of Inventory Route:"],
     channelValue: assetObject["(61) Channel / Channel Protection:"],
 
+    // Location
     contact: assetObject["Contact(s)"],
     highwayAgencyDistrict: assetObject["(2) Highway Agency District:"],
     invRoute: assetObject["Inv Route #"],
@@ -652,11 +654,26 @@ function extractAssetDetails(assetObject) {
     facilityCarried: assetObject["(7) Facility Carried:"],
     featuresIntersected: assetObject["(6) Features Intersected:"],
 
-    deck: assetObject["(58) Deck:"],
-    superstructure: assetObject["(59) Superstructure:"],
-    substructure: assetObject["(60) Substructure:"],
-    culvert: assetObject["(62) Culverts:"],
+    // Primary Ratings
+    deck: assetObject["(B.C.01) Deck Condition Rating"],
+    superstructure: assetObject["(B.C.02) Superstructure Condition Rating"],
+    substructure: assetObject["(B.C.03) Substructure Condition Rating"],
+    culvert: assetObject["(B.C.04) Culvert Condition Rating"],
 
+    // Secondary Ratings
+    bridgeJoints: assetObject["(B.C.08) Bridge Joints Condition Rating"]?.trim() ? assetObject["(B.C.08) Bridge Joints Condition Rating"] : "N",
+    terminalJoints: assetObject["(B.C.08a) Terminal Joint Condition Rating"]?.trim() ? assetObject["(B.C.08a) Terminal Joint Condition Rating"] : "N",
+    approachSlabs: assetObject["(B.C.01b ) Approach Slab Condition Rating"]?.trim() ? assetObject["(B.C.01b ) Approach Slab Condition Rating"] : "N",
+    wearingSurface: assetObject["(B.C.01a) Wearing Surface Condition Rating"],
+    bridgeBearings: assetObject["(B.C.07) Bridge Bearings Condition Rating"]?.trim() ? assetObject["(B.C.07) Bridge Bearings Condition Rating"] : "N",
+    bridgePaint: assetObject["(B.C.02a) Paint Condition Rating"]?.trim() ? assetObject["(B.C.02a) Paint Condition Rating"] : "N",
+    concreteSlopewall: assetObject["(B.C.03a) Concrete Slopewall Condition Rating"]?.trim() ? assetObject["(B.C.03a) Concrete Slopewall Condition Rating"] : "N",
+
+    // Appraisal
+    approachRoadwayAlignment: assetObject["(72) Approach Roadway Alignment:"],
+    waterwayAdequacy: assetObject["(71) Waterway Adequacy:"],
+
+    // Material & Type
     approachSpans: assetObject["(46) Number of Approach Spans:"] || 0,
     approachMatType: assetObject["(44A) Structure Type, Approach Spans: Kind of Material:"],
     approachDesignType: assetObject["(44B) Structure Type, Approach Spans: Type of Design"],
@@ -668,11 +685,7 @@ function extractAssetDetails(assetObject) {
     deckProtectionType: assetObject["(108C) Wearing Surface Protection System: Deck Protection"],
     deckStructureType: assetObject["(107) Deck Structure Type:"],
 
-    bridgeJointType: assetObject["(58.02) Bridge Joint Type:"],
-    scourStatus: assetObject["Scour Analysis Status:"],
-    scourDetermination: assetObject["Scour Analysis Determination:"],
-    scourSafety: assetObject["Scour Critical Safety Status:"],
-
+    // Inspection Types
     nstmInspRequired: assetObject["(92AA) Critical Feature Inspection: NSTM Insp Required?"],
     nstmInspFrequency: assetObject["(92A) Critical Feature Inspection: NSTM Insp Frequency?"],
     nstmInspDate: assetObject["(93A) Critical Feature Inspection Date: NSTM Insp Date"] || "",
@@ -683,30 +696,30 @@ function extractAssetDetails(assetObject) {
     underwaterInspFrequency: assetObject["(92B) Critical Feature Inspection: Underwater Insp Frequency?"],
     underwaterInspDate: assetObject["(93B) Critical Feature Inspection: Underwater Insp Date"] || "",
 
-    brdgWidthCurbToCurb: assetObject["(51) Brdg Rdwy Width Curb-To-Curb:"],
-    deckWidthOutToOut: assetObject["(52) Deck Width, Out-To-Out:"],
-    structureLength: assetObject["(49) Structure Length:"],
-    skewValue: assetObject["(34) Skew:"],
+    // Geometry
+    brdgWidthCurbToCurb: assetObject["(B.G.06) Bridge Width Curb-to-Curb"],
+    deckWidthOutToOut: assetObject["(B.G.05) Bridge Width Out-to-Out"],
+    structureLength: assetObject["(B.G.02) Total Bridge Length"],
+    skewValue: assetObject["(B.G.11) Skew"],
 
+    // Link
     hyperlink: assetObject["Hyperlink"],
 
-    underfillValue: assetObject["(62) Culverts:"],
+    // Membrane
+    underfillValue: assetObject["(B.C.04) Culvert Condition Rating"],
     membraneValue: assetObject["(108B) Wearing Surface Protection System: Deck Membrane"],
-    approachRoadwayAlignment: assetObject["(72) Approach Roadway Alignment:"],
-    terminalJoints: assetObject["(58.06) Terminal Joints:"],
-    approachSlabs: assetObject["(58.05) Approach Slabs:"],
-    bridgeJoints: assetObject["(58.04) Bridge Joints:"],
-    wearingSurface: assetObject["(58.01) Wearing Surface:"],
-    bridgeBearings: assetObject["(59.02) Bridge Bearings:"],
-    madPaint: assetObject["MAD Paint"],
-    concreteSlopewall: assetObject["Concrete Slopewall:"],
+
+    // Not used
     scourAnalysisComment: assetObject["Scour Analysis Comment:"],
-    waterwayAdequacy: assetObject["(71) Waterway Adequacy:"],
     deprecatedDesignLoad: assetObject["(31) DeprecatedDesign Load"],
     madBats: assetObject["MAD-Bats"],
     madSwallows: assetObject["MAD-Swallows"],
     bridgeRailings: assetObject["(36A) Bridge Railings:"],
     transitions: assetObject["(36B) Transitions:"],
+    bridgeJointType: assetObject["(58.02) Bridge Joint Type:"],
+    scourStatus: assetObject["Scour Analysis Status:"],
+    scourDetermination: assetObject["Scour Analysis Determination:"],
+    scourSafety: assetObject["Scour Critical Safety Status:"],
   };
 }
 
@@ -806,6 +819,41 @@ function resetBridgeComponentTextareas(assetObject) {
     } else {
       updateComponentText("B.C.01", "", String(assetValues.deck));
       highlightRowIfMatches("B.C.01", String(assetValues.deck));
+    }
+
+    // Approach Slabs
+    if (assetValues.approachSlabs) {
+      updateComponentText("B.C.01b", "", String(assetValues.approachSlabs));
+      highlightRowIfMatches("B.C.01b", String(assetValues.approachSlabs));
+    }
+
+    // Joints
+    if (assetValues.bridgeJoints) {
+      updateComponentText("B.C.08", "", String(assetValues.bridgeJoints));
+      highlightRowIfMatches("B.C.08", String(assetValues.bridgeJoints));
+    }
+
+    if (assetValues.terminalJoints) {
+      updateComponentText("B.C.08a", "", String(assetValues.terminalJoints));
+      highlightRowIfMatches("B.C.08a", String(assetValues.terminalJoints));
+    }
+
+    // Paint
+    if (assetValues.bridgePaint) {
+      updateComponentText("B.C.02a", "", String(assetValues.bridgePaint));
+      highlightRowIfMatches("B.C.02a", String(assetValues.bridgePaint));
+    }
+
+    // Bearings
+    if (assetValues.bridgeBearings) {
+      updateComponentText("B.C.07", "", String(assetValues.bridgeBearings));
+      highlightRowIfMatches("B.C.07", String(assetValues.bridgeBearings));
+    }
+
+    // Slopewall
+    if (assetValues.concreteSlopewall) {
+      updateComponentText("B.C.03a", "", String(assetValues.concreteSlopewall));
+      highlightRowIfMatches("B.C.03a", String(assetValues.concreteSlopewall));
     }
 
     // Check and update for B.C.02 (superstructure)
