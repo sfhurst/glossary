@@ -2762,6 +2762,7 @@ const bridgeComponents = [
       "The designed countermeasures are in good condition.",
       "There is moderate scour at the base of the upstream piers, but it does not appear to affect the stability of the structure.",
       "Scour has exposed the top of the footing at Pier 2, but no undermining was found.",
+      "The structure is an underfill arch with low susceptibility to scour.",
     ],
     rating_table: [
       {
