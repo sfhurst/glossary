@@ -36,6 +36,7 @@ const bridgeComponents = [
       "The bridge is in a superelevated horizontal curve.",
       "The bridge is in a sag vertical curve.",
       "The bridge is in a crest vertical curve.",
+      "The bridge is over/carries a railroad. INDOT personnel may access the railroad right-of-way based on rule IC 8-3-15-3 (d)(8).",
     ],
 
     rating_table: [
