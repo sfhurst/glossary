@@ -1653,7 +1653,8 @@ const glossaryAllTerms = [
 
   {
     term: "AADT (Annual Average Daily Traffic)",
-    definition: "The total annual volume of traffic passing a point or segment of a highway in both directions divided by the number of days in a year.",
+    definition:
+      "The total number of vehicles that pass a specific point on a roadway over a year, divided by 365 days, providing an average daily traffic volume for planning and analysis.",
     search: `How is "Annual Average Daily Traffic" used at INDOT?`,
     discipline: "transportation engineering",
     page: ["glossary-bridge-tab", "bridge-alignment-pg5"],
@@ -1661,7 +1662,8 @@ const glossaryAllTerms = [
   },
   {
     term: "AADTT (Annual Average Daily Truck Traffic)",
-    definition: "The total annual volume of truck traffic passing a point or segment of a highway in both directions divided by the number of days in a year.",
+    definition:
+      "The total number of trucks that pass a specific point on a roadway over the course of a year, divided by 365 days, used to evaluate truck traffic impact on infrastructure.",
     search: `How is "Annual Average Daily Truck Traffic" used at INDOT?`,
     discipline: "transportation engineering",
     page: ["glossary-bridge-tab", "bridge-alignment-pg5"],
