@@ -61,10 +61,16 @@
       <div style="display: flex; height: 40px; line-height: 40px; vertical-align: middle; margin-left: 10px">Superstructure | Reinforced Concrete Slab | Spalling</div> -->
       <div class="header-tab-line">
         <div class="left-buttons">
-          <button class="asset-buttons active" data-target="bridge-asset-tab" data-container-class="asset-containers" data-button-class="asset-buttons">Bridge</button>
-          <button class="asset-buttons" data-target="culvert-asset-tab" data-container-class="asset-containers" data-button-class="asset-buttons">Culvert</button>
-          <button class="asset-buttons" data-target="wall-asset-tab" data-container-class="asset-containers" data-button-class="asset-buttons">Wall</button> |
-          <button class="asset-buttons" data-target="misc-asset-tab" data-container-class="asset-containers" data-button-class="asset-buttons">&#8226;&#8226;&#8226;</button>
+          <button class="asset-buttons active" data-target="bridge-asset-tab" data-container-class="asset-containers" data-button-class="asset-buttons" data-hash="bridge">
+            Bridge
+          </button>
+          <button class="asset-buttons" data-target="culvert-asset-tab" data-container-class="asset-containers" data-button-class="asset-buttons" data-hash="culvert">
+            Culvert
+          </button>
+          <button class="asset-buttons" data-target="wall-asset-tab" data-container-class="asset-containers" data-button-class="asset-buttons" data-hash="wall">Wall</button>
+          <button class="asset-buttons" data-target="misc-asset-tab" data-container-class="asset-containers" data-button-class="asset-buttons" data-hash="misc">
+            &#8226;&#8226;&#8226;
+          </button>
         </div>
         <div class="search-container">
           <span id="searchID" class="search-title"></span
@@ -77,9 +83,9 @@
 
     <!-- ::::: --------------------------- Main --------------------------- -->
 
-    <main>
+    <main id="main-content" tabindex="-1">
       <!-- :::: Bridge Asset Tab -->
-      <div id="bridge-asset-tab" class="asset-containers" style="display: block">
+      <div id="bridge-asset-tab" class="asset-containers asset-display">
         <div class="main-content-containers">
           <button
             class="bridge-component-buttons active"
@@ -1015,6 +1021,14 @@
               target="_blank"
               href="https://www.in.gov/dot/div/contracts/standards/drawings/index.html"
               >Standard Drawings</a
+            >
+            <a
+              id="footerStop"
+              class="content-container-links-line-links"
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://docs.lib.purdue.edu/cgi/viewcontent.cgi?article=1037&context=inltappubs"
+              >Bridge Rail Rating Guide</a
             >
           </div>
 
@@ -5374,7 +5388,7 @@
       </div>
 
       <!-- :::: Culvert Asset Tab -->
-      <div id="culvert-asset-tab" class="asset-containers">
+      <div id="culvert-asset-tab" class="asset-containers asset-display">
         <div class="main-content-containers">
           <button
             class="culvert-item-buttons active"
@@ -6143,7 +6157,7 @@
       </div>
 
       <!-- :::: Wall Asset Tab -->
-      <div id="wall-asset-tab" class="asset-containers">
+      <div id="wall-asset-tab" class="asset-containers asset-display">
         <div class="main-content-containers">
           <button class="wall-item-buttons active" data-target="wall-inspection-tab" data-container-class="wall-item-containers" data-button-class="wall-item-buttons">
             Wall Inspections
@@ -6384,7 +6398,7 @@
         </div>
       </div>
 
-      <div id="misc-asset-tab" class="asset-containers">
+      <div id="misc-asset-tab" class="asset-containers asset-display">
         <div class="main-content-containers">
           <button class="misc-component-buttons active" data-target="glossary-tab" data-container-class="misc-component-containers" data-button-class="misc-component-buttons">
             Glossaries

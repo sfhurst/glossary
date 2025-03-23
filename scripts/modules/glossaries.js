@@ -1630,32 +1630,6 @@ const indianaCounties = [
   { number: 92, name: "Whitley" },
 ];
 
-// List of needs: Welds,
-/* 
-
-Contraction Scour
-Pin and Hinge Assemblies
-Lower Chord
-Buckling
-Necking
-Aggregate
-Cement
-Silt
-Shale
-Limestone
-Portal
-Weep Hole
-Additional Treatment
-Cable Boots
-Grommets
-Cable Terminations
-Widening
-Critical Find
-Urgent Critical Find
-Severe Critical Find
-
-*/
-
 const words = [
   {
     term: "Local Public Agency (LPA)",
@@ -1675,53 +1649,109 @@ const words = [
 ];
 
 const glossaryAllTerms = [
+  // :::::
+
   {
-    term: "AASHTO Manual",
-    definition:
-      "The term 'AASHTO Manual' means the American Association of State Highway and Transportation Officials (AASHTO) 'Manual for Bridge Evaluation' with Sections 1.4, 2.2, 4.2, 6, and 8, excluding the 3rd paragraph in Article 6B.7.1.",
-    search: ``,
-    discipline: "bridge design",
-    page: ["glossary-bridge-tab"],
+    term: "AADT (Annual Average Daily Traffic)",
+    definition: "The total annual volume of traffic passing a point or segment of a highway in both directions divided by the number of days in a year.",
+    search: `How is "Annual Average Daily Traffic" used at INDOT?`,
+    discipline: "transportation engineering",
+    page: ["glossary-bridge-tab", "bridge-alignment-pg5"],
+    letter: "letter-jump-a",
   },
   {
-    term: "AASHTO MBEI",
+    term: "AADTT (Annual Average Daily Truck Traffic)",
+    definition: "The total annual volume of truck traffic passing a point or segment of a highway in both directions divided by the number of days in a year.",
+    search: `How is "Annual Average Daily Truck Traffic" used at INDOT?`,
+    discipline: "transportation engineering",
+    page: ["glossary-bridge-tab", "bridge-alignment-pg5"],
+  },
+  {
+    term: "ADT (Average Daily Traffic)",
     definition:
-      "AASHTO Manual for Bridge Element Inspection is a reference for standardized element definitions, element quantity calculations, condition state definitions, element feasible actions, and inspection conventions. This manual is used for element descriptions, quantity calculations, and condition state definitions.",
-    search: ``,
+      "The total volume of vehicle traffic passing a specific point or roadway segment in both directions over a given period, divided by the number of days in that period. Unlike AADT, which averages traffic over an entire year, ADT is typically calculated for shorter durations, such as a season or specific months, and does not account for annual variations.",
+    search: "How is 'Average Daily Traffic' used at INDOT?",
+    discipline: "transportation engineering",
+    page: ["glossary-additional-tab"],
+  },
+  {
+    term: "AASHTO (American Association of State Highway and Transportation Officials)",
+    definition:
+      "A nonprofit organization that establishes technical standards for the design, construction, maintenance, and operation of highways and bridges in the United States. Its guidelines, including the AASHTO LRFD Bridge Design Specifications, are widely used for structural analysis, load rating, and material selection in bridge engineering.",
     discipline: "bridge design",
-    page: ["glossary-bridge-tab"],
+    page: "glossary-additional-tab",
+  },
+  {
+    term: "AASHTO LRFD Bridge Design Specifications",
+    definition:
+      "Establishes load and resistance factor design criteria for bridges, incorporating statistical reliability to ensure structural safety, durability, and efficiency while accounting for material properties, load variability, and resistance factors.",
+    discipline: "bridge design",
+    page: "glossary-additional-tab",
+  },
+  {
+    term: "AASHTO Manual for Bridge Element Inspection (MBEI)",
+    definition:
+      "Standardizes bridge inspection practices by defining element-level condition assessment, rating guidelines, and documentation methods to ensure consistent data collection for maintenance, repair, and asset management decisions.",
+    discipline: "bridge design",
+    page: "glossary-additional-tab",
+  },
+  {
+    term: "AASHTO Manual for Bridge Evaluation (MBE)",
+    definition:
+      "Provides guidance for load rating, condition assessment, and structural evaluation of existing bridges, incorporating inspection data, material properties, and load models to determine capacity, safety, and serviceability.",
+    discipline: "bridge design",
+    page: "glossary-additional-tab",
   },
   {
     term: "Abrasion",
-    definition: "Wearing or grinding away of material by water containing sand, gravel, or stones.",
+    definition:
+      "The wearing away of a material's surface due to repeated friction or impact from particles, debris, water, and/or traffic. In bridges, it commonly affects concrete and steel components, leading to surface degradation and increased susceptibility to other forms of deterioration.",
     search: ``,
     discipline: "bridge design",
     page: ["glossary-culvert-tab", "bridge-culvert-pg6"],
   },
   {
     term: "Abrasive Condition",
-    definition: "The presence of granular material accompanied with a stream gradient or flow sufficient to cause movement of the granular material in the streambed.",
-    search: ``,
+    definition:
+      "A condition occurring when channel flow is strong enough to mobilize granular materials, such as sand or gravel, which can cause surface wear on bridge foundations or components. This condition can accelerate the erosion of exposed structures, particularly in areas with high flow velocities.",
+    search: `Abrasive Condition in hydrology?`,
     discipline: "bridge design",
     page: ["glossary-culvert-tab", "bridge-culvert-pg6"],
   },
   {
     term: "Abutment",
-    definition: "A structure that supports the end of a bridge and transfers loads to the foundation.",
+    definition:
+      "A structure at the end of a bridge that supports the bridge's deck and transfers loads to the foundation. It resists vertical and horizontal forces, anchors the superstructure, and prevents displacement. Abutments are designed to withstand environmental factors like soil pressure and water flow.",
     discipline: "bridge design",
     page: ["bridge-sub-pg9", "bridge-culvert-pg6"],
   },
   {
+    term: "Additional Treatment",
+    definition:
+      "The extension of a culvert or small structure using a different material or design, typically as part of a roadway widening project. This may include adding corrugated metal pipes (CMPs) to the ends of a concrete box culvert or attaching a concrete box to the end of a pipe to maintain flow capacity and structural integrity.",
+    search: `How do you extend a box culvert with a CMP?`,
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+  {
     term: "Adhesion",
-    definition: "The ability of a sealant or material to bond to a surface and remain attached under stress or movement.",
+    definition:
+      "The ability of a sealant or material to bond to a surface and remain attached under stress or movement. In bridge design, particularly at deck expansion joints, adhesion ensures a secure bond between the joint sealant and the surrounding concrete, preventing water infiltration, debris, and deterioration of the joint.",
     discipline: "bridge design",
     page: ["bridge-joints-pg9"],
   },
   {
     term: "Aggradation",
-    definition: "The process of sediment deposition that raises the level of a riverbed or streambed, often due to reduced water flow or velocity.",
+    definition:
+      "The process of sediment accumulation in a waterway, typically due to a decrease in flow velocity. In bridge inspection, aggradation can raise the level of the streambed around bridge foundations, potentially affecting structural stability, increasing scour risk, and altering water flow patterns.",
     discipline: "bridge design",
     page: ["bridge-channel-pg8"],
+  },
+  {
+    term: "Aggregate",
+    definition: "Granular material such as sand, gravel, or crushed stone used in concrete and asphalt to provide strength, durability, and resistance to wear.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
   },
   {
     term: "Anchor",
@@ -1732,18 +1762,11 @@ const glossaryAllTerms = [
     page: ["glossary-wall-tab"],
   },
   {
-    term: "Annual Average Daily Traffic (AADT)",
-    definition: "The total annual volume of traffic passing a point or segment of a highway in both directions divided by the number of days in a year.",
-    search: `What is "Annual Average Daily Traffic" in transportation engineering?`,
-    discipline: "transportation engineering",
-    page: ["glossary-bridge-tab", "bridge-alignment-pg5"],
-  },
-  {
-    term: "Annual Average Daily Truck Traffic (AADTT)",
-    definition: "The total annual volume of truck traffic passing a point or segment of a highway in both directions divided by the number of days in a year.",
-    search: `What is "Annual Average Daily Truck Traffic" in transportation engineering?`,
-    discipline: "transportation engineering",
-    page: ["glossary-bridge-tab", "bridge-alignment-pg5"],
+    term: "ANSI (American National Standards Institute)",
+    definition:
+      "A private, nonprofit organization that oversees the development of voluntary consensus standards for a wide range of industries, including construction and engineering. It coordinates with international bodies to ensure compatibility between U.S. and global standards, covering materials, testing procedures, and safety regulations used in bridge design and fabrication.",
+    discipline: "bridge design",
+    page: "glossary-additional-tab",
   },
   {
     term: "Approach Roadway Alignment",
@@ -1806,6 +1829,12 @@ const glossaryAllTerms = [
     page: ["bridge-channel-pg8"],
   },
   {
+    term: "As-Builts",
+    definition: "Final construction drawings that document deviations from original design plans, reflecting the actual dimensions and configurations of a completed structure.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+  {
     term: "Asphalt",
     definition:
       "A mixture of aggregates and bitumen used for paving roads and bridge decks. It provides a durable and flexible surface capable of withstanding heavy traffic loads. Over time, it can deteriorate due to weathering, UV exposure, and traffic stress.",
@@ -1820,6 +1849,20 @@ const glossaryAllTerms = [
     page: ["bridge-joints-pg9"],
   },
   {
+    term: "ASTM (American Society for Testing and Materials)",
+    definition:
+      "An international organization that develops and publishes technical standards for materials, products, systems, and services used in infrastructure projects. Its specifications define the physical and mechanical properties of materials such as steel, concrete, and coatings, ensuring quality control and performance consistency in bridge construction.",
+    discipline: "bridge design",
+    page: "glossary-additional-tab",
+  },
+  {
+    term: "ASTM Structural Steels",
+    definition:
+      "Structural steels used in bridge construction under ASTM specifications, designed for varying requirements of strength, weldability, corrosion resistance, and toughness. Different grades are optimized for specific applications, including general structural use, high-strength applications, and weathering resistance. Some grades require careful design considerations to prevent issues like brittle fracture, deformation under high loads, or accelerated corrosion in certain environments.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+  {
     term: "Asymmetric Barrier Design",
     definition:
       "A barrier design in which the shape, size, or orientation of the guardrail or barrier varies on each side to account for differing road conditions, clear zones, or traffic flow. Asymmetric barriers are commonly used in situations where one side of the barrier faces a more hazardous area, such as a steep drop-off, requiring enhanced protection.",
@@ -1831,6 +1874,22 @@ const glossaryAllTerms = [
     definition: "Crash barriers designed to absorb and dissipate the energy of an impacting vehicle, reducing the severity of collisions.",
     discipline: "bridge design",
     page: ["bridge-railings-pg9"],
+  },
+  {
+    term: "Azimuth",
+    definition: "The horizontal angular measurement in a coordinate system, often used in bridge and roadway alignment to define direction relative to true north.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+
+  // :::::
+
+  {
+    term: "Backer Bar",
+    definition: "A temporary or permanent metal strip placed behind a weld joint to support molten material, ensuring complete fusion and penetration during welding.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+    letter: "letter-jump-b",
   },
   {
     term: "Backfill",
@@ -2006,6 +2065,12 @@ const glossaryAllTerms = [
     page: ["bridge-sub-pg9"],
   },
   {
+    term: "Buckling",
+    definition: "A sudden lateral deformation caused by compressive forces exceeding a structural element’s critical load, often occurring in slender columns, girders, or plates.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+  {
     term: "Built-Up Member",
     definition:
       "A structural component that is assembled from multiple smaller elements, such as plates or shapes, to form a larger unit. Built-up members are often used when single solid pieces are too large or impractical. They are common in steel bridge construction and provide flexibility in design.",
@@ -2014,11 +2079,33 @@ const glossaryAllTerms = [
     page: ["glossary-additional-tab"],
   },
   {
+    term: "Butt Weld",
+    definition: "A weld joining two pieces of metal in the same plane, typically used for full-penetration connections in structural steel fabrication.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+
+  // :::::
+
+  {
     term: "Cable Barrier System",
     definition:
       "A flexible guardrail system consisting of multiple strands of tensioned steel cable supported by posts. Designed to absorb impact by deflecting vehicles, it is often more cost-effective and easier to repair than rigid barriers, making it a common choice for medians and roadsides.",
     discipline: "bridge design",
     page: ["bridge-railings-pg9"],
+    letter: "letter-jump-c",
+  },
+  {
+    term: "Cable Terminations",
+    definition: "End fittings or anchorage systems securing cables in cable-supported structures, designed to transfer loads efficiently while minimizing stress concentrations.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+  {
+    term: "Cable Boots",
+    definition: "Protective coverings placed over exposed cable ends or connections in suspension and cable-stayed bridges to prevent corrosion and mechanical damage.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
   },
   {
     term: "Cantilever",
@@ -2045,11 +2132,30 @@ const glossaryAllTerms = [
     page: ["glossary-additional-tab"],
   },
   {
+    term: "Carbon Steel",
+    definition:
+      "A strong, cost-effective steel primarily composed of iron and carbon, commonly used in bridge girders and structural members. Prone to corrosion if not properly coated or maintained.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+  {
+    term: "Catwalk",
+    definition: "A narrow walkway, often suspended beneath a bridge or inside a truss, providing inspector access to structural elements.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+  {
     term: "Cavitation",
     definition:
       "The formation of vapor bubbles in the water that collapse near a surface, leading to localized erosion, often seen around hydraulic structures like gates or valves.",
     discipline: "bridge design",
     page: ["bridge-channel-pg8"],
+  },
+  {
+    term: "Cement",
+    definition: "A binding material, typically Portland cement, that reacts chemically with water to form a hardened paste, providing cohesion in concrete and mortar.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
   },
   {
     term: "Centerline",
@@ -2097,9 +2203,17 @@ const glossaryAllTerms = [
   },
   {
     term: "Check Dams",
-    definition: "Small structures used in rivers or streams to slow the flow of water and reduce erosion.",
+    definition:
+      "A small, temporary or permanent barrier placed across a drainage channel, swale, or ditch to slow water flow, reduce erosion, and allow sediment to settle. Often constructed from rock, sandbags, or logs.",
     discipline: "bridge design",
     page: ["bridge-channel-pg8"],
+  },
+  {
+    term: "Clad Steel",
+    definition:
+      "A composite steel with a corrosion-resistant outer layer (such as stainless steel) bonded to a structural steel core. Can be difficult to weld and requires specialized fabrication techniques.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
   },
   {
     term: "Clear Zone",
@@ -2124,6 +2238,13 @@ const glossaryAllTerms = [
     page: ["glossary-bridge-tab"],
   },
   {
+    term: "Compaction",
+    definition:
+      "The process of increasing soil density by applying mechanical force to reduce air voids. Proper compaction improves load-bearing capacity and reduces settlement but can also impact drainage and permeability.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+  {
     term: "Compression",
     definition:
       "A force that acts to reduce the size of a material or structural element. In bridge design, compression is typically applied to beams, columns, or other load-bearing elements. Materials subjected to compression may deform or buckle if the force exceeds their capacity.",
@@ -2137,6 +2258,13 @@ const glossaryAllTerms = [
       "A joint system that uses a flexible seal material that compresses to close the gap between two bridge sections. This joint prevents water and debris infiltration by maintaining a tight seal during movement. Over time, compression seals can lose flexibility, accumulate debris, and suffer from misalignment, leading to ineffective sealing and water leakage.",
     discipline: "bridge design",
     page: ["bridge-joints-pg9"],
+  },
+  {
+    term: "Concrete",
+    definition:
+      "A composite material composed of cement, water, and aggregates such as sand and gravel, which hardens through a chemical reaction known as hydration. Used extensively in bridge construction due to its compressive strength and durability, concrete is susceptible to issues such as cracking, shrinkage, freeze-thaw damage, and reinforcement corrosion if not properly designed, mixed, or maintained.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
   },
   {
     term: "Concrete Barrier Wall",
@@ -2166,6 +2294,13 @@ const glossaryAllTerms = [
     page: ["bridge-channel-pg8"],
   },
   {
+    term: "Consolidation",
+    definition:
+      "The gradual settlement of soil due to the expulsion of water from pore spaces under long-term loading. Common in clay soils and can cause foundation or structural movement over time.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+  {
     term: "Construction Joint",
     definition:
       "A joint used in the construction process to separate different phases of work, typically where two sections of a structure meet. It allows for the continuation of construction while providing a defined break between sections, but may require additional treatment to prevent movement or water infiltration.",
@@ -2177,6 +2312,13 @@ const glossaryAllTerms = [
     definition:
       "A type of bridge span that extends over multiple supports, allowing the structure to distribute loads across more than one support. Continuous spans are often used for longer bridges and can reduce the overall deflection of the structure. They are more efficient than simple spans, particularly for longer distances.",
     search: ``,
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+  {
+    term: "Contraction Scour",
+    definition:
+      "The removal of bed material from a channel due to increased flow velocity at a constricted section, often occurring beneath bridges or culverts where water accelerates through a narrower opening.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -2254,6 +2396,12 @@ const glossaryAllTerms = [
     page: ["glossary-wall-tab"],
   },
   {
+    term: "Critical Find",
+    definition: "A defect or condition discovered during inspection that poses a significant structural or safety concern, requiring prompt evaluation and potential remediation.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+  {
     term: "Cross Bracing",
     definition: "A system of diagonal braces used to strengthen and stabilize the bridge structure, typically placed between girders or beams.",
     search: ``,
@@ -2326,6 +2474,13 @@ const glossaryAllTerms = [
     page: ["bridge-alignment-pg5"],
   },
   {
+    term: "Curved Girders",
+    definition:
+      "Girders fabricated with a horizontal or vertical curvature to accommodate roadway alignment or aesthetic considerations, requiring specialized design and analysis.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+  {
     term: "Cut / Fill",
     definition:
       "The process of removing soil (cut) or adding material (fill) to adjust the level of the ground to support a structure. In bridge construction, cut and fill are used to level the ground for foundations, approaches, and embankments. This process is crucial in creating a stable base for bridge supports.",
@@ -2339,12 +2494,16 @@ const glossaryAllTerms = [
     discipline: "bridge design",
     page: ["bridge-channel-pg8"],
   },
+
+  // :::::
+
   {
     term: "Damage Inspection",
     definition: "An unscheduled inspection to assess structural damage resulting from environmental factors or human actions.",
     search: ``,
     discipline: "bridge design",
     page: ["glossary-bridge-tab"],
+    letter: "letter-jump-d",
   },
   {
     term: "Datum",
@@ -2376,7 +2535,8 @@ const glossaryAllTerms = [
   },
   {
     term: "Deflection",
-    definition: "Change in the original or specified vertical or horizontal measurement of a culvert structure.",
+    definition:
+      "The displacement of a structural element (such as a beam or bridge deck) under load. Excessive deflection can indicate overstressed components or insufficient stiffness.",
     search: ``,
     discipline: "bridge design",
     page: ["glossary-culvert-tab", "bridge-culvert-pg6"],
@@ -2422,6 +2582,13 @@ const glossaryAllTerms = [
       "Engineered channel armoring specifically designed to address scour vulnerability. These measures use materials like concrete blocks, gabions, or riprap, carefully planned and calculated based on flow rate, water velocity, soil properties, and site conditions to effectively mitigate erosion and protect vulnerable areas.",
     discipline: "bridge design",
     page: ["bridge-channel-pg8"],
+  },
+  {
+    term: "Detention Ponds",
+    definition:
+      "Engineered basins designed to temporarily store stormwater runoff, controlling peak discharge rates and allowing sediment to settle before releasing water at a controlled rate.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
   },
   {
     term: "Deterioration",
@@ -2504,11 +2671,21 @@ const glossaryAllTerms = [
     page: ["bridge-channel-pg8"],
   },
   {
+    term: "Dye Penetrant Testing (PT)",
+    definition: "A non-destructive method where a liquid dye is applied to a weld, revealing surface cracks and defects through capillary action.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+
+  // :::::
+
+  {
     term: "Earthwork",
     definition: "The process of moving, excavating, or compacting soil, rock, or other materials to prepare a site for construction or engineering projects.",
     search: ``,
     discipline: "bridge design",
     page: ["glossary-compounds-tab"],
+    letter: "letter-jump-e",
   },
   {
     term: "Eastbound, Westbound, Northbound, Southbound",
@@ -2516,6 +2693,12 @@ const glossaryAllTerms = [
     search: ``,
     discipline: "bridge design",
     page: ["glossary-compounds-tab"],
+  },
+  {
+    term: "Eddy Current Testing (ET)",
+    definition: "An electromagnetic NDT technique used to detect surface and near-surface defects in conductive materials by measuring changes in electrical resistance.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
   },
   {
     term: "Efflorescence",
@@ -2531,6 +2714,12 @@ const glossaryAllTerms = [
     search: ``,
     discipline: "bridge design",
     page: ["glossary-bridge-tab"],
+  },
+  {
+    term: "Elevated Platform",
+    definition: "A fixed or mobile work surface used to provide safe access to elevated bridge components during inspection, maintenance, or repair operations.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
   },
   {
     term: "Elevation",
@@ -2604,6 +2793,9 @@ const glossaryAllTerms = [
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
+
+  // :::::
+
   {
     term: "Fatigue",
     definition:
@@ -2611,6 +2803,7 @@ const glossaryAllTerms = [
     search: ``,
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
+    letter: "letter-jump-f",
   },
   {
     term: "Fatigue Categories",
@@ -2625,6 +2818,13 @@ const glossaryAllTerms = [
     definition:
       "A crack that forms in a material due to repeated stress or load cycles, even when the stress levels are below the material's ultimate tensile strength. Fatigue cracks are a common cause of failure in bridges, particularly in high-stress regions such as welds or joints.",
     search: ``,
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+  {
+    term: "Fatigue Life",
+    definition:
+      "The number of stress cycles a structural component can endure before failure due to repetitive loading, influenced by material properties, stress range, and environmental factors.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -2660,6 +2860,26 @@ const glossaryAllTerms = [
     search: ``,
     discipline: "bridge design",
     page: ["glossary-bridge-tab"],
+  },
+  {
+    term: "FHWA (Federal Highway Administration)",
+    definition:
+      "A division of the U.S. Department of Transportation responsible for regulating and funding national highway programs. It establishes policies, safety standards, and research initiatives that influence bridge design, inspection, and rehabilitation, ensuring structural integrity and long-term performance of transportation infrastructure.",
+    discipline: "bridge design",
+    page: "glossary-additional-tab",
+  },
+  {
+    term: "Field Weld",
+    definition:
+      "A weld performed on-site during construction or repair, as opposed to being fabricated in a shop. Field welding requires special procedures to manage environmental conditions and ensure weld quality.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+  {
+    term: "Fillet Weld",
+    definition: "A triangular cross-section weld joining two surfaces at an angle, commonly used in bridge fabrication for attaching stiffeners, plates, and structural elements.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
   },
   {
     term: "Flange",
@@ -2728,6 +2948,9 @@ const glossaryAllTerms = [
     discipline: "bridge design",
     page: ["glossary-compounds-tab", "bridge-channel-pg8"],
   },
+
+  // :::::
+
   {
     term: "Gabion",
     definition:
@@ -2735,6 +2958,7 @@ const glossaryAllTerms = [
     search: `What is "Gabion" in retaining wall design?`,
     discipline: "retaining wall design",
     page: ["glossary-wall-tab"],
+    letter: "letter-jump-g",
   },
   {
     term: "Gabion Mattresses",
@@ -2748,6 +2972,13 @@ const glossaryAllTerms = [
     search: ``,
     discipline: "bridge design",
     page: ["glossary-culvert-tab", "bridge-culvert-pg6"],
+  },
+  {
+    term: "Galvanized Steel",
+    definition:
+      "Steel coated with a layer of zinc to provide corrosion protection, often used for secondary bridge components. The zinc layer can degrade over time, especially in coastal or high-salt environments, leading to rusting.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
   },
   {
     term: "Geotextile",
@@ -2781,6 +3012,12 @@ const glossaryAllTerms = [
     search: `What is "Gravity Wall" in retaining wall design?`,
     discipline: "retaining wall design",
     page: ["glossary-wall-tab"],
+  },
+  {
+    term: "Grommets",
+    definition: "Rubber or metal rings used to seal and protect cables or fasteners passing through holes in bridge components, preventing wear and moisture intrusion.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
   },
   {
     term: "Groundwater",
@@ -2825,6 +3062,9 @@ const glossaryAllTerms = [
     discipline: "bridge design",
     page: ["bridge-railings-pg9"],
   },
+
+  // :::::
+
   {
     term: "Hairline Cracks",
     definition:
@@ -2832,6 +3072,7 @@ const glossaryAllTerms = [
     search: ``,
     discipline: "bridge deck maintenance",
     page: ["glossary-additional-tab"],
+    letter: "letter-jump-h",
   },
   {
     term: "Hands-On",
@@ -2870,10 +3111,29 @@ const glossaryAllTerms = [
     page: ["glossary-compounds-tab", "bridge-sub-pg9"],
   },
   {
+    term: "Heat-Affected Zone (HAZ)",
+    definition: "The portion of base metal adjacent to a weld that undergoes microstructural changes due to welding heat, affecting mechanical properties.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+  {
+    term: "Heat-Treated Steel",
+    definition: "Steel that undergoes heat treatment to increase hardness and strength, used in critical bridge components. Can be prone to brittleness if not properly tempered.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+  {
     term: "Heave",
     definition:
       "The upward movement or displacement of a bridge or road surface, typically caused by soil expansion or freezing. Heave can lead to misalignment of bridge components and affect the ride quality of the bridge deck. It is usually related to changes in soil moisture or temperature.",
     search: ``,
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+  {
+    term: "High-Strength Low-Alloy (HSLA) Steel",
+    definition:
+      "A type of steel with added alloying elements that enhance strength without increasing weight. Can be sensitive to welding procedures and may require preheating to prevent cracking.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -2935,6 +3195,9 @@ const glossaryAllTerms = [
     discipline: "bridge design",
     page: ["glossary-bridge-tab"],
   },
+
+  // :::::
+
   {
     term: "I-Beam",
     definition:
@@ -2942,6 +3205,7 @@ const glossaryAllTerms = [
     search: ``,
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
+    letter: "letter-jump-i",
   },
   {
     term: "In-Depth Inspection",
@@ -2964,6 +3228,13 @@ const glossaryAllTerms = [
     search: ``,
     discipline: "bridge design",
     page: ["glossary-culvert-tab", "bridge-culvert-pg6"],
+  },
+  {
+    term: "Infiltration Systems",
+    definition:
+      "Stormwater management solutions designed to allow runoff to percolate into the soil, reducing surface water flow and promoting groundwater recharge. Examples include permeable pavement, infiltration trenches, and dry wells.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
   },
   {
     term: "Inherent Defect",
@@ -3073,12 +3344,16 @@ const glossaryAllTerms = [
     discipline: "bridge inspection",
     page: ["glossary-defects-tab"],
   },
+
+  // :::::
+
   {
     term: "Jacking Frame",
     definition:
       "A diaphragm, typically found on a steel beam or steel girder bridge, designed to accommodate the loads required to support the bridge during bearing replacement. These are typically only included at support locations and will be more robust than a typical diaphragm.",
     discipline: "bridge design",
     page: ["bridge-super-pg9"],
+    letter: "letter-jump-j",
   },
   {
     term: "Jobsite",
@@ -3100,13 +3375,26 @@ const glossaryAllTerms = [
     discipline: "bridge design",
     page: ["bridge-joints-pg9"],
   },
+
+  // :::::
+
   {
     term: "Keystone",
     definition: "The central, topmost stone or concrete block of an arch that locks the other blocks or sections in place, crucial for the arch’s structural integrity.",
     search: ``,
     discipline: "arch design",
     page: ["glossary-compounds-tab", "bridge-culvert-pg6"],
+    letter: "letter-jump-k",
   },
+  {
+    term: "Kinked Girders",
+    definition: "A girder with a longitudinal axis that changes orientation at a location along the girder length excluding at the supports.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+
+  // :::::
+
   {
     term: "Lagging",
     definition:
@@ -3114,6 +3402,7 @@ const glossaryAllTerms = [
     search: `What is "Lagging" in retaining wall design?`,
     discipline: "retaining wall design",
     page: ["glossary-wall-tab"],
+    letter: "letter-jump-l",
   },
   {
     term: "LaPorte",
@@ -3168,6 +3457,19 @@ const glossaryAllTerms = [
     search: ``,
     discipline: "bridge design",
     page: ["glossary-bridge-tab"],
+  },
+  {
+    term: "LiDAR",
+    definition:
+      "A remote sensing technology that uses laser pulses to generate precise three-dimensional models of structures, commonly used in bridge inspections and terrain mapping.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+  {
+    term: "Limestone",
+    definition: "A sedimentary rock primarily composed of calcium carbonate, commonly used in aggregate production and as a raw material for cement manufacturing.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
   },
   {
     term: "Line of Sight",
@@ -3254,6 +3556,22 @@ const glossaryAllTerms = [
     page: ["bridge-super-pg9"],
   },
   {
+    term: "Lower Chord",
+    definition: "The bottom horizontal member of a truss that primarily resists tensile forces, contributing to the overall stability and load distribution of the structure.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+
+  // :::::
+
+  {
+    term: "Magnetic Particle Testing (MT)",
+    definition: "An NDT method that uses magnetic fields and fine iron particles to detect surface and near-surface cracks in ferromagnetic materials.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+    letter: "letter-jump-m",
+  },
+  {
     term: "Major Defect",
     definition:
       "Damage or deterioration is significant, and the strength or performance is adversely affected. Examples would be similar in type to moderate defects but of greater magnitude and severity that, upon reporting, would require a structural or geotechnical review.",
@@ -3267,6 +3585,12 @@ const glossaryAllTerms = [
     search: ``,
     discipline: "bridge design",
     page: ["glossary-bridge-tab"],
+  },
+  {
+    term: "Man Lift",
+    definition: "A powered aerial lift used to elevate inspectors or workers to difficult-to-reach areas of bridges and structures, improving accessibility and safety.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
   },
   {
     term: "Map Cracking",
@@ -3344,6 +3668,13 @@ const glossaryAllTerms = [
     page: ["bridge-joints-pg9"],
   },
   {
+    term: "Modulus of Elasticity of Steel",
+    definition:
+      "A measure of steel's stiffness, defined as the ratio of stress to strain within the elastic limit. For structural steel, it is typically around 29,000 ksi (200 GPa), determining how much a member deforms under load.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+  {
     term: "Moment",
     definition:
       "A measure of the rotational force or bending caused by external loads applied to a structure, such as a bridge. The moment acts to bend or rotate a structural element, such as a beam or girder, and is crucial in determining the strength and design requirements of bridge components. It is typically expressed in units of force multiplied by distance.",
@@ -3359,6 +3690,9 @@ const glossaryAllTerms = [
     discipline: "bridge design",
     page: ["glossary-bridge-tab"],
   },
+
+  // :::::
+
   {
     term: "National Bridge Inspection Standards (NBIS)",
     definition:
@@ -3366,6 +3700,7 @@ const glossaryAllTerms = [
     search: ``,
     discipline: "bridge design",
     page: ["glossary-bridge-tab"],
+    letter: "letter-jump-n",
   },
   {
     term: "National Bridge Inventory (NBI)",
@@ -3399,6 +3734,12 @@ const glossaryAllTerms = [
     page: ["glossary-bridge-tab"],
   },
   {
+    term: "Necking",
+    definition: "A localized reduction in cross-sectional area of a structural or tensioned element due to excessive tensile stress, often a precursor to fracture.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+  {
     term: "Neighboring State",
     definition:
       "The State responsible for reporting an abbreviated bridge record for a border bridge. The Designated Lead State and the Neighboring State are determined through agreement between the two border States.",
@@ -3407,11 +3748,25 @@ const glossaryAllTerms = [
     page: ["glossary-bridge-tab"],
   },
   {
+    term: "Nickel Alloy Steel",
+    definition:
+      "Steel with added nickel for enhanced toughness and corrosion resistance, often used in cold-weather bridge applications. Can be costly and difficult to fabricate compared to conventional steels.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+  {
     term: "Nominal",
     definition: "Referring to an approximate or standard value, typically used when the exact measurement may vary slightly but is considered close to the stated value.",
     search: ``,
     discipline: "bridge design",
     page: ["bridge-deck-pg11"],
+  },
+  {
+    term: "Non-Destructive Testing (NDT)",
+    definition:
+      "A range of inspection techniques used to evaluate materials and welds without causing damage, including ultrasonic, radiographic, magnetic particle, and dye penetrant testing.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
   },
   {
     term: "Nonredundant Steel Tension Member (NSTM)",
@@ -3443,12 +3798,16 @@ const glossaryAllTerms = [
     discipline: "bridge design",
     page: ["bridge-joints-pg9"],
   },
+
+  // :::::
+
   {
     term: "Off-Ramp",
     definition: "A roadway that allows vehicles to exit a highway or freeway.",
     search: ``,
     discipline: "bridge design",
     page: ["glossary-compounds-tab", "bridge-alignment-pg5"],
+    letter: "letter-jump-o",
   },
   {
     term: "On-Ramp",
@@ -3481,6 +3840,27 @@ const glossaryAllTerms = [
     page: ["glossary-bridge-tab"],
   },
   {
+    term: "OSHA (Occupational Safety and Health Administration)",
+    definition:
+      "A federal agency that sets and enforces workplace safety standards, including regulations specific to construction, maintenance, and inspection of bridges. It mandates fall protection, confined space entry protocols, and other safety measures to protect workers from hazards commonly encountered on bridge projects.",
+    discipline: "bridge design",
+    page: "glossary-additional-tab",
+  },
+  {
+    term: "Out-To-Out Coping",
+    definition:
+      "The total width measured from the outer edges of the bridge coping, which includes the concrete or protective elements along the deck edges. This measurement helps define the full extent of the bridge deck, including safety barriers or parapets.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+  {
+    term: "Out-To-Out Roadway",
+    definition:
+      "The total width of the bridge deck measured from the outermost edges, including all lanes, shoulders, and any barriers or railings. This dimension is critical for determining the available roadway space for vehicles and maintenance access.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+  {
     term: "Outlet",
     definition: "The final 5 ft of the downstream end of a culvert structure.",
     search: ``,
@@ -3494,14 +3874,17 @@ const glossaryAllTerms = [
     discipline: "bridge design",
     page: ["glossary-compounds-tab"],
   },
+
+  // :::::
+
   {
     term: "Parabolic Offsets",
     definition:
       "Curved offsets used in guardrail and barrier systems to gradually redirect vehicles and reduce impact forces. The parabolic shape helps to guide the vehicle away from the hazard in a controlled manner, improving safety and minimizing the risk of severe collisions.",
     discipline: "bridge design",
     page: ["bridge-railings-pg9"],
+    letter: "letter-jump-p",
   },
-
   {
     term: "Parapet",
     definition:
@@ -3514,6 +3897,19 @@ const glossaryAllTerms = [
     definition:
       "The occurrence of a series of cracks that form a recognizable pattern, often due to external factors like temperature fluctuations, moisture changes, or material shrinkage. Pattern cracking is typically superficial but may require attention if it leads to further degradation of the material. It can affect both asphalt and concrete surfaces.",
     search: ``,
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+  {
+    term: "Peening",
+    definition: "A process of mechanically working a weld surface using controlled hammering or blasting to reduce residual stresses and improve fatigue resistance.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+  {
+    term: "Piecewise Girders",
+    definition:
+      "A girder or beam line comprised of girders with a longitudinal axis that changes orientation at one or more supports. The girder line may be simply supported or continuous at supports.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -3550,11 +3946,23 @@ const glossaryAllTerms = [
     page: ["bridge-sub-pg9"],
   },
   {
+    term: "Pin-and-Hinge Assembly",
+    definition: "A structural connection designed to allow controlled rotation while transferring loads, commonly used in cantilevered bridge spans and movable bridge components.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+  {
     term: "Piping",
     definition: "The process of erosion along the exterior perimeter of a culvert barrel.",
     search: ``,
     discipline: "bridge design",
     page: ["glossary-culvert-tab", "bridge-culvert-pg6", "bridge-channel-pg8"],
+  },
+  {
+    term: "Plug Weld",
+    definition: "A circular weld used to join overlapping metal components by filling a pre-drilled hole with molten material, often employed in splice connections.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
   },
   {
     term: "Point Bar",
@@ -3568,6 +3976,12 @@ const glossaryAllTerms = [
       "A joint filled with polymer-modified asphalt, designed to accommodate movement while providing sealing and protection against water infiltration. Polymer-modified asphalt can degrade over time from UV exposure, crack under stress, and take longer to cure, delaying repairs.",
     discipline: "bridge design",
     page: ["bridge-joints-pg9"],
+  },
+  {
+    term: "Portal",
+    definition: "The entrance or exit frame of a bridge, tunnel, or culvert, often consisting of a rigid frame structure that supports loads and resists lateral forces.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
   },
   {
     term: "Post-Tensioned",
@@ -3652,6 +4066,9 @@ const glossaryAllTerms = [
     discipline: "bridge design",
     page: ["glossary-bridge-tab"],
   },
+
+  // :::::
+
   {
     term: "Q100 HW",
     definition:
@@ -3659,6 +4076,7 @@ const glossaryAllTerms = [
     search: ``,
     discipline: "hydrology",
     page: ["glossary-additional-tab"],
+    letter: "letter-jump-q",
   },
   {
     term: "Q100 Scour",
@@ -3682,6 +4100,23 @@ const glossaryAllTerms = [
     search: ``,
     discipline: "bridge design",
     page: ["glossary-bridge-tab"],
+  },
+  {
+    term: "Quenched and Tempered (Q&T) Steel",
+    definition:
+      "High-strength steel that has undergone a controlled heating and cooling process to improve mechanical properties. Susceptible to hydrogen embrittlement and requires strict quality control during fabrication.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+
+  // :::::
+
+  {
+    term: "Radiographic Testing (RT)",
+    definition: "A non-destructive testing method using X-rays or gamma rays to detect internal flaws in welds by producing an image on a radiographic film or digital sensor.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+    letter: "letter-jump-r",
   },
   {
     term: "Railroad",
@@ -3740,6 +4175,13 @@ const glossaryAllTerms = [
     search: `What is "Retaining Wall" in retaining wall design?`,
     discipline: "retaining wall design",
     page: ["glossary-wall-tab", "bridge-sub-pg9"],
+  },
+  {
+    term: "Retention Ponds",
+    definition:
+      "Permanent basins designed to hold stormwater runoff indefinitely, allowing pollutants to settle and water to be released through infiltration or controlled discharge.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
   },
   {
     term: "Retrofit",
@@ -3858,6 +4300,13 @@ const glossaryAllTerms = [
     page: ["glossary-additional-tab"],
   },
   {
+    term: "Rust",
+    definition:
+      "The reddish-brown corrosion product formed on iron or steel due to prolonged exposure to moisture and oxygen, potentially leading to section loss and structural degradation.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+  {
     term: "Rutting",
     definition:
       "The formation of depressions or grooves in the surface of a roadway or bridge deck, often caused by the repetitive passage of heavy vehicles. Rutting can result in a rough driving surface, posing a safety hazard to vehicles, and may lead to further damage if not repaired. It typically occurs in asphalt and can be exacerbated by extreme weather conditions or poor material quality.",
@@ -3865,6 +4314,9 @@ const glossaryAllTerms = [
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
+
+  // :::::
+
   {
     term: "Sacrificial Concrete",
     definition:
@@ -3872,6 +4324,7 @@ const glossaryAllTerms = [
     search: ``,
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
+    letter: "letter-jump-s",
   },
   {
     term: "Safe Load Capacity",
@@ -4006,6 +4459,13 @@ const glossaryAllTerms = [
     page: ["bridge-channel-pg8"],
   },
   {
+    term: "Sediment-Laden Flow",
+    definition:
+      "A water flow that carries a significant amount of suspended particles such as sand, silt, and clay. These particles can erode materials like concrete or steel, affecting the stability of bridge foundations and structures, especially during high-flow events.",
+    discipline: "channel design",
+    page: "glossary-additional-tab",
+  },
+  {
     term: "Semi-Integral Abutment",
     definition:
       "A type of bridge abutment design where the abutment is partially connected to the bridge deck but still allows for some independent movement. This design provides flexibility to accommodate thermal expansion and contraction while maintaining structural stability. It is often used in areas with high seismic or thermal loading conditions.",
@@ -4029,19 +4489,30 @@ const glossaryAllTerms = [
     page: ["glossary-additional-tab"],
   },
   {
+    term: "Severe Critical Finding",
+    definition: "A critical finding that necessitates immediate action within 30 days.",
+    discipline: "bridge inspection",
+    page: ["glossary-additional-tab"],
+  },
+  {
+    term: "Shale",
+    definition: "A sedimentary rock composed of fine-grained clay minerals that can degrade when exposed to moisture, leading to foundation instability or material breakdown.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+  {
+    term: "Shear",
+    definition:
+      "A force that causes parts of a material to slide past one another in opposite directions. In structural elements, excessive shear stress can lead to cracking or failure, particularly in connections and supports.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+  {
     term: "Shear Crack",
     definition:
       "A diagonal crack in a structural member caused by shear forces, often forming near supports and extending upward toward the midpoint of the member. Shear cracks indicate significant structural stress and can compromise the integrity of the member if not addressed.",
     discipline: "bridge design",
     page: ["bridge-super-pg9"],
-  },
-  {
-    term: "Shear Force",
-    definition:
-      "A force that causes a material to slide or deform in parallel layers. In bridge structures, shear force is typically experienced in the beams and girders under load. Proper design and analysis of shear forces are essential to ensure that structural members can resist these forces without failing.",
-    search: ``,
-    discipline: "structural engineering",
-    page: ["glossary-additional-tab"],
   },
   {
     term: "Shear Key",
@@ -4074,11 +4545,29 @@ const glossaryAllTerms = [
     page: ["glossary-wall-tab"],
   },
   {
+    term: "Sidehill Bridge",
+    definition: "A structure built on a sloping terrain where one end is significantly higher than the other, often requiring asymmetric substructure and foundation adjustments.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+  {
     term: "Sidewalk",
     definition: "A paved path for pedestrians along the side of a roadway, typically made of concrete or asphalt.",
     search: ``,
     discipline: "bridge design",
     page: ["glossary-compounds-tab"],
+  },
+  {
+    term: "Silt",
+    definition: "Fine-grained soil particles smaller than sand but larger than clay, often problematic in foundation stability due to poor drainage and susceptibility to erosion.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+  {
+    term: "Silt Fence",
+    definition: "A temporary sediment control device made of geotextile fabric stretched between stakes, used to trap silt and prevent erosion during construction.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
   },
   {
     term: "Simple Span",
@@ -4102,6 +4591,19 @@ const glossaryAllTerms = [
     search: ``,
     discipline: "bridge design",
     page: ["glossary-culvert-tab", "bridge-culvert-pg6"],
+  },
+  {
+    term: "Slag",
+    definition: "A byproduct of metal refining and steel production, often used in construction materials such as aggregate or cement to enhance durability and performance.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+  {
+    term: "Slag Inclusion",
+    definition:
+      "A welding defect where non-metallic slag becomes trapped within a weld, weakening the joint and potentially leading to structural failure if not properly addressed.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
   },
   {
     term: "Sliding Steel Plate Joint",
@@ -4260,6 +4762,13 @@ const glossaryAllTerms = [
     page: ["bridge-channel-pg8"],
   },
   {
+    term: "Stainless Steel",
+    definition:
+      "A corrosion-resistant steel alloy with high chromium content, sometimes used for bridge components in highly corrosive environments. More expensive than other steels and can suffer from stress corrosion cracking in certain conditions.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+  {
     term: "State",
     definition: "Any of the 50 States, the District of Columbia, or Puerto Rico.",
     search: ``,
@@ -4272,6 +4781,13 @@ const glossaryAllTerms = [
     search: ``,
     discipline: "bridge design",
     page: ["glossary-bridge-tab"],
+  },
+  {
+    term: "Stay-In-Place Forms",
+    definition:
+      "Permanent formwork, often made of steel or fiber-reinforced polymer, left in place after concrete placement to provide additional support and reduce construction time.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
   },
   {
     term: "Steel Girder",
@@ -4416,6 +4932,13 @@ const glossaryAllTerms = [
     page: ["glossary-additional-tab"],
   },
   {
+    term: "Swales",
+    definition:
+      "Shallow, sloped channels designed to convey and filter stormwater, reducing runoff velocity and promoting infiltration. Often vegetated to enhance erosion control and water quality.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+  {
     term: "Sway Bracing",
     definition: "Bracing used to resist lateral forces that cause side-to-side movement of a structure, improving its stability.",
     discipline: "bridge design",
@@ -4428,6 +4951,18 @@ const glossaryAllTerms = [
     search: ``,
     discipline: "bridge design",
     page: ["glossary-bridge-tab"],
+  },
+
+  // :::::
+
+  {
+    term: "T1 Steel (A514)",
+    definition:
+      "A high-strength, quenched-and-tempered alloy steel used for structural applications requiring high load capacity. It has excellent strength but can be challenging to weld due to its susceptibility to hydrogen cracking. Preheating and controlled welding procedures are required to prevent embrittlement.",
+    search: `What is "T1 Steel" in bridge design?`,
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+    letter: "letter-jump-t",
   },
   {
     term: "Team Leader",
@@ -4477,6 +5012,7 @@ const glossaryAllTerms = [
     term: "TGB Transition",
     definition:
       "A guardrail transition system that connects rigid concrete bridge railings with W-Beam approach rails using a Thrie Beam segment. This transition ensures a smooth, safe connection between the rigid concrete barrier and the flexible W-Beam rail, while leveraging the Thrie Beam segment to accommodate the shift in barrier type.",
+    search: `What is "Thrie Beam to W-Beam Transition" in bridge design?`,
     discipline: "bridge design",
     page: ["bridge-railings-pg9"],
   },
@@ -4609,6 +5145,23 @@ const glossaryAllTerms = [
     discipline: "bridge design",
     page: ["bridge-railings-pg9"],
   },
+
+  // :::::
+
+  {
+    term: "Ultrasonic Testing (UT)",
+    definition:
+      "A non-destructive testing method that uses high-frequency sound waves to detect internal flaws, discontinuities, and thickness variations in welds and structural components.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+    letter: "letter-jump-u",
+  },
+  {
+    term: "Underbridge Truck",
+    definition: "A specialized vehicle equipped with an articulating boom and inspection platform designed to access bridge undersides for maintenance and evaluation.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
   {
     term: "Undercutting",
     definition: "The erosion of the base of a channel's bank or bed, causing instability and leading to the collapse or sloughing of the bank material.",
@@ -4697,10 +5250,20 @@ const glossaryAllTerms = [
     page: ["glossary-compounds-tab"],
   },
   {
+    term: "Urgent Critical Finding",
+    definition: "A critical finding that necessitates immediate action within 3 days.",
+    discipline: "bridge inspection",
+    page: ["glossary-additional-tab"],
+  },
+
+  // :::::
+
+  {
     term: "Vertical Alignment",
     definition: "The configuration of the roadway in the vertical plane, including grades, curves, and elevations.",
     discipline: "bridge design",
     page: ["bridge-alignment-pg5"],
+    letter: "letter-jump-v",
   },
   {
     term: "Vertical Curve",
@@ -4721,11 +5284,15 @@ const glossaryAllTerms = [
     discipline: "bridge design",
     page: ["glossary-culvert-tab", "bridge-culvert-pg6"],
   },
+
+  // :::::
+
   {
     term: "W-Beam Guardrail",
     definition: "A common guardrail type with a W-shaped cross-section, typically used on highways. It’s effective in absorbing impact and redirecting vehicles.",
     discipline: "bridge design",
     page: ["bridge-railings-pg9"],
+    letter: "letter-jump-w",
   },
   {
     term: "Waterline",
@@ -4742,10 +5309,23 @@ const glossaryAllTerms = [
     page: ["glossary-compounds-tab"],
   },
   {
+    term: "Wattle",
+    definition: "A cylindrical erosion control device made from straw, coir, or synthetic material, placed along slopes or drainage areas to slow water flow and trap sediment.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+  {
     term: "Wear",
     definition:
       "The gradual degradation of a material's surface due to friction, abrasion, or environmental factors. In bridges, wear can occur on surfaces like the deck, bearings, or expansion joints due to regular use and exposure to the elements. While some wear is inevitable, excessive wear can reduce the effectiveness of components, necessitating maintenance or replacement.",
     search: ``,
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+  {
+    term: "Weathering Steel (Corten)",
+    definition:
+      "A high-strength, low-alloy steel designed to form a protective rust layer that reduces further corrosion. Susceptible to accelerated corrosion in environments with frequent moisture exposure, especially where water can collect.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -4758,9 +5338,28 @@ const glossaryAllTerms = [
     page: ["glossary-additional-tab"],
   },
   {
+    term: "Weep Hole",
+    definition: "A small drainage opening in retaining walls, bridge abutments, or concrete structures that allows trapped water to escape, reducing hydrostatic pressure.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+  {
+    term: "Weld Toe",
+    definition: "The transition between the base metal and the weld, a critical area susceptible to fatigue cracking if not properly blended or inspected.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+  {
+    term: "Welds",
+    definition: "Fused joints between metal components formed by applying heat and filler material, critical for structural integrity in steel bridges and components.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+  {
     term: "WGB Transition",
     definition:
       "A guardrail transition system used to connect rigid concrete bridge railings to W-beam approach rails. This transition ensures a smooth and safe shift between the more rigid concrete barrier and the flexible W-beam rail, enhancing vehicle containment and impact absorption.",
+    search: `What is "W-Beam to Rigid Bridge Rail Transition" in bridge design?`,
     discipline: "bridge design",
     page: ["bridge-railings-pg9"],
   },
@@ -4776,6 +5375,12 @@ const glossaryAllTerms = [
     definition: "The increase in the horizontal width of a channel, typically caused by bank erosion or undercutting.",
     discipline: "bridge design",
     page: ["bridge-channel-pg8"],
+  },
+  {
+    term: "Widening",
+    definition: "The expansion of an existing roadway or bridge deck to increase capacity, improve safety, or accommodate additional lanes and traffic loads.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
   },
   {
     term: "Widespread Defects",
@@ -4802,7 +5407,8 @@ const glossaryAllTerms = [
   {
     term: "WT Transition",
     definition:
-      "A guardrail transition system designed to connect Thrie Beam bridge rail to W-Beam approach guardrail. This transition provides a smooth and safe connection between the rigid Thrie Beam barrier and the more flexible W-Beam rail, ensuring proper vehicle containment and impact resistance.",
+      "A guardrail transition system designed to connect Thrie Beam bridge rail to W-Beam approach guardrail. This transition provides a smooth and safe connection between the rigid Thrie Beam barrier and the more flexible W-Beam rail, ensuring proper vehicle containment and impact resistance. This does not transition to a concrete barrier wall.",
+    serach: `What is "Thrie Beam to W-Beam Transition" in bridge design?`,
     discipline: "bridge design",
     page: ["bridge-railings-pg9"],
   },
@@ -4811,3 +5417,22 @@ const glossaryAllTerms = [
 // "glossary-bridge-tab", "glossary-culvert-tab", "glossary-defects-tab", "glossary-wall-tab", "glossary-compounds-tab"
 // "bridge-alignment-pg5", "bridge-approach-pg7", "bridge-joints-pg9", "bridge-railings-pg9", "bridge-deck-pg11", "bridge-super-pg9"
 // "bridge-bearings-pg6", "bridge-sub-pg9", "bridge-culvert-pg6", "bridge-channel-pg8", "bridge-additional-tab"
+
+// List of needs: Welds,
+/* 
+
+Check Dam
+Compaction
+Consolidation
+Deflection
+Detention Ponds
+Field Weld
+Infiltration Systems
+Modulus of Elasticity of Steel
+Retention Ponds
+Shear
+Silt Fence
+Swales
+Wattle
+
+*/

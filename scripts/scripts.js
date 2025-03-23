@@ -261,6 +261,10 @@ function populateGlossaryAll() {
     let search3 = defect3.search || `What is "${defect3.term}" in ${defect3.discipline}?`; // Search query
     link3.classList.add("glossary-term-link");
     link3.textContent = defect3.term;
+
+    // Add the data-term attribute for search purposes
+    link3.setAttribute("data-term", defect3.term.toLowerCase()); // Add the data-term attribute here
+
     // If defect3.link exists, use it; otherwise, fall back to Google search
     link3.href = defect3.link || `https://www.google.com/search?q=${encodeURIComponent(search3)}`;
     link3.target = "_blank";
@@ -611,8 +615,6 @@ function expandTextarea(event, componentName) {
 // ::: ------------------------------ Handles the display of content for each tab based on button clicks (Page Button Clicks) ------------------------------
 function openTab(evt) {
   var button = evt.currentTarget; // The clicked button
-
-  // Extract relevant attributes from the button (target content, container class, and button class)
   var componentName = button.getAttribute("data-target");
   var containerClass = button.getAttribute("data-container-class");
   var buttonClass = button.getAttribute("data-button-class");
@@ -632,7 +634,48 @@ function openTab(evt) {
   // Show the selected tab's content and add "active" class to the clicked button
   document.getElementById(componentName).style.display = "block"; // Display the targeted container
   button.className += " active"; // Add active class to the clicked button
+
+  // Update the URL hash (only for main tab)
+  var hash = button.getAttribute("data-hash");
+  updateURLHash(hash);
 }
+
+// Update the URL hash with just the main tab hash (no nested tab hash)
+function updateURLHash(hash) {
+  if (hash) {
+    window.location.hash = hash; // Set the main tab hash
+  }
+}
+
+// Event listener for the hashchange event to handle tab changes
+window.addEventListener("hashchange", function () {
+  var hash = window.location.hash.substring(1); // Get the current hash (without the "#")
+
+  // Activate the correct tab based on the hash
+  var button = document.querySelector(`[data-hash="${hash}"]`);
+  if (button) {
+    openTab({ currentTarget: button }); // Trigger the tab click based on the hash
+  }
+});
+
+// On page load, open the tab corresponding to the current hash or default to the first tab
+window.addEventListener("load", function () {
+  var hash = window.location.hash.substring(1); // Get the current hash (without the "#")
+  if (hash) {
+    var button = document.querySelector(`[data-hash="${hash}"]`);
+    if (button) {
+      openTab({ currentTarget: button }); // Trigger the tab click based on the hash
+    }
+  } else {
+    // If no hash in URL, trigger the first button click (default tab)
+    document.querySelector(".asset-buttons.active").click();
+  }
+});
+
+// Add event listeners to the header buttons (main tabs)
+document.querySelectorAll(".asset-buttons").forEach(function (button) {
+  button.addEventListener("click", openTab); // Add click event to trigger openTab
+});
 
 // ::: ------------------------------ Button Classes (Page Button Clicks) ------------------------------
 var buttonClasses = [
@@ -1387,3 +1430,82 @@ document.querySelectorAll("[id^='user-textarea']").forEach((textarea) => {
       });
   });
 });
+
+// :::: (Glossary Search) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+document.addEventListener("DOMContentLoaded", function () {
+  let searchTerm = "";
+  let searchTimeout;
+  let specialKeyTimeout;
+  let specialKeyActive = false;
+
+  document.addEventListener("keydown", function (event) {
+    const glossaryTab = document.getElementById("glossary-tab");
+    if (!glossaryTab || glossaryTab.style.display !== "block") {
+      return;
+    }
+
+    // If Ctrl key is pressed, activate delay
+    if (event.ctrlKey) {
+      specialKeyActive = true;
+      clearTimeout(specialKeyTimeout);
+      specialKeyTimeout = setTimeout(() => {
+        specialKeyActive = false;
+      }, 1000); // 1-second delay after releasing Ctrl
+      return;
+    }
+
+    // Prevent search while special key delay is active
+    if (specialKeyActive) {
+      return;
+    }
+
+    // Ignore non-character keys
+    if (event.key.length > 1) {
+      return;
+    }
+
+    // Append the typed character to the search term
+    searchTerm += event.key.toLowerCase();
+
+    // Reset search term if no keys are pressed within 1 second
+    clearTimeout(searchTimeout);
+    searchTimeout = setTimeout(() => {
+      searchTerm = "";
+    }, 1000);
+
+    // Filter the glossary terms based on the search term
+    const matchedTerms = glossaryAllTerms.filter((termObj) => {
+      return termObj.term.toLowerCase().startsWith(searchTerm);
+    });
+
+    // Scroll to the first matched term's parent div
+    if (matchedTerms.length > 0) {
+      const firstMatch = matchedTerms[0];
+      const termElement = document.querySelector(`.glossary-term-link[data-term="${firstMatch.term.toLowerCase()}"]`);
+
+      if (termElement) {
+        const parentElement = termElement.closest(".glossary-card-header");
+        if (parentElement) {
+          parentElement.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+    }
+  });
+});
+
+// :::: (Scroll To Top) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("keydown", function (event) {
+    const mainSection = document.querySelector("main"); // Adjust selector if needed
+
+    if (event.key === "Home") {
+      mainSection.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    } else if (event.key === "End") {
+      mainSection.scrollTo({ top: mainSection.scrollHeight, left: 0, behavior: "auto" });
+    }
+  });
+});
+
+// :::: (URL Hash) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
