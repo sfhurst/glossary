@@ -142,7 +142,7 @@ document.querySelector(".search-box").addEventListener("keydown", function (even
     this.value = searchValue; // Update the search box with the padded value
   }
 
-  // Searches for the Asset in assetData
+  // Searches for the Asset in assetData and creates a deep copy
   assetObject = JSON.parse(JSON.stringify(assetData.find((item) => item["Asset Number"].toLowerCase() === searchValue)));
   resetBridgeComponentTextareas(assetObject);
 

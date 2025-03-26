@@ -1114,16 +1114,16 @@ function findAndUpdateAssetErrors() {
 
     // Extract necessary values
     let assetValues = {
-      deck: parseFloat(asset["(58) Deck:"]),
+      deck: parseFloat(asset["(B.C.01) Deck Condition Rating"]),
       inspectionFrequency: parseFloat(asset["(91) Designated Inspection Frequency:"]),
-      superstructure: parseFloat(asset["(59) Superstructure:"]),
-      substructure: parseFloat(asset["(60) Substructure:"]),
+      superstructure: parseFloat(asset["(B.C.02) Superstructure Condition Rating"]),
+      substructure: parseFloat(asset["(B.C.03) Substructure Condition Rating"]),
       scourCritical: parseFloat(asset["(113) Scour Critical Bridges:"]),
       mainDesignType: asset["(43B) Structure Type, Main: Type of Design:"],
       wearingSurfaceType: asset["(108A) Wearing Surface Protection System: Wearing Surface"],
-      wearingSurface: parseFloat(asset["(58.01) Wearing Surface:"]),
+      wearingSurface: parseFloat(asset["(B.C.01a) Wearing Surface Condition Rating"]),
       deckStructureType: asset["(107) Deck Structure Type:"],
-      underfillValue: asset["(62) Culverts:"],
+      underfillValue: asset["(B.C.04) Culvert Condition Rating"],
       membraneValue: asset["(108B) Wearing Surface Protection System: Deck Membrane"],
     };
 
@@ -1308,35 +1308,35 @@ function updateObjectRatings(numericalValue, dataCategory) {
   if (searchValue !== "") {
     if (dataCategory === "B.C.01") {
       if (assetObject) {
-        assetObject["(58) Deck:"] = numericalValue;
+        assetObject["(B.C.01) Deck Condition Rating"] = numericalValue;
         hideAllErrors();
         displaySummary(assetObject);
       }
     }
     if (dataCategory === "B.C.02") {
       if (assetObject) {
-        assetObject["(59) Superstructure:"] = numericalValue;
+        assetObject["(B.C.02) Superstructure Condition Rating"] = numericalValue;
         hideAllErrors();
         displaySummary(assetObject);
       }
     }
     if (dataCategory === "B.C.03") {
       if (assetObject) {
-        assetObject["(60) Substructure:"] = numericalValue;
+        assetObject["(B.C.03) Substructure Condition Rating"] = numericalValue;
         hideAllErrors();
         displaySummary(assetObject);
       }
     }
     if (dataCategory === "B.C.04") {
       if (assetObject) {
-        assetObject["(62) Culverts:"] = numericalValue;
+        assetObject["(B.C.04) Culvert Condition Rating"] = numericalValue;
         hideAllErrors();
         displaySummary(assetObject);
       }
     }
     if (dataCategory === "B.C.01a") {
       if (assetObject) {
-        assetObject["(58.01) Wearing Surface:"] = numericalValue;
+        assetObject["(B.C.01a) Wearing Surface Condition Rating"] = numericalValue;
         hideAllErrors();
         displaySummary(assetObject);
       }

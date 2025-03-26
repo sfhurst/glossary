@@ -1681,28 +1681,28 @@ const glossaryAllTerms = [
     definition:
       "A nonprofit organization that establishes technical standards for the design, construction, maintenance, and operation of highways and bridges in the United States. Its guidelines, including the AASHTO LRFD Bridge Design Specifications, are widely used for structural analysis, load rating, and material selection in bridge engineering.",
     discipline: "bridge design",
-    page: "glossary-additional-tab",
+    page: ["glossary-additional-tab"],
   },
   {
     term: "AASHTO LRFD Bridge Design Specifications",
     definition:
       "Establishes load and resistance factor design criteria for bridges, incorporating statistical reliability to ensure structural safety, durability, and efficiency while accounting for material properties, load variability, and resistance factors.",
     discipline: "bridge design",
-    page: "glossary-additional-tab",
+    page: ["glossary-additional-tab"],
   },
   {
     term: "AASHTO Manual for Bridge Element Inspection (MBEI)",
     definition:
       "Standardizes bridge inspection practices by defining element-level condition assessment, rating guidelines, and documentation methods to ensure consistent data collection for maintenance, repair, and asset management decisions.",
     discipline: "bridge design",
-    page: "glossary-additional-tab",
+    page: ["glossary-additional-tab"],
   },
   {
     term: "AASHTO Manual for Bridge Evaluation (MBE)",
     definition:
       "Provides guidance for load rating, condition assessment, and structural evaluation of existing bridges, incorporating inspection data, material properties, and load models to determine capacity, safety, and serviceability.",
     discipline: "bridge design",
-    page: "glossary-additional-tab",
+    page: ["glossary-additional-tab"],
   },
   {
     term: "Abrasion",
@@ -1756,19 +1756,11 @@ const glossaryAllTerms = [
     page: ["glossary-additional-tab"],
   },
   {
-    term: "Anchor",
-    definition:
-      "A tendon, tendon bundle, rod, or bar element that is installed into the ground through the wall and anchored into stable material well behind potentially unstable soil, then tensioned and attached to the wall to provide additional resistance to earth pressures. Anchors are also referred to as Tie-Backs or Ground Anchors.",
-    search: `What is "Anchor" in retaining wall design?`,
-    discipline: "retaining wall design",
-    page: ["glossary-wall-tab"],
-  },
-  {
     term: "ANSI (American National Standards Institute)",
     definition:
       "A private, nonprofit organization that oversees the development of voluntary consensus standards for a wide range of industries, including construction and engineering. It coordinates with international bodies to ensure compatibility between U.S. and global standards, covering materials, testing procedures, and safety regulations used in bridge design and fabrication.",
     discipline: "bridge design",
-    page: "glossary-additional-tab",
+    page: ["glossary-additional-tab"],
   },
   {
     term: "Approach Roadway Alignment",
@@ -1855,7 +1847,7 @@ const glossaryAllTerms = [
     definition:
       "An international organization that develops and publishes technical standards for materials, products, systems, and services used in infrastructure projects. Its specifications define the physical and mechanical properties of materials such as steel, concrete, and coatings, ensuring quality control and performance consistency in bridge construction.",
     discipline: "bridge design",
-    page: "glossary-additional-tab",
+    page: ["glossary-additional-tab"],
   },
   {
     term: "ASTM Structural Steels",
@@ -2868,7 +2860,7 @@ const glossaryAllTerms = [
     definition:
       "A division of the U.S. Department of Transportation responsible for regulating and funding national highway programs. It establishes policies, safety standards, and research initiatives that influence bridge design, inspection, and rehabilitation, ensuring structural integrity and long-term performance of transportation infrastructure.",
     discipline: "bridge design",
-    page: "glossary-additional-tab",
+    page: ["glossary-additional-tab"],
   },
   {
     term: "Field Weld",
@@ -3846,7 +3838,7 @@ const glossaryAllTerms = [
     definition:
       "A federal agency that sets and enforces workplace safety standards, including regulations specific to construction, maintenance, and inspection of bridges. It mandates fall protection, confined space entry protocols, and other safety measures to protect workers from hazards commonly encountered on bridge projects.",
     discipline: "bridge design",
-    page: "glossary-additional-tab",
+    page: ["glossary-additional-tab"],
   },
   {
     term: "Out-To-Out Coping",
@@ -4465,7 +4457,7 @@ const glossaryAllTerms = [
     definition:
       "A water flow that carries a significant amount of suspended particles such as sand, silt, and clay. These particles can erode materials like concrete or steel, affecting the stability of bridge foundations and structures, especially during high-flow events.",
     discipline: "channel design",
-    page: "glossary-additional-tab",
+    page: ["glossary-additional-tab"],
   },
   {
     term: "Semi-Integral Abutment",
@@ -5047,6 +5039,14 @@ const glossaryAllTerms = [
     page: ["glossary-additional-tab"],
   },
   {
+    term: "Tieback Anchor",
+    definition:
+      "A structural element used in retaining walls, consisting of a high-strength tendon grouted into a drilled hole and anchored in stable soil. The tendon is then tensioned and connected to the wall to resist lateral earth pressures, preventing movement and enhancing stability.",
+    search: `What is "Anchor" in retaining wall design?`,
+    discipline: "retaining wall design",
+    page: ["glossary-wall-tab"],
+  },
+  {
     term: "Tining",
     definition:
       "The process of creating a textured surface on concrete using specialized equipment, often in the form of tines or brushes. Tining is applied to bridge decks to provide better skid resistance and traction, especially in wet or icy conditions. It helps improve safety by reducing the likelihood of vehicles skidding on the bridge surface.",
@@ -5423,18 +5423,28 @@ const glossaryAllTerms = [
 // List of needs: Welds,
 /* 
 
-Check Dam
-Compaction
-Consolidation
-Deflection
-Detention Ponds
-Field Weld
-Infiltration Systems
-Modulus of Elasticity of Steel
-Retention Ponds
-Shear
-Silt Fence
-Swales
-Wattle
+Cliff Swallows
+Brown Bats
+Barn Swallows
+In-Service Inspection
+Friable Material
+Asbestos
+Epoxy Overlay
+Vertical Member
+Diagonal Member
+Floorbeam
+Monolithic
+Thermal Expansion
+Adjacent
+Drone
+Acoustic NDT
+Parallel
+Perpendicular
+Parallel
+Tangent Line
+Normal Line
+Flexure
+Flexure Cracking
+Tack Weld
 
 */
