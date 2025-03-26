@@ -1751,8 +1751,7 @@ const glossaryAllTerms = [
   },
   {
     term: "Adjacent",
-    definition:
-      "Describes structural components, roadways, or features positioned near each other. In bridge design, proximity influences load distribution, potential interactions, and construction constraints that impact long-term performance and maintenance considerations.",
+    definition: "Refers to objects or elements that are next to or bordering one another, often used to describe one roadway or bridge components position relative to another.",
     discipline: "bridge design",
     page: "glossary-additional-tab",
   },
@@ -1845,7 +1844,7 @@ const glossaryAllTerms = [
   {
     term: "Asbestos",
     definition:
-      "A fibrous silicate mineral once used for fire resistance and insulation in construction materials. Its airborne fibers pose severe health hazards, requiring strict containment, removal, and disposal regulations when encountered during bridge rehabilitation or demolition.",
+      "A naturally occurring fibrous mineral used in construction materials for insulation and fireproofing. Its airborne fibers pose severe health hazards, requiring strict containment, removal, and disposal regulations when encountered during bridge rehabilitation or demolition.",
     discipline: "bridge design",
     page: "glossary-additional-tab",
   },
@@ -3020,8 +3019,7 @@ const glossaryAllTerms = [
   },
   {
     term: "Friable Material",
-    definition:
-      "A substance that crumbles, breaks, or reduces to powder under hand pressure, posing risks of airborne contamination. In bridge work, friable asbestos-containing materials require special handling and abatement procedures to protect worker safety and environmental health.",
+    definition: "A material that is easily crumbled or broken, especially when dry, often referring to substances like asbestos that pose health risks when disturbed.",
     discipline: "bridge design",
     page: "glossary-additional-tab",
   },
@@ -3769,7 +3767,7 @@ const glossaryAllTerms = [
   {
     term: "Monolithic",
     definition:
-      "Describes a structure or component formed as a single, continuous mass without joints or separations. In bridge construction, monolithic elements improve durability and reduce weak points where deterioration or movement could occur.",
+      "Describes a structure or component formed as a single, continuous mass without joints or separations. Monolithic elements improve durability and reduce weak points where deterioration or movement could occur.",
     discipline: "bridge design",
     page: "glossary-additional-tab",
   },
@@ -3876,8 +3874,7 @@ const glossaryAllTerms = [
   },
   {
     term: "Normal Line",
-    definition:
-      "A straight line perpendicular to a surface or plane at a given point. In bridge design, it is used in geometric layout, stress analysis, and alignment considerations to ensure proper orientation of structural elements.",
+    definition: "A line that is perpendicular to a surface at a given point, often used in geometry or structural analysis for defining angles and forces.",
     discipline: "bridge design",
     page: "glossary-additional-tab",
   },
@@ -3986,7 +3983,7 @@ const glossaryAllTerms = [
   {
     term: "Parallel",
     definition:
-      "Describes two or more lines, surfaces, or structural members that maintain a constant distance apart without intersecting. In bridge layout, parallel alignment is critical for uniform load distribution and efficient design of multi-span structures.",
+      "Describes two or more lines, surfaces, or structural members that maintain a constant distance apart without intersecting. Parallel alignment is critical for uniform load distribution and efficient design of multi-span structures.",
     discipline: "bridge design",
     page: "glossary-additional-tab",
   },
@@ -4014,7 +4011,7 @@ const glossaryAllTerms = [
   {
     term: "Perpendicular",
     definition:
-      "Describes the relationship between two intersecting elements forming a 90-degree angle. In bridge design, perpendicular connections ensure proper force transfer, stability, and alignment of components such as piers, beams, and deck joints.",
+      "Describes the relationship between two intersecting elements forming a 90-degree angle. Perpendicular connections ensure proper force transfer, stability, and alignment of components such as piers, beams, and deck joints.",
     discipline: "bridge design",
     page: "glossary-additional-tab",
   },
@@ -5079,14 +5076,14 @@ const glossaryAllTerms = [
   {
     term: "Tack Weld",
     definition:
-      "A small, temporary weld used to hold metal components in place before final welding. In bridge fabrication, tack welds ensure proper alignment and positioning, preventing distortion or movement during the full welding process.",
+      "A small, temporary weld used to hold parts together before the final weld, often for alignment or positioning. Tack welds may act as sites for crack initiation and influence fatigue performance.",
     discipline: "bridge design",
     page: "glossary-additional-tab",
   },
   {
     term: "Tangent Line",
     definition:
-      "A straight line that touches a curve at a single point without crossing it. In bridge geometry, tangent lines define alignment transitions, guiding roadway curvature and structural layout for smooth vehicular movement.",
+      "A straight line that touches a curve at a single point without crossing it. Tangent lines define alignment transitions, guiding roadway curvature and structural layout for smooth vehicular movement.",
     discipline: "bridge design",
     page: "glossary-additional-tab",
   },
@@ -5150,8 +5147,7 @@ const glossaryAllTerms = [
   },
   {
     term: "Thermal Expansion",
-    definition:
-      "The tendency of materials to expand or contract with temperature changes. In bridge design, expansion joints and flexible connections accommodate movement caused by thermal variations, preventing stress buildup and structural damage.",
+    definition: "The increase in the size of a material when it is heated, which can affect the performance of structures by causing movement or distortion.",
     discipline: "bridge design",
     page: "glossary-additional-tab",
   },
@@ -5421,7 +5417,7 @@ const glossaryAllTerms = [
   {
     term: "Vertical Member",
     definition:
-      "A structural component oriented upright to carry axial or bending loads. In bridges, vertical members in trusses, columns, and supports help transfer forces between horizontal elements and foundations.",
+      "A structural component oriented upright to carry axial or bending loads. Vertical members in trusses, columns, and supports help transfer forces between horizontal elements and foundations.",
     discipline: "bridge design",
     page: "glossary-additional-tab",
   },
@@ -5569,27 +5565,13 @@ const glossaryAllTerms = [
 // List of needs: Welds,
 /* 
 
-Acoustic Emission Testing
-Adjacent
-Asbestos
-Barn Swallows
-Brown Bats
-Cliff Swallows
-Diagonal Member
-Epoxy Overlay
-Flexure
-Flexure Cracking
-Floorbeam
-Friable Material
-In-Service Bridge
-Monolithic
-Normal Line
-Parallel
-Perpendicular
-Tack Weld
-Tangent Line
-Thermal Expansion
-Vertical Member
+Add fatigue categories to the definitions of things like eyebars, transverse stiffeners, longitudinal stiffeners, bare metal, plug welds, rivets, bolts, butt welds etc
+Add nstm comments to diagonal members, vertical members, gusset plates, floorbeams, stringers (stringers are not typically nstms but or often connected to nstms), Cables, Tie Girders
+
+Bare Metal
+Bolts
+Gusset Plate
+Rivets
 
 Drone
 
