@@ -893,7 +893,7 @@ function resetBridgeComponentTextareas(assetObject) {
     }
 
     if (["1", "01", 1].includes(assetValues.mainDesignType)) {
-      updateComponentText("B.C.02", "The superstructure is a deck/slab. See the deck comments. ");
+      updateComponentText("B.C.02", "The superstructure is a reinforced concrete slab. See the deck comments. ");
     }
 
     // Check and update for B.AP.11 (Scour Critical)

@@ -1083,6 +1083,7 @@ const bridgeComponents = [
                 <p>The deck and superstructure condition ratings are the same for slab bridges.</p>`,
     example_comments: [
       "There are no deficiencies to report.",
+      "Strength and performance are not affected.",
       "The top of the deck is covered by an epoxy overlay.",
       "No deficiencies are showing through the overlay.",
       "The deck underside is concealed by stay-in-place forms and the copings are protected from runoff by concrete barrier walls.",
@@ -1247,7 +1248,8 @@ const bridgeComponents = [
                 </p>`,
     example_comments: [
       "There are no deficiencies to report.",
-      "The superstructure is a deck/slab. See the deck comments.",
+      "The superstructure is a reinforced concrete slab. See the deck comments.",
+      "Strength and performance are not affected.",
 
       "The steel beams are painted, with no defects in the protective coating.",
       "There are some areas of minor pitting in the lower flanges, but no active corrosion. ",
@@ -1433,6 +1435,7 @@ const bridgeComponents = [
                 <p>At stages of advanced deterioration, consider any section loss in the painted material.</p>`,
     example_comments: [
       "The steel beams of the superstructure have a protective coating.",
+      "There are some areas where surface corrosion has initiated.",
       "The piles are painted.",
       "There is minor chalking and surface dulling throughout.",
       "There are some areas of light rust and minor peeling.",
@@ -1651,6 +1654,7 @@ const bridgeComponents = [
                 </p>`,
     example_comments: [
       "There are no deficiencies to report.",
+      "Strength and performance are not affected.",
       "There is minor staining on the interior piers and in the abutment backwalls.",
       "There is light abrasion in the interior piers.",
       "There are isolated minor-width vertical cracks in the interior piers and in the abutment backwalls.",
@@ -1902,6 +1906,7 @@ const bridgeComponents = [
                 </p>`,
     example_comments: [
       "There are no deficiencies to report.",
+      "Strength and performance are not affected.",
       "There is minor leaking between the segments.",
       "There are minor deformations to the pipe shape.",
       "There is minor corrosion in the flow line.",
