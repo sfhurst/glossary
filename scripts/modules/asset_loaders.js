@@ -257,50 +257,7 @@ function displaySummary(assetObject) {
     // Call the expandTextarea function manually to change the size of the textarea to fit the content
     expandTextarea({ target: contentContainer }, "summary-textarea"); // No return needed
     expandTextarea({ target: contentContainer }, "submittal-textarea"); // No return needed
-
-    // Add click event listener to copy summary text to clipboard
-    contentContainer.ondblclick = function (event) {
-      // Create a temporary element to extract text without HTML tags
-      const tempElement = document.createElement("div");
-      tempElement.innerHTML = generalNotes;
-
-      // Create a "Copied" message element
-      const copiedMessage = document.createElement("div");
-      copiedMessage.textContent = "Copied";
-
-      // Style the "Copied" message
-      copiedMessage.style.position = "fixed"; // Use fixed positioning
-      copiedMessage.style.top = "15px"; // Position it a bit below the top
-      copiedMessage.style.left = "50%"; // Center horizontally
-      copiedMessage.style.transform = "translateX(-50%)"; // Adjust for perfect centering
-
-      copiedMessage.style.backgroundColor = "rgba(67 84 167 / 0.9)";
-      copiedMessage.style.color = "#fff";
-      copiedMessage.style.padding = "5px 5px";
-      copiedMessage.style.borderRadius = "4px";
-      copiedMessage.style.fontSize = "14px";
-      copiedMessage.style.zIndex = "9999"; // Ensure it's above other content
-
-      document.body.appendChild(copiedMessage);
-
-      // Remove the "Copied" message after 2 seconds
-      setTimeout(() => {
-        copiedMessage.remove();
-      }, 850);
-
-      copySummaryTextareaContent();
-    };
   }
-}
-
-// ::: ---------------------------- copySummaryTextareaContent() ----------------------------
-
-// Copy the summary to the clipboard when it is clicked
-function copySummaryTextareaContent() {
-  let textarea = document.getElementById("summary-textarea");
-
-  // Copy to clipboard
-  navigator.clipboard.writeText(textarea.value);
 }
 
 // ::: ---------------------------- generateSummary() ----------------------------
@@ -411,7 +368,8 @@ function generateSummary(assetObject) {
 
   const elementSubmittalResponse = assetValues.highwaySystem === 1 ? "Element, " : "Not element, ";
   const scourCriticalSubmittalResponse = scourTypesSubmittal[assetValues.scourVulnerability] || "not over water, ";
-  const scourVulnerabilitySubmittalResponse = scourCriticalSubmittalResponse !== "not over water, " ? "Please update the scour vulnerability rating." : "";
+  const scourVulnerabilitySubmittalResponse =
+    scourCriticalSubmittalResponse !== "not over water, " ? "Please update the scour vulnerability rating." : "";
   const postedSubmittalResponse = assetValues.postedValue === "A" ? "not posted" : "posted";
 
   let formattedSubmittalMaintenanceComments = maintenanceArray
@@ -464,7 +422,10 @@ function populateTextareas(assetObject) {
     tempDate.setMonth(tempDate.getMonth() + assetValues.inspectionFrequency);
     tempDate.setMonth(tempDate.getMonth() + 1);
     tempDate.setDate(0);
-    formattedInspectionDueDate = `${(tempDate.getMonth() + 1).toString().padStart(2, "0")}/${tempDate.getDate().toString().padStart(2, "0")}/${tempDate.getFullYear()}`;
+    formattedInspectionDueDate = `${(tempDate.getMonth() + 1).toString().padStart(2, "0")}/${tempDate
+      .getDate()
+      .toString()
+      .padStart(2, "0")}/${tempDate.getFullYear()}`;
     inspectionDueDate = formattedInspectionDueDate;
   }
 
@@ -473,7 +434,10 @@ function populateTextareas(assetObject) {
     tempNSTMDate.setMonth(tempNSTMDate.getMonth() + assetValues.nstmInspFrequency);
     tempNSTMDate.setMonth(tempNSTMDate.getMonth() + 1);
     tempNSTMDate.setDate(0);
-    formattedNSTMDueDate = `${(tempNSTMDate.getMonth() + 1).toString().padStart(2, "0")}/${tempNSTMDate.getDate().toString().padStart(2, "0")}/${tempNSTMDate.getFullYear()}`;
+    formattedNSTMDueDate = `${(tempNSTMDate.getMonth() + 1).toString().padStart(2, "0")}/${tempNSTMDate
+      .getDate()
+      .toString()
+      .padStart(2, "0")}/${tempNSTMDate.getFullYear()}`;
     nstmDueDate = formattedNSTMDueDate;
   }
 
@@ -667,7 +631,9 @@ function extractAssetDetails(assetObject) {
     wearingSurface: assetObject["(B.C.01a) Wearing Surface Condition Rating"],
     bridgeBearings: assetObject["(B.C.07) Bridge Bearings Condition Rating"]?.trim() ? assetObject["(B.C.07) Bridge Bearings Condition Rating"] : "N",
     bridgePaint: assetObject["(B.C.02a) Paint Condition Rating"]?.trim() ? assetObject["(B.C.02a) Paint Condition Rating"] : "N",
-    concreteSlopewall: assetObject["(B.C.03a) Concrete Slopewall Condition Rating"]?.trim() ? assetObject["(B.C.03a) Concrete Slopewall Condition Rating"] : "N",
+    concreteSlopewall: assetObject["(B.C.03a) Concrete Slopewall Condition Rating"]?.trim()
+      ? assetObject["(B.C.03a) Concrete Slopewall Condition Rating"]
+      : "N",
 
     // Appraisal
     approachRoadwayAlignment: assetObject["(72) Approach Roadway Alignment:"],
@@ -757,9 +723,13 @@ function lowestValueDetermination(assetObject) {
 function resetBridgeComponentTextareas(assetObject) {
   const assetValues = extractAssetDetails(assetObject); // Get new asset data
   let wearingSurfaceMonolithic = "";
-  // Reset all textareas and spans first
+  // Reset all textareas and spans first and buttons
   document.querySelectorAll(".reset-comments").forEach((textarea) => {
     textarea.value = "";
+  });
+
+  document.querySelectorAll(".rating-button").forEach((textarea) => {
+    textarea.textContent = "N";
   });
 
   document.querySelectorAll(".textarea-content-here").forEach((span) => {
@@ -924,22 +894,36 @@ function resetReviewPageNumericalValues() {
 // Helper function to update the text content of both textarea and span
 function updateComponentText(dataCategory, text, numericalValue = null) {
   const textarea = document.querySelector(`textarea[data-category="${dataCategory}"]`);
+  let newStr = dataCategory.replace(/\./g, ""); // Replaces all periods with an empty string
   if (textarea) textarea.value = text;
+  const textareaReview = document.getElementById(`${newStr}-textarea-review`);
+  if (textareaReview) textareaReview.value = text;
 
   const span = document.querySelector(`.content-container-rating-lines[data-category="${dataCategory}"] .textarea-content-here`);
   if (span) span.textContent = text;
 
   if (numericalValue !== null) {
     // Update the numerical value in the review ratings tab
-    const reviewNumericalSpan = document.querySelector(`#review-ratings-tab .content-container-rating-lines[data-category="${dataCategory}"] .content-container-rating-numerical`);
+    const reviewNumericalSpan = document.querySelector(
+      `#review-ratings-tab .content-container-rating-lines[data-category="${dataCategory}"] .content-container-rating-numerical`
+    );
     if (reviewNumericalSpan) reviewNumericalSpan.textContent = numericalValue;
+    const buttonNumerical = document.getElementById(`${newStr}-button-review`);
+    if (buttonNumerical) {
+      buttonNumerical.textContent = numericalValue;
+      const colorVar = `--rating-${numericalValue}`;
+      const color = getComputedStyle(document.documentElement).getPropertyValue(colorVar);
+      buttonNumerical.style.backgroundColor = color.trim();
+    }
   }
 }
 
 // Helper function to highlight the row based on the dataCategory and value in assetValues
 function highlightRowIfMatches(dataCategory, value) {
   // Find all rows with the specific data-category (e.g., B.AP.01), but exclude rows inside the review page container
-  const rows = document.querySelectorAll(`.content-container-rating-lines[data-category="${dataCategory}"]:not(#review-ratings-tab .content-container-rating-lines)`);
+  const rows = document.querySelectorAll(
+    `.content-container-rating-lines[data-category="${dataCategory}"]:not(#review-ratings-tab .content-container-rating-lines)`
+  );
 
   rows.forEach((row) => {
     const numericalValueSpan = row.querySelector(".content-container-rating-numerical");
@@ -1118,7 +1102,9 @@ function inspectionTypeResponseFunction(assetValues) {
 // Membrane | Generate the membrane description if certain conditions are met (e.g., wearing surface and deck type)
 function membraneResponseFunction(assetValues) {
   const membraneResponse =
-    assetValues.underfillValue === "N" && (assetValues.deckStructureType === "1" || assetValues.deckStructureType === "2") && assetValues.wearingSurfaceType === "6"
+    assetValues.underfillValue === "N" &&
+    (assetValues.deckStructureType === "1" || assetValues.deckStructureType === "2") &&
+    assetValues.wearingSurfaceType === "6"
       ? ["0", "8", "N"].includes(assetValues.membraneValue)
         ? "There is not an agency-approved protective membrane between the concrete deck and the bituminous wearing surface. As a result, the wearing surface rating must be a 4, as outlined in Part 7 of INDOT's 2020 Bridge Inspection Manual."
         : "There is an agency-approved protective membrane between the concrete deck and the bituminous wearing surface."
@@ -1143,7 +1129,10 @@ function lowestRatingResponseFunction(lowestValue) {
     9: "(excellent condition). There are no deficiencies to report.",
   };
   const conditionDescriptionResponse = conditionDescriptions[lowestValue] || "";
-  const lowestRatingResponse = `The lowest condition rating (B.C.13) for the bridge is a ${lowestValue} ${conditionDescriptionResponse}`.replace("a 8", "an 8");
+  const lowestRatingResponse = `The lowest condition rating (B.C.13) for the bridge is a ${lowestValue} ${conditionDescriptionResponse}`.replace(
+    "a 8",
+    "an 8"
+  );
 
   return lowestRatingResponse;
 }

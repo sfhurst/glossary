@@ -1,6 +1,10 @@
 const dataDate = "03/21/2025"; // Date iTAMS data was output
-document.querySelector("#asset-updated").textContent = `These are populated when an asset number is searched. The asset data was last updated on ${dataDate}.`;
-document.querySelector("#user-local-storage").textContent = `User information is saved in the browser's local storage by completing the fields. Clear the browser cache to remove.`;
+document.querySelector(
+  "#asset-updated"
+).textContent = `These are populated when an asset number is searched. The asset data was last updated on ${dataDate}.`;
+document.querySelector(
+  "#user-local-storage"
+).textContent = `User information is saved in the browser's local storage by completing the fields. Clear the browser cache to remove.`;
 
 // Table of Contents
 // :::: (HTML Injection)
@@ -430,6 +434,7 @@ function updateExampleComments() {
 
 document.addEventListener("DOMContentLoaded", updateExampleComments);
 
+// test working
 // ::: ------------------------------ Populate review div based on textarea comment (Text Content Insertion)  ------------------------------
 function handleTextareaChange(event) {
   const textarea = event.target; // Get the changed textarea element
@@ -454,6 +459,27 @@ function handleTextareaChange(event) {
     }
   } else {
     console.log("No matching div found for data-category:", dataCategory);
+  }
+
+  // Check if the changed textarea is from the "review" ID structure
+  const isReviewTextarea = textarea.id.includes("-review");
+
+  // Update the corresponding textarea without causing an endless loop
+  if (isReviewTextarea) {
+    const matchingTextareas = document.querySelectorAll(`[id^="${textarea.id.split("-")[0]}-textarea"]`);
+    matchingTextareas.forEach((matchingTextarea) => {
+      if (matchingTextarea !== textarea) {
+        matchingTextarea.value = textareaContents;
+      }
+    });
+  } else {
+    // Update the corresponding review textarea without causing an endless loop
+    const matchingReviewTextareas = document.querySelectorAll(`[id^="${textarea.id.split("-")[0]}-textarea-review"]`);
+    matchingReviewTextareas.forEach((matchingReviewTextarea) => {
+      if (matchingReviewTextarea !== textarea) {
+        matchingReviewTextarea.value = textareaContents;
+      }
+    });
   }
 }
 
@@ -486,29 +512,8 @@ function copyToClipboard(evt) {
   navigator.clipboard
     .writeText(textToCopy + " ")
     .then(() => {
-      // Create a "Copied" message element
-      const copiedMessage = document.createElement("div");
-      copiedMessage.textContent = "Copied";
-
-      // Style the "Copied" message
-      copiedMessage.style.position = "fixed"; // Use fixed positioning
-      copiedMessage.style.top = "15px"; // Position it a bit below the top
-      copiedMessage.style.left = "50%"; // Center horizontally
-      copiedMessage.style.transform = "translateX(-50%)"; // Adjust for perfect centering
-
-      copiedMessage.style.backgroundColor = "rgba(67 84 167 / 0.9)";
-      copiedMessage.style.color = "#fff";
-      copiedMessage.style.padding = "5px 5px";
-      copiedMessage.style.borderRadius = "4px";
-      copiedMessage.style.fontSize = "14px";
-      copiedMessage.style.zIndex = "9999"; // Ensure it's above other content
-
-      document.body.appendChild(copiedMessage);
-
-      // Remove the "Copied" message after 850ms
-      setTimeout(() => {
-        copiedMessage.remove();
-      }, 850);
+      storeClipboardData(textToCopy + " "); // Store the copied text into clipboard history
+      showCopiedMessage(); // Show the "Copied" message
     })
     .catch((err) => console.error("Error copying text:", err)); // Error handling
 }
@@ -526,8 +531,9 @@ function copyTextarea(evt) {
   // Use the Clipboard API to copy the content to the clipboard
   navigator.clipboard
     .writeText(textToCopy) // Copy the textarea content
-    .then(function () {
-      // console.log("Copied to clipboard: " + textToCopy); // Log success (optional)
+    .then(() => {
+      storeClipboardData(textToCopy); // Store the copied text into clipboard history
+      showCopiedMessage(); // Show the "Copied" message
     })
     .catch(function (err) {
       console.error("Error copying text: ", err); // Log any errors that occur
@@ -559,40 +565,14 @@ document.querySelectorAll(".content-container-rating-condition-bubble").forEach(
   span.addEventListener("click", copyDataCategory);
 });
 
-// ::: ------------------------------ Review: Copy clciked comment for searching later (Copy To Clipboard) ------------------------------
+// ::: ------------------------------ Review: Copy clciked comment for transfering (Copy To Clipboard) ------------------------------
 function copyContent(event) {
   const content = event.target.textContent.trim(); // Get text inside <span class="textarea-content-here">
   if (content) {
-    navigator.clipboard
-      .writeText(content)
-      .then(() => {
-        // Create a "Copied" message element
-        const copiedMessage = document.createElement("div");
-        copiedMessage.textContent = "Copied";
-
-        // Style the "Copied" message
-        copiedMessage.style.position = "fixed"; // Use fixed positioning
-        copiedMessage.style.top = "15px"; // Position it a bit below the top
-        copiedMessage.style.left = "50%"; // Center horizontally
-        copiedMessage.style.transform = "translateX(-50%)"; // Adjust for perfect centering
-
-        copiedMessage.style.backgroundColor = "rgba(67 84 167 / 0.9)";
-        copiedMessage.style.color = "#fff";
-        copiedMessage.style.padding = "5px 5px";
-        copiedMessage.style.borderRadius = "4px";
-        copiedMessage.style.fontSize = "14px";
-        copiedMessage.style.zIndex = "9999"; // Ensure it's above other content
-
-        document.body.appendChild(copiedMessage);
-
-        // Remove the "Copied" message after 850ms
-        setTimeout(() => {
-          copiedMessage.remove();
-        }, 850);
-      })
-      .catch((err) => {
-        console.error("Error copying content:", err);
-      });
+    navigator.clipboard.writeText(content).then(() => {
+      storeClipboardData(content); // Store the copied text into clipboard history
+      showCopiedMessage(); // Show the "Copied" message
+    });
   }
 }
 
@@ -605,9 +585,27 @@ document.querySelectorAll(".textarea-content-here").forEach((span) => {
 
 // ::: ------------------------------ Expand the textareas when pasted or typed in (Textarea Expansion) ------------------------------
 function expandTextarea(event, componentName) {
-  // Declare variables
-  var elem = document.getElementById(componentName); // Get the targeted textarea element
-  elem.parentNode.dataset.replicatedValue = elem.value; // Update the parent element's value with the textarea content
+  // Extract the unique part of the component name (e.g., BC01 from BC01-textarea)
+  const baseId = componentName.split("-")[0];
+
+  // Create the IDs for both textarea and review textarea
+  const textareaId = `${baseId}-textarea`;
+  const reviewTextareaId = `${baseId}-textarea-review`;
+
+  // Use requestAnimationFrame to sync the update
+  requestAnimationFrame(() => {
+    // Get the elements for both textareas (if they exist)
+    const textareaElem = document.getElementById(textareaId);
+    const reviewTextareaElem = document.getElementById(reviewTextareaId);
+
+    // Check if the textarea elements exist and update their replicated values
+    if (textareaElem) {
+      textareaElem.parentNode.dataset.replicatedValue = textareaElem.value;
+    }
+    if (reviewTextareaElem) {
+      reviewTextareaElem.parentNode.dataset.replicatedValue = reviewTextareaElem.value;
+    }
+  });
 }
 
 // :::: (Page Button Clicks) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -729,15 +727,20 @@ function handleTabClick(event) {
 
     // If "review-ratings-tab" is clicked, clear the asset-updated message
     if (target === "review-ratings-tab") {
-      document.getElementById("asset-updated").textContent = "The ratings and comments are generated by actions on the corresponding component pages.";
+      document.getElementById("asset-updated").textContent =
+        "The ratings and comments are generated by actions on the corresponding component pages.";
     }
     // If "review-ratings-tab" is clicked, clear the asset-updated message
     if (target === "review-summary-tab") {
-      document.getElementById("asset-updated").textContent = `The summary is built automatically when an asset number is searched. The asset data was last updated on ${dataDate}.`;
+      document.getElementById(
+        "asset-updated"
+      ).textContent = `The summary is built automatically when an asset number is searched. The asset data was last updated on ${dataDate}.`;
     }
     // If "review-ratings-tab" is clicked, clear the asset-updated message
     if (target === "review-data-tab") {
-      document.getElementById("asset-updated").textContent = `These are populated when an asset number is searched. The asset data was last updated on ${dataDate}.`;
+      document.getElementById(
+        "asset-updated"
+      ).textContent = `These are populated when an asset number is searched. The asset data was last updated on ${dataDate}.`;
     }
 
     if (target === "settings-user-tab") {
@@ -810,6 +813,12 @@ function handleHighlight(event) {
         span.textContent = ""; // Reset the numerical value to an empty string
       }
     }
+
+    // Reset the numerical value on the corresponding review button
+    const reviewButton = document.getElementById(`${dataCategory}-button-review`);
+    if (reviewButton) {
+      reviewButton.textContent = "N"; // Reset button text or whatever default text you prefer
+    }
   } else {
     // Remove the highlight from all items in this container
     items.forEach((item) => {
@@ -843,6 +852,17 @@ function handleHighlight(event) {
       }
     } else {
       console.log("No matching data-category found in #bridge-review-tab.");
+    }
+
+    // Update the corresponding review button with the numerical value
+    let newStr = dataCategory.replace(/\./g, ""); // Replaces all periods with an empty string
+    const reviewButton = document.getElementById(`${newStr}-button-review`);
+    if (reviewButton) {
+      reviewButton.textContent = numericalValue; // Update button text with the numerical value
+
+      const colorVar = `--rating-${numericalValue}`;
+      const color = getComputedStyle(document.documentElement).getPropertyValue(colorVar);
+      reviewButton.style.backgroundColor = color.trim();
     }
   }
 }
@@ -1288,7 +1308,10 @@ document.querySelector("#error-super button").addEventListener("click", function
 });
 
 document.querySelector("#error-deck button").addEventListener("click", function () {
-  showErrorPopup(this, "Monolithic Error: When the deck or wearing surface rating is below 6, they must match; otherwise, the wearing surface rating can be one less.");
+  showErrorPopup(
+    this,
+    "Monolithic Error: When the deck or wearing surface rating is below 6, they must match; otherwise, the wearing surface rating can be one less."
+  );
 });
 
 document.querySelector("#error-sub button").addEventListener("click", function () {
@@ -1296,7 +1319,10 @@ document.querySelector("#error-sub button").addEventListener("click", function (
 });
 
 document.querySelector("#error-wearing button").addEventListener("click", function () {
-  showErrorPopup(this, "Membrane Error: When there is no membrane between a concrete deck and a bituminous wearing surface, the wearing surface rating must be below 5.");
+  showErrorPopup(
+    this,
+    "Membrane Error: When there is no membrane between a concrete deck and a bituminous wearing surface, the wearing surface rating must be below 5."
+  );
 });
 
 document.querySelector("#asset-error-button").addEventListener("click", function () {
@@ -1422,12 +1448,10 @@ document.getElementById("user-textarea-name").addEventListener("keydown", functi
 // Handle double-click to copy text from textareas to clipboard
 document.querySelectorAll("[id^='user-textarea']").forEach((textarea) => {
   textarea.addEventListener("dblclick", function () {
-    navigator.clipboard
-      .writeText(this.value)
-      .then(() => {})
-      .catch((err) => {
-        console.error("Error copying text:", err);
-      });
+    navigator.clipboard.writeText(this.value).then(() => {
+      storeClipboardData(this.value); // Store the copied text into clipboard history
+      showCopiedMessage(); // Show the "Copied" message
+    });
   });
 });
 
@@ -1508,4 +1532,511 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// :::: (URL Hash) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// :::: (Review Navigate) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+document.querySelectorAll(".paragraph-navigate").forEach((paragraph) => {
+  paragraph.addEventListener("click", () => {
+    const target = paragraph.dataset.navigate;
+    const button = document.querySelector(`button[data-navigate="${target}"]`);
+    if (button) button.click();
+  });
+});
+
+// :::: (Review DblClick) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Handle double-click to copy text from textareas with id = something-textarea-review to clipboard
+document.querySelectorAll("[id$='-textarea-review']").forEach((textarea) => {
+  textarea.addEventListener("dblclick", function () {
+    navigator.clipboard
+      .writeText(this.value)
+      .then(() => {
+        storeClipboardData(this.value); // Store the copied text into clipboard history
+        showCopiedMessage(); // Show the "Copied" message
+      })
+      .catch((err) => {
+        console.error("Error copying text:", err);
+      });
+  });
+});
+
+// :::: (Clipboard History) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Ctrl+Shift+Z
+
+// Array to store clipboard history
+let clipboardHistory = [];
+let redoHistory = []; // To store redo actions
+
+// Limit to how many clipboard items to keep (optional)
+const maxHistory = 10;
+
+// Function to handle storing clipboard data
+function storeClipboardData(data) {
+  if (clipboardHistory.length >= maxHistory) {
+    clipboardHistory.shift(); // Remove the oldest entry if the array exceeds maxHistory
+  }
+  clipboardHistory.push(data);
+  // Clear redo history when new copy is made
+  redoHistory = [];
+}
+
+// Function to show a custom "Copied" message
+function showCopiedMessage() {
+  // Remove any existing message before showing a new one
+  const existingCopiedMessage = document.querySelector(".copied-message");
+  if (existingCopiedMessage) {
+    existingCopiedMessage.remove();
+  }
+
+  // Remove any existing message before showing a new one
+  const existingClipboardMessage = document.querySelector(".clipboard-message");
+  if (existingClipboardMessage) {
+    existingClipboardMessage.remove();
+  }
+
+  const copiedMessage = document.createElement("div");
+  copiedMessage.classList.add("copied-message"); // Add a class to target this specific message
+
+  // Style the message container to use flexbox
+  copiedMessage.style.display = "flex"; // Use flexbox to align items horizontally
+  copiedMessage.style.alignItems = "center"; // Vertically align items in the center
+  copiedMessage.style.position = "fixed";
+  copiedMessage.style.top = "15px";
+  copiedMessage.style.left = "50%";
+  copiedMessage.style.transform = "translateX(-50%)";
+  copiedMessage.style.borderRadius = "8px"; // Rounded corners for the container
+  copiedMessage.style.fontSize = "14px"; // Font size
+  copiedMessage.style.maxWidth = "80%"; // Max width of the message block
+  copiedMessage.style.wordWrap = "break-word"; // Ensure long lines of text wrap correctly
+  copiedMessage.style.zIndex = "9999"; // Ensure it appears above other content
+
+  // Create the "Copied:" part with different background
+  const copiedPart = document.createElement("div");
+  copiedPart.textContent = "Copied!";
+  copiedPart.style.backgroundColor = "rgba(67, 84, 167, 0.9)"; // Blue background for "Copied"
+  copiedPart.style.color = "#fff"; // White text color
+  copiedPart.style.padding = "6px 10px"; // Reduced padding for the "Copied:" part
+  // copiedPart.style.fontWeight = "bold"; // Bold text for "Copied:"
+  copiedPart.style.marginRight = "8px"; // Space between "Copied:" and the next text
+  copiedPart.style.borderRadius = "4px"; // Rounded corners for the "Copied:" part
+
+  // Create the part with instructions (Ctrl+Shift+Z and Ctrl+Shift+Y)
+  const instructionsPart = document.createElement("div");
+  instructionsPart.textContent = "Press Ctrl+Shift+Z to undo and Ctrl+Shift+Y to redo.";
+  instructionsPart.style.backgroundColor = "#333"; // Dark background for instructions
+  instructionsPart.style.color = "#fff"; // White text color
+  instructionsPart.style.padding = "6px 10px"; // Reduced padding for instructions
+  instructionsPart.style.flexGrow = "1"; // Allow content to take remaining space if needed
+  instructionsPart.style.borderRadius = "4px"; // Rounded corners for the instructions part
+
+  // Append the "Copied:" part and the instructions to the message container
+  copiedMessage.appendChild(copiedPart);
+  copiedMessage.appendChild(instructionsPart);
+
+  // Append the whole message container to the body
+  document.body.appendChild(copiedMessage);
+
+  // Remove the message after 2 seconds
+  setTimeout(() => {
+    copiedMessage.remove();
+  }, 3000);
+}
+
+// Function to show the current clipboard value (used for Undo/Redo)
+function showCurrentClipboardValue(value) {
+  // Remove any existing message before showing a new one
+  const existingCopiedMessage = document.querySelector(".copied-message");
+  if (existingCopiedMessage) {
+    existingCopiedMessage.remove();
+  }
+
+  // Remove any existing message before showing a new one
+  const existingClipboardMessage = document.querySelector(".clipboard-message");
+  if (existingClipboardMessage) {
+    existingClipboardMessage.remove();
+  }
+
+  // Create the message container
+  const currentMessage = document.createElement("div");
+  currentMessage.classList.add("clipboard-message"); // Add a class to target this specific message
+
+  // Style the message container to use flexbox
+  currentMessage.style.display = "flex"; // Use flexbox to align items horizontally
+  currentMessage.style.alignItems = "center"; // Vertically align items in the center
+  currentMessage.style.position = "fixed";
+  currentMessage.style.top = "15px";
+  currentMessage.style.left = "50%";
+  currentMessage.style.transform = "translateX(-50%)";
+  currentMessage.style.borderRadius = "8px"; // Rounded corners for the message container
+  currentMessage.style.fontSize = "14px"; // Font size
+  currentMessage.style.maxWidth = "80%"; // Max width of the message block
+  currentMessage.style.wordWrap = "break-word"; // Ensure long lines of text wrap correctly
+  currentMessage.style.zIndex = "9999"; // Ensure it appears above other content
+
+  // Create a div for the "Clipboard Contents:" part with different background
+  const titlePart = document.createElement("div");
+  titlePart.textContent = "Clipboard Contents:";
+  titlePart.style.padding = "6px 10px"; // Increased padding for better spacing
+  // titlePart.style.fontWeight = "bold"; // Bold text for the title
+  titlePart.style.marginRight = "8px"; // Space between the title and content
+  titlePart.style.borderRadius = "4px"; // Rounded corners for the title
+  titlePart.style.backgroundColor = "rgba(29, 110, 32, 0.9)"; // Green background for the title
+  titlePart.style.color = "#fff"; // White text color
+
+  // Create a div for the clipboard content itself (rest of the message)
+  const contentPart = document.createElement("div");
+  contentPart.textContent = value.slice(0, 100); // Show more of the text (100 characters)
+  contentPart.style.padding = "6px 10px"; // Increased padding for better spacing
+  contentPart.style.flexGrow = "1"; // Allow content to take remaining space if needed
+  contentPart.style.borderRadius = "4px"; // Rounded corners for the content part
+  contentPart.style.backgroundColor = "#333"; // Dark background for content part
+  contentPart.style.color = "#fff"; // White text color
+
+  // Append the title and content to the message container
+  currentMessage.appendChild(titlePart);
+  currentMessage.appendChild(contentPart);
+
+  // Append the whole message container to the body
+  document.body.appendChild(currentMessage);
+
+  // Remove the message after 5 seconds
+  setTimeout(() => {
+    currentMessage.remove();
+  }, 5000);
+}
+
+// Handle double-click to copy text from textareas to clipboard
+document.querySelectorAll("[id$='-textarea-review']").forEach((textarea) => {
+  textarea.addEventListener("dblclick", function () {
+    const value = this.value;
+    navigator.clipboard
+      .writeText(value)
+      .then(() => {
+        storeClipboardData(value); // Store the copied text into clipboard history
+        showCopiedMessage(); // Show the "Copied" message
+      })
+      .catch((err) => {
+        console.error("Error copying text:", err);
+      });
+  });
+});
+
+// Handle keyboard shortcut (Ctrl + Shift + Z) to restore previous clipboard content
+document.addEventListener("keydown", (event) => {
+  if (event.ctrlKey && event.shiftKey && event.key === "Z") {
+    event.preventDefault(); // Prevent the default browser undo/redo action
+
+    if (clipboardHistory.length > 1) {
+      const removed = clipboardHistory.pop(); // Remove most recent copy
+      redoHistory.push(removed); // Save for redo
+      const previousClipboard = clipboardHistory[clipboardHistory.length - 1];
+      navigator.clipboard
+        .writeText(previousClipboard)
+        .then(() => {
+          showCurrentClipboardValue(previousClipboard); // Show current clipboard value (Undo)
+        })
+        .catch((err) => {
+          console.error("Error restoring clipboard value:", err);
+        });
+    } else {
+      console.log("Not enough clipboard history to undo.");
+    }
+  }
+});
+
+// Handle keyboard shortcut (Ctrl + Shift + Y) to redo clipboard content
+document.addEventListener("keydown", (event) => {
+  if (event.ctrlKey && event.shiftKey && event.key === "Y") {
+    event.preventDefault(); // Prevent the default browser redo action
+
+    if (redoHistory.length > 0) {
+      const redoValue = redoHistory.pop(); // Get the next clipboard value to redo
+      clipboardHistory.push(redoValue); // Push to history again
+      navigator.clipboard
+        .writeText(redoValue)
+        .then(() => {
+          showCurrentClipboardValue(redoValue); // Show current clipboard value (Redo)
+        })
+        .catch((err) => {
+          console.error("Error redoing clipboard value:", err);
+        });
+    } else {
+      console.log("No redo clipboard history.");
+    }
+  }
+});
+
+// Capture manual copy events (Ctrl+C, right-click copy) inside the page
+document.addEventListener("copy", (event) => {
+  let copiedText = "";
+
+  const activeEl = document.activeElement;
+  if (activeEl && (activeEl.tagName === "TEXTAREA" || activeEl.tagName === "INPUT")) {
+    copiedText = activeEl.value.substring(activeEl.selectionStart, activeEl.selectionEnd);
+  } else {
+    copiedText = window.getSelection().toString();
+  }
+
+  if (copiedText) {
+    storeClipboardData(copiedText);
+    showCopiedMessage(); // Show "Copied" message for manual copy
+    console.log("Captured copy:", copiedText);
+  }
+});
+
+// :::: (Tab Order) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Disable tabbing globally by setting tabindex="-1" for all elements
+document.querySelectorAll("div").forEach((element) => {
+  element.setAttribute("tabindex", "-1");
+});
+
+// Function to enable tabbing on specific elements
+function enableTabbing(elementId, tabindexValue) {
+  const element = document.getElementById(elementId);
+  if (element) {
+    element.setAttribute("tabindex", tabindexValue);
+  }
+}
+
+// Enable tabbing for specific elements
+// enableTabbing('tab2', 1);   // Enable tabbing for Tab 2
+// enableTabbing('input2', 2);  // Enable tabbing for Input 2
+// enableTabbing('button1', 3); // Enable tabbing for Button 1
+
+// :::: (Arrow Buttons) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+function getVisibleElements(rowClass) {
+  return Array.from(document.querySelectorAll(`.${rowClass}`)).filter((el) => el.offsetParent !== null);
+}
+
+function getAllRowClasses() {
+  const allElements = document.querySelectorAll("[class*='row']");
+  const rowClasses = new Set();
+
+  allElements.forEach((el) => {
+    // Only include the row if it is visible
+    if (el.offsetParent !== null) {
+      el.classList.forEach((cls) => {
+        if (cls.startsWith("row")) {
+          rowClasses.add(cls);
+        }
+      });
+    }
+  });
+
+  return Array.from(rowClasses).sort(); // optional: sort row1, row2, row3
+}
+
+window.addEventListener("keydown", function (event) {
+  let activeElement = document.activeElement;
+  let rowClass = Array.from(activeElement.classList).find((cls) => cls.startsWith("row"));
+  if (!rowClass) return;
+
+  const elements = getVisibleElements(rowClass);
+  const index = elements.indexOf(activeElement);
+  const allRows = getAllRowClasses();
+  const rowIndex = allRows.indexOf(rowClass);
+
+  if (event.code === "ArrowRight") {
+    let activeElement = document.activeElement;
+
+    // Check if the active element is a textarea
+    if (activeElement.tagName.toLowerCase() === "textarea") {
+      const textarea = activeElement;
+      const cursorPosition = textarea.selectionEnd;
+
+      // If the cursor is at the end of the textarea, proceed with normal behavior
+      if (cursorPosition === textarea.value.length) {
+        const nextIndex = (index + 1) % elements.length;
+        elements[nextIndex].focus();
+        event.preventDefault();
+      } else {
+        // If the cursor is not at the end, allow the natural behavior (move cursor right)
+        if (textarea.selectionEnd === textarea.value.length) {
+          textarea.selectionStart = 0; // Set cursor to the start
+        }
+      }
+    } else {
+      // Normal behavior if not in a textarea
+      const nextIndex = (index + 1) % elements.length;
+      elements[nextIndex].focus();
+      event.preventDefault();
+    }
+  }
+
+  if (event.code === "ArrowLeft") {
+    let activeElement = document.activeElement;
+
+    // Check if the active element is a textarea
+    if (activeElement.tagName.toLowerCase() === "textarea") {
+      const textarea = activeElement;
+      const cursorPosition = textarea.selectionStart;
+
+      // If the cursor is at the beginning of the textarea, proceed with normal behavior
+      if (cursorPosition === 0) {
+        const nextIndex = (index - 1 + elements.length) % elements.length;
+        elements[nextIndex].focus();
+        event.preventDefault();
+      } else {
+        // If the cursor is not at the beginning, allow the natural behavior (move cursor left)
+        if (textarea.selectionStart === 0) {
+          textarea.selectionEnd = textarea.value.length; // Set cursor to the end
+        }
+      }
+    } else {
+      // Normal behavior if not in a textarea
+      const nextIndex = (index - 1 + elements.length) % elements.length;
+      elements[nextIndex].focus();
+      event.preventDefault();
+    }
+  }
+
+  if (event.code === "ArrowDown") {
+    const activeElement = document.activeElement;
+
+    // Check if the active element is a textarea
+    if (activeElement.tagName.toLowerCase() === "textarea") {
+      const cursorPosition = activeElement.selectionStart; // Get the cursor position
+      const textLength = activeElement.value.length; // Get the text length
+
+      // If the cursor is at the end, check if it's the last row and jump to the first row
+      if (cursorPosition === textLength) {
+        if (rowIndex === allRows.length - 1) {
+          // It's the last row, so focus the first element in Row1
+          const firstRow = getVisibleElements(allRows[0]);
+          if (firstRow.length) {
+            firstRow[0].focus();
+          }
+        } else {
+          // Move focus to the first element in the next row
+          const nextRowIndex = (rowIndex + 1) % allRows.length;
+          const nextRow = getVisibleElements(allRows[nextRowIndex]);
+
+          if (nextRow.length) {
+            // Check if there's an active button in the next row
+            const activeButton = nextRow.find((el) => el.tagName.toLowerCase() === "button" && el.classList.contains("active"));
+            if (activeButton) {
+              activeButton.focus(); // Focus the active button
+            } else {
+              nextRow[0].focus(); // If no active button, focus the first visible element
+            }
+          }
+        }
+        event.preventDefault();
+      }
+      // If the cursor is not at the end, allow natural ArrowDown behavior
+      else {
+        return; // Let the browser handle the default behavior
+      }
+    } else {
+      // Normal behavior for non-textarea elements
+      const nextRowIndex = (rowIndex + 1) % allRows.length;
+      const nextRow = getVisibleElements(allRows[nextRowIndex]);
+
+      if (nextRow.length) {
+        // Check if there's an active button in the next row
+        const activeButton = nextRow.find((el) => el.tagName.toLowerCase() === "button" && el.classList.contains("active"));
+        if (activeButton) {
+          activeButton.focus(); // Focus the active button
+        } else {
+          nextRow[0].focus(); // If no active button, focus the first visible element
+        }
+      }
+      event.preventDefault();
+    }
+  }
+
+  if (event.code === "ArrowUp") {
+    let activeElement = document.activeElement;
+
+    // Check if the active element is a textarea
+    if (activeElement.tagName.toLowerCase() === "textarea") {
+      const textarea = activeElement;
+      const cursorPosition = textarea.selectionStart;
+
+      // If the cursor is at the beginning of the textarea, proceed with normal behavior
+      if (cursorPosition === 0) {
+        const nextRowIndex = (rowIndex - 1 + allRows.length) % allRows.length;
+        const nextRow = getVisibleElements(allRows[nextRowIndex]);
+        if (nextRow.length) {
+          nextRow[0].focus(); // Focus the first visible element in the previous row
+        }
+        event.preventDefault();
+      }
+    } else {
+      // Normal behavior if not in a textarea
+      const nextRowIndex = (rowIndex - 1 + allRows.length) % allRows.length;
+      const nextRow = getVisibleElements(allRows[nextRowIndex]);
+      if (nextRow.length) {
+        // Check if there's an active button in the previous row
+        const activeButton = nextRow.find((el) => el.tagName.toLowerCase() === "button" && el.classList.contains("active"));
+        if (activeButton) {
+          activeButton.focus(); // Focus the active button
+        } else {
+          nextRow[0].focus(); // If no active button, focus the first visible element
+        }
+      }
+      event.preventDefault();
+    }
+  }
+});
+
+// :::: (Type Rating) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+window.addEventListener("keydown", function (event) {
+  // Ignore if typing in input or textarea
+  if (["INPUT", "TEXTAREA"].includes(event.target.tagName)) return;
+
+  const key = event.key.toUpperCase();
+
+  // Allowed keys: 0-9 and specific letters
+  if (!/^[0-9ABCDEFGNPUY]$/.test(key)) return;
+
+  // List of possible visible container IDs
+  const containerIds = [
+    "bridge-alignment-pg2",
+    "bridge-approach-pg2",
+    "bridge-joints-pg2",
+    "bridge-joints-pg5",
+    "bridge-railings-pg2",
+    "bridge-railings-pg5",
+    "bridge-deck-pg2",
+    "bridge-deck-pg5",
+    "bridge-super-pg2",
+    "bridge-super-pg5",
+    "bridge-bearings-pg2",
+    "bridge-sub-pg2",
+    "bridge-sub-pg5",
+    "bridge-culvert-pg2",
+    "bridge-channel-pg2",
+    "bridge-channel-pg5",
+    "bridge-scour-pg2",
+    "bridge-scour-pg5",
+    "bridge-overtopping-pg2",
+    "bridge-wildlife-pg2",
+    "bridge-wildlife-pg4",
+  ];
+
+  // Find the currently visible container
+  const activeContainer = containerIds.map((id) => document.getElementById(id)).find((el) => el && el.offsetParent !== null);
+
+  if (!activeContainer) return; // No visible container
+
+  // Find the rating line matching the key
+  const targetLine = Array.from(activeContainer.querySelectorAll(".content-container-rating-lines")).find((line) => {
+    const span = line.querySelector(".content-container-rating-numerical");
+    return span && span.textContent.trim().toUpperCase() === key;
+  });
+
+  if (targetLine) {
+    handleHighlight({ target: targetLine });
+    event.preventDefault();
+  }
+});
+
+// :::: (Working) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//
+
+//

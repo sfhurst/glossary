@@ -1,5 +1,6 @@
 /* ::: ---------------------------- General | Buttons --------------------------------- */
 
+/* Base button styles */
 button {
   border: none;
   outline: none;
@@ -10,17 +11,7 @@ button {
   background-color: var(--inactive-button-color1);
   color: var(--inactive-button-text-color1);
   border-radius: 4px;
-  /* box-shadow: 1px 1px 1px rgb(124 124 124 / 0.5); */
-}
-
-.alt1-buttons {
-  background-color: var(--inactive-button-color3);
-  color: var(--inactive-button-text-color3);
-}
-
-.alt2-buttons {
-  background-color: var(--inactive-button-color2);
-  color: var(--inactive-button-text-color2);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle box-shadow */
 }
 
 /* Change background color of buttons on hover */
@@ -29,9 +20,72 @@ button:hover {
   color: var(--hover-button-text-color1);
 }
 
+/* Create an active/current tablink class */
+button.active {
+  background-color: var(--active-button-color1);
+  color: var(--active-button-text-color1);
+  /* No border effect or glow here */
+}
+
+/* Focus effect for primary buttons */
+button:focus {
+  outline: none; /* Remove the default outline */
+  background-color: var(--hover-button-color1);
+  position: relative;
+}
+
+button:focus::after {
+  content: "";
+  position: absolute;
+  bottom: 5px; /* Adjust the distance from the bottom */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%; /* Control the width of the effect */
+  width: 20px; /* Control the width of the effect */
+  height: 3px; /* Control the thickness of the effect */
+  background: rgba(255, 0, 0, 0.726);
+  background: linear-gradient(to right, transparent, rgb(76, 76, 253), transparent); /* Gradient effect */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional subtle shadow for better visibility */
+}
+
+/* Focus effect for active buttons - add red glow only when focused */
+button.active:focus {
+  background-color: var(--active-button-color1); /* Keep background color intact */
+}
+
+/* Third row buttons for first group (alt1-buttons) */
+.alt1-buttons {
+  background-color: var(--inactive-button-color3);
+  color: var(--inactive-button-text-color3);
+}
+
 .alt1-buttons:hover {
   background-color: var(--hover-button-color3);
   color: var(--hover-button-text-color3);
+}
+
+.alt1-buttons.active {
+  background-color: var(--active-button-color2);
+  color: var(--active-button-text-color2);
+  /* No red border effect for active buttons in normal state */
+}
+
+/* Focus effect for alt1-buttons */
+.alt1-buttons:focus {
+  outline: none;
+  background-color: var(--hover-button-color3); /* Optional: change background on focus */
+  transition: 0.3s;
+}
+
+/* Focus effect for active alt1-buttons - red glow only when focused */
+.alt1-buttons.active:focus {
+  background-color: var(--active-button-color2); /* Keep background color intact */
+}
+
+/* Third row buttons for second group (alt2-buttons) */
+.alt2-buttons {
+  background-color: var(--inactive-button-color2);
+  color: var(--inactive-button-text-color2);
 }
 
 .alt2-buttons:hover {
@@ -39,22 +93,28 @@ button:hover {
   color: var(--hover-button-text-color2);
 }
 
-/* Create an active/current tablink class */
-button.active {
-  background-color: var(--active-button-color1);
-  color: var(--active-button-text-color1);
-}
-
-.alt1-buttons.active {
-  background-color: var(--active-button-color2);
-  color: var(--active-button-text-color2);
-}
-
 .alt2-buttons.active {
   background-color: var(--active-button-color2);
   color: var(--active-button-text-color2);
+  /* No red border effect for active buttons in normal state */
 }
 
+/* Focus effect for alt2-buttons */
+.alt2-buttons:focus {
+  outline: none;
+  background-color: var(--hover-button-color2); /* Optional: change background on focus */
+  transition: 0.3s;
+}
+
+/* Focus effect for active alt2-buttons - red glow only when focused */
+.alt2-buttons.active:focus {
+  box-shadow: 0 0 4px 2px rgba(18, 156, 37, 0.884); /* More pronounced red glow with larger spread */
+  background-color: var(--active-button-color2); /* Keep background color intact */
+}
+
+/*  */
+
+/*  */
 .asset-update-text {
   margin-left: 20px;
   color: rgba(233 233 233 / 0.6);
@@ -935,4 +995,62 @@ button.active {
   height: 30px; /* Height in viewport height for relative scaling */
   background: rgba(128, 128, 128, 0.8);
   top: 3px;
+}
+
+/* ::: ---------------------------- New Review Page --------------------------------- */
+
+.textareaNew-group-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+.textareaNew-group-container > * {
+  width: 100%;
+}
+
+.rating-button {
+  padding: 0 10px;
+  margin: 0;
+  border-radius: 0;
+  height: 24px; /* fixed height */
+  width: 30px;
+  font-size: 16px;
+  line-height: 24px; /* ensure text is centered */
+}
+
+.content-container-with-rating {
+  display: flex;
+  align-items: center; /* Center vertically */
+  gap: 10px;
+  padding: 12px;
+  background-color: var(--content-background-color);
+  position: relative; /* This is required to ensure the button is positioned relative to this container */
+}
+
+.paragraph-rating.paragraph-navigate {
+  cursor: pointer;
+}
+
+:root {
+  /* Failed - Critical */
+  --rating-0: rgba(100, 0, 0, 0.5); /* Very Dark Red */
+  --rating-1: rgba(120, 0, 0, 0.5); /* Very Dark Red */
+  --rating-2: rgba(139, 0, 0, 0.5); /* Dark Red */
+
+  /* Serious - Poor */
+  --rating-3: rgba(200, 30, 0, 0.5); /* Deep Orange-Red */
+  --rating-4: rgba(230, 90, 0, 0.5); /* Dark Orange */
+  --rating-P: rgba(230, 90, 0, 0.5); /* Dark Orange (Poor) */
+
+  /* Fair - Satisfactory (closer tones) */
+  --rating-5: rgba(255, 180, 0, 0.4); /* Gold */
+  --rating-F: rgba(255, 180, 0, 0.4); /* Fair */
+  --rating-6: rgba(235, 200, 50, 0.4); /* Slightly lighter Gold/Yellow */
+
+  /* Good - Excellent */
+  --rating-7: rgba(140, 240, 100, 0.4); /* Soft Green */
+  --rating-G: rgba(140, 240, 100, 0.4); /* Good */
+  --rating-8: rgba(80, 200, 80, 0.4); /* Medium Green */
+  --rating-9: rgba(40, 150, 40, 0.4); /* Deep Green */
 }

@@ -1,7 +1,3 @@
-Changed several example comments
+Here
 
-- Changed deck/slab example and asset load comment
-- Added strength and performance example comment
-- Added example comment to paint
-- Changed wall comment from apparent to obvious
-- Untracked temporary files used for code placeholders
+- 
