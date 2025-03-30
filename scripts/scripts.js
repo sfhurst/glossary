@@ -611,6 +611,10 @@ function expandTextarea(event, componentName) {
 // :::: (Page Button Clicks) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // ::: ------------------------------ Handles the display of content for each tab based on button clicks (Page Button Clicks) ------------------------------
+
+// Flag to ensure the focus happens only on page startup
+let isInitialLoad = true;
+
 function openTab(evt) {
   var button = evt.currentTarget; // The clicked button
   var componentName = button.getAttribute("data-target");
@@ -636,6 +640,12 @@ function openTab(evt) {
   // Update the URL hash (only for main tab)
   var hash = button.getAttribute("data-hash");
   updateURLHash(hash);
+
+  // Focus on the active button if it's the initial page load
+  if (isInitialLoad) {
+    button.focus();
+    isInitialLoad = false; // Set the flag to false after focusing once
+  }
 }
 
 // Update the URL hash with just the main tab hash (no nested tab hash)
@@ -1568,16 +1578,16 @@ let clipboardHistory = [];
 let redoHistory = []; // To store redo actions
 
 // Limit to how many clipboard items to keep (optional)
-const maxHistory = 10;
+const maxHistory = 100;
 
-// Function to handle storing clipboard data
 function storeClipboardData(data) {
   if (clipboardHistory.length >= maxHistory) {
-    clipboardHistory.shift(); // Remove the oldest entry if the array exceeds maxHistory
+    clipboardHistory.shift();
   }
   clipboardHistory.push(data);
-  // Clear redo history when new copy is made
   redoHistory = [];
+
+  saveClipboardHistory(); // Save to sessionStorage
 }
 
 // Function to show a custom "Copied" message
@@ -1721,12 +1731,14 @@ document.querySelectorAll("[id$='-textarea-review']").forEach((textarea) => {
   });
 });
 
+// Modify undo function to never remove the last item
 // Handle keyboard shortcut (Ctrl + Shift + Z) to restore previous clipboard content
 document.addEventListener("keydown", (event) => {
   if (event.ctrlKey && event.shiftKey && event.key === "Z") {
     event.preventDefault(); // Prevent the default browser undo/redo action
 
     if (clipboardHistory.length > 1) {
+      // Ensure at least one item remains
       const removed = clipboardHistory.pop(); // Remove most recent copy
       redoHistory.push(removed); // Save for redo
       const previousClipboard = clipboardHistory[clipboardHistory.length - 1];
@@ -1739,7 +1751,7 @@ document.addEventListener("keydown", (event) => {
           console.error("Error restoring clipboard value:", err);
         });
     } else {
-      console.log("Not enough clipboard history to undo.");
+      console.log("Clipboard history cannot be emptied.");
     }
   }
 });
@@ -1783,6 +1795,28 @@ document.addEventListener("copy", (event) => {
     console.log("Captured copy:", copiedText);
   }
 });
+
+// Function to save clipboard history to sessionStorage
+function saveClipboardHistory() {
+  sessionStorage.setItem("clipboardHistory", JSON.stringify(clipboardHistory));
+  sessionStorage.setItem("redoHistory", JSON.stringify(redoHistory));
+}
+
+// Function to load clipboard history from sessionStorage
+function loadClipboardHistory() {
+  const storedClipboard = sessionStorage.getItem("clipboardHistory");
+  const storedRedo = sessionStorage.getItem("redoHistory");
+
+  if (storedClipboard) {
+    clipboardHistory = JSON.parse(storedClipboard);
+  }
+  if (storedRedo) {
+    redoHistory = JSON.parse(storedRedo);
+  }
+}
+
+// Call loadClipboardHistory on page load
+loadClipboardHistory();
 
 // :::: (Tab Order) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -2035,8 +2069,167 @@ window.addEventListener("keydown", function (event) {
   }
 });
 
+// :::: (Page Navigation) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Define the navigation sequence as an array of button data-targets
+const navigationMap = [
+  ["bridge-asset-tab", "bridge-alignment-tab", "bridge-alignment-pg2"],
+  ["bridge-asset-tab", "bridge-approach-slabs-tab", "bridge-approach-pg2"],
+  ["bridge-asset-tab", "bridge-joints-tab", "bridge-joints-pg2"],
+  ["bridge-asset-tab", "bridge-joints-tab", "bridge-joints-pg5"],
+  ["bridge-asset-tab", "bridge-railings-tab", "bridge-railings-pg2"],
+  ["bridge-asset-tab", "bridge-railings-tab", "bridge-railings-pg5"],
+  ["bridge-asset-tab", "bridge-deck-tab", "bridge-deck-pg2"],
+  ["bridge-asset-tab", "bridge-deck-tab", "bridge-deck-pg5"],
+  ["bridge-asset-tab", "bridge-super-tab", "bridge-super-pg2"],
+  ["bridge-asset-tab", "bridge-super-tab", "bridge-super-pg5"],
+  ["bridge-asset-tab", "bridge-bearings-tab", "bridge-bearings-pg2"],
+  ["bridge-asset-tab", "bridge-sub-tab", "bridge-sub-pg2"],
+  ["bridge-asset-tab", "bridge-sub-tab", "bridge-sub-pg5"],
+  ["bridge-asset-tab", "bridge-culvert-tab", "bridge-culvert-pg2"],
+  ["bridge-asset-tab", "bridge-channel-tab", "bridge-channel-pg2"],
+  ["bridge-asset-tab", "bridge-channel-tab", "bridge-channel-pg5"],
+  ["bridge-asset-tab", "bridge-scour-tab", "bridge-scour-pg2"],
+  ["bridge-asset-tab", "bridge-scour-tab", "bridge-scour-pg5"],
+  ["bridge-asset-tab", "bridge-overtopping-tab", "bridge-overtopping-pg2"],
+  ["bridge-asset-tab", "bridge-wildlife-tab", "bridge-wildlife-pg2"],
+  ["bridge-asset-tab", "bridge-wildlife-tab", "bridge-wildlife-pg4"],
+  ["bridge-asset-tab", "bridge-elements-tab", "element-elements-tab"],
+  ["bridge-asset-tab", "bridge-maintenance-tab"],
+  ["bridge-asset-tab", "bridge-review-tab", "review-ratings2-tab"],
+];
+
+// Track the current position in the navigation sequence
+let currentIndex = 0;
+
+/**
+ * Simulates clicking a button based on its data-target attribute.
+ * @param {string} dataTarget - The data-target of the button to trigger.
+ */
+function triggerButton(dataTarget) {
+  const button = document.querySelector(`[data-target="${dataTarget}"]`);
+  if (button) {
+    button.click();
+    button.focus(); // Focus the last clicked button
+  }
+}
+
+/**
+ * Moves the navigation forward or backward and triggers the corresponding buttons.
+ * @param {string} direction - "up" moves forward, "down" moves backward.
+ */
+function navigate(direction) {
+  if (direction === "up") {
+    // Move forward in the sequence, looping back to the first entry if at the end
+    currentIndex = (currentIndex + 1) % navigationMap.length;
+  } else if (direction === "down") {
+    // Move backward in the sequence, looping back to the last entry if at the start
+    currentIndex = (currentIndex - 1 + navigationMap.length) % navigationMap.length;
+  }
+
+  // Simulate button clicks for the current navigation entry
+  navigationMap[currentIndex].forEach(triggerButton);
+}
+
+// Listen for PageUp and PageDown key presses
+document.addEventListener("keydown", (event) => {
+  if (event.key === "PageDown") {
+    navigate("up"); // PageUp moves forward in the sequence
+    event.preventDefault();
+  } else if (event.key === "PageUp") {
+    navigate("down"); // PageDown moves backward in the sequence
+    event.preventDefault();
+  }
+});
+
 // :::: (Working) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //
 
 //
+
+// :::: (Dev Component Mapping) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Global flag to control whether the extraction should run
+let isExtractionEnabled = false; // Set to `true` to enable, `false` to disable
+
+// Function to collect all unique classes, ids, and data-attributes
+function collectUniqueAttributes() {
+  const uniqueClasses = new Set();
+  const uniqueIDs = new Set();
+  const uniqueDataAttributes = new Set();
+  const duplicateIDs = new Set(); // Set to track duplicate IDs
+
+  // Select all elements in the document
+  const allElements = document.querySelectorAll("*");
+
+  // Loop through all elements and collect the unique attributes
+  allElements.forEach((element) => {
+    // Collect IDs only if they are unique
+    if (element.id) {
+      if (uniqueIDs.has(element.id)) {
+        // If the ID is already in the unique set, add it to the duplicate set
+        duplicateIDs.add(element.id);
+      } else {
+        uniqueIDs.add(element.id);
+      }
+    }
+
+    // Collect Classes
+    element.classList.forEach((cls) => {
+      uniqueClasses.add(cls);
+    });
+
+    // Collect Data-Attributes
+    Array.from(element.attributes).forEach((attr) => {
+      if (attr.name.startsWith("data-")) {
+        uniqueDataAttributes.add(attr.name);
+      }
+    });
+  });
+
+  // Alphabetize the results and get the counts
+  const sortedIDs = [...uniqueIDs].sort();
+  const sortedClasses = [...uniqueClasses].sort();
+  const sortedDataAttributes = [...uniqueDataAttributes].sort();
+
+  // Create the output text content
+  let outputText = "";
+
+  // If there are duplicate IDs, flag them in the output
+  if (duplicateIDs.size > 0) {
+    outputText += `**Duplicate IDs Found:**\n${Array.from(duplicateIDs).join("\n")}\n\n`;
+  }
+
+  // Add the unique lists to the output text
+  outputText += `IDs (${sortedIDs.length}):\n` + sortedIDs.join("\n") + "\n\n";
+  outputText += `Unique Classes (${sortedClasses.length}):\n` + sortedClasses.join("\n") + "\n\n";
+  outputText += `Unique Data Attributes (${sortedDataAttributes.length}):\n` + sortedDataAttributes.join("\n") + "\n";
+
+  return outputText;
+}
+
+// Function to download the content as a .txt file
+function downloadTxt(content, filename = "uniqueAttributes.txt") {
+  const blob = new Blob([content], { type: "text/plain" });
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = filename;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
+// Function to handle extraction based on the flag
+function handleExtraction() {
+  if (isExtractionEnabled) {
+    const textContent = collectUniqueAttributes();
+    downloadTxt(textContent); // Trigger the download of the txt file
+    console.log("Extraction Enabled: Data file generated.");
+  } else {
+    console.log("Extraction Disabled: No action taken.");
+  }
+}
+
+// Example: Execute extraction based on the flag
+handleExtraction();

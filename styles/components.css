@@ -35,17 +35,18 @@ button:focus {
 }
 
 button:focus::after {
-  content: "";
+  content: ""; /* Required for the effect to work */
   position: absolute;
-  bottom: 5px; /* Adjust the distance from the bottom */
+  bottom: 3px; /* Adjust the distance from the bottom */
   left: 50%;
   transform: translateX(-50%);
-  width: 60%; /* Control the width of the effect */
-  width: 20px; /* Control the width of the effect */
-  height: 3px; /* Control the thickness of the effect */
-  background: rgba(255, 0, 0, 0.726);
+  width: 10px; /* Control the width of the effect */
+  height: 4px; /* Control the thickness of the effect */
+  background: linear-gradient(to right, transparent, var(--color-orange), transparent); /* Gradient effect */
   background: linear-gradient(to right, transparent, rgb(76, 76, 253), transparent); /* Gradient effect */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional subtle shadow for better visibility */
+  background: var(--color-orange);
+  background: rgb(76, 76, 253);
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);  Optional subtle shadow for better visibility */
 }
 
 /* Focus effect for active buttons - add red glow only when focused */
