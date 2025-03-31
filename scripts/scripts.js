@@ -1843,8 +1843,14 @@ function enableTabbing(elementId, tabindexValue) {
 const toggleFocusActivation = "activate"; // Set to "focus" or "activate"
 
 function handleElementAction(element) {
+  if (element.tagName.toLowerCase() === "a") return; // Skip activation for links
+
   if (toggleFocusActivation === "focus") {
     element.focus();
+    if (element.tagName.toLowerCase() === "textarea") {
+      element.selectionStart = element.value.length;
+      element.selectionEnd = element.value.length;
+    }
   } else if (toggleFocusActivation === "activate") {
     element.click();
   }
