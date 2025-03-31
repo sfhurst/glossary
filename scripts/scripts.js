@@ -768,7 +768,7 @@ function handleTabClick(event) {
 
     // If two or more comment builders hold the active view on their tabs then select the correct one to be active
     const activeButtons = document.querySelectorAll(".bridge-approach-buttons.active, .bridge-deck-buttons.active");
-    if (activeTab === "bridge-approach-slabs-tab") {
+    if (activeTab === "bridge-approach-tab") {
       currentTarget = "approach-pg6";
     }
     if (activeTab === "bridge-deck-tab") {
@@ -2073,30 +2073,30 @@ window.addEventListener("keydown", function (event) {
 
 // Define the navigation sequence as an array of button data-targets
 const navigationMap = [
-  ["bridge-asset-tab", "bridge-alignment-tab", "bridge-alignment-pg2"],
-  ["bridge-asset-tab", "bridge-approach-slabs-tab", "bridge-approach-pg2"],
-  ["bridge-asset-tab", "bridge-joints-tab", "bridge-joints-pg2"],
-  ["bridge-asset-tab", "bridge-joints-tab", "bridge-joints-pg5"],
-  ["bridge-asset-tab", "bridge-railings-tab", "bridge-railings-pg2"],
-  ["bridge-asset-tab", "bridge-railings-tab", "bridge-railings-pg5"],
-  ["bridge-asset-tab", "bridge-deck-tab", "bridge-deck-pg2"],
-  ["bridge-asset-tab", "bridge-deck-tab", "bridge-deck-pg5"],
-  ["bridge-asset-tab", "bridge-super-tab", "bridge-super-pg2"],
-  ["bridge-asset-tab", "bridge-super-tab", "bridge-super-pg5"],
-  ["bridge-asset-tab", "bridge-bearings-tab", "bridge-bearings-pg2"],
-  ["bridge-asset-tab", "bridge-sub-tab", "bridge-sub-pg2"],
-  ["bridge-asset-tab", "bridge-sub-tab", "bridge-sub-pg5"],
-  ["bridge-asset-tab", "bridge-culvert-tab", "bridge-culvert-pg2"],
-  ["bridge-asset-tab", "bridge-channel-tab", "bridge-channel-pg2"],
-  ["bridge-asset-tab", "bridge-channel-tab", "bridge-channel-pg5"],
-  ["bridge-asset-tab", "bridge-scour-tab", "bridge-scour-pg2"],
-  ["bridge-asset-tab", "bridge-scour-tab", "bridge-scour-pg5"],
-  ["bridge-asset-tab", "bridge-overtopping-tab", "bridge-overtopping-pg2"],
-  ["bridge-asset-tab", "bridge-wildlife-tab", "bridge-wildlife-pg2"],
-  ["bridge-asset-tab", "bridge-wildlife-tab", "bridge-wildlife-pg4"],
-  ["bridge-asset-tab", "bridge-elements-tab", "element-elements-tab"],
-  ["bridge-asset-tab", "bridge-maintenance-tab"],
-  ["bridge-asset-tab", "bridge-review-tab", "review-ratings2-tab"],
+  ["bridge-asset-tab", "bridge-alignment-tab", "bridge-alignment-pg2"], // Index 0
+  ["bridge-asset-tab", "bridge-approach-tab", "bridge-approach-pg2"], // Index 1
+  ["bridge-asset-tab", "bridge-joints-tab", "bridge-joints-pg2"], // Index 2
+  ["bridge-asset-tab", "bridge-joints-tab", "bridge-joints-pg5"], // Index 3
+  ["bridge-asset-tab", "bridge-railings-tab", "bridge-railings-pg2"], // Index 4
+  ["bridge-asset-tab", "bridge-railings-tab", "bridge-railings-pg5"], // Index 5
+  ["bridge-asset-tab", "bridge-deck-tab", "bridge-deck-pg2"], // Index 6
+  ["bridge-asset-tab", "bridge-deck-tab", "bridge-deck-pg5"], // Index 7
+  ["bridge-asset-tab", "bridge-super-tab", "bridge-super-pg2"], // Index 8
+  ["bridge-asset-tab", "bridge-super-tab", "bridge-super-pg5"], // Index 9
+  ["bridge-asset-tab", "bridge-bearings-tab", "bridge-bearings-pg2"], // Index 10
+  ["bridge-asset-tab", "bridge-sub-tab", "bridge-sub-pg2"], // Index 11
+  ["bridge-asset-tab", "bridge-sub-tab", "bridge-sub-pg5"], // Index 12
+  ["bridge-asset-tab", "bridge-culvert-tab", "bridge-culvert-pg2"], // Index 13
+  ["bridge-asset-tab", "bridge-channel-tab", "bridge-channel-pg2"], // Index 14
+  ["bridge-asset-tab", "bridge-channel-tab", "bridge-channel-pg5"], // Index 15
+  ["bridge-asset-tab", "bridge-scour-tab", "bridge-scour-pg2"], // Index 16
+  ["bridge-asset-tab", "bridge-scour-tab", "bridge-scour-pg5"], // Index 17
+  ["bridge-asset-tab", "bridge-overtopping-tab", "bridge-overtopping-pg2"], // Index 18
+  ["bridge-asset-tab", "bridge-wildlife-tab", "bridge-wildlife-pg2"], // Index 19
+  ["bridge-asset-tab", "bridge-wildlife-tab", "bridge-wildlife-pg4"], // Index 20
+  ["bridge-asset-tab", "bridge-elements-tab", "element-elements-tab"], // Index 21
+  ["bridge-asset-tab", "bridge-maintenance-tab", null], // Index 22
+  ["bridge-asset-tab", "bridge-review-tab", "review-ratings2-tab"], // Index 23
 ];
 
 // Track the current position in the navigation sequence
@@ -2134,10 +2134,10 @@ function navigate(direction) {
 // Listen for PageUp and PageDown key presses
 document.addEventListener("keydown", (event) => {
   if (event.key === "PageDown") {
-    navigate("up"); // PageUp moves forward in the sequence
+    navigate("up"); // PageDown moves forward in the sequence
     event.preventDefault();
   } else if (event.key === "PageUp") {
-    navigate("down"); // PageDown moves backward in the sequence
+    navigate("down"); // PageUp moves backward in the sequence
     event.preventDefault();
   }
 });
@@ -2233,3 +2233,98 @@ function handleExtraction() {
 
 // Example: Execute extraction based on the flag
 handleExtraction();
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+// Function to find the correct navigation index
+function findNavigationIndex() {
+  let foundIndex = -1; // Default to -1 if no valid index is found
+
+  // Get the active button outside the loop
+  let buttonActive2 = null;
+  let buttonActive3 = null;
+  let buttonActive3Prefix = null;
+
+  // Get all buttons whose data-target starts with "bridge-" and ends with "-tab", but exclude "bridge-asset-tab"
+  const activeButton2 = document.querySelectorAll('[data-target^="bridge-"][data-target$="-tab"]:not([data-target="bridge-asset-tab"])');
+
+  // Loop through all the buttons and check if any of them is active
+  activeButton2.forEach((button) => {
+    const buttonTarget2 = button.getAttribute("data-target");
+
+    // Check if the button follows the "bridge-*-tab" pattern and is active
+    if (button.classList.contains("active") && buttonTarget2.includes("-tab")) {
+      buttonActive2 = buttonTarget2; // Store the active button's data-target
+      buttonActive3Prefix = buttonActive2.split("-").slice(0, 2).join("-") + "-";
+      // alert(buttonActive2);
+    }
+  });
+
+  // alert(buttonActive3Prefix);
+  const activeButton3 = document.querySelectorAll(`[data-target^="${buttonActive3Prefix}pg"]`);
+  // alert(activeButton3); // works to here!
+
+  // Loop through all the buttons and check if any of them is active
+  activeButton3.forEach((button) => {
+    const buttonTarget3 = button.getAttribute("data-target");
+
+    // Check if the button follows the "bridge-*-tab" pattern and is active
+    if (button.classList.contains("active") && buttonTarget3.includes("-pg")) {
+      buttonActive3 = buttonTarget3; // Store the active button's data-target
+      // alert(buttonActive3);
+    }
+  });
+
+  // Now iterate over navigationMap to find the correct index
+  for (let i = 0; i < navigationMap.length; i++) {
+    const buttonTarget2 = navigationMap[i][1]; // Second element in the array // bridge-*-tab // Components // buttonActive2
+    const buttonTarget3 = navigationMap[i][2]; // Third element in the array // bridge-something-pgN (typically)
+
+    // If buttonActive2 is set, compare it with other elements in the navigationMap
+    if (buttonActive3Prefix) {
+      // Extract the number after the "-pg"
+      const numberFromButtonActive3 = parseInt(buttonActive3.slice(buttonActive3.lastIndexOf("-pg") + 3), 10);
+      const numberFromButtonTarget3 = parseInt(buttonTarget3.slice(buttonTarget3.lastIndexOf("-pg") + 3), 10);
+
+      // Get the prefix before "-pg"
+      const prefixFromButtonActive3 = buttonActive3.slice(0, buttonActive3.lastIndexOf("-pg"));
+      const prefixFromButtonTarget3 = buttonTarget3.slice(0, buttonTarget3.lastIndexOf("-pg"));
+
+      // Output for debugging purposes
+      // alert(numberFromButtonActive3 + ", " + numberFromButtonTarget3);
+      // alert(prefixFromButtonActive3 + ", " + prefixFromButtonTarget3);
+
+      // Compare the active button's number with other elements in the navigationMap (if needed)
+      // For example, if you want to compare this with `buttonTarget2` or any other values, you can add that logic here
+      if (prefixFromButtonActive3 === prefixFromButtonTarget3) {
+        if (numberFromButtonActive3 > numberFromButtonTarget3) {
+          alert("Greater than");
+        } else if (numberFromButtonActive3 < numberFromButtonTarget3) {
+          alert("Less than");
+        } else if (numberFromButtonActive3 === numberFromButtonTarget3) {
+          alert("Equal");
+        }
+      }
+    }
+  }
+}
+
+// Track the number of times the Control key is pressed
+let ctrlPresses = 0;
+let lastCtrlPressTime = 0;
+
+// Event listener for keydown events
+window.addEventListener("keydown", function (event) {
+  if (event.key !== "Control") return;
+
+  const currentTime = Date.now();
+  if (currentTime - lastCtrlPressTime > 1000) ctrlPresses = 0;
+
+  lastCtrlPressTime = currentTime;
+  ctrlPresses++;
+
+  if (ctrlPresses === 2) {
+    findNavigationIndex(); // Call the function when Control is pressed twice
+    ctrlPresses = 0; // Reset counter
+  }
+});
