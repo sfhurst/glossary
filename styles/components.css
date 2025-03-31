@@ -274,6 +274,10 @@ button.active:focus {
   border-radius: 1px;
 }
 
+.content-container-links-line-links:focus {
+  border-left: 3px solid rgb(76, 76, 253);
+}
+
 .paragraph-rating {
   margin: 0 0 5px 0;
 }
