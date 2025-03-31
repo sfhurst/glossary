@@ -2119,12 +2119,17 @@ function triggerButton(dataTarget) {
  * @param {string} direction - "up" moves forward, "down" moves backward.
  */
 function navigate(direction) {
+  foundIndex = findNavigationIndex(); // Call the function when Control is pressed twice
   if (direction === "up") {
+    let roundedDown = Math.floor(foundIndex);
+    // alert(roundedDown);
     // Move forward in the sequence, looping back to the first entry if at the end
-    currentIndex = (currentIndex + 1) % navigationMap.length;
+    currentIndex = (roundedDown + 1) % navigationMap.length;
   } else if (direction === "down") {
+    let roundedUp = Math.ceil(foundIndex);
+    // alert(roundedUp);
     // Move backward in the sequence, looping back to the last entry if at the start
-    currentIndex = (currentIndex - 1 + navigationMap.length) % navigationMap.length;
+    currentIndex = (roundedUp - 1 + navigationMap.length) % navigationMap.length;
   }
 
   // Simulate button clicks for the current navigation entry
@@ -2239,6 +2244,7 @@ handleExtraction();
 // Function to find the correct navigation index
 function findNavigationIndex() {
   let foundIndex = -1; // Default to -1 if no valid index is found
+  let betweenKey = 0; // A key to see if they value is between to rating tables on the same component tab
 
   // Get the active button outside the loop
   let buttonActive2 = null;
@@ -2250,11 +2256,11 @@ function findNavigationIndex() {
 
   // Loop through all the buttons and check if any of them is active
   activeButton2.forEach((button) => {
-    const buttonTarget2 = button.getAttribute("data-target");
+    const activeTarget2 = button.getAttribute("data-target");
 
     // Check if the button follows the "bridge-*-tab" pattern and is active
-    if (button.classList.contains("active") && buttonTarget2.includes("-tab")) {
-      buttonActive2 = buttonTarget2; // Store the active button's data-target
+    if (button.classList.contains("active") && activeTarget2.includes("-tab")) {
+      buttonActive2 = activeTarget2; // Store the active button's data-target
       buttonActive3Prefix = buttonActive2.split("-").slice(0, 2).join("-") + "-";
       // alert(buttonActive2);
     }
@@ -2266,11 +2272,11 @@ function findNavigationIndex() {
 
   // Loop through all the buttons and check if any of them is active
   activeButton3.forEach((button) => {
-    const buttonTarget3 = button.getAttribute("data-target");
+    const activeTarget3 = button.getAttribute("data-target");
 
     // Check if the button follows the "bridge-*-tab" pattern and is active
-    if (button.classList.contains("active") && buttonTarget3.includes("-pg")) {
-      buttonActive3 = buttonTarget3; // Store the active button's data-target
+    if (button.classList.contains("active") && activeTarget3.includes("-pg")) {
+      buttonActive3 = activeTarget3; // Store the active button's data-target
       // alert(buttonActive3);
     }
   });
@@ -2279,34 +2285,52 @@ function findNavigationIndex() {
   for (let i = 0; i < navigationMap.length; i++) {
     const buttonTarget2 = navigationMap[i][1]; // Second element in the array // bridge-*-tab // Components // buttonActive2
     const buttonTarget3 = navigationMap[i][2]; // Third element in the array // bridge-something-pgN (typically)
-
+    if (buttonActive2 === "bridge-elements-tab" && buttonTarget2 === "bridge-elements-tab") {
+      foundIndex = i;
+      break;
+    } else if (buttonActive2 === "bridge-maintenance-tab" && buttonTarget2 === "bridge-maintenance-tab") {
+      foundIndex = i;
+      break;
+    }
+    if (buttonActive2 === "bridge-review-tab" && buttonTarget2 === "bridge-review-tab") {
+      foundIndex = i;
+      break;
+    }
     // If buttonActive2 is set, compare it with other elements in the navigationMap
-    if (buttonActive3Prefix) {
+    else if (buttonActive3 && buttonActive3.includes("-pg") && buttonTarget3 && buttonTarget3.includes("-pg")) {
       // Extract the number after the "-pg"
       const numberFromButtonActive3 = parseInt(buttonActive3.slice(buttonActive3.lastIndexOf("-pg") + 3), 10);
       const numberFromButtonTarget3 = parseInt(buttonTarget3.slice(buttonTarget3.lastIndexOf("-pg") + 3), 10);
-
       // Get the prefix before "-pg"
       const prefixFromButtonActive3 = buttonActive3.slice(0, buttonActive3.lastIndexOf("-pg"));
       const prefixFromButtonTarget3 = buttonTarget3.slice(0, buttonTarget3.lastIndexOf("-pg"));
 
-      // Output for debugging purposes
-      // alert(numberFromButtonActive3 + ", " + numberFromButtonTarget3);
-      // alert(prefixFromButtonActive3 + ", " + prefixFromButtonTarget3);
-
       // Compare the active button's number with other elements in the navigationMap (if needed)
       // For example, if you want to compare this with `buttonTarget2` or any other values, you can add that logic here
+      // alert(buttonTarget3 + ", " + buttonActive3);
+      if (buttonTarget3 === buttonActive3) {
+        foundIndex = i;
+        // alert("This button!");
+        break;
+      }
       if (prefixFromButtonActive3 === prefixFromButtonTarget3) {
+        // Output for debugging purposes
+        // alert(numberFromButtonActive3 + ", " + numberFromButtonTarget3);
+        // alert(prefixFromButtonActive3 + ", " + prefixFromButtonTarget3);
+
         if (numberFromButtonActive3 > numberFromButtonTarget3) {
-          alert("Greater than");
+          // alert("Greater than");
+          foundIndex = i + 0.5;
         } else if (numberFromButtonActive3 < numberFromButtonTarget3) {
-          alert("Less than");
-        } else if (numberFromButtonActive3 === numberFromButtonTarget3) {
-          alert("Equal");
+          // alert("Less than");
+          foundIndex = i - 0.5;
         }
       }
     }
   }
+
+  // Returns
+  return foundIndex;
 }
 
 // Track the number of times the Control key is pressed
