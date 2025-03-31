@@ -1840,6 +1840,16 @@ function enableTabbing(elementId, tabindexValue) {
 
 // :::: (Arrow Buttons) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+const toggleFocusActivation = "activate"; // Set to "focus" or "activate"
+
+function handleElementAction(element) {
+  if (toggleFocusActivation === "focus") {
+    element.focus();
+  } else if (toggleFocusActivation === "activate") {
+    element.click();
+  }
+}
+
 function getVisibleElements(rowClass) {
   return Array.from(document.querySelectorAll(`.${rowClass}`)).filter((el) => el.offsetParent !== null);
 }
@@ -1884,6 +1894,7 @@ window.addEventListener("keydown", function (event) {
       if (cursorPosition === textarea.value.length) {
         const nextIndex = (index + 1) % elements.length;
         elements[nextIndex].focus();
+        handleElementAction(elements[nextIndex]);
         event.preventDefault();
       } else {
         // If the cursor is not at the end, allow the natural behavior (move cursor right)
@@ -1895,6 +1906,7 @@ window.addEventListener("keydown", function (event) {
       // Normal behavior if not in a textarea
       const nextIndex = (index + 1) % elements.length;
       elements[nextIndex].focus();
+      handleElementAction(elements[nextIndex]);
       event.preventDefault();
     }
   }
@@ -1911,6 +1923,7 @@ window.addEventListener("keydown", function (event) {
       if (cursorPosition === 0) {
         const nextIndex = (index - 1 + elements.length) % elements.length;
         elements[nextIndex].focus();
+        handleElementAction(elements[nextIndex]);
         event.preventDefault();
       } else {
         // If the cursor is not at the beginning, allow the natural behavior (move cursor left)
@@ -1922,6 +1935,7 @@ window.addEventListener("keydown", function (event) {
       // Normal behavior if not in a textarea
       const nextIndex = (index - 1 + elements.length) % elements.length;
       elements[nextIndex].focus();
+      handleElementAction(elements[nextIndex]);
       event.preventDefault();
     }
   }
@@ -1941,6 +1955,7 @@ window.addEventListener("keydown", function (event) {
           const firstRow = getVisibleElements(allRows[0]);
           if (firstRow.length) {
             firstRow[0].focus();
+            handleElementAction(firstRow[0]);
           }
         } else {
           // Move focus to the first element in the next row
@@ -1952,8 +1967,10 @@ window.addEventListener("keydown", function (event) {
             const activeButton = nextRow.find((el) => el.tagName.toLowerCase() === "button" && el.classList.contains("active"));
             if (activeButton) {
               activeButton.focus(); // Focus the active button
+              handleElementAction(activeButton);
             } else {
               nextRow[0].focus(); // If no active button, focus the first visible element
+              handleElementAction(nextRow[0]);
             }
           }
         }
@@ -1973,8 +1990,10 @@ window.addEventListener("keydown", function (event) {
         const activeButton = nextRow.find((el) => el.tagName.toLowerCase() === "button" && el.classList.contains("active"));
         if (activeButton) {
           activeButton.focus(); // Focus the active button
+          handleElementAction(activeButton);
         } else {
           nextRow[0].focus(); // If no active button, focus the first visible element
+          handleElementAction(nextRow[0]);
         }
       }
       event.preventDefault();
@@ -1995,6 +2014,7 @@ window.addEventListener("keydown", function (event) {
         const nextRow = getVisibleElements(allRows[nextRowIndex]);
         if (nextRow.length) {
           nextRow[0].focus(); // Focus the first visible element in the previous row
+          handleElementAction(nextRow[0]);
         }
         event.preventDefault();
       }
@@ -2007,12 +2027,38 @@ window.addEventListener("keydown", function (event) {
         const activeButton = nextRow.find((el) => el.tagName.toLowerCase() === "button" && el.classList.contains("active"));
         if (activeButton) {
           activeButton.focus(); // Focus the active button
+          handleElementAction(activeButton);
         } else {
           nextRow[0].focus(); // If no active button, focus the first visible element
+          handleElementAction(nextRow[0]);
         }
       }
       event.preventDefault();
     }
+  }
+});
+
+// :::: (Enter & Arrow Down Button) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+window.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    setTimeout(() => {
+      // Get the event target (the button that was just activated)
+      const targetButton = document.activeElement;
+
+      // Check if the target button has both required classes
+      if (targetButton.classList.contains("row2") && targetButton.classList.contains("bridge-component-buttons")) {
+        // Trigger a simulated "ArrowDown" key event
+        const arrowDownEvent = new KeyboardEvent("keydown", {
+          key: "ArrowDown",
+          code: "ArrowDown",
+          keyCode: 40,
+          which: 40,
+          bubbles: true,
+        });
+        document.dispatchEvent(arrowDownEvent);
+      }
+    }, 10); // Small delay to allow default Enter action to complete
   }
 });
 
@@ -2285,14 +2331,7 @@ function findNavigationIndex() {
   for (let i = 0; i < navigationMap.length; i++) {
     const buttonTarget2 = navigationMap[i][1]; // Second element in the array // bridge-*-tab // Components // buttonActive2
     const buttonTarget3 = navigationMap[i][2]; // Third element in the array // bridge-something-pgN (typically)
-    if (buttonActive2 === "bridge-elements-tab" && buttonTarget2 === "bridge-elements-tab") {
-      foundIndex = i;
-      break;
-    } else if (buttonActive2 === "bridge-maintenance-tab" && buttonTarget2 === "bridge-maintenance-tab") {
-      foundIndex = i;
-      break;
-    }
-    if (buttonActive2 === "bridge-review-tab" && buttonTarget2 === "bridge-review-tab") {
+    if (["bridge-elements-tab", "bridge-maintenance-tab", "bridge-review-tab"].includes(buttonActive2) && buttonActive2 === buttonTarget2) {
       foundIndex = i;
       break;
     }

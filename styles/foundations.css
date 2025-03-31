@@ -168,7 +168,7 @@ body {
 
 .search-box:focus {
   outline: none;
-  box-shadow: 0 0 4px 4px rgba(0, 123, 255, 0.3); /* Soft blue glow for focus */
+  box-shadow: 0 0 4px 4px rgba(255, 25, 0, 0.685); /* Soft blue glow for focus */
   transition: 0.3s;
   background-color: rgb(183, 190, 196);
 }

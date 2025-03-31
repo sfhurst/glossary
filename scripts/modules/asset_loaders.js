@@ -105,6 +105,27 @@ copySummaryTextareaContent():
 // console.time("Speed Test");
 // console.timeEnd("Speed Test");
 
+// ::: ---------------------------- Asset Search Focus ----------------------------
+
+// Function to simulate clicking the bridge asset tab button and refocusing the search box
+function triggerBridgeTabAndRefocus() {
+  const searchBox = document.querySelector(".search-box");
+  const bridgeTabButton = document.querySelector("[data-target='bridge-asset-tab']");
+
+  if (bridgeTabButton) {
+    bridgeTabButton.click();
+  }
+
+  // Ensure focus stays in the search box and cursor is at the end
+  setTimeout(() => {
+    searchBox.focus();
+    searchBox.setSelectionRange(searchBox.value.length, searchBox.value.length);
+  }, 0);
+}
+
+// Event Listener for Search Box Focus
+document.querySelector(".search-box").addEventListener("focus", triggerBridgeTabAndRefocus);
+
 // ::: ---------------------------- Asset Search Box ----------------------------
 
 // Global variable to store the formatted history
