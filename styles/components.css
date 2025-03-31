@@ -295,6 +295,16 @@ button.active:focus {
   background: rgba(91, 84, 122, 0.1);
 }
 
+/* .textarea-comments:focus {
+  border-left: 3px solid rgb(76, 76, 253);
+  background: rgba(90, 88, 61, 0.18);
+} */
+
+.content-container-paragraphs:has(.textarea-comments:focus) {
+  /* Styles for the parent when the child is focused */
+  border-left: 3px solid rgb(76, 76, 253);
+}
+
 .textarea-mirrors {
   display: grid;
   margin-left: 0px;
