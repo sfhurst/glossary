@@ -29,9 +29,9 @@ const bridgeComponents = [
     </ul>`,
     example_comments: [
       "No speed reduction is necessary.",
-      "A minor speed reduction is expected due to roadway geometry.",
-      "An intersection is present at the north approach.",
-      "The bridge is at a traffic light and carries part of the queue.",
+      "A minor speed reduction is expected due to the approach roadway geometry.",
+      // "An intersection is present at the north approach.",
+      // "The bridge is at a traffic light and carries part of the queue.",
       "The bridge is in a horizontal curve.",
       "The bridge is in a superelevated horizontal curve.",
       "The bridge is in a sag vertical curve.",
@@ -66,13 +66,15 @@ const bridgeComponents = [
     glossary: [
       {
         term: "Annual Average Daily Traffic (AADT)",
-        definition: "The total annual volume of traffic passing a point or segment of a highway in both directions divided by the number of days in a year.",
+        definition:
+          "The total annual volume of traffic passing a point or segment of a highway in both directions divided by the number of days in a year.",
         search: `What is "Annual Average Daily Traffic" in transportation engineering?`,
         page: ["bridge-alignment-pg5"],
       },
       {
         term: "Annual Average Daily Truck Traffic (AADTT)",
-        definition: "The total annual volume of truck traffic passing a point or segment of a highway in both directions divided by the number of days in a year.",
+        definition:
+          "The total annual volume of truck traffic passing a point or segment of a highway in both directions divided by the number of days in a year.",
         search: `What is "Annual Average Daily Truck Traffic" in transportation engineering?`,
         page: ["bridge-alignment-pg5"],
       },
@@ -92,7 +94,8 @@ const bridgeComponents = [
       },
       {
         term: "Crest Vertical Curve",
-        definition: "A curve in the roadway profile that connects an ascending grade to a descending grade, typically used to smooth transitions at the crest of a hill.",
+        definition:
+          "A curve in the roadway profile that connects an ascending grade to a descending grade, typically used to smooth transitions at the crest of a hill.",
         discipline: "bridge design",
         page: ["bridge-alignment-pg5"],
       },
@@ -140,8 +143,18 @@ const bridgeComponents = [
         discipline: "bridge design",
         page: ["bridge-alignment-pg5"],
       },
-      { term: "Off-Ramp", definition: "A roadway that allows vehicles to exit a highway or freeway.", discipline: "bridge design", page: ["bridge-alignment-pg5"] },
-      { term: "On-Ramp", definition: "A roadway that allows vehicles to enter a highway or freeway.", discipline: "bridge design", page: ["bridge-alignment-pg5"] },
+      {
+        term: "Off-Ramp",
+        definition: "A roadway that allows vehicles to exit a highway or freeway.",
+        discipline: "bridge design",
+        page: ["bridge-alignment-pg5"],
+      },
+      {
+        term: "On-Ramp",
+        definition: "A roadway that allows vehicles to enter a highway or freeway.",
+        discipline: "bridge design",
+        page: ["bridge-alignment-pg5"],
+      },
       {
         term: "Right-of-Way",
         definition:
@@ -151,7 +164,8 @@ const bridgeComponents = [
       },
       {
         term: "Sag Vertical Curve",
-        definition: "A curve in the roadway profile that connects a descending grade to an ascending grade, typically used to smooth transitions at the bottom of a dip or valley.",
+        definition:
+          "A curve in the roadway profile that connects a descending grade to an ascending grade, typically used to smooth transitions at the bottom of a dip or valley.",
         discipline: "bridge design",
         page: ["bridge-alignment-pg5"],
       },
@@ -211,7 +225,7 @@ const bridgeComponents = [
       "No significant settlement has occurred.",
       "There are no deficiencies to report. The approach slabs show no noticeable settlement or visible surface defects.",
       "The approach slabs have been covered with an overlay.",
-      "The approach slabs appear to be level and stable with no signs of shifting.",
+      "The approach slabs appear to level and stable with no signs of shifting.",
       "There are sealed cracks in the approach slabs.",
       "There are sound concrete patches in the approach slabs.",
       "There is minor settlement of the approach slabs.",
@@ -313,8 +327,8 @@ const bridgeComponents = [
                 <p>Do not consider if the terminal joint meets the current standard.</p>`,
     example_comments: [
       "The terminal joints are in good condition.",
-      "The bridge has HMA terminal joints.",
       "The joints provide a smooth transition.",
+      "The bridge has HMA terminal joints.",
       "The bridge has integral or semi-integral abutments but no designated terminal joints; the construction joints at the end of the approach slabs function as terminal joints.",
       "The west construction joint is slightly raised due to thermal expansion and compression from the approach slab, creating a slight unevenness in the roadway.",
       "The terminal joints present a rough transition to the bridge.",
@@ -376,12 +390,12 @@ const bridgeComponents = [
       "The expansion joints are functioning as designed.",
       "The bridge has integral abutments.",
       "The joints are partially full of debris.",
-      "There are areas of the joints that have been repaired with pourable material.",
+      // "There are areas of the joints that have been repaired with pourable material.",
       "There is some leaking at the expansion joints.",
-      "The joints are leaking throughout.",
-      "There are several punctures and a loss of adhesion with the nosing in both the north and south joints.",
+      // "The joints are leaking throughout.",
+      // "There are several punctures and a loss of adhesion with the nosing in both the north and south joints.",
       "The joints have multiple areas that have lost adhesion.",
-      "The joints have a loss of adhesion throughout.",
+      // "The joints have a loss of adhesion throughout.",
       "The joints are full of debris, which may impact their functionality.",
     ],
     rating_table: [
@@ -458,7 +472,8 @@ const bridgeComponents = [
       },
       {
         term: "Asphalt Plug Joint",
-        definition: "A joint system that uses a flexible asphalt-based material to accommodate small movements while providing a smooth riding surface.",
+        definition:
+          "A joint system that uses a flexible asphalt-based material to accommodate small movements while providing a smooth riding surface.",
         discipline: "bridge design",
         page: ["bridge-joints-pg9"],
       },
@@ -768,7 +783,8 @@ const bridgeComponents = [
       },
       {
         term: "Guardrail Rail",
-        definition: "The main horizontal part of the guardrail that absorbs the force of a collision. It can be W-beam, box beam, or thrie beam, depending on the type.",
+        definition:
+          "The main horizontal part of the guardrail that absorbs the force of a collision. It can be W-beam, box beam, or thrie beam, depending on the type.",
         discipline: "bridge design",
         page: ["bridge-railings-pg9"],
       },
@@ -852,7 +868,8 @@ const bridgeComponents = [
       },
       {
         term: "Transition Railing",
-        definition: "A section of guardrail used to smoothly transition between different types of guardrails, ensuring seamless vehicle redirection.",
+        definition:
+          "A section of guardrail used to smoothly transition between different types of guardrails, ensuring seamless vehicle redirection.",
         discipline: "bridge design",
         page: ["bridge-railings-pg9"],
       },
@@ -865,7 +882,8 @@ const bridgeComponents = [
       },
       {
         term: "W-Beam Guardrail",
-        definition: "A common guardrail type with a W-shaped cross-section, typically used on highways. It’s effective in absorbing impact and redirecting vehicles.",
+        definition:
+          "A common guardrail type with a W-shaped cross-section, typically used on highways. It’s effective in absorbing impact and redirecting vehicles.",
         discipline: "bridge design",
         page: ["bridge-railings-pg9"],
       },
@@ -912,7 +930,7 @@ const bridgeComponents = [
       "There are no deficiencies to report.",
       "The bridge railing transitions are functioning as designed.",
       "There is some collision damage in the railing at the transition.",
-      "To accomadate other roadway features, the transition railings are designed as attenuators.",
+      // "To accomadate other roadway features, the transition railings are designed as attenuators.",
     ],
     rating_table: [
       {
@@ -995,9 +1013,9 @@ const bridgeComponents = [
                   below, both the deck and the wearing surface must be rated the same and assigned the lower rating.
                 </p>`,
     example_comments: [
+      "There are no deficiencies to report.",
       "The wearing surface is monolithic with the deck.",
       "The wearing surface is monolithic with the deck. See the deck comments.",
-      "There are no deficiencies to report.",
       "There are sealed cracks in the wearing surface.",
       "There are unsealed cracks visible across less than 10% of the total surface area.",
       "There are isolated areas of minor peeling in the epoxy overlay.",
@@ -1085,20 +1103,20 @@ const bridgeComponents = [
       "There are no deficiencies to report.",
       "Strength and performance are not affected.",
       "The top of the deck is covered by an epoxy overlay.",
-      "No deficiencies are showing through the overlay.",
+      // "No deficiencies are showing through the overlay.",
       "The deck underside is concealed by stay-in-place forms and the copings are protected from runoff by concrete barrier walls.",
-      "The deck underside is concealed by stay-in-place forms and the top of the deck by an epoxy overlay.",
+      // "The deck underside is concealed by stay-in-place forms and the top of the deck by an epoxy overlay.",
       "No corrosion was found in the stay-in-place forms and the copings are in good condition.",
-      "The copings are exposed to runoff beneath the metal guardrails.",
-      "The copings have isolated hairline cracks and isolated areas of staining.",
+      // "The copings are exposed to runoff beneath the metal guardrails.",
+      // "The copings have isolated hairline cracks and isolated areas of staining.",
       "There are scattered areas of minor corrosion in the stay-in-place forms.",
       "There are moderate spalls with delamination and exposed rebar around the deck drains.",
       "There is heavy spalling with multiple layers of exposed rebar exhibiting moderate section loss along the north coping in all spans.",
-      "There are large areas of deep spalling with exposed rebar exhibiting moderate section loss on the underside of the deck.",
-      "Water is penetrating the deck.",
-      "Water is penetrating the deck as evidenced by the efflorescence between the box beams.",
-      "There are no obvious signs of water contacting or moving through the deck.",
-      "There is not sufficient evidence to suggest that water is moving through the deck or to warrant a lower rating.",
+      // "There are large areas of deep spalling with exposed rebar exhibiting moderate section loss on the underside of the deck.",
+      // "Water is penetrating the deck.",
+      "There is efflorescence between the box beams, indicating that water is moving through the deck.",
+      "There is no evidence of water contacting or moving through the deck.",
+      // "There is not sufficient evidence to suggest that water is moving through the deck or to warrant a lower rating.",
     ],
     rating_table: [
       {
@@ -1161,7 +1179,12 @@ const bridgeComponents = [
     ],
     glossary_page_id: "bridge-deck-pg11",
     glossary: [
-      { term: "Bridge Deck", definition: "The roadway surface of a bridge, typically made of concrete or steel.", discipline: "bridge design", page: ["bridge-deck-pg11"] },
+      {
+        term: "Bridge Deck",
+        definition: "The roadway surface of a bridge, typically made of concrete or steel.",
+        discipline: "bridge design",
+        page: ["bridge-deck-pg11"],
+      },
       {
         term: "Deck Joint",
         definition: "A joint in the bridge deck that allows for expansion, contraction, and movement due to temperature changes or load variations.",
@@ -1188,7 +1211,8 @@ const bridgeComponents = [
       },
       {
         term: "Nominal",
-        definition: "Referring to an approximate or standard value, typically used when the exact measurement may vary slightly but is considered close to the stated value.",
+        definition:
+          "Referring to an approximate or standard value, typically used when the exact measurement may vary slightly but is considered close to the stated value.",
         search: ``,
         discipline: "bridge design",
         page: ["bridge-deck-pg11"],
@@ -1248,15 +1272,15 @@ const bridgeComponents = [
                 </p>`,
     example_comments: [
       "There are no deficiencies to report.",
-      "The superstructure is a reinforced concrete slab. See the deck comments.",
       "Strength and performance are not affected.",
+      "The superstructure is a reinforced concrete slab. See the deck comments.",
 
       "The steel beams are painted, with no defects in the protective coating.",
       "There are some areas of minor pitting in the lower flanges, but no active corrosion. ",
       "There is heavy section loss and rust scale in the beam ends at the abutments under the joints.",
 
       "There is minor cracking and delamination in the beam ends at the abutments beneath the joints.",
-      "There are exposed strands in Beam 1 at the west abutment.",
+      // "There are exposed strands in Beam 1 at the west abutment.",
 
       "There is a moderate, diagonal crack running up toward the center of the beam (indicating shear failure).",
     ],
@@ -1323,7 +1347,8 @@ const bridgeComponents = [
     glossary: [
       {
         term: "Cover Plate",
-        definition: "A steel plate welded or bolted to the flange of a beam or girder to increase its load-carrying capacity and reduce stress in high-moment regions.",
+        definition:
+          "A steel plate welded or bolted to the flange of a beam or girder to increase its load-carrying capacity and reduce stress in high-moment regions.",
         discipline: "bridge design",
         page: ["bridge-super-pg9"],
       },
@@ -1346,7 +1371,12 @@ const bridgeComponents = [
         discipline: "bridge design",
         page: ["bridge-super-pg9"],
       },
-      { term: "Girder Line", definition: "The alignment of girders supporting the bridge deck.", discipline: "bridge design", page: ["bridge-super-pg9"] },
+      {
+        term: "Girder Line",
+        definition: "The alignment of girders supporting the bridge deck.",
+        discipline: "bridge design",
+        page: ["bridge-super-pg9"],
+      },
       {
         term: "Jacking Frame",
         definition:
@@ -1376,7 +1406,8 @@ const bridgeComponents = [
       },
       {
         term: "Splice Plate",
-        definition: "A steel plate used to join two structural members end-to-end, transferring loads across the connection and maintaining continuity in the structure.",
+        definition:
+          "A steel plate used to join two structural members end-to-end, transferring loads across the connection and maintaining continuity in the structure.",
         discipline: "bridge design",
         page: ["bridge-super-pg9"],
       },
@@ -1527,7 +1558,7 @@ const bridgeComponents = [
       "There are no deficiencies to report.",
       "The bearings are adequately positioned beneath the bridge beams and fully supported by the substructure.",
       "There is minor corrosion in the bearings at the abutments.",
-      "There is minor pitting in the bearings at the abutments that has been painted over.",
+      // "There is minor pitting in the bearings at the abutments that has been painted over.",
       "There is moderate pack rust and heavy corrosion in the bearings at the abutments.",
       "There is rust (lamellar) scaling between the bottom of the bearings and the masonry plates at the bearings under the abutments.",
       "The bearings are slightly misaligned.",
@@ -1659,8 +1690,8 @@ const bridgeComponents = [
       "There is light abrasion in the interior piers.",
       "There are isolated minor-width vertical cracks in the interior piers and in the abutment backwalls.",
       "There are several shallow-depth spalls in the piers and abutments.",
-      "There is an area of moderate spalling in the Pier 2 pier cap near the bearing area of Beams 1 and 2. There is still good bearing beneath the beams.",
-      "There is moderate erosion at the east abutment due to drainage and runoff issues.",
+      // "There is an area of moderate spalling in the Pier 2 pier cap near the bearing area of Beams 1 and 2. There is still good bearing beneath the beams.",
+      "There is moderate erosion at the east abutment due to unchanneled drainage and excessive runoff.",
       "There is moderate scour at the upstream end of Pier 2 where it is directly impacted by the channel.",
       "There are several piles exposed at the north abutment.",
       "There is a wide-width horizontal crack (indicating settlement) running the length of the west abutment.",
@@ -1750,7 +1781,12 @@ const bridgeComponents = [
         discipline: "bridge design",
         page: ["bridge-sub-pg9"],
       },
-      { term: "Footing", definition: "The foundation element of a bridge that distributes loads to the ground.", discipline: "bridge design", page: ["bridge-sub-pg9"] },
+      {
+        term: "Footing",
+        definition: "The foundation element of a bridge that distributes loads to the ground.",
+        discipline: "bridge design",
+        page: ["bridge-sub-pg9"],
+      },
       {
         term: "Headwall",
         definition: "A retaining wall at the end of a culvert or bridge opening that stabilizes the structure and prevents erosion.",
@@ -1826,15 +1862,15 @@ const bridgeComponents = [
                   the stability of the soil beneath the slopewall.
                 </p>`,
     example_comments: [
-      "The slopewall appears to be stable with no visible signs of distress or movement.",
       "The slopewalls are in good condition.",
-      "The structure has MSE walls.",
-      "There are no obvious structural deficiencies in the MSE walls.",
+      "The slopewall appears to be stable with no signs of distress or movement.",
+      "The east slopewall has wide cracking.",
       "The slopewall exhibits minor settlement, but there are no signs of structural instability.",
       "There are minor voids present behind the slopewall, but they do not appear to be affecting stability.",
-      "There is moderate erosion under the east slopewall.",
-      "The east slopewall has wide cracking.",
+      // "There is moderate erosion under the east slopewall.",
       "The slopewall is overgrown with vegetation, which may be hiding potential issues.",
+      "The structure has MSE walls.",
+      "There are no obvious structural deficiencies in the MSE walls.",
     ],
     rating_table: [
       {
@@ -1909,8 +1945,8 @@ const bridgeComponents = [
       "Strength and performance are not affected.",
       "There is minor leaking between the segments.",
       "There are minor deformations to the pipe shape.",
-      "There is minor corrosion in the flow line.",
-      "There is complete section loss in the pipe invert on the north end for 20'.",
+      "There is minor corrosion at the waterline.",
+      // "There is complete section loss in the pipe invert on the north end for 20'.",
       "There is some minor- to moderate-width cracking with efflorescence in the barrel.",
       "There is cracking and efflorescence in the spandrel wall.",
       "There is minor cracking with heavy efflorescence at the outer edge of the arch ring.",
@@ -1985,25 +2021,29 @@ const bridgeComponents = [
       },
       {
         term: "Abrasive Condition",
-        definition: "The presence of granular material accompanied with a stream gradient or flow sufficient to cause movement of the granular material in the streambed.",
+        definition:
+          "The presence of granular material accompanied with a stream gradient or flow sufficient to cause movement of the granular material in the streambed.",
         discipline: "bridge design",
         page: ["bridge-culvert-pg6"],
       },
       {
         term: "Abutment",
-        definition: "A support structure at either end of the bridge that holds the ends of the arch in place and transfers the loads from the bridge to the ground.",
+        definition:
+          "A support structure at either end of the bridge that holds the ends of the arch in place and transfers the loads from the bridge to the ground.",
         discipline: "bridge design",
         page: ["bridge-culvert-pg6"],
       },
       {
         term: "Arch Crown",
-        definition: "The highest point of the arch, located at the center of the span, which experiences compressive forces that help distribute loads across the arch structure.",
+        definition:
+          "The highest point of the arch, located at the center of the span, which experiences compressive forces that help distribute loads across the arch structure.",
         discipline: "bridge design",
         page: ["bridge-culvert-pg6"],
       },
       {
         term: "Arch Ring",
-        definition: "The curved, topmost portion of an arch that carries the compressive load across the span of the bridge, ensuring structural stability.",
+        definition:
+          "The curved, topmost portion of an arch that carries the compressive load across the span of the bridge, ensuring structural stability.",
         discipline: "bridge design",
         page: ["bridge-culvert-pg6"],
       },
@@ -2022,7 +2062,8 @@ const bridgeComponents = [
       },
       {
         term: "Barrel (Arch)",
-        definition: "The curved, continuous part of an arch bridge, typically referring to the overall length or span of the arch that supports the load.",
+        definition:
+          "The curved, continuous part of an arch bridge, typically referring to the overall length or span of the arch that supports the load.",
         discipline: "bridge design",
         page: ["bridge-culvert-pg6"],
       },
@@ -2034,11 +2075,17 @@ const bridgeComponents = [
       },
       {
         term: "Blistering",
-        definition: "Process of water infiltrating the first layer of a fiberglass-reinforced plastic large culvert structure causing bubbles to form near the surface.",
+        definition:
+          "Process of water infiltrating the first layer of a fiberglass-reinforced plastic large culvert structure causing bubbles to form near the surface.",
         discipline: "bridge design",
         page: ["bridge-culvert-pg6"],
       },
-      { term: "Channel", definition: "A waterway used to transport water from one location to another.", discipline: "bridge design", page: ["bridge-culvert-pg6"] },
+      {
+        term: "Channel",
+        definition: "A waterway used to transport water from one location to another.",
+        discipline: "bridge design",
+        page: ["bridge-culvert-pg6"],
+      },
       {
         term: "Corrosion",
         definition: "Deterioration or dissolution of a material by chemical or electrochemical reaction with the surrounding environment.",
@@ -2070,8 +2117,18 @@ const bridgeComponents = [
         discipline: "bridge design",
         page: ["bridge-culvert-pg6"],
       },
-      { term: "Deterioration", definition: "Decline in quality over time due to chemical or physical wearing.", discipline: "bridge design", page: ["bridge-culvert-pg6"] },
-      { term: "Differential Settlement", definition: "Uneven settlement between footings or supports.", discipline: "bridge design", page: ["bridge-culvert-pg6"] },
+      {
+        term: "Deterioration",
+        definition: "Decline in quality over time due to chemical or physical wearing.",
+        discipline: "bridge design",
+        page: ["bridge-culvert-pg6"],
+      },
+      {
+        term: "Differential Settlement",
+        definition: "Uneven settlement between footings or supports.",
+        discipline: "bridge design",
+        page: ["bridge-culvert-pg6"],
+      },
       {
         term: "Efflorescence",
         definition: "Deposits of salts on the surface of a porous material caused by the migration of salt-laden water to the surface.",
@@ -2084,7 +2141,12 @@ const bridgeComponents = [
         discipline: "bridge design",
         page: ["bridge-culvert-pg6"],
       },
-      { term: "Erosion", definition: "The removal of a material or surface over time by flowing water.", discipline: "bridge design", page: ["bridge-culvert-pg6"] },
+      {
+        term: "Erosion",
+        definition: "The removal of a material or surface over time by flowing water.",
+        discipline: "bridge design",
+        page: ["bridge-culvert-pg6"],
+      },
       {
         term: "Exfiltration",
         definition: "The process of water exiting a culvert structure and entering the surrounding soil through unintended openings.",
@@ -2099,44 +2161,68 @@ const bridgeComponents = [
       },
       {
         term: "Flexible Culvert",
-        definition: "A culvert that relies on a consistent application of pressure from the surrounding soil envelope to develop structural strength.",
+        definition:
+          "A culvert that relies on a consistent application of pressure from the surrounding soil envelope to develop structural strength.",
         discipline: "bridge design",
         page: ["bridge-culvert-pg6"],
       },
-      { term: "Galvanization", definition: "Application of zinc coating along the surface of a structure.", discipline: "bridge design", page: ["bridge-culvert-pg6"] },
+      {
+        term: "Galvanization",
+        definition: "Application of zinc coating along the surface of a structure.",
+        discipline: "bridge design",
+        page: ["bridge-culvert-pg6"],
+      },
       {
         term: "Infiltration",
         definition: "The process of water or backfill material entering the culvert structure through unintended openings.",
         discipline: "bridge design",
         page: ["bridge-culvert-pg6"],
       },
-      { term: "Inlet", definition: "The initial 5 ft of the upstream end of a culvert structure.", discipline: "bridge design", page: ["bridge-culvert-pg6"] },
+      {
+        term: "Inlet",
+        definition: "The initial 5 ft of the upstream end of a culvert structure.",
+        discipline: "bridge design",
+        page: ["bridge-culvert-pg6"],
+      },
       {
         term: "Intrados",
         definition: "The inner surface of the arch ring, which is in compression and typically carries the load from the bridge deck.",
         discipline: "bridge design",
         page: ["bridge-culvert-pg6"],
       },
-      { term: "Invert", definition: "The bottom or lowest region along the internal surface of a pipe.", discipline: "bridge design", page: ["bridge-culvert-pg6"] },
+      {
+        term: "Invert",
+        definition: "The bottom or lowest region along the internal surface of a pipe.",
+        discipline: "bridge design",
+        page: ["bridge-culvert-pg6"],
+      },
       {
         term: "Joint",
-        definition: "Connection where two sections of a culvert structure meet. Additional material may be present to ensure a watertight connection between sections.",
+        definition:
+          "Connection where two sections of a culvert structure meet. Additional material may be present to ensure a watertight connection between sections.",
         discipline: "bridge design",
         page: ["bridge-culvert-pg6"],
       },
       {
         term: "Keystone",
-        definition: "The central, topmost stone or concrete block of an arch that locks the other blocks or sections in place, crucial for the arch’s structural integrity.",
+        definition:
+          "The central, topmost stone or concrete block of an arch that locks the other blocks or sections in place, crucial for the arch’s structural integrity.",
         discipline: "bridge design",
         page: ["bridge-culvert-pg6"],
       },
       {
         term: "Large Culvert",
-        definition: "A culvert structure with a measured span length between 4 ft and 20 ft as measured perpendicular to the centerline of the parent roadway.",
+        definition:
+          "A culvert structure with a measured span length between 4 ft and 20 ft as measured perpendicular to the centerline of the parent roadway.",
         discipline: "bridge design",
         page: ["bridge-culvert-pg6"],
       },
-      { term: "Outlet", definition: "The final 5 ft of the downstream end of a culvert structure.", discipline: "bridge design", page: ["bridge-culvert-pg6"] },
+      {
+        term: "Outlet",
+        definition: "The final 5 ft of the downstream end of a culvert structure.",
+        discipline: "bridge design",
+        page: ["bridge-culvert-pg6"],
+      },
       {
         term: "Pier",
         definition:
@@ -2144,10 +2230,30 @@ const bridgeComponents = [
         discipline: "bridge design",
         page: ["bridge-culvert-pg6"],
       },
-      { term: "Piping", definition: "The process of erosion along the exterior perimeter of a culvert barrel.", discipline: "bridge design", page: ["bridge-culvert-pg6"] },
-      { term: "Pressure Head", definition: "Height of water above a plane or point of reference.", discipline: "bridge design", page: ["bridge-culvert-pg6"] },
-      { term: "Rehabilitation", definition: "Repairing a culvert to return it to its initial condition or better.", discipline: "bridge design", page: ["bridge-culvert-pg6"] },
-      { term: "Replacement", definition: "Removal of existing structure and construction of a new culvert.", discipline: "bridge design", page: ["bridge-culvert-pg6"] },
+      {
+        term: "Piping",
+        definition: "The process of erosion along the exterior perimeter of a culvert barrel.",
+        discipline: "bridge design",
+        page: ["bridge-culvert-pg6"],
+      },
+      {
+        term: "Pressure Head",
+        definition: "Height of water above a plane or point of reference.",
+        discipline: "bridge design",
+        page: ["bridge-culvert-pg6"],
+      },
+      {
+        term: "Rehabilitation",
+        definition: "Repairing a culvert to return it to its initial condition or better.",
+        discipline: "bridge design",
+        page: ["bridge-culvert-pg6"],
+      },
+      {
+        term: "Replacement",
+        definition: "Removal of existing structure and construction of a new culvert.",
+        discipline: "bridge design",
+        page: ["bridge-culvert-pg6"],
+      },
       {
         term: "Rigid Culvert",
         definition: "A culvert that relies on internal material properties to develop structural strength.",
@@ -2156,7 +2262,8 @@ const bridgeComponents = [
       },
       {
         term: "Rise",
-        definition: "The vertical distance from the base of the arch to the highest point of the arch, influencing the curvature and load distribution of the arch.",
+        definition:
+          "The vertical distance from the base of the arch to the highest point of the arch, influencing the curvature and load distribution of the arch.",
         discipline: "bridge design",
         page: ["bridge-culvert-pg6"],
       },
@@ -2172,7 +2279,12 @@ const bridgeComponents = [
         discipline: "bridge design",
         page: ["bridge-culvert-pg6"],
       },
-      { term: "Section Loss", definition: "Loss of a material’s thickness caused by chemical or physical degradation.", discipline: "bridge design", page: ["bridge-culvert-pg6"] },
+      {
+        term: "Section Loss",
+        definition: "Loss of a material’s thickness caused by chemical or physical degradation.",
+        discipline: "bridge design",
+        page: ["bridge-culvert-pg6"],
+      },
       {
         term: "Slabbing",
         definition: "Straightening of rounded concrete sections accompanied by cracking and/or spalls.",
@@ -2185,7 +2297,12 @@ const bridgeComponents = [
         discipline: "bridge design",
         page: ["bridge-culvert-pg6"],
       },
-      { term: "Spalling", definition: "Separation of surface concrete due to fractures within the material.", discipline: "bridge design", page: ["bridge-culvert-pg6"] },
+      {
+        term: "Spalling",
+        definition: "Separation of surface concrete due to fractures within the material.",
+        discipline: "bridge design",
+        page: ["bridge-culvert-pg6"],
+      },
       {
         term: "Span",
         definition: "The horizontal distance between the supports (abutments) of the arch, determining the size and shape of the arch structure.",
@@ -2215,7 +2332,8 @@ const bridgeComponents = [
       },
       {
         term: "Underfill Material",
-        definition: "A material, such as compacted soil or granular aggregate, placed beneath the arch ring to help distribute loads evenly and enhance the bridge’s stability.",
+        definition:
+          "A material, such as compacted soil or granular aggregate, placed beneath the arch ring to help distribute loads evenly and enhance the bridge’s stability.",
         discipline: "bridge design",
         page: ["bridge-culvert-pg6"],
       },
@@ -2260,13 +2378,13 @@ const bridgeComponents = [
                 </p>`,
     example_comments: [
       "There are no deficiencies to report.",
-      "The bridge is not over water.",
-      "The channel condition does not threaten the roadway or the bridge.",
       "Under normal conditions, the shallow, low-velocity channel flows from south to north through Span B.",
-      "The channel is free of significant debris accumulation that would obstruct flow.",
-      "Flow direction varies with rising and receding water levels.",
       "There are localized areas of minor erosion.",
+      "The channel is free of significant debris accumulation that would obstruct flow.",
+      "The channel condition does not threaten the roadway or the bridge.",
+      "Flow direction varies with rising and receding water levels.",
       "Accumulated debris has caused localized flow obstruction in the channel.",
+      "The bridge is not over water.",
     ],
     rating_table: [
       {
@@ -2332,7 +2450,8 @@ const bridgeComponents = [
     glossary: [
       {
         term: "Aggradation",
-        definition: "The process of sediment deposition that raises the level of a riverbed or streambed, often due to reduced water flow or velocity.",
+        definition:
+          "The process of sediment deposition that raises the level of a riverbed or streambed, often due to reduced water flow or velocity.",
         discipline: "bridge design",
         page: ["bridge-channel-pg8"],
       },
@@ -2351,7 +2470,8 @@ const bridgeComponents = [
       },
       {
         term: "Backwater",
-        definition: "The increase in the upstream water elevation resulting from an obstruction to flow, such as a bridge and/or embankment placed in the floodplain.",
+        definition:
+          "The increase in the upstream water elevation resulting from an obstruction to flow, such as a bridge and/or embankment placed in the floodplain.",
 
         discipline: "bridge design",
         page: ["bridge-channel-pg8"],
@@ -2423,7 +2543,8 @@ const bridgeComponents = [
       },
       {
         term: "Degradation",
-        definition: "The process of erosion or removal of sediment from the riverbed or streambed, leading to a lowering of the watercourse or shoreline.",
+        definition:
+          "The process of erosion or removal of sediment from the riverbed or streambed, leading to a lowering of the watercourse or shoreline.",
         discipline: "bridge design",
         page: ["bridge-channel-pg8"],
       },
@@ -2438,20 +2559,23 @@ const bridgeComponents = [
 
       {
         term: "Drop Structures",
-        definition: "A river training feature that is placed in the channel to control the flow of water and reduce scouring effects on the streambed.",
+        definition:
+          "A river training feature that is placed in the channel to control the flow of water and reduce scouring effects on the streambed.",
         discipline: "bridge design",
         page: ["bridge-channel-pg8"],
       },
       {
         term: "Erosion",
-        definition: "The gradual removal of soil, rock, or other surface materials by natural forces such as wind, water, or ice. Scour is a type of erosion.",
+        definition:
+          "The gradual removal of soil, rock, or other surface materials by natural forces such as wind, water, or ice. Scour is a type of erosion.",
         discipline: "bridge design",
         page: ["bridge-channel-pg8"],
       },
 
       {
         term: "Floodplain",
-        definition: "The flat, often expansive area adjacent to a channel that is subject to periodic flooding, typically formed by sediment deposition during high-water events.",
+        definition:
+          "The flat, often expansive area adjacent to a channel that is subject to periodic flooding, typically formed by sediment deposition during high-water events.",
         discipline: "bridge design",
         page: ["bridge-channel-pg8"],
       },
@@ -2494,7 +2618,8 @@ const bridgeComponents = [
       },
       {
         term: "Headcutting",
-        definition: "The erosion of the upstream end of a channel, often occurring when a sudden drop in elevation (such as a waterfall) leads to rapid erosion and deepening.",
+        definition:
+          "The erosion of the upstream end of a channel, often occurring when a sudden drop in elevation (such as a waterfall) leads to rapid erosion and deepening.",
         discipline: "bridge design",
         page: ["bridge-channel-pg8"],
       },
@@ -2508,13 +2633,15 @@ const bridgeComponents = [
 
       {
         term: "Meander",
-        definition: "A curve or bend in a channel, typically occurring in low-gradient rivers or streams, where the water flow erodes one bank and deposits sediment on the other.",
+        definition:
+          "A curve or bend in a channel, typically occurring in low-gradient rivers or streams, where the water flow erodes one bank and deposits sediment on the other.",
         discipline: "bridge design",
         page: ["bridge-channel-pg8"],
       },
       {
         term: "Piping",
-        definition: "The erosion caused by the flow of water through soil or sediment, creating underground channels and leading to the collapse of the surface material.",
+        definition:
+          "The erosion caused by the flow of water through soil or sediment, creating underground channels and leading to the collapse of the surface material.",
         discipline: "bridge design",
         page: ["bridge-channel-pg8"],
       },
@@ -2546,7 +2673,8 @@ const bridgeComponents = [
       },
       {
         term: "Rill Erosion",
-        definition: "Shallow, small channels formed on the soil surface by the concentrated flow of water, often caused by rainfall or surface runoff.",
+        definition:
+          "Shallow, small channels formed on the soil surface by the concentrated flow of water, often caused by rainfall or surface runoff.",
         discipline: "bridge design",
         page: ["bridge-channel-pg8"],
       },
@@ -2565,7 +2693,8 @@ const bridgeComponents = [
       },
       {
         term: "Sediment Deposition",
-        definition: "The accumulation of eroded materials such as sand, silt, or gravel within a channel, typically occurring when the flow velocity decreases.",
+        definition:
+          "The accumulation of eroded materials such as sand, silt, or gravel within a channel, typically occurring when the flow velocity decreases.",
         discipline: "bridge design",
         page: ["bridge-channel-pg8"],
       },
@@ -2591,7 +2720,8 @@ const bridgeComponents = [
       },
       {
         term: "Spurs",
-        definition: "A river training countermeasure that extends from the bank to control flow direction and reduce erosion by deflecting water away from vulnerable areas.",
+        definition:
+          "A river training countermeasure that extends from the bank to control flow direction and reduce erosion by deflecting water away from vulnerable areas.",
         discipline: "bridge design",
         page: ["bridge-channel-pg8"],
       },
@@ -2606,14 +2736,16 @@ const bridgeComponents = [
 
       {
         term: "Thalweg",
-        definition: "The line of lowest elevation within a channel, often following the natural flow path of water, marking the deepest part of the channel.",
+        definition:
+          "The line of lowest elevation within a channel, often following the natural flow path of water, marking the deepest part of the channel.",
         discipline: "bridge design",
         page: ["bridge-channel-pg8"],
       },
 
       {
         term: "Undercutting",
-        definition: "The erosion of the base of a channel's bank or bed, causing instability and leading to the collapse or sloughing of the bank material.",
+        definition:
+          "The erosion of the base of a channel's bank or bed, causing instability and leading to the collapse or sloughing of the bank material.",
         discipline: "bridge design",
         page: ["bridge-channel-pg8"],
       },
@@ -2719,12 +2851,14 @@ const bridgeComponents = [
       {
         code: "3",
         condition: "SERIOUS",
-        description: "Major defects; performance of channel protection is seriously affected. Condition typically necessitates more frequent monitoring or corrective actions.",
+        description:
+          "Major defects; performance of channel protection is seriously affected. Condition typically necessitates more frequent monitoring or corrective actions.",
       },
       {
         code: "2",
         condition: "CRITICAL",
-        description: "Major defects; channel protection is severely compromised. Condition typically necessitates more frequent monitoring or corrective actions.",
+        description:
+          "Major defects; channel protection is severely compromised. Condition typically necessitates more frequent monitoring or corrective actions.",
       },
       {
         code: "1",
@@ -2833,7 +2967,8 @@ const bridgeComponents = [
     glossary: [
       {
         term: "Aggradation",
-        definition: "The process of sediment deposition that raises the level of a riverbed or streambed, often due to reduced water flow or velocity.",
+        definition:
+          "The process of sediment deposition that raises the level of a riverbed or streambed, often due to reduced water flow or velocity.",
         discipline: "bridge design",
         page: ["bridge-scour-pg7"],
       },
@@ -2852,7 +2987,8 @@ const bridgeComponents = [
       },
       {
         term: "Backwater",
-        definition: "The increase in the upstream water elevation resulting from an obstruction to flow, such as a bridge and/or embankment placed in the floodplain.",
+        definition:
+          "The increase in the upstream water elevation resulting from an obstruction to flow, such as a bridge and/or embankment placed in the floodplain.",
 
         discipline: "bridge design",
         page: ["bridge-scour-pg7"],
@@ -2924,7 +3060,8 @@ const bridgeComponents = [
       },
       {
         term: "Degradation",
-        definition: "The process of erosion or removal of sediment from the riverbed or streambed, leading to a lowering of the watercourse or shoreline.",
+        definition:
+          "The process of erosion or removal of sediment from the riverbed or streambed, leading to a lowering of the watercourse or shoreline.",
         discipline: "bridge design",
         page: ["bridge-scour-pg7"],
       },
@@ -2939,20 +3076,23 @@ const bridgeComponents = [
 
       {
         term: "Drop Structures",
-        definition: "A river training feature that is placed in the channel to control the flow of water and reduce scouring effects on the streambed.",
+        definition:
+          "A river training feature that is placed in the channel to control the flow of water and reduce scouring effects on the streambed.",
         discipline: "bridge design",
         page: ["bridge-scour-pg7"],
       },
       {
         term: "Erosion",
-        definition: "The gradual removal of soil, rock, or other surface materials by natural forces such as wind, water, or ice. Scour is a type of erosion.",
+        definition:
+          "The gradual removal of soil, rock, or other surface materials by natural forces such as wind, water, or ice. Scour is a type of erosion.",
         discipline: "bridge design",
         page: ["bridge-scour-pg7"],
       },
 
       {
         term: "Floodplain",
-        definition: "The flat, often expansive area adjacent to a channel that is subject to periodic flooding, typically formed by sediment deposition during high-water events.",
+        definition:
+          "The flat, often expansive area adjacent to a channel that is subject to periodic flooding, typically formed by sediment deposition during high-water events.",
         discipline: "bridge design",
         page: ["bridge-scour-pg7"],
       },
@@ -2995,7 +3135,8 @@ const bridgeComponents = [
       },
       {
         term: "Headcutting",
-        definition: "The erosion of the upstream end of a channel, often occurring when a sudden drop in elevation (such as a waterfall) leads to rapid erosion and deepening.",
+        definition:
+          "The erosion of the upstream end of a channel, often occurring when a sudden drop in elevation (such as a waterfall) leads to rapid erosion and deepening.",
         discipline: "bridge design",
         page: ["bridge-scour-pg7"],
       },
@@ -3009,7 +3150,8 @@ const bridgeComponents = [
 
       {
         term: "Meander",
-        definition: "A curve or bend in a channel, typically occurring in low-gradient rivers or streams, where the water flow erodes one bank and deposits sediment on the other.",
+        definition:
+          "A curve or bend in a channel, typically occurring in low-gradient rivers or streams, where the water flow erodes one bank and deposits sediment on the other.",
         discipline: "bridge design",
         page: ["bridge-scour-pg7"],
       },
@@ -3021,7 +3163,8 @@ const bridgeComponents = [
       },
       {
         term: "Piping",
-        definition: "The erosion caused by the flow of water through soil or sediment, creating underground channels and leading to the collapse of the surface material.",
+        definition:
+          "The erosion caused by the flow of water through soil or sediment, creating underground channels and leading to the collapse of the surface material.",
         discipline: "bridge design",
         page: ["bridge-scour-pg7"],
       },
@@ -3053,7 +3196,8 @@ const bridgeComponents = [
       },
       {
         term: "Rill Erosion",
-        definition: "Shallow, small channels formed on the soil surface by the concentrated flow of water, often caused by rainfall or surface runoff.",
+        definition:
+          "Shallow, small channels formed on the soil surface by the concentrated flow of water, often caused by rainfall or surface runoff.",
         discipline: "bridge design",
         page: ["bridge-scour-pg7"],
       },
@@ -3066,7 +3210,8 @@ const bridgeComponents = [
       },
       {
         term: "Sediment Deposition",
-        definition: "The accumulation of eroded materials such as sand, silt, or gravel within a channel, typically occurring when the flow velocity decreases.",
+        definition:
+          "The accumulation of eroded materials such as sand, silt, or gravel within a channel, typically occurring when the flow velocity decreases.",
         discipline: "bridge design",
         page: ["bridge-scour-pg7"],
       },
@@ -3092,7 +3237,8 @@ const bridgeComponents = [
       },
       {
         term: "Spurs",
-        definition: "A river training countermeasure that extends from the bank to control flow direction and reduce erosion by deflecting water away from vulnerable areas.",
+        definition:
+          "A river training countermeasure that extends from the bank to control flow direction and reduce erosion by deflecting water away from vulnerable areas.",
 
         discipline: "bridge design",
         page: ["bridge-scour-pg7"],
@@ -3108,14 +3254,16 @@ const bridgeComponents = [
 
       {
         term: "Thalweg",
-        definition: "The line of lowest elevation within a channel, often following the natural flow path of water, marking the deepest part of the channel.",
+        definition:
+          "The line of lowest elevation within a channel, often following the natural flow path of water, marking the deepest part of the channel.",
         discipline: "bridge design",
         page: ["bridge-scour-pg7"],
       },
 
       {
         term: "Undercutting",
-        definition: "The erosion of the base of a channel's bank or bed, causing instability and leading to the collapse or sloughing of the bank material.",
+        definition:
+          "The erosion of the base of a channel's bank or bed, causing instability and leading to the collapse or sloughing of the bank material.",
         discipline: "bridge design",
         page: ["bridge-scour-pg7"],
       },
@@ -3353,7 +3501,11 @@ const bridgeComponents = [
                   Bridge/structure inspections must be completed by qualified individuals. In order to become a qualified individual, the INDOT Bat Training must be completed.
                   Contact INDOT ESD to request access for completing the INDOT Bat Training.
                 </p>`,
-    example_comments: ["No bats were seen or heard.", "Bats and/or guano were observed.", "Bats heard nesting at bridge or inside bridge components."],
+    example_comments: [
+      "No bats were seen or heard.",
+      "Bats and/or guano were observed.",
+      "Bats heard nesting at bridge or inside bridge components.",
+    ],
     rating_table: [
       {
         code: "N",

@@ -49,6 +49,21 @@ button:focus::after {
   /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);  Optional subtle shadow for better visibility */
 }
 
+.main-content-containers:has(button:focus) {
+  /* Styles for the parent when the child is focused */
+  border-left: 3px solid rgb(76, 76, 253);
+}
+
+.main-content-containers:has(a:focus) {
+  /* Styles for the parent when the child is focused */
+  border-left: 3px solid rgb(76, 76, 253);
+}
+
+.header:has(button:focus) {
+  border-left: 3px solid rgb(76, 76, 253);
+  width: calc(100% - 3px); /* Subtract the border width */
+}
+
 /* Focus effect for active buttons - add red glow only when focused */
 button.active:focus {
   background-color: var(--active-button-color1); /* Keep background color intact */
@@ -167,6 +182,10 @@ button.active:focus {
   background-color: var(--main-color);
 }
 
+.main-content-containers:focus {
+  border-left: 3px solid rgb(76, 76, 253);
+}
+
 .content-container-tabs {
   min-height: 25px;
   padding: 5px 10px;
@@ -230,6 +249,14 @@ button.active:focus {
   border-bottom: solid 2px rgba(128, 128, 128, 0.2);
   transition: 0.2s;
   color: var(--text-color);
+}
+
+.content-container-paragraphs p.content-container-comment-lines:nth-of-type(2),
+.content-container-paragraphs p.content-container-comment-lines:nth-of-type(4),
+.content-container-paragraphs p.content-container-comment-lines:nth-of-type(6),
+.content-container-paragraphs p.content-container-comment-lines:nth-of-type(8),
+.content-container-paragraphs p.content-container-comment-lines:nth-of-type(10) {
+  background-color: rgba(34, 34, 34, 0.7);
 }
 
 .content-container-comment-lines:active {
@@ -300,7 +327,7 @@ button.active:focus {
   background: rgba(90, 88, 61, 0.18);
 } */
 
-.content-container-paragraphs:has(.textarea-comments:focus) {
+.main-content-containers:has(.textarea-comments:focus) {
   /* Styles for the parent when the child is focused */
   border-left: 3px solid rgb(76, 76, 253);
 }

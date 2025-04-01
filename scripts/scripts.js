@@ -1604,6 +1604,12 @@ function showCopiedMessage() {
     existingClipboardMessage.remove();
   }
 
+  // Remove any existing message before showing a new one
+  const existingArrowMessage = document.querySelector(".arrow-message");
+  if (existingArrowMessage) {
+    existingArrowMessage.remove();
+  }
+
   const copiedMessage = document.createElement("div");
   copiedMessage.classList.add("copied-message"); // Add a class to target this specific message
 
@@ -1624,6 +1630,7 @@ function showCopiedMessage() {
   const copiedPart = document.createElement("div");
   copiedPart.textContent = "Copied!";
   copiedPart.style.backgroundColor = "rgba(67, 84, 167, 0.9)"; // Blue background for "Copied"
+  copiedPart.style.backgroundColor = "rgba(75, 84, 128, 0.9)"; // Blue background for "Copied"
   copiedPart.style.color = "#fff"; // White text color
   copiedPart.style.padding = "6px 10px"; // Reduced padding for the "Copied:" part
   // copiedPart.style.fontWeight = "bold"; // Bold text for "Copied:"
@@ -1666,6 +1673,12 @@ function showCurrentClipboardValue(value) {
     existingClipboardMessage.remove();
   }
 
+  // Remove any existing message before showing a new one
+  const existingArrowMessage = document.querySelector(".arrow-message");
+  if (existingArrowMessage) {
+    existingArrowMessage.remove();
+  }
+
   // Create the message container
   const currentMessage = document.createElement("div");
   currentMessage.classList.add("clipboard-message"); // Add a class to target this specific message
@@ -1690,7 +1703,7 @@ function showCurrentClipboardValue(value) {
   // titlePart.style.fontWeight = "bold"; // Bold text for the title
   titlePart.style.marginRight = "8px"; // Space between the title and content
   titlePart.style.borderRadius = "4px"; // Rounded corners for the title
-  titlePart.style.backgroundColor = "rgba(29, 110, 32, 0.9)"; // Green background for the title
+  titlePart.style.backgroundColor = "rgba(45, 91, 47, 0.9)"; // Green background for the title
   titlePart.style.color = "#fff"; // White text color
 
   // Create a div for the clipboard content itself (rest of the message)
@@ -1821,7 +1834,7 @@ loadClipboardHistory();
 // :::: (Tab Order) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Disable tabbing globally by setting tabindex="-1" for all elements
-document.querySelectorAll("div").forEach((element) => {
+document.querySelectorAll("div:not(.divRow)").forEach((element) => {
   element.setAttribute("tabindex", "-1");
 });
 
@@ -1841,6 +1854,32 @@ function enableTabbing(elementId, tabindexValue) {
 // :::: (Arrow Buttons) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 const toggleFocusActivation = "activate"; // Set to "focus" or "activate"
+
+// Track the number of times the Control key is pressed // :::: (Ctrl, Ctrl) //
+let ctrlPresses = 0;
+let lastCtrlPressTime = 0;
+let toggleArrow = "navigation";
+
+// Event listener for keydown events
+window.addEventListener("keydown", function (event) {
+  if (event.key !== "Control") return;
+
+  const currentTime = Date.now();
+  if (currentTime - lastCtrlPressTime > 300) ctrlPresses = 0;
+
+  lastCtrlPressTime = currentTime;
+  ctrlPresses++;
+
+  if (ctrlPresses === 2) {
+    if (toggleArrow === "navigation") {
+      toggleArrow = "default";
+    } else {
+      toggleArrow = "navigation";
+    }
+    ctrlPresses = 0; // Reset counter
+    showArrowMessage(toggleArrow);
+  }
+});
 
 function handleElementAction(element) {
   if (element.tagName.toLowerCase() === "a") return; // Skip activation for links
@@ -1946,7 +1985,7 @@ window.addEventListener("keydown", function (event) {
     }
   }
 
-  if (event.code === "ArrowDown") {
+  if (event.code === "ArrowDown" && toggleArrow !== "default") {
     const activeElement = document.activeElement;
 
     // Check if the active element is a textarea
@@ -2006,7 +2045,7 @@ window.addEventListener("keydown", function (event) {
     }
   }
 
-  if (event.code === "ArrowUp") {
+  if (event.code === "ArrowUp" && toggleArrow !== "default") {
     let activeElement = document.activeElement;
 
     // Check if the active element is a textarea
@@ -2378,22 +2417,75 @@ function findNavigationIndex() {
   return foundIndex;
 }
 
-// Track the number of times the Control key is pressed
-let ctrlPresses = 0;
-let lastCtrlPressTime = 0;
+// :::: (Arrow Message) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// Event listener for keydown events
-window.addEventListener("keydown", function (event) {
-  if (event.key !== "Control") return;
-
-  const currentTime = Date.now();
-  if (currentTime - lastCtrlPressTime > 1000) ctrlPresses = 0;
-
-  lastCtrlPressTime = currentTime;
-  ctrlPresses++;
-
-  if (ctrlPresses === 2) {
-    findNavigationIndex(); // Call the function when Control is pressed twice
-    ctrlPresses = 0; // Reset counter
+// Function to show the current clipboard value (used for Undo/Redo)
+function showArrowMessage(value) {
+  // Remove any existing message before showing a new one
+  const existingCopiedMessage = document.querySelector(".copied-message");
+  if (existingCopiedMessage) {
+    existingCopiedMessage.remove();
   }
-});
+
+  // Remove any existing message before showing a new one
+  const existingClipboardMessage = document.querySelector(".clipboard-message");
+  if (existingClipboardMessage) {
+    existingClipboardMessage.remove();
+  }
+
+  // Remove any existing message before showing a new one
+  const existingArrowMessage = document.querySelector(".arrow-message");
+  if (existingArrowMessage) {
+    existingArrowMessage.remove();
+  }
+
+  // Create the message container
+  const currentMessage = document.createElement("div"); //
+  const messageValue = value === "default" ? "Set to vertical scroll." : "Set to page navigation.";
+
+  currentMessage.classList.add("arrow-message"); // Add a class to target this specific message
+
+  // Style the message container to use flexbox
+  currentMessage.style.display = "flex"; // Use flexbox to align items horizontally
+  currentMessage.style.alignItems = "center"; // Vertically align items in the center
+  currentMessage.style.position = "fixed";
+  currentMessage.style.top = "15px";
+  currentMessage.style.left = "50%";
+  currentMessage.style.transform = "translateX(-50%)";
+  currentMessage.style.borderRadius = "8px"; // Rounded corners for the message container
+  currentMessage.style.fontSize = "14px"; // Font size
+  currentMessage.style.maxWidth = "80%"; // Max width of the message block
+  currentMessage.style.wordWrap = "break-word"; // Ensure long lines of text wrap correctly
+  currentMessage.style.zIndex = "9999"; // Ensure it appears above other content
+
+  // Create a div for the "Arrow Keys:" part with different background
+  const titlePart = document.createElement("div");
+  titlePart.textContent = "Up & Down Arrow Keys:";
+  titlePart.style.padding = "6px 10px"; // Increased padding for better spacing
+  // titlePart.style.fontWeight = "bold"; // Bold text for the title
+  titlePart.style.marginRight = "8px"; // Space between the title and content
+  titlePart.style.borderRadius = "4px"; // Rounded corners for the title
+  titlePart.style.backgroundColor = "rgba(63, 38, 63, 0.9)"; // Green background for the title
+  titlePart.style.color = "#fff"; // White text color
+
+  // Create a div for the clipboard content itself (rest of the message)
+  const contentPart = document.createElement("div");
+  contentPart.textContent = messageValue; // Show more of the text (100 characters)
+  contentPart.style.padding = "6px 10px"; // Increased padding for better spacing
+  contentPart.style.flexGrow = "1"; // Allow content to take remaining space if needed
+  contentPart.style.borderRadius = "4px"; // Rounded corners for the content part
+  contentPart.style.backgroundColor = "#333"; // Dark background for content part
+  contentPart.style.color = "#fff"; // White text color
+
+  // Append the title and content to the message container
+  currentMessage.appendChild(titlePart);
+  currentMessage.appendChild(contentPart);
+
+  // Append the whole message container to the body
+  document.body.appendChild(currentMessage);
+
+  // Remove the message after 5 seconds
+  setTimeout(() => {
+    currentMessage.remove();
+  }, 5000);
+}
