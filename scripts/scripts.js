@@ -425,6 +425,13 @@ function updateExampleComments() {
       component.example_comments.forEach((comment) => {
         const p = document.createElement("p");
         p.classList.add("content-container-comment-lines");
+
+        // Create the new class from the item_id with "p" prepended and periods removed
+        const newClass = "p-" + component.item_id.replace(/\./g, "");
+
+        // Add the new class to the p element
+        p.classList.add(newClass);
+
         p.textContent = comment.trim();
         contentContainer.appendChild(p);
       });
@@ -2489,3 +2496,51 @@ function showArrowMessage(value) {
     currentMessage.remove();
   }, 5000);
 }
+
+document.addEventListener("keydown", function (event) {
+  // Do nothing if an input or textarea is focused
+  if (document.activeElement.tagName === "INPUT" || document.activeElement.tagName === "TEXTAREA") return;
+
+  // Check if the key is 1-9 or 0 (which represents 10)
+  if (!/^[1-9]$|^0$/.test(event.key)) return;
+
+  // Convert '0' to index 9 (for the 10th element)
+  let index = event.key === "0" ? 9 : parseInt(event.key) - 1;
+
+  // Select all visible comment lines
+  const comments = Array.from(document.querySelectorAll(".content-container-comment-lines")).filter(
+    (comment) => comment.offsetParent !== null // Ensure it's visible
+  );
+
+  // Ensure the selected index exists
+  if (index < comments.length) {
+    const textToCopy = comments[index].textContent.trim() + " ";
+
+    // Copy to clipboard
+    navigator.clipboard
+      .writeText(textToCopy)
+      .then(() => console.log(`Copied: ${textToCopy}`))
+      .catch((err) => console.error("Failed to copy:", err));
+
+    // Find the corresponding textarea based on the p element's class
+    const pElement = comments[index];
+    let pClass = "";
+
+    // Loop through all the classes of the p element to find the one that starts with 'p'
+    pElement.classList.forEach((cls) => {
+      if (cls.startsWith("p-")) {
+        pClass = cls;
+      }
+    });
+
+    if (pClass) {
+      const textareaId = pClass.replace("p-", "") + "-textarea"; // Remove 'p' and add '-textarea'
+
+      const textarea = document.getElementById(textareaId);
+      if (textarea && textarea.offsetParent !== null) {
+        // Ensure the textarea is visible
+        textarea.value += textToCopy; // Append the copied value to the textarea
+      }
+    }
+  }
+});
