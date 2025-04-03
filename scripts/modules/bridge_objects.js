@@ -2876,7 +2876,7 @@ const bridgeComponents = [
   // Scour
   {
     name: "Scour",
-    item_id: "",
+    item_id: "B.C.11",
     format: "AN (1)",
     frequency: "EI",
     referenece: "SNBI",

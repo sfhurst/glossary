@@ -2540,6 +2540,9 @@ document.addEventListener("keydown", function (event) {
       if (textarea && textarea.offsetParent !== null) {
         // Ensure the textarea is visible
         textarea.value += textToCopy; // Append the copied value to the textarea
+
+        // Fire the 'input' event to trigger any listeners like `oninput`
+        textarea.dispatchEvent(new Event("input", { bubbles: true }));
       }
     }
   }
