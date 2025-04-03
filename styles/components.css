@@ -256,7 +256,7 @@ button.active:focus {
 .content-container-paragraphs p.content-container-comment-lines:nth-of-type(6),
 .content-container-paragraphs p.content-container-comment-lines:nth-of-type(8),
 .content-container-paragraphs p.content-container-comment-lines:nth-of-type(10) {
-  background-color: rgba(33, 33, 27, 0.7);
+  background-color: rgba(92, 63, 40, 0.7);
 }
 
 .content-container-comment-lines:active {
