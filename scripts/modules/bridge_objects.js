@@ -1465,6 +1465,7 @@ const bridgeComponents = [
                 <br />
                 <p>At stages of advanced deterioration, consider any section loss in the painted material.</p>`,
     example_comments: [
+      "There are no deficiencies to report.",
       "The steel beams of the superstructure have a protective coating.",
       "There are some areas where surface corrosion has initiated.",
       "The piles are painted.",
@@ -2898,6 +2899,7 @@ const bridgeComponents = [
                 </p>`,
     example_comments: [
       "There is no scour present.",
+      "There is no visible scour at the bridge.",
       "There is minor localized scour at the interior piers.",
       "The designed countermeasures are in good condition.",
       "There is moderate scour at the base of the upstream piers, but it does not appear to affect the stability of the structure.",

@@ -166,6 +166,7 @@ document.querySelector(".search-box").addEventListener("keydown", function (even
   // Searches for the Asset in assetData and creates a deep copy
   assetObject = JSON.parse(JSON.stringify(assetData.find((item) => item["Asset Number"].toLowerCase() === searchValue)));
   resetBridgeComponentTextareas(assetObject);
+  revertReviewBackgroundColor();
 
   // Handles Not Found Case
   const searchID = document.getElementById("searchID");
@@ -1302,4 +1303,14 @@ function cardinalResponseFunction() {
   }
 
   return cardinalResponse;
+}
+
+//
+
+// Example function to remove the highlighted class
+function revertReviewBackgroundColor() {
+  const parentDivs = document.querySelectorAll(".main-content-containers");
+  parentDivs.forEach((div) => {
+    div.classList.remove("review-textarea-highlighted");
+  });
 }

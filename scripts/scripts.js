@@ -1584,8 +1584,13 @@ document.querySelectorAll(".paragraph-navigate").forEach((paragraph) => {
 // Handle double-click to copy text from textareas with id = something-textarea-review to clipboard
 document.querySelectorAll("[id$='-textarea-review']").forEach((textarea) => {
   textarea.addEventListener("dblclick", function () {
-    // Change background color to grey
-    this.style.backgroundColor = "rgba(74, 36, 20, 0.7)";
+    // Find the parent div with class "content-container-rating-lines"
+    const parentDiv = this.closest(".main-content-containers");
+
+    if (parentDiv) {
+      // Add the 'highlighted' class to change the background color
+      parentDiv.classList.add("review-textarea-highlighted");
+    }
 
     // Copy text to clipboard
     navigator.clipboard
