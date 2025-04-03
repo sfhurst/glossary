@@ -15,6 +15,24 @@ document.querySelector(
 // :::: (Rating Table Clicks)
 // :::: (Maintenance/Element Clicks)
 // :::: (Console Logs)
+// :::: (Error Log)
+// :::: (Error Log Popups)
+// :::: (Summary Update)
+// :::: (Local Storage)
+// :::: (Glossary Search)
+// :::: (Scroll To Top)
+// :::: (Review Navigate)
+// :::: (Review DblClick)
+// :::: (Clipboard History)
+// :::: (Tab Order)
+// :::: (Arrow Buttons)
+// :::: (Enter & Row Down)
+// :::: (Type Rating)
+// :::: (Rating Page Navigation)
+// :::: (Rating Page Index)
+// :::: (Arrow Message)
+// :::: (0-9 Example Comments)
+// :::: (Dev Component Mapping)
 
 // :::: (HTML Injection) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1262,7 +1280,7 @@ function findAndUpdateAssetErrors() {
 // Call the function to process errors and update the UI
 findAndUpdateAssetErrors();
 
-// :::: Not Sorted | Working /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// :::: (Error Log Popups)
 
 // Function to create and display the popup
 function showErrorPopup(button, message) {
@@ -1345,6 +1363,8 @@ document.querySelector("#error-wearing button").addEventListener("click", functi
 document.querySelector("#asset-error-button").addEventListener("click", function () {
   showAssetErrorPopup(errorString);
 });
+
+// :::: (Summary Update)
 
 // Update summary when changing ratings
 function updateObjectRatings(numericalValue, dataCategory) {
@@ -1564,6 +1584,10 @@ document.querySelectorAll(".paragraph-navigate").forEach((paragraph) => {
 // Handle double-click to copy text from textareas with id = something-textarea-review to clipboard
 document.querySelectorAll("[id$='-textarea-review']").forEach((textarea) => {
   textarea.addEventListener("dblclick", function () {
+    // Change background color to grey
+    this.style.backgroundColor = "rgba(74, 36, 20, 0.7)";
+
+    // Copy text to clipboard
     navigator.clipboard
       .writeText(this.value)
       .then(() => {
@@ -2090,7 +2114,7 @@ window.addEventListener("keydown", function (event) {
   }
 });
 
-// :::: (Enter & Arrow Down Button) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// :::: (Enter & Row Down) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 window.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
@@ -2167,7 +2191,7 @@ window.addEventListener("keydown", function (event) {
   }
 });
 
-// :::: (Page Navigation) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// :::: (Rating Page Navigation) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Define the navigation sequence as an array of button data-targets
 const navigationMap = [
@@ -2245,99 +2269,7 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-// :::: (Working) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-//
-
-//
-
-// :::: (Dev Component Mapping) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-// Global flag to control whether the extraction should run
-let isExtractionEnabled = false; // Set to `true` to enable, `false` to disable
-
-// Function to collect all unique classes, ids, and data-attributes
-function collectUniqueAttributes() {
-  const uniqueClasses = new Set();
-  const uniqueIDs = new Set();
-  const uniqueDataAttributes = new Set();
-  const duplicateIDs = new Set(); // Set to track duplicate IDs
-
-  // Select all elements in the document
-  const allElements = document.querySelectorAll("*");
-
-  // Loop through all elements and collect the unique attributes
-  allElements.forEach((element) => {
-    // Collect IDs only if they are unique
-    if (element.id) {
-      if (uniqueIDs.has(element.id)) {
-        // If the ID is already in the unique set, add it to the duplicate set
-        duplicateIDs.add(element.id);
-      } else {
-        uniqueIDs.add(element.id);
-      }
-    }
-
-    // Collect Classes
-    element.classList.forEach((cls) => {
-      uniqueClasses.add(cls);
-    });
-
-    // Collect Data-Attributes
-    Array.from(element.attributes).forEach((attr) => {
-      if (attr.name.startsWith("data-")) {
-        uniqueDataAttributes.add(attr.name);
-      }
-    });
-  });
-
-  // Alphabetize the results and get the counts
-  const sortedIDs = [...uniqueIDs].sort();
-  const sortedClasses = [...uniqueClasses].sort();
-  const sortedDataAttributes = [...uniqueDataAttributes].sort();
-
-  // Create the output text content
-  let outputText = "";
-
-  // If there are duplicate IDs, flag them in the output
-  if (duplicateIDs.size > 0) {
-    outputText += `**Duplicate IDs Found:**\n${Array.from(duplicateIDs).join("\n")}\n\n`;
-  }
-
-  // Add the unique lists to the output text
-  outputText += `IDs (${sortedIDs.length}):\n` + sortedIDs.join("\n") + "\n\n";
-  outputText += `Unique Classes (${sortedClasses.length}):\n` + sortedClasses.join("\n") + "\n\n";
-  outputText += `Unique Data Attributes (${sortedDataAttributes.length}):\n` + sortedDataAttributes.join("\n") + "\n";
-
-  return outputText;
-}
-
-// Function to download the content as a .txt file
-function downloadTxt(content, filename = "uniqueAttributes.txt") {
-  const blob = new Blob([content], { type: "text/plain" });
-  const link = document.createElement("a");
-  link.href = URL.createObjectURL(blob);
-  link.download = filename;
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-}
-
-// Function to handle extraction based on the flag
-function handleExtraction() {
-  if (isExtractionEnabled) {
-    const textContent = collectUniqueAttributes();
-    downloadTxt(textContent); // Trigger the download of the txt file
-    console.log("Extraction Enabled: Data file generated.");
-  } else {
-    console.log("Extraction Disabled: No action taken.");
-  }
-}
-
-// Example: Execute extraction based on the flag
-handleExtraction();
-
-///////////////////////////////////////////////////////////////////////////////////////////////
+// :::: (Rating Page Index) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Function to find the correct navigation index
 function findNavigationIndex() {
@@ -2497,6 +2429,8 @@ function showArrowMessage(value) {
   }, 5000);
 }
 
+// :::: (0-9 Example Comments) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 document.addEventListener("keydown", function (event) {
   // Do nothing if an input or textarea is focused
   if (document.activeElement.tagName === "INPUT" || document.activeElement.tagName === "TEXTAREA") return;
@@ -2547,3 +2481,91 @@ document.addEventListener("keydown", function (event) {
     }
   }
 });
+
+// :::: (Dev Component Mapping) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Global flag to control whether the extraction should run
+let isExtractionEnabled = false; // Set to `true` to enable, `false` to disable
+
+// Function to collect all unique classes, ids, and data-attributes
+function collectUniqueAttributes() {
+  const uniqueClasses = new Set();
+  const uniqueIDs = new Set();
+  const uniqueDataAttributes = new Set();
+  const duplicateIDs = new Set(); // Set to track duplicate IDs
+
+  // Select all elements in the document
+  const allElements = document.querySelectorAll("*");
+
+  // Loop through all elements and collect the unique attributes
+  allElements.forEach((element) => {
+    // Collect IDs only if they are unique
+    if (element.id) {
+      if (uniqueIDs.has(element.id)) {
+        // If the ID is already in the unique set, add it to the duplicate set
+        duplicateIDs.add(element.id);
+      } else {
+        uniqueIDs.add(element.id);
+      }
+    }
+
+    // Collect Classes
+    element.classList.forEach((cls) => {
+      uniqueClasses.add(cls);
+    });
+
+    // Collect Data-Attributes
+    Array.from(element.attributes).forEach((attr) => {
+      if (attr.name.startsWith("data-")) {
+        uniqueDataAttributes.add(attr.name);
+      }
+    });
+  });
+
+  // Alphabetize the results and get the counts
+  const sortedIDs = [...uniqueIDs].sort();
+  const sortedClasses = [...uniqueClasses].sort();
+  const sortedDataAttributes = [...uniqueDataAttributes].sort();
+
+  // Create the output text content
+  let outputText = "";
+
+  // If there are duplicate IDs, flag them in the output
+  if (duplicateIDs.size > 0) {
+    outputText += `**Duplicate IDs Found:**\n${Array.from(duplicateIDs).join("\n")}\n\n`;
+  }
+
+  // Add the unique lists to the output text
+  outputText += `IDs (${sortedIDs.length}):\n` + sortedIDs.join("\n") + "\n\n";
+  outputText += `Unique Classes (${sortedClasses.length}):\n` + sortedClasses.join("\n") + "\n\n";
+  outputText += `Unique Data Attributes (${sortedDataAttributes.length}):\n` + sortedDataAttributes.join("\n") + "\n";
+
+  return outputText;
+}
+
+// Function to download the content as a .txt file
+function downloadTxt(content, filename = "uniqueAttributes.txt") {
+  const blob = new Blob([content], { type: "text/plain" });
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = filename;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
+// Function to handle extraction based on the flag
+function handleExtraction() {
+  if (isExtractionEnabled) {
+    const textContent = collectUniqueAttributes();
+    downloadTxt(textContent); // Trigger the download of the txt file
+    console.log("Extraction Enabled: Data file generated.");
+  } else {
+    console.log("Extraction Disabled: No action taken.");
+  }
+}
+
+// Example: Execute extraction based on the flag
+handleExtraction();
+
+// :::: Not Sorted | Working /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
