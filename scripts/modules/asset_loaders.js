@@ -169,7 +169,7 @@ document.querySelector(".search-box").addEventListener("keydown", function (even
   revertReviewBackgroundColor();
 
   // Handles Not Found Case
-  const searchID = document.getElementById("searchID");
+  let searchID = document.getElementById("searchID");
 
   if (!assetObject) {
     searchID.textContent = "Asset not found.";
@@ -205,8 +205,27 @@ document.querySelector(".search-box").addEventListener("keydown", function (even
   searchID.textContent = assetName;
   searchID.replaceWith(searchID.cloneNode(true));
 
-  document.getElementById("searchID").addEventListener("click", () => {
+  // Select the element with id="searchID"
+  searchID = document.getElementById("searchID");
+
+  // Ensure the 'row1' class is added if it's not already present
+  if (!searchID.classList.contains("row1")) {
+    searchID.classList.add("row1");
+  }
+
+  // Make the element focusable by adding tabindex="0"
+  searchID.tabIndex = 0;
+
+  // Add the event listener to open the link in a new tab
+  searchID.addEventListener("click", () => {
     window.open(hyperlink, "_blank");
+  });
+
+  // Add the event listener for Enter key press to trigger click
+  searchID.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      window.open(hyperlink, "_blank");
+    }
   });
 });
 
@@ -231,8 +250,15 @@ function updateMapButton(latValue, longValue) {
     window.open(url, "_blank");
   };
 
-  document.getElementById("button-map-link").style.opacity = "1";
-  document.getElementById("button-map-link").style.cursor = "pointer"; // Adds hand pointer
+  // Make the button visible and interactive
+  mapButton.style.opacity = "1";
+  mapButton.style.cursor = "pointer"; // Adds hand pointer
+  mapButton.tabIndex = 0;
+
+  // Add the 'row1' class if it's not already present
+  if (!mapButton.classList.contains("row1")) {
+    mapButton.classList.add("row1");
+  }
 }
 
 // ::: ---------------------------- getGoogleMapsLink() ----------------------------

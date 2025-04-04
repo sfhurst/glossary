@@ -159,6 +159,10 @@ body {
   color: var(--color-yellow);
 }
 
+.search-title:focus {
+  color: var(--color-yellow);
+}
+
 .search-title:active {
   /* transform: rotate(20deg); */
   left: 4px;

@@ -34,6 +34,7 @@ const bridgeComponents = [
       // "The bridge is at a traffic light and carries part of the queue.",
       "The bridge is in a horizontal curve.",
       "The bridge is in a superelevated horizontal curve.",
+      "There are warning signs recommending a speed reduction for curves in the approach alignment.",
       "The bridge is in a sag vertical curve.",
       "The bridge is in a crest vertical curve.",
       "The bridge is over/carries a railroad. INDOT personnel may access the railroad right-of-way based on rule IC 8-3-15-3 (d)(8).",
@@ -1688,15 +1689,16 @@ const bridgeComponents = [
     example_comments: [
       "There are no deficiencies to report.",
       "Strength and performance are not affected.",
-      "There is minor staining on the interior piers and in the abutment backwalls.",
-      "There is light abrasion in the interior piers.",
-      "There are isolated minor-width vertical cracks in the interior piers and in the abutment backwalls.",
-      "There are several shallow-depth spalls in the piers and abutments.",
+      "There is light abrasion in the interior piers at the waterline.",
+      "There is minor staining and insignificant surface defects on the interior piers and in the abutment backwalls.",
+      "There are some minor-width vertical cracks in the interior piers and in the abutment backwalls.",
+      "There are several surface spalls with exposed reinforcing steel in the piers and abutments.",
       // "There is an area of moderate spalling in the Pier 2 pier cap near the bearing area of Beams 1 and 2. There is still good bearing beneath the beams.",
       "There is moderate erosion at the east abutment due to unchanneled drainage and excessive runoff.",
       "There is moderate scour at the upstream end of Pier 2 where it is directly impacted by the channel.",
       "There are several piles exposed at the north abutment.",
-      "There is a wide-width horizontal crack (indicating settlement) running the length of the west abutment.",
+      "No significant settlement has occurred and the substructure is not being undermined.",
+      // "There is a wide-width horizontal crack (indicating settlement) running the length of the west abutment.",
     ],
     rating_table: [
       {
@@ -1865,7 +1867,8 @@ const bridgeComponents = [
                 </p>`,
     example_comments: [
       "The slopewalls are in good condition.",
-      "The slopewall appears to be stable with no signs of distress or movement.",
+      "There are some settlement cracks in the slopewalls.",
+      "The slopewalls appear to be stable with no signs of distress or movement.",
       "The east slopewall has wide cracking.",
       "The slopewall exhibits minor settlement, but there are no signs of structural instability.",
       "There are minor voids present behind the slopewall, but they do not appear to be affecting stability.",
@@ -2380,12 +2383,13 @@ const bridgeComponents = [
                 </p>`,
     example_comments: [
       "There are no deficiencies to report.",
-      "Under normal conditions, the shallow, low-velocity channel flows from south to north through Span B.",
+      "Under normal conditions, the shallow, low-velocity channel flows from north to south through Span B.",
       "There are localized areas of minor erosion.",
       "The channel is free of significant debris accumulation that would obstruct flow.",
       "The channel condition does not threaten the roadway or the bridge.",
       "Flow direction varies with rising and receding water levels.",
       "Accumulated debris has caused localized flow obstruction in the channel.",
+      "The channel flows against the south abutment, creating a low spot in the channel.",
       "The bridge is not over water.",
     ],
     rating_table: [
@@ -2900,6 +2904,7 @@ const bridgeComponents = [
                 </p>`,
     example_comments: [
       "There is no scour present.",
+      "There is no significant scour present.",
       "There is no visible scour at the bridge.",
       "There is minor localized scour at the interior piers.",
       "The designed countermeasures are in good condition.",

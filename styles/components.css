@@ -252,11 +252,17 @@ button.active:focus {
 }
 
 .content-container-paragraphs p.content-container-comment-lines:nth-of-type(2),
-.content-container-paragraphs p.content-container-comment-lines:nth-of-type(4),
 .content-container-paragraphs p.content-container-comment-lines:nth-of-type(6),
-.content-container-paragraphs p.content-container-comment-lines:nth-of-type(8),
 .content-container-paragraphs p.content-container-comment-lines:nth-of-type(10) {
-  background-color: rgba(92, 63, 40, 0.7);
+  background-color: rgba(134, 10, 29, 0.4);
+  background-color: rgba(119, 82, 130, 0.3);
+}
+
+.content-container-paragraphs p.content-container-comment-lines:nth-of-type(4),
+.content-container-paragraphs p.content-container-comment-lines:nth-of-type(8) {
+  background-color: rgba(179, 15, 15, 0.4);
+  background-color: rgba(70, 18, 61, 0.6);
+  background-color: rgba(131, 99, 86, 0.3);
 }
 
 .content-container-comment-lines:active {
@@ -778,7 +784,7 @@ button.active:focus {
   margin: -2px -2px 8px -2px;
   background-color: var(--hover-button-color1);
   padding: 10px 4px 4px 8px;
-  border-bottom: solid 1px grey;
+  border-bottom: solid 2px grey;
   border-radius: 1px;
 }
 
@@ -798,7 +804,7 @@ button.active:focus {
   margin: -2px -2px 8px -2px;
   background-color: var(--hover-button-color1);
   padding: 10px 4px 4px 8px;
-  border-bottom: solid 1px grey;
+  border-bottom: solid 2px grey;
   border-radius: 1px;
 }
 
@@ -832,7 +838,7 @@ button.active:focus {
   margin: -2px -2px 8px -2px;
   background-color: var(--hover-button-color1);
   padding: 10px 4px 4px 8px;
-  border-bottom: solid 1px grey;
+  border-bottom: solid 2px grey;
   border-radius: 1px;
 }
 
@@ -866,7 +872,7 @@ button.active:focus {
   margin: -2px -2px 8px -2px;
   background-color: var(--hover-button-color1);
   padding: 10px 4px 4px 8px;
-  border-bottom: solid 1px grey;
+  border-bottom: solid 2px grey;
   border-radius: 1px;
 }
 
@@ -1081,35 +1087,35 @@ button.active:focus {
 :root {
   /* Failed - Critical */
   --rating-0: rgba(100, 0, 0, 0.5); /* Very Dark Red */
-  --rating-0: rgb(52, 0, 0); /* Very Dark Red */
+  --rating-0: rgba(52, 0, 0, 0.6); /* Very Dark Red */
   --rating-1: rgba(120, 0, 0, 0.5); /* Very Dark Red */
-  --rating-1: rgb(120, 0, 0); /* Very Dark Red */
+  --rating-1: rgba(120, 0, 0, 0.6); /* Very Dark Red */
   --rating-2: rgba(139, 0, 0, 0.5); /* Dark Red */
-  --rating-2: rgb(187, 5, 5); /* Dark Red */
+  --rating-2: rgba(187, 5, 5, 0.6); /* Dark Red */
 
   /* Serious - Poor */
   --rating-3: rgba(200, 30, 0, 0.5); /* Deep Orange-Red */
-  --rating-3: rgb(221, 51, 29); /* Deep Orange-Red */
+  --rating-3: rgba(221, 51, 29, 0.6); /* Deep Orange-Red */
   --rating-4: rgba(230, 90, 0, 0.5); /* Dark Orange */
-  --rating-4: rgb(244, 131, 61); /* Dark Orange */
+  --rating-4: rgba(244, 131, 61, 0.6); /* Dark Orange */
   --rating-P: rgba(230, 90, 0, 0.5); /* Dark Orange (Poor) */
-  --rating-P: rgb(244, 131, 61); /* Dark Orange (Poor) */
+  --rating-P: rgba(244, 131, 61, 0.6); /* Dark Orange (Poor) */
 
   /* Fair - Satisfactory (closer tones) */
   --rating-5: rgba(255, 180, 0, 0.4); /* Gold */
-  --rating-5: rgb(235, 255, 80); /* Gold */
+  --rating-5: rgba(244, 251, 35, 0.6); /* Gold */
   --rating-F: rgba(255, 180, 0, 0.4); /* Fair */
-  --rating-F: rgb(235, 255, 80); /* Fair */
+  --rating-F: rgba(244, 251, 35, 0.6); /* Fair */
   --rating-6: rgba(235, 200, 50, 0.4); /* Slightly lighter Gold/Yellow */
-  --rating-6: rgb(171, 255, 87); /* Slightly lighter Gold/Yellow */
+  --rating-6: rgba(171, 255, 87, 0.6); /* Slightly lighter Gold/Yellow */
 
   /* Good - Excellent */
   --rating-7: rgba(140, 240, 100, 0.4); /* Soft Green */
-  --rating-7: rgb(134, 241, 91); /* Soft Green */
+  --rating-7: rgba(88, 255, 22, 0.6); /* Soft Green */
   --rating-G: rgba(140, 240, 100, 0.4); /* Good */
-  --rating-G: rgb(134, 241, 91); /* Good */
+  --rating-G: rgba(88, 255, 22, 0.6); /* Good */
   --rating-8: rgba(80, 200, 80, 0.4); /* Medium Green */
-  --rating-8: rgb(85, 164, 221); /* Medium Green */
+  --rating-8: rgba(85, 164, 221, 0.6); /* Medium Green */
   --rating-9: rgba(40, 150, 40, 0.4); /* Deep Green */
-  --rating-9: rgb(19, 60, 192); /* Deep Green */
+  --rating-9: rgba(19, 60, 192, 0.6); /* Deep Green */
 }

@@ -32,7 +32,10 @@ document.querySelector(
 // :::: (Rating Page Index)
 // :::: (Arrow Message)
 // :::: (0-9 Example Comments)
+// :::: (Auto Correct)
+// :::: (Quick TL#)
 // :::: (Dev Component Mapping)
+// :::: (Google Analytics)
 
 // :::: (HTML Injection) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -548,7 +551,7 @@ document.querySelectorAll(".content-container-comment-lines").forEach(function (
   element.addEventListener("click", copyToClipboard); // Add click event listener to each comment line
 });
 
-// ::: ------------------------------ Copy textarea Text to Clipboard (Copy To Clipboard) ------------------------------
+// ::: ------------------------------ Copy any dbl-clicked textarea Text to Clipboard (Copy To Clipboard) ------------------------------
 function copyTextarea(evt) {
   var textarea = evt.currentTarget; // Get the clicked textarea element
   var textToCopy = textarea.value; // Get the text content from the textarea
@@ -1919,6 +1922,8 @@ window.addEventListener("keydown", function (event) {
 
 function handleElementAction(element) {
   if (element.tagName.toLowerCase() === "a") return; // Skip activation for links
+  if (element.id === "button-map-link") return; // Skip activation if the ID is "button-map-link"
+  if (element.id === "searchID") return; // Skip activation if the ID is "searchID"
 
   if (toggleFocusActivation === "focus") {
     element.focus();
@@ -2440,16 +2445,36 @@ document.addEventListener("keydown", function (event) {
   // Do nothing if an input or textarea is focused
   if (document.activeElement.tagName === "INPUT" || document.activeElement.tagName === "TEXTAREA") return;
 
-  // Check if the key is 1-9 or 0 (which represents 10)
-  if (!/^[1-9]$|^0$/.test(event.key)) return;
+  // Check if the key is 1-9, 0 (which represents 10), or Delete
+  if (!/^[1-9]$|^0$|Delete$/.test(event.key)) return;
 
-  // Convert '0' to index 9 (for the 10th element)
-  let index = event.key === "0" ? 9 : parseInt(event.key) - 1;
+  let index;
+
+  // If the key is a number (1-9 or 0), determine the index
+  if (/^[1-9]$|^0$/.test(event.key)) {
+    index = event.key === "0" ? 9 : parseInt(event.key) - 1;
+  }
 
   // Select all visible comment lines
   const comments = Array.from(document.querySelectorAll(".content-container-comment-lines")).filter(
     (comment) => comment.offsetParent !== null // Ensure it's visible
   );
+
+  // Find the first comment line with a class starting with 'p-'
+  const firstVisibleComment = comments.find((comment) => {
+    return Array.from(comment.classList).some((cls) => cls.startsWith("p-"));
+  });
+
+  const pClass = Array.from(firstVisibleComment.classList).find((cls) => cls.startsWith("p-"));
+  const textareaId = pClass.replace("p-", "") + "-textarea"; // Remove 'p' and add '-textarea'
+  const textarea = document.getElementById(textareaId);
+
+  // If the Delete key is pressed, find the corresponding index
+  if (textarea) {
+    if (event.key === "Delete") {
+      textarea.value = "";
+    }
+  }
 
   // Ensure the selected index exists
   if (index < comments.length) {
@@ -2461,21 +2486,7 @@ document.addEventListener("keydown", function (event) {
       .then(() => console.log(`Copied: ${textToCopy}`))
       .catch((err) => console.error("Failed to copy:", err));
 
-    // Find the corresponding textarea based on the p element's class
-    const pElement = comments[index];
-    let pClass = "";
-
-    // Loop through all the classes of the p element to find the one that starts with 'p'
-    pElement.classList.forEach((cls) => {
-      if (cls.startsWith("p-")) {
-        pClass = cls;
-      }
-    });
-
-    if (pClass) {
-      const textareaId = pClass.replace("p-", "") + "-textarea"; // Remove 'p' and add '-textarea'
-
-      const textarea = document.getElementById(textareaId);
+    if (textarea) {
       if (textarea && textarea.offsetParent !== null) {
         // Ensure the textarea is visible
         textarea.value += textToCopy; // Append the copied value to the textarea
@@ -2485,6 +2496,65 @@ document.addEventListener("keydown", function (event) {
       }
     }
   }
+});
+
+// :::: (Auto Correct)
+
+// document.querySelectorAll("[id$='-textarea']").forEach((textarea) => {
+//   textarea.addEventListener("input", function (event) {
+//     const commonTypos = {
+//       teh: "the",
+//       adn: "and",
+//       recieve: "receive",
+//       jsut: "just",
+//       woudl: "would",
+//       thsi: "this",
+//       dont: "don't",
+//       doesnt: "doesn't",
+//       wierd: "weird",
+//     };
+
+//     const compoundWords = {
+//       "rip rap": "riprap", // Add more compound fixes as needed
+//     };
+
+//     // Get current text value
+//     let text = this.value;
+
+//     // Check if the last character is a space or punctuation
+//     if (/[ .,!?]/.test(text.slice(-1))) {
+//       let words = text.split(/\s+/); // Split by spaces
+
+//       // Check for common typos
+//       words = words.map((word) => commonTypos[word] || word);
+
+//       // Check for compound word fixes (e.g., "rip rap" -> "riprap")
+//       for (let i = 0; i < words.length - 1; i++) {
+//         let compoundCheck = words[i] + " " + words[i + 1];
+//         if (compoundWords[compoundCheck]) {
+//           words[i] = compoundWords[compoundCheck]; // Replace compound phrase with corrected version
+//           words.splice(i + 1, 1); // Remove the next word
+//         }
+//       }
+
+//       // Join words back and update the textarea value
+//       this.value = words.join(" ");
+//     }
+//   });
+// });
+
+// :::: (Quick TL#)
+
+document.querySelectorAll('[data-target="bridge-asset-tab"]').forEach((button) => {
+  button.addEventListener("dblclick", function () {
+    const textarea = document.getElementById("user-textarea-teamleader");
+    if (textarea) {
+      navigator.clipboard
+        .writeText(textarea.value)
+        .then(() => console.log("Copied:", textarea.value))
+        .catch((err) => console.error("Failed to copy:", err));
+    }
+  });
 });
 
 // :::: (Dev Component Mapping) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2573,4 +2643,82 @@ function handleExtraction() {
 // Example: Execute extraction based on the flag
 handleExtraction();
 
+// :::: (Google Analytics)
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.body.addEventListener("click", function (event) {
+    if (event.target.tagName === "BUTTON") {
+      gtag("event", "click", {
+        event_category: "button",
+        event_label: event.target.innerText.trim() || "Unnamed Button",
+      });
+    }
+  });
+});
+
 // :::: Not Sorted | Working /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+document.addEventListener("keydown", function (event) {
+  // Ignore if not a Shift + Letter keypress
+  if (!event.shiftKey || event.key.length !== 1 || !/[A-Z]/.test(event.key)) {
+    return;
+  }
+
+  // Step 1: Check if the unique bridge asset tab button is active
+  const bridgeAssetTab = document.querySelector('button[data-target="bridge-asset-tab"]');
+  if (!bridgeAssetTab || !bridgeAssetTab.classList.contains("active")) {
+    // alert("Step 1: The bridge asset tab is not active.");
+    return;
+  }
+
+  // Step 2: Find the active bridge component button in row 2
+  const activeComponentButton = document.querySelector("button.bridge-component-buttons.active.row2");
+  if (!activeComponentButton) {
+    // alert("Step 2: No active bridge component button found.");
+    return;
+  }
+  const componentTarget = activeComponentButton.dataset.target;
+
+  // Step 3: Find the div by its ID (since data-target refers to an ID)
+  const componentDiv = document.getElementById(componentTarget);
+  if (!componentDiv) {
+    // alert(`Step 3: No div found with id '${componentTarget}'.`);
+    return;
+  }
+
+  // Find the active button inside this component div
+  const activeSubButton = componentDiv.querySelector("button.active");
+  if (!activeSubButton) {
+    // alert("Step 3: No active button found within the component div.");
+    return;
+  }
+
+  // Step 4: Determine if the active button is alt1 or alt2
+  const textareas = componentDiv.querySelectorAll("textarea");
+  if (textareas.length === 0) {
+    // alert("Step 5: No textareas found in the component div.");
+    return;
+  }
+
+  let targetTextarea;
+  if (textareas.length === 1) {
+    // If only one textarea, always use it
+    targetTextarea = textareas[0];
+  } else {
+    // If two textareas, select based on alt1 or alt2 button class
+    if (activeSubButton.classList.contains("alt1-buttons")) {
+      targetTextarea = textareas[0];
+    } else if (activeSubButton.classList.contains("alt2-buttons")) {
+      targetTextarea = textareas[1];
+    } else {
+      // alert("Step 4: Active button is neither alt1-buttons nor alt2-buttons.");
+      return;
+    }
+  }
+
+  // Step 6: If no input fields are active, focus the appropriate textarea and append the letter
+  if (!document.activeElement || (document.activeElement.tagName !== "TEXTAREA" && document.activeElement.tagName !== "INPUT")) {
+    targetTextarea.focus();
+    targetTextarea.setSelectionRange(targetTextarea.value.length, targetTextarea.value.length);
+  }
+});

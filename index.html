@@ -99,9 +99,10 @@
           </button>
         </div>
         <div class="search-container">
-          <span id="searchID" class="search-title"></span
-          ><button id="asset-error-button" class="material-symbols-outlined main-error-icon" type="button" style="display: none">error</button
-          ><button id="button-map-link" class="button-icon material-symbols-outlined" type="button">location_on</button
+          <div id="searchID" class="search-title"></div>
+          <button id="asset-error-button" class="material-symbols-outlined main-error-icon" tabindex="-1" type="button" style="display: none">
+            error</button
+          ><button id="button-map-link" class="button-icon material-symbols-outlined" tabindex="-1" type="button">location_on</button
           ><input type="text" class="search-box row1" placeholder="Asset #" />
         </div>
       </div>
@@ -9105,7 +9106,7 @@
               data-container-class="settings-item-containers"
               data-button-class="settings-item-buttons"
             >
-              User
+              User Settings
             </button>
             <button
               class="settings-item-buttons row3"
@@ -9113,16 +9114,16 @@
               data-container-class="settings-item-containers"
               data-button-class="settings-item-buttons"
             >
-              Global
+              Global Settings
             </button>
             |
             <button
               class="settings-item-buttons row3"
-              data-target="settings-help-tab"
+              data-target="settings-guide-tab"
               data-container-class="settings-item-containers"
               data-button-class="settings-item-buttons"
             >
-              Help
+              User Guide
             </button>
             <span id="user-local-storage" class="asset-update-text"></span>
           </div>
@@ -9226,21 +9227,63 @@
             </div>
           </div>
           <!-- :: Help Tab -->
-          <div id="settings-help-tab" class="settings-item-containers">
-            <p class="asset-data-container-header">Instructions:</p>
-            <div class="asset-data-content-containers">
-              <div class="review-components-container textarea2-group-container">
-                <!-- Routine -->
-                <div class="textarea-group">
-                  <p class="paragraph-rating2">Temp:</p>
-                  <div class="content-container-paragraphs">
-                    <div class="textarea-containers2">
-                      <div class="textarea-mirrors2">
-                        <textarea readonly id="help-textarea-temp" rows="1" class="textarea-comments2"></textarea>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+          <div id="settings-guide-tab" class="settings-item-containers">
+            <div class="report-walkthrough-content-cards-container">
+              <div class="report-walkthrough-content-cards">
+                <p class="report-walkthrough-card-header">Navigation:</p>
+
+                <ul>
+                  <li>
+                    <p class="report-walkthrough-card-paragraph">
+                      Left and right arrow keys open adjacent tabs. Other options are available under arrow key settings in the global settings page.
+                    </p>
+                  </li>
+                  <li>
+                    <p class="report-walkthrough-card-paragraph">
+                      Tab moves through the buttons and text areas as expected but does not activate them.
+                    </p>
+                  </li>
+                  <li>
+                    <p class="report-walkthrough-card-paragraph">
+                      Pressing enter to activate a button goes to the next row of buttons and focuses the active button.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div class="report-walkthrough-content-cards">
+                <p class="report-walkthrough-card-header">Keyboard Shortcuts:</p>
+
+                <ul>
+                  <li>
+                    <p class="report-walkthrough-card-paragraph">
+                      Pressing Ctrl, Ctrl in quick succession activates and deactivates the programmed navigation function for up and down arrow key
+                      presses. This feature is active by default.
+                    </p>
+                  </li>
+                  <li>
+                    <p class="report-walkthrough-card-paragraph">
+                      Pressing 1-9 or 0 from the example comments page, outside of text areas, adds the associated comment to the associated text
+                      area.
+                    </p>
+                  </li>
+                  <li>
+                    <p class="report-walkthrough-card-paragraph">
+                      Pressing the delete key from the example comments page, outside of text areas, clears the text area.
+                    </p>
+                  </li>
+                  <li>
+                    <p class="report-walkthrough-card-paragraph">Pressing Ctrl + Shift + Z removes an item from the clipboard history.</p>
+                  </li>
+                  <li>
+                    <p class="report-walkthrough-card-paragraph">Pressing Ctrl + Shift + Y restores an item to the clipboard history.</p>
+                  </li>
+                  <li>
+                    <p class="report-walkthrough-card-paragraph">Pressing Page Up advances to the next Rating Table or tab.</p>
+                  </li>
+                  <li>
+                    <p class="report-walkthrough-card-paragraph">Pressing Page Down goes back to the previous Rating Table or tab.</p>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
