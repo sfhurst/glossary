@@ -9065,30 +9065,121 @@
           <div id="settings-guide-tab" class="settings-item-containers">
             <div class="settings-content-cards-container">
               <div class="settings-content-cards">
+                <p class="settings-card-header">Function:</p>
+
+                <ul>
+                  <li>
+                    <p class="settings2-card-paragraph" style="padding-top: 5px">
+                      The site is laid out in tabbed rows. The header is Row 1. Selections made on Row 1 populate Row 2 tabs, and so on.
+                    </p>
+                  </li>
+                  <li>
+                    <p class="settings2-card-paragraph">
+                      Keyboard navigation has been prioritized with custom shortcuts that improve default behavior.
+                    </p>
+                  </li>
+                  <li>
+                    <p class="settings2-card-paragraph">The arrow keys, Tab key, and Page Up/Page Down keys all have programmed actions.</p>
+                  </li>
+                  <li>
+                    <p class="settings2-card-paragraph">Comment fields provide space to build comments, with all relevant resources a click away.</p>
+                  </li>
+                  <li>
+                    <p class="settings2-card-paragraph">Double-clicking a comment field copies the full content to the clipboard.</p>
+                  </li>
+                  <li>
+                    <p class="settings2-card-paragraph">
+                      Entering an asset number in the asset number search box loads the bridge data into the page, updates ratings for most items, and
+                      populates general information into the comment fields. Comments will also become available once they are restored in iTAMS. This
+                      only works for bridges. It’s especially useful in the field and when working through bridge reports.
+                    </p>
+                  </li>
+                  <li>
+                    <p class="settings2-card-paragraph">
+                      When asset data is loaded, real-time error checks run to flag certain data issues. Errors are marked with a red alert box in the
+                      top-right corner of the header.
+                    </p>
+                  </li>
+                  <li>
+                    <p class="settings2-card-paragraph">
+                      The Bridge tab provides all relevant information for each rated component. It also includes tools to assist with inspection
+                      report writing.
+                    </p>
+                  </li>
+                  <ul>
+                    <li>
+                      <p class="settings2-card-paragraph">
+                        Typing outside a comment field automatically activates and places the cursor in the appropriate comment field.
+                      </p>
+                    </li>
+                    <li>
+                      <p class="settings2-card-paragraph">
+                        When an Example Comments tab is in focus, clicking an example comment copies it to the clipboard.
+                      </p>
+                    </li>
+                    <li>
+                      <p class="settings2-card-paragraph">
+                        When an Example Comments tab is in focus, typing the row number for an example comment copies it to the associated comment
+                        field.
+                      </p>
+                    </li>
+                    <li>
+                      <p class="settings2-card-paragraph">
+                        When an Example Comments tab is in focus, pressing the Delete key clears the associated comment field.
+                      </p>
+                    </li>
+                    <li>
+                      <p class="settings2-card-paragraph">
+                        When a Rating Table tab is in focus, clicking or typing a rating value selects and highlights it.
+                      </p>
+                    </li>
+                    <li>
+                      <p class="settings2-card-paragraph">All of these actions update the Review tab.</p>
+                    </li>
+                  </ul>
+                  <li>
+                    <p class="settings2-card-paragraph">
+                      The clipboard history for this site can be accessed with Ctrl + Shift + Z and Ctrl + Shift + Y.
+                    </p>
+                  </li>
+                  <li>
+                    <p class="settings2-card-paragraph">
+                      Typing while on the Full Glossary tab locates terms starting with the typed characters and focuses the closest match. This
+                      behavior has not been implemented in the other glossaries.
+                    </p>
+                  </li>
+                  <li>
+                    <p class="settings2-card-paragraph">Glossary terms link to a Google search intended to trigger the AI Overview.</p>
+                  </li>
+                </ul>
+              </div>
+              <div class="settings-content-cards">
                 <p class="settings-card-header">Navigation:</p>
 
                 <ul>
                   <li>
+                    <p class="settings-card-paragraph" style="padding-top: 5px">
+                      <kbd>&#9664;</kbd> <kbd>&#9654;</kbd> arrow keys switch between adjacent tabs.
+                    </p>
+                  </li>
+                  <li>
+                    <p class="settings-card-paragraph"><kbd>&#9650;</kbd> <kbd>&#9660;</kbd> arrow keys move focus up and down between rows.</p>
+                  </li>
+                  <li>
                     <p class="settings-card-paragraph">
-                      <kbd>&#9664;</kbd> <kbd>&#9654;</kbd> arrow keys open adjacent tabs. Other options are available under arrow key settings in the
-                      global settings page.
+                      <kbd>Tab</kbd> moves through buttons and comment fields as expected but does not activate them.
                     </p>
                   </li>
                   <li>
                     <p class="settings-card-paragraph">
-                      <kbd>&#9650;</kbd> <kbd>&#9660;</kbd> arrow keys move between rows. Other options are available under arrow key settings in the
-                      global settings page.
+                      <kbd>Enter</kbd> activates the focused button and moves focus to the active button on the next row.
                     </p>
                   </li>
                   <li>
-                    <p class="settings-card-paragraph">
-                      <kbd>Tab</kbd> moves through the buttons and text areas as expected but does not activate them.
-                    </p>
+                    <p class="settings-card-paragraph"><kbd>PgUp</kbd> navigates to the previous bridge component Rating Table tab.</p>
                   </li>
                   <li>
-                    <p class="settings-card-paragraph">
-                      <kbd>Enter</kbd> activates a focused button and moves focus to the active button on the next row of buttons.
-                    </p>
+                    <p class="settings-card-paragraph"><kbd>PgDn</kbd> navigates to the next bridge component Rating Table tab.</p>
                   </li>
                 </ul>
               </div>
@@ -9097,33 +9188,31 @@
 
                 <ul>
                   <li>
-                    <p class="settings-card-paragraph">
-                      Pressing Ctrl, Ctrl in quick succession activates and deactivates the programmed navigation function for up and down arrow key
-                      presses. This feature is active by default.
+                    <p class="settings-card-paragraph" style="padding-top: 5px">
+                      <kbd>Ctrl</kbd> , <kbd>Ctrl</kbd> pressed in quick succession toggles the programmed navigation function for <kbd>&#9650;</kbd>
+                      <kbd>&#9660;</kbd> arrow keys. This is useful for enabling normal scrolling.
                     </p>
                   </li>
                   <li>
                     <p class="settings-card-paragraph">
-                      Pressing 1-9 or 0 from the example comments page, outside of text areas, adds the associated comment to the associated text
-                      area.
+                      <kbd>1</kbd> - <kbd>9</kbd> or <kbd>0</kbd> when pressed from an Example Comments tab (outside of comment fields), adds the
+                      corresponding example comment to its comment field.
                     </p>
                   </li>
                   <li>
                     <p class="settings-card-paragraph">
-                      Pressing the delete key from the example comments page, outside of text areas, clears the text area.
+                      <kbd>Del</kbd> when pressed from an Example Comments tab (outside of comment fields), clears the associated comment field.
                     </p>
                   </li>
                   <li>
-                    <p class="settings-card-paragraph">Pressing Ctrl + Shift + Z removes an item from the clipboard history.</p>
+                    <p class="settings-card-paragraph">
+                      <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Z</kbd> removes the last item from the clipboard history.
+                    </p>
                   </li>
                   <li>
-                    <p class="settings-card-paragraph">Pressing Ctrl + Shift + Y restores an item to the clipboard history.</p>
-                  </li>
-                  <li>
-                    <p class="settings-card-paragraph">Pressing Page Up advances to the next Rating Table or tab.</p>
-                  </li>
-                  <li>
-                    <p class="settings-card-paragraph">Pressing Page Down goes back to the previous Rating Table or tab.</p>
+                    <p class="settings-card-paragraph">
+                      <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Y</kbd> restores the most recent item to the clipboard history.
+                    </p>
                   </li>
                 </ul>
               </div>

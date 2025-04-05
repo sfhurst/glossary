@@ -790,8 +790,8 @@ function handleTabClick(event) {
       document.querySelector("#user-local-storage").textContent = `Global features are under development.`;
       // `Global settings are saved in the browser's local storage by completing the fields. Clear the browser cache to remove.`
     }
-    if (target === "settings-help-tab") {
-      document.querySelector("#user-local-storage").textContent = `The help section is under development.`;
+    if (target === "settings-guide-tab") {
+      document.querySelector("#user-local-storage").textContent = `A general overview of site functionality.`;
     }
 
     // If two or more comment builders hold the active view on their tabs then select the correct one to be active
