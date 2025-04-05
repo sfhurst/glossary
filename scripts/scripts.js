@@ -267,7 +267,7 @@ function populateGlossaryCompound() {
 
 document.addEventListener("DOMContentLoaded", populateGlossaryCompound);
 
-// ::: ------------------------------ Populate glossary with compound word definitions (Text Content Insertion)  ------------------------------
+// ::: ------------------------------ Populate glossary with all definitions (Text Content Insertion)  ------------------------------
 function populateGlossaryAll() {
   const container3 = document.querySelector("#glossary-all-tab .glossary-numeric-ratings-container");
 
@@ -1552,6 +1552,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const parentElement = termElement.closest(".glossary-card-header");
         if (parentElement) {
           parentElement.scrollIntoView({ behavior: "smooth", block: "start" });
+
+          const link = parentElement.querySelector(".glossary-term-link");
+          if (link) {
+            link.focus({ preventScroll: true });
+          }
         }
       }
     }
@@ -1574,11 +1579,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // :::: (Review Navigate) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// Go to the component page
 document.querySelectorAll(".paragraph-navigate").forEach((paragraph) => {
   paragraph.addEventListener("click", () => {
     const target = paragraph.dataset.navigate;
     const button = document.querySelector(`button[data-navigate="${target}"]`);
-    if (button) button.click();
+    if (button) {
+      button.click();
+      button.focus(); // Set focus after click
+    }
   });
 });
 
@@ -1945,7 +1954,6 @@ function getAllRowClasses() {
   const rowClasses = new Set();
 
   allElements.forEach((el) => {
-    // Only include the row if it is visible
     if (el.offsetParent !== null) {
       el.classList.forEach((cls) => {
         if (cls.startsWith("row")) {
@@ -1955,7 +1963,11 @@ function getAllRowClasses() {
     }
   });
 
-  return Array.from(rowClasses).sort(); // optional: sort row1, row2, row3
+  return Array.from(rowClasses).sort((a, b) => {
+    const numA = parseInt(a.replace("row", ""));
+    const numB = parseInt(b.replace("row", ""));
+    return numA - numB;
+  });
 }
 
 window.addEventListener("keydown", function (event) {
