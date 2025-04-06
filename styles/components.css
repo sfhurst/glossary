@@ -504,9 +504,37 @@ button.active:focus {
   color: var(--inactive-button-text-color1);
 }
 
-.main-error-icon:hover {
+.main-error-icon:hover,
+.main-error-icon:focus,
+.main-error-icon:active {
   background-color: rgba(158, 33, 33, 0.4);
   color: var(--inactive-button-text-color1);
+  color: var(--color-yellow);
+}
+
+.main-error-icon2 {
+  font-size: 18px;
+  font-weight: 500;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  margin: -4px 0 0;
+  border-radius: 10px;
+  user-select: none;
+  transition: 0.8s;
+  background-color: rgba(158, 33, 33, 0.3);
+  color: var(--inactive-button-text-color1);
+  display: none;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.main-error-icon2:hover,
+.main-error-icon2:focus,
+.main-error-icon2:active {
+  background-color: rgba(158, 33, 33, 0.4);
   color: var(--color-yellow);
 }
 

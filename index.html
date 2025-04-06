@@ -100,10 +100,11 @@
         </div>
         <div class="search-container">
           <div id="searchID" class="search-title"></div>
-          <button id="asset-error-button" class="material-symbols-outlined main-error-icon" tabindex="-1" type="button" style="display: none">
-            error</button
-          ><button id="button-map-link" class="button-icon material-symbols-outlined" tabindex="-1" type="button">location_on</button
-          ><input type="text" class="search-box row1" placeholder="Asset #" />
+          <button id="asset-error-button1" class="material-symbols-outlined main-error-icon" tabindex="-1" type="button" style="display: none">
+            error
+          </button>
+          <button id="button-map-link" class="button-icon material-symbols-outlined" tabindex="-1" type="button">location_on</button>
+          <input type="text" class="search-box row1" placeholder="Asset #" />
         </div>
       </div>
     </header>
@@ -4956,14 +4957,10 @@
             >
               Summary
             </button>
-            <!-- <button
-              class="review-item-buttons"
-              data-target="review-ratings-tab"
-              data-container-class="review-content-containers"
-              data-button-class="review-item-buttons"
-            >
-              Ratings & Comments
-            </button> -->
+
+            <button id="asset-error-button2" class="material-symbols-outlined main-error-icon2" tabindex="-1" type="button" style="display: none">
+              error
+            </button>
 
             <span id="asset-updated" class="asset-update-text"></span>
           </div>
@@ -9089,9 +9086,10 @@
                   </li>
                   <li>
                     <p class="settings2-card-paragraph">
-                      Entering an asset number in the asset number search box loads the bridge data into the page, updates ratings for most items, and
-                      populates general information into the comment fields. Comments will also become available once they are restored in iTAMS. This
-                      only works for bridges. It’s especially useful in the field and when working through bridge reports.
+                      Entering an asset number in the asset number search box loads the bridge data into the page, updates ratings for most items,
+                      populates general information into the comment fields, and builds a summary in the Review tab. Comments will also become
+                      available once they are restored in iTAMS. This only works for bridges. It’s especially useful in the field and when working
+                      through bridge reports.
                     </p>
                   </li>
                   <li>
@@ -9134,7 +9132,9 @@
                       </p>
                     </li>
                     <li>
-                      <p class="settings2-card-paragraph">All of these actions update the Review tab.</p>
+                      <p class="settings2-card-paragraph">
+                        All of these actions update the Review tab, and any changes made in the Review tab update the associated bridge component.
+                      </p>
                     </li>
                   </ul>
                   <li>

@@ -235,7 +235,8 @@ function hideAllErrors() {
   document.querySelectorAll('[id^="error-"]').forEach((element) => {
     element.style.display = "none";
   });
-  document.getElementById("asset-error-button").style.display = "none";
+  document.getElementById("asset-error-button1").style.display = "none";
+  document.getElementById("asset-error-button2").style.display = "none";
 }
 
 // ::: ---------------------------- updateMapButton() ----------------------------
@@ -1080,7 +1081,8 @@ function errorIconDisplay(assetObject, lowestValue) {
 
   // Asset error icon
   if (anyError === 1) {
-    document.getElementById("asset-error-button").style.display = "block";
+    document.getElementById("asset-error-button1").style.display = "block";
+    document.getElementById("asset-error-button2").style.display = "inline-flex";
   }
 }
 

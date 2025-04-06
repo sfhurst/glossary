@@ -8,15 +8,33 @@ document.querySelector(
 
 // Table of Contents
 // :::: (HTML Injection)
-// :::: (Text Content Insertion)
-// :::: (Copy To Clipboard)
+
+// :::::: (Field Population)
+// :::: (Populate Defect Glossary)
+// :::: (Populate SNBI Glossary)
+// :::: (Populate Culvert Glossary)
+// :::: (Populate Wall Glossary)
+// :::: (Populate Compound Word Glossary)
+// :::: (Populate Full Glossary)
+// :::: (Populate County Glossary)
+// :::: (Populate Bridge Tab Glossaries)
+// :::: (Populate Example Comments)
+// :::: (Populate Review Textarea Comments)
+
+// :::::: (Copy To Clipboard)
+// :::: (Example Comment to Clipboard)
+// :::: (Dbl-Clicked Textarea to Clipboard)
+
 // :::: (Textarea Expansion)
-// :::: (Page Button Clicks)
+
+// :::::: (Page Button Clicks)
+// :::: (Display Pages on Button Click)
+// :::: (Button Click Array of Classes)
+// :::: (Button Classes Add Event Listeners)
+// :::: (Active Button Clicked)
+
 // :::: (Rating Table Clicks)
 // :::: (Maintenance/Element Clicks)
-// :::: (Console Logs)
-// :::: (Error Log)
-// :::: (Error Log Popups)
 // :::: (Summary Update)
 // :::: (Local Storage)
 // :::: (Glossary Search)
@@ -34,12 +52,15 @@ document.querySelector(
 // :::: (0-9 Example Comments)
 // :::: (Auto Correct)
 // :::: (Quick TL#)
+// :::: (Console Logs)
+// :::: (Error Log)
+// :::: (Error Log Popups)
 // :::: (Dev Component Mapping)
 // :::: (Google Analytics)
 
-// :::: (HTML Injection) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// :::: (HTML Injection) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
-// ::: ------------------------------ Helper function to safely insert HTML into a container (HTML Injection) ------------------------------
+// Helper function to safely insert HTML into a container
 function setSafeHTML(container, unsafeHTML) {
   if (container) {
     // Sanitize the HTML to avoid XSS attacks
@@ -51,21 +72,11 @@ function setSafeHTML(container, unsafeHTML) {
   }
 }
 
-// ::: ------------------------------ Insert the alignment pg1 commentary into the content container (HTML Injection) ------------------------------
-// This is still generated in the index.html and can be deleted. It isn't necessary to sanitize page load items, only textarea items that get used in other areas.
-// This should be deleted once the concept is completed for textareas.
-//**// document.addEventListener("DOMContentLoaded", function () {
-//**// const container = document.querySelector("#bridge-alignment-pg1 .content-container-paragraphs");
+// :::::: (Field Population) //////////////////////////////////////////////////////////////////////////
 
-// Use the setSafeHTML function to insert sanitized content
-//**// const unsafeHTML = bridgeComponents[0].commentary; // The raw HTML content to be inserted
-// container.innerHTML = unsafeHTML;
-//**// setSafeHTML(container, unsafeHTML); // Insert sanitized HTML into the container
-//**// });
+// :::: (Populate Defect Glossary) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
-// :::: (Text Content Insertion) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-// ::: ------------------------------ Populate glossary with defect definitions (Text Content Insertion)  ------------------------------
+// Populate glossary with defect definitions
 function populateGlossaryDefects() {
   const container = document.querySelector("#glossary-defects-tab .glossary-numeric-ratings-container");
 
@@ -107,7 +118,9 @@ function populateGlossaryDefects() {
 
 document.addEventListener("DOMContentLoaded", populateGlossaryDefects);
 
-// ::: ------------------------------ Populate glossary with bridge definitions (Text Content Insertion)  ------------------------------
+// :::: (Populate SNBI Glossary) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+// Populate glossary with bridge definitions
 function populateGlossaryBridge() {
   const container2 = document.querySelector("#glossary-bridge-tab .glossary-numeric-ratings-container");
 
@@ -147,7 +160,9 @@ function populateGlossaryBridge() {
 
 document.addEventListener("DOMContentLoaded", populateGlossaryBridge);
 
-// ::: ------------------------------ Populate glossary with culvert definitions (Text Content Insertion)  ------------------------------
+// :::: (Populate Culvert Glossary) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+// Populate glossary with culvert definitions
 function populateGlossaryCulvert() {
   const container2 = document.querySelector("#glossary-culvert-tab .glossary-numeric-ratings-container");
 
@@ -187,7 +202,9 @@ function populateGlossaryCulvert() {
 
 document.addEventListener("DOMContentLoaded", populateGlossaryCulvert);
 
-// ::: ------------------------------ Populate glossary with wall definitions (Text Content Insertion)  ------------------------------
+// :::: (Populate Wall Glossary) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+// Populate glossary with wall definitions
 function populateGlossaryWall() {
   const container3 = document.querySelector("#glossary-wall-tab .glossary-numeric-ratings-container");
 
@@ -227,7 +244,9 @@ function populateGlossaryWall() {
 
 document.addEventListener("DOMContentLoaded", populateGlossaryWall);
 
-// ::: ------------------------------ Populate glossary with compound word definitions (Text Content Insertion)  ------------------------------
+// :::: (Populate Compound Word Glossary) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+// Populate glossary with compound word definitions
 function populateGlossaryCompound() {
   const container3 = document.querySelector("#glossary-compounds-tab .glossary-numeric-ratings-container");
 
@@ -267,7 +286,9 @@ function populateGlossaryCompound() {
 
 document.addEventListener("DOMContentLoaded", populateGlossaryCompound);
 
-// ::: ------------------------------ Populate glossary with all definitions (Text Content Insertion)  ------------------------------
+// :::: (Populate Full Glossary) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+// Populate glossary with all definitions (Text Content Insertion)
 function populateGlossaryAll() {
   const container3 = document.querySelector("#glossary-all-tab .glossary-numeric-ratings-container");
 
@@ -311,7 +332,9 @@ function populateGlossaryAll() {
 
 document.addEventListener("DOMContentLoaded", populateGlossaryAll);
 
-// ::: ------------------------------ Populate glossary with counties (Text Content Insertion)  ------------------------------
+// :::: (Populate County Glossary) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+// Populate glossary with counties
 // This is still generated in the index.html and can be deleted.
 // Function to populate the county glossary
 function populateCountyGlossary() {
@@ -373,7 +396,9 @@ function populateCountyGlossary() {
 // Call the function once the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", populateCountyGlossary);
 
-// ::: ------------------------------ Populate glossary tabs for bridge components (Text Content Insertion)  ------------------------------
+// :::: (Populate Bridge Tab Glossaries) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+// Populate glossary tabs for bridge components
 
 function buildGlossaries(bridgeComponents) {
   // Loop through each glossary_page_id in the bridgeComponents array
@@ -427,7 +452,9 @@ function buildGlossaries(bridgeComponents) {
 
 buildGlossaries(bridgeComponents);
 
-// ::: ------------------------------ Populate example comments for bridge components (Text Content Insertion)  ------------------------------
+// :::: (Populate Example Comments) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+// Populate example comments for bridge components
 function updateExampleComments() {
   bridgeComponents.forEach((component) => {
     const commentsContainer = document.getElementById(component.example_comments_page_id);
@@ -462,8 +489,9 @@ function updateExampleComments() {
 
 document.addEventListener("DOMContentLoaded", updateExampleComments);
 
-// test working
-// ::: ------------------------------ Populate review div based on textarea comment (Text Content Insertion)  ------------------------------
+// :::: (Populate Review Textarea Comments) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+// Populate review div based on textarea comment
 function handleTextareaChange(event) {
   const textarea = event.target; // Get the changed textarea element
 
@@ -516,9 +544,11 @@ document.querySelectorAll("textarea").forEach((textarea) => {
   textarea.addEventListener("input", handleTextareaChange);
 });
 
-// :::: (Copy To Clipboard) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// :::::: (Copy To Clipboard) //////////////////////////////////////////////////////////////////////////
 
-// ::: ------------------------------ Copy Example Comment Text to Clipboard (Copy To Clipboard) ------------------------------
+// :::: (Example Comment to Clipboard) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+// Copy Example Comment Text to Clipboard
 document.addEventListener("click", function (evt) {
   // Check if the clicked element is one of the comment lines to trigger the copy action
   if (evt.target.classList.contains("content-container-comment-lines")) {
@@ -551,7 +581,9 @@ document.querySelectorAll(".content-container-comment-lines").forEach(function (
   element.addEventListener("click", copyToClipboard); // Add click event listener to each comment line
 });
 
-// ::: ------------------------------ Copy any dbl-clicked textarea Text to Clipboard (Copy To Clipboard) ------------------------------
+// :::: (Dbl-Clicked Textarea to Clipboard) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+// Copy any dbl-clicked textarea Text to Clipboard
 function copyTextarea(evt) {
   var textarea = evt.currentTarget; // Get the clicked textarea element
   var textToCopy = textarea.value; // Get the text content from the textarea
@@ -573,45 +605,9 @@ document.querySelectorAll(".textarea-comments").forEach(function (textarea) {
   textarea.addEventListener("dblclick", copyTextarea); // Trigger copyTextarea function on double-click
 });
 
-// ::: ------------------------------ Review: Copy clciked component name for searching later (Copy To Clipboard) ------------------------------
-function copyDataCategory(event) {
-  const dataCategory = event.target.closest(".content-container-rating-lines").getAttribute("data-category");
-  if (dataCategory) {
-    navigator.clipboard
-      .writeText(dataCategory)
-      .then(() => {
-        // console.log("Data category copied to clipboard:", dataCategory);
-      })
-      .catch((err) => {
-        console.error("Error copying data-category:", err);
-      });
-  }
-}
+// :::: (Textarea Expansion) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
-// Attach event listeners to copy data-category when clicking on .content-container-rating-condition-bubble
-document.querySelectorAll(".content-container-rating-condition-bubble").forEach((span) => {
-  span.addEventListener("click", copyDataCategory);
-});
-
-// ::: ------------------------------ Review: Copy clciked comment for transfering (Copy To Clipboard) ------------------------------
-function copyContent(event) {
-  const content = event.target.textContent.trim(); // Get text inside <span class="textarea-content-here">
-  if (content) {
-    navigator.clipboard.writeText(content).then(() => {
-      storeClipboardData(content); // Store the copied text into clipboard history
-      showCopiedMessage(); // Show the "Copied" message
-    });
-  }
-}
-
-// Attach event listeners to copy content when clicking on .textarea-content-here
-document.querySelectorAll(".textarea-content-here").forEach((span) => {
-  span.addEventListener("click", copyContent);
-});
-
-// :::: (Textarea Expansion) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-// ::: ------------------------------ Expand the textareas when pasted or typed in (Textarea Expansion) ------------------------------
+// Expand the textareas when pasted or typed in
 function expandTextarea(event, componentName) {
   // Extract the unique part of the component name (e.g., BC01 from BC01-textarea)
   const baseId = componentName.split("-")[0];
@@ -636,9 +632,11 @@ function expandTextarea(event, componentName) {
   });
 }
 
-// :::: (Page Button Clicks) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// :::::: (Page Button Clicks) //////////////////////////////////////////////////////////////////////////
 
-// ::: ------------------------------ Handles the display of content for each tab based on button clicks (Page Button Clicks) ------------------------------
+// :::: (Display Pages on Button Click) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+// Handles the display of content for each tab based on button clicks
 
 // Flag to ensure the focus happens only on page startup
 let isInitialLoad = true;
@@ -713,7 +711,9 @@ document.querySelectorAll(".asset-buttons").forEach(function (button) {
   button.addEventListener("click", openTab); // Add click event to trigger openTab
 });
 
-// ::: ------------------------------ Button Classes (Page Button Clicks) ------------------------------
+// :::: (Button Click Array of Classes) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+// Button Classes
 var buttonClasses = [
   "asset-buttons",
   "bridge-component-buttons",
@@ -743,7 +743,9 @@ var buttonClasses = [
   "settings-item-buttons",
 ];
 
-// ::: ------------------------------ Loop Through Button Classes and Add Event Listeners (Page Button Clicks) ------------------------------
+// :::: (Button Classes Add Event Listeners) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+// Loop Through Button Classes and Add Event Listeners
 buttonClasses.forEach(function (buttonClass) {
   // For each button class, find buttons and add an event listener for tab opening
   document.querySelectorAll("." + buttonClass).forEach(function (button) {
@@ -751,7 +753,9 @@ buttonClasses.forEach(function (buttonClass) {
   });
 });
 
-// ::: ------------------------------ Know the active tab (Page Button Clicks) ------------------------------
+// :::: (Active Button Clicked) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+// Know the active tab
 let activeTab = null;
 
 // Function to Handle Clicks on Elements with a data-target Attribute
@@ -822,9 +826,9 @@ document.addEventListener("click", function (event) {
   }
 });
 
-// :::: (Rating Table Clicks) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// :::: (Rating Table Clicks) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
-// ::: ------------------------------ Rating table clicks ------------------------------
+// Rating table clicks
 function handleHighlight(event) {
   // Find the parent container (section) of the clicked item
   const container = event.target.closest('[class*="containers"]');
@@ -910,9 +914,9 @@ document.querySelectorAll(".content-container-rating-lines").forEach((item) => {
   item.addEventListener("click", handleHighlight);
 });
 
-// :::: (Maintenance/Element Clicks) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// :::: (Maintenance/Element Clicks) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
-// ::: ------------------------------ Determine what maintenance or element button is clicked ------------------------------
+// Determine what maintenance or element button is clicked
 let maintenanceArray = []; // Global array to track active maintenance items
 
 function addDeficiencyButtons(event) {
@@ -965,409 +969,7 @@ function addDeficiencyButtons(event) {
   }
 }
 
-// :::: (Console Logs) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-// ::: ------------------------------ Run Times and Counts ------------------------------
-
-// Random data logs
-console.log("Number of bridge assets loaded: " + Object.keys(assetData).length);
-console.log("index.html last modified:", document.lastModified);
-console.log("Data last updated:", dataDate);
-
-window.addEventListener("load", function () {
-  const loadTimeInMilliseconds = performance.now();
-  const loadTimeInSeconds = loadTimeInMilliseconds / 1000;
-  console.log(`Page loaded in ${loadTimeInSeconds.toFixed(2)} seconds`);
-});
-
-// Seymour routes
-const district2Assets = assetData.filter((asset) => asset["(2) Highway Agency District:"] === 2);
-const uniqueInvRoutes = new Set(district2Assets.map((asset) => asset["Inv Route #"]));
-console.log(`Number of unique routes in Seymour: ${uniqueInvRoutes.size}`);
-
-// Glossary Terms
-const count = glossaryAllTerms.length;
-console.log(`Number of unique glossary terms: ${count}`);
-
-// Mapping district numbers to district names
-const districtIdMap = {
-  1: "crawfordsville",
-  2: "fortwayne",
-  3: "greenfield",
-  4: "laporte",
-  5: "seymour",
-  6: "vincennes",
-  7: "toll",
-};
-
-// Compute district counts & NSTM inspection counts
-const districtCounts = {};
-const nstmCounts = {};
-const specialCounts = {};
-const underwaterCounts = {};
-const elementCounts = {};
-const reducedIntervalCounts = {};
-const extendedIntervalCounts = {};
-const postedCounts = {};
-const scourCounts = {};
-
-// Initialize total counts
-let totalRoutine = 0;
-let totalNstm = 0;
-let totalSpecial = 0;
-let totalUnderwater = 0;
-let totalElement = 0;
-let totalReducedInterval = 0;
-let totalExtendedInterval = 0;
-let totalPosted = 0;
-let totalScour = 0;
-
-assetData.forEach((asset) => {
-  const district = asset["(2) Highway Agency District:"]; // Get district value
-  const nstmRequired = asset["(92AA) Critical Feature Inspection: NSTM Insp Required?"]; // Check NSTM
-  const specialRequired = asset["(92CC) Critical Feature Inspection: Special Insp Required?"]; // Check special
-  const underwaterRequired = asset["(92BB) Critical Feature Inspection: Underwater Insp Required?"]; // Check underwater
-  const elementRequired = asset["(104) Highway System of Inventory Route:"]; // Check element
-  const frequencyRequired = asset["(91) Designated Inspection Frequency:"]; // Check frequency
-  const postedRequired = asset["(41) Structure Open/Posted/Closed:"]; // Check posted
-  const scourRequired = asset["(B.AP.03) Scour Vulnerability"]; // Check scour critical
-
-  if (district !== undefined) {
-    districtCounts[district] = (districtCounts[district] || 0) + 1;
-    totalRoutine++; // Increment total routine count
-
-    if (nstmRequired === "Y") {
-      nstmCounts[district] = (nstmCounts[district] || 0) + 1;
-      totalNstm++; // Increment total NSTM count
-    }
-
-    if (specialRequired === "Y") {
-      specialCounts[district] = (specialCounts[district] || 0) + 1;
-      totalSpecial++; // Increment total special count
-    }
-
-    if (underwaterRequired === "Y") {
-      underwaterCounts[district] = (underwaterCounts[district] || 0) + 1;
-      totalUnderwater++; // Increment total underwater count
-    }
-
-    if (elementRequired === 1) {
-      elementCounts[district] = (elementCounts[district] || 0) + 1;
-      totalElement++; // Increment total element count
-    }
-
-    if (frequencyRequired < 24) {
-      reducedIntervalCounts[district] = (reducedIntervalCounts[district] || 0) + 1;
-      totalReducedInterval++; // Increment total reduced interval count
-    }
-
-    if (frequencyRequired > 24) {
-      extendedIntervalCounts[district] = (extendedIntervalCounts[district] || 0) + 1;
-      totalExtendedInterval++; // Increment total extended interval count
-    }
-
-    if (postedRequired !== "A") {
-      postedCounts[district] = (postedCounts[district] || 0) + 1;
-      totalPosted++; // Increment total posted count
-    }
-
-    if (scourRequired !== null && scourRequired !== "N" && !["A", "B", "AB-T"].includes(scourRequired)) {
-      scourCounts[district] = (scourCounts[district] || 0) + 1;
-      totalScour++; // Increment total scour count
-    }
-  }
-});
-
-// Function to update textareas dynamically
-function updateTextarea(district, type, value) {
-  let districtName = districtIdMap[district]; // Get district name
-  if (!districtName) districtName = "all"; // If no district, send to "all"
-
-  const textareaId = `${districtName}-textarea-${type}`; // Generate ID
-  const textarea = document.getElementById(textareaId);
-  if (textarea) {
-    textarea.value = value; // Update the textarea value
-  }
-}
-
-// Update the corresponding district textareas
-Object.entries(districtCounts).forEach(([district, count]) => {
-  updateTextarea(district, "routine", count);
-});
-Object.entries(nstmCounts).forEach(([district, count]) => {
-  updateTextarea(district, "nstm", count);
-});
-Object.entries(specialCounts).forEach(([district, count]) => {
-  updateTextarea(district, "special", count);
-});
-Object.entries(underwaterCounts).forEach(([district, count]) => {
-  updateTextarea(district, "underwater", count);
-});
-Object.entries(elementCounts).forEach(([district, count]) => {
-  updateTextarea(district, "element", count);
-});
-Object.entries(reducedIntervalCounts).forEach(([district, count]) => {
-  updateTextarea(district, "reducedinterval", count);
-});
-Object.entries(extendedIntervalCounts).forEach(([district, count]) => {
-  updateTextarea(district, "extendedinterval", count);
-});
-Object.entries(postedCounts).forEach(([district, count]) => {
-  updateTextarea(district, "posted", count);
-});
-Object.entries(scourCounts).forEach(([district, count]) => {
-  updateTextarea(district, "scour", count);
-});
-
-// Update the corresponding district textareas
-Object.entries(districtCounts).forEach(([district, count]) => {
-  updateTextarea(district, "routine", count);
-
-  // Calculate bridge share: (routine inspections per inspector) / 2
-  const inspectors = district === "3" ? 6 : 4; // Greenfield (3) has 6 inspectors, others have 4
-  const bridgeShare = Math.ceil(count / inspectors / 2); // Divide by inspectors, then by 2
-
-  updateTextarea(district, "bridgeshare", bridgeShare); // Update bridge share
-});
-
-// Update total textareas
-updateTextarea("all", "routine", totalRoutine);
-updateTextarea("all", "nstm", totalNstm);
-updateTextarea("all", "special", totalSpecial);
-updateTextarea("all", "underwater", totalUnderwater);
-updateTextarea("all", "element", totalElement);
-updateTextarea("all", "reducedinterval", totalReducedInterval);
-updateTextarea("all", "extendedinterval", totalExtendedInterval);
-updateTextarea("all", "posted", totalPosted);
-updateTextarea("all", "scour", totalScour);
-
-console.log(districtCounts);
-
-// :::: (Error Log) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-// Function to count errors per district and update textareas
-function findAndUpdateAssetErrors() {
-  let errorCounts = {
-    freq: {},
-    super: {},
-    deck: {},
-    sub: {},
-    wearing: {},
-  };
-
-  let errorAssets = {
-    freq: {},
-    super: {},
-    deck: {},
-    sub: {},
-    wearing: {},
-  };
-
-  assetData.forEach((asset) => {
-    const district = asset["(2) Highway Agency District:"];
-    const status = asset["(41) Structure Open/Posted/Closed:"]; // Check status
-    if (status === "K" || district === undefined) return; // Exclude if status is "K"
-
-    let assetNumber = asset["Asset Number"]; // Store asset number
-
-    // Extract necessary values
-    let assetValues = {
-      deck: parseFloat(asset["(B.C.01) Deck Condition Rating"]),
-      inspectionFrequency: parseFloat(asset["(91) Designated Inspection Frequency:"]),
-      superstructure: parseFloat(asset["(B.C.02) Superstructure Condition Rating"]),
-      substructure: parseFloat(asset["(B.C.03) Substructure Condition Rating"]),
-      scourCritical: parseFloat(asset["(113) Scour Critical Bridges:"]),
-      mainDesignType: asset["(43B) Structure Type, Main: Type of Design:"],
-      wearingSurfaceType: asset["(108A) Wearing Surface Protection System: Wearing Surface"],
-      wearingSurface: parseFloat(asset["(B.C.01a) Wearing Surface Condition Rating"]),
-      deckStructureType: asset["(107) Deck Structure Type:"],
-      underfillValue: asset["(B.C.04) Culvert Condition Rating"],
-      membraneValue: asset["(108B) Wearing Surface Protection System: Deck Membrane"],
-    };
-
-    let lowestValue = Math.min(assetValues.deck, assetValues.superstructure, assetValues.substructure);
-
-    // Error Check: Frequency Error
-    if (lowestValue < 4 && assetValues.inspectionFrequency > 12) {
-      errorCounts.freq[district] = (errorCounts.freq[district] || 0) + 1;
-      errorAssets.freq[district] = errorAssets.freq[district] || [];
-      errorAssets.freq[district].push(assetNumber);
-    }
-
-    // Error Check: Deck/Slab Error
-    if (assetValues.deck !== assetValues.superstructure && ["1", "01", 1].includes(assetValues.mainDesignType)) {
-      errorCounts.super[district] = (errorCounts.super[district] || 0) + 1;
-      errorAssets.super[district] = errorAssets.super[district] || [];
-      errorAssets.super[district].push(assetNumber);
-    }
-
-    // Error Check: Monolithic Error
-    if (assetValues.wearingSurfaceType === "1") {
-      if (assetValues.deck <= 5 || assetValues.wearingSurface <= 5) {
-        if (assetValues.deck !== assetValues.wearingSurface) {
-          errorCounts.deck[district] = (errorCounts.deck[district] || 0) + 1;
-          errorAssets.deck[district] = errorAssets.deck[district] || [];
-          errorAssets.deck[district].push(assetNumber);
-        }
-      } else {
-        if (assetValues.deck !== assetValues.wearingSurface && assetValues.deck !== assetValues.wearingSurface + 1) {
-          errorCounts.deck[district] = (errorCounts.deck[district] || 0) + 1;
-          errorAssets.deck[district] = errorAssets.deck[district] || [];
-          errorAssets.deck[district].push(assetNumber);
-        }
-      }
-    }
-
-    // Error Check: Scour/Sub Error
-    if (assetValues.scourCritical <= 2 && assetValues.substructure > assetValues.scourCritical) {
-      errorCounts.sub[district] = (errorCounts.sub[district] || 0) + 1;
-      errorAssets.sub[district] = errorAssets.sub[district] || [];
-      errorAssets.sub[district].push(assetNumber);
-    }
-
-    // Error Check: Membrane Error
-    if (
-      assetValues.wearingSurface > 4 &&
-      assetValues.underfillValue === "N" &&
-      ["1", "2"].includes(assetValues.deckStructureType) &&
-      assetValues.wearingSurfaceType === "6" &&
-      ["0", "8", "N"].includes(assetValues.membraneValue)
-    ) {
-      errorCounts.wearing[district] = (errorCounts.wearing[district] || 0) + 1;
-      errorAssets.wearing[district] = errorAssets.wearing[district] || [];
-      errorAssets.wearing[district].push(assetNumber);
-    }
-  });
-
-  // Update textareas for each district
-  Object.entries(errorCounts.freq).forEach(([district, count]) => {
-    updateTextarea(district, "error-frequency", count);
-  });
-  Object.entries(errorCounts.super).forEach(([district, count]) => {
-    updateTextarea(district, "error-deckslab", count);
-  });
-  Object.entries(errorCounts.deck).forEach(([district, count]) => {
-    updateTextarea(district, "error-monolithic", count);
-  });
-  Object.entries(errorCounts.sub).forEach(([district, count]) => {
-    updateTextarea(district, "error-scoursub", count);
-  });
-  Object.entries(errorCounts.wearing).forEach(([district, count]) => {
-    updateTextarea(district, "error-membrane", count);
-  });
-
-  // Calculate the sum for each error type and send it to the corresponding textareas
-  let totalFreqErrors = Object.values(errorCounts.freq).reduce((sum, count) => sum + count, 0);
-  let totalSuperErrors = Object.values(errorCounts.super).reduce((sum, count) => sum + count, 0);
-  let totalDeckErrors = Object.values(errorCounts.deck).reduce((sum, count) => sum + count, 0);
-  let totalSubErrors = Object.values(errorCounts.sub).reduce((sum, count) => sum + count, 0);
-  let totalWearingErrors = Object.values(errorCounts.wearing).reduce((sum, count) => sum + count, 0);
-
-  // Update the sum of errors in the respective textareas
-  document.getElementById("all-textarea-error-frequency").value = totalFreqErrors;
-  document.getElementById("all-textarea-error-monolithic").value = totalSuperErrors;
-  document.getElementById("all-textarea-error-deckslab").value = totalDeckErrors;
-  document.getElementById("all-textarea-error-scoursub").value = totalSubErrors;
-  document.getElementById("all-textarea-error-membrane").value = totalWearingErrors;
-
-  // Log error asset numbers by district and error type
-  console.log("Errors by District and Type:");
-  Object.entries(errorAssets).forEach(([errorType, districts]) => {
-    console.log(`\n${errorType.toUpperCase()} Errors:`);
-    Object.entries(districts).forEach(([district, assets]) => {
-      console.log(`  District ${district}:`, assets);
-    });
-  });
-}
-
-// Call the function to process errors and update the UI
-findAndUpdateAssetErrors();
-
-// :::: (Error Log Popups)
-
-// Function to create and display the popup
-function showErrorPopup(button, message) {
-  // Create the temporary popup div
-  let errorPopup = document.createElement("div");
-  errorPopup.classList.add("error-popup");
-  errorPopup.innerText = message;
-
-  // Append the popup to the body
-  document.body.appendChild(errorPopup);
-
-  // Get the .textarea-group that contains the button
-  let group = button.closest(".textarea-group");
-
-  // Get the position of the .textarea-group
-  let groupRect = group.getBoundingClientRect();
-
-  // Position it below the .textarea-group and center it
-  errorPopup.style.left = `${groupRect.left + window.scrollX + groupRect.width / 2 - errorPopup.offsetWidth / 2}px`;
-  errorPopup.style.top = `${groupRect.bottom + window.scrollY + 10}px`; // Slightly below the group
-
-  // Remove popup after 3 seconds
-  setTimeout(() => {
-    errorPopup.remove();
-  }, 5000);
-}
-
-function showAssetErrorPopup(message) {
-  let button = document.getElementById("asset-error-button");
-  if (!button) return; // Exit if the button doesn't exist
-
-  // Create the temporary popup div
-  let errorPopup = document.createElement("div");
-  errorPopup.classList.add("error-popup");
-  errorPopup.innerText = message;
-
-  // Append the popup to the body
-  document.body.appendChild(errorPopup);
-
-  // Get the position of the button
-  let buttonRect = button.getBoundingClientRect();
-
-  // Position it below the button and center it
-  errorPopup.style.left = `${buttonRect.left + window.scrollX + buttonRect.width / 2 - errorPopup.offsetWidth / 2}px`;
-  errorPopup.style.top = `${buttonRect.bottom + window.scrollY + 10}px`; // Slightly below the button
-
-  // Remove popup after 3 seconds
-  setTimeout(() => {
-    errorPopup.remove();
-  }, 2000);
-}
-
-// Add event listeners for each error button
-document.querySelector("#error-freq button").addEventListener("click", function () {
-  showErrorPopup(this, "Inspection Frequency Error: When the lowest rating is below 4, the frequency must be 12 months or less.");
-});
-
-document.querySelector("#error-super button").addEventListener("click", function () {
-  showErrorPopup(this, "Deck Slab Error: The deck and superstructure ratings must match for slab bridges.");
-});
-
-document.querySelector("#error-deck button").addEventListener("click", function () {
-  showErrorPopup(
-    this,
-    "Monolithic Error: When the deck or wearing surface rating is below 6, they must match; otherwise, the wearing surface rating can be one less."
-  );
-});
-
-document.querySelector("#error-sub button").addEventListener("click", function () {
-  showErrorPopup(this, "Scour Error: When the scour rating is below 3, the substructure rating must be the same or lower.");
-});
-
-document.querySelector("#error-wearing button").addEventListener("click", function () {
-  showErrorPopup(
-    this,
-    "Membrane Error: When there is no membrane between a concrete deck and a bituminous wearing surface, the wearing surface rating must be below 5."
-  );
-});
-
-document.querySelector("#asset-error-button").addEventListener("click", function () {
-  showAssetErrorPopup(errorString);
-});
-
-// :::: (Summary Update)
+// :::: (Summary Update) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 // Update summary when changing ratings
 function updateObjectRatings(numericalValue, dataCategory) {
@@ -1412,7 +1014,7 @@ function updateObjectRatings(numericalValue, dataCategory) {
   // add freq change
 }
 
-// :::: (Local Storage) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// :::: (Local Storage)  // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 // Function to store user textareas to browser (Save on change)
 function saveOnChange(event) {
@@ -1495,7 +1097,7 @@ document.querySelectorAll("[id^='user-textarea']").forEach((textarea) => {
   });
 });
 
-// :::: (Glossary Search) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// :::: (Glossary Search) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 document.addEventListener("DOMContentLoaded", function () {
   let searchTerm = "";
@@ -1563,7 +1165,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// :::: (Scroll To Top) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// :::: (Scroll To Top) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 document.addEventListener("DOMContentLoaded", function () {
   document.addEventListener("keydown", function (event) {
@@ -1577,7 +1179,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// :::: (Review Navigate) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// :::: (Review Navigate) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 // Go to the component page
 document.querySelectorAll(".paragraph-navigate").forEach((paragraph) => {
@@ -1591,7 +1193,7 @@ document.querySelectorAll(".paragraph-navigate").forEach((paragraph) => {
   });
 });
 
-// :::: (Review DblClick) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// :::: (Review DblClick) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 // Handle double-click to copy text from textareas with id = something-textarea-review to clipboard
 document.querySelectorAll("[id$='-textarea-review']").forEach((textarea) => {
@@ -1617,7 +1219,7 @@ document.querySelectorAll("[id$='-textarea-review']").forEach((textarea) => {
   });
 });
 
-// :::: (Clipboard History) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// :::: (Clipboard History) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 // Ctrl+Shift+Z
 
@@ -1879,7 +1481,7 @@ function loadClipboardHistory() {
 // Call loadClipboardHistory on page load
 loadClipboardHistory();
 
-// :::: (Tab Order) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// :::: (Tab Order) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 // Disable tabbing globally by setting tabindex="-1" for all elements
 document.querySelectorAll("div:not(.divRow)").forEach((element) => {
@@ -1899,7 +1501,7 @@ function enableTabbing(elementId, tabindexValue) {
 // enableTabbing('input2', 2);  // Enable tabbing for Input 2
 // enableTabbing('button1', 3); // Enable tabbing for Button 1
 
-// :::: (Arrow Buttons) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// :::: (Arrow Buttons) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 const toggleFocusActivation = "activate"; // Set to "focus" or "activate"
 
@@ -2136,7 +1738,7 @@ window.addEventListener("keydown", function (event) {
   }
 });
 
-// :::: (Enter & Row Down) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// :::: (Enter & Row Down) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 window.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
@@ -2160,7 +1762,7 @@ window.addEventListener("keydown", function (event) {
   }
 });
 
-// :::: (Type Rating) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// :::: (Type Rating) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 window.addEventListener("keydown", function (event) {
   // Ignore if typing in input or textarea
@@ -2213,7 +1815,7 @@ window.addEventListener("keydown", function (event) {
   }
 });
 
-// :::: (Rating Page Navigation) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// :::: (Rating Page Navigation) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 // Define the navigation sequence as an array of button data-targets
 const navigationMap = [
@@ -2291,7 +1893,7 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-// :::: (Rating Page Index) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// :::: (Rating Page Index) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 // Function to find the correct navigation index
 function findNavigationIndex() {
@@ -2378,7 +1980,7 @@ function findNavigationIndex() {
   return foundIndex;
 }
 
-// :::: (Arrow Message) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// :::: (Arrow Message) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 // Function to show the current clipboard value (used for Undo/Redo)
 function showArrowMessage(value) {
@@ -2451,7 +2053,7 @@ function showArrowMessage(value) {
   }, 5000);
 }
 
-// :::: (0-9 Example Comments) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// :::: (0-9 Example Comments) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 document.addEventListener("keydown", function (event) {
   // Do nothing if an input or textarea is focused
@@ -2510,7 +2112,7 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
-// :::: (Auto Correct)
+// :::: (Auto Correct) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 // document.querySelectorAll("[id$='-textarea']").forEach((textarea) => {
 //   textarea.addEventListener("input", function (event) {
@@ -2555,7 +2157,7 @@ document.addEventListener("keydown", function (event) {
 //   });
 // });
 
-// :::: (Quick TL#)
+// :::: (Quick TL#) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 document.querySelectorAll('[data-target="bridge-asset-tab"]').forEach((button) => {
   button.addEventListener("dblclick", function () {
@@ -2569,7 +2171,408 @@ document.querySelectorAll('[data-target="bridge-asset-tab"]').forEach((button) =
   });
 });
 
-// :::: (Dev Component Mapping) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// :::: (Console Logs) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+// Run Times and Counts
+
+// Random data logs
+console.log("Number of bridge assets loaded: " + Object.keys(assetData).length);
+console.log("index.html last modified:", document.lastModified);
+console.log("Data last updated:", dataDate);
+
+window.addEventListener("load", function () {
+  const loadTimeInMilliseconds = performance.now();
+  const loadTimeInSeconds = loadTimeInMilliseconds / 1000;
+  console.log(`Page loaded in ${loadTimeInSeconds.toFixed(2)} seconds`);
+});
+
+// Seymour routes
+const district2Assets = assetData.filter((asset) => asset["(2) Highway Agency District:"] === 2);
+const uniqueInvRoutes = new Set(district2Assets.map((asset) => asset["Inv Route #"]));
+console.log(`Number of unique routes in Seymour: ${uniqueInvRoutes.size}`);
+
+// Glossary Terms
+const count = glossaryAllTerms.length;
+console.log(`Number of unique glossary terms: ${count}`);
+
+// Mapping district numbers to district names
+const districtIdMap = {
+  1: "crawfordsville",
+  2: "fortwayne",
+  3: "greenfield",
+  4: "laporte",
+  5: "seymour",
+  6: "vincennes",
+  7: "toll",
+};
+
+// Compute district counts & NSTM inspection counts
+const districtCounts = {};
+const nstmCounts = {};
+const specialCounts = {};
+const underwaterCounts = {};
+const elementCounts = {};
+const reducedIntervalCounts = {};
+const extendedIntervalCounts = {};
+const postedCounts = {};
+const scourCounts = {};
+
+// Initialize total counts
+let totalRoutine = 0;
+let totalNstm = 0;
+let totalSpecial = 0;
+let totalUnderwater = 0;
+let totalElement = 0;
+let totalReducedInterval = 0;
+let totalExtendedInterval = 0;
+let totalPosted = 0;
+let totalScour = 0;
+
+assetData.forEach((asset) => {
+  const district = asset["(2) Highway Agency District:"]; // Get district value
+  const nstmRequired = asset["(92AA) Critical Feature Inspection: NSTM Insp Required?"]; // Check NSTM
+  const specialRequired = asset["(92CC) Critical Feature Inspection: Special Insp Required?"]; // Check special
+  const underwaterRequired = asset["(92BB) Critical Feature Inspection: Underwater Insp Required?"]; // Check underwater
+  const elementRequired = asset["(104) Highway System of Inventory Route:"]; // Check element
+  const frequencyRequired = asset["(91) Designated Inspection Frequency:"]; // Check frequency
+  const postedRequired = asset["(41) Structure Open/Posted/Closed:"]; // Check posted
+  const scourRequired = asset["(B.AP.03) Scour Vulnerability"]; // Check scour critical
+
+  if (district !== undefined) {
+    districtCounts[district] = (districtCounts[district] || 0) + 1;
+    totalRoutine++; // Increment total routine count
+
+    if (nstmRequired === "Y") {
+      nstmCounts[district] = (nstmCounts[district] || 0) + 1;
+      totalNstm++; // Increment total NSTM count
+    }
+
+    if (specialRequired === "Y") {
+      specialCounts[district] = (specialCounts[district] || 0) + 1;
+      totalSpecial++; // Increment total special count
+    }
+
+    if (underwaterRequired === "Y") {
+      underwaterCounts[district] = (underwaterCounts[district] || 0) + 1;
+      totalUnderwater++; // Increment total underwater count
+    }
+
+    if (elementRequired === 1) {
+      elementCounts[district] = (elementCounts[district] || 0) + 1;
+      totalElement++; // Increment total element count
+    }
+
+    if (frequencyRequired < 24) {
+      reducedIntervalCounts[district] = (reducedIntervalCounts[district] || 0) + 1;
+      totalReducedInterval++; // Increment total reduced interval count
+    }
+
+    if (frequencyRequired > 24) {
+      extendedIntervalCounts[district] = (extendedIntervalCounts[district] || 0) + 1;
+      totalExtendedInterval++; // Increment total extended interval count
+    }
+
+    if (postedRequired !== "A") {
+      postedCounts[district] = (postedCounts[district] || 0) + 1;
+      totalPosted++; // Increment total posted count
+    }
+
+    if (scourRequired !== null && scourRequired !== "N" && !["A", "B", "AB-T"].includes(scourRequired)) {
+      scourCounts[district] = (scourCounts[district] || 0) + 1;
+      totalScour++; // Increment total scour count
+    }
+  }
+});
+
+// Function to update textareas dynamically
+function updateTextarea(district, type, value) {
+  let districtName = districtIdMap[district]; // Get district name
+  if (!districtName) districtName = "all"; // If no district, send to "all"
+
+  const textareaId = `${districtName}-textarea-${type}`; // Generate ID
+  const textarea = document.getElementById(textareaId);
+  if (textarea) {
+    textarea.value = value; // Update the textarea value
+  }
+}
+
+// Update the corresponding district textareas
+Object.entries(districtCounts).forEach(([district, count]) => {
+  updateTextarea(district, "routine", count);
+});
+Object.entries(nstmCounts).forEach(([district, count]) => {
+  updateTextarea(district, "nstm", count);
+});
+Object.entries(specialCounts).forEach(([district, count]) => {
+  updateTextarea(district, "special", count);
+});
+Object.entries(underwaterCounts).forEach(([district, count]) => {
+  updateTextarea(district, "underwater", count);
+});
+Object.entries(elementCounts).forEach(([district, count]) => {
+  updateTextarea(district, "element", count);
+});
+Object.entries(reducedIntervalCounts).forEach(([district, count]) => {
+  updateTextarea(district, "reducedinterval", count);
+});
+Object.entries(extendedIntervalCounts).forEach(([district, count]) => {
+  updateTextarea(district, "extendedinterval", count);
+});
+Object.entries(postedCounts).forEach(([district, count]) => {
+  updateTextarea(district, "posted", count);
+});
+Object.entries(scourCounts).forEach(([district, count]) => {
+  updateTextarea(district, "scour", count);
+});
+
+// Update the corresponding district textareas
+Object.entries(districtCounts).forEach(([district, count]) => {
+  updateTextarea(district, "routine", count);
+
+  // Calculate bridge share: (routine inspections per inspector) / 2
+  const inspectors = district === "3" ? 6 : 4; // Greenfield (3) has 6 inspectors, others have 4
+  const bridgeShare = Math.ceil(count / inspectors / 2); // Divide by inspectors, then by 2
+
+  updateTextarea(district, "bridgeshare", bridgeShare); // Update bridge share
+});
+
+// Update total textareas
+updateTextarea("all", "routine", totalRoutine);
+updateTextarea("all", "nstm", totalNstm);
+updateTextarea("all", "special", totalSpecial);
+updateTextarea("all", "underwater", totalUnderwater);
+updateTextarea("all", "element", totalElement);
+updateTextarea("all", "reducedinterval", totalReducedInterval);
+updateTextarea("all", "extendedinterval", totalExtendedInterval);
+updateTextarea("all", "posted", totalPosted);
+updateTextarea("all", "scour", totalScour);
+
+console.log(districtCounts);
+
+// :::: (Error Log) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+// Function to count errors per district and update textareas
+function findAndUpdateAssetErrors() {
+  let errorCounts = {
+    freq: {},
+    super: {},
+    deck: {},
+    sub: {},
+    wearing: {},
+  };
+
+  let errorAssets = {
+    freq: {},
+    super: {},
+    deck: {},
+    sub: {},
+    wearing: {},
+  };
+
+  assetData.forEach((asset) => {
+    const district = asset["(2) Highway Agency District:"];
+    const status = asset["(41) Structure Open/Posted/Closed:"]; // Check status
+    if (status === "K" || district === undefined) return; // Exclude if status is "K"
+
+    let assetNumber = asset["Asset Number"]; // Store asset number
+
+    // Extract necessary values
+    let assetValues = {
+      deck: parseFloat(asset["(B.C.01) Deck Condition Rating"]),
+      inspectionFrequency: parseFloat(asset["(91) Designated Inspection Frequency:"]),
+      superstructure: parseFloat(asset["(B.C.02) Superstructure Condition Rating"]),
+      substructure: parseFloat(asset["(B.C.03) Substructure Condition Rating"]),
+      scourCritical: parseFloat(asset["(113) Scour Critical Bridges:"]),
+      mainDesignType: asset["(43B) Structure Type, Main: Type of Design:"],
+      wearingSurfaceType: asset["(108A) Wearing Surface Protection System: Wearing Surface"],
+      wearingSurface: parseFloat(asset["(B.C.01a) Wearing Surface Condition Rating"]),
+      deckStructureType: asset["(107) Deck Structure Type:"],
+      underfillValue: asset["(B.C.04) Culvert Condition Rating"],
+      membraneValue: asset["(108B) Wearing Surface Protection System: Deck Membrane"],
+    };
+
+    let lowestValue = Math.min(assetValues.deck, assetValues.superstructure, assetValues.substructure);
+
+    // Error Check: Frequency Error
+    if (lowestValue < 4 && assetValues.inspectionFrequency > 12) {
+      errorCounts.freq[district] = (errorCounts.freq[district] || 0) + 1;
+      errorAssets.freq[district] = errorAssets.freq[district] || [];
+      errorAssets.freq[district].push(assetNumber);
+    }
+
+    // Error Check: Deck/Slab Error
+    if (assetValues.deck !== assetValues.superstructure && ["1", "01", 1].includes(assetValues.mainDesignType)) {
+      errorCounts.super[district] = (errorCounts.super[district] || 0) + 1;
+      errorAssets.super[district] = errorAssets.super[district] || [];
+      errorAssets.super[district].push(assetNumber);
+    }
+
+    // Error Check: Monolithic Error
+    if (assetValues.wearingSurfaceType === "1") {
+      if (assetValues.deck <= 5 || assetValues.wearingSurface <= 5) {
+        if (assetValues.deck !== assetValues.wearingSurface) {
+          errorCounts.deck[district] = (errorCounts.deck[district] || 0) + 1;
+          errorAssets.deck[district] = errorAssets.deck[district] || [];
+          errorAssets.deck[district].push(assetNumber);
+        }
+      } else {
+        if (assetValues.deck !== assetValues.wearingSurface && assetValues.deck !== assetValues.wearingSurface + 1) {
+          errorCounts.deck[district] = (errorCounts.deck[district] || 0) + 1;
+          errorAssets.deck[district] = errorAssets.deck[district] || [];
+          errorAssets.deck[district].push(assetNumber);
+        }
+      }
+    }
+
+    // Error Check: Scour/Sub Error
+    if (assetValues.scourCritical <= 2 && assetValues.substructure > assetValues.scourCritical) {
+      errorCounts.sub[district] = (errorCounts.sub[district] || 0) + 1;
+      errorAssets.sub[district] = errorAssets.sub[district] || [];
+      errorAssets.sub[district].push(assetNumber);
+    }
+
+    // Error Check: Membrane Error
+    if (
+      assetValues.wearingSurface > 4 &&
+      assetValues.underfillValue === "N" &&
+      ["1", "2"].includes(assetValues.deckStructureType) &&
+      assetValues.wearingSurfaceType === "6" &&
+      ["0", "8", "N"].includes(assetValues.membraneValue)
+    ) {
+      errorCounts.wearing[district] = (errorCounts.wearing[district] || 0) + 1;
+      errorAssets.wearing[district] = errorAssets.wearing[district] || [];
+      errorAssets.wearing[district].push(assetNumber);
+    }
+  });
+
+  // Update textareas for each district
+  Object.entries(errorCounts.freq).forEach(([district, count]) => {
+    updateTextarea(district, "error-frequency", count);
+  });
+  Object.entries(errorCounts.super).forEach(([district, count]) => {
+    updateTextarea(district, "error-deckslab", count);
+  });
+  Object.entries(errorCounts.deck).forEach(([district, count]) => {
+    updateTextarea(district, "error-monolithic", count);
+  });
+  Object.entries(errorCounts.sub).forEach(([district, count]) => {
+    updateTextarea(district, "error-scoursub", count);
+  });
+  Object.entries(errorCounts.wearing).forEach(([district, count]) => {
+    updateTextarea(district, "error-membrane", count);
+  });
+
+  // Calculate the sum for each error type and send it to the corresponding textareas
+  let totalFreqErrors = Object.values(errorCounts.freq).reduce((sum, count) => sum + count, 0);
+  let totalSuperErrors = Object.values(errorCounts.super).reduce((sum, count) => sum + count, 0);
+  let totalDeckErrors = Object.values(errorCounts.deck).reduce((sum, count) => sum + count, 0);
+  let totalSubErrors = Object.values(errorCounts.sub).reduce((sum, count) => sum + count, 0);
+  let totalWearingErrors = Object.values(errorCounts.wearing).reduce((sum, count) => sum + count, 0);
+
+  // Update the sum of errors in the respective textareas
+  document.getElementById("all-textarea-error-frequency").value = totalFreqErrors;
+  document.getElementById("all-textarea-error-monolithic").value = totalSuperErrors;
+  document.getElementById("all-textarea-error-deckslab").value = totalDeckErrors;
+  document.getElementById("all-textarea-error-scoursub").value = totalSubErrors;
+  document.getElementById("all-textarea-error-membrane").value = totalWearingErrors;
+
+  // Log error asset numbers by district and error type
+  console.log("Errors by District and Type:");
+  Object.entries(errorAssets).forEach(([errorType, districts]) => {
+    console.log(`\n${errorType.toUpperCase()} Errors:`);
+    Object.entries(districts).forEach(([district, assets]) => {
+      console.log(`  District ${district}:`, assets);
+    });
+  });
+}
+
+// Call the function to process errors and update the UI
+findAndUpdateAssetErrors();
+
+// :::: (Error Log Popups) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+// Function to create and display the popup
+function showErrorPopup(button, message) {
+  // Create the temporary popup div
+  let errorPopup = document.createElement("div");
+  errorPopup.classList.add("error-popup");
+  errorPopup.innerText = message;
+
+  // Append the popup to the body
+  document.body.appendChild(errorPopup);
+
+  // Get the .textarea-group that contains the button
+  let group = button.closest(".textarea-group");
+
+  // Get the position of the .textarea-group
+  let groupRect = group.getBoundingClientRect();
+
+  // Position it below the .textarea-group and center it
+  errorPopup.style.left = `${groupRect.left + window.scrollX + groupRect.width / 2 - errorPopup.offsetWidth / 2}px`;
+  errorPopup.style.top = `${groupRect.bottom + window.scrollY + 10}px`; // Slightly below the group
+
+  // Remove popup after 3 seconds
+  setTimeout(() => {
+    errorPopup.remove();
+  }, 5000);
+}
+
+function showAssetErrorPopup(message, button) {
+  if (!button) return; // Exit if no button provided
+
+  let errorPopup = document.createElement("div");
+  errorPopup.classList.add("error-popup");
+  errorPopup.innerText = message;
+
+  document.body.appendChild(errorPopup);
+
+  let buttonRect = button.getBoundingClientRect();
+
+  errorPopup.style.left = `${buttonRect.left + window.scrollX + buttonRect.width / 2 - errorPopup.offsetWidth / 2}px`;
+  errorPopup.style.top = `${buttonRect.bottom + window.scrollY + 10}px`;
+
+  setTimeout(() => {
+    errorPopup.remove();
+  }, 2000);
+}
+
+// Add event listeners for each error button
+document.querySelector("#error-freq button").addEventListener("click", function () {
+  showErrorPopup(this, "Inspection Frequency Error: When the lowest rating is below 4, the frequency must be 12 months or less.");
+});
+
+document.querySelector("#error-super button").addEventListener("click", function () {
+  showErrorPopup(this, "Deck Slab Error: The deck and superstructure ratings must match for slab bridges.");
+});
+
+document.querySelector("#error-deck button").addEventListener("click", function () {
+  showErrorPopup(
+    this,
+    "Monolithic Error: When the deck or wearing surface rating is below 6, they must match; otherwise, the wearing surface rating can be one less."
+  );
+});
+
+document.querySelector("#error-sub button").addEventListener("click", function () {
+  showErrorPopup(this, "Scour Error: When the scour rating is below 3, the substructure rating must be the same or lower.");
+});
+
+document.querySelector("#error-wearing button").addEventListener("click", function () {
+  showErrorPopup(
+    this,
+    "Membrane Error: When there is no membrane between a concrete deck and a bituminous wearing surface, the wearing surface rating must be below 5."
+  );
+});
+
+["asset-error-button1", "asset-error-button2"].forEach((id) => {
+  const btn = document.getElementById(id);
+  if (btn) {
+    btn.addEventListener("click", function () {
+      showAssetErrorPopup(errorString, btn);
+    });
+  }
+});
+
+// :::: (Dev Component Mapping) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 // Global flag to control whether the extraction should run
 let isExtractionEnabled = false; // Set to `true` to enable, `false` to disable
@@ -2655,7 +2658,7 @@ function handleExtraction() {
 // Example: Execute extraction based on the flag
 handleExtraction();
 
-// :::: (Google Analytics)
+// :::: (Google Analytics) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 document.addEventListener("DOMContentLoaded", function () {
   document.body.addEventListener("click", function (event) {
@@ -2668,7 +2671,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// :::: Not Sorted | Working /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// :::: (Not Sorted | Working) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 document.addEventListener("keydown", function (event) {
   // Ignore if not a Shift + Letter keypress
