@@ -40,6 +40,40 @@
   --color-yellow: rgb(202, 199, 18);
   --color-orange: rgba(241, 89, 47, 0.7);
   --color-purple: rgba(167, 84, 167, 0.7);
+
+  /* Failed - Critical */
+  --rating-0: rgba(100, 0, 0, 0.5); /* Very Dark Red */
+  --rating-0: rgba(52, 0, 0, 0.6); /* Very Dark Red */
+  --rating-1: rgba(120, 0, 0, 0.5); /* Very Dark Red */
+  --rating-1: rgba(120, 0, 0, 0.6); /* Very Dark Red */
+  --rating-2: rgba(139, 0, 0, 0.5); /* Dark Red */
+  --rating-2: rgba(187, 5, 5, 0.6); /* Dark Red */
+
+  /* Serious - Poor */
+  --rating-3: rgba(200, 30, 0, 0.5); /* Deep Orange-Red */
+  --rating-3: rgba(221, 51, 29, 0.6); /* Deep Orange-Red */
+  --rating-4: rgba(230, 90, 0, 0.5); /* Dark Orange */
+  --rating-4: rgba(244, 131, 61, 0.6); /* Dark Orange */
+  --rating-P: rgba(230, 90, 0, 0.5); /* Dark Orange (Poor) */
+  --rating-P: rgba(244, 131, 61, 0.6); /* Dark Orange (Poor) */
+
+  /* Fair - Satisfactory (closer tones) */
+  --rating-5: rgba(255, 180, 0, 0.4); /* Gold */
+  --rating-5: rgba(244, 251, 35, 0.6); /* Gold */
+  --rating-F: rgba(255, 180, 0, 0.4); /* Fair */
+  --rating-F: rgba(244, 251, 35, 0.6); /* Fair */
+  --rating-6: rgba(235, 200, 50, 0.4); /* Slightly lighter Gold/Yellow */
+  --rating-6: rgba(171, 255, 87, 0.6); /* Slightly lighter Gold/Yellow */
+
+  /* Good - Excellent */
+  --rating-7: rgba(140, 240, 100, 0.4); /* Soft Green */
+  --rating-7: rgba(88, 255, 22, 0.6); /* Soft Green */
+  --rating-G: rgba(140, 240, 100, 0.4); /* Good */
+  --rating-G: rgba(88, 255, 22, 0.6); /* Good */
+  --rating-8: rgba(80, 200, 80, 0.4); /* Medium Green */
+  --rating-8: rgba(85, 164, 221, 0.6); /* Medium Green */
+  --rating-9: rgba(40, 150, 40, 0.4); /* Deep Green */
+  --rating-9: rgba(19, 60, 192, 0.6); /* Deep Green */
 }
 
 html,
@@ -175,13 +209,6 @@ body {
   box-shadow: 0 0 4px 4px rgba(255, 25, 0, 0.685); /* Soft blue glow for focus */
   transition: 0.3s;
   background-color: rgb(183, 190, 196);
-}
-
-@media (max-width: 700px) {
-  /* Adjust 600px to your needs */
-  .search-container {
-    display: none;
-  }
 }
 
 .search-box::placeholder {
@@ -320,6 +347,54 @@ main {
   color: rgb(224, 224, 224);
   vertical-align: 2px;
   text-shadow: 0 0 8px rgb(0, 0, 0), 3px 3px 8px rgb(0, 0, 0);
+}
+
+/* ::: --------------------------- Media --------------------------- */
+
+/* Asset data display boxes */
+@media (max-width: 768px) {
+  .textarea2-group-container {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjusts for smaller screen sizes */
+  }
+}
+
+@media (max-width: 480px) {
+  .textarea2-group-container {
+    grid-template-columns: 1fr; /* Stacks the boxes vertically on very small screens */
+  }
+}
+
+/* Review tab message */
+@media (max-width: 1280px) {
+  /* Adjust 600px to your needs */
+  .asset-update-text {
+    display: none;
+  }
+}
+
+/* Main asset buttons */
+@media (max-width: 768px) {
+  /* Hide the buttons or elements with specific data-target values */
+  [data-target="culvert-asset-tab"],
+  [data-target="wall-asset-tab"],
+  [data-target="misc-asset-tab"] {
+    display: none;
+  }
+}
+
+/* Hide the whole component row (js automatically activates the review page) */
+@media (max-width: 768px) {
+  #bridge-component-button-row {
+    display: none;
+  }
+}
+
+/* Pointer on Review tab links back to component pages */
+/* Apply !important because this won't work without it */
+@media (max-width: 768px) {
+  .paragraph-rating.paragraph-navigate {
+    cursor: default !important;
+  }
 }
 
 /* ::: --------------------------- Not Sorted | Working --------------------------- */

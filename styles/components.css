@@ -136,13 +136,6 @@ button.active:focus {
   color: rgba(233 233 233 / 0.6);
 }
 
-@media (max-width: 1400px) {
-  /* Adjust 600px to your needs */
-  .asset-update-text {
-    display: none;
-  }
-}
-
 /* ::: ---------------------------- General | Containers --------------------------------- */
 
 /* Hidden initially */
@@ -558,20 +551,14 @@ button.active:focus {
   justify-content: space-between;
 }
 
-@media (max-width: 768px) {
-  .textarea2-group-container {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjusts for smaller screen sizes */
-  }
-}
-
-@media (max-width: 480px) {
-  .textarea2-group-container {
-    grid-template-columns: 1fr; /* Stacks the boxes vertically on very small screens */
-  }
-}
-
 .paragraph-rating2 {
   margin: 0 0 5px 0;
+}
+
+/* ::: ---------------------------- Bridge | Rating Table --------------------------------- */
+
+.highlight {
+  background-color: rgba(63, 63, 63, 0.7);
 }
 
 /* ::: ---------------------------- Bridge | Comment Builder --------------------------------- */
@@ -782,6 +769,11 @@ button.active:focus {
   padding: 10px 4px 4px 8px;
   border-bottom: solid 1px grey;
   border-radius: 1px;
+}
+
+.light-placeholder::placeholder {
+  color: #fff; /* light texty */
+  opacity: 0.6; /* Ensures full opacity */
 }
 
 /* ::: ---------------------------- Culvert | Rating Guidance --------------------------------- */
@@ -1041,15 +1033,6 @@ kbd {
 }
 /* ::: ---------------------------- Not Sorted | Working --------------------------------- */
 
-.highlight {
-  background-color: rgba(63, 63, 63, 0.7);
-}
-
-.light-placeholder::placeholder {
-  color: #fff; /* light texty */
-  opacity: 0.6; /* Ensures full opacity */
-}
-
 .error-popup {
   position: absolute;
   background-color: rgb(80, 50, 60);
@@ -1068,13 +1051,13 @@ kbd {
 
 /* ::: ---------------------------- Unknown --------------------------------- */
 
-.category {
-  margin: 5px;
-}
+/* .category { */
+/* margin: 5px; */
+/* } */
 
-#output {
-  margin-top: 10px;
-}
+/* #output { */
+/* margin-top: 10px; */
+/* } */
 
 /* ::: ---------------------------- Bridge | SNBI Commentary (Page 1) --------------------------------- */
 
@@ -1101,29 +1084,6 @@ kbd {
   text-indent: 0 hanging;
   padding: 5px 10px 5px 10px;
   cursor: default;
-}
-
-/* ::: ---------------------------- Crack Card (Not Used, But Saved) --------------------------------- */
-
-.crack-gauge {
-  position: absolute;
-  left: 50%;
-  bottom: -15px;
-  transform: translate(-50%, -50%); /* Combine both transforms into one */
-  display: flex;
-  position: relative;
-  height: 57px; /* Height in viewport height */
-  background: transparent;
-  border: none;
-}
-
-.tick {
-  position: absolute;
-  bottom: 50%; /* Start by positioning from the middle */
-  transform: translateY(50%); /* Move it up by 50% of its own height to center it */
-  height: 30px; /* Height in viewport height for relative scaling */
-  background: rgba(128, 128, 128, 0.8);
-  top: 3px;
 }
 
 /* ::: ---------------------------- New Review Page --------------------------------- */
@@ -1163,40 +1123,4 @@ kbd {
 
 .review-textarea-highlighted {
   background: rgba(74, 36, 20, 0.7);
-}
-
-:root {
-  /* Failed - Critical */
-  --rating-0: rgba(100, 0, 0, 0.5); /* Very Dark Red */
-  --rating-0: rgba(52, 0, 0, 0.6); /* Very Dark Red */
-  --rating-1: rgba(120, 0, 0, 0.5); /* Very Dark Red */
-  --rating-1: rgba(120, 0, 0, 0.6); /* Very Dark Red */
-  --rating-2: rgba(139, 0, 0, 0.5); /* Dark Red */
-  --rating-2: rgba(187, 5, 5, 0.6); /* Dark Red */
-
-  /* Serious - Poor */
-  --rating-3: rgba(200, 30, 0, 0.5); /* Deep Orange-Red */
-  --rating-3: rgba(221, 51, 29, 0.6); /* Deep Orange-Red */
-  --rating-4: rgba(230, 90, 0, 0.5); /* Dark Orange */
-  --rating-4: rgba(244, 131, 61, 0.6); /* Dark Orange */
-  --rating-P: rgba(230, 90, 0, 0.5); /* Dark Orange (Poor) */
-  --rating-P: rgba(244, 131, 61, 0.6); /* Dark Orange (Poor) */
-
-  /* Fair - Satisfactory (closer tones) */
-  --rating-5: rgba(255, 180, 0, 0.4); /* Gold */
-  --rating-5: rgba(244, 251, 35, 0.6); /* Gold */
-  --rating-F: rgba(255, 180, 0, 0.4); /* Fair */
-  --rating-F: rgba(244, 251, 35, 0.6); /* Fair */
-  --rating-6: rgba(235, 200, 50, 0.4); /* Slightly lighter Gold/Yellow */
-  --rating-6: rgba(171, 255, 87, 0.6); /* Slightly lighter Gold/Yellow */
-
-  /* Good - Excellent */
-  --rating-7: rgba(140, 240, 100, 0.4); /* Soft Green */
-  --rating-7: rgba(88, 255, 22, 0.6); /* Soft Green */
-  --rating-G: rgba(140, 240, 100, 0.4); /* Good */
-  --rating-G: rgba(88, 255, 22, 0.6); /* Good */
-  --rating-8: rgba(80, 200, 80, 0.4); /* Medium Green */
-  --rating-8: rgba(85, 164, 221, 0.6); /* Medium Green */
-  --rating-9: rgba(40, 150, 40, 0.4); /* Deep Green */
-  --rating-9: rgba(19, 60, 192, 0.6); /* Deep Green */
 }

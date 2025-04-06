@@ -26,6 +26,7 @@ document.querySelector(
 // :::: (Dbl-Clicked Textarea to Clipboard)
 
 // :::: (Textarea Expansion)
+// :::: (Automatically Type in Textareas)
 
 // :::::: (Page Button Clicks)
 // :::: (Display Pages on Button Click)
@@ -52,11 +53,25 @@ document.querySelector(
 // :::: (0-9 Example Comments)
 // :::: (Auto Correct)
 // :::: (Quick TL#)
+// :::: (Reset Tabs)
+// :::: (Resize for Mobile)
+// :::: (SPMS Link)
+// :::: (Glossary Shortcut Ctrl + Shift + G)
+// :::: (Settings Shortcut Ctrl + Shift + S)
+// :::: (Bridge Shortcut Ctrl + Shift + B)
+// :::: (Culvert Shortcut Ctrl + Shift + C)
+// :::: (Retaining Wall Shortcut Ctrl + Shift + R)
+
 // :::: (Console Logs)
 // :::: (Error Log)
 // :::: (Error Log Popups)
 // :::: (Dev Component Mapping)
 // :::: (Google Analytics)
+
+// :::: (Not Sorted || Working)
+
+// = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+// = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 // :::: (HTML Injection) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
@@ -632,6 +647,73 @@ function expandTextarea(event, componentName) {
   });
 }
 
+// :::: (Automatically Type in Textareas) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+document.addEventListener("keydown", function (event) {
+  // Ignore if not a Shift + Letter keypress
+  if (!event.shiftKey || event.key.length !== 1 || !/[A-Z]/.test(event.key)) {
+    return;
+  }
+
+  // Step 1: Check if the unique bridge asset tab button is active
+  const bridgeAssetTab = document.querySelector('button[data-target="bridge-asset-tab"]');
+  if (!bridgeAssetTab || !bridgeAssetTab.classList.contains("active")) {
+    // alert("Step 1: The bridge asset tab is not active.");
+    return;
+  }
+
+  // Step 2: Find the active bridge component button in row 2
+  const activeComponentButton = document.querySelector("button.bridge-component-buttons.active.row2");
+  if (!activeComponentButton) {
+    // alert("Step 2: No active bridge component button found.");
+    return;
+  }
+  const componentTarget = activeComponentButton.dataset.target;
+
+  // Step 3: Find the div by its ID (since data-target refers to an ID)
+  const componentDiv = document.getElementById(componentTarget);
+  if (!componentDiv) {
+    // alert(`Step 3: No div found with id '${componentTarget}'.`);
+    return;
+  }
+
+  // Find the active button inside this component div
+  const activeSubButton = componentDiv.querySelector("button.active");
+  if (!activeSubButton) {
+    // alert("Step 3: No active button found within the component div.");
+    return;
+  }
+
+  // Step 4: Determine if the active button is alt1 or alt2
+  const textareas = componentDiv.querySelectorAll("textarea");
+  if (textareas.length === 0) {
+    // alert("Step 5: No textareas found in the component div.");
+    return;
+  }
+
+  let targetTextarea;
+  if (textareas.length === 1) {
+    // If only one textarea, always use it
+    targetTextarea = textareas[0];
+  } else {
+    // If two textareas, select based on alt1 or alt2 button class
+    if (activeSubButton.classList.contains("alt1-buttons")) {
+      targetTextarea = textareas[0];
+    } else if (activeSubButton.classList.contains("alt2-buttons")) {
+      targetTextarea = textareas[1];
+    } else {
+      // alert("Step 4: Active button is neither alt1-buttons nor alt2-buttons.");
+      return;
+    }
+  }
+
+  // Step 6: If no input fields are active, focus the appropriate textarea and append the letter
+  if (!document.activeElement || (document.activeElement.tagName !== "TEXTAREA" && document.activeElement.tagName !== "INPUT")) {
+    targetTextarea.focus();
+    targetTextarea.setSelectionRange(targetTextarea.value.length, targetTextarea.value.length);
+  }
+});
+
 // :::::: (Page Button Clicks) //////////////////////////////////////////////////////////////////////////
 
 // :::: (Display Pages on Button Click) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
@@ -646,6 +728,10 @@ function openTab(evt) {
   var componentName = button.getAttribute("data-target");
   var containerClass = button.getAttribute("data-container-class");
   var buttonClass = button.getAttribute("data-button-class");
+
+  // Scroll main element to the top on page change
+  const mainSection = document.querySelector("main"); // Adjust selector if needed
+  mainSection.scrollTo({ top: 0, left: 0, behavior: "auto" });
 
   // Hide all content containers of the same class
   var containers = document.getElementsByClassName(containerClass);
@@ -1183,12 +1269,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Go to the component page
 document.querySelectorAll(".paragraph-navigate").forEach((paragraph) => {
-  paragraph.addEventListener("click", () => {
-    const target = paragraph.dataset.navigate;
-    const button = document.querySelector(`button[data-navigate="${target}"]`);
-    if (button) {
-      button.click();
-      button.focus(); // Set focus after click
+  paragraph.addEventListener("click", (event) => {
+    // Check if the screen width is greater than 768px before executing the action
+    if (window.innerWidth > 768) {
+      const target = paragraph.dataset.navigate;
+      const button = document.querySelector(`button[data-navigate="${target}"]`);
+      if (button) {
+        button.click();
+        button.focus(); // Set focus after click
+      }
     }
   });
 });
@@ -2171,6 +2260,166 @@ document.querySelectorAll('[data-target="bridge-asset-tab"]').forEach((button) =
   });
 });
 
+// :::: (Reset Tabs) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+function resetViaSimulatedClicks() {
+  // Step 1: Scroll main content to top
+  const mainSection = document.getElementById("main-content");
+  if (mainSection) {
+    mainSection.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }
+
+  // Step 2: Simulate clicks on all buttons targeting bridge-SOMETHING-pg2
+  const pg2Buttons = document.querySelectorAll('button[data-target^="bridge-"][data-target$="-pg2"]');
+  pg2Buttons.forEach((btn) => btn.click());
+
+  // Step 3: Simulate click on the bridge-alignment-tab button
+  const alignmentButton = document.querySelector('button[data-target="bridge-alignment-tab"]');
+  if (alignmentButton) alignmentButton.click();
+}
+
+// :::: (Resize for Mobile) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+// Function to simulate button click
+function simulateButtonClick(dataTarget) {
+  const button = document.querySelector(`[data-target="${dataTarget}"]`);
+  if (button) {
+    button.click();
+  }
+}
+
+// Function to focus the button
+function focusButton(dataTarget) {
+  const button = document.querySelector(`[data-target="${dataTarget}"]`);
+  if (button) {
+    button.focus();
+  }
+}
+
+// Function to check screen width and trigger clicks
+function checkScreenWidthAndTriggerClicks() {
+  // Check if the width is less than 768px
+  if (window.innerWidth <= 768) {
+    simulateButtonClick("bridge-asset-tab");
+    simulateButtonClick("bridge-review-tab");
+    simulateButtonClick("review-data-tab");
+    focusButton("review-data-tab"); // Focus the "review-data-tab" button
+  }
+}
+
+// Run the function on load to check if the screen is already at the desired size
+checkScreenWidthAndTriggerClicks();
+
+// Add event listener to trigger when the window is resized
+window.addEventListener("resize", checkScreenWidthAndTriggerClicks);
+
+// :::: (SPMS Link) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+document.getElementById("spms-link").addEventListener("click", function (event) {
+  // Get the textarea content
+  const assetTextarea = document.getElementById("asset-textarea-assetNumberNBI");
+  if (assetTextarea) {
+    // Use the Clipboard API to copy the text to the clipboard
+    navigator.clipboard
+      .writeText(assetTextarea.value)
+      .then(function () {})
+      .catch(function (err) {
+        console.error("Unable to copy text", err);
+      });
+  }
+});
+
+// :::: (Glossary Shortcut Ctrl + Shift + G) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+document.addEventListener("keydown", function (event) {
+  // Check if Ctrl + Shift + G is pressed
+  if (event.ctrlKey && event.shiftKey && event.key === "G") {
+    // Prevent the default action (which is opening the Find bar)
+    event.preventDefault();
+
+    // Trigger the button with data-target="misc-asset-tab"
+    const targetButton1 = document.querySelector('[data-target="misc-asset-tab"]');
+    const targetButton2 = document.querySelector('[data-target="glossary-tab"]');
+    const targetButton3 = document.querySelector('[data-target="glossary-all-tab"]');
+    if (targetButton3) {
+      targetButton1.click();
+      targetButton2.click();
+      targetButton3.click();
+      targetButton3.focus();
+    }
+  }
+});
+
+// :::: (Settings Shortcut Ctrl + Shift + S) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+document.addEventListener("keydown", function (event) {
+  // Check if Ctrl + Shift + S is pressed
+  if (event.ctrlKey && event.shiftKey && event.key === "S") {
+    // Prevent the default action (which is opening the Find bar)
+    event.preventDefault();
+
+    // Trigger the button with data-target="misc-asset-tab"
+    const targetButton1 = document.querySelector('[data-target="misc-asset-tab"]');
+    const targetButton2 = document.querySelector('[data-target="settings-tab"]');
+    if (targetButton2) {
+      targetButton1.click();
+      targetButton2.click();
+      targetButton2.focus();
+    }
+  }
+});
+
+// :::: (Bridge Shortcut Ctrl + Shift + B) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+document.addEventListener("keydown", function (event) {
+  // Check if Ctrl + Shift + B is pressed
+  if (event.ctrlKey && event.shiftKey && event.key === "B") {
+    // Prevent the default action (which is opening the Find bar)
+    event.preventDefault();
+
+    // Trigger the button with data-target="misc-asset-tab"
+    const targetButton1 = document.querySelector('[data-target="bridge-asset-tab"]');
+    if (targetButton1) {
+      targetButton1.click();
+      targetButton1.focus();
+    }
+  }
+});
+
+// :::: (Culvert Shortcut Ctrl + Shift + C) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+document.addEventListener("keydown", function (event) {
+  // Check if Ctrl + Shift + C is pressed
+  if (event.ctrlKey && event.shiftKey && event.key === "C") {
+    // Prevent the default action (which is opening the Find bar)
+    event.preventDefault();
+
+    // Trigger the button with data-target="misc-asset-tab"
+    const targetButton1 = document.querySelector('[data-target="culvert-asset-tab"]');
+    if (targetButton1) {
+      targetButton1.click();
+      targetButton1.focus();
+    }
+  }
+});
+
+// :::: (Retaining Wall Shortcut Ctrl + Shift + R) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+document.addEventListener("keydown", function (event) {
+  // Check if Ctrl + Shift + R is pressed
+  if (event.ctrlKey && event.shiftKey && event.key === "R") {
+    // Prevent the default action (which is opening the Find bar)
+    event.preventDefault();
+
+    // Trigger the button with data-target="misc-asset-tab"
+    const targetButton1 = document.querySelector('[data-target="wall-asset-tab"]');
+    if (targetButton1) {
+      targetButton1.click();
+      targetButton1.focus();
+    }
+  }
+});
+
 // :::: (Console Logs) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 // Run Times and Counts
@@ -2672,68 +2921,3 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // :::: (Not Sorted | Working) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-
-document.addEventListener("keydown", function (event) {
-  // Ignore if not a Shift + Letter keypress
-  if (!event.shiftKey || event.key.length !== 1 || !/[A-Z]/.test(event.key)) {
-    return;
-  }
-
-  // Step 1: Check if the unique bridge asset tab button is active
-  const bridgeAssetTab = document.querySelector('button[data-target="bridge-asset-tab"]');
-  if (!bridgeAssetTab || !bridgeAssetTab.classList.contains("active")) {
-    // alert("Step 1: The bridge asset tab is not active.");
-    return;
-  }
-
-  // Step 2: Find the active bridge component button in row 2
-  const activeComponentButton = document.querySelector("button.bridge-component-buttons.active.row2");
-  if (!activeComponentButton) {
-    // alert("Step 2: No active bridge component button found.");
-    return;
-  }
-  const componentTarget = activeComponentButton.dataset.target;
-
-  // Step 3: Find the div by its ID (since data-target refers to an ID)
-  const componentDiv = document.getElementById(componentTarget);
-  if (!componentDiv) {
-    // alert(`Step 3: No div found with id '${componentTarget}'.`);
-    return;
-  }
-
-  // Find the active button inside this component div
-  const activeSubButton = componentDiv.querySelector("button.active");
-  if (!activeSubButton) {
-    // alert("Step 3: No active button found within the component div.");
-    return;
-  }
-
-  // Step 4: Determine if the active button is alt1 or alt2
-  const textareas = componentDiv.querySelectorAll("textarea");
-  if (textareas.length === 0) {
-    // alert("Step 5: No textareas found in the component div.");
-    return;
-  }
-
-  let targetTextarea;
-  if (textareas.length === 1) {
-    // If only one textarea, always use it
-    targetTextarea = textareas[0];
-  } else {
-    // If two textareas, select based on alt1 or alt2 button class
-    if (activeSubButton.classList.contains("alt1-buttons")) {
-      targetTextarea = textareas[0];
-    } else if (activeSubButton.classList.contains("alt2-buttons")) {
-      targetTextarea = textareas[1];
-    } else {
-      // alert("Step 4: Active button is neither alt1-buttons nor alt2-buttons.");
-      return;
-    }
-  }
-
-  // Step 6: If no input fields are active, focus the appropriate textarea and append the letter
-  if (!document.activeElement || (document.activeElement.tagName !== "TEXTAREA" && document.activeElement.tagName !== "INPUT")) {
-    targetTextarea.focus();
-    targetTextarea.setSelectionRange(targetTextarea.value.length, targetTextarea.value.length);
-  }
-});
