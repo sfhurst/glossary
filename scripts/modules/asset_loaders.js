@@ -147,7 +147,9 @@ document.querySelector(".search-box").addEventListener("keydown", function (even
 
   // Reset Comments variable
   resetComments = 0;
-  resetViaSimulatedClicks();
+  if (window.innerWidth > 768) {
+    resetViaSimulatedClicks();
+  }
 
   // Retrieves the Search Input Value
   searchValue = this.value.trim().toLowerCase();
