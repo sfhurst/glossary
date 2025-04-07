@@ -61,6 +61,7 @@ document.querySelector(
 // :::: (Bridge Shortcut Ctrl + Shift + B)
 // :::: (Culvert Shortcut Ctrl + Shift + C)
 // :::: (Retaining Wall Shortcut Ctrl + Shift + R)
+// :::: (Backspace History)
 
 // :::: (Console Logs)
 // :::: (Error Log)
@@ -1267,19 +1268,81 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // :::: (Review Navigate) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
-// Go to the component page
+// Go to the component's example comments tab
 document.querySelectorAll(".paragraph-navigate").forEach((paragraph) => {
-  paragraph.addEventListener("click", (event) => {
-    // Check if the screen width is greater than 768px before executing the action
+  paragraph.addEventListener("click", () => {
     if (window.innerWidth > 768) {
-      const target = paragraph.dataset.navigate;
-      const button = document.querySelector(`button[data-navigate="${target}"]`);
-      if (button) {
-        button.click();
-        button.focus(); // Set focus after click
+      const targetNavigate = paragraph.dataset.navigate;
+      const targetComments = paragraph.dataset.comments;
+
+      const navigateButton = document.querySelector(`button[data-navigate="${targetNavigate}"]`);
+      const commentsButton = document.querySelector(`button[data-target="${targetComments}"]`);
+
+      if (navigateButton) {
+        navigateButton.click();
+        navigateButton.focus();
+      }
+
+      if (commentsButton) {
+        commentsButton.click();
+        commentsButton.focus();
       }
     }
   });
+});
+
+// Go to the component's rating table tab
+document.querySelectorAll(".rating-button").forEach((paragraph) => {
+  paragraph.addEventListener("click", () => {
+    if (window.innerWidth > 768) {
+      const targetNavigate = paragraph.dataset.navigate;
+      const targetRating = paragraph.dataset.rating;
+
+      const navigateButton = document.querySelector(`button[data-navigate="${targetNavigate}"]`);
+      const ratingButton = document.querySelector(`button[data-target="${targetRating}"]`);
+
+      if (navigateButton) {
+        navigateButton.click();
+        navigateButton.focus();
+      }
+
+      if (ratingButton) {
+        ratingButton.click();
+        ratingButton.focus();
+      }
+    }
+  });
+});
+
+document.addEventListener("keydown", (event) => {
+  // Check if Ctrl + Shift + E is pressed
+  if (event.ctrlKey && event.shiftKey && event.key === "E") {
+    const activeTextarea = document.activeElement;
+
+    // Step 1: Check if the active element is a textarea
+    if (activeTextarea && activeTextarea.tagName === "TEXTAREA") {
+      // Step 2: Retrieve the data-navigate and data-comments attributes from the active textarea
+      const dataNavigate = activeTextarea.dataset.navigate;
+      const dataComments = activeTextarea.dataset.comments;
+
+      // Step 3: Trigger the same functionality as the paragraph click event
+      if (window.innerWidth > 768) {
+        // Step 4: Find the button with the matching data-navigate and simulate a click
+        const navigateButton = document.querySelector(`button[data-navigate="${dataNavigate}"]`);
+        if (navigateButton) {
+          navigateButton.click(); // Simulate click on the navigate button
+          navigateButton.focus(); // Set focus after click
+        }
+
+        // Step 5: Find the button with the matching data-target (matching data-comments) and simulate a click
+        const commentsButton = document.querySelector(`button[data-target="${dataComments}"]`);
+        if (commentsButton) {
+          commentsButton.click(); // Simulate click on the comments button
+          commentsButton.focus(); // Set focus on the comments button
+        }
+      }
+    }
+  }
 });
 
 // :::: (Review DblClick) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
@@ -1624,6 +1687,7 @@ function handleElementAction(element) {
   if (element.tagName.toLowerCase() === "a") return; // Skip activation for links
   if (element.id === "button-map-link") return; // Skip activation if the ID is "button-map-link"
   if (element.id === "searchID") return; // Skip activation if the ID is "searchID"
+  if ("rating" in element.dataset) return; // Skip activation if the data attribute is rating
 
   if (toggleFocusActivation === "focus") {
     element.focus();
@@ -2417,6 +2481,109 @@ document.addEventListener("keydown", function (event) {
       targetButton1.click();
       targetButton1.focus();
     }
+  }
+});
+
+// :::: (Backspace History) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+// Step 1: Initialize array for navigation history
+const navHistory = [];
+const maxHistorySize = 100;
+
+// Helper function to check if an element is visible (including parent visibility)
+function isElementVisible(el) {
+  while (el) {
+    const style = window.getComputedStyle(el);
+    if (style.display === "none" || style.visibility === "hidden") {
+      return false;
+    }
+    el = el.parentElement;
+  }
+  return true;
+}
+
+// Step 2: Save current state of visible active buttons, and track focused button
+function saveActiveState() {
+  // Get all active buttons that are visible
+  const activeButtons = Array.from(document.querySelectorAll("button.active")).filter((btn) => isElementVisible(btn)); // Only consider visible buttons
+
+  // Get the state of visible active buttons' data-target attributes
+  const state = activeButtons.map((btn) => btn.getAttribute("data-target")).filter(Boolean);
+
+  // Track the focused button (if any)
+  const focusedButton =
+    document.activeElement && document.activeElement.tagName === "BUTTON" ? document.activeElement.getAttribute("data-target") : null;
+
+  // Store the state, along with the focused button (if any)
+  const newState = { targets: state, focused: focusedButton };
+
+  // Only push to the history if the new state is different from the last state
+  const lastState = navHistory[navHistory.length - 1] || {};
+  const isDifferent = JSON.stringify(newState) !== JSON.stringify(lastState);
+
+  if (isDifferent) {
+    if (navHistory.length >= maxHistorySize) {
+      navHistory.shift(); // Remove the oldest state if we exceed the maximum size
+    }
+    navHistory.push(newState);
+  }
+}
+
+// Step 3: Restore a saved state by simulating clicks on buttons with matching data-targets
+function restoreState(state) {
+  // We don't touch the active classes directly. Instead, simulate button clicks based on data-targets
+
+  state.targets.forEach((target) => {
+    const btn = document.querySelector(`button[data-target="${target}"]`);
+    if (btn && isElementVisible(btn)) {
+      btn.click(); // Simulate the click to restore the active state
+    }
+  });
+
+  // Restore the focused button if there was one
+  if (state.focused) {
+    const focusedButton = document.querySelector(`button[data-target="${state.focused}"]`);
+    if (focusedButton) {
+      focusedButton.focus(); // Set focus back to the button
+    }
+  }
+}
+
+// Step 4: Backspace key to navigate back (remove current state and restore previous state)
+document.addEventListener("keydown", (event) => {
+  // Check if the backspace key was pressed
+  if (event.key === "Backspace") {
+    const activeElement = document.activeElement;
+
+    // Allow the default backspace action in input/textarea or editable elements
+    if (activeElement.tagName === "INPUT" || activeElement.tagName === "TEXTAREA" || activeElement.isContentEditable) {
+      return; // Don't prevent default, let backspace work normally
+    }
+
+    // Otherwise, prevent default and run the backspace navigation code
+    event.preventDefault();
+
+    if (navHistory.length > 1) {
+      navHistory.pop(); // Remove current state (last item)
+      const prevState = navHistory[navHistory.length - 1];
+      restoreState(prevState); // Restore the previous state
+    } else {
+      alert("No more history to go back to.");
+    }
+  }
+});
+
+// Save state on load and after every button click
+window.addEventListener("DOMContentLoaded", () => {
+  // Give the DOM time to load and capture the initial state (including focused button)
+  setTimeout(saveActiveState, 0);
+});
+
+// Capture state after every button click
+document.addEventListener("click", (e) => {
+  if (e.target.tagName === "BUTTON" && e.target.dataset.target) {
+    // Defer the snapshot to ensure DOM updates (class changes, etc.)
+    setTimeout(saveActiveState, 0);
   }
 });
 
