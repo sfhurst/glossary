@@ -2384,6 +2384,7 @@ const bridgeComponents = [
     example_comments: [
       "There are no deficiencies to report.",
       "Under normal conditions, the shallow, low-velocity channel flows from north to south through Span B.",
+      "The interior piers are located near the channel banks and are frequently exposed to water when levels are at or near normal pool.",
       "There are localized areas of minor erosion.",
       "The channel is free of significant debris accumulation that would obstruct flow.",
       "The channel condition does not threaten the roadway or the bridge.",
@@ -2832,7 +2833,7 @@ const bridgeComponents = [
       {
         code: "8",
         condition: "VERY GOOD",
-        description: "Some minor defects.",
+        description: "Some inherent defects.",
       },
       {
         code: "7",
