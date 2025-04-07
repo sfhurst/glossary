@@ -2240,6 +2240,9 @@ document.addEventListener("keydown", function (event) {
   if (textarea) {
     if (event.key === "Delete") {
       textarea.value = "";
+
+      // Fire the 'input' event to trigger any listeners like `oninput`
+      textarea.dispatchEvent(new Event("input", { bubbles: true }));
     }
   }
 
