@@ -2567,8 +2567,6 @@ document.addEventListener("keydown", (event) => {
       navHistory.pop(); // Remove current state (last item)
       const prevState = navHistory[navHistory.length - 1];
       restoreState(prevState); // Restore the previous state
-    } else {
-      alert("No more history to go back to.");
     }
   }
 });
