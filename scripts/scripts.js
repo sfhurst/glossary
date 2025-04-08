@@ -486,7 +486,10 @@ function updateExampleComments() {
 
       // Clear existing content and add new comments
       contentContainer.innerHTML = "";
-      component.example_comments.forEach((comment) => {
+
+      // Iterate over each comment group
+      component.example_comments.forEach((commentGroup) => {
+        const randomComment = getRandomComment(commentGroup); // Get random comment from the group
         const p = document.createElement("p");
         p.classList.add("content-container-comment-lines");
 
@@ -496,11 +499,17 @@ function updateExampleComments() {
         // Add the new class to the p element
         p.classList.add(newClass);
 
-        p.textContent = comment.trim();
+        p.textContent = randomComment.trim();
         contentContainer.appendChild(p);
       });
     }
   });
+}
+
+// Function to get a random comment from an array of comments
+function getRandomComment(commentGroup) {
+  const randomIndex = Math.floor(Math.random() * commentGroup.length);
+  return commentGroup[randomIndex];
 }
 
 document.addEventListener("DOMContentLoaded", updateExampleComments);
@@ -1258,8 +1267,14 @@ document.addEventListener("DOMContentLoaded", function () {
   document.addEventListener("keydown", function (event) {
     const mainSection = document.querySelector("main"); // Adjust selector if needed
 
+    // Handle Home and End key scrolling
     if (event.key === "Home") {
       mainSection.scrollTo({ top: 0, left: 0, behavior: "auto" });
+      const activeButton = document.querySelector(".asset-buttons.active");
+
+      if (activeButton) {
+        activeButton.focus(); // Focus on the active button
+      }
     } else if (event.key === "End") {
       mainSection.scrollTo({ top: mainSection.scrollHeight, left: 0, behavior: "auto" });
     }
