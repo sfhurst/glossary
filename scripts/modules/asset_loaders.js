@@ -440,6 +440,13 @@ function generateSummary(assetObject) {
   const submittalResponse = `Completed Items 6 and 7. All other items will be systematically updated within the FHWA's grace period, which expires at the end of 2027. ${elementSubmittalResponse}${scourCriticalSubmittalResponse}${postedSubmittalResponse}${maintenanceSubmittalResponse} ${scourVulnerabilitySubmittalResponse}`;
   document.getElementById("submittal-textarea").value = submittalResponse;
 
+  // expand all textareas
+  document.querySelectorAll("textarea[oninput^='expandTextarea']").forEach((textarea) => {
+    // Trigger the input event manually
+    const event = new Event("input", { bubbles: true });
+    textarea.dispatchEvent(event);
+  });
+
   // Final notes is returned as the answer to the generateSummary(assetObject);
   return updatedGeneralNotes;
 }

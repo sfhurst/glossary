@@ -2386,6 +2386,12 @@ function checkScreenWidthAndTriggerClicks() {
     simulateButtonClick("bridge-review-tab");
     simulateButtonClick("review-data-tab");
     focusButton("review-data-tab"); // Focus the "review-data-tab" button
+
+    // Trigger expandTextarea on all matching textareas
+    document.querySelectorAll("textarea[oninput^='expandTextarea']").forEach((textarea) => {
+      const event = new Event("input", { bubbles: true });
+      textarea.dispatchEvent(event);
+    });
   }
 }
 
