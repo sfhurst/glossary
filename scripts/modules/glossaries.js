@@ -2041,6 +2041,13 @@ const glossaryAllTerms = [
     page: ["glossary-compounds-tab", "bridge-channel-pg8"],
   },
   {
+    term: "Bare Metal",
+    definition:
+      "Uncoated or stripped surface that exposes the underlying alloy to environmental elements, increasing susceptibility to corrosion, abrasion, or chemical reactions.",
+    discipline: "bridge inspection",
+    page: ["glossary-additional-tab"],
+  },
+  {
     term: "Barn Swallows",
     definition:
       "Small migratory birds that build mud nests on bridge structures, particularly under overhangs and beams. Their nesting can lead to maintenance concerns due to accumulated droppings and potential conflicts with environmental regulations protecting native species.",
@@ -2139,6 +2146,13 @@ const glossaryAllTerms = [
     search: ``,
     discipline: "bridge design",
     page: ["glossary-culvert-tab", "bridge-culvert-pg6"],
+  },
+  {
+    term: "Bolts",
+    definition:
+      "Cylindrical fasteners with external threads used to clamp components together by applying torque, often combined with nuts or embedded in tapped holes to resist axial and shear forces.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
   },
   {
     term: "Box Beam",
@@ -3287,6 +3301,13 @@ const glossaryAllTerms = [
     discipline: "bridge design",
     page: ["bridge-railings-pg9"],
   },
+  {
+    term: "Gusset Plate",
+    definition:
+      "Flat steel connector used to transfer force between intersecting structural members, often designed to handle combined axial, shear, and bending stresses at joints.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
 
   // :::::
 
@@ -3418,12 +3439,26 @@ const glossaryAllTerms = [
     page: ["bridge-joints-pg9"],
   },
   {
+    term: "Hydraulics",
+    definition:
+      "The study of fluid behavior in motion, focusing on the forces and flow patterns of water through channels, around obstacles, and within confined systems.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+  {
     term: "Hydraulic Review",
     definition:
       "A review by a person qualified to evaluate the field-observed hydraulic conditions and make a determination of the impacts of the conditions on the performance of the channel, channel protection, or when working with structural staff, determine the scour vulnerability of a bridge member or entire bridge. Hydraulic reviews may include a review of the field inspection notes and photographs, review of as-built plans, scour appraisals, and scour POAs, or performance of a hydraulic analysis as deemed appropriate.",
     search: ``,
     discipline: "bridge design",
     page: ["glossary-bridge-tab"],
+  },
+  {
+    term: "Hydrology",
+    definition:
+      "The science of water occurrence, distribution, and movement across Earth's surface and subsurface, including rainfall, runoff, infiltration, and storage behavior.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
   },
 
   // :::::
@@ -4551,6 +4586,13 @@ const glossaryAllTerms = [
     search: ``,
     discipline: "bridge design",
     page: ["glossary-bridge-tab"],
+  },
+  {
+    term: "Rivets",
+    definition:
+      "Permanent mechanical fasteners formed by inserting a heated metal shaft through aligned holes and deforming one end to create a second head, securing the connection without threads.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
   },
   {
     term: "Roadside",
