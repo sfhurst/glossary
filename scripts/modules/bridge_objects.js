@@ -1020,7 +1020,7 @@ const bridgeComponents = [
                 </p>`,
     example_comments: [
       ["There are no deficiencies to report."],
-      ["The wearing surface is monolithic with the deck."],
+      ["The wearing surface is monolithic with the deck.", "The wearing surface is cast monolithically with the deck."],
       ["The wearing surface is monolithic with the deck. See the deck comments."],
       ["There are sealed cracks in the wearing surface."],
       ["There are unsealed cracks visible across less than 10% of the total surface area."],
@@ -2821,6 +2821,7 @@ const bridgeComponents = [
       ["All channel protection measures appear to be functioning as designed."],
       ["The interior piers and abutments are protected with riprap."],
       ["No channel protection is visible at the bridge."],
+      ["No channel protection is visible at the interior piers."],
       ["Some riprap has washed away leaving sections of bank unprotected."],
       ["Most of the riprap under the end spans has washed away."],
       ["The channel protection is ineffective; a yellow maintenance deficiency was submitted for erosion control."],

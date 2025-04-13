@@ -322,7 +322,13 @@ function populateGlossaryAll() {
     const link3 = document.createElement("a");
     let search3 = defect3.search || `What is "${defect3.term}" in ${defect3.discipline}?`; // Search query
     link3.classList.add("glossary-term-link");
-    link3.textContent = defect3.term;
+
+    // Special case for "iterate" to use styled HTML
+    if (defect3.term.toLowerCase() === "iterate") {
+      link3.innerHTML = '<span class="ite-text">ite<span class="rate-text">rate</span></span>';
+    } else {
+      link3.textContent = defect3.term;
+    }
 
     // Add the data-term attribute for search purposes
     link3.setAttribute("data-term", defect3.term.toLowerCase()); // Add the data-term attribute here

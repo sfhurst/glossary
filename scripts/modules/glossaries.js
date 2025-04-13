@@ -2274,6 +2274,13 @@ const glossaryAllTerms = [
     page: ["glossary-additional-tab"],
   },
   {
+    term: "Camber",
+    definition:
+      "An intentional upward curve built into structural elements to offset deflection from loading, helping maintain proper alignment over time.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+  {
     term: "Cantilever",
     definition:
       "A structural element that is supported at only one end, with the other end extending freely. It is used to support loads without requiring additional support at the free end. Cantilevers are common in bridge construction and allow for longer spans without intermediate supports.",
@@ -2338,6 +2345,13 @@ const glossaryAllTerms = [
       "The formation of a powdery residue on the surface of materials, typically due to the degradation of a paint or coating. It occurs as a result of weathering, chemical reactions, or exposure to UV light. This residue can reduce the effectiveness of the coating and may require surface cleaning or repainting.",
     search: ``,
     discipline: "bridge paint",
+    page: ["glossary-additional-tab"],
+  },
+  {
+    term: "Chamfer",
+    definition:
+      "A beveled edge cut along a corner to reduce sharpness, improve durability, minimize stress concentration, or create a cleaner visual transition.",
+    discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
   {
@@ -3180,6 +3194,13 @@ const glossaryAllTerms = [
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
+  {
+    term: "Functionally Obsolete",
+    definition:
+      "A classification for structures that no longer meet current design standards for width, clearance, or capacity, despite being safe for limited use.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
 
   // :::::
 
@@ -3616,6 +3637,15 @@ const glossaryAllTerms = [
     search: `What are "Isolated Defects" in bridge inspection?`,
     discipline: "bridge inspection",
     page: ["glossary-defects-tab"],
+  },
+  {
+    term: "iterate",
+    definition:
+      "A process of repeating a procedure or calculation, typically with updated inputs, to approach a desired result, refine accuracy, or solve complex problems through successive approximation.",
+    definition:
+      "A method of refining ideas or solutions through deliberate repetition, where each pass builds on the last to sharpen focus, enhance clarity, or drive innovation.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
   },
 
   // :::::
@@ -4537,6 +4567,14 @@ const glossaryAllTerms = [
     page: ["bridge-channel-pg8"],
   },
   {
+    term: "Rideability",
+    definition:
+      "A measure of surface smoothness based on how comfortably vehicles travel over it; influenced by bumps, dips, joint alignment, and pavement texture.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+
+  {
     term: "Right-of-Way",
     definition:
       "The land designated for the roadway and its components, including the traveled way, shoulders, and any additional space required for construction and maintenance.",
@@ -5217,6 +5255,13 @@ const glossaryAllTerms = [
     page: ["glossary-bridge-tab"],
   },
   {
+    term: "Structurally Deficient",
+    definition:
+      "A condition indicating deterioration in key load-bearing elements, often requiring repair, load restriction, or increased inspection frequency.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+  {
     term: "Subdistrict",
     definition: "A smaller administrative division within a larger district, often used in transportation planning.",
     search: ``,
@@ -5621,6 +5666,13 @@ const glossaryAllTerms = [
     page: ["glossary-bridge-tab"],
   },
   {
+    term: "Upheaval",
+    definition:
+      "A localized rise in a surface often caused by expanding soils, frost heave, or subgrade movement, leading to irregular elevation changes.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+  },
+  {
     term: "Upper Chord",
     definition:
       "The top horizontal component of a truss or structural frame, typically in tension, which resists downward forces. The upper chord works in conjunction with the lower chord and diagonals to form the triangular units that make up the truss. It plays a crucial role in distributing loads and maintaining the stability of the overall structure.",
@@ -5824,10 +5876,8 @@ const glossaryAllTerms = [
 Add fatigue categories to the definitions of things like eyebars, transverse stiffeners, longitudinal stiffeners, bare metal, plug welds, rivets, bolts, butt welds etc
 Add nstm comments to diagonal members, vertical members, gusset plates, floorbeams, stringers (stringers are not typically nstms but or often connected to nstms), Cables, Tie Girders
 
-Bare Metal
-Bolts
-Gusset Plate
-Rivets
+Functionally Obsolete
+Structurally Defecient
 
 Drone
 
