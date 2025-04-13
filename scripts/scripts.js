@@ -299,7 +299,6 @@ document.addEventListener("DOMContentLoaded", populateGlossaryAll);
 // :::: (Populate County Glossary) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 // Populate glossary with counties
-// This is still generated in the index.html and can be deleted.
 // Function to populate the county glossary
 function populateCountyGlossary() {
   const container = document.querySelector("#glossary-county-tab .glossary-card-paragraph");
@@ -393,10 +392,6 @@ function openTab(evt) {
   document.getElementById(componentName).style.display = "block"; // Display the targeted container
   button.className += " active"; // Add active class to the clicked button
 
-  // Update the URL hash (only for main tab)
-  var hash = button.getAttribute("data-hash");
-  updateURLHash(hash);
-
   // Focus on the active button if it's the initial page load
   if (isInitialLoad) {
     button.focus();
@@ -404,36 +399,9 @@ function openTab(evt) {
   }
 }
 
-// Update the URL hash with just the main tab hash (no nested tab hash)
-function updateURLHash(hash) {
-  if (hash) {
-    window.location.hash = hash; // Set the main tab hash
-  }
-}
-
-// Event listener for the hashchange event to handle tab changes
-window.addEventListener("hashchange", function () {
-  var hash = window.location.hash.substring(1); // Get the current hash (without the "#")
-
-  // Activate the correct tab based on the hash
-  var button = document.querySelector(`[data-hash="${hash}"]`);
-  if (button) {
-    openTab({ currentTarget: button }); // Trigger the tab click based on the hash
-  }
-});
-
 // On page load, open the tab corresponding to the current hash or default to the first tab
 window.addEventListener("load", function () {
-  var hash = window.location.hash.substring(1); // Get the current hash (without the "#")
-  if (hash) {
-    var button = document.querySelector(`[data-hash="${hash}"]`);
-    if (button) {
-      openTab({ currentTarget: button }); // Trigger the tab click based on the hash
-    }
-  } else {
-    // If no hash in URL, trigger the first button click (default tab)
-    document.querySelector(".asset-buttons.active").click();
-  }
+  document.querySelector(".asset-buttons.active").click();
 });
 
 // Add event listeners to the header buttons (main tabs)
