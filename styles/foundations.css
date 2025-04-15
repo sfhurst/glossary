@@ -372,16 +372,6 @@ main {
   }
 }
 
-/* Main asset buttons */
-@media (max-width: 768px) {
-  /* Hide the buttons or elements with specific data-target values */
-  [data-target="culvert-asset-tab"],
-  [data-target="wall-asset-tab"],
-  [data-target="misc-asset-tab"] {
-    display: none;
-  }
-}
-
 /* Hide the whole component row (js automatically activates the review page) */
 @media (max-width: 768px) {
   #bridge-component-button-row {

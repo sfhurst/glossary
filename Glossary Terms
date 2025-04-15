@@ -1,0 +1,17 @@
+Can I get objects for these items in this format with really detailed definitions that don't restate the term. I want this exact format:
+{ 
+term: “”, 
+definition: “”, 
+discipline: "bridge design", 
+page: ["glossary-additional-tab"], 
+},
+
+I would like my own detailed definition in less than 300 characters for a glossary entry that doesn't restate the term for this item related to bridge inspection or design. It should include the term followed by a colon and then the definition:
+
+iterate
+
+Considerations:
+Don't specifically mention bridge design or maintenance.
+DO NOT PUT THE TERM IN THE DEFINITION!! !important
+Use the most common spelling.
+I want them to read like natural glossary entries with sentences that typically start with "A/AN" or "The"

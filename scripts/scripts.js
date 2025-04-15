@@ -296,6 +296,58 @@ function populateGlossaryAll() {
 
 document.addEventListener("DOMContentLoaded", populateGlossaryAll);
 
+// :::: (Populate BIRM Glossary) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+// Populate glossary with BIRM definitions (Text Content Insertion)
+function populateGlossaryBIRM() {
+  const container3 = document.querySelector("#glossary-birm-tab .glossary-numeric-ratings-container");
+
+  // Loop through each glossary term and create a glossary card for each
+  birmTerms.forEach((defect3) => {
+    // Create the card container
+    const card3 = document.createElement("div");
+    card3.classList.add("glossary-content-cards");
+
+    // Create the header for the card with the defect term
+    const header3 = document.createElement("div");
+    header3.classList.add("glossary-card-header");
+
+    // Create the hidden link for the term
+    const link3 = document.createElement("a");
+    let search3 = defect3.search || `What is "${defect3.term}" in ${defect3.discipline}?`; // Search query
+    link3.classList.add("glossary-term-link");
+
+    // Special case for "iterate" to use styled HTML
+    if (defect3.term.toLowerCase() === "iterate") {
+      link3.innerHTML = '<span class="ite-text">ite<span class="rate-text">rate</span></span>';
+    } else {
+      link3.textContent = defect3.term;
+    }
+
+    // Add the data-term attribute for search purposes
+    link3.setAttribute("data-term", defect3.term.toLowerCase()); // Add the data-term attribute here
+
+    // If defect3.link exists, use it; otherwise, fall back to Google search
+    link3.href = defect3.link || `https://www.google.com/search?q=${encodeURIComponent(search3)}`;
+    link3.target = "_blank";
+
+    // Append the link inside the header div
+    header3.appendChild(link3);
+
+    // Create the paragraph for the card with the defect definition
+    const paragraph3 = document.createElement("p");
+    paragraph3.classList.add("glossary-card-paragraph");
+    paragraph3.textContent = defect3.definition;
+
+    // Assemble the card elements
+    card3.appendChild(header3);
+    card3.appendChild(paragraph3);
+    container3.appendChild(card3);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", populateGlossaryBIRM);
+
 // :::: (Populate County Glossary) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 // Populate glossary with counties
@@ -311,48 +363,39 @@ function populateCountyGlossary() {
   // Clear any existing content
   container.innerHTML = ""; // Not ideal, you can remove this if you prefer to create elements directly
 
-  // Find the object with variable: "countyCode"
-  const countyObject = bridgeData.find((obj) => obj.variable === "countyCode");
+  // Use the indianaCounties array
+  const countyObject = indianaCounties;
 
   // If found, populate with county data
-  if (countyObject && Array.isArray(countyObject.values)) {
-    countyObject.values.forEach(({ code, description }) => {
-      // Create a div for each county item
+  if (Array.isArray(indianaCounties)) {
+    indianaCounties.forEach(({ code, description }) => {
       const countyItem = document.createElement("div");
       countyItem.classList.add("county-item");
 
-      // Create a link element wrapping the county info
       const link = document.createElement("a");
       link.classList.add("glossary-term-link");
       link.href = `https://www.google.com/maps?q=${encodeURIComponent(description + " County, Indiana")}`;
-      link.target = "_blank"; // Open in a new tab
+      link.target = "_blank";
 
-      // Create a span for the code
       const codeSpan = document.createElement("span");
       codeSpan.classList.add("county-code");
       codeSpan.textContent = code;
 
-      // Create a text node for " - "
       const dashText = document.createTextNode(" - ");
 
-      // Create a span for the description
       const descriptionSpan = document.createElement("span");
       descriptionSpan.classList.add("county-description");
       descriptionSpan.textContent = description;
 
-      // Append the code, dash, and description spans to the link
       link.appendChild(codeSpan);
-      link.appendChild(dashText); // Append the dash text node
+      link.appendChild(dashText);
       link.appendChild(descriptionSpan);
 
-      // Append the link to the county item
       countyItem.appendChild(link);
-
-      // Append the county item to the container
       container.appendChild(countyItem);
     });
   } else {
-    console.error("No matching object with 'variable: countyCode' found in bridgeData.");
+    console.error("indianaCounties is not an array.");
   }
 }
 
