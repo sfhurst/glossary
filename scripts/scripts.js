@@ -34,86 +34,105 @@
 
 // :::: (Populate Defect Glossary) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
-// Populate glossary with defect definitions
+// Populate glossary with defect definitions from glossaryAllTerms
 function populateGlossaryDefects() {
   const container = document.querySelector("#glossary-defects-tab .glossary-numeric-ratings-container");
 
-  // Loop through each defect definition and create a glossary card for each
-  defectDefinitions.forEach((defect) => {
-    // Create a container for each glossary card
+  // Separate entries with and without 'order' key
+  const ordered = [];
+  const unordered = [];
+
+  glossaryAllTerms.forEach((item) => {
+    // Check for "defect classes" filter first
+    if (item.filter && item.filter.includes("defect classes")) {
+      if (typeof item.order === "number") {
+        ordered.push(item);
+      } else {
+        unordered.push(item);
+      }
+    }
+    // Then check for "defects" filter and push to the end
+    else if (item.filter && item.filter.includes("defects")) {
+      unordered.push(item); // Push to the end
+    }
+  });
+
+  // Sort the ordered entries
+  ordered.sort((a, b) => a.order - b.order);
+
+  // Combine into final list
+  const defectTerms = [...ordered, ...unordered];
+
+  // Build cards
+  defectTerms.forEach((defect) => {
     const card = document.createElement("div");
     card.classList.add("glossary-content-cards");
 
-    // Create the header for the card with the defect term
     const header = document.createElement("div");
     header.classList.add("glossary-card-header");
 
-    // Create the hidden link for the term
     const link = document.createElement("a");
-    let search = defect.search || `What is "${defect.term}" in ${defect.discipline}?`; // Search query
+    const search = defect.search || `What is "${defect.term}" in ${defect.discipline}?`;
     link.classList.add("glossary-term-link");
     link.textContent = defect.term;
-    // If defect.link exists, use it; otherwise, fall back to Google search
     link.href = defect.link || `https://www.google.com/search?q=${encodeURIComponent(search)}`;
     link.target = "_blank";
 
-    // Append the link inside the header div
     header.appendChild(link);
 
-    // Create a paragraph for the card with the defect definition
     const paragraph = document.createElement("p");
     paragraph.classList.add("glossary-card-paragraph");
     paragraph.textContent = defect.definition;
 
-    // Append the header and paragraph to the card container
     card.appendChild(header);
     card.appendChild(paragraph);
-
-    // Append the card to the glossary container
     container.appendChild(card);
   });
 }
 
 document.addEventListener("DOMContentLoaded", populateGlossaryDefects);
 
-// :::: (Populate SNBI Glossary) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+// :::: (Populate Bridge Glossary) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 // Populate glossary with bridge definitions
 function populateGlossaryBridge() {
-  const container2 = document.querySelector("#glossary-bridge-tab .glossary-numeric-ratings-container");
+  const container = document.querySelector("#glossary-bridge-tab .glossary-numeric-ratings-container");
 
-  // Loop through each glossary term and create a glossary card for each
-  glossaryTerms.forEach((defect2) => {
-    // Create the card container
-    const card2 = document.createElement("div");
-    card2.classList.add("glossary-content-cards");
+  // Loop through each glossary term that includes "bridge" in the filter array
+  // glossaryTerms.forEach((thing) => {
+  glossaryAllTerms
+    .filter((thing) => Array.isArray(thing.filter) && thing.filter.includes("bridge"))
+    .forEach((thing) => {
+      // Create the card container
+      const card = document.createElement("div");
+      card.classList.add("glossary-content-cards");
 
-    // Create the header for the card with the defect term
-    const header2 = document.createElement("div");
-    header2.classList.add("glossary-card-header");
+      // Create the header for the card with the thing term
+      const header = document.createElement("div");
+      header.classList.add("glossary-card-header");
 
-    // Create the hidden link for the term
-    const link2 = document.createElement("a");
-    let search2 = defect2.search || `What is "${defect2.term}" in ${defect2.discipline}?`; // Search query
-    link2.classList.add("glossary-term-link");
-    link2.textContent = defect2.term;
-    // If defect2.link exists, use it; otherwise, fall back to Google search
-    link2.href = defect2.link || `https://www.google.com/search?q=${encodeURIComponent(search2)}`;
-    link2.target = "_blank";
+      // Create the hidden link for the term
+      const link = document.createElement("a");
+      let search = thing.search || `What is "${thing.term}" in ${thing.discipline}?`; // Search query
+      link.classList.add("glossary-term-link");
+      link.textContent = thing.term;
+      // If thing.link exists, use it; otherwise, fall back to Google search
+      link.href = thing.link || `https://www.google.com/search?q=${encodeURIComponent(search)}`;
+      link.target = "_blank";
 
-    // Append the link inside the header div
-    header2.appendChild(link2);
+      // Append the link inside the header div
+      header.appendChild(link);
 
-    // Create the paragraph for the card with the defect definition
-    const paragraph2 = document.createElement("p");
-    paragraph2.classList.add("glossary-card-paragraph");
-    paragraph2.textContent = defect2.definition;
+      // Create the paragraph for the card with the thing definition
+      const paragraph = document.createElement("p");
+      paragraph.classList.add("glossary-card-paragraph");
+      paragraph.textContent = thing.definition;
 
-    // Assemble the card elements
-    card2.appendChild(header2);
-    card2.appendChild(paragraph2);
-    container2.appendChild(card2);
-  });
+      // Assemble the card elements
+      card.appendChild(header);
+      card.appendChild(paragraph);
+      container.appendChild(card);
+    });
 }
 
 document.addEventListener("DOMContentLoaded", populateGlossaryBridge);
@@ -122,40 +141,43 @@ document.addEventListener("DOMContentLoaded", populateGlossaryBridge);
 
 // Populate glossary with culvert definitions
 function populateGlossaryCulvert() {
-  const container2 = document.querySelector("#glossary-culvert-tab .glossary-numeric-ratings-container");
+  const container = document.querySelector("#glossary-culvert-tab .glossary-numeric-ratings-container");
 
-  // Loop through each glossary term and create a glossary card for each
-  culvertTerms.forEach((defect2) => {
-    // Create the card container
-    const card2 = document.createElement("div");
-    card2.classList.add("glossary-content-cards");
+  // Loop through each glossary term that includes "culvert" in the filter array
+  // glossaryTerms.forEach((thing) => {
+  glossaryAllTerms
+    .filter((thing) => Array.isArray(thing.filter) && thing.filter.includes("culvert"))
+    .forEach((thing) => {
+      // Create the card container
+      const card = document.createElement("div");
+      card.classList.add("glossary-content-cards");
 
-    // Create the header for the card with the defect term
-    const header2 = document.createElement("div");
-    header2.classList.add("glossary-card-header");
+      // Create the header for the card with the thing term
+      const header = document.createElement("div");
+      header.classList.add("glossary-card-header");
 
-    // Create the hidden link for the term
-    const link2 = document.createElement("a");
-    let search2 = defect2.search || `What is "${defect2.term}" in ${defect2.discipline}?`; // Search query
-    link2.classList.add("glossary-term-link");
-    link2.textContent = defect2.term;
-    // If defect2.link exists, use it; otherwise, fall back to Google search
-    link2.href = defect2.link || `https://www.google.com/search?q=${encodeURIComponent(search2)}`;
-    link2.target = "_blank";
+      // Create the hidden link for the term
+      const link = document.createElement("a");
+      let search = thing.search || `What is "${thing.term}" in ${thing.discipline}?`; // Search query
+      link.classList.add("glossary-term-link");
+      link.textContent = thing.term;
+      // If thing.link exists, use it; otherwise, fall back to Google search
+      link.href = thing.link || `https://www.google.com/search?q=${encodeURIComponent(search)}`;
+      link.target = "_blank";
 
-    // Append the link inside the header div
-    header2.appendChild(link2);
+      // Append the link inside the header div
+      header.appendChild(link);
 
-    // Create the paragraph for the card with the defect definition
-    const paragraph2 = document.createElement("p");
-    paragraph2.classList.add("glossary-card-paragraph");
-    paragraph2.textContent = defect2.definition;
+      // Create the paragraph for the card with the thing definition
+      const paragraph = document.createElement("p");
+      paragraph.classList.add("glossary-card-paragraph");
+      paragraph.textContent = thing.definition;
 
-    // Assemble the card elements
-    card2.appendChild(header2);
-    card2.appendChild(paragraph2);
-    container2.appendChild(card2);
-  });
+      // Assemble the card elements
+      card.appendChild(header);
+      card.appendChild(paragraph);
+      container.appendChild(card);
+    });
 }
 
 document.addEventListener("DOMContentLoaded", populateGlossaryCulvert);
@@ -164,85 +186,91 @@ document.addEventListener("DOMContentLoaded", populateGlossaryCulvert);
 
 // Populate glossary with wall definitions
 function populateGlossaryWall() {
-  const container3 = document.querySelector("#glossary-wall-tab .glossary-numeric-ratings-container");
+  const container = document.querySelector("#glossary-wall-tab .glossary-numeric-ratings-container");
 
-  // Loop through each glossary term and create a glossary card for each
-  wallTerms.forEach((defect3) => {
-    // Create the card container
-    const card3 = document.createElement("div");
-    card3.classList.add("glossary-content-cards");
+  // Loop through each glossary term that includes "wall" in the filter array
+  // glossaryTerms.forEach((thing) => {
+  glossaryAllTerms
+    .filter((thing) => Array.isArray(thing.filter) && thing.filter.includes("wall"))
+    .forEach((thing) => {
+      // Create the card container
+      const card = document.createElement("div");
+      card.classList.add("glossary-content-cards");
 
-    // Create the header for the card with the defect term
-    const header3 = document.createElement("div");
-    header3.classList.add("glossary-card-header");
+      // Create the header for the card with the thing term
+      const header = document.createElement("div");
+      header.classList.add("glossary-card-header");
 
-    // Create the hidden link for the term
-    const link3 = document.createElement("a");
-    let search3 = defect3.search || `What is "${defect3.term}" in ${defect3.discipline}?`; // Search query
-    link3.classList.add("glossary-term-link");
-    link3.textContent = defect3.term;
-    // If defect3.link exists, use it; otherwise, fall back to Google search
-    link3.href = defect3.link || `https://www.google.com/search?q=${encodeURIComponent(search3)}`;
-    link3.target = "_blank";
+      // Create the hidden link for the term
+      const link = document.createElement("a");
+      let search = thing.search || `What is "${thing.term}" in ${thing.discipline}?`; // Search query
+      link.classList.add("glossary-term-link");
+      link.textContent = thing.term;
+      // If thing.link exists, use it; otherwise, fall back to Google search
+      link.href = thing.link || `https://www.google.com/search?q=${encodeURIComponent(search)}`;
+      link.target = "_blank";
 
-    // Append the link inside the header div
-    header3.appendChild(link3);
+      // Append the link inside the header div
+      header.appendChild(link);
 
-    // Create the paragraph for the card with the defect definition
-    const paragraph3 = document.createElement("p");
-    paragraph3.classList.add("glossary-card-paragraph");
-    paragraph3.textContent = defect3.definition;
+      // Create the paragraph for the card with the thing definition
+      const paragraph = document.createElement("p");
+      paragraph.classList.add("glossary-card-paragraph");
+      paragraph.textContent = thing.definition;
 
-    // Assemble the card elements
-    card3.appendChild(header3);
-    card3.appendChild(paragraph3);
-    container3.appendChild(card3);
-  });
+      // Assemble the card elements
+      card.appendChild(header);
+      card.appendChild(paragraph);
+      container.appendChild(card);
+    });
 }
 
 document.addEventListener("DOMContentLoaded", populateGlossaryWall);
 
-// :::: (Populate Compound Word Glossary) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+// :::: (Populate Compounds Glossary) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
-// Populate glossary with compound word definitions
-function populateGlossaryCompound() {
-  const container3 = document.querySelector("#glossary-compounds-tab .glossary-numeric-ratings-container");
+// Populate glossary with compounds definitions
+function populateGlossaryCompounds() {
+  const container = document.querySelector("#glossary-compounds-tab .glossary-numeric-ratings-container");
 
-  // Loop through each glossary term and create a glossary card for each
-  compoundTerms.forEach((defect3) => {
-    // Create the card container
-    const card3 = document.createElement("div");
-    card3.classList.add("glossary-content-cards");
+  // Loop through each glossary term that includes "compounds" in the filter array
+  // glossaryTerms.forEach((thing) => {
+  glossaryAllTerms
+    .filter((thing) => Array.isArray(thing.filter) && thing.filter.includes("compounds"))
+    .forEach((thing) => {
+      // Create the card container
+      const card = document.createElement("div");
+      card.classList.add("glossary-content-cards");
 
-    // Create the header for the card with the defect term
-    const header3 = document.createElement("div");
-    header3.classList.add("glossary-card-header");
+      // Create the header for the card with the thing term
+      const header = document.createElement("div");
+      header.classList.add("glossary-card-header");
 
-    // Create the hidden link for the term
-    const link3 = document.createElement("a");
-    let search3 = defect3.search || `What is "${defect3.term}" in ${defect3.discipline}?`; // Search query
-    link3.classList.add("glossary-term-link");
-    link3.textContent = defect3.term;
-    // If defect3.link exists, use it; otherwise, fall back to Google search
-    link3.href = defect3.link || `https://www.google.com/search?q=${encodeURIComponent(search3)}`;
-    link3.target = "_blank";
+      // Create the hidden link for the term
+      const link = document.createElement("a");
+      let search = thing.search || `What is "${thing.term}" in ${thing.discipline}?`; // Search query
+      link.classList.add("glossary-term-link");
+      link.textContent = thing.term;
+      // If thing.link exists, use it; otherwise, fall back to Google search
+      link.href = thing.link || `https://www.google.com/search?q=${encodeURIComponent(search)}`;
+      link.target = "_blank";
 
-    // Append the link inside the header div
-    header3.appendChild(link3);
+      // Append the link inside the header div
+      header.appendChild(link);
 
-    // Create the paragraph for the card with the defect definition
-    const paragraph3 = document.createElement("p");
-    paragraph3.classList.add("glossary-card-paragraph");
-    paragraph3.textContent = defect3.definition;
+      // Create the paragraph for the card with the thing definition
+      const paragraph = document.createElement("p");
+      paragraph.classList.add("glossary-card-paragraph");
+      paragraph.textContent = thing.definition;
 
-    // Assemble the card elements
-    card3.appendChild(header3);
-    card3.appendChild(paragraph3);
-    container3.appendChild(card3);
-  });
+      // Assemble the card elements
+      card.appendChild(header);
+      card.appendChild(paragraph);
+      container.appendChild(card);
+    });
 }
 
-document.addEventListener("DOMContentLoaded", populateGlossaryCompound);
+document.addEventListener("DOMContentLoaded", populateGlossaryCompounds);
 
 // :::: (Populate Full Glossary) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
@@ -401,6 +429,456 @@ function populateCountyGlossary() {
 
 // Call the function once the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", populateCountyGlossary);
+
+// :::: (Populate NSTM Glossary) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+// Populate glossary with nstm definitions
+function populateGlossaryNSTM() {
+  const container = document.querySelector("#glossary-nstm-tab .glossary-numeric-ratings-container");
+
+  // Loop through each glossary term that includes "NSTM" in the filter array
+  // glossaryTerms.forEach((thing) => {
+  glossaryAllTerms
+    .filter((thing) => Array.isArray(thing.filter) && thing.filter.includes("NSTM"))
+    .forEach((thing) => {
+      // Create the card container
+      const card = document.createElement("div");
+      card.classList.add("glossary-content-cards");
+
+      // Create the header for the card with the thing term
+      const header = document.createElement("div");
+      header.classList.add("glossary-card-header");
+
+      // Create the hidden link for the term
+      const link = document.createElement("a");
+      let search = thing.search || `What is "${thing.term}" in ${thing.discipline}?`; // Search query
+      link.classList.add("glossary-term-link");
+      link.textContent = thing.term;
+      // If thing.link exists, use it; otherwise, fall back to Google search
+      link.href = thing.link || `https://www.google.com/search?q=${encodeURIComponent(search)}`;
+      link.target = "_blank";
+
+      // Append the link inside the header div
+      header.appendChild(link);
+
+      // Create the paragraph for the card with the thing definition
+      const paragraph = document.createElement("p");
+      paragraph.classList.add("glossary-card-paragraph");
+      paragraph.textContent = thing.definition;
+
+      // Assemble the card elements
+      card.appendChild(header);
+      card.appendChild(paragraph);
+      container.appendChild(card);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", populateGlossaryNSTM);
+
+// :::: (Populate Joints Glossary) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+// Populate glossary with joints definitions
+function populateGlossaryJoints() {
+  const container = document.querySelector("#glossary-joints-tab .glossary-numeric-ratings-container");
+
+  // Loop through each glossary term that includes "joints" in the filter array
+  // glossaryTerms.forEach((thing) => {
+  glossaryAllTerms
+    .filter((thing) => Array.isArray(thing.filter) && thing.filter.includes("joints"))
+    .forEach((thing) => {
+      // Create the card container
+      const card = document.createElement("div");
+      card.classList.add("glossary-content-cards");
+
+      // Create the header for the card with the thing term
+      const header = document.createElement("div");
+      header.classList.add("glossary-card-header");
+
+      // Create the hidden link for the term
+      const link = document.createElement("a");
+      let search = thing.search || `What is "${thing.term}" in ${thing.discipline}?`; // Search query
+      link.classList.add("glossary-term-link");
+      link.textContent = thing.term;
+      // If thing.link exists, use it; otherwise, fall back to Google search
+      link.href = thing.link || `https://www.google.com/search?q=${encodeURIComponent(search)}`;
+      link.target = "_blank";
+
+      // Append the link inside the header div
+      header.appendChild(link);
+
+      // Create the paragraph for the card with the thing definition
+      const paragraph = document.createElement("p");
+      paragraph.classList.add("glossary-card-paragraph");
+      paragraph.textContent = thing.definition;
+
+      // Assemble the card elements
+      card.appendChild(header);
+      card.appendChild(paragraph);
+      container.appendChild(card);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", populateGlossaryJoints);
+
+// :::: (Populate Components Glossary) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+// Populate glossary with components definitions
+function populateGlossaryComponents() {
+  const container = document.querySelector("#glossary-components-tab .glossary-numeric-ratings-container");
+
+  // Loop through each glossary term that includes "components" in the filter array
+  // glossaryTerms.forEach((thing) => {
+  glossaryAllTerms
+    .filter((thing) => Array.isArray(thing.filter) && thing.filter.includes("components"))
+    .forEach((thing) => {
+      // Create the card container
+      const card = document.createElement("div");
+      card.classList.add("glossary-content-cards");
+
+      // Create the header for the card with the thing term
+      const header = document.createElement("div");
+      header.classList.add("glossary-card-header");
+
+      // Create the hidden link for the term
+      const link = document.createElement("a");
+      let search = thing.search || `What is "${thing.term}" in ${thing.discipline}?`; // Search query
+      link.classList.add("glossary-term-link");
+      link.textContent = thing.term;
+      // If thing.link exists, use it; otherwise, fall back to Google search
+      link.href = thing.link || `https://www.google.com/search?q=${encodeURIComponent(search)}`;
+      link.target = "_blank";
+
+      // Append the link inside the header div
+      header.appendChild(link);
+
+      // Create the paragraph for the card with the thing definition
+      const paragraph = document.createElement("p");
+      paragraph.classList.add("glossary-card-paragraph");
+      paragraph.textContent = thing.definition;
+
+      // Assemble the card elements
+      card.appendChild(header);
+      card.appendChild(paragraph);
+      container.appendChild(card);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", populateGlossaryComponents);
+
+// :::: (Populate Welds Glossary) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+// Populate glossary with welds definitions
+function populateGlossaryWelds() {
+  const container = document.querySelector("#glossary-welds-tab .glossary-numeric-ratings-container");
+
+  // Loop through each glossary term that includes "welds" in the filter array
+  // glossaryTerms.forEach((thing) => {
+  glossaryAllTerms
+    .filter((thing) => Array.isArray(thing.filter) && thing.filter.includes("welds"))
+    .forEach((thing) => {
+      // Create the card container
+      const card = document.createElement("div");
+      card.classList.add("glossary-content-cards");
+
+      // Create the header for the card with the thing term
+      const header = document.createElement("div");
+      header.classList.add("glossary-card-header");
+
+      // Create the hidden link for the term
+      const link = document.createElement("a");
+      let search = thing.search || `What is "${thing.term}" in ${thing.discipline}?`; // Search query
+      link.classList.add("glossary-term-link");
+      link.textContent = thing.term;
+      // If thing.link exists, use it; otherwise, fall back to Google search
+      link.href = thing.link || `https://www.google.com/search?q=${encodeURIComponent(search)}`;
+      link.target = "_blank";
+
+      // Append the link inside the header div
+      header.appendChild(link);
+
+      // Create the paragraph for the card with the thing definition
+      const paragraph = document.createElement("p");
+      paragraph.classList.add("glossary-card-paragraph");
+      paragraph.textContent = thing.definition;
+
+      // Assemble the card elements
+      card.appendChild(header);
+      card.appendChild(paragraph);
+      container.appendChild(card);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", populateGlossaryWelds);
+
+// :::: (Populate Roadway Glossary) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+// Populate glossary with roadway definitions
+function populateGlossaryRoadway() {
+  const container = document.querySelector("#glossary-roadway-tab .glossary-numeric-ratings-container");
+
+  // Loop through each glossary term that includes "roadway" in the filter array
+  // glossaryTerms.forEach((thing) => {
+  glossaryAllTerms
+    .filter((thing) => Array.isArray(thing.filter) && thing.filter.includes("roadway"))
+    .forEach((thing) => {
+      // Create the card container
+      const card = document.createElement("div");
+      card.classList.add("glossary-content-cards");
+
+      // Create the header for the card with the thing term
+      const header = document.createElement("div");
+      header.classList.add("glossary-card-header");
+
+      // Create the hidden link for the term
+      const link = document.createElement("a");
+      let search = thing.search || `What is "${thing.term}" in ${thing.discipline}?`; // Search query
+      link.classList.add("glossary-term-link");
+      link.textContent = thing.term;
+      // If thing.link exists, use it; otherwise, fall back to Google search
+      link.href = thing.link || `https://www.google.com/search?q=${encodeURIComponent(search)}`;
+      link.target = "_blank";
+
+      // Append the link inside the header div
+      header.appendChild(link);
+
+      // Create the paragraph for the card with the thing definition
+      const paragraph = document.createElement("p");
+      paragraph.classList.add("glossary-card-paragraph");
+      paragraph.textContent = thing.definition;
+
+      // Assemble the card elements
+      card.appendChild(header);
+      card.appendChild(paragraph);
+      container.appendChild(card);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", populateGlossaryRoadway);
+
+// :::: (Populate Acronyms Glossary) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+// Populate glossary with acronyms definitions
+function populateGlossaryAcronyms() {
+  const container = document.querySelector("#glossary-acronyms-tab .glossary-numeric-ratings-container");
+
+  // Loop through each glossary term that includes "acronyms" in the filter array
+  // glossaryTerms.forEach((thing) => {
+  glossaryAllTerms
+    .filter((thing) => Array.isArray(thing.filter) && thing.filter.some((f) => f === "acronyms" || f === "org"))
+    .forEach((thing) => {
+      // Create the card container
+      const card = document.createElement("div");
+      card.classList.add("glossary-content-cards");
+
+      // Create the header for the card with the thing term
+      const header = document.createElement("div");
+      header.classList.add("glossary-card-header");
+
+      // Create the hidden link for the term
+      const link = document.createElement("a");
+      let search = thing.search || `What is "${thing.term}" in ${thing.discipline}?`; // Search query
+      link.classList.add("glossary-term-link");
+      link.textContent = thing.term;
+      // If thing.link exists, use it; otherwise, fall back to Google search
+      link.href = thing.link || `https://www.google.com/search?q=${encodeURIComponent(search)}`;
+      link.target = "_blank";
+
+      // Append the link inside the header div
+      header.appendChild(link);
+
+      // Create the paragraph for the card with the thing definition
+      const paragraph = document.createElement("p");
+      paragraph.classList.add("glossary-card-paragraph");
+      paragraph.textContent = thing.definition;
+
+      // Assemble the card elements
+      card.appendChild(header);
+      card.appendChild(paragraph);
+      container.appendChild(card);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", populateGlossaryAcronyms);
+
+// :::: (Populate NDT Glossary) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+// Populate glossary with ndt definitions
+function populateGlossaryNDT() {
+  const container = document.querySelector("#glossary-ndt-tab .glossary-numeric-ratings-container");
+
+  // Loop through each glossary term that includes "NDT" in the filter array
+  // glossaryTerms.forEach((thing) => {
+  glossaryAllTerms
+    .filter((thing) => Array.isArray(thing.filter) && thing.filter.includes("NDT"))
+    .forEach((thing) => {
+      // Create the card container
+      const card = document.createElement("div");
+      card.classList.add("glossary-content-cards");
+
+      // Create the header for the card with the thing term
+      const header = document.createElement("div");
+      header.classList.add("glossary-card-header");
+
+      // Create the hidden link for the term
+      const link = document.createElement("a");
+      let search = thing.search || `What is "${thing.term}" in ${thing.discipline}?`; // Search query
+      link.classList.add("glossary-term-link");
+      link.textContent = thing.term;
+      // If thing.link exists, use it; otherwise, fall back to Google search
+      link.href = thing.link || `https://www.google.com/search?q=${encodeURIComponent(search)}`;
+      link.target = "_blank";
+
+      // Append the link inside the header div
+      header.appendChild(link);
+
+      // Create the paragraph for the card with the thing definition
+      const paragraph = document.createElement("p");
+      paragraph.classList.add("glossary-card-paragraph");
+      paragraph.textContent = thing.definition;
+
+      // Assemble the card elements
+      card.appendChild(header);
+      card.appendChild(paragraph);
+      container.appendChild(card);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", populateGlossaryNDT);
+
+// :::: (Populate Channel Glossary) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+// Populate glossary with channel definitions
+function populateGlossaryChannel() {
+  const container = document.querySelector("#glossary-channel-tab .glossary-numeric-ratings-container");
+
+  // Loop through each glossary term that includes "channel" in the filter array
+  // glossaryTerms.forEach((thing) => {
+  glossaryAllTerms
+    .filter((thing) => Array.isArray(thing.filter) && thing.filter.includes("channel"))
+    .forEach((thing) => {
+      // Create the card container
+      const card = document.createElement("div");
+      card.classList.add("glossary-content-cards");
+
+      // Create the header for the card with the thing term
+      const header = document.createElement("div");
+      header.classList.add("glossary-card-header");
+
+      // Create the hidden link for the term
+      const link = document.createElement("a");
+      let search = thing.search || `What is "${thing.term}" in ${thing.discipline}?`; // Search query
+      link.classList.add("glossary-term-link");
+      link.textContent = thing.term;
+      // If thing.link exists, use it; otherwise, fall back to Google search
+      link.href = thing.link || `https://www.google.com/search?q=${encodeURIComponent(search)}`;
+      link.target = "_blank";
+
+      // Append the link inside the header div
+      header.appendChild(link);
+
+      // Create the paragraph for the card with the thing definition
+      const paragraph = document.createElement("p");
+      paragraph.classList.add("glossary-card-paragraph");
+      paragraph.textContent = thing.definition;
+
+      // Assemble the card elements
+      card.appendChild(header);
+      card.appendChild(paragraph);
+      container.appendChild(card);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", populateGlossaryChannel);
+
+// :::: (Populate Materials Glossary) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+// Populate glossary with materials definitions
+function populateGlossaryMaterials() {
+  const container = document.querySelector("#glossary-materials-tab .glossary-numeric-ratings-container");
+
+  // Loop through each glossary term that includes "materials" in the filter array
+  // glossaryTerms.forEach((thing) => {
+  glossaryAllTerms
+    .filter((thing) => Array.isArray(thing.filter) && thing.filter.includes("materials"))
+    .forEach((thing) => {
+      // Create the card container
+      const card = document.createElement("div");
+      card.classList.add("glossary-content-cards");
+
+      // Create the header for the card with the thing term
+      const header = document.createElement("div");
+      header.classList.add("glossary-card-header");
+
+      // Create the hidden link for the term
+      const link = document.createElement("a");
+      let search = thing.search || `What is "${thing.term}" in ${thing.discipline}?`; // Search query
+      link.classList.add("glossary-term-link");
+      link.textContent = thing.term;
+      // If thing.link exists, use it; otherwise, fall back to Google search
+      link.href = thing.link || `https://www.google.com/search?q=${encodeURIComponent(search)}`;
+      link.target = "_blank";
+
+      // Append the link inside the header div
+      header.appendChild(link);
+
+      // Create the paragraph for the card with the thing definition
+      const paragraph = document.createElement("p");
+      paragraph.classList.add("glossary-card-paragraph");
+      paragraph.textContent = thing.definition;
+
+      // Assemble the card elements
+      card.appendChild(header);
+      card.appendChild(paragraph);
+      container.appendChild(card);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", populateGlossaryMaterials);
+
+// :::: (Populate Design Glossary) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+// Populate glossary with design definitions
+function populateGlossaryDesign() {
+  const container = document.querySelector("#glossary-design-tab .glossary-numeric-ratings-container");
+
+  // Loop through each glossary term that includes "eng" or "construction" in the filter array
+  // glossaryTerms.forEach((thing) => {
+  glossaryAllTerms
+    .filter((thing) => Array.isArray(thing.filter) && thing.filter.some((f) => f === "eng" || f === "construction"))
+    .forEach((thing) => {
+      // Create the card container
+      const card = document.createElement("div");
+      card.classList.add("glossary-content-cards");
+
+      // Create the header for the card with the thing term
+      const header = document.createElement("div");
+      header.classList.add("glossary-card-header");
+
+      // Create the hidden link for the term
+      const link = document.createElement("a");
+      let search = thing.search || `What is "${thing.term}" in ${thing.discipline}?`; // Search query
+      link.classList.add("glossary-term-link");
+      link.textContent = thing.term;
+      // If thing.link exists, use it; otherwise, fall back to Google search
+      link.href = thing.link || `https://www.google.com/search?q=${encodeURIComponent(search)}`;
+      link.target = "_blank";
+
+      // Append the link inside the header div
+      header.appendChild(link);
+
+      // Create the paragraph for the card with the thing definition
+      const paragraph = document.createElement("p");
+      paragraph.classList.add("glossary-card-paragraph");
+      paragraph.textContent = thing.definition;
+
+      // Assemble the card elements
+      card.appendChild(header);
+      card.appendChild(paragraph);
+      container.appendChild(card);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", populateGlossaryDesign);
 
 // :::: (Display Pages on Button Click) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 

@@ -1,0 +1,34 @@
+GOAL:
+To get a brief description of why we are inspecting the component and what we should focus our attention on. What we should be looking for and trying to determine. Within the limitations od our visual inspection.
+
+TERMS and FOCUS:
+[
+Approach Roadway Alignment - Influence on speed.
+Approach Slabs - Stability, rideability
+Bridge Joints - Expansion, leaking,
+Terminal Joints - Expansion, rideability, for integral and semi-integral abutments
+Bridge Railings - To protect vehicles from leaving the roadway
+Bridge Railing Transitions - To transition between a less rigid railing to a more rigid bridge railing
+Deck - Rideability, load carrying, superstructure protection
+Wearing Surface - Rideability, deck protection
+Superstructure - Load carrying, symmetry, free of distortion
+Paint - A protective coating
+Bearings - Load transfer to the substructure, freedom of movement, adequately positioned
+Substructure - Load transfer to the ground, settlement, undermining
+Slopewall - Abutment protection from runoff, underfill containment, settlement
+Channel - Erosion, alignment, capacity, debris
+Channel Protection - Protects the substructure components and othe bridge features
+Scour - Erosion at substructure, impact on substructure
+Scour Vulnerability - Geotech and Hydrology based concerns
+Overtopping Likelihood - Hydraulics and Hydrology based concerns
+]
+
+OBJECT FORMAT REQUEST:
+Please rewrite the content above as a JavaScript object with the following structure:
+
+- term: lowercase string of the glossary term
+- guidance: natural language, < 1000 characters, no restating the term.
+- discipline: "bridge design"
+- filter: ["component"]
+
+Guidance should tell us why we are looking at the component and how it impacts the overall health of the bridge. More than anything think about the components function and what our primary concern for inspecting it and rating it is. What is our deterioration code.

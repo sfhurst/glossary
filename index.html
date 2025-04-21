@@ -11,7 +11,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Asset Glossaries</title>
-    <link rel="icon" href="./media/logo-rings-only-purple.png" />
+    <link rel="icon" href="./media/logo-rings-only-green.png" />
 
     <!-- CSS -->
     <link rel="stylesheet" href="styles/foundations.css" />
@@ -19,7 +19,7 @@
     <!-- JS -->
 
     <script src="./scripts/modules/glossaries.js" defer></script>
-    <script src="./scripts/modules/bridge_objects.js" defer></script>
+    <!-- <script src="./scripts/modules/bridge_objects.js" defer></script> -->
 
     <script src="./scripts/scripts.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/dompurify@2.4.0/dist/purify.min.js"></script>
@@ -89,6 +89,32 @@
             >
               BIRM
             </button>
+            |
+            <button
+              class="glossary-item-buttons row3"
+              data-target="glossary-bridge-tab"
+              data-container-class="glossary-item-containers"
+              data-button-class="glossary-item-buttons"
+            >
+              Bridge
+            </button>
+            <button
+              class="glossary-item-buttons row3"
+              data-target="glossary-culvert-tab"
+              data-container-class="glossary-item-containers"
+              data-button-class="glossary-item-buttons"
+            >
+              Culvert
+            </button>
+            <button
+              class="glossary-item-buttons row3"
+              data-target="glossary-wall-tab"
+              data-container-class="glossary-item-containers"
+              data-button-class="glossary-item-buttons"
+            >
+              Wall
+            </button>
+            |
             <button
               class="glossary-item-buttons row3"
               data-target="glossary-defects-tab"
@@ -99,27 +125,86 @@
             </button>
             <button
               class="glossary-item-buttons row3"
-              data-target="glossary-bridge-tab"
+              data-target="glossary-design-tab"
               data-container-class="glossary-item-containers"
               data-button-class="glossary-item-buttons"
             >
-              SNBI
+              Design
             </button>
             <button
               class="glossary-item-buttons row3"
-              data-target="glossary-culvert-tab"
+              data-target="glossary-materials-tab"
               data-container-class="glossary-item-containers"
               data-button-class="glossary-item-buttons"
             >
-              Culvert Manual
+              Materials
             </button>
             <button
               class="glossary-item-buttons row3"
-              data-target="glossary-wall-tab"
+              data-target="glossary-ndt-tab"
               data-container-class="glossary-item-containers"
               data-button-class="glossary-item-buttons"
             >
-              Wall Manual
+              NDT
+            </button>
+            <button
+              class="glossary-item-buttons row3"
+              data-target="glossary-nstm-tab"
+              data-container-class="glossary-item-containers"
+              data-button-class="glossary-item-buttons"
+            >
+              NSTM
+            </button>
+            |
+            <button
+              class="glossary-item-buttons row3"
+              data-target="glossary-roadway-tab"
+              data-container-class="glossary-item-containers"
+              data-button-class="glossary-item-buttons"
+            >
+              Roadway
+            </button>
+            <button
+              class="glossary-item-buttons row3"
+              data-target="glossary-channel-tab"
+              data-container-class="glossary-item-containers"
+              data-button-class="glossary-item-buttons"
+            >
+              Channel
+            </button>
+
+            <button
+              class="glossary-item-buttons row3"
+              data-target="glossary-components-tab"
+              data-container-class="glossary-item-containers"
+              data-button-class="glossary-item-buttons"
+            >
+              Components
+            </button>
+            <button
+              class="glossary-item-buttons row3"
+              data-target="glossary-joints-tab"
+              data-container-class="glossary-item-containers"
+              data-button-class="glossary-item-buttons"
+            >
+              Joints
+            </button>
+            <button
+              class="glossary-item-buttons row3"
+              data-target="glossary-welds-tab"
+              data-container-class="glossary-item-containers"
+              data-button-class="glossary-item-buttons"
+            >
+              Welds
+            </button>
+            |
+            <button
+              class="glossary-item-buttons row3"
+              data-target="glossary-acronyms-tab"
+              data-container-class="glossary-item-containers"
+              data-button-class="glossary-item-buttons"
+            >
+              Acronyms
             </button>
             <button
               class="glossary-item-buttons row3"
@@ -177,6 +262,46 @@
             </div>
             <!-- :: Glossary BIRM Tab -->
             <div id="glossary-birm-tab" class="glossary-item-containers">
+              <div class="glossary-numeric-ratings-container"></div>
+            </div>
+            <!-- :: Glossary NSTM Tab -->
+            <div id="glossary-nstm-tab" class="glossary-item-containers">
+              <div class="glossary-numeric-ratings-container"></div>
+            </div>
+            <!-- :: Glossary Components Tab -->
+            <div id="glossary-components-tab" class="glossary-item-containers">
+              <div class="glossary-numeric-ratings-container"></div>
+            </div>
+            <!-- :: Glossary Joints Tab -->
+            <div id="glossary-joints-tab" class="glossary-item-containers">
+              <div class="glossary-numeric-ratings-container"></div>
+            </div>
+            <!-- :: Glossary Welds Tab -->
+            <div id="glossary-welds-tab" class="glossary-item-containers">
+              <div class="glossary-numeric-ratings-container"></div>
+            </div>
+            <!-- :: Glossary Roadway Tab -->
+            <div id="glossary-roadway-tab" class="glossary-item-containers">
+              <div class="glossary-numeric-ratings-container"></div>
+            </div>
+            <!-- :: Glossary Acronyms Tab -->
+            <div id="glossary-acronyms-tab" class="glossary-item-containers">
+              <div class="glossary-numeric-ratings-container"></div>
+            </div>
+            <!-- :: Glossary NDT Tab -->
+            <div id="glossary-ndt-tab" class="glossary-item-containers">
+              <div class="glossary-numeric-ratings-container"></div>
+            </div>
+            <!-- :: Glossary Channel Tab -->
+            <div id="glossary-channel-tab" class="glossary-item-containers">
+              <div class="glossary-numeric-ratings-container"></div>
+            </div>
+            <!-- :: Glossary Materials Tab -->
+            <div id="glossary-materials-tab" class="glossary-item-containers">
+              <div class="glossary-numeric-ratings-container"></div>
+            </div>
+            <!-- :: Glossary Design Tab -->
+            <div id="glossary-design-tab" class="glossary-item-containers">
               <div class="glossary-numeric-ratings-container"></div>
             </div>
           </div>
