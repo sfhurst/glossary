@@ -7994,9 +7994,9 @@ const glossaryAllTerms = [
     filter: ["acronyms", "roadway"],
   },
   {
-    term: "advisory signs",
+    term: "advisory speed signs",
     definition:
-      "Information panels suggesting safe driving behaviors or conditions, such as curve speeds, without the force of law, usually supplemental to primary signage.",
+      "Roadway signs that display recommended speeds for navigating specific features such as curves, ramps, or intersections. Unlike regulatory speed limit signs, they are not legally enforceable but serve as advisory notices. Typically posted with warning signs, they reflect the maximum safe speed under normal conditions and help assess approach characteristics near structures like bridges.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
     filter: ["roadway"],
@@ -8136,7 +8136,8 @@ const glossaryAllTerms = [
   },
   {
     term: "arch springing",
-    definition: "The point or line at which the arch ring meets the abutments, where the arch begins to support the load from the bridge.",
+    definition:
+      "The point on the springline where the arch begins to curve away from its vertical support, typically located at the base of the arch. It marks the start of the arch ring’s curvature. Though sometimes called the springing point, arch springing is more commonly used in engineering texts and drawings. Both terms refer to the same physical location on the structure.",
     discipline: "bridge design",
     page: ["bridge-culvert-pg6"],
     filter: ["bridge", "components", "culvert"],
@@ -8315,7 +8316,7 @@ const glossaryAllTerms = [
   {
     term: "beam",
     definition:
-      "A long, horizontal structural element used to support loads. Beams are typically supported at their ends by columns, piers, or walls, and they carry loads across a span. They come in various shapes, including I-beams and box beams, and are crucial in bridge design.",
+      "A horizontal structural member designed to resist bending and shear forces across a span. In bridge design, beams support vertical loads and transfer them to supports such as abutments, piers, or framing elements. The term encompasses a range of components, including girders, floorbeams, and stringers, depending on the member’s role, span direction, and position in the structure. Beams may run longitudinally or transversely and can have various cross-sectional shapes such as I-beams, box beams, tee beams, or channels. While beam is often used informally to describe any horizontal member, in technical use it refers specifically to elements that carry load across a span and resist bending through flexural action.",
     search: ``,
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
@@ -8444,6 +8445,15 @@ const glossaryAllTerms = [
     discipline: "bridge design",
     page: ["bridge-railings-pg9"],
     filter: ["roadway"],
+  },
+  {
+    term: "breast wall",
+    definition:
+      "A type of retaining wall located below the bridge seat, typically at the base of the bridge abutment. It is designed to hold back soil and prevent erosion around the foundation, providing stability to the embankment and the bridge's structure.",
+    search: ``,
+    discipline: "bridge design",
+    page: ["glossary-compounds-tab", "bridge-sub-pg9"],
+    filter: ["bridge", "components", "compounds", "culvert"],
   },
   {
     term: "bridge",
@@ -8678,6 +8688,15 @@ const glossaryAllTerms = [
     discipline: "bridge design",
     page: ["bridge-channel-pg8"],
     filter: ["channel", "components"],
+  },
+  {
+    term: "cheek wall",
+    definition:
+      "A vertical wall perpendicular to the end of a bridge abutment, enclosing three sides of the bridge seat. Cheek walls help retain the embankment, support the bridge structure at the approach, and protect fascia bearings from the elements. Unlike wingwalls, which are angled, cheek walls form a right angle with the abutment. Sometimes called a knee wall.",
+    search: ``,
+    discipline: "bridge design",
+    page: ["glossary-compounds-tab", "bridge-sub-pg9"],
+    filter: ["bridge", "components", "compounds", "culvert"],
   },
   {
     term: "clad steel",
@@ -9536,7 +9555,7 @@ const glossaryAllTerms = [
   {
     term: "floorbeam",
     definition:
-      "A transverse beam that supports bridge decks and distributes loads to main girders or trusses. It plays a critical role in maintaining structural integrity by transferring vehicular and environmental loads efficiently across the bridge framework.",
+      "A transverse beam used in bridge superstructures to support stringers and deck elements, transferring those loads to longitudinal girders or trusses. Floorbeams are positioned perpendicular to the direction of traffic and are typically spaced at regular intervals. In bridges with a defined floor system, floorbeams are crucial for tying together the structure, ensuring lateral stability, and efficiently spreading loads across multiple girders. They are most common in truss bridges, plate girder bridges, and older steel multi-girder systems. Unlike girders and stringers, which run longitudinally with the span, floorbeams run transversely across the span and often act as a platform for other framing components.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
     filter: ["bridge", "components", "compounds", "NSTM"],
@@ -9656,7 +9675,7 @@ const glossaryAllTerms = [
   {
     term: "girder",
     definition:
-      "A horizontal structural element used to support the load of a bridge, typically made of steel, concrete, or composite materials. Girders are one of the primary load-bearing components in bridge design, often placed parallel to the span of the bridge. They are supported by piers and abutments, distributing the weight to other structural elements.",
+      "A longitudinal structural member in a bridge superstructure that carries the main structural loads and transfers them to piers or abutments. They are generally the largest structural members in the superstructure and may support floorbeams, depending on the bridge type. Girders are typically made from rolled or built-up steel, prestressed concrete, or composite sections.",
     search: ``,
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
@@ -9863,9 +9882,9 @@ const glossaryAllTerms = [
     filter: ["acronyms"],
   },
   {
-    term: "historic",
+    term: "historic bridge",
     definition:
-      "A designation for a bridge or structure that has significant historical, cultural, or architectural value. Historic bridges are often subject to preservation guidelines to maintain their integrity for future generations. These structures are sometimes exempt from modern standards but are carefully monitored to ensure safety.",
+      "A bridge or structure recognized for its significant historical, cultural, or architectural value. Historic bridges are typically evaluated based on factors such as age, design, construction method, and contribution to the community or transportation history. They are often subject to preservation guidelines to maintain their integrity while ensuring safety. Though they may not always meet modern engineering standards, they are carefully monitored and protected to preserve their heritage for future generations.",
     search: ``,
     discipline: "bridge preservation",
     page: ["glossary-additional-tab"],
@@ -9886,6 +9905,14 @@ const glossaryAllTerms = [
     discipline: "bridge design",
     page: ["bridge-alignment-pg5"],
     filter: ["construction", "roadway"],
+  },
+  {
+    term: "horizontal alignment signs",
+    definition:
+      "A type of warning sign that alerts drivers to upcoming changes in roadway direction, such as curves, turns, or winding sections. They provide advance notice to help drivers safely navigate horizontal shifts in alignment. Common symbols include curve arrows, chevrons, and winding road icons, often paired with advisory speed signs. These signs also help assess the approach roadway alignment at a bridge.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+    filter: ["roadway"],
   },
   {
     term: "horizontal curve radius",
@@ -11839,7 +11866,7 @@ const glossaryAllTerms = [
   {
     term: "springline",
     definition:
-      "The horizontal line at which the arch ring begins to curve from the abutment, marking the transition between the arch ring and the abutments. The horizontal distance between two springlines is the span distance.",
+      "An imaginary horizontal line along the length of the arch barrel where the arch ring begins to curve away from the abutment. It marks the transition from the vertical support to the curved portion of the arch and serves as a key reference in design and construction.",
     search: ``,
     discipline: "arch design",
     page: ["glossary-culvert-tab", "glossary-compounds-tab", "bridge-culvert-pg6"],
@@ -11945,7 +11972,7 @@ const glossaryAllTerms = [
   {
     term: "stringer",
     definition:
-      "A horizontal structural member that supports the deck of a bridge and transmits loads to the main supporting beams or girders. Stringers run parallel to the length of the bridge and are commonly used in both timber and steel bridge designs. They play a key role in distributing the load across the bridge deck and supporting traffic loads.",
+      "A longitudinal beam in a bridge superstructure that supports the deck and distributes loads to transverse floorbeams. Stringers run parallel to the direction of traffic and are spaced to carry wheel loads from the deck. In typical bridge floor systems, stringers span between floorbeams, which in turn transfer loads to girders or trusses. Stringers are generally smaller than girders and floorbeams and serve as intermediate members in the load path from the deck to the main supporting structure.",
     search: ``,
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
@@ -12368,28 +12395,20 @@ const glossaryAllTerms = [
     filter: ["channel", "compounds"],
   },
   {
-    term: "underfill concrete arch",
+    term: "underfill bridge",
     definition:
-      "A type of bridge structure consisting of a concrete arch with a fill material placed underneath the arch to support and distribute the load, providing stability and reducing the amount of material required for the arch.",
-    discipline: "bridge design",
-    page: ["bridge-culvert-pg6"],
-    filter: ["bridge", "culvert"],
-  },
-  {
-    term: "underfill material",
-    definition:
-      "A material, such as compacted soil or granular aggregate, placed beneath the arch ring to help distribute loads evenly and enhance the bridge’s stability.",
+      "A type of bridge where fill material is placed between the wearing surface and the structure. The fill helps distribute loads to the underlying structural elements, which may include beams, arches, or other systems. The design may or may not include a separate deck. Sometimes simply called an underfill.",
     discipline: "bridge design",
     page: ["bridge-culvert-pg6"],
     filter: ["compounds", "materials"],
   },
   {
-    term: "underground",
-    definition: "Refers to structures or utilities located below the surface, such as tunnels, pipelines, or electrical wiring.",
-    search: ``,
+    term: "underfill concrete arch",
+    definition:
+      "A type of bridge structure where fill material is placed between the wearing surface and a concrete arch, contained within the spandrel walls. The fill supports the roadway and helps distribute loads to the arch. Loss of fill from behind the spandrel walls is a known failure mechanism, as it can compromise the stability of the structure.",
     discipline: "bridge design",
-    page: ["glossary-compounds-tab"],
-    filter: ["compounds"],
+    page: ["bridge-culvert-pg6"],
+    filter: ["bridge", "culvert"],
   },
   {
     term: "undermining",
@@ -12409,8 +12428,9 @@ const glossaryAllTerms = [
     filter: ["bridge", "compounds", "roadway"],
   },
   {
-    term: "underwater bridge inspection diver",
-    definition: "The individual performing the inspection of the underwater portion of the bridge.",
+    term: "underwater bridge inspector",
+    definition:
+      "A certified diver who conducts visual and tactile inspections of the underwater elements of a bridge, including substructure, piers, footings, scour areas, and embedded components, to assess condition, detect defects, and document maintenance needs.",
     search: ``,
     discipline: "bridge design",
     page: ["glossary-bridge-tab"],
@@ -12503,7 +12523,7 @@ const glossaryAllTerms = [
   {
     term: "vertical offset",
     definition:
-      "Displacement of an object or structure in the vertical direction, where the position deviates from its original alignment or intended reference point.",
+      "A measurable difference in elevation between two points that were originally intended to align. It indicates a displacement in the vertical direction and can result from various causes such as settlement, heave, thermal movement, impact, or construction error. The offset is the observed deviation and its cause must be determined through inspection or analysis.",
     search: ``,
     discipline: "bridge design",
     page: ["glossary-culvert-tab", "bridge-culvert-pg6"],
@@ -12655,7 +12675,8 @@ const glossaryAllTerms = [
   },
   {
     term: "wingwall",
-    definition: "A sidewall extending from an abutment or headwall that helps retain soil and direct water flow away from a bridge or culvert.",
+    definition:
+      "A wall that extends from the sides of a bridge abutment at an angle, typically to retain soil and stabilize the embankment. It is sloped to follow the natural terrain and provides additional support along the approach to the bridge. Unlike cheek walls, wingwalls are not perpendicular to the abutment.",
     search: ``,
     discipline: "bridge design",
     page: ["glossary-compounds-tab", "bridge-sub-pg9"],
