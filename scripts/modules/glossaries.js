@@ -8466,7 +8466,8 @@ const glossaryAllTerms = [
   },
   {
     term: "bridge deck",
-    definition: "The roadway surface of a bridge, typically made of concrete or steel.",
+    definition:
+      "The structural component of a bridge that supports traffic loads and transfers them to the superstructure. It spans between supporting members and is a key element in the bridge’s load path. Commonly called a deck.",
     discipline: "bridge design",
     page: ["bridge-deck-pg11"],
     filter: ["bridge", "components"],
@@ -8790,13 +8791,6 @@ const glossaryAllTerms = [
     filter: ["bridge", "components"],
   },
   {
-    term: "concrete slope paving",
-    definition: "A protective layer of concrete used to stabilize slopes and prevent erosion.",
-    discipline: "bridge design",
-    page: ["bridge-channel-pg8"],
-    filter: ["channel", "components", "construction"],
-  },
-  {
     term: "confluence",
     definition: "The point at which two or more streams or rivers meet, often forming a larger channel or river.",
     discipline: "bridge design",
@@ -9013,7 +9007,7 @@ const glossaryAllTerms = [
     filter: ["bridge", "components"],
   },
   {
-    term: "cut / fill",
+    term: "cut, fill",
     definition:
       "The process of removing soil (cut) or adding material (fill) to adjust the level of the ground to support a structure. In bridge construction, cut and fill are used to level the ground for foundations, approaches, and embankments. This process is crucial in creating a stable base for bridge supports.",
     search: ``,
@@ -9057,13 +9051,6 @@ const glossaryAllTerms = [
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
     filter: ["bridge", "construction"],
-  },
-  {
-    term: "deck joint",
-    definition: "A joint in the bridge deck that allows for expansion, contraction, and movement due to temperature changes or load variations.",
-    discipline: "bridge design",
-    page: ["bridge-deck-pg11"],
-    filter: ["bridge", "components", "construction", "joints"],
   },
   {
     term: "deck slab",
@@ -9260,12 +9247,31 @@ const glossaryAllTerms = [
     filter: ["construction"],
   },
   {
-    term: "eastbound, westbound, northbound, southbound",
-    definition: "Moving in the indicated direction, typically referring to traffic lanes or transportation routes.",
+    term: "east / west / north / south",
+    definition:
+      "Cardinal directions used for general orientation or description. Not capitalized unless part of a proper noun or at the beginning of a sentence.",
     search: ``,
     discipline: "bridge design",
     page: ["glossary-compounds-tab"],
-    filter: ["compounds", "roadway"],
+    filter: ["construction", "roadway"],
+  },
+  {
+    term: "east side / west side / north side / south side",
+    definition:
+      "Directional terms for locations relative to a bridge or other structure, typically based on plan view orientation rather than true cardinal directions. They are not capitalized or combined unless they are part of a proper noun (e.g., Eastside Park).",
+    search: ``,
+    discipline: "bridge design",
+    page: ["glossary-compounds-tab"],
+    filter: ["construction", "compounds", "roadway"],
+  },
+  {
+    term: "eastbound (EB) / westbound (WB) / northbound (NB) / southbound (SB)",
+    definition:
+      "Indicate movement in the specified direction, typically referring to traffic lanes or transportation routes. Not capitalized unless they begin a sentence.",
+    search: ``,
+    discipline: "bridge design",
+    page: ["glossary-compounds-tab"],
+    filter: ["acronyms", "construction", "compounds", "roadway"],
   },
   {
     term: "eddy current testing (ET)",
@@ -9311,6 +9317,15 @@ const glossaryAllTerms = [
     filter: ["bridge", "channel", "construction"],
   },
   {
+    term: "elevation view",
+    definition:
+      "A vertical view from architectural drawings that shows the height, facade, and exterior details of a structure. It highlights the structure’s exterior appearance and vertical dimensions.",
+    search: ``,
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+    filter: ["bridge", "construction"],
+  },
+  {
     term: "embankment",
     definition:
       "A raised mass of compacted soil built above natural ground to support a roadway, structure, or grade change, often placed around buried components like culverts for stability and load distribution.",
@@ -9328,7 +9343,14 @@ const glossaryAllTerms = [
     filter: ["construction", "roadway"],
   },
   {
-    term: "end treatment",
+    term: "end treatment (culvert)",
+    definition:
+      "Specially designed components at the ends of a culvert that help direct water flow, stabilize the culvert, and protect the surrounding area from erosion or damage.",
+    discipline: "bridge design",
+    filter: ["roadway"],
+  },
+  {
+    term: "end treatment (railing)",
     definition: "Specially designed components at the end of guardrails that minimize the risk of injury or vehicle damage during impact.",
     discipline: "bridge design",
     page: ["bridge-railings-pg9"],
@@ -10904,6 +10926,15 @@ const glossaryAllTerms = [
     filter: ["channel", "defects"],
   },
   {
+    term: "plan view",
+    definition:
+      "A top-down, horizontal view in architectural drawings that shows the layout and spatial arrangement of rooms, walls, doors, and other elements. It provides an overview of the structure’s footprint.",
+    search: ``,
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+    filter: ["bridge", "construction"],
+  },
+  {
     term: "plug weld",
     definition:
       "A circular weld used to join overlapping metal components by filling a pre-drilled hole with molten material, often employed in splice connections.",
@@ -11373,6 +11404,15 @@ const glossaryAllTerms = [
     filter: ["bridge", "construction"],
   },
   {
+    term: "safety metal end section (SMES)",
+    definition:
+      "A sloped, grated metal attachment installed at the end of a culvert to reduce the risk of vehicle snag or rollover during roadway departures. Matches the slope of the surrounding ground for a smoother transition over the culvert opening.",
+    search: ``,
+    discipline: "bridge design",
+    page: ["glossary-bridge-tab"],
+    filter: ["acronyms", "culvert", "construction"],
+  },
+  {
     term: "sag vertical curve",
     definition:
       "A curve in the roadway profile that connects a descending grade to an ascending grade, typically used to smooth transitions at the bottom of a dip or valley.",
@@ -11511,6 +11551,15 @@ const glossaryAllTerms = [
     discipline: "bridge design",
     page: ["glossary-culvert-tab", "bridge-culvert-pg6"],
     filter: ["defects"],
+  },
+  {
+    term: "section view",
+    definition:
+      "A cut-through view from architectural drawings that shows the internal details of a structure, as if it were sliced along a plane. It reveals layers, materials, and dimensions inside the structure that are not visible from the exterior.",
+    search: ``,
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+    filter: ["bridge", "construction"],
   },
   {
     term: "sediment deposition",
@@ -12373,7 +12422,7 @@ const glossaryAllTerms = [
   {
     term: "underbridge truck",
     definition:
-      "A specialized vehicle equipped with an articulating boom and inspection platform designed to access bridge undersides for maintenance and evaluation.",
+      "A specialized vehicle equipped with articulating booms and an inspection platform. It operates from the travel lanes and deploys over the side of the bridge, allowing operators to access the underside. The two main U.S. manufacturers are Aspen Aerials and Paxton-Mitchell.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
     filter: ["bridge", "construction"],
