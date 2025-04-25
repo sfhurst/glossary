@@ -8063,7 +8063,7 @@ const glossaryAllTerms = [
   {
     term: "aggradation",
     definition:
-      "The process of sediment accumulation in a waterway, typically due to a decrease in flow velocity. In bridge inspection, aggradation can raise the level of the streambed around bridge foundations, potentially affecting structural stability, increasing scour risk, and altering water flow patterns.",
+      "A specific type of sediment deposition where the overall elevation of a streambed, riverbed, or landscape increases due to the continuous accumulation of sediment. It typically refers to the buildup of sediment in a channel or floodplain over time, which can affect the shape and stability of the environment.",
     discipline: "bridge design",
     page: ["bridge-channel-pg8"],
     filter: ["channel", "defects"],
@@ -8321,6 +8321,14 @@ const glossaryAllTerms = [
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
     filter: ["bridge", "components"],
+  },
+  {
+    term: "beam line",
+    definition:
+      "A reference line used in the framing plan of bridge drawings to indicate the centerline of a beam or girder. It defines the layout and spacing of structural members and is used for alignment during design, detailing, and construction.",
+    discipline: "bridge design",
+    page: ["bridge-super-pg9"],
+    filter: ["bridge", "construction"],
   },
   {
     term: "bearing",
@@ -8730,6 +8738,14 @@ const glossaryAllTerms = [
     discipline: "bridge design",
     page: ["glossary-bridge-tab"],
     filter: ["bridge", "construction", "roadway"],
+  },
+  {
+    term: "cold joint",
+    definition:
+      "A visible seam in concrete that forms when one batch hardens before the next is poured, often due to construction delays. This results in a weak bond between the layers, which can affect the strength and durability of the structure if not properly addressed.",
+    search: ``,
+    discipline: "bridge design",
+    filter: ["bridge", "components", "culvert", "joints"],
   },
   {
     term: "complex feature",
@@ -9366,12 +9382,28 @@ const glossaryAllTerms = [
     filter: ["materials"],
   },
   {
+    term: "epoxy",
+    definition:
+      "A strong, durable adhesive or coating made from synthetic resins that hardens when mixed with a curing agent. It’s commonly used in construction to bond, seal, or protect materials like concrete and steel.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+    filter: ["materials"],
+  },
+  {
+    term: "epoxy coated rebar",
+    definition:
+      "A steel reinforcing bar coated with a layer of epoxy to protect it from corrosion. The coating acts as a barrier between the steel and moisture or chloride exposure, making it especially useful in environments like bridges where deicing salts or marine conditions can accelerate rust.",
+    discipline: "bridge design",
+    page: ["glossary-additional-tab"],
+    filter: ["bridge", "components"],
+  },
+  {
     term: "epoxy overlay",
     definition:
       "A thin deck overlay consisting of epoxy resin and aggregate, applied to concrete bridge decks to enhance skid resistance, protect against moisture infiltration, and extend service life by preventing chloride penetration and surface wear.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
-    filter: ["bridge", "components", "materials"],
+    filter: ["bridge", "components"],
   },
   {
     term: "erosion",
@@ -9394,7 +9426,7 @@ const glossaryAllTerms = [
   {
     term: "expansion",
     definition:
-      "The increase in size of materials or structural components due to temperature changes, moisture variation, or other environmental factors. Expansion must be accounted for in bridge design to prevent damage such as buckling or cracking. Expansion joints are commonly used to accommodate these changes.",
+      "The increase in size of a material or structural component caused by environmental factors such as heat, moisture, or chemical changes. In bridges, expansion is typically accommodated with joints or bearings to prevent cracking, buckling, or other damage.",
     search: ``,
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
@@ -9703,13 +9735,7 @@ const glossaryAllTerms = [
     page: ["glossary-additional-tab"],
     filter: ["bridge", "components", "NSTM"],
   },
-  {
-    term: "girder line",
-    definition: "The alignment of girders supporting the bridge deck.",
-    discipline: "bridge design",
-    page: ["bridge-super-pg9"],
-    filter: ["bridge", "construction"],
-  },
+
   {
     term: "grade",
     definition:
@@ -10188,14 +10214,14 @@ const glossaryAllTerms = [
     filter: ["compounds", "construction"],
   },
   {
-    term: "joint (culvert)",
+    term: "joint",
     definition:
-      "The interface where two culvert sections connect, often sealed with gaskets, grout, or other materials to prevent leakage, accommodate movement, and maintain structural and hydraulic continuity.",
+      "A location where two structural elements or sections of material meet, often visible as a seam. Joints may be designed to accommodate movement, transfer loads, or simply connect different construction stages. Common examples include expansion joints, construction joints, and cold joints, each serving a specific purpose based on material behavior and design intent.",
     search: ``,
     discipline: "bridge design",
-    page: ["glossary-culvert-tab", "bridge-culvert-pg6"],
-    filter: ["components", "culvert"],
+    filter: ["bridge", "components", "culvert", "joints"],
   },
+
   {
     term: "joint sealant",
     definition: "A material used to fill and seal joints to prevent water infiltration and debris accumulation.",
@@ -11564,7 +11590,7 @@ const glossaryAllTerms = [
   {
     term: "sediment deposition",
     definition:
-      "The accumulation of eroded materials such as sand, silt, or gravel within a channel, typically occurring when the flow velocity decreases.",
+      "The process by which particles of sediment, such as sand, silt, or gravel, settle out of water or air and accumulate in a particular area. This can occur in rivers, lakes, or on land where the energy of the transporting medium (like water or wind) decreases, causing the particles to settle.",
     discipline: "bridge design",
     page: ["bridge-channel-pg8"],
     filter: ["channel", "defects"],
@@ -11866,7 +11892,8 @@ const glossaryAllTerms = [
   },
   {
     term: "span",
-    definition: "The horizontal distance between the supports (abutments) of the arch, determining the size and shape of the arch structure.",
+    definition:
+      "The horizontal distance between the supports of a bridge, typically measured from one end of the structure to the other. For an arch bridge, the span is the distance from springline to springline; for a simple span, it is measured from bent-to-bent or pier-to-pier. The span dimension directly influences the design and load-bearing capacity of the bridge.",
     discipline: "bridge design",
     page: ["bridge-culvert-pg6"],
     filter: ["bridge", "construction"],
@@ -12072,18 +12099,11 @@ const glossaryAllTerms = [
   {
     term: "superstructure",
     definition:
-      "The portion of a bridge or other structure that is above the foundation, including the deck, beams, girders, and other supporting components. The superstructure bears the load of the traffic or other forces acting on the bridge. Proper design and maintenance of the superstructure are essential for ensuring the safety and functionality of the bridge.",
+      "The structural portion of a bridge that supports the deck and transfers live and dead loads to the substructure. It typically includes beams, girders, trusses, or similar primary load-carrying elements. In bridge inspection, the deck is evaluated separately from the superstructure, except when the deck itself acts as the main load-bearing component, as in slab bridges.",
     search: ``,
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
     filter: ["bridge", "components", "compounds"],
-  },
-  {
-    term: "superstructure span",
-    definition: "The portion of the bridge above the substructure that supports traffic loads.",
-    discipline: "bridge design",
-    page: ["bridge-super-pg9"],
-    filter: ["bridge", "components"],
   },
   {
     term: "supported bridge",
@@ -12253,7 +12273,7 @@ const glossaryAllTerms = [
   {
     term: "thermal expansion",
     definition:
-      "The increase in the size of a material when it is heated, which can affect the performance of structures by causing movement or distortion.",
+      "A specific type of expansion that occurs when a material is heated. Heat increases atomic movement, which causes materials to expand. Cooling causes contraction as atomic motion slows and spacing decreases. This thermal movement can affect alignment and stress in bridge components if not properly managed.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
     filter: ["bridge", "construction", "joints", "materials"],

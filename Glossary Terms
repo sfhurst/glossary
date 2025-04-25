@@ -1,32 +1,6 @@
-Can I get objects for these items in this format with really detailed definitions that don't restate the term. I want this exact format:
-{
-term: “”,
-definition: “”,
-discipline: "bridge design",
-page: ["glossary-additional-tab"],
-},
-
-I would like my own detailed definition in less than 300 characters for a glossary entry that doesn't restate the term for this item related to bridge inspection or design. It should include the term followed by a colon and then the definition:
-
-iterate
-
-Considerations:
-Don't specifically mention bridge design or maintenance.
-DO NOT PUT THE TERM IN THE DEFINITION!! !important
-Use the most common spelling.
-I want them to read like natural glossary entries with sentences that typically start with "A", "AN", or "The"
-
-Can I get an updated definitions for these. I just need the definition.
-
-I would like my own detailed definition in less than 300 characters for a glossary entry that doesn't restate the term for this item related to bridge inspection or design.
-
-Considerations:
-Don't specifically mention bridge design or maintenance.
-DO NOT PUT THE TERM IN THE DEFINITION!! !important
-Use the most common spelling.
-I want them to read like natural glossary entries with sentences that typically start with "A", "AN", or "The"
-
-Provide a clear, concise definition for XXXXX.
-Don't start the definition with the term.
-Explaining what it is.
-Keep the language straightforward and avoid unnecessary jargon or overly technical terms.
+1. Provide a clear, concise but robust definition for XXXXX.
+2. Copyright free for publication in my bridge term glossary.
+3. Don't start the definition with the term.
+4. Explain what it is.
+5. Keep the language straightforward and avoid unnecessary jargon or overly technical terms.
+6. Use the most common spelling if my term is incorrect.
