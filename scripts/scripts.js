@@ -34,7 +34,8 @@
 
 // :::: (Populate Defect Glossary) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
-// Populate glossary with defect definitions from glossaryAllTerms
+let glossaryDefects = [];
+// Populate glossary with defect definitions from glossaryFull
 function populateGlossaryDefects() {
   const container = document.querySelector("#glossary-defects-tab .glossary-numeric-ratings-container");
 
@@ -42,7 +43,7 @@ function populateGlossaryDefects() {
   const ordered = [];
   const unordered = [];
 
-  glossaryAllTerms.forEach((item) => {
+  glossaryFull.forEach((item) => {
     // Check for "defect classes" filter first
     if (item.filter && item.filter.includes("defect classes")) {
       if (typeof item.order === "number") {
@@ -63,8 +64,15 @@ function populateGlossaryDefects() {
   // Combine into final list
   const defectTerms = [...ordered, ...unordered];
 
-  // Build cards
+  // Build cards and populate the array with term-definition objects
   defectTerms.forEach((defect) => {
+    // Create term-definition object
+    const termDef = {
+      term: defect.term,
+      definition: defect.definition,
+    };
+    glossaryDefects.push(termDef);
+
     const card = document.createElement("div");
     card.classList.add("glossary-content-cards");
 
@@ -75,6 +83,10 @@ function populateGlossaryDefects() {
     const search = defect.search || `What is "${defect.term}" in ${defect.discipline}?`;
     link.classList.add("glossary-term-link");
     link.textContent = defect.term;
+
+    // Add the data-term attribute for search purposes
+    link.setAttribute("data-term", defect.term.toLowerCase()); // Add the data-term attribute here
+
     link.href = defect.link || `https://www.google.com/search?q=${encodeURIComponent(search)}`;
     link.target = "_blank";
 
@@ -94,15 +106,25 @@ document.addEventListener("DOMContentLoaded", populateGlossaryDefects);
 
 // :::: (Populate Bridge Glossary) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
+let glossaryBridge = [];
 // Populate glossary with bridge definitions
 function populateGlossaryBridge() {
   const container = document.querySelector("#glossary-bridge-tab .glossary-numeric-ratings-container");
 
+  // Create an array to hold term and definition objects
+
   // Loop through each glossary term that includes "bridge" in the filter array
   // glossaryTerms.forEach((thing) => {
-  glossaryAllTerms
+  glossaryFull
     .filter((thing) => Array.isArray(thing.filter) && thing.filter.includes("bridge"))
     .forEach((thing) => {
+      // Create term-definition object
+      const termDef = {
+        term: thing.term,
+        definition: thing.definition,
+      };
+      glossaryBridge.push(termDef);
+
       // Create the card container
       const card = document.createElement("div");
       card.classList.add("glossary-content-cards");
@@ -116,6 +138,10 @@ function populateGlossaryBridge() {
       let search = thing.search || `What is "${thing.term}" in ${thing.discipline}?`; // Search query
       link.classList.add("glossary-term-link");
       link.textContent = thing.term;
+
+      // Add the data-term attribute for search purposes
+      link.setAttribute("data-term", thing.term.toLowerCase()); // Add the data-term attribute here
+
       // If thing.link exists, use it; otherwise, fall back to Google search
       link.href = thing.link || `https://www.google.com/search?q=${encodeURIComponent(search)}`;
       link.target = "_blank";
@@ -139,15 +165,23 @@ document.addEventListener("DOMContentLoaded", populateGlossaryBridge);
 
 // :::: (Populate Culvert Glossary) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
+let glossaryCulvert = [];
 // Populate glossary with culvert definitions
 function populateGlossaryCulvert() {
   const container = document.querySelector("#glossary-culvert-tab .glossary-numeric-ratings-container");
 
   // Loop through each glossary term that includes "culvert" in the filter array
   // glossaryTerms.forEach((thing) => {
-  glossaryAllTerms
+  glossaryFull
     .filter((thing) => Array.isArray(thing.filter) && thing.filter.includes("culvert"))
     .forEach((thing) => {
+      // Create term-definition object
+      const termDef = {
+        term: thing.term,
+        definition: thing.definition,
+      };
+      glossaryCulvert.push(termDef);
+
       // Create the card container
       const card = document.createElement("div");
       card.classList.add("glossary-content-cards");
@@ -161,6 +195,10 @@ function populateGlossaryCulvert() {
       let search = thing.search || `What is "${thing.term}" in ${thing.discipline}?`; // Search query
       link.classList.add("glossary-term-link");
       link.textContent = thing.term;
+
+      // Add the data-term attribute for search purposes
+      link.setAttribute("data-term", thing.term.toLowerCase()); // Add the data-term attribute here
+
       // If thing.link exists, use it; otherwise, fall back to Google search
       link.href = thing.link || `https://www.google.com/search?q=${encodeURIComponent(search)}`;
       link.target = "_blank";
@@ -184,15 +222,23 @@ document.addEventListener("DOMContentLoaded", populateGlossaryCulvert);
 
 // :::: (Populate Wall Glossary) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
+let glossaryWall = [];
 // Populate glossary with wall definitions
 function populateGlossaryWall() {
   const container = document.querySelector("#glossary-wall-tab .glossary-numeric-ratings-container");
 
   // Loop through each glossary term that includes "wall" in the filter array
   // glossaryTerms.forEach((thing) => {
-  glossaryAllTerms
+  glossaryFull
     .filter((thing) => Array.isArray(thing.filter) && thing.filter.includes("wall"))
     .forEach((thing) => {
+      // Create term-definition object
+      const termDef = {
+        term: thing.term,
+        definition: thing.definition,
+      };
+      glossaryWall.push(termDef);
+
       // Create the card container
       const card = document.createElement("div");
       card.classList.add("glossary-content-cards");
@@ -206,6 +252,10 @@ function populateGlossaryWall() {
       let search = thing.search || `What is "${thing.term}" in ${thing.discipline}?`; // Search query
       link.classList.add("glossary-term-link");
       link.textContent = thing.term;
+
+      // Add the data-term attribute for search purposes
+      link.setAttribute("data-term", thing.term.toLowerCase()); // Add the data-term attribute here
+
       // If thing.link exists, use it; otherwise, fall back to Google search
       link.href = thing.link || `https://www.google.com/search?q=${encodeURIComponent(search)}`;
       link.target = "_blank";
@@ -229,15 +279,23 @@ document.addEventListener("DOMContentLoaded", populateGlossaryWall);
 
 // :::: (Populate Compounds Glossary) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
+let glossaryCompounds = [];
 // Populate glossary with compounds definitions
 function populateGlossaryCompounds() {
   const container = document.querySelector("#glossary-compounds-tab .glossary-numeric-ratings-container");
 
   // Loop through each glossary term that includes "compounds" in the filter array
   // glossaryTerms.forEach((thing) => {
-  glossaryAllTerms
+  glossaryFull
     .filter((thing) => Array.isArray(thing.filter) && thing.filter.includes("compounds"))
     .forEach((thing) => {
+      // Create term-definition object
+      const termDef = {
+        term: thing.term,
+        definition: thing.definition,
+      };
+      glossaryCompounds.push(termDef);
+
       // Create the card container
       const card = document.createElement("div");
       card.classList.add("glossary-content-cards");
@@ -251,6 +309,10 @@ function populateGlossaryCompounds() {
       let search = thing.search || `What is "${thing.term}" in ${thing.discipline}?`; // Search query
       link.classList.add("glossary-term-link");
       link.textContent = thing.term;
+
+      // Add the data-term attribute for search purposes
+      link.setAttribute("data-term", thing.term.toLowerCase()); // Add the data-term attribute here
+
       // If thing.link exists, use it; otherwise, fall back to Google search
       link.href = thing.link || `https://www.google.com/search?q=${encodeURIComponent(search)}`;
       link.target = "_blank";
@@ -276,10 +338,10 @@ document.addEventListener("DOMContentLoaded", populateGlossaryCompounds);
 
 // Populate glossary with all definitions (Text Content Insertion)
 function populateGlossaryAll() {
-  const container3 = document.querySelector("#glossary-all-tab .glossary-numeric-ratings-container");
+  const container3 = document.querySelector("#glossary-full-tab .glossary-numeric-ratings-container");
 
   // Loop through each glossary term and create a glossary card for each
-  glossaryAllTerms.forEach((defect3) => {
+  glossaryFull.forEach((defect3) => {
     // Create the card container
     const card3 = document.createElement("div");
     card3.classList.add("glossary-content-cards");
@@ -331,7 +393,7 @@ function populateGlossaryBIRM() {
   const container3 = document.querySelector("#glossary-birm-tab .glossary-numeric-ratings-container");
 
   // Loop through each glossary term and create a glossary card for each
-  birmTerms.forEach((defect3) => {
+  glossaryBIRM.forEach((defect3) => {
     // Create the card container
     const card3 = document.createElement("div");
     card3.classList.add("glossary-content-cards");
@@ -432,15 +494,23 @@ document.addEventListener("DOMContentLoaded", populateCountyGlossary);
 
 // :::: (Populate NSTM Glossary) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
+let glossaryNSTM = [];
 // Populate glossary with nstm definitions
 function populateGlossaryNSTM() {
   const container = document.querySelector("#glossary-nstm-tab .glossary-numeric-ratings-container");
 
   // Loop through each glossary term that includes "NSTM" in the filter array
   // glossaryTerms.forEach((thing) => {
-  glossaryAllTerms
+  glossaryFull
     .filter((thing) => Array.isArray(thing.filter) && thing.filter.includes("NSTM"))
     .forEach((thing) => {
+      // Create term-definition object
+      const termDef = {
+        term: thing.term,
+        definition: thing.definition,
+      };
+      glossaryNSTM.push(termDef);
+
       // Create the card container
       const card = document.createElement("div");
       card.classList.add("glossary-content-cards");
@@ -454,6 +524,10 @@ function populateGlossaryNSTM() {
       let search = thing.search || `What is "${thing.term}" in ${thing.discipline}?`; // Search query
       link.classList.add("glossary-term-link");
       link.textContent = thing.term;
+
+      // Add the data-term attribute for search purposes
+      link.setAttribute("data-term", thing.term.toLowerCase()); // Add the data-term attribute here
+
       // If thing.link exists, use it; otherwise, fall back to Google search
       link.href = thing.link || `https://www.google.com/search?q=${encodeURIComponent(search)}`;
       link.target = "_blank";
@@ -477,15 +551,23 @@ document.addEventListener("DOMContentLoaded", populateGlossaryNSTM);
 
 // :::: (Populate Joints Glossary) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
+let glossaryJoints = [];
 // Populate glossary with joints definitions
 function populateGlossaryJoints() {
   const container = document.querySelector("#glossary-joints-tab .glossary-numeric-ratings-container");
 
   // Loop through each glossary term that includes "joints" in the filter array
   // glossaryTerms.forEach((thing) => {
-  glossaryAllTerms
+  glossaryFull
     .filter((thing) => Array.isArray(thing.filter) && thing.filter.includes("joints"))
     .forEach((thing) => {
+      // Create term-definition object
+      const termDef = {
+        term: thing.term,
+        definition: thing.definition,
+      };
+      glossaryJoints.push(termDef);
+
       // Create the card container
       const card = document.createElement("div");
       card.classList.add("glossary-content-cards");
@@ -499,6 +581,10 @@ function populateGlossaryJoints() {
       let search = thing.search || `What is "${thing.term}" in ${thing.discipline}?`; // Search query
       link.classList.add("glossary-term-link");
       link.textContent = thing.term;
+
+      // Add the data-term attribute for search purposes
+      link.setAttribute("data-term", thing.term.toLowerCase()); // Add the data-term attribute here
+
       // If thing.link exists, use it; otherwise, fall back to Google search
       link.href = thing.link || `https://www.google.com/search?q=${encodeURIComponent(search)}`;
       link.target = "_blank";
@@ -522,15 +608,23 @@ document.addEventListener("DOMContentLoaded", populateGlossaryJoints);
 
 // :::: (Populate Components Glossary) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
+let glossaryComponents = [];
 // Populate glossary with components definitions
 function populateGlossaryComponents() {
   const container = document.querySelector("#glossary-components-tab .glossary-numeric-ratings-container");
 
   // Loop through each glossary term that includes "components" in the filter array
   // glossaryTerms.forEach((thing) => {
-  glossaryAllTerms
+  glossaryFull
     .filter((thing) => Array.isArray(thing.filter) && thing.filter.includes("components"))
     .forEach((thing) => {
+      // Create term-definition object
+      const termDef = {
+        term: thing.term,
+        definition: thing.definition,
+      };
+      glossaryComponents.push(termDef);
+
       // Create the card container
       const card = document.createElement("div");
       card.classList.add("glossary-content-cards");
@@ -544,6 +638,10 @@ function populateGlossaryComponents() {
       let search = thing.search || `What is "${thing.term}" in ${thing.discipline}?`; // Search query
       link.classList.add("glossary-term-link");
       link.textContent = thing.term;
+
+      // Add the data-term attribute for search purposes
+      link.setAttribute("data-term", thing.term.toLowerCase()); // Add the data-term attribute here
+
       // If thing.link exists, use it; otherwise, fall back to Google search
       link.href = thing.link || `https://www.google.com/search?q=${encodeURIComponent(search)}`;
       link.target = "_blank";
@@ -567,15 +665,23 @@ document.addEventListener("DOMContentLoaded", populateGlossaryComponents);
 
 // :::: (Populate Welds Glossary) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
+let glossaryWelds = [];
 // Populate glossary with welds definitions
 function populateGlossaryWelds() {
   const container = document.querySelector("#glossary-welds-tab .glossary-numeric-ratings-container");
 
   // Loop through each glossary term that includes "welds" in the filter array
   // glossaryTerms.forEach((thing) => {
-  glossaryAllTerms
+  glossaryFull
     .filter((thing) => Array.isArray(thing.filter) && thing.filter.includes("welds"))
     .forEach((thing) => {
+      // Create term-definition object
+      const termDef = {
+        term: thing.term,
+        definition: thing.definition,
+      };
+      glossaryWelds.push(termDef);
+
       // Create the card container
       const card = document.createElement("div");
       card.classList.add("glossary-content-cards");
@@ -589,6 +695,10 @@ function populateGlossaryWelds() {
       let search = thing.search || `What is "${thing.term}" in ${thing.discipline}?`; // Search query
       link.classList.add("glossary-term-link");
       link.textContent = thing.term;
+
+      // Add the data-term attribute for search purposes
+      link.setAttribute("data-term", thing.term.toLowerCase()); // Add the data-term attribute here
+
       // If thing.link exists, use it; otherwise, fall back to Google search
       link.href = thing.link || `https://www.google.com/search?q=${encodeURIComponent(search)}`;
       link.target = "_blank";
@@ -612,15 +722,23 @@ document.addEventListener("DOMContentLoaded", populateGlossaryWelds);
 
 // :::: (Populate Roadway Glossary) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
+let glossaryRoadway = [];
 // Populate glossary with roadway definitions
 function populateGlossaryRoadway() {
   const container = document.querySelector("#glossary-roadway-tab .glossary-numeric-ratings-container");
 
   // Loop through each glossary term that includes "roadway" in the filter array
   // glossaryTerms.forEach((thing) => {
-  glossaryAllTerms
+  glossaryFull
     .filter((thing) => Array.isArray(thing.filter) && thing.filter.includes("roadway"))
     .forEach((thing) => {
+      // Create term-definition object
+      const termDef = {
+        term: thing.term,
+        definition: thing.definition,
+      };
+      glossaryRoadway.push(termDef);
+
       // Create the card container
       const card = document.createElement("div");
       card.classList.add("glossary-content-cards");
@@ -634,6 +752,10 @@ function populateGlossaryRoadway() {
       let search = thing.search || `What is "${thing.term}" in ${thing.discipline}?`; // Search query
       link.classList.add("glossary-term-link");
       link.textContent = thing.term;
+
+      // Add the data-term attribute for search purposes
+      link.setAttribute("data-term", thing.term.toLowerCase()); // Add the data-term attribute here
+
       // If thing.link exists, use it; otherwise, fall back to Google search
       link.href = thing.link || `https://www.google.com/search?q=${encodeURIComponent(search)}`;
       link.target = "_blank";
@@ -657,15 +779,23 @@ document.addEventListener("DOMContentLoaded", populateGlossaryRoadway);
 
 // :::: (Populate Acronyms Glossary) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
+let glossaryAcronyms = [];
 // Populate glossary with acronyms definitions
 function populateGlossaryAcronyms() {
   const container = document.querySelector("#glossary-acronyms-tab .glossary-numeric-ratings-container");
 
   // Loop through each glossary term that includes "acronyms" in the filter array
   // glossaryTerms.forEach((thing) => {
-  glossaryAllTerms
+  glossaryFull
     .filter((thing) => Array.isArray(thing.filter) && thing.filter.some((f) => f === "acronyms" || f === "org"))
     .forEach((thing) => {
+      // Create term-definition object
+      const termDef = {
+        term: thing.term,
+        definition: thing.definition,
+      };
+      glossaryAcronyms.push(termDef);
+
       // Create the card container
       const card = document.createElement("div");
       card.classList.add("glossary-content-cards");
@@ -679,6 +809,10 @@ function populateGlossaryAcronyms() {
       let search = thing.search || `What is "${thing.term}" in ${thing.discipline}?`; // Search query
       link.classList.add("glossary-term-link");
       link.textContent = thing.term;
+
+      // Add the data-term attribute for search purposes
+      link.setAttribute("data-term", thing.term.toLowerCase()); // Add the data-term attribute here
+
       // If thing.link exists, use it; otherwise, fall back to Google search
       link.href = thing.link || `https://www.google.com/search?q=${encodeURIComponent(search)}`;
       link.target = "_blank";
@@ -702,15 +836,23 @@ document.addEventListener("DOMContentLoaded", populateGlossaryAcronyms);
 
 // :::: (Populate NDT Glossary) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
+let glossaryNDT = [];
 // Populate glossary with ndt definitions
 function populateGlossaryNDT() {
   const container = document.querySelector("#glossary-ndt-tab .glossary-numeric-ratings-container");
 
   // Loop through each glossary term that includes "NDT" in the filter array
   // glossaryTerms.forEach((thing) => {
-  glossaryAllTerms
+  glossaryFull
     .filter((thing) => Array.isArray(thing.filter) && thing.filter.includes("NDT"))
     .forEach((thing) => {
+      // Create term-definition object
+      const termDef = {
+        term: thing.term,
+        definition: thing.definition,
+      };
+      glossaryNDT.push(termDef);
+
       // Create the card container
       const card = document.createElement("div");
       card.classList.add("glossary-content-cards");
@@ -724,6 +866,10 @@ function populateGlossaryNDT() {
       let search = thing.search || `What is "${thing.term}" in ${thing.discipline}?`; // Search query
       link.classList.add("glossary-term-link");
       link.textContent = thing.term;
+
+      // Add the data-term attribute for search purposes
+      link.setAttribute("data-term", thing.term.toLowerCase()); // Add the data-term attribute here
+
       // If thing.link exists, use it; otherwise, fall back to Google search
       link.href = thing.link || `https://www.google.com/search?q=${encodeURIComponent(search)}`;
       link.target = "_blank";
@@ -747,15 +893,23 @@ document.addEventListener("DOMContentLoaded", populateGlossaryNDT);
 
 // :::: (Populate Channel Glossary) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
+let glossaryChannel = [];
 // Populate glossary with channel definitions
 function populateGlossaryChannel() {
   const container = document.querySelector("#glossary-channel-tab .glossary-numeric-ratings-container");
 
   // Loop through each glossary term that includes "channel" in the filter array
   // glossaryTerms.forEach((thing) => {
-  glossaryAllTerms
+  glossaryFull
     .filter((thing) => Array.isArray(thing.filter) && thing.filter.includes("channel"))
     .forEach((thing) => {
+      // Create term-definition object
+      const termDef = {
+        term: thing.term,
+        definition: thing.definition,
+      };
+      glossaryChannel.push(termDef);
+
       // Create the card container
       const card = document.createElement("div");
       card.classList.add("glossary-content-cards");
@@ -769,6 +923,10 @@ function populateGlossaryChannel() {
       let search = thing.search || `What is "${thing.term}" in ${thing.discipline}?`; // Search query
       link.classList.add("glossary-term-link");
       link.textContent = thing.term;
+
+      // Add the data-term attribute for search purposes
+      link.setAttribute("data-term", thing.term.toLowerCase()); // Add the data-term attribute here
+
       // If thing.link exists, use it; otherwise, fall back to Google search
       link.href = thing.link || `https://www.google.com/search?q=${encodeURIComponent(search)}`;
       link.target = "_blank";
@@ -792,15 +950,23 @@ document.addEventListener("DOMContentLoaded", populateGlossaryChannel);
 
 // :::: (Populate Materials Glossary) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
+let glossaryMaterials = [];
 // Populate glossary with materials definitions
 function populateGlossaryMaterials() {
   const container = document.querySelector("#glossary-materials-tab .glossary-numeric-ratings-container");
 
   // Loop through each glossary term that includes "materials" in the filter array
   // glossaryTerms.forEach((thing) => {
-  glossaryAllTerms
+  glossaryFull
     .filter((thing) => Array.isArray(thing.filter) && thing.filter.includes("materials"))
     .forEach((thing) => {
+      // Create term-definition object
+      const termDef = {
+        term: thing.term,
+        definition: thing.definition,
+      };
+      glossaryMaterials.push(termDef);
+
       // Create the card container
       const card = document.createElement("div");
       card.classList.add("glossary-content-cards");
@@ -814,6 +980,10 @@ function populateGlossaryMaterials() {
       let search = thing.search || `What is "${thing.term}" in ${thing.discipline}?`; // Search query
       link.classList.add("glossary-term-link");
       link.textContent = thing.term;
+
+      // Add the data-term attribute for search purposes
+      link.setAttribute("data-term", thing.term.toLowerCase()); // Add the data-term attribute here
+
       // If thing.link exists, use it; otherwise, fall back to Google search
       link.href = thing.link || `https://www.google.com/search?q=${encodeURIComponent(search)}`;
       link.target = "_blank";
@@ -837,15 +1007,23 @@ document.addEventListener("DOMContentLoaded", populateGlossaryMaterials);
 
 // :::: (Populate Design Glossary) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
+let glossaryDesign = [];
 // Populate glossary with design definitions
 function populateGlossaryDesign() {
   const container = document.querySelector("#glossary-design-tab .glossary-numeric-ratings-container");
 
   // Loop through each glossary term that includes "eng" or "construction" in the filter array
   // glossaryTerms.forEach((thing) => {
-  glossaryAllTerms
+  glossaryFull
     .filter((thing) => Array.isArray(thing.filter) && thing.filter.some((f) => f === "eng" || f === "construction"))
     .forEach((thing) => {
+      // Create term-definition object
+      const termDef = {
+        term: thing.term,
+        definition: thing.definition,
+      };
+      glossaryDesign.push(termDef);
+
       // Create the card container
       const card = document.createElement("div");
       card.classList.add("glossary-content-cards");
@@ -859,6 +1037,10 @@ function populateGlossaryDesign() {
       let search = thing.search || `What is "${thing.term}" in ${thing.discipline}?`; // Search query
       link.classList.add("glossary-term-link");
       link.textContent = thing.term;
+
+      // Add the data-term attribute for search purposes
+      link.setAttribute("data-term", thing.term.toLowerCase()); // Add the data-term attribute here
+
       // If thing.link exists, use it; otherwise, fall back to Google search
       link.href = thing.link || `https://www.google.com/search?q=${encodeURIComponent(search)}`;
       link.target = "_blank";
@@ -1062,15 +1244,71 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 1000);
 
     // Filter the glossary terms based on the search term
-    const matchedTerms = glossaryAllTerms.filter((termObj) => {
-      return termObj.term.toLowerCase().startsWith(searchTerm);
-    });
+    let matchedTerms = []; // Declare termElement outside the if-else structure
+
+    const glossaryMap = {
+      "glossary-full-tab": glossaryFull,
+      "glossary-birm-tab": glossaryBIRM,
+      "glossary-bridge-tab": glossaryBridge,
+      "glossary-culvert-tab": glossaryCulvert,
+      "glossary-wall-tab": glossaryWall,
+      "glossary-defects-tab": glossaryDefects,
+      "glossary-design-tab": glossaryDesign,
+      "glossary-materials-tab": glossaryMaterials,
+      "glossary-ndt-tab": glossaryNDT,
+      "glossary-nstm-tab": glossaryNSTM,
+      "glossary-roadway-tab": glossaryRoadway,
+      "glossary-channel-tab": glossaryChannel,
+      "glossary-components-tab": glossaryComponents,
+      "glossary-joints-tab": glossaryJoints,
+      "glossary-welds-tab": glossaryWelds,
+      "glossary-acronyms-tab": glossaryAcronyms,
+      "glossary-compounds-tab": glossaryCompounds,
+    };
+
+    for (const [tabId, glossary] of Object.entries(glossaryMap)) {
+      if (document.querySelector(`[data-target="${tabId}"].active`)) {
+        matchedTerms = glossary.filter((termObj) => termObj.term.toLowerCase().startsWith(searchTerm));
+        break;
+      }
+    }
 
     // Scroll to the first matched term's parent div
     if (matchedTerms.length > 0) {
       const firstMatch = matchedTerms[0];
-      const termElement = document.querySelector(`.glossary-term-link[data-term="${firstMatch.term.toLowerCase()}"]`);
 
+      const firstMatchTerm = firstMatch.term.toLowerCase();
+
+      const allTabs = [
+        "glossary-full-tab",
+        "glossary-birm-tab",
+        "glossary-bridge-tab",
+        "glossary-culvert-tab",
+        "glossary-wall-tab",
+        "glossary-defects-tab",
+        "glossary-design-tab",
+        "glossary-materials-tab",
+        "glossary-ndt-tab",
+        "glossary-nstm-tab",
+        "glossary-roadway-tab",
+        "glossary-channel-tab",
+        "glossary-components-tab",
+        "glossary-joints-tab",
+        "glossary-welds-tab",
+        "glossary-acronyms-tab",
+        "glossary-compounds-tab",
+      ];
+
+      let termElement = null;
+
+      for (const tab of allTabs) {
+        if (document.querySelector(`[data-target="${tab}"].active`)) {
+          termElement = document.querySelector(`#${tab} .glossary-term-link[data-term="${firstMatchTerm}"]`);
+          break;
+        }
+      }
+
+      // If termElement is found
       if (termElement) {
         const parentElement = termElement.closest(".glossary-card-header");
         if (parentElement) {
@@ -1472,7 +1710,7 @@ document.addEventListener("keydown", function (event) {
     // Trigger the button with data-target="misc-asset-tab"
     const targetButton1 = document.querySelector('[data-target="misc-asset-tab"]');
     const targetButton2 = document.querySelector('[data-target="glossary-tab"]');
-    const targetButton3 = document.querySelector('[data-target="glossary-all-tab"]');
+    const targetButton3 = document.querySelector('[data-target="glossary-full-tab"]');
     if (targetButton3) {
       targetButton1.click();
       targetButton2.click();

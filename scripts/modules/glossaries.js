@@ -172,7 +172,7 @@ const indianaCounties = [
   { code: "92", description: "Whitley" },
 ];
 
-const birmTerms = [
+const glossaryBIRM = [
   {
     term: "AASHTO",
     definition:
@@ -7930,7 +7930,7 @@ const componentTerms = [
 
 // filter: ["acronyms", "bridge", "channel", "components", "compounds", "culvert", "defects", "joints", "materials", "roadway", "NSTM", "org", "wall", "welds"],
 
-const glossaryAllTerms = [
+const glossaryFull = [
   // :::::
 
   {
