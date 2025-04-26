@@ -1,6 +1,119 @@
-1. Provide a clear, concise but robust definition for XXXXX.
+# Normal
+
+1. Provide a clear, concise but robust definition for monolithic wearing surface.
 2. Copyright free for publication in my bridge term glossary.
 3. Don't start the definition with the term.
 4. Explain what it is.
 5. Keep the language straightforward and avoid unnecessary jargon or overly technical terms.
 6. Use the most common spelling if my term is incorrect.
+7. Don't use dashes.
+8. Use lowercase unless it is a proper noun.
+9. Return a js object in this format that I can paste into my code, note there are no quotes around the keys, only their matched pair is a string:
+
+{
+term: "intermittent welds",
+definition:
+"A weld applied in separate, evenly spaced segments along a joint rather than one continuous line. This pattern reduces heat and material use but creates stress points at each segment end. These stress points increase the risk of fatigue cracking. When aligned parallel to the main stress direction, it falls under AASHTO fatigue category E. When placed perpendicular to the stress, it performs better and is classified as category C prime.",
+search: ``,
+discipline: "bridge design",
+filter: ["bridge", "construction", "NSTM"],
+},
+
+# Fatigue
+
+1. Provide a clear, concise but robust definition for misdrilled holes. It is a fatigue prone detail.
+2. Copyright free for publication in my bridge term glossary.
+3. Don't start the definition with the term.
+4. Explain what it is.
+5. Keep the language straightforward and avoid unnecessary jargon or overly technical terms.
+6. Use the most common spelling if my term is incorrect.
+7. AASHTO fatigue category B if bolted, D if open, uncategorized if repaired with weld material.
+8. Don't use dashes.
+9. Return an object in this format, note there are no quotes around the keys, only their matched pair is a string:
+
+{
+term: "intermittent welds",
+definition:
+"A weld applied in separate, evenly spaced segments along a joint rather than one continuous line. This pattern reduces heat and material use but creates stress points at each segment end. These stress points increase the risk of fatigue cracking. When aligned parallel to the main stress direction, it falls under AASHTO fatigue category E. When placed perpendicular to the stress, it performs better and is classified as category C prime.",
+search: ``,
+discipline: "bridge design",
+filter: ["bridge", "construction", "NSTM"],
+},
+
+# Terms
+
+1974 (birth year of fatigue design)  
+axial tension  
+brittle failure  
+Charpy V-notch (CVN) impact test  
+connection plate  
+constraint-induced fracture  
+crack propagation  
+cyclical loading  
+discontinuity  
+douber plate  
+ductile failure  
+ductility  
+elastic deformation  
+fatigue details  
+finite element models (FEA)  
+fracture toughnes  
+haunch  
+high performance steel (HPS)  
+high strength steel  
+insert plate  
+iron
+isotropic  
+Jersey Barrier  
+lamellar corrosion  
+Mianus River Bridge  
+moment diagram  
+necking  
+negative bending moment  
+neutral axis  
+normal  
+normal stress  
+overhang bracket  
+pigeon  
+plastic deformation  
+positive bending moment  
+reinforced concrete  
+rust scaling  
+serviceability  
+shelf plate  
+shear diagram  
+Silver Bridge  
+SNBI  
+stiffnes  
+strain  
+stress  
+stress-strain curve  
+stress riser  
+structural steel  
+suspension cables  
+tensile strength / ultimate strength  
+tension zones  
+yield strength / yield point / elastic limit  
+wrought iron
+
+# Filters
+
+bridge - Any bridge components, manuals, governing bodies, inspections. Not forces or defects or materials.
+culvert - Any culvert components. Not forces or defects or materials.
+wall - Any wall components. Not forces or defects or materials.
+
+defects - defects
+construction - Any design or construction related terms. Plan terms. Mechanical forces. Material properties. Navigation. Wildlife. Not components unless construction specific.
+materials - Materials. Not material defects (defects). Not material properties (construction).
+NDT - Testing
+NSTM - Any defect, component, or mechanical force associated with NSTMs. Fatigue details and terms. Fatigue components.
+
+roadway - Any roadway items.
+channel - Any channel components and defects.
+components - Any part of a structure you can inspect, but not the broader terms like bridge.
+joints - Joints
+welds - Welds
+
+acronyms - Anything requiring and acronym.
+org - Any organizations. Often acronyms but not always. Still grouped with acronyms.
+compounds - Compound words.

@@ -35,7 +35,8 @@
 // :::: (Populate Defect Glossary) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 let glossaryDefects = [];
-// Populate glossary with defect definitions from glossaryFull
+
+// Populate glossary with defect definitions from glossaryMain
 function populateGlossaryDefects() {
   const container = document.querySelector("#glossary-defects-tab .glossary-numeric-ratings-container");
 
@@ -43,7 +44,7 @@ function populateGlossaryDefects() {
   const ordered = [];
   const unordered = [];
 
-  glossaryFull.forEach((item) => {
+  glossaryMain.forEach((item) => {
     // Check for "defect classes" filter first
     if (item.filter && item.filter.includes("defect classes")) {
       if (typeof item.order === "number") {
@@ -64,8 +65,11 @@ function populateGlossaryDefects() {
   // Combine into final list
   const defectTerms = [...ordered, ...unordered];
 
+  // How many will get the "glossary-card-header2" class
+  const defectClassCount = ordered.length;
+
   // Build cards and populate the array with term-definition objects
-  defectTerms.forEach((defect) => {
+  defectTerms.forEach((defect, index) => {
     // Create term-definition object
     const termDef = {
       term: defect.term,
@@ -77,7 +81,13 @@ function populateGlossaryDefects() {
     card.classList.add("glossary-content-cards");
 
     const header = document.createElement("div");
-    header.classList.add("glossary-card-header");
+    // Apply different class based on index
+    if (index < defectClassCount) {
+      header.classList.add("glossary-card-header");
+      header.classList.add("glossary-card-header-defects");
+    } else {
+      header.classList.add("glossary-card-header");
+    }
 
     const link = document.createElement("a");
     const search = defect.search || `What is "${defect.term}" in ${defect.discipline}?`;
@@ -85,7 +95,7 @@ function populateGlossaryDefects() {
     link.textContent = defect.term;
 
     // Add the data-term attribute for search purposes
-    link.setAttribute("data-term", defect.term.toLowerCase()); // Add the data-term attribute here
+    link.setAttribute("data-term", defect.term.toLowerCase());
 
     link.href = defect.link || `https://www.google.com/search?q=${encodeURIComponent(search)}`;
     link.target = "_blank";
@@ -115,7 +125,7 @@ function populateGlossaryBridge() {
 
   // Loop through each glossary term that includes "bridge" in the filter array
   // glossaryTerms.forEach((thing) => {
-  glossaryFull
+  glossaryMain
     .filter((thing) => Array.isArray(thing.filter) && thing.filter.includes("bridge"))
     .forEach((thing) => {
       // Create term-definition object
@@ -172,7 +182,7 @@ function populateGlossaryCulvert() {
 
   // Loop through each glossary term that includes "culvert" in the filter array
   // glossaryTerms.forEach((thing) => {
-  glossaryFull
+  glossaryMain
     .filter((thing) => Array.isArray(thing.filter) && thing.filter.includes("culvert"))
     .forEach((thing) => {
       // Create term-definition object
@@ -229,7 +239,7 @@ function populateGlossaryWall() {
 
   // Loop through each glossary term that includes "wall" in the filter array
   // glossaryTerms.forEach((thing) => {
-  glossaryFull
+  glossaryMain
     .filter((thing) => Array.isArray(thing.filter) && thing.filter.includes("wall"))
     .forEach((thing) => {
       // Create term-definition object
@@ -286,7 +296,7 @@ function populateGlossaryCompounds() {
 
   // Loop through each glossary term that includes "compounds" in the filter array
   // glossaryTerms.forEach((thing) => {
-  glossaryFull
+  glossaryMain
     .filter((thing) => Array.isArray(thing.filter) && thing.filter.includes("compounds"))
     .forEach((thing) => {
       // Create term-definition object
@@ -338,10 +348,10 @@ document.addEventListener("DOMContentLoaded", populateGlossaryCompounds);
 
 // Populate glossary with all definitions (Text Content Insertion)
 function populateGlossaryAll() {
-  const container3 = document.querySelector("#glossary-full-tab .glossary-numeric-ratings-container");
+  const container3 = document.querySelector("#glossary-main-tab .glossary-numeric-ratings-container");
 
   // Loop through each glossary term and create a glossary card for each
-  glossaryFull.forEach((defect3) => {
+  glossaryMain.forEach((defect3) => {
     // Create the card container
     const card3 = document.createElement("div");
     card3.classList.add("glossary-content-cards");
@@ -501,7 +511,7 @@ function populateGlossaryNSTM() {
 
   // Loop through each glossary term that includes "NSTM" in the filter array
   // glossaryTerms.forEach((thing) => {
-  glossaryFull
+  glossaryMain
     .filter((thing) => Array.isArray(thing.filter) && thing.filter.includes("NSTM"))
     .forEach((thing) => {
       // Create term-definition object
@@ -558,7 +568,7 @@ function populateGlossaryJoints() {
 
   // Loop through each glossary term that includes "joints" in the filter array
   // glossaryTerms.forEach((thing) => {
-  glossaryFull
+  glossaryMain
     .filter((thing) => Array.isArray(thing.filter) && thing.filter.includes("joints"))
     .forEach((thing) => {
       // Create term-definition object
@@ -615,7 +625,7 @@ function populateGlossaryComponents() {
 
   // Loop through each glossary term that includes "components" in the filter array
   // glossaryTerms.forEach((thing) => {
-  glossaryFull
+  glossaryMain
     .filter((thing) => Array.isArray(thing.filter) && thing.filter.includes("components"))
     .forEach((thing) => {
       // Create term-definition object
@@ -672,7 +682,7 @@ function populateGlossaryWelds() {
 
   // Loop through each glossary term that includes "welds" in the filter array
   // glossaryTerms.forEach((thing) => {
-  glossaryFull
+  glossaryMain
     .filter((thing) => Array.isArray(thing.filter) && thing.filter.includes("welds"))
     .forEach((thing) => {
       // Create term-definition object
@@ -729,7 +739,7 @@ function populateGlossaryRoadway() {
 
   // Loop through each glossary term that includes "roadway" in the filter array
   // glossaryTerms.forEach((thing) => {
-  glossaryFull
+  glossaryMain
     .filter((thing) => Array.isArray(thing.filter) && thing.filter.includes("roadway"))
     .forEach((thing) => {
       // Create term-definition object
@@ -786,7 +796,7 @@ function populateGlossaryAcronyms() {
 
   // Loop through each glossary term that includes "acronyms" in the filter array
   // glossaryTerms.forEach((thing) => {
-  glossaryFull
+  glossaryMain
     .filter((thing) => Array.isArray(thing.filter) && thing.filter.some((f) => f === "acronyms" || f === "org"))
     .forEach((thing) => {
       // Create term-definition object
@@ -843,7 +853,7 @@ function populateGlossaryNDT() {
 
   // Loop through each glossary term that includes "NDT" in the filter array
   // glossaryTerms.forEach((thing) => {
-  glossaryFull
+  glossaryMain
     .filter((thing) => Array.isArray(thing.filter) && thing.filter.includes("NDT"))
     .forEach((thing) => {
       // Create term-definition object
@@ -900,7 +910,7 @@ function populateGlossaryChannel() {
 
   // Loop through each glossary term that includes "channel" in the filter array
   // glossaryTerms.forEach((thing) => {
-  glossaryFull
+  glossaryMain
     .filter((thing) => Array.isArray(thing.filter) && thing.filter.includes("channel"))
     .forEach((thing) => {
       // Create term-definition object
@@ -957,7 +967,7 @@ function populateGlossaryMaterials() {
 
   // Loop through each glossary term that includes "materials" in the filter array
   // glossaryTerms.forEach((thing) => {
-  glossaryFull
+  glossaryMain
     .filter((thing) => Array.isArray(thing.filter) && thing.filter.includes("materials"))
     .forEach((thing) => {
       // Create term-definition object
@@ -1012,10 +1022,10 @@ let glossaryDesign = [];
 function populateGlossaryDesign() {
   const container = document.querySelector("#glossary-design-tab .glossary-numeric-ratings-container");
 
-  // Loop through each glossary term that includes "eng" or "construction" in the filter array
+  // Loop through each glossary term that includes "design" in the filter array
   // glossaryTerms.forEach((thing) => {
-  glossaryFull
-    .filter((thing) => Array.isArray(thing.filter) && thing.filter.some((f) => f === "eng" || f === "construction"))
+  glossaryMain
+    .filter((thing) => Array.isArray(thing.filter) && thing.filter.includes("design"))
     .forEach((thing) => {
       // Create term-definition object
       const termDef = {
@@ -1247,7 +1257,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let matchedTerms = []; // Declare termElement outside the if-else structure
 
     const glossaryMap = {
-      "glossary-full-tab": glossaryFull,
+      "glossary-main-tab": glossaryMain,
       "glossary-birm-tab": glossaryBIRM,
       "glossary-bridge-tab": glossaryBridge,
       "glossary-culvert-tab": glossaryCulvert,
@@ -1280,7 +1290,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const firstMatchTerm = firstMatch.term.toLowerCase();
 
       const allTabs = [
-        "glossary-full-tab",
+        "glossary-main-tab",
         "glossary-birm-tab",
         "glossary-bridge-tab",
         "glossary-culvert-tab",
@@ -1333,7 +1343,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Handle Home and End key scrolling
     if (event.key === "Home") {
       mainSection.scrollTo({ top: 0, left: 0, behavior: "auto" });
-      const activeButton = document.querySelector(".asset-buttons.active");
+      const activeButton = document.querySelector(".glossary-item-buttons.active");
 
       if (activeButton) {
         activeButton.focus(); // Focus on the active button
@@ -1710,7 +1720,7 @@ document.addEventListener("keydown", function (event) {
     // Trigger the button with data-target="misc-asset-tab"
     const targetButton1 = document.querySelector('[data-target="misc-asset-tab"]');
     const targetButton2 = document.querySelector('[data-target="glossary-tab"]');
-    const targetButton3 = document.querySelector('[data-target="glossary-full-tab"]');
+    const targetButton3 = document.querySelector('[data-target="glossary-main-tab"]');
     if (targetButton3) {
       targetButton1.click();
       targetButton2.click();

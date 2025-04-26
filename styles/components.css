@@ -131,7 +131,8 @@ button.active:focus {
 /*  */
 
 /*  */
-.asset-update-text {
+.asset-update-text,
+.type-to-search {
   margin-left: 20px;
   color: rgba(233 233 233 / 0.6);
 }
@@ -1022,6 +1023,10 @@ kbd {
   padding: 10px 4px 4px 8px;
   border-bottom: solid 1px grey;
   border-radius: 1px;
+  cursor: default;
+}
+.glossary-card-header-defects {
+  background-color: var(--background-purple);
 }
 
 .glossary-card-paragraph {
