@@ -1,6 +1,6 @@
 # Normal
 
-1. Provide a clear, concise but robust definition for monolithic wearing surface.
+1. Provide a clear, concise but robust definition for pin-and-hanger assembly.
 2. Copyright free for publication in my bridge term glossary.
 3. Don't start the definition with the term.
 4. Explain what it is.
@@ -16,7 +16,7 @@ definition:
 "A weld applied in separate, evenly spaced segments along a joint rather than one continuous line. This pattern reduces heat and material use but creates stress points at each segment end. These stress points increase the risk of fatigue cracking. When aligned parallel to the main stress direction, it falls under AASHTO fatigue category E. When placed perpendicular to the stress, it performs better and is classified as category C prime.",
 search: ``,
 discipline: "bridge design",
-filter: ["bridge", "construction", "NSTM"],
+filter: ["defects", "design", "NSTM", "welds"],
 },
 
 # Fatigue

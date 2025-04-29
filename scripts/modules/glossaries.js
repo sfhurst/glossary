@@ -289,19 +289,19 @@ const glossaryMain = [
   // :::::
 
   {
-    term: "backer bar",
-    definition:
-      "A metal strip placed behind a weld joint to support molten weld material and ensure full penetration. It may be temporary or left in place. When not removed, it acts as a stress riser and becomes an uncategorized fatigue detail. Depending on its size and configuration, it may fall under AASHTO fatigue categories C to E prime.",
-    discipline: "bridge design",
-    letter: "letter-jump-b",
-    filter: ["components", "NSTM", "welds"],
-  },
-  {
     term: "backfill",
     definition:
       "The material placed behind a bridge abutment or retaining wall to provide support, distribute loads, and aid in drainage. It is typically composed of soil, granular fill, or other engineered materials.",
     discipline: "bridge design",
+    letter: "letter-jump-b",
     filter: ["compounds", "design", "materials"],
+  },
+  {
+    term: "backing bar",
+    definition:
+      "A metal strip placed behind a weld joint to support molten weld material and ensure full penetration. It may be temporary or left in place. When not removed, it acts as a stress riser and becomes an uncategorized fatigue detail. Depending on its size and configuration, it may fall under AASHTO fatigue categories C to E prime.",
+    discipline: "bridge design",
+    filter: ["components", "NSTM", "welds"],
   },
   {
     term: "backwall",
@@ -769,7 +769,7 @@ const glossaryMain = [
   {
     term: "compression",
     definition:
-      "A force that acts to reduce the size of a material or structural element. In bridge design, compression is typically applied to beams, columns, or other load-bearing elements. Materials subjected to compression may deform or buckle if the force exceeds their capacity. Members in compressin are not NSTMs.",
+      "A force that acts to reduce the size of a material or structural element. In bridge design, compression is typically applied to beams, columns, or other load-bearing elements. Materials subjected to compression may deform or buckle if the force exceeds their capacity. Members fully in compressin are not NSTMs.",
     search: ``,
     discipline: "bridge design",
     filter: ["design", "NSTM"],
@@ -817,12 +817,20 @@ const glossaryMain = [
     filter: ["design"],
   },
   {
-    term: "constraint-induced fracture",
+    term: "constraint-induced fracture (CIF)",
     definition:
-      "A type of crack that forms because movement is blocked in one or more directions, causing stress to build up in a connection. It often occurs in rigid joints where thermal or shrinkage movement is restrained.",
+      "A sudden, brittle failure caused by restrained movement in one or more directions. Stress builds up when thermal expansion, shrinkage, or other deformation is blocked, often in connections where elastic or plastic movement is restricted.",
     search: ``,
     discipline: "bridge design",
-    filter: ["defects", "design", "NSTM"],
+    filter: ["acronyms", "defects", "design", "NSTM"],
+  },
+  {
+    term: "constraint-relief gap",
+    definition:
+      "A gap left in a welded structural element to reduce restraint and prevent constraint-induced fracture. Often used in retrofits at intersecting welds or triaxially restrained connections, it reduces the risk of brittle fracture by allowing limited elastic or plastic deformation.",
+    search: ``,
+    discipline: "bridge fabrication",
+    filter: ["defects", "NDT", "NSTM"],
   },
   {
     term: "construction joint",
@@ -881,14 +889,14 @@ const glossaryMain = [
   {
     term: "cover plate",
     definition:
-      "A steel plate welded or bolted to the flange of a beam or girder to increase its load-carrying capacity and reduce stress in high-moment regions.",
+      "A steel plate welded or bolted to the flange of a beam or girder to increase its load-carrying capacity and reduce stress in high-moment regions. The ends of longitudinal welds on welded cover plates are classified as AASHTO fatigue category E or E prime, depending on flange thickness.",
     discipline: "bridge design",
     filter: ["bridge", "components", "NSTM"],
   },
   {
     term: "crack arrest hole",
     definition:
-      'A drilled hole placed at the end of a crack to prevent it from propagating further. This method is commonly used in bridges and other structures to halt crack growth and prevent further structural damage. A 2" hole is recommended to capture the crack and prevent the crack from reinitiating.',
+      'A drilled hole placed at the end of a crack to prevent it from propagating further. This method is commonly used in bridges and other structures to halt crack growth and prevent further structural damage. A 2" hole is recommended to capture the crack and prevent the crack from reinitiating. The open hole is classified as AASHTO fatigue category D.',
     search: ``,
     discipline: "bridge repair",
     filter: ["defects", "NDT", "NSTM"],
@@ -1134,7 +1142,7 @@ const glossaryMain = [
   {
     term: "diagonal member",
     definition:
-      "A structural component that forms an angled connection between other members, primarily in trusses and bracing systems. It provides stability by distributing loads and resisting lateral forces to maintain the bridge’s strength and rigidity.",
+      "A structural component that forms an angled connection between other members, primarily in trusses and bracing systems. It provides stability by distributing loads and resisting lateral forces to maintain the bridge’s strength and rigidity. In a simple truss, such as a Pratt truss, members that run upward and outward from midspan, as well as opposing diagonals at midspan, are typically NSTMs.",
     discipline: "bridge design",
     filter: ["bridge", "components", "NSTM"],
   },
@@ -1162,7 +1170,7 @@ const glossaryMain = [
   {
     term: "discontinuity",
     definition:
-      "An interruption in the material or geometry of a structure, such as a hole, joint, or crack, which can create stress concentrations and affect performance or strength.",
+      "An interruption in the material or geometry of a structure, such as a hole or crack, which can create stress concentrations and affect performance or strength.",
     search: ``,
     discipline: "structural mechanics",
     filter: ["defects", "NSTM"],
@@ -1444,7 +1452,7 @@ const glossaryMain = [
   {
     term: "eyebar",
     definition:
-      "A flat steel bar, often used in suspension bridges, which is connected at its ends to form a link in the structure. Eyebars are typically used in tension members where high strength is required to support loads. They are often seen in the main cables of suspension bridges.",
+      "A flat steel bar with forged or machined holes at each end, used as a tension member in bridges. Common in older trusses and suspension bridges, eyebars are often grouped in parallel sets to share load. The net section of the eyebar head is classified as AASHTO fatigue category E.",
     search: ``,
     discipline: "bridge design",
     filter: ["bridge", "components", "compounds", "NSTM"],
@@ -1878,7 +1886,7 @@ const glossaryMain = [
   {
     term: "high performance steel (HPS)",
     definition:
-      "A specialized grade of steel designed for bridges that offers improved weldability, toughness, and corrosion resistance compared to conventional high strength steel. It extends service life and reduces maintenance needs.",
+      "A specialized grade of steel designed for bridges that offers improved weldability, toughness, and corrosion resistance compared to conventional high-strength steel. It extends service life and reduces maintenance needs.",
     search: ``,
     discipline: "materials engineering",
     filter: ["acronyms", "materials"],
@@ -1891,7 +1899,7 @@ const glossaryMain = [
     filter: ["acronyms", "materials"],
   },
   {
-    term: "high strength steel",
+    term: "high-strength steel",
     definition:
       "A type of steel with greater yield strength than standard structural steel, allowing for lighter and more efficient designs. It is commonly used in bridge components where reduced weight or higher load capacity is needed.",
     search: ``,
@@ -2128,6 +2136,14 @@ const glossaryMain = [
     filter: ["design", "NSTM"],
   },
   {
+    term: "intersecting welds",
+    definition:
+      "Two or more welds that meet or cross at a single point, often creating a stress concentration. Improper layout or sequencing can lead to cracking or reduced fatigue resistance. Intersecting welds are also prone to constraint-induced fracture due to restrained shrinkage or thermal movement.",
+    search: ``,
+    discipline: "bridge design",
+    filter: ["defects", "NSTM", "welds"],
+  },
+  {
     term: "intrados",
     definition: "The inner surface of the arch ring, which is in compression and typically carries the load from the bridge deck.",
     discipline: "bridge design",
@@ -2286,6 +2302,15 @@ const glossaryMain = [
     filter: ["bridge"],
   },
   {
+    term: "lateral connection plate",
+    definition:
+      "A plate used to connect lateral components, such as cross frames or lateral bracing, to the main structural elements. It helps distribute loads and provides lateral stability. Lateral connection plates are prone to constraint-induced fracture and fatigue cracking. Longitudinal attachment welds, in plates where no transition radius is provided, are classified as AASHTO fatigue category E.",
+    search: ``,
+    discipline: "bridge construction",
+    filter: ["bridge", "components", "NSTM"],
+  },
+
+  {
     term: "latex-modified overlay",
     definition:
       "A type of concrete overlay that uses latex additives to improve bonding strength and durability. Latex-modified overlays are applied to bridge decks to protect against wear, water infiltration, and freeze-thaw damage. They enhance the longevity of the surface while maintaining the structural integrity of the bridge deck.",
@@ -2412,7 +2437,8 @@ const glossaryMain = [
   },
   {
     term: "longitudinal stiffener",
-    definition: "A stiffener placed parallel to the length of a structural member to improve its resistance to bending and buckling under load.",
+    definition:
+      "A stiffener placed parallel to the length of a structural member, typically in tension regions where there are high bending moments, to improve its resistance to bending under load. When no radius is provided, the terminations in the stiffener's longitudinal welds are classified as AASHTO fatigue category E or E prime, depending on the thickness of the stiffener.",
     discipline: "bridge design",
     filter: ["bridge", "components", "NSTM"],
   },
@@ -2946,11 +2972,20 @@ const glossaryMain = [
     filter: ["bridge", "components"],
   },
   {
+    term: "pin-and-hanger assembly",
+    definition:
+      "A connection used to link two girders in the same beam line by suspending one from the other with steel hangers and transverse pins. The cantilevered girder supports a suspended girder through a set of plates and pins that allow rotation and limited longitudinal movement. This design accommodates expansion and contraction but introduces multiple fatigue-prone details. Pin-and-hanger assemblies are vulnerable to corrosion and failure from pack rust.",
+    search: ``,
+    discipline: "bridge design",
+    filter: ["bridge", "components", "compounds", "design", "NSTM"],
+  },
+
+  {
     term: "pin-and-hinge assembly",
     definition:
-      "A structural connection designed to allow controlled rotation while transferring loads, commonly used in cantilevered bridge spans and movable bridge components.",
+      "A connection between two girders in the same beam line using a single transverse pin. One girder acts as a cantilever and supports the other, forming a hinge at the joint. The pin permits rotation but does not allow significant longitudinal movement while transferring load in shear and bearing. Unlike pin-and-hanger systems, this type does not use hangers and is more compact. Pin-and-hinge assemblies often have fatigue-prone details and are susceptible to failure from pack rust.",
     discipline: "bridge design",
-    filter: ["bridge", "components", "compounds", "NSTM"],
+    filter: ["bridge", "components", "compounds", "design", "NSTM"],
   },
   {
     term: "piping",
@@ -2967,6 +3002,14 @@ const glossaryMain = [
     search: ``,
     discipline: "bridge design",
     filter: ["design"],
+  },
+  {
+    term: "planar discontinuity",
+    definition:
+      "A flaw within a material that lies along a flat or nearly flat plane, such as a crack, lack of fusion, or laminar tearing. These defects are critical because they create stress concentrations and can lead to fracture under load.",
+    search: `what is planar discontinuity in steel fabrication`,
+    discipline: "bridge fabrication",
+    filter: ["defects", "NDT", "NSTM"],
   },
   {
     term: "plastic deformation",
@@ -3105,6 +3148,14 @@ const glossaryMain = [
     search: ``,
     discipline: "bridge design",
     filter: ["roadway"],
+  },
+  {
+    term: "punched holes",
+    definition:
+      "A hole created by forcing a punch through the material instead of drilling. This method causes tearing and deformation around the edge of the hole, which can lead to cracking or fatigue over time. Punched holes are typically considered inferior to drilled holes for structural applications and have an AASHTO fatigue category D even when filled with a high-strength bolt.",
+    search: ``,
+    discipline: "bridge design",
+    filter: ["defects", "design", "NSTM", "connections"],
   },
 
   // :::::
@@ -3326,7 +3377,7 @@ const glossaryMain = [
   {
     term: "rivets",
     definition:
-      "Permanent mechanical fasteners formed by inserting a heated metal shaft through aligned holes and deforming one end to create a second head, securing the connection without threads.",
+      "Permanent mechanical fasteners formed by inserting a heated metal shaft through aligned holes and deforming one end to create a second head, securing the connection without threads. Rivets no longer have an AASHTO fatigue category, but holes without high-strength bolts are category D.",
     discipline: "bridge design",
     filter: ["components", "design", "NSTM"],
   },
@@ -3679,7 +3730,7 @@ const glossaryMain = [
   {
     term: "shelf plate",
     definition:
-      "A horizontal plate welded to the side of a beam or column to support another member, such as a diaphragm or cross frame. It provides a surface for welding or bolting components together.",
+      "A horizontal plate welded or bolted to a main structural member, forming a structural ledge that supports the end of a beam, girder, or bracket. It acts as a bearing surface and transfers loads into the supporting element.",
     search: ``,
     discipline: "bridge construction",
     filter: ["bridge", "components", "NSTM"],
@@ -4303,6 +4354,15 @@ const glossaryMain = [
     filter: ["components", "roadway"],
   },
   {
+    term: "tie beam",
+    definition:
+      "A horizontal member that connects vertical columns above an open spandrel arch, helping to keep them aligned and share loads across the structure. It adds lateral stability but does not resist outward thrust between arch ends.",
+    search: ``,
+    discipline: "bridge design",
+    filter: ["bridge", "components", "compounds"],
+  },
+
+  {
     term: "tie girder",
     definition:
       "A horizontal structural member that connects two or more vertical components, such as columns or supports, to maintain stability and prevent lateral movement. Tie girders are commonly used in bridges to tie together different parts of the structure and provide additional support. They help distribute forces and increase the overall rigidity of the bridge.",
@@ -4377,7 +4437,8 @@ const glossaryMain = [
   },
   {
     term: "transverse stiffener",
-    definition: "A stiffener installed perpendicular to the length of a structural member to resist web buckling and improve shear capacity.",
+    definition:
+      "A stiffener placed perpendicular to the length of a structural member, typically in compression regions, to prevent web buckling under load. Transverse stiffeners enhance the stability of the member. The terminations in the stiffener's transverse welds are classified as AASHTO fatigue category C prime.",
     discipline: "bridge design",
     filter: ["bridge", "components", "NSTM"],
   },
@@ -4391,7 +4452,7 @@ const glossaryMain = [
   {
     term: "triaxial restraint",
     definition:
-      "A condition in which a material is constrained in three perpendicular directions, often leading to internal stresses. In bridge construction, triaxial restraint can occur when a material is tightly confined by surrounding components, such as welds or other structural elements. This restraint can lead to sudden failures or material distress.",
+      "A condition where a material is restrained from moving in three perpendicular directions, preventing elastic or plastic deformation. In bridge construction, this occurs when structural elements or welds tightly confine a component, increasing internal stress and raising the risk of fracture or other failure.",
     search: ``,
     discipline: "structural engineering",
     filter: ["design", "defects", "NSTM"],
@@ -4712,6 +4773,14 @@ const glossaryMain = [
     search: ``,
     discipline: "bridge design",
     filter: ["bridge", "components", "compounds", "culvert"],
+  },
+  {
+    term: "work zone",
+    definition:
+      "An area of a roadway where construction, maintenance, or utility work is taking place and traffic conditions are altered as a result. It may include lane closures, detours, flaggers, barriers, and signs used to protect workers and guide drivers safely through or around the site.",
+    search: ``,
+    discipline: "bridge design",
+    filter: ["compounds", "design"],
   },
   {
     term: "wrought iron",
@@ -8170,14 +8239,14 @@ const glossaryBIRM = [
   },
 
   {
-    term: "high carbon steel",
+    term: "high-carbon steel",
     definition: "A type of steel containing between 0.5% and 1.5% carbon, providing increased strength and hardness but reducing ductility.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
-    term: "high strength bolt",
+    term: "high-strength bolt",
     definition: "A bolt made from high-strength steel, typically used in applications requiring enhanced durability and resistance to loads.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
