@@ -299,7 +299,7 @@ const glossaryMain = [
   {
     term: "backing bar",
     definition:
-      "A metal strip placed behind a weld joint to support molten weld material and ensure full penetration. It may be temporary or left in place. When not removed, it acts as a stress riser and becomes an uncategorized fatigue detail. Depending on its size and configuration, it may fall under AASHTO fatigue categories C to E prime.",
+      "A metal strip placed behind a weld joint to support molten weld material and ensure full penetration. It may be temporary or left in place. When not removed, it acts as a stress riser and becomes an uncategorized fatigue detail. Depending on its size and configuration, it may fall under AASHTO fatigue categories C to E'.",
     discipline: "bridge design",
     filter: ["components", "NSTM", "welds"],
   },
@@ -419,7 +419,7 @@ const glossaryMain = [
   {
     term: "biaxial stress",
     definition:
-      "A state of stress where forces act in two perpendicular directions within the same plane. This often occurs in flat plates or shells under pressure or combined in-plane loading.",
+      "A state of stress where forces act in two perpendicular directions within the same plane. This condition often occurs in flat plates under pressure or when multiple in-plane forces are applied.",
     search: ``,
     discipline: "structural mechanics",
     filter: ["design", "NSTM"],
@@ -531,7 +531,8 @@ const glossaryMain = [
   },
   {
     term: "brittle failure",
-    definition: "A sudden fracture of a material with little to no prior plastic deformation, often occurring without warning under stress.",
+    definition:
+      "A sudden fracture of a material with little to no prior plastic deformation, often occurring without warning under stress. Brittle failure in a nonredundant steel tension member (NSTM) could lead to the collapse of the structure.",
     search: ``,
     discipline: "materials engineering",
     filter: ["defects", "NSTM"],
@@ -827,7 +828,7 @@ const glossaryMain = [
   {
     term: "constraint-induced fracture (CIF)",
     definition:
-      "A sudden, brittle failure caused by restrained movement in one or more directions. Stress builds up when thermal expansion, shrinkage, or other deformation is blocked, often in connections where elastic or plastic movement is restricted.",
+      "A sudden, brittle failure caused by restrained movement in one or more directions. Stress builds up when thermal expansion, shrinkage, or other deformation is blocked, often in rigid connections where elastic or plastic movement is restricted.",
     search: ``,
     discipline: "bridge design",
     filter: ["acronyms", "defects", "design", "NSTM"],
@@ -897,7 +898,7 @@ const glossaryMain = [
   {
     term: "cover plate",
     definition:
-      "A steel plate welded or bolted to the flange of a beam or girder to increase its load-carrying capacity and reduce stress in high-moment regions. The ends of longitudinal welds on welded cover plates are classified as AASHTO fatigue category E or E prime, depending on flange thickness.",
+      "A steel plate welded to the bottom flange of a built-up steel member to increase bending strength in high moment regions. They are often used as a more economical alternative to increasing the size of the entire beam. It’s important to monitor cover plates for fatigue cracks, corrosion along welds, and section loss at the ends, where stress concentrations often occur. The end terminations of longitudinal welds on welded cover plates are classified as AASHTO fatigue category E or E′, depending on flange thickness.",
     discipline: "bridge design",
     filter: ["bridge", "components", "NSTM"],
   },
@@ -1042,7 +1043,7 @@ const glossaryMain = [
   {
     term: "cyclical loading",
     definition:
-      "A repeated application of loads over time that causes stress fluctuations in a structure. This type of loading can lead to fatigue and eventual failure even when individual loads are below the material’s strength limit.",
+      "Repeated or fluctuating stress caused by heavy truck traffic, producing tension and compression in alternating cycles. This type of loading can cause fatigue cracking, often at stress levels below the material’s yield strength, in fatigue-prone areas such as weld terminations and connections. Once fatigue cracks form, continued cycles propagate the cracks and can lead to member failure.",
     search: ``,
     discipline: "structural mechanics",
     filter: ["design", "NSTM"],
@@ -1105,7 +1106,7 @@ const glossaryMain = [
   {
     term: "degree of constraint",
     definition:
-      "A measure of how much a material or structural element is restricted from deforming when subjected to stress. Higher constraint limits movement such as expansion, contraction, or shear, often leading to elevated internal stresses. It plays a key role in weld behavior, triaxial stress conditions, and thermal effects.",
+      "A measure of how much a material or structural element is restricted from deforming when subjected to stress. Higher constraint results in a more rigid connection, limiting expansion, contraction, bending, and flexing, and often leading to elevated internal stresses. The degree of constraint is influenced by whether the stress state is uniaxial, biaxial, or triaxial, and plays a key role in a material’s ability to deform plastically.",
     search: ``,
     discipline: "structural mechanics",
     filter: ["design", "defects", "NSTM"],
@@ -1479,24 +1480,24 @@ const glossaryMain = [
   {
     term: "fatigue",
     definition:
-      "The weakening of material over time due to repeated loading cycles. In bridges, fatigue can lead to crack formation and eventual failure of critical components. Fatigue is a major concern in areas subject to heavy traffic or fluctuating loads, requiring careful design and material selection.",
+      "A gradual weakening of metal caused by repeated loading, often at stress levels well below the material's yield strength. This can lead to small cracks that grow with each cycle and eventually cause sudden failure. Fatigue is a major concern for welded details and attachments on bridges subjected to high load cycles from traffic, wind, or vibrations. Inspectors check for early signs of fatigue to prevent structural failure, especially in bridges designed before 1974 or that have poor fatigue details.",
     search: ``,
     discipline: "bridge design",
     letter: "letter-jump-f",
-    filter: ["design", "defects", "NSTM"],
+    filter: ["bridge", "design", "defects", "NSTM"],
   },
   {
     term: "fatigue details",
     definition:
-      "Specific design features that affect how well a structural element resists fatigue cracking. Examples include weld terminations, bolted joints, and cutouts, which must follow established guidelines to prevent failure.",
+      "Design features or fabrication choices that influence how a bridge component resists fatigue. Poor fatigue details include sharp corners, holes, weld terminations, and attachments that create stress concentrations. These areas are more likely to develop cracks under repeated loading. Modern designs use improved fatigue details, while bridges designed before 1974 may contain high-risk configurations. Bridges with poor fatigue details require a hands-on inspection to check for crack initiation.",
     search: ``,
     discipline: "bridge design",
-    filter: ["design", "defects", "NSTM"],
+    filter: ["bridge", "design", "defects", "NSTM", "welds"],
   },
   {
     term: "fatigue categories",
     definition:
-      "Classification of materials and structural components based on their resistance to fatigue. These categories help constructionineers determine the expected life span of a bridge component under repeated loading conditions. Higher categories indicate better resistance to fatigue and longer durability under cyclic loading.",
+      "A classification of bridge materials and design details based on their resistance to fatigue. AASHTO assigns each of these fatigue details to a fatigue category to predict how it performs under repeated load cycles. Lower categories, such as E or E', represent weaker details, while stronger ones fall into categories like A or B. These categories help engineers and inspectors identify high-risk areas for inspection and mitigation.",
     search: ``,
     discipline: "FHWA",
     filter: ["design", "defects", "NSTM"],
@@ -1504,7 +1505,7 @@ const glossaryMain = [
   {
     term: "fatigue crack",
     definition:
-      "A crack that forms in a material due to repeated stress or load cycles, even when the stress levels are below the material's ultimate tensile strength. Fatigue cracks are a common cause of failure in bridges, particularly in high-stress regions such as welds or joints.",
+      "A crack that forms in a material due to repeated load cycles below the material's yield strength. Fatigue cracks typically start small and grow progressively under cyclical loading, eventually leading to failure if not detected and repaired. Detecting and monitoring these cracks is critical during bridge inspections.",
     search: ``,
     discipline: "bridge design",
     filter: ["defects", "welds"],
@@ -1512,7 +1513,7 @@ const glossaryMain = [
   {
     term: "fatigue life",
     definition:
-      "The number of stress cycles a structural component can endure before failure due to repetitive loading, influenced by material properties, stress range, and environmental factors.",
+      "The estimated number of load cycles a material or detail can withstand before a fatigue crack begins to form. Fatigue life is an important factor in bridge design and maintenance because it helps predict when a component may become vulnerable to cracking. Understanding this lifespan allows engineers and inspectors to plan inspections, maintenance, or replacements before fatigue damage threatens structural safety. Fatigue life can be estimated using S-N curves defined by AASHTO, where S is the stress range and N is the number of load cycles to failure.",
     discipline: "bridge design",
     filter: ["design"],
   },
@@ -1653,7 +1654,7 @@ const glossaryMain = [
   {
     term: "fracture",
     definition:
-      "The breaking or cracking of a material under stress, often resulting in a loss of structural integrity. In bridges, fractures can occur in critical components due to excessive loading, fatigue, or environmental factors. Proper monitoring and maintenance are necessary to prevent fractures from leading to failure.",
+      "A type of brittle failure that develops in a material under stress, causing a sudden loss of structural integrity. Fractures typically occur in critical components due to excessive loading, poor fatigue details, unmitigated fatigue cracks, extreme environmental conditions, or a combination of these factors. Detecting defects that can lead to fractures is essential to prevent structural failure. Fractured steel will display chevron patterns along the break surface that point back to where the fracture initiated.",
     search: ``,
     discipline: "bridge design",
     filter: ["defects", "NSTM"],
@@ -1724,7 +1725,7 @@ const glossaryMain = [
   {
     term: "galvanized steel",
     definition:
-      "Steel coated with a layer of zinc to provide corrosion protection, often used for secondary bridge components. The zinc layer can degrade over time, especially in coastal or high-salt environments, leading to rusting.",
+      "Steel that has been coated with a layer of zinc to protect it from corrosion. The zinc coating contributes a sacrificial anode to the steel, corroding first and protecting the underlying steel by redirecting corrosion away from it. Zinc corrosion typically appears as white rust, which forms when the zinc reacts with moisture, oxygen, and contaminants. Galvanized steel is commonly used in bridge components for its durable corrosion resistance and reduced maintenance needs compared to uncoated steel.",
     discipline: "bridge design",
     filter: ["materials"],
   },
@@ -2138,7 +2139,7 @@ const glossaryMain = [
   {
     term: "intermittent welds / stitch welds",
     definition:
-      "A weld applied in separate, evenly spaced segments along a joint rather than one continuous line. This pattern reduces heat and material use but creates stress points at each segment end. These stress points increase the risk of fatigue cracking. Intermittent welds are an uncategorized fatigue detail. When aligned parallel to the main stress direction, they likely fall under AASHTO fatigue category E. When placed perpendicular to the stress, they are classified as category C prime.",
+      "A weld applied in separate, evenly spaced segments along a joint rather than one continuous line. This pattern reduces heat and material use but creates stress points at each segment end. These stress points increase the risk of fatigue cracking. Intermittent welds are an uncategorized fatigue detail. When aligned parallel to the main stress direction, they likely fall under AASHTO fatigue category E. When placed perpendicular to the stress, they are classified as category C'.",
     search: ``,
     discipline: "bridge design",
     filter: ["design", "NSTM", "welds"],
@@ -2454,7 +2455,7 @@ const glossaryMain = [
   {
     term: "longitudinal stiffener",
     definition:
-      "A stiffener placed parallel to the length of a structural member, typically in tension regions where there are high bending moments, to improve its resistance to bending under load. When no transition radius is provided, the terminations in the stiffener's longitudinal welds are classified as AASHTO fatigue category E or E prime, depending on the thickness of the stiffener.",
+      "A stiffener placed parallel to the length of a structural member, typically in tension regions where there are high bending moments, to improve its resistance to bending under load. When no transition radius is provided, the terminations in the stiffener's longitudinal welds are classified as AASHTO fatigue category E or E', depending on the thickness of the stiffener.",
     discipline: "bridge design",
     filter: ["bridge", "components", "NSTM"],
   },
@@ -2526,7 +2527,7 @@ const glossaryMain = [
   {
     term: "Mianus River Bridge",
     definition:
-      "A section of an interstate bridge in Connecticut that collapsed in 1983 due to corrosion-related pin and hanger failure. The incident highlighted the risks of overlooked fatigue details in fracture-critical members.",
+      "A section of an interstate bridge in Connecticut that collapsed in 1983 due to corrosion-related pin and hanger failure. The incident highlighted the risks of overlooked fatigue details in nonredundant steel tension members (NSTMs) and led to new federal requirements for hands-on inspection of fatigue-prone details and clearer guidelines for identifying and inspecting NSTMs.",
     search: ``,
     discipline: "bridge history",
     filter: ["design", "NSTM"],
@@ -3782,7 +3783,7 @@ const glossaryMain = [
   {
     term: "Silver Bridge",
     definition:
-      "A suspension bridge that collapsed in 1967 over the Ohio River due to a failed eyebar link with a critical flaw. The disaster led to nationwide bridge inspection standards and the creation of the National Bridge Inspection Program.",
+      "A suspension bridge built in 1928 that collapsed in 1967 over the Ohio River due to a fracture in an eyebar link. The failure began at a small crack caused by a manufacturing defect in the steel, which led to a fatigue crack too small to detect through inspection. The collapse killed 46 people and prompted the creation of the National Bridge Inspection Standards (NBIS), establishing formal bridge inspection requirements across the United States.",
     search: ``,
     discipline: "bridge history",
     filter: ["design", "NSTM"],
@@ -4260,7 +4261,7 @@ const glossaryMain = [
   {
     term: "tack welds",
     definition:
-      "A temporary weld used to hold parts in position before final welding. These small welds are not typically designed to carry load and are often left in place. If left in the finished structure, they act as uncategorized fatigue-prone details and typically fall into AASHTO fatigue category E or E prime. Tack welds are allowed in modern design but must be incorporated into the main weld or removed.",
+      "A temporary weld used to hold parts in position before final welding. These small welds are not typically designed to carry load and are often left in place. If left in the finished structure, they act as uncategorized fatigue-prone details and typically fall into AASHTO fatigue category E or E'. Tack welds are allowed in modern design but must be incorporated into the main weld or removed.",
     search: "",
     discipline: "bridge design",
     filter: ["design", "NSTM", "welds"],
@@ -4446,7 +4447,7 @@ const glossaryMain = [
   {
     term: "transverse connection plate",
     definition:
-      "A plate used to connect transverse elements, such as diaphragms or cross bracing, to main girders. It transfers load between members and enhances structural stability across the width of the bridge. The end terminations in a transverse weld are classified as AASHTO fatigue category C prime.",
+      "A plate used to connect transverse elements, such as diaphragms or cross bracing, to main girders. It transfers load between members and enhances structural stability across the width of the bridge. The end terminations in a transverse weld are classified as AASHTO fatigue category C'.",
     search: ``,
     discipline: "bridge construction",
     filter: ["bridge", "components", "NSTM"],
@@ -4462,7 +4463,7 @@ const glossaryMain = [
   {
     term: "transverse stiffener",
     definition:
-      "A stiffener placed perpendicular to the length of a structural member, typically in compression regions, to prevent web buckling under load. Transverse stiffeners enhance the stability of the member. The terminations in the stiffener's transverse welds are classified as AASHTO fatigue category C prime.",
+      "A stiffener placed perpendicular to the length of a structural member, typically in compression regions, to prevent web buckling under load. Transverse stiffeners enhance the stability of the member. The terminations in the stiffener's transverse welds are classified as AASHTO fatigue category C'.",
     discipline: "bridge design",
     filter: ["bridge", "components", "NSTM"],
   },
