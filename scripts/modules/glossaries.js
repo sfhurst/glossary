@@ -273,7 +273,7 @@ const glossaryMain = [
   {
     term: "axial tension",
     definition:
-      "A pulling force applied along the length of a structural member, causing it to stretch. The entire cross-section resists the load evenly if the force is centered.",
+      "A type of uniaxial stress where a pulling force is applied along the length of a structural member, causing it to stretch elastically. The entire cross-section resists the load evenly if the force is centered.",
     search: ``,
     discipline: "structural mechanics",
     filter: ["design", "NSTM"],
@@ -415,6 +415,14 @@ const glossaryMain = [
     search: ``,
     discipline: "bridge design",
     filter: ["channel", "design", "roadway"],
+  },
+  {
+    term: "biaxial stress",
+    definition:
+      "A state of stress where forces act in two perpendicular directions within the same plane. This often occurs in flat plates or shells under pressure or combined in-plane loading.",
+    search: ``,
+    discipline: "structural mechanics",
+    filter: ["design", "NSTM"],
   },
   {
     term: "bin wall",
@@ -1093,6 +1101,14 @@ const glossaryMain = [
       "The process of erosion or removal of sediment from the riverbed or streambed, leading to a lowering of the watercourse or shoreline.",
     discipline: "bridge design",
     filter: ["channel", "defects"],
+  },
+  {
+    term: "degree of constraint",
+    definition:
+      "A measure of how much a material or structural element is restricted from deforming when subjected to stress. Higher constraint limits movement such as expansion, contraction, or shear, often leading to elevated internal stresses. It plays a key role in weld behavior, triaxial stress conditions, and thermal effects.",
+    search: ``,
+    discipline: "structural mechanics",
+    filter: ["design", "defects", "NSTM"],
   },
   {
     term: "delamination",
@@ -2304,7 +2320,7 @@ const glossaryMain = [
   {
     term: "lateral connection plate",
     definition:
-      "A plate used to connect lateral components, such as cross frames or lateral bracing, to the main structural elements. It helps distribute loads and provides lateral stability. Lateral connection plates are prone to constraint-induced fracture and fatigue cracking. Longitudinal attachment welds, in plates where no transition radius is provided, are classified as AASHTO fatigue category E.",
+      "A plate used to connect lateral components, such as cross frames or lateral bracing, to the main structural elements. It helps distribute loads and provides lateral stability. Lateral connection plates are prone to constraint-induced fracture and fatigue cracking. When no transition radius is provided, the terminations in the plate's longitudinal welds are classified as AASHTO fatigue category E.",
     search: ``,
     discipline: "bridge construction",
     filter: ["bridge", "components", "NSTM"],
@@ -2438,7 +2454,7 @@ const glossaryMain = [
   {
     term: "longitudinal stiffener",
     definition:
-      "A stiffener placed parallel to the length of a structural member, typically in tension regions where there are high bending moments, to improve its resistance to bending under load. When no radius is provided, the terminations in the stiffener's longitudinal welds are classified as AASHTO fatigue category E or E prime, depending on the thickness of the stiffener.",
+      "A stiffener placed parallel to the length of a structural member, typically in tension regions where there are high bending moments, to improve its resistance to bending under load. When no transition radius is provided, the terminations in the stiffener's longitudinal welds are classified as AASHTO fatigue category E or E prime, depending on the thickness of the stiffener.",
     discipline: "bridge design",
     filter: ["bridge", "components", "NSTM"],
   },
@@ -4244,7 +4260,7 @@ const glossaryMain = [
   {
     term: "tack welds",
     definition:
-      "A temporary weld used to hold parts in position before final welding. These small welds are not typically designed to carry load and remain in place if not removed. If left in the finished structure, they act as uncategorized fatigue-prone details and typically fall into AASHTO fatigue category E or E prime. Tack welds are allowed in modern design but must be incorporated into the main weld or removed.",
+      "A temporary weld used to hold parts in position before final welding. These small welds are not typically designed to carry load and are often left in place. If left in the finished structure, they act as uncategorized fatigue-prone details and typically fall into AASHTO fatigue category E or E prime. Tack welds are allowed in modern design but must be incorporated into the main weld or removed.",
     search: "",
     discipline: "bridge design",
     filter: ["design", "NSTM", "welds"],
@@ -4428,6 +4444,14 @@ const glossaryMain = [
     filter: ["components", "roadway"],
   },
   {
+    term: "transverse connection plate",
+    definition:
+      "A plate used to connect transverse elements, such as diaphragms or cross bracing, to main girders. It transfers load between members and enhances structural stability across the width of the bridge. The end terminations in a transverse weld are classified as AASHTO fatigue category C prime.",
+    search: ``,
+    discipline: "bridge construction",
+    filter: ["bridge", "components", "NSTM"],
+  },
+  {
     term: "transverse cracking",
     definition:
       "Cracks that form perpendicular to the primary direction of stress or traffic flow in a bridge component. Transverse cracks can appear on decks, beams, or other structural elements and are typically caused by shrinkage, thermal cycling, or excessive load. If left unaddressed, transverse cracking can compromise the integrity of the structure, especially if it leads to water infiltration and corrosion.",
@@ -4456,6 +4480,14 @@ const glossaryMain = [
     search: ``,
     discipline: "structural engineering",
     filter: ["design", "defects", "NSTM"],
+  },
+  {
+    term: "triaxial stress",
+    definition:
+      "A state of stress where forces act in all three perpendicular directions. This occurs in confined materials under pressure, such as in geotechnical or high-pressure applications.",
+    search: ``,
+    discipline: "structural mechanics",
+    filter: ["design", "NSTM"],
   },
   {
     term: "tributary",
@@ -4556,6 +4588,14 @@ const glossaryMain = [
     search: ``,
     discipline: "bridge design",
     filter: ["bridge", "channel"],
+  },
+  {
+    term: "uniaxial stress",
+    definition:
+      "A state of stress where force is applied in only one direction along a single axis. The material experiences tension or compression along that axis while other directions remain unstressed.",
+    search: ``,
+    discipline: "structural mechanics",
+    filter: ["design", "NSTM"],
   },
   {
     term: "unknown foundations",
