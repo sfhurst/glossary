@@ -1187,7 +1187,7 @@ const glossaryMain = [
   {
     term: "discontinuity",
     definition:
-      "An interruption in the material or geometry of a structure, such as a hole or crack, which can create stress concentrations and affect performance or strength.",
+      "An interruption in the material or geometry of a bridge component, such as a hole, notch, crack, void, or inclusion, that creates a localized increase in stress and may initiate fatigue cracking or reduce strength. Discontinuities can include internal material defects that remain undetectable until they grow into visible cracks. Following the Silver Bridge collapse in 1967, material standards were improved to ensure that steel had enough toughness for small defects to grow slowly and become detectable before failure.",
     search: ``,
     discipline: "structural mechanics",
     filter: ["defects", "NSTM"],
@@ -1218,7 +1218,7 @@ const glossaryMain = [
   {
     term: "doubler plate",
     definition:
-      "A steel plate welded to the web of a girder to add thickness and strength at high-stress areas such as connections. It helps prevent web buckling and increases load-carrying capacity.",
+      "A secondary plate added to a structural member to increase its thickness and strength in a localized area, often around connections or damaged regions. Doubler plates help restore capacity, distribute loads, or reinforce sections where stress demands exceed the original design, making them a common solution in bridge repairs and retrofits.",
     search: ``,
     discipline: "bridge design",
     filter: ["bridge", "components", "NSTM", "welds"],
@@ -1263,7 +1263,7 @@ const glossaryMain = [
   {
     term: "ductile failure",
     definition:
-      "A type of material failure characterized by significant plastic deformation before fracture, often preceded by necking in tensile specimens.",
+      "A type of structural failure characterized by noticeable deformation before fracture, typically involving stretching, bending, or necking of the material. Ductile failure is generally preferred over brittle failure because it provides visible warning signs, such as distortion or yielding, allowing time for intervention before collapse.",
     search: ``,
     discipline: "materials engineering",
     filter: ["design", "defects", "NSTM"],
@@ -1271,7 +1271,7 @@ const glossaryMain = [
   {
     term: "ductility",
     definition:
-      "The ability of a material to undergo significant plastic deformation before rupture, allowing it to be drawn into wires or undergo other shape changes without breaking.",
+      "The ability of a material to undergo significant plastic deformation before fracturing, often observed as stretching, bending, or reshaping without breaking. Ductility is a key property in bridge materials like steel, as it allows structures to absorb energy, redistribute loads, and provide visible signs of distress before failure.",
     search: ``,
     discipline: "materials engineering",
     filter: ["bridge", "design", "NSTM"],
@@ -1336,7 +1336,7 @@ const glossaryMain = [
   {
     term: "elastic deformation",
     definition:
-      "A reversible change in the shape of a material under stress, where the material returns to its original shape upon removal of the load.",
+      "A temporary change in shape or size that occurs when a material is subjected to stress but returns to its original form once the load is removed. Elastic deformation is important in bridge design because it allows components to flex under normal loads without sustaining permanent damage.",
     search: ``,
     discipline: "materials engineering",
     filter: ["design", "defects", "NSTM"],
@@ -4095,7 +4095,7 @@ const glossaryMain = [
   {
     term: "stress",
     definition:
-      "The internal resistance offered by a material to an external force, measured as force per unit area. It quantifies the intensity of internal forces in a material.",
+      "The internal force per unit area within a material that develops in response to external loads, temperature changes, or deformation. Stress determines how a bridge component resists applied forces and is critical for evaluating structural capacity, predicting failure modes, and guiding design decisions. Common types include tensile stress (pulling), compressive stress (pushing), shear stress (sliding), bending stress (flexure), and torsional stress (twisting).",
     search: ``,
     discipline: "materials engineering",
     filter: ["design", "NSTM"],
