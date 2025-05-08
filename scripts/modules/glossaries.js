@@ -321,7 +321,7 @@ const glossaryMain = [
   {
     term: "bare metal",
     definition:
-      "Uncoated or stripped surface that exposes the underlying alloy to environmental elements, increasing susceptibility to corrosion, abrasion, or chemical reactions. Also required for certain NDT methods that rely on direct surface contact.",
+      "Uncoated or stripped surface that exposes the underlying alloy to environmental elements, increasing susceptibility to corrosion, abrasion, or chemical reactions. Also required for certain NDE methods that rely on direct surface contact.",
     discipline: "bridge inspection",
     filter: ["materials", "NDT"],
   },
@@ -342,7 +342,7 @@ const glossaryMain = [
   {
     term: "barrel (culvert)",
     definition:
-      "The main section of a culvert, typically a pipe or box, that carries water beneath the roadway. Often made from corrugated metal or concrete, it relies on its shape for structural strength and efficient hydraulic flow.",
+      "The primary structural component of a culvert, typically cylindrical or rectangular in shape, designed to carry water beneath a roadway. It is constructed from materials such as corrugated metal, concrete, or plastic, and its shape ensures efficient flow of water while resisting the forces from surrounding soil and traffic loads. The barrel is a critical element in maintaining the culvert’s hydraulic and structural integrity.",
     discipline: "bridge design",
     filter: ["components", "culvert"],
   },
@@ -562,9 +562,9 @@ const glossaryMain = [
   {
     term: "butt weld",
     definition:
-      "A weld joining two pieces of metal in the same plane, typically used for full-penetration connections in structural steel fabrication.",
+      "A weld joining two pieces of metal in the same plane, typically used for full-penetration connections in structural steel fabrication. Butt welds ground smooth are an AASHTO fatigue category B detail. The FHWA issued a technical advisory for butt welds in nonredundant steel tension members made with T-1 steel, recommending visual inspection and non-destructive evaluation for those installed without a fracture control plan.",
     discipline: "bridge design",
-    filter: ["welds"],
+    filter: ["NSTM", "welds"],
   },
 
   // :::::
@@ -1887,8 +1887,7 @@ const glossaryMain = [
   },
   {
     term: "heat-treated steel",
-    definition:
-      "Steel that undergoes heat treatment to increase hardness and strength, used in critical bridge components. Can be prone to brittleness if not properly tempered.",
+    definition: "Steel that undergoes heat treatment to increase hardness and strength. Can be prone to brittleness if not properly tempered.",
     discipline: "bridge design",
     filter: ["materials"],
   },
@@ -2733,6 +2732,13 @@ const glossaryMain = [
     filter: ["design"],
   },
   {
+    term: "non-destructive evaluation (NDE)",
+    definition:
+      "A method used to assess the condition or integrity of a material or structure without causing damage. NDE is used to detect cracks, voids, corrosion, or other flaws during inspections, allowing continued service without dismantling or harming the component.",
+    discipline: "bridge design",
+    filter: ["acronyms", "NDT"],
+  },
+  {
     term: "non-destructive testing (NDT)",
     definition:
       "A range of inspection techniques used to evaluate materials and welds without causing damage, including ultrasonic, radiographic, magnetic particle, and dye penetrant testing.",
@@ -3023,7 +3029,7 @@ const glossaryMain = [
   {
     term: "planar discontinuity",
     definition:
-      "A flaw within a material that lies along a flat or nearly flat plane, such as a crack, lack of fusion, or laminar tearing. These defects are create stress concentrations and can lead to fracture under load.",
+      "A flaw within a material that lies along a flat or nearly flat plane, such as a crack, lack of fusion, or laminar tearing. These defects create stress concentrations and can lead to fracture under load.",
     search: `what is planar discontinuity in steel fabrication`,
     discipline: "bridge fabrication",
     filter: ["defects", "NDT", "NSTM"],
@@ -3064,6 +3070,13 @@ const glossaryMain = [
       "The entrance or exit frame of a bridge, tunnel, or culvert, often consisting of a rigid frame structure that supports loads and resists lateral forces.",
     discipline: "bridge design",
     filter: ["bridge", "components"],
+  },
+  {
+    term: "Portland cement",
+    definition:
+      "A fine powder produced by heating a specific blend of limestone and clay to form clinker, then grinding it with gypsum to regulate setting. It forms a predictable, durable binder in concrete and mortar for bridge decks, piers, and abutments. Other cements may use different base materials or additives and lack the consistent performance of Portland cement.",
+    discipline: "bridge design",
+    filter: ["materials"],
   },
   {
     term: "positive bending moment",
@@ -3831,14 +3844,14 @@ const glossaryMain = [
   {
     term: "slag",
     definition:
-      "A byproduct of metal refining and steel production, often used in construction materials such as aggregate or cement to enhance durability and performance.",
+      "A nonmetallic byproduct formed during welding from flux, metal impurities, and oxidation. Slag solidifies on the weld surface and must be removed to inspect the weld and ensure proper bonding between passes. If left in place, it can trap defects and weaken the weld.",
     discipline: "bridge design",
     filter: ["defects", "materials", "welds"],
   },
   {
     term: "slag inclusion",
     definition:
-      "A welding defect where non-metallic slag becomes trapped within a weld, weakening the joint and potentially leading to structural failure if not properly addressed.",
+      "A welding defect where slag becomes trapped inside the weld metal, often between passes or layers. This can create weak points, reduce the weld’s strength, and lead to cracking or failure under load.",
     discipline: "bridge design",
     filter: ["defects", "welds"],
   },
@@ -4266,10 +4279,10 @@ const glossaryMain = [
   // :::::
 
   {
-    term: "T1 steel (A514)",
+    term: "T-1 steel (A514)",
     definition:
-      "A quenched and tempered alloy steel with 100 ksi yield strength, used in many 1970s-era bridges for its high strength-to-weight ratio. Also known as ASTM A514 or AASHTO M244 Grade 100, it is prone to hydrogen-induced cracking during welding and fabrication, especially in butt welds under tension. This brittleness became a concern after the 2011 closure of the Sherman Minton Bridge, where cracks were discovered in tie girder welds made from T1 steel. The event led to federal guidance urging inspection of fracture critical members made from this material, especially where no fracture control plan exists. Identifying T1 steel is key to evaluating weld quality, fracture risk, and long-term service performance.",
-    search: `What is "T1 Steel" in bridge design?`,
+      "A quenched and tempered alloy steel with 100 ksi yield strength, used in many 1970s-era bridges for its high strength-to-weight ratio. Also known as ASTM A514 or AASHTO M244 Grade 100, it is prone to hydrogen-induced cracking during welding and fabrication, especially in butt welds under tension. This brittleness became a concern after the 2011 closure of the Sherman Minton Bridge, where cracks were discovered in tie girder welds made from T-1 steel. The event led to federal guidance urging inspection of fracture critical members made from this material, especially where no fracture control plan exists. Identifying T-1 steel is key to evaluating weld quality, fracture risk, and long-term service performance.",
+    search: `What is "T-1 Steel" in bridge design?`,
     discipline: "bridge design",
     letter: "letter-jump-t",
     filter: ["materials", "NSTM"],
@@ -4776,14 +4789,14 @@ const glossaryMain = [
   {
     term: "weld toe",
     definition:
-      "The transition between the base metal and the weld, a critical area susceptible to fatigue cracking if not properly blended or inspected.",
+      "The boundary where the weld face meets the base metal. This transition point is a common location for stress concentrations and fatigue cracks, especially if the toe is not smooth or blended properly.",
     discipline: "bridge design",
     filter: ["defects", "welds"],
   },
   {
     term: "welds",
     definition:
-      "Fused joints between metal components formed by applying heat and filler material, critical for structural integrity in steel bridges and components.",
+      "Used to join two pieces of metal by applying heat, pressure, or both, often with added filler material to create a strong bond. Common in steel fabrication and bridge construction, welds transfer loads between components and must meet design and inspection standards for strength, durability, and safety.",
     discipline: "bridge design",
     filter: ["components", "welds"],
   },

@@ -44,7 +44,7 @@ filter: ["acronyms", "bridge", "channel", "components", "compounds", "design", "
 
 # Term Only
 
-web
+Portland cement
 
 1. **Provide a clear, robust but concise definition for the term(s):**  
    Ensure the definition explains the term in an accessible and technically accurate way. The definition should be helpful to both bridge engineers and technicians.
@@ -64,7 +64,7 @@ web
 6. **Avoid dashes:**  
    Keep the definition simple and clean. Use commas or periods instead of dashes for better readability.
 
-7. **Use lowercase for terms unless it's a proper noun:**  
+7. **Capitalize sentences normally. Use lowercase for the term itself (the glossary entry), unless it's a proper noun:**  
    Keep the terms and definitions in lowercase to maintain consistency with the glossary format. Capitalize only when referring to proper nouns or at the beginning of a sentence.
 
 8. **Ensure relevance and practicality:**  
@@ -76,7 +76,7 @@ web
 10. Provide only the definition.
 
 11. **My Notes:**
-    i think a tie girder is used in suspension bridges but i am not sure. also, how is it different than the lower chord. i think on the sheman minton there are tie girders and a lower chord.
+    how is it different from just cement
 
 # Fatigue
 
