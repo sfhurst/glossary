@@ -3826,6 +3826,14 @@ const glossaryMain = [
     filter: ["bridge", "design", "NSTM"],
   },
   {
+    term: "sinkhole",
+    definition:
+      "A depression in the ground formed by collapse of soil and rock when water erodes soluble bedrock. Sinkholes can develop beneath bridge foundations, embankments, or pavements, causing sudden settlement or collapse. Field inspections should look for ground sinking and water drainage problems to prevent damage to structures.",
+    search: ``,
+    discipline: "bridge design",
+    filter: ["channel", "defects"],
+  },
+  {
     term: "skew",
     definition:
       "The angle between the longitudinal axis of a bridge and the alignment of the road or railway that it crosses. Skewed bridges are often required when the road or waterway is not perpendicular to the supporting piers or abutments. The skew angle affects the load distribution and design of the bridge structure.",
