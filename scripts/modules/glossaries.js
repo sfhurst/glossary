@@ -1029,7 +1029,7 @@ const glossaryMain = [
   {
     term: "cut, fill",
     definition:
-      "The process of removing soil (cut) or adding material (fill) to adjust the level of the ground to support a structure. In bridge construction, cut and fill are used to level the ground for foundations, approaches, and embankments. This process is crucial in creating a stable base for bridge supports.",
+      "The process of removing soil (cut) or adding material (fill) to adjust the level of the ground to support a structure. In bridge construction, cut and fill are used to level the ground for foundations, approaches, and embankments.",
     search: ``,
     discipline: "bridge construction",
     filter: ["design", "materials"],
@@ -1574,7 +1574,7 @@ const glossaryMain = [
   {
     term: "finite element models (FEA)",
     definition:
-      "A computerized method that breaks a structure into small parts to simulate how it behaves under loads. It is used to predict stress, deformation, and failure in complex shapes and connections.",
+      "A computer-based method used to simulate how a structure responds to loads, temperature, or other forces by dividing it into smaller, simpler parts called elements. Finite element models help engineers evaluate complex behaviors, identify stress concentrations, and assess load paths, especially in situations where hand calculations are impractical or where physical testing is not possible. They are often used to refine designs, predict failure modes, or justify repair strategies for unusual or critical bridge components.",
     search: ``,
     discipline: "structural analysis",
     filter: ["acronyms", "design", "NSTM"],
@@ -1582,7 +1582,7 @@ const glossaryMain = [
   {
     term: "flange",
     definition:
-      "A projecting edge or lip that extends from a structural element, typically a beam or girder. The flange provides additional strength and stability to the element by resisting bending and shear forces. In bridges, flanges are commonly found on I-beams and other structural members.",
+      "A flat projecting edge used to strengthen or connect structural components, typically found at the top and bottom of rolled or built-up steel beams and girders. Flanges resist bending by carrying tension and compression forces and work with the web to support loads in a bridge structure.",
     search: ``,
     discipline: "bridge design",
     filter: ["bridge", "components", "NSTM"],
@@ -1626,7 +1626,7 @@ const glossaryMain = [
   {
     term: "floorbeam",
     definition:
-      "A transverse beam used in bridge superstructures to support stringers and deck elements, transferring those loads to longitudinal girders or trusses. Floorbeams are positioned perpendicular to the direction of traffic and are typically spaced at regular intervals. In bridges with a defined floor system, floorbeams are crucial for tying together the structure, ensuring lateral stability, and efficiently spreading loads across multiple girders. They are most common in truss bridges, plate girder bridges, and older steel multi-girder systems. Unlike girders and stringers, which run longitudinally with the span, floorbeams run transversely across the span and often act as a platform for other framing components.",
+      "A transverse beam used in bridge superstructures to support stringers and deck elements, transferring those loads to longitudinal girders or trusses. Floorbeams are positioned perpendicular to the direction of traffic and are typically spaced at regular intervals. In bridges with a defined floor system, floorbeams are used for ensuring lateral stability and efficiently spreading loads across multiple girders. They are most common in truss bridges, plate girder bridges, and older steel multi-girder systems. Unlike girders and stringers, which run longitudinally with the span, floorbeams run transversely across the span and often act as a platform for other framing components.",
     discipline: "bridge design",
     filter: ["bridge", "components", "compounds", "NSTM"],
   },
@@ -1654,7 +1654,7 @@ const glossaryMain = [
   {
     term: "fracture",
     definition:
-      "A type of brittle failure that develops in a material under stress, causing a sudden loss of structural integrity. Fractures typically occur in critical components due to excessive loading, poor fatigue details, unmitigated fatigue cracks, extreme environmental conditions, or a combination of these factors. Detecting defects that can lead to fractures is essential to prevent structural failure. Fractured steel will display chevron patterns along the break surface that point back to where the fracture initiated.",
+      "A type of brittle failure that develops in a material under stress, causing a sudden loss of structural integrity. Fractures typically occur in critical components due to excessive loading, poor fatigue details, unmitigated fatigue cracks, extreme environmental conditions, or a combination of these factors. Fractured steel will display chevron patterns along the break surface that point back to where the fracture initiated.",
     search: ``,
     discipline: "bridge design",
     filter: ["defects", "NSTM"],
@@ -1670,7 +1670,7 @@ const glossaryMain = [
   {
     term: "fracture toughness",
     definition:
-      "The ability of a material containing a crack to resist fracture, indicating the material's capacity to withstand stress in the presence of flaws.",
+      "The ability of a material to resist crack growth when a flaw or defect is present. Fracture toughness affects how well a component can withstand stress without breaking. Materials with low fracture toughness are more likely to fail suddenly, especially under cold temperatures or repeated loading. ",
     search: ``,
     discipline: "materials engineering",
     filter: ["design", "NSTM"],
@@ -1740,7 +1740,7 @@ const glossaryMain = [
   {
     term: "girder",
     definition:
-      "A longitudinal structural member in a bridge superstructure that carries the main structural loads and transfers them to piers or abutments. They are generally the largest structural members in the superstructure and may support floorbeams, depending on the bridge type. Girders are typically made from rolled or built-up steel, prestressed concrete, or composite sections.",
+      "A longitudinal structural member in the bridge superstructure that carries primary loads and transfers them to piers or abutments. Girders are usually the largest members in the superstructure and may support floorbeams, depending on the bridge type. They are typically made from rolled or built-up steel, prestressed concrete, or composite sections.",
     search: ``,
     discipline: "bridge design",
     filter: ["bridge", "components", "NSTM"],
@@ -1816,7 +1816,7 @@ const glossaryMain = [
   {
     term: "gusset plate",
     definition:
-      "Flat steel connector used to transfer force between intersecting structural members, often designed to handle combined axial, shear, and bending stresses at joints.",
+      "A flat steel plate used to connect multiple structural members at a joint, typically where beams, girders, or truss members meet. Gusset plates transfer loads between connected members. They are commonly found in truss bridges and must be inspected for corrosion, cracking, or distortion. An underdesigned gusset plate caused the collapse of the I-35W bridge in Minnesota in 2007.",
     discipline: "bridge design",
     filter: ["bridge", "components", "NSTM"],
   },
@@ -1835,7 +1835,7 @@ const glossaryMain = [
   {
     term: "hands-on",
     definition:
-      "An approach or technique involving direct involvement with physical tasks rather than relying on theoretical knowledge or remote actions. In the context of bridge inspections, a hands-on approach includes physically examining components, performing tests, and conducting repairs rather than relying on visual or computational analysis alone.",
+      "A proximity requirement meaning the inspector must be within arm’s reach of a component to reliably detect defects that may not be visible from a distance.",
     search: ``,
     discipline: "bridge inspection",
     filter: ["design", "compounds", "NSTM"],
@@ -1843,7 +1843,7 @@ const glossaryMain = [
   {
     term: "hands-on inspection",
     definition:
-      "Inspection within arm’s length of the member. Inspection uses visual techniques that may be supplemented by nondestructive evaluation techniques.",
+      "A close-up visual examination where the inspector is within arm’s reach of the component. This level of access is necessary to identify small cracks, section loss, poor fatigue details, or other defects that may not be visible during typical ground-based inspections.",
     search: ``,
     discipline: "bridge design",
     filter: ["bridge", "compounds", "NSTM"],
@@ -1851,7 +1851,7 @@ const glossaryMain = [
   {
     term: "hanger",
     definition:
-      "A structural element used to support a bridge component, typically a suspension or cable-stayed bridge's cable or beam. The hanger transfers the load from the bridge deck to the main supporting cables or structure. They are designed to withstand tensile forces and are usually made from steel or other durable materials.",
+      "A structural component that supports part of a bridge span, typically in cantilevered or suspension bridge designs. In cantilevered systems, hangers directly carry the load of the span, transferring it from the deck to the supporting structures. In suspension bridges, hangers connect the bridge deck to the main suspension cables, helping distribute the load to the towers. The collapse of a section of the Mianus River Bridge was caused by the failure of a single hanger.",
     search: ``,
     discipline: "bridge design",
     filter: ["bridge", "components", "NSTM"],
@@ -2080,7 +2080,7 @@ const glossaryMain = [
   {
     term: "insert plate",
     definition:
-      "A steel plate added into a structural member, often to thicken a flange or web, allowing for stronger welds or bolted connections. It helps transfer loads more effectively without changing the outer shape.",
+      "A steel plate welded into the web of a built-up beam or girder to locally increase depth and strength, often at supports or haunches. Insert plates introduce complex weld zones that may be prone to cracking, especially where vertical welds intersect with horizontal ones. These welds are often ground smooth and may not be visible during inspection. Insert plates should be identified prior to inspection and the base metal in those areas should be inspected for fatigue cracks propagating from weld discontinuities.",
     search: ``,
     discipline: "bridge design",
     filter: ["bridge", "components", "NSTM"],
@@ -2147,7 +2147,7 @@ const glossaryMain = [
   {
     term: "internal redundancy",
     definition:
-      "A redundancy that exists within a primary member cross-section without load path redundancy, such that fracture of one component will not propagate through the entire member, is discoverable by the applicable inspection procedures, and will not cause a portion of or the entire bridge to collapse.",
+      "A condition where multiple load-carrying elements are combined into a single structural member, such as paired angle or channel segments in a built-up truss member. This configuration provides additional support if one element fails. In some cases, this redundancy allows for the reclassification of members previously considered nonredundant steel tension members (NSTMs), removing the NSTM designation and reducing the need for specialized monitoring.",
     search: ``,
     discipline: "bridge design",
     filter: ["design", "NSTM"],
@@ -2155,7 +2155,7 @@ const glossaryMain = [
   {
     term: "intersecting welds",
     definition:
-      "Two or more welds that meet or cross at a single point, often creating a stress concentration. Improper layout or sequencing can lead to cracking or reduced fatigue resistance. Intersecting welds are also prone to constraint-induced fracture due to restrained shrinkage or thermal movement.",
+      "Intersecting welds refer to two or more welds that meet or cross at a single point, which can create stress concentrations. Improper layout or sequencing can lead to cracking or reduced fatigue resistance. These welds are prone to constraint-induced fracture due to restrained shrinkage or thermal movement, unless there is at least a 1/4 inch gap between them.",
     search: ``,
     discipline: "bridge design",
     filter: ["defects", "NSTM", "welds"],
@@ -2261,7 +2261,7 @@ const glossaryMain = [
   {
     term: "keystone",
     definition:
-      "The central, topmost stone or concrete block of an arch that locks the other blocks or sections in place, crucial for the arch’s structural integrity.",
+      "The central, topmost stone or concrete block of an arch that locks the other blocks or sections in place. Without the keystone the arch would lose its structural integrity.",
     search: ``,
     discipline: "arch design",
     letter: "letter-jump-k",
@@ -2375,7 +2375,7 @@ const glossaryMain = [
   },
   {
     term: "line of sight",
-    definition: "The unobstructed view along the roadway, crucial for driver safety, allowing the driver to see upcoming curves or obstacles.",
+    definition: "The unobstructed view along the roadway, allowing the driver to see upcoming curves or obstacles.",
     search: ``,
     discipline: "bridge design",
     filter: ["roadway"],
@@ -2407,7 +2407,7 @@ const glossaryMain = [
   {
     term: "load path redundancy",
     definition:
-      "A redundancy that exists based on the number of primary load-carrying members between points of support, such that fracture of the cross-section at one location of a member will not cause a portion of or the entire bridge to collapse.",
+      "A structural condition in which multiple independent paths exist for loads to transfer through a bridge, allowing the structure to remain stable if one element fails. Load path redundancy improves overall system resilience by reducing the likelihood that a single failure will lead to collapse. This is often accomplished by using multiple beam lines, parallel truss systems, or other redundant framing layouts that can carry loads even if one path is compromised.",
     search: ``,
     discipline: "bridge design",
     filter: ["design", "NSTM"],
@@ -2462,7 +2462,7 @@ const glossaryMain = [
   {
     term: "lower chord",
     definition:
-      "The bottom horizontal member of a truss that primarily resists tensile forces, contributing to the overall stability and load distribution of the structure.",
+      "A primary horizontal component along the bottom of a truss, typically made up of one or more connected members acting together to resist tension. It connects the lower ends of diagonal and vertical elements and often supports floorbeam connections. Often composed of built-up girders with bolted or riveted connections, it requires close inspection for section loss, cracking, or fatigue.",
     discipline: "bridge design",
     filter: ["bridge", "components", "NSTM"],
   },
@@ -2606,7 +2606,7 @@ const glossaryMain = [
   {
     term: "moment",
     definition:
-      "A measure of the rotational force or bending caused by external loads applied to a structure, such as a bridge. The moment acts to bend or rotate a structural element, such as a beam or girder, and is crucial in determining the strength and design requirements of bridge components. It is typically expressed in units of force multiplied by distance.",
+      "A measure of the rotational force caused by external loads acting on a structure, creating bending in elements like beams or girders. Moments influence how a structure deforms under load and are important for determining strength, stress distribution, and design requirements. Typically expressed in units of force times distance, such as kip-feet or pound-inches.",
     search: ``,
     discipline: "bridge design",
     filter: ["design", "NSTM"],
@@ -2614,7 +2614,7 @@ const glossaryMain = [
   {
     term: "moment diagram",
     definition:
-      "A chart showing the bending moment along a beam’s length, typically based on loading and support conditions. It helps identify where maximum bending stresses occur.",
+      "A graphical representation that shows how bending moment varies along the length of a beam or structural element. The diagram helps identify regions where bending stress is highest by displaying positive and negative moments.",
     search: ``,
     discipline: "structural analysis",
     filter: ["design", "NSTM"],
@@ -2689,14 +2689,14 @@ const glossaryMain = [
   {
     term: "necking",
     definition:
-      "The localized reduction in cross-sectional area that occurs in a material under high tensile stress just before it fractures. It marks the onset of material failure.",
+      "A localized narrowing or reduction in cross-sectional area that forms when a material stretches under high tensile stress. Necking is a key indicator of ductile failure and often appears before complete fracture. Its presence helps inspectors identify overstressed or compromised tension members.",
     discipline: "bridge design",
     filter: ["design", "defects", "NSTM"],
   },
   {
     term: "negative bending moment",
     definition:
-      "A moment that causes a beam to bend with the top fibers in tension and the bottom in compression. It typically occurs near supports in continuous spans.",
+      "A moment that causes upward deflection in a beam, putting the top fibers in tension and the bottom in compression. This usually happens near supports in continuous spans, making those areas important for design and inspection.",
     search: ``,
     discipline: "structural mechanics",
     filter: ["design", "NSTM"],
@@ -2742,15 +2742,14 @@ const glossaryMain = [
   {
     term: "nonredundant steel tension member (NSTM)",
     definition:
-      "A primary steel member fully or partially in tension, and without load path redundancy, system redundancy, or internal redundancy, whose failure may cause a portion of or the entire bridge to collapse.",
+      "A primary steel tension member whose failure would cause a partial or total collapse of the structure due to its isolation within the structural framing system. These members require focused attention during design, inspection, and maintenance to ensure bridge safety. NSTMs require hands-on inspection every two years, or more often if needed to monitor deterioration. Formerly known as fracture critical members (FCMs).",
     search: ``,
     discipline: "bridge design",
     filter: ["acronyms", "bridge", "NSTM"],
   },
   {
     term: "normal",
-    definition:
-      "A direction that is perpendicular to a surface or plane. In structural terms, it describes stress or force acting at a right angle to the face of a material.",
+    definition: "A direction that is perpendicular to a surface or plane.",
     search: ``,
     discipline: "structural mechanics",
     filter: ["design"],
@@ -2773,7 +2772,7 @@ const glossaryMain = [
   {
     term: "normal stress",
     definition:
-      "The stress acting perpendicular to a surface, either in tension or compression. It is calculated by dividing the force by the area over which it acts.",
+      "The internal force per unit area within a material that resists deformation caused by applied external forces. It acts perpendicular to the surface of the material's cross-sectional area and parallel to the applied force. In tension, normal stress resists elongation, and in compression, it resists shortening. Normal stress is calculated by dividing the applied force by the area over which it acts.",
     search: ``,
     discipline: "structural mechanics",
     filter: ["design", "NSTM"],
@@ -2787,7 +2786,8 @@ const glossaryMain = [
   },
   {
     term: "NSTM inspection",
-    definition: "A hands-on inspection of a nonredundant steel tension member.",
+    definition:
+      "A hands-on inspection required for structures with nonredundant steel tension members (NSTMs), carried out on a 24-month inspection interval unless conditions warrant more frequent inspections. It focuses on detecting issues such as section loss, fatigue cracks, or damage that may weaken the structural integrity of the tension members.",
     search: ``,
     discipline: "bridge design",
     filter: ["bridge", "NSTM"],
@@ -2881,7 +2881,7 @@ const glossaryMain = [
   {
     term: "overhang bracket",
     definition:
-      "A support device attached to the edge of a bridge deck to hold formwork during concrete placement. It allows construction of cantilevered deck sections without falsework beneath.",
+      "A structural steel component used to connect the cantilevered portion of a bridge deck to a steel girder. The overhang bracket transfers loads from the deck and traffic barriers into the girder and can introduce localized stress concentrations, especially at the web and flange connections. These brackets are fatigue-prone details due to cyclic loads and thermal movement, which can cause out-of-plane deformation and elevated stress ranges in adjacent girder elements.",
     search: ``,
     discipline: "bridge construction",
     filter: ["bridge", "components", "NSTM"],
@@ -3023,7 +3023,7 @@ const glossaryMain = [
   {
     term: "planar discontinuity",
     definition:
-      "A flaw within a material that lies along a flat or nearly flat plane, such as a crack, lack of fusion, or laminar tearing. These defects are critical because they create stress concentrations and can lead to fracture under load.",
+      "A flaw within a material that lies along a flat or nearly flat plane, such as a crack, lack of fusion, or laminar tearing. These defects are create stress concentrations and can lead to fracture under load.",
     search: `what is planar discontinuity in steel fabrication`,
     discipline: "bridge fabrication",
     filter: ["defects", "NDT", "NSTM"],
@@ -3068,7 +3068,7 @@ const glossaryMain = [
   {
     term: "positive bending moment",
     definition:
-      "A moment that causes a beam to bend in a way that places the bottom fibers in tension and the top fibers in compression. This is the typical bending condition for simply supported beams.",
+      "A moment that causes downward deflection in a beam, putting the bottom fibers in tension and the top in compression. This typically occurs at midspan in simple spans, making those areas important for design and inspection.",
     search: ``,
     discipline: "structural mechanics",
     filter: ["design", "NSTM"],
@@ -3189,7 +3189,7 @@ const glossaryMain = [
   {
     term: "Q100 scour",
     definition:
-      "The potential scour depth calculated based on the Q100 flood event, indicating the level of erosion around bridge foundations that could occur during a 100-year flood. Scour analysis at this flow rate is crucial for determining the necessary design of bridge foundations to ensure their stability in extreme flooding conditions. This value helps engineers plan for future flood risks and prevent structural damage.",
+      "The potential scour depth calculated based on the Q100 flood event, indicating the level of erosion around bridge foundations that could occur during a 100-year flood. Scour analysis at this flow rate is used for determine the necessary design of bridge foundations to ensure their stability in extreme flooding conditions. This value helps engineers plan for future flood risks and prevent structural damage.",
     search: ``,
     discipline: "bridge design",
     filter: ["channel", "design"],
@@ -3411,6 +3411,14 @@ const glossaryMain = [
     search: ``,
     discipline: "bridge design",
     filter: ["compounds", "roadway"],
+  },
+  {
+    term: "rolled member",
+    definition:
+      "A steel shape formed by passing heated metal through a series of rollers to achieve a standardized cross-section, such as an I-beam, channel, or angle. Rolled members are widely used in bridges for their consistent properties, availability, and efficient performance in bending, shear, and axial load applications.",
+    search: ``,
+    discipline: "bridge design",
+    filter: ["bridge", "components", "NSTM", "welds"],
   },
   {
     term: "route",
@@ -3695,7 +3703,7 @@ const glossaryMain = [
   {
     term: "shear",
     definition:
-      "A force that causes parts of a material to slide past one another in opposite directions. In structural elements, excessive shear stress can lead to cracking or failure, particularly in connections and supports.",
+      "A measure of the internal force that causes adjacent parts of a material to slide past each other in opposite directions, typically along a plane parallel to the force. Shear affects how structural elements behave under load and is especially important in the design of connections, supports, and web components. It is usually expressed in units of force, such as kips or pounds.",
     discipline: "bridge design",
     filter: ["design", "NSTM"],
   },
@@ -3709,7 +3717,7 @@ const glossaryMain = [
   {
     term: "shear diagram",
     definition:
-      "A graphical representation of how shear force varies along the length of a structural member. It helps identify where shear forces peak and influence design.",
+      "A graphical representation that shows how shear force varies along the length of a beam or structural element. The diagram helps identify regions where shear forces are highest and is used to assess the structural demand on sections prone to sliding or shear failure.",
     search: ``,
     discipline: "structural analysis",
     filter: ["design", "NSTM"],
@@ -3747,10 +3755,18 @@ const glossaryMain = [
   {
     term: "shelf plate",
     definition:
-      "A horizontal plate welded or bolted to a main structural member, forming a structural ledge that supports the end of a beam, girder, or bracket. It acts as a bearing surface and transfers loads into the supporting element.",
+      "A horizontal plate welded or bolted to a main structural member, creating a ledge that supports the end of a beam, girder, or bracket. The shelf plate serves as a bearing surface, transferring loads from the supported component to the supporting structure.",
     search: ``,
     discipline: "bridge construction",
     filter: ["bridge", "components", "NSTM"],
+  },
+  {
+    term: "shim",
+    definition:
+      "A thin piece of material used to fill gaps or adjust the fit between structural components. Shims help ensure proper alignment and load transfer, especially in connections where fabrication or erection tolerances create uneven surfaces. They are often made of steel and may be bolted or welded in place.",
+    search: ``,
+    discipline: "bridge construction",
+    filter: ["bridge", "components"],
   },
   {
     term: "sidehill bridge",
@@ -3844,7 +3860,7 @@ const glossaryMain = [
   {
     term: "slope",
     definition:
-      "The degree of inclination or gradient of a surface, such as the ground or a bridge deck. Slope is measured as the ratio of vertical rise to horizontal distance and is crucial in determining drainage, load distribution, and structural stability. In bridge design, slope influences factors such as deck drainage and the alignment of approach roads.",
+      "The degree of inclination or gradient of a surface, such as the ground or a bridge deck. Slope is measured as the ratio of vertical rise to horizontal distance and is used to determine drainage, load distribution, and structural stability. In bridge design, slope influences factors such as deck drainage and the alignment of approach roads.",
     search: ``,
     discipline: "bridge design",
     filter: ["channel", "design", "roadway"],
@@ -3971,7 +3987,7 @@ const glossaryMain = [
   {
     term: "splice plate",
     definition:
-      "A steel plate used to join two structural members end-to-end, transferring loads across the connection and maintaining continuity in the structure.",
+      "A steel plate used to join two structural members end-to-end, transferring loads across the connection and maintaining continuity in the structure. Splice plates are typically bolted and help preserve structural integrity, especially in long spans or areas that need additional reinforcement.",
     discipline: "bridge design",
     filter: ["bridge", "components", "NSTM"],
   },
@@ -4042,14 +4058,14 @@ const glossaryMain = [
   {
     term: "stiffener",
     definition:
-      "A structural element, typically a plate or rib, used to reinforce and increase the rigidity of beams, girders, or other members to prevent deformation or buckling.",
+      "A structural element, typically a plate or rib, used to reinforce beams, girders, or other members to prevent deformation, buckling, or local instability. Stiffeners can be longitudinal, running along the length of the member, or transverse, placed across the width to address local stress concentrations. They are used for enhancing the strength and rigidity of structural components subjected to high loads or stress concentrations.",
     discipline: "bridge design",
     filter: ["bridge", "components", "NSTM"],
   },
   {
     term: "stiffness",
     definition:
-      "A measure of a material's resistance to deformation under load, defined as the ratio of applied force to the resulting displacement.",
+      "A measure of a material’s resistance to deformation under applied load. It is defined as the ratio of the applied force to the resulting displacement.",
     search: ``,
     discipline: "materials engineering",
     filter: ["design", "NSTM"],
@@ -4064,7 +4080,7 @@ const glossaryMain = [
   {
     term: "strain",
     definition:
-      "The deformation or displacement of material that results from an applied stress, expressed as the ratio of change in dimension to the original dimension.",
+      "The deformation or change in shape of a material due to an applied force. Strain is typically expressed as the ratio of the change in dimension to the original dimension but can also be represented as a percentage change in the material’s size. It helps engineers understand how materials stretch, compress, or bend under different loading conditions, influencing design decisions and safety assessments.",
     search: ``,
     discipline: "materials engineering",
     filter: ["design", "NSTM"],
@@ -4095,7 +4111,7 @@ const glossaryMain = [
   {
     term: "stress",
     definition:
-      "The internal force per unit area within a material that develops in response to external loads, temperature changes, or deformation. Stress determines how a bridge component resists applied forces and is critical for evaluating structural capacity, predicting failure modes, and guiding design decisions. Common types include tensile stress (pulling), compressive stress (pushing), shear stress (sliding), bending stress (flexure), and torsional stress (twisting).",
+      "The internal force per unit area within a material that develops in response to external loads, temperature changes, or deformation. Stress determines how a bridge component resists applied forces and is used for evaluating structural capacity, predicting failure modes, and guiding design decisions. Common types include tensile stress (pulling), compressive stress (pushing), shear stress (sliding), bending stress (flexure), and torsional stress (twisting).",
     search: ``,
     discipline: "materials engineering",
     filter: ["design", "NSTM"],
@@ -4103,7 +4119,7 @@ const glossaryMain = [
   {
     term: "stress riser",
     definition:
-      "A localized area where stress is concentrated due to a sudden change in geometry, such as a hole, notch, or weld end. These areas are more likely to initiate cracks under repeated loading.",
+      "A localized area where stress is concentrated due to a sudden change in geometry, such as a hole, notch, or weld termination. These areas are more likely to initiate fatigue cracks under repeated loading.",
     search: ``,
     discipline: "structural mechanics",
     filter: ["defects", "NSTM"],
@@ -4111,7 +4127,7 @@ const glossaryMain = [
   {
     term: "stress-strain curve",
     definition:
-      "A graphical representation of a material's response to applied stress, showing the relationship between stress and strain, and indicating properties like elasticity, yield strength, and tensile strength.",
+      "A graphical representation that shows the relationship between stress and strain for a material, indicating key properties such as elasticity, yield strength, and tensile strength.",
     search: ``,
     discipline: "materials engineering",
     filter: ["design", "NSTM"],
@@ -4220,7 +4236,7 @@ const glossaryMain = [
   {
     term: "suspension cables",
     definition:
-      "The main load-carrying elements in a suspension bridge. They support the deck by transferring its weight to towers and anchorages through tension.",
+      "Tension elements used to support the main span of a suspension bridge by carrying loads from the deck to the towers and anchorage points. Suspension cables are typically made from high-strength steel wires bundled into large strands, allowing them to support long spans by distributing forces efficiently across the structure. Suspension cables are considered nonredundant steel tension members (NSTMs).",
     search: ``,
     discipline: "bridge design",
     filter: ["bridge", "components", "NSTM"],
@@ -4241,7 +4257,7 @@ const glossaryMain = [
   {
     term: "system redundancy",
     definition:
-      "A redundancy that exists in a bridge system without load path redundancy, such that fracture of the cross-section at one location of a primary member will not cause a portion of or the entire bridge to collapse.",
+      "A structural condition where the system can redistribute loads and remain stable even without multiple independent load paths. System redundancy applies when a member’s failure does not lead to collapse due to the way internal forces shift within the structure. It cannot be identified through inspection or plans alone and requires refined analysis to determine whether certain members or the bridge itself behave in a redundant manner. In some cases, this redundancy allows for the reclassification of members previously considered nonredundant steel tension members (NSTMs), removing the NSTM designation and reducing the need for specialized monitoring.",
     search: ``,
     discipline: "bridge design",
     filter: ["design", "NSTM"],
@@ -4252,7 +4268,7 @@ const glossaryMain = [
   {
     term: "T1 steel (A514)",
     definition:
-      "A high-strength, quenched-and-tempered alloy steel used for structural applications requiring high load capacity. It has excellent strength but can be challenging to weld due to its susceptibility to hydrogen cracking. Preheating and controlled welding procedures are required to prevent embrittlement.",
+      "A quenched and tempered alloy steel with 100 ksi yield strength, used in many 1970s-era bridges for its high strength-to-weight ratio. Also known as ASTM A514 or AASHTO M244 Grade 100, it is prone to hydrogen-induced cracking during welding and fabrication, especially in butt welds under tension. This brittleness became a concern after the 2011 closure of the Sherman Minton Bridge, where cracks were discovered in tie girder welds made from T1 steel. The event led to federal guidance urging inspection of fracture critical members made from this material, especially where no fracture control plan exists. Identifying T1 steel is key to evaluating weld quality, fracture risk, and long-term service performance.",
     search: `What is "T1 Steel" in bridge design?`,
     discipline: "bridge design",
     letter: "letter-jump-t",
@@ -4307,7 +4323,7 @@ const glossaryMain = [
   {
     term: "tensile strength",
     definition:
-      "The maximum stress that a material can endure while being stretched or pulled before breaking. It indicates the material's resistance to tension.",
+      "The maximum stress a material can withstand while being stretched or pulled before breaking, measured in pounds per square inch or megapascals. It helps determine how much force a bridge component can resist under tension and is a key factor in selecting materials for tension members.",
     search: ``,
     discipline: "materials engineering",
     filter: ["design", "NSTM"],
@@ -4315,7 +4331,7 @@ const glossaryMain = [
   {
     term: "tension",
     definition:
-      "A force that stretches or elongates a material, opposite of compression. In bridge design, tension forces act on elements such as cables, tendons, or beams under load. Proper tension management is essential for the structural integrity of suspension bridges, cables, and pre-stressed concrete components.",
+      "A pulling force that stretches a material or structural member along its length. It is one of the main internal forces acting on bridge components. Recognizing where tension occurs helps engineers design for adequate strength and helps inspectors identify areas vulnerable to cracking, fatigue, or fracture.",
     search: ``,
     discipline: "structural engineering",
     filter: ["design", "NSTM"],
@@ -4323,7 +4339,7 @@ const glossaryMain = [
   {
     term: "tension zones",
     definition:
-      "Regions in a structural element where forces act to pull the material apart. These areas are more vulnerable to cracking and require careful detail and reinforcement.",
+      "Regions in a structural element where internal forces act to pull the material apart. These tension zones are more vulnerable to cracking, especially at welds, connections, or abrupt changes in geometry, and require careful detailing, reinforcement, and inspection to manage fatigue and fracture risk.",
     search: ``,
     discipline: "structural mechanics",
     filter: ["design", "NSTM"],
@@ -4382,7 +4398,15 @@ const glossaryMain = [
   {
     term: "tie girder",
     definition:
-      "A horizontal structural member that connects two or more vertical components, such as columns or supports, to maintain stability and prevent lateral movement. Tie girders are commonly used in bridges to tie together different parts of the structure and provide additional support. They help distribute forces and increase the overall rigidity of the bridge.",
+      "A structural element used in tied-arch and some suspension bridges to resist tension forces by connecting the ends of the arch or bridge together. It prevents the arch from spreading apart and transfers loads to the supports. The tie girder plays a crucial role in maintaining the stability of the structure by ensuring that tensile forces are properly managed. It differs from the lower chord, which is part of a truss system and provides tension resistance along the bottom of the truss rather than tying an arch together. Understanding the tie girder is important for bridge inspection and maintenance, as it often bears significant tensile stress, which can lead to cracking or failure if not properly monitored.",
+    search: ``,
+    discipline: "bridge design",
+    filter: ["bridge", "components", "NSTM"],
+  },
+  {
+    term: "tie rod",
+    definition:
+      "A structural component used to resist tensile forces in a bridge. It is typically a straight, cylindrical rod that helps prevent parts of a structure from separating or collapsing under tension. Tie rods are commonly found in trusses, arch bridges, or suspension bridge systems. They connect structural members and help maintain stability by counteracting outward forces.",
     search: ``,
     discipline: "bridge design",
     filter: ["bridge", "components", "NSTM"],
@@ -4400,7 +4424,7 @@ const glossaryMain = [
     definition:
       "The process of creating a textured surface on concrete using specialized equipment, often in the form of tines or brushes. Tining is applied to bridge decks to provide better skid resistance and traction, especially in wet or icy conditions. It helps improve safety by reducing the likelihood of vehicles skidding on the bridge surface.",
     search: ``,
-    discipline: "nridge design",
+    discipline: "bridge design",
     filter: ["bridge", "design", "roadway"],
   },
   {
@@ -4413,7 +4437,7 @@ const glossaryMain = [
   {
     term: "torsion",
     definition:
-      "A twisting force that causes a material or structure to rotate along its axis. In bridges, torsional forces may arise from uneven load distribution or external factors such as wind or traffic. Structural components, such as beams and girders, must be designed to resist torsion to prevent deformation or failure.",
+      "A twisting force that causes a structural element to rotate around its longitudinal axis. Torsion occurs when an external load is applied in a way that produces rotation, leading to shear stresses within the material. In bridges, torsion can affect components like beams, girders, and decks, particularly when uneven loads or wind forces create rotational effects. Proper design and material selection are necessary to resist torsional forces and prevent structural failure.",
     search: ``,
     discipline: "structural engineering",
     filter: ["design", "NSTM"],
@@ -4485,7 +4509,7 @@ const glossaryMain = [
   {
     term: "triaxial stress",
     definition:
-      "A state of stress where forces act in all three perpendicular directions. This occurs in confined materials under pressure, such as in geotechnical or high-pressure applications.",
+      "A state of stress where forces act in three perpendicular directions. This can occur at intersecting welds or plated connections where components meet at different angles. At these intersections, the combined forces in multiple directions can lead to more complex stress states, potentially affecting the strength and stability of the structure.",
     search: ``,
     discipline: "structural mechanics",
     filter: ["design", "NSTM"],
@@ -4616,7 +4640,7 @@ const glossaryMain = [
   {
     term: "upper chord",
     definition:
-      "The top horizontal component of a truss or structural frame, typically in tension, which resists downward forces. The upper chord works in conjunction with the lower chord and diagonals to form the triangular units that make up the truss. It plays a crucial role in distributing loads and maintaining the stability of the overall structure.",
+      "The top horizontal component of a truss or structural frame, typically in tension, which resists downward forces. The upper chord works in conjunction with the lower chord and diagonals to form the triangular units that make up the truss. It is used to distribute loads and maintain the stability of the overall structure.",
     search: ``,
     discipline: "bridge design",
     filter: ["bridge", "components", "NSTM"],
@@ -4660,7 +4684,7 @@ const glossaryMain = [
   {
     term: "vertical member",
     definition:
-      "A structural component oriented upright to carry axial or bending loads. Vertical members in trusses, columns, and supports help transfer forces between horizontal elements and foundations.",
+      "A structural component oriented upright to carry axial or bending loads. Vertical members transfer forces between horizontal elements and foundations. In trusses, they connect the upper and lower chords and are often under compression.",
     discipline: "bridge design",
     filter: ["bridge", "components", "NSTM"],
   },
@@ -4729,7 +4753,7 @@ const glossaryMain = [
   {
     term: "web",
     definition:
-      "The vertical or diagonal component of a structural element, such as a beam or truss, that connects the flanges and helps to resist shear forces. The web is typically the central portion of the beam or truss, designed to bear loads that act in the direction perpendicular to the element. In trusses, the web members are usually in compression or tension, depending on the load distribution.",
+      "The central portion of a beam that connects the top and bottom flanges. It carries shear forces and provides stability to the beam structure.",
     search: ``,
     discipline: "bridge design",
     filter: ["bridge", "components", "NSTM"],
@@ -7800,7 +7824,7 @@ const glossaryBIRM = [
   {
     term: "fracture critical member (FCM)",
     definition:
-      "A critical structural component that, if it fails, could result in the collapse of a portion of or the entire structure. These members are typically under tension and are carefully inspected for damage or stress.",
+      "A primary steel tension member whose failure would cause a partial or total collapse of the structure due to its isolation within the structural framing system. These members require focused attention during design, inspection, and maintenance to ensure bridge safety. Fracture critical members (FCMs) require hands-on inspection every two years, or more often if needed to monitor deterioration. Now referred to as nonredundant steel tension members (NSTMs).",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -7944,7 +7968,7 @@ const glossaryBIRM = [
   {
     term: "geometry",
     definition:
-      "The study of the shape, form, and spatial relationships between elements within a structure, which are crucial for determining its stability and functionality.",
+      "The study of the shape, form, and spatial relationships between elements within a structure, which are used to determine its stability and functionality.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -8592,7 +8616,7 @@ const glossaryBIRM = [
   {
     term: "jack stringer",
     definition:
-      "The beam located along the outermost floor bay, often carrying less load than interior members but crucial for supporting edges and distributing deck forces.",
+      "The beam located along the outermost floor bay, often carrying less load than interior members but still important for supporting edges and distributing deck forces.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -9999,7 +10023,7 @@ const glossaryBIRM = [
   {
     term: "primary member",
     definition:
-      "A structural component designed to resist significant bending and shear forces, crucial for distributing live and dead loads across the structure.",
+      "A structural component designed to resist significant bending and shear forces, used for distributing live and dead loads across the structure.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -11349,7 +11373,7 @@ const glossaryBIRM = [
   {
     term: "streambed",
     definition:
-      "The bottom of a river or stream channel, where water flows. The composition and stability of the streambed are crucial for maintaining water flow and preventing erosion.",
+      "The bottom of a river or stream channel, where water flows. The composition and stability of the streambed are important for maintaining water flow and preventing erosion.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -11934,8 +11958,7 @@ const glossaryBIRM = [
 
   {
     term: "transducer",
-    definition:
-      "A device that converts one form of energy into another, often used in ultrasonic testing to transmit and receive sound waves. It is crucial for non-destructive testing techniques.",
+    definition: "A device that converts one form of energy into another, often used in ultrasonic testing to transmit and receive sound waves.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },

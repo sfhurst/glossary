@@ -43,24 +43,23 @@ button:focus::after {
   width: 10px; /* Control the width of the effect */
   height: 4px; /* Control the thickness of the effect */
   background: linear-gradient(to right, transparent, var(--color-orange), transparent); /* Gradient effect */
-  background: linear-gradient(to right, transparent, rgb(76, 76, 253), transparent); /* Gradient effect */
+  background: linear-gradient(to right, transparent, var(--neon-light), transparent); /* Gradient effect */
   background: var(--color-orange);
-  background: rgb(76, 76, 253);
-  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);  Optional subtle shadow for better visibility */
+  background: var(--neon-light);
 }
 
 .main-content-containers:has(button:focus) {
   /* Styles for the parent when the child is focused */
-  border-left: 3px solid rgb(76, 76, 253);
+  border-left: 3px solid var(--neon-light);
 }
 
 .main-content-containers:has(a:focus) {
   /* Styles for the parent when the child is focused */
-  border-left: 3px solid rgb(76, 76, 253);
+  border-left: 3px solid var(--neon-light);
 }
 
 .header:has(button:focus) {
-  border-left: 3px solid rgb(76, 76, 253);
+  border-left: 3px solid var(--neon-light);
   width: calc(100% - 3px); /* Subtract the border width */
 }
 
@@ -134,7 +133,7 @@ button.active:focus {
 .asset-update-text,
 .type-to-search {
   margin-left: 20px;
-  color: rgba(233 233 233 / 0.6);
+  color: var(--notes-text);
 }
 
 /* ::: ---------------------------- General | Containers --------------------------------- */
@@ -177,7 +176,7 @@ button.active:focus {
 }
 
 .main-content-containers:focus {
-  border-left: 3px solid rgb(76, 76, 253);
+  border-left: 3px solid var(--neon-light);
 }
 
 .content-container-tabs {
@@ -199,7 +198,7 @@ button.active:focus {
 }
 
 .content-container-rating-lines {
-  border-bottom: solid 2px rgba(128, 128, 128, 0.2);
+  border-bottom: solid 2px var(--rating-lines);
   display: flex;
   cursor: default;
   background-color: var(--content-background-color);
@@ -240,7 +239,7 @@ button.active:focus {
   margin-bottom: 3px;
   color: rgb(172, 172, 172);
   text-indent: -15px;
-  border-bottom: solid 2px rgba(128, 128, 128, 0.2);
+  border-bottom: solid 2px var(--rating-lines);
   transition: 0.2s;
   color: var(--text-color);
 }
@@ -302,7 +301,7 @@ button.active:focus {
 }
 
 .content-container-links-line-links:focus {
-  border-left: 3px solid rgb(76, 76, 253);
+  border-left: 3px solid var(--neon-light);
 }
 
 .paragraph-rating {
@@ -323,13 +322,13 @@ button.active:focus {
 }
 
 /* .textarea-comments:focus {
-  border-left: 3px solid rgb(76, 76, 253);
+  border-left: 3px solid var(--neon-light);
   background: rgba(90, 88, 61, 0.18);
 } */
 
 .main-content-containers:has(.textarea-comments:focus) {
   /* Styles for the parent when the child is focused */
-  border-left: 3px solid rgb(76, 76, 253);
+  border-left: 3px solid var(--neon-light);
 }
 
 .textarea-mirrors {
@@ -1128,4 +1127,64 @@ kbd {
 
 .review-textarea-highlighted {
   background: rgba(74, 36, 20, 0.7);
+}
+
+/* ------------------------------- */
+
+.theme-slider {
+  position: fixed;
+  bottom: 12px;
+  left: 12px;
+  width: 40px;
+  height: 30px;
+  background-color: #1c4592;
+  background-color: #f78da7;
+  background-color: #d2d2d2;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 3s;
+  z-index: 9999;
+}
+
+.theme-slider .slider-knob {
+  width: 26px;
+  height: 26px;
+  margin: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 1s;
+}
+
+[data-theme="pink"] .theme-slider {
+  background-color: #f78da7;
+  background-color: #1c4592;
+  background-color: #6c6c6c;
+}
+
+[data-theme="pink"] .theme-slider .slider-knob {
+  transform: translateX(10px);
+}
+
+[data-theme="white"] .theme-slider {
+  background-color: #f78da7;
+  background-color: #1c4592;
+  background-color: #6c6c6c;
+}
+
+[data-theme="white"] .theme-slider .slider-knob {
+  transform: translateX(10px);
+}
+
+.iterate-img {
+  transition: opacity 1s ease;
+  opacity: 1;
+}
+.iterate-img.fade-out {
+  opacity: 0;
+}
+
+html,
+body,
+* {
+  transition: background-color 1s, color 1s, border-color 1s;
 }

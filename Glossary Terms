@@ -42,11 +42,11 @@ filter: ["acronyms", "bridge", "channel", "components", "compounds", "design", "
 }
 ```
 
-# Simple
+# Term Only
 
-discontinuity
+web
 
-1. **Provide a clear, concise, and robust definition for the term(s):**  
+1. **Provide a clear, robust but concise definition for the term(s):**  
    Ensure the definition explains the term in an accessible and technically accurate way. The definition should be helpful to both bridge engineers and technicians.
 
 2. **Explain what the term is and why it is important:**  
@@ -64,13 +64,19 @@ discontinuity
 6. **Avoid dashes:**  
    Keep the definition simple and clean. Use commas or periods instead of dashes for better readability.
 
-7. **Use lowercase unless it's a proper noun:**  
-   Keep the terms and definitions in lowercase to maintain consistency with the glossary format. Capitalize only when referring to proper nouns.
+7. **Use lowercase for terms unless it's a proper noun:**  
+   Keep the terms and definitions in lowercase to maintain consistency with the glossary format. Capitalize only when referring to proper nouns or at the beginning of a sentence.
 
 8. **Ensure relevance and practicality:**  
    Keep the definition focused on its real-world applications in bridge design, inspection, and maintenance. Make sure that both engineers and technicians can apply the term in practice.
 
-9. Provide only the definition.
+9. **No filler words or sentences**
+   Don't use words like "critical", "essential", or "crucial" to heighten definitions or relationships unnecessarily when a word like "used" can make it simpler and less dramatic. Don't talk about how in engineering it is critical to inspect or assess something.
+
+10. Provide only the definition.
+
+11. **My Notes:**
+    i think a tie girder is used in suspension bridges but i am not sure. also, how is it different than the lower chord. i think on the sheman minton there are tie girders and a lower chord.
 
 # Fatigue
 

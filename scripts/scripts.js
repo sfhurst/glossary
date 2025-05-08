@@ -1,3 +1,21 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const slider = document.getElementById("theme-toggle");
+  const logoImg = document.querySelector(".iterate-img");
+
+  slider.addEventListener("click", () => {
+    const html = document.documentElement;
+    const current = html.getAttribute("data-theme");
+
+    if (current === "blue") {
+      html.setAttribute("data-theme", "white");
+      logoImg.src = "./media/logo-rings-only-orange.png";
+    } else {
+      html.setAttribute("data-theme", "blue");
+      logoImg.src = "./media/logo-rings-only-purple.png";
+    }
+  });
+});
+
 // Table of Contents
 
 // :::::: (Field Population)
