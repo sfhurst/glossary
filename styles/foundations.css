@@ -62,6 +62,7 @@
   --main-color: rgba(240, 240, 240, 0.95); /* light neutral */
   --text-color: rgb(33, 33, 33); /* dark readable text */
   --content-background-color: rgba(220, 218, 218, 0.9); /* soft white */
+  --background-purple: rgba(52, 37, 53, 0.4);
 
   /* primary buttons - background */
   --active-button-color1: rgb(230, 230, 230); /* light grey */
@@ -93,52 +94,13 @@
   --hover-button-text-color3: var(--text-color);
   --inactive-button-text-color3: var(--text-color);
 
+  /* misc */
   --rating-lines: rgba(89, 89, 89, 0.32); /* subtle grid lines */
   --neon-light: rgb(76, 76, 253);
   --highlight: rgba(168, 168, 168, 0.7);
   --notes-text: rgba(33 33 33 / 0.6);
-}
-
-[data-theme="orange"] {
-  --main-background: url("../media/light-down-black2.svg");
-  --main-background-overlay: rgb(65 45 25 / 0.9); /* warm dark overlay */
-  --main-color: rgb(124 69 18 / 0.9); /* rich burnt orange */
-  --text-color: rgb(245 235 220); /* light tan text */
-  --content-background-color: rgb(50 30 20 / 0.7); /* muted brownish base */
-
-  /* primary buttons - background */
-  --active-button-color1: rgb(215 180 140); /* warm beige */
-  --hover-button-color1: rgb(160 85 30); /* deep orange hover */
-  --inactive-button-color1: rgb(130 70 25); /* duller burnt orange */
-
-  /* primary buttons - text */
-  --active-button-text-color1: rgb(42 42 42);
-  --hover-button-text-color1: var(--text-color);
-  --inactive-button-text-color1: var(--text-color);
-
-  /* secondary buttons - background */
-  --active-button-color2: rgb(215 180 140);
-  --hover-button-color2: rgb(155 100 50); /* medium toast brown */
-  --inactive-button-color2: rgb(140 85 45); /* muted orange-brown */
-
-  /* secondary buttons - text */
-  --active-button-text-color2: rgb(42 42 42);
-  --hover-button-text-color2: var(--text-color);
-  --inactive-button-text-color2: var(--text-color);
-
-  /* tertiary buttons - background */
-  --active-button-color3: rgb(215 180 140);
-  --hover-button-color3: rgb(125 95 55); /* mustard brown */
-  --inactive-button-color3: rgb(110 80 45); /* toned down mustard */
-
-  /* tertiary buttons - text */
-  --active-button-text-color3: rgb(42 42 42);
-  --hover-button-text-color3: var(--text-color);
-  --inactive-button-text-color3: var(--text-color);
-
-  --rating-lines: rgba(160, 120, 90, 0.2); /* soft orange tint */
-  --neon-light: rgb(76, 76, 253);
-  --highlight: rgba(63, 63, 63, 0.7);
+  --text-shadow: rgb(145, 145, 145);
+  --color-link-focus: rgb(241, 89, 47);
 }
 
 [data-theme="blue"] {
@@ -147,29 +109,45 @@
   --main-color: rgb(58 73 95 / 0.9);
   --text-color: rgb(233 233 233);
   --content-background-color: rgb(34 34 34 / 0.7);
+  --background-purple: rgba(52, 37, 53, 0.7);
+
+  /* primary buttons - background */
   --active-button-color1: rgb(182 182 182);
   --hover-button-color1: rgb(40 40 65);
   --inactive-button-color1: rgb(47 47 77);
+
+  /* primary buttons - text */
   --active-button-text-color1: rgb(42 42 42);
   --hover-button-text-color1: var(--text-color);
   --inactive-button-text-color1: var(--text-color);
+
+  /* secondary buttons - background */
   --active-button-color2: rgb(182 182 182);
   --hover-button-color2: rgb(58 88 74);
   --inactive-button-color2: rgb(65 99 79);
+
+  /* secondary buttons - text */
   --active-button-text-color2: rgb(42 42 42);
   --hover-button-text-color2: var(--text-color);
   --inactive-button-text-color2: var(--text-color);
+
+  /* tertiary buttons - background */
   --active-button-color3: rgb(182 182 182);
   --hover-button-color3: rgb(88, 83, 58);
   --inactive-button-color3: rgb(97, 99, 65);
+
+  /* tertiary buttons - text */
   --active-button-text-color3: rgb(42 42 42);
   --hover-button-text-color3: var(--text-color);
   --inactive-button-text-color3: var(--text-color);
 
+  /* misc */
   --rating-lines: rgba(128, 128, 128, 0.2);
   --neon-light: rgb(76, 76, 253);
   --highlight: rgba(63, 63, 63, 0.7);
   --notes-text: rgba(233 233 233 / 0.6);
+  --text-shadow: rgb(0, 0, 0);
+  --color-link-focus: var(--color-yellow);
 }
 
 [data-theme="pink"] {
@@ -472,7 +450,7 @@ main {
   font-size: 12px;
   color: var(--text-color);
   vertical-align: 2px;
-  text-shadow: 0 0 8px rgb(0, 0, 0), 3px 3px 8px rgb(0, 0, 0);
+  text-shadow: 0 0 8px var(--text-shadow), 3px 3px 8px var(--text-shadow);
 }
 
 /* ::: --------------------------- Media --------------------------- */

@@ -776,6 +776,13 @@ const glossaryMain = [
     filter: ["design"],
   },
   {
+    term: "complete joint penetration (CJP) weld",
+    definition:
+      "A groove weld that fully joins the entire thickness of two connected pieces, allowing stress to pass through the joint without interruption. CJP welds are used where maximum strength is required, such as in primary structural connections.",
+    discipline: "bridge design",
+    filter: ["acronyms", "welds"],
+  },
+  {
     term: "compression",
     definition:
       "A force that acts to reduce the size of a material or structural element. In bridge design, compression is typically applied to beams, columns, or other load-bearing elements. Materials subjected to compression may deform or buckle if the force exceeds their capacity. Members fully in compressin are not NSTMs.",
