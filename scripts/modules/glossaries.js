@@ -2982,7 +2982,7 @@ const glossaryMain = [
   {
     term: "pigeon",
     definition:
-      "A colloquial term in bridge maintenance referring to a minor defect or issue that, while not critical, requires attention to prevent future deterioration.",
+      "A medium-sized bird common in cities and rural areas, known for its short neck, compact body, and cooing sound. Pigeons often build nests on bridges, ledges, and other structures. Their droppings can accelerate corrosion and may carry diseases such as histoplasmosis, cryptococcosis, and, in rare cases, avian influenza, posing maintenance and health concerns.",
     search: ``,
     discipline: "bridge maintenance",
     filter: ["design"],
