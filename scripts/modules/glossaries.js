@@ -182,8 +182,7 @@ const glossaryMain = [
   },
   {
     term: "arch ring",
-    definition:
-      "The curved, topmost portion of an arch that carries the compressive load across the span of the bridge, ensuring structural stability.",
+    definition: "The curved portion of an arch that carries the compressive load across the span of the bridge, ensuring structural stability.",
     search: ``,
     discipline: "arch design",
     filter: ["bridge", "components", "compounds", "culvert"],
