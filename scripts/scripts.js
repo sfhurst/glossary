@@ -1777,7 +1777,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (link && link.href) {
       gtag("event", "click", {
         event_category: "link",
-        event_label: link.href,
+        event_label: link.innerText.trim() || link.href,
       });
     }
   });
