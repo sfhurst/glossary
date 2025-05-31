@@ -729,7 +729,7 @@ const glossaryMain = [
       "A surface treatment where a layer of liquid asphalt is sprayed onto an existing pavement, followed by a layer of crushed stone or gravel. Rollers are used to press the stone into the asphalt. This process seals small cracks, improves surface friction, and extends pavement life.",
     search: ``,
     discipline: "highway maintenance",
-    filter: ["construction", "roadway", "materials"],
+    filter: ["design", "roadway", "materials"],
   },
 
   {
@@ -2288,6 +2288,14 @@ const glossaryMain = [
   // :::::
 
   {
+    term: "k-frame bridge",
+    definition:
+      "A type of steel rigid frame bridge where angled compression members form a rotated 'K' shape between the superstructure and intermediate supports. These members, acting as rigid connections, transfer loads directly into the substructure without bearings or large pier caps. Often used in multi-span continuous bridges, this layout provides structural efficiency, minimizes joints, and simplifies construction. Inspectors should monitor the connections for fatigue, weld cracking, and corrosion due to force concentration at rigid joints.",
+    search: `What is "k-frame" in bridge design?`,
+    discipline: "bridge design",
+    filter: ["bridge", "components", "design"],
+  },
+  {
     term: "keystone",
     definition:
       "The central, topmost stone or concrete block of an arch that locks the other blocks or sections in place. Without the keystone the arch would lose its structural integrity.",
@@ -2568,7 +2576,7 @@ const glossaryMain = [
       "A roadway or bridge deck surface that has been cut using a milling machine to remove a uniform layer of material. This process is used to improve smoothness, adjust grade or elevation, and prepare the surface for new overlays.",
     search: ``,
     discipline: "highway design",
-    filter: ["construction", "roadway", "materials"],
+    filter: ["design", "roadway", "materials"],
   },
 
   {
@@ -3408,6 +3416,15 @@ const glossaryMain = [
     discipline: "bridge design",
     filter: ["culvert"],
   },
+  {
+    term: "rigid frame bridge",
+    definition:
+      "A bridge where the superstructure and substructure are connected by moment-resisting joints, forming a single continuous frame. Loads are transferred through rigid connections without bearings, allowing the entire structure to act as a unit. This design reduces the number of joints, improves durability, and simplifies maintenance. Common in short to medium span bridges, especially in urban or confined areas, where minimizing structural depth and construction complexity is beneficial.",
+    search: ``,
+    discipline: "bridge design",
+    filter: ["bridge", "components", "design"],
+  },
+
   {
     term: "rigid overlay",
     definition:
