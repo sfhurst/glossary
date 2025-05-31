@@ -725,6 +725,15 @@ const glossaryMain = [
     filter: ["bridge", "components", "compounds", "culvert"],
   },
   {
+    term: "chip sealing",
+    definition:
+      "A surface treatment where a layer of liquid asphalt is sprayed onto an existing pavement, followed by a layer of crushed stone or gravel. Rollers are used to press the stone into the asphalt. This process seals small cracks, improves surface friction, and extends pavement life.",
+    search: ``,
+    discipline: "highway maintenance",
+    filter: ["construction", "roadway", "materials"],
+  },
+
+  {
     term: "clad steel",
     definition:
       "A composite steel with a corrosion-resistant outer layer (such as stainless steel) bonded to a structural steel core. Can be difficult to weld and requires specialized fabrication techniques.",
@@ -869,6 +878,21 @@ const glossaryMain = [
       "The removal of bed material from a channel due to increased flow velocity at a constricted section, often occurring beneath bridges or culverts where water accelerates through a narrower opening.",
     discipline: "bridge design",
     filter: ["channel", "defects"],
+  },
+  {
+    term: "cope",
+    definition: `A re-entrant corner cut made in structural steel to allow proper fit with connecting members. Copes are used to remove part of a flange or web, usually at beam ends, so the piece clears obstructions and fits tightly in place during assembly. A cope with a radius greater than or equal to 1" is an AASHTO fatigue category C.`,
+    search: ``,
+    discipline: "bridge design",
+    filter: ["design", "NSTM"],
+  },
+  {
+    term: "coping",
+    definition:
+      "The overhanging portion of a bridge deck or structure, designed to protect the supporting elements and direct water away from the core of the structure.",
+    search: ``,
+    discipline: "bridge design",
+    filter: ["bridge", "components"],
   },
   {
     term: "corbel",
@@ -1248,7 +1272,7 @@ const glossaryMain = [
   {
     term: "drilled shaft",
     definition:
-      "A structural element constructed using an auger to drill into a soil mass to remove soil and then filling the drilled void with concrete. Drilled shafts used for retaining wall construction are typically built as Secant Walls (consisting of overlapping or intersecting drilled shafts), Soldier Walls (consisting of spaced drilled shafts with lagging), or Tangent Walls (consisting of drilled shafts placed side-by-side and touching one another, but not overlapping).",
+      "A hole drilled into the ground using an auger or other drilling equipment. Drilled shafts may be left empty or used for various purposes, such as soil testing or creating a foundation when filled with concrete.",
     search: `What is "Drilled Shaft" in retaining wall design?`,
     discipline: "retaining wall design",
     filter: ["bridge", "design"],
@@ -2538,6 +2562,16 @@ const glossaryMain = [
     discipline: "bridge history",
     filter: ["design", "NSTM"],
   },
+
+  {
+    term: "milled surface",
+    definition:
+      "A roadway or bridge deck surface that has been cut using a milling machine to remove a uniform layer of material. This process is used to improve smoothness, adjust grade or elevation, and prepare the surface for new overlays.",
+    search: ``,
+    discipline: "highway design",
+    filter: ["construction", "roadway", "materials"],
+  },
+
   {
     term: "minor defect",
     definition:

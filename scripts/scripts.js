@@ -1750,6 +1750,18 @@ document.addEventListener("keydown", function (event) {
 
 // :::: (Google Analytics) // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
+// Google Analytics init
+window.dataLayer = window.dataLayer || [];
+function gtag() {
+  dataLayer.push(arguments);
+}
+
+window.addEventListener("load", () => {
+  gtag("js", new Date());
+  gtag("config", "G-0F90HEKFRF");
+});
+
+// Button click tracking
 document.addEventListener("DOMContentLoaded", function () {
   document.body.addEventListener("click", function (event) {
     if (event.target.tagName === "BUTTON") {
