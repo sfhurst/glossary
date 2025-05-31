@@ -1761,13 +1761,23 @@ window.addEventListener("load", () => {
   gtag("config", "G-0F90HEKFRF");
 });
 
-// Button click tracking
+// Unified click tracking
 document.addEventListener("DOMContentLoaded", function () {
   document.body.addEventListener("click", function (event) {
+    // Button click tracking
     if (event.target.tagName === "BUTTON") {
       gtag("event", "click", {
         event_category: "button",
         event_label: event.target.innerText.trim() || "Unnamed Button",
+      });
+    }
+
+    // Link click tracking
+    const link = event.target.closest("a");
+    if (link && link.href) {
+      gtag("event", "click", {
+        event_category: "link",
+        event_label: link.href,
       });
     }
   });
