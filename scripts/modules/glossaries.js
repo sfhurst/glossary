@@ -1316,12 +1316,20 @@ const glossaryMain = [
   // :::::
 
   {
+    term: "e.g.",
+    definition:
+      "A Latin abbreviation meaning for example. It introduces one or more examples to clarify a broader category or concept. Used in reports, specifications, and field notes to illustrate possible conditions, materials, or scenarios without limiting to a single case. Helps clarify expectations or guide interpretation in design and maintenance procedures.",
+    search: "",
+    discipline: "bridge inspection",
+    letter: "letter-jump-e",
+    filter: ["acronyms"],
+  },
+  {
     term: "earthwork",
     definition:
       "The process of moving, excavating, or compacting soil, rock, or other materials to prepare a site for construction or engineering projects.",
     search: ``,
     discipline: "bridge design",
-    letter: "letter-jump-e",
     filter: ["design"],
   },
   {
@@ -2045,6 +2053,14 @@ const glossaryMain = [
     filter: ["bridge", "components", "compounds"],
   },
   {
+    term: "i.e.",
+    definition:
+      "A Latin abbreviation meaning that is or in other words. It introduces a restatement or clarification of the previous idea. Unlike e.g., it does not list examples but instead narrows or precisely defines the meaning. Used in inspection notes and technical writing to avoid ambiguity in descriptions, especially when specifying exact locations, conditions, or interpretations.",
+    search: "",
+    discipline: "bridge inspection",
+    filter: ["acronyms"],
+  },
+  {
     term: "in-depth inspection",
     definition:
       "A close-up, detailed inspection of one or more bridge members located above or below water, using visual or nondestructive evaluation techniques as required to identify any deficiencies not readily detectable using routine inspection procedures. Hands-on inspection may be necessary at some locations. In-depth inspections may occur more or less frequently than routine inspections, as outlined in bridge-specific inspection procedures.",
@@ -2059,6 +2075,15 @@ const glossaryMain = [
     discipline: "bridge design",
     filter: ["bridge"],
   },
+  {
+    term: "in situ",
+    definition:
+      "A Latin phrase meaning in place or on site. It refers to work or conditions that occur directly at the location of a structure or element, rather than being fabricated or altered elsewhere. In bridge inspection and maintenance, it often describes measurements, repairs, or observations made without removing the component. In design, it can refer to materials cast or formed directly in their final position, such as in situ concrete. The term emphasizes real-world context and helps distinguish between theoretical or lab-based results and actual field performance.",
+    search: "",
+    discipline: "bridge inspection",
+    filter: ["design", "materials"],
+  },
+
   {
     term: "Indiana Type 5 aluminum bridge railing",
     definition:

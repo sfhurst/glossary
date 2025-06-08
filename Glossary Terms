@@ -1,8 +1,8 @@
 # Advanced
 
-K-Frame
+in situ
 
-1. **Provide a clear, concise, and robust definition for the term(s):**  
+1. **Provide a clear, robust but concise definition for the term(s):**  
    Ensure the definition explains the term in an accessible and technically accurate way. The definition should be helpful to both bridge engineers and technicians.
 
 2. **Explain what the term is and why it is important:**  
@@ -20,16 +20,19 @@ K-Frame
 6. **Avoid dashes:**  
    Keep the definition simple and clean. Use commas or periods instead of dashes for better readability.
 
-7. **Use lowercase unless it's a proper noun:**  
-   Keep the terms and definitions in lowercase to maintain consistency with the glossary format. Capitalize only when referring to proper nouns.
+7. **Capitalize sentences normally. Use lowercase for the term itself (the glossary entry), unless it's a proper noun:**  
+   Keep the terms and definitions in lowercase to maintain consistency with the glossary format. Capitalize only when referring to proper nouns or at the beginning of a sentence.
 
 8. **Ensure relevance and practicality:**  
    Keep the definition focused on its real-world applications in bridge design, inspection, and maintenance. Make sure that both engineers and technicians can apply the term in practice.
 
-9. **Return an object in this format:**  
-   Use only the filters provided in the list below. You may include more than one if they apply. Do not invent new filters or modify these. Use the most specific and relevant tags from this set:  
-   `["acronyms", "bridge", "channel", "components", "compounds", "design", "culvert", "defects", "joints", "materials", "roadway", "NSTM", "org", "wall", "welds"]`  
-   Return the object in this exact format, with no quotes around the keys (only around the values):
+9. **No filler words or sentences**
+   Don't use words like "critical", "essential", or "crucial" to heighten definitions or relationships unnecessarily when a word like "used" can make it simpler and less dramatic. Don't talk about how in engineering it is critical to inspect or assess something.
+
+10. **Return an object in this format:**  
+    Use only the filters provided in the list below. You may include more than one if they apply. Do not invent new filters or modify these. Use the most specific and relevant tags from this set:  
+    `["acronyms", "bridge", "channel", "components", "compounds", "design", "culvert", "defects", "joints", "materials", "roadway", "NSTM", "org", "wall", "welds"]`  
+    Return the object in this exact format, with no quotes around the keys (only around the values):
 
 ```javascript
 {
