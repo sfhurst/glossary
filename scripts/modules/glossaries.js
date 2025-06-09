@@ -2859,7 +2859,7 @@ const glossaryMain = [
   {
     term: "nosing",
     definition:
-      "The rounded or beveled edge at the intersection of a joint, such as an expansion or contraction joint. It helps protect the joint from damage and wear, allowing for smoother transitions between sections and reducing the risk of cracking by distributing stress more evenly.",
+      "Material placed along the edges of an expansion joint to reinforce and protect the surrounding concrete from impact, spalling, and wear. It forms part of the joint header and supports the joint seal or gland. Joint nosing is typically made of elastomeric concrete or other flexible, durable compounds that can bond to concrete and withstand traffic loads and thermal movement. It helps preserve joint function and extend the life of the deck surface.",
     discipline: "bridge design",
     filter: ["components", "joints"],
   },
