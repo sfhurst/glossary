@@ -348,9 +348,9 @@ const glossaryMain = [
   {
     term: "base metal",
     definition:
-      "The material to which coatings, welds, or other treatments are applied, forming the structural foundation in fabrication or joining processes. Often selected for its strength, durability, or compatibility with the intended application.",
+      "The material to which coatings, welds, or other treatments are applied, forming the structural foundation in fabrication or joining processes. Often selected for its strength, durability, or compatibility with the intended application. Typically classified under AASHTO fatigue category A.",
     discipline: "bridge inspection",
-    filter: ["materials", "welds"],
+    filter: ["materials", "welds", "NSTM"],
   },
   {
     term: "beam",
@@ -4849,9 +4849,9 @@ const glossaryMain = [
   {
     term: "weathering steel (Corten)",
     definition:
-      "A high-strength, low-alloy steel designed to form a protective rust layer that reduces further corrosion. Susceptible to accelerated corrosion in environments with frequent moisture exposure, especially where water can collect.",
+      "A high-strength, low-alloy steel designed to form a protective rust layer that reduces further corrosion. Susceptible to accelerated corrosion in environments with frequent moisture exposure, especially where water can collect. Typically classified under AASHTO fatigue category B.",
     discipline: "bridge design",
-    filter: ["materials"],
+    filter: ["materials", "NSTM"],
   },
   {
     term: "web",
