@@ -138,6 +138,14 @@ const glossaryMain = [
     filter: ["materials"],
   },
   {
+    term: "alluvial",
+    definition:
+      "Material deposited by flowing water, typically consisting of sand, silt, clay, or gravel that forms the bed and banks of rivers and streams. In bridge design and inspection, alluvial beds are significant because they can be easily eroded or scoured, affecting the stability of foundations placed in them.",
+    search: ``,
+    discipline: "bridge design",
+    filter: ["channel"],
+  },
+  {
     term: "ANSI (American National Standards Institute)",
     definition:
       "A private, nonprofit organization that oversees the development of voluntary consensus standards for a wide range of industries, including construction and engineering. It coordinates with international bodies to ensure compatibility between U.S. and global standards, covering materials, testing procedures, and safety regulations used in bridge design and fabrication.",
@@ -738,6 +746,14 @@ const glossaryMain = [
       "A composite steel with a corrosion-resistant outer layer (such as stainless steel) bonded to a structural steel core. Can be difficult to weld and requires specialized fabrication techniques.",
     discipline: "bridge design",
     filter: ["materials"],
+  },
+  {
+    term: "clear water scour",
+    definition:
+      "Erosion around a pier or abutment that occurs when the approach flow is not carrying sediment and the bed material is initially stable. Scour begins because the local flow accelerates near the structure, removing sediment that was otherwise at rest. This condition is common when flow velocity exceeds the threshold needed to mobilize bed particles.",
+    search: ``,
+    discipline: "bridge design",
+    filter: ["bridge", "channel"],
   },
   {
     term: "clear zone",
@@ -2013,6 +2029,22 @@ const glossaryMain = [
     filter: ["design", "roadway"],
   },
   {
+    term: "horizontal vortex",
+    definition:
+      "A swirling flow pattern that forms along the sides of a pier, abutment, or other obstruction parallel to the bed. These vortices move sediment laterally, shaping scour holes and affecting the distribution of bed material near foundations.",
+    search: ``,
+    discipline: "bridge design",
+    filter: ["channel"],
+  },
+  {
+    term: "horseshoe vortex",
+    definition:
+      "A curved vortex that wraps around the base of a pier or abutment where the approaching flow meets the obstruction. This flow pattern directs high-velocity water downward, increasing the removal of sediment and deepening scour holes at the foundation.",
+    search: ``,
+    discipline: "bridge design",
+    filter: ["channel"],
+  },
+  {
     term: "hot mix asphalt (HMA)",
     definition: "A combination of asphalt binder and aggregates heated and mixed to form a durable pavement material.",
     discipline: "bridge design",
@@ -2449,6 +2481,14 @@ const glossaryMain = [
     search: ``,
     discipline: "bridge design",
     filter: ["acronyms", "roadway"],
+  },
+  {
+    term: "live bed scour",
+    definition:
+      "Sediment movement that occurs before scour begins, where the channel bed is already transporting material under normal flow conditions. This means additional erosion around a pier or abutment happens while the bed remains active, which affects how scour depth is predicted and monitored during inspections.",
+    search: ``,
+    discipline: "bridge design",
+    filter: ["channel"],
   },
   {
     term: "live load",
@@ -3629,7 +3669,7 @@ const glossaryMain = [
   {
     term: "scour",
     definition:
-      "Localized erosion caused by the force of flowing water around structures like bridge piers, abutments, or embankments, often leading to foundation instability.",
+      "Localized erosion caused by the force of flowing water around structures like bridge piers, abutments, or embankments, often leading to foundation instability. Scour is the leading cause of bridge failures.",
     search: ``,
     discipline: "bridge design",
     filter: ["channel", "defects"],
@@ -3914,6 +3954,14 @@ const glossaryMain = [
     search: ``,
     discipline: "bridge design",
     filter: ["channel", "defects"],
+  },
+  {
+    term: "sinuosity",
+    definition:
+      "The ratio of a stream or river's channel length to the straight-line distance it covers, indicating how much it meanders. High sinuosity means the channel has many bends, which affects flow velocity, sediment transport, and the location of scour or deposition near bridge crossings.",
+    search: ``,
+    discipline: "bridge design",
+    filter: ["channel"],
   },
   {
     term: "skew",
@@ -4809,6 +4857,14 @@ const glossaryMain = [
     discipline: "bridge design",
     letter: "letter-jump-w",
     filter: ["roadway"],
+  },
+  {
+    term: "wake vortex",
+    definition:
+      "A rotating flow pattern that forms downstream of a pier, pile, or other obstruction as water moves past it. These vortices can lift and carry bed material, contributing to local scour at bridge foundations.",
+    search: ``,
+    discipline: "bridge design",
+    filter: ["channel"],
   },
   {
     term: "warning signs",
