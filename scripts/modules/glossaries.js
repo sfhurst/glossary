@@ -3659,7 +3659,7 @@ const glossaryMain = [
     filter: ["bridge", "components", "roadway"],
   },
   {
-    term: "sawcut",
+    term: "saw cut",
     definition:
       "A method of cutting concrete or asphalt using a saw, typically with a diamond blade, to create a clean, controlled crack or joint. Sawcutting is often used to create expansion joints or to remove damaged sections of a surface. This technique helps maintain the structural integrity of the material by preventing uncontrolled cracking and facilitating proper jointing.",
     search: ``,
