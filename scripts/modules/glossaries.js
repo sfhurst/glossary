@@ -1254,6 +1254,14 @@ const glossaryMain = [
     filter: ["roadway"],
   },
   {
+    term: "dogbone",
+    definition:
+    "A cut made in a steel beam where two drilled holes are connected by a saw cut, forming a shape that resembles a dog bone. This detail captures existing cracks or controls crack propagation by concentrating stress at the ends of the cut, preventing the crack from spreading further along the member. It is commonly used in retrofits or repairs to manage fatigue in steel beams.",
+    search: ``,
+    discipline: "bridge design",
+    filter: ["bridge", "NSTM"],
+  },
+  {
     term: "double deck bridge",
     definition:
       "A bridge consisting of two decks, tiers, or levels. These bridges may incorporate highway lanes on both levels or highway lanes on one level and other transportation modes on the other level.",
