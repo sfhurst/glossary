@@ -3020,6 +3020,22 @@ const glossaryMain = [
     discipline: "bridge design",
     filter: ["bridge", "compounds", "roadway"],
   },
+  {
+    term: "oxbow",
+    definition:
+    "A sharp, U-shaped bend or loop in a river's course, typically found on a mature floodplain. It represents a highly active area where erosion occurs on the outer bank (cut bank) and deposition occurs on the inner bank (point bar), causing the river's channel to continuously migrate. Understanding its movement is vital for designing bridge foundations and abutments to resist scour and erosion.",
+    search: "",
+    discipline: "bridge design",
+    filter: ["channel"],
+  },
+  {
+    term: "oxbow lake",
+    definition:
+    "A crescent-shaped body of water that forms on a floodplain when a river's meander (oxbow) is cut off from the main channel by the river establishing a shorter, straighter path during a flood event. The presence of an oxbow lake signals a history of channel instability and indicates a floodplain composed of soft, low-bearing-capacity soils, which must be considered in geotechnical analysis for bridge foundations.",
+    search: "",
+    discipline: "bridge design",
+    filter: ["channel"],
+  },
 
   // :::::
 
@@ -3584,6 +3600,14 @@ const glossaryMain = [
       "A live load, which has a gross weight, axle weight, or distance between axles not conforming with State statutes for legally configured vehicles, authorized for unlimited trips over an extended period of time to move alongside other heavy vehicles on a regular basis.",
     search: ``,
     discipline: "bridge design",
+    filter: ["bridge", "design"],
+  },
+  {
+    term: "rubric",
+    definition:
+    "A set of established rules, criteria, or guidelines used to govern a process, ensure compliance, and evaluate the quality or condition of an item or activity. In bridge engineering, a rubric is a structured scoring tool that clearly defines the standards and expectations for inspection ratings, design submittals, or maintenance work. It ensures consistency, objectivity, and transparency in assessment.",
+    search: "",
+    discipline: "inspection and quality assurance",
     filter: ["bridge", "design"],
   },
   {
