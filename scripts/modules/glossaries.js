@@ -1256,7 +1256,7 @@ const glossaryMain = [
   {
     term: "dogbone",
     definition:
-    "A cut made in a steel beam where two drilled holes are connected by a saw cut, forming a shape that resembles a dog bone. This detail captures existing cracks or controls crack propagation by concentrating stress at the ends of the cut, preventing the crack from spreading further along the member. It is commonly used in retrofits or repairs to manage fatigue in steel beams.",
+      "A cut made in a steel beam where two drilled holes are connected by a sawcut, forming a shape that resembles a dog bone. This detail captures existing cracks or controls crack propagation by concentrating stress at the ends of the cut, preventing the crack from spreading further along the member. It is commonly used in retrofits or repairs to manage fatigue in steel beams.",
     search: ``,
     discipline: "bridge design",
     filter: ["bridge", "NSTM"],
@@ -3683,7 +3683,7 @@ const glossaryMain = [
     filter: ["bridge", "components", "roadway"],
   },
   {
-    term: "saw cut",
+    term: "sawcut",
     definition:
       "A method of cutting concrete or asphalt using a saw, typically with a diamond blade, to create a clean, controlled crack or joint. Sawcutting is often used to create expansion joints or to remove damaged sections of a surface. This technique helps maintain the structural integrity of the material by preventing uncontrolled cracking and facilitating proper jointing.",
     search: ``,
