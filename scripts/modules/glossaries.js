@@ -1686,19 +1686,19 @@ const glossaryMain = [
     filter: ["bridge"],
   },
   {
-    term: "floorbeam",
-    definition:
-      "A transverse beam used in bridge superstructures to support stringers and deck elements, transferring those loads to longitudinal girders or trusses. Floorbeams are positioned perpendicular to the direction of traffic and are typically spaced at regular intervals. In bridges with a defined floor system, floorbeams are used for ensuring lateral stability and efficiently spreading loads across multiple girders. They are most common in truss bridges, plate girder bridges, and older steel multi-girder systems. Unlike girders and stringers, which run longitudinally with the span, floorbeams run transversely across the span and often act as a platform for other framing components.",
-    discipline: "bridge design",
-    filter: ["bridge", "components", "compounds", "NSTM"],
-  },
-  {
     term: "floodplain",
     definition:
       "The flat, often expansive area adjacent to a channel that is subject to periodic flooding, typically formed by sediment deposition during high-water events.",
     search: ``,
     discipline: "bridge design",
     filter: ["channel", "compounds"],
+  },
+  {
+    term: "floor beam",
+    definition:
+      "A transverse beam used in bridge superstructures to support stringers and deck elements, transferring those loads to longitudinal girders or trusses. Floorbeams are positioned perpendicular to the direction of traffic and are typically spaced at regular intervals. In bridges with a defined floor system, floorbeams are used for ensuring lateral stability and efficiently spreading loads across multiple girders. They are most common in truss bridges, plate girder bridges, and older steel multi-girder systems. Unlike girders and stringers, which run longitudinally with the span, floorbeams run transversely across the span and often act as a platform for other framing components.",
+    discipline: "bridge design",
+    filter: ["bridge", "components", "compounds", "NSTM"],
   },
   {
     term: "flow Line",
