@@ -180,6 +180,53 @@
   --highlight: rgba(149, 135, 156, 0.7);
 }
 
+[data-theme="green"] {
+  --main-background: url("../media/light-down-black2.svg");
+  --main-background-overlay: rgb(54 54 54 / 0.9);
+  --main-color: rgba(32, 50, 33, 0.9);
+  --text-color: rgb(233 233 233);
+  --content-background-color: rgb(34 34 34 / 0.7);
+  --background-purple: rgba(52, 37, 53, 0.7);
+
+  /* primary buttons - background */
+  --active-button-color1: rgb(182 182 182);
+  --hover-button-color1: rgb(50, 65, 40);
+  --inactive-button-color1: rgb(56, 73, 45);
+
+  /* primary buttons - text */
+  --active-button-text-color1: rgb(42 42 42);
+  --hover-button-text-color1: var(--text-color);
+  --inactive-button-text-color1: var(--text-color);
+
+  /* secondary buttons - background */
+  --active-button-color2: rgb(182 182 182);
+  --hover-button-color2: rgb(58 88 74);
+  --inactive-button-color2: rgb(65 99 79);
+
+  /* secondary buttons - text */
+  --active-button-text-color2: rgb(42 42 42);
+  --hover-button-text-color2: var(--text-color);
+  --inactive-button-text-color2: var(--text-color);
+
+  /* tertiary buttons - background */
+  --active-button-color3: rgb(182 182 182);
+  --hover-button-color3: rgb(88, 83, 58);
+  --inactive-button-color3: rgb(97, 99, 65);
+
+  /* tertiary buttons - text */
+  --active-button-text-color3: rgb(42 42 42);
+  --hover-button-text-color3: var(--text-color);
+  --inactive-button-text-color3: var(--text-color);
+
+  /* misc */
+  --rating-lines: rgba(128, 128, 128, 0.2);
+  --neon-light: rgb(76, 76, 253);
+  --highlight: rgba(63, 63, 63, 0.7);
+  --notes-text: rgba(233 233 233 / 0.6);
+  --text-shadow: rgb(0, 0, 0);
+  --color-link-focus: var(--color-yellow);
+}
+
 html,
 header,
 textarea,
