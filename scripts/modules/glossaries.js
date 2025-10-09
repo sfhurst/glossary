@@ -13,8 +13,7 @@ const glossaryMain = [
   },
   {
     term: "AADT (annual average daily traffic)",
-    definition:
-      "The total number of vehicles that pass a specific point on a roadway over a year, divided by 365 days, providing an average daily traffic volume for planning and analysis.",
+    definition: "The total number of vehicles that pass a specific point on a roadway over a year, divided by 365 days, providing an average daily traffic volume for planning and analysis.",
     search: `How is "Annual Average Daily Traffic" used at INDOT?`,
     discipline: "transportation engineering",
     letter: "letter-jump-a",
@@ -22,8 +21,7 @@ const glossaryMain = [
   },
   {
     term: "AADTT (annual average daily truck traffic)",
-    definition:
-      "The total number of trucks that pass a specific point on a roadway over the course of a year, divided by 365 days, used to evaluate truck traffic impact on infrastructure.",
+    definition: "The total number of trucks that pass a specific point on a roadway over the course of a year, divided by 365 days, used to evaluate truck traffic impact on infrastructure.",
     search: `How is "Annual Average Daily Truck Traffic" used at INDOT?`,
     discipline: "transportation engineering",
     filter: ["acronyms", "roadway"],
@@ -118,8 +116,7 @@ const glossaryMain = [
   },
   {
     term: "adjacent",
-    definition:
-      "Refers to objects or elements that are next to or bordering one another, often used to describe one roadway or bridge components position relative to another.",
+    definition: "Refers to objects or elements that are next to or bordering one another, often used to describe one roadway or bridge components position relative to another.",
     discipline: "bridge design",
     filter: ["roadway"],
   },
@@ -132,8 +129,7 @@ const glossaryMain = [
   },
   {
     term: "aggregate",
-    definition:
-      "Granular material such as sand, gravel, or crushed stone used in concrete and asphalt to provide strength, durability, and resistance to wear.",
+    definition: "Granular material such as sand, gravel, or crushed stone used in concrete and asphalt to provide strength, durability, and resistance to wear.",
     discipline: "bridge design",
     filter: ["materials"],
   },
@@ -183,8 +179,7 @@ const glossaryMain = [
   },
   {
     term: "arch crown",
-    definition:
-      "The highest point of the arch, located at the center of the span, which experiences compressive forces that help distribute loads across the arch structure.",
+    definition: "The highest point of the arch, located at the center of the span, which experiences compressive forces that help distribute loads across the arch structure.",
     discipline: "bridge design",
     filter: ["bridge", "components", "compounds", "culvert"],
   },
@@ -224,8 +219,7 @@ const glossaryMain = [
   },
   {
     term: "as-built drawings",
-    definition:
-      "Final construction drawings that document deviations from original design plans, reflecting the actual dimensions and configurations of a completed structure.",
+    definition: "Final construction drawings that document deviations from original design plans, reflecting the actual dimensions and configurations of a completed structure.",
     discipline: "bridge design",
     filter: ["design"],
   },
@@ -287,8 +281,7 @@ const glossaryMain = [
   },
   {
     term: "azimuth",
-    definition:
-      "The horizontal angular measurement in a coordinate system, often used in bridge and roadway alignment to define direction relative to true north.",
+    definition: "The horizontal angular measurement in a coordinate system, often used in bridge and roadway alignment to define direction relative to true north.",
     discipline: "bridge design",
     filter: ["design"],
   },
@@ -319,8 +312,7 @@ const glossaryMain = [
   },
   {
     term: "backwater",
-    definition:
-      "The increase in the upstream water elevation resulting from an obstruction to flow, such as a bridge and/or embankment placed in the floodplain.",
+    definition: "The increase in the upstream water elevation resulting from an obstruction to flow, such as a bridge and/or embankment placed in the floodplain.",
     search: ``,
     discipline: "bridge design",
     filter: ["channel", "compounds"],
@@ -441,8 +433,7 @@ const glossaryMain = [
   },
   {
     term: "BIRM (Bridge Inspector’s Reference Manual)",
-    definition:
-      "A federal guide outlining standard methods, tools, and procedures for evaluating highway structures in use, ensuring consistent assessments and reliable reporting across agencies.",
+    definition: "A federal guide outlining standard methods, tools, and procedures for evaluating highway structures in use, ensuring consistent assessments and reliable reporting across agencies.",
     search: ``,
     discipline: "bridge design",
     filter: ["bridge", "org"],
@@ -553,8 +544,7 @@ const glossaryMain = [
   },
   {
     term: "buckling",
-    definition:
-      "A sudden lateral deformation caused by compressive forces exceeding a structural element’s critical load, often occurring in slender columns, girders, or plates.",
+    definition: "A sudden lateral deformation caused by compressive forces exceeding a structural element’s critical load, often occurring in slender columns, girders, or plates.",
     discipline: "bridge design",
     filter: ["defects"],
   },
@@ -586,22 +576,19 @@ const glossaryMain = [
   },
   {
     term: "cable terminations",
-    definition:
-      "End fittings or anchorage systems securing cables in cable-supported structures, designed to transfer loads efficiently while minimizing stress concentrations.",
+    definition: "End fittings or anchorage systems securing cables in cable-supported structures, designed to transfer loads efficiently while minimizing stress concentrations.",
     discipline: "bridge design",
     filter: ["bridge"],
   },
   {
     term: "cable boots",
-    definition:
-      "Protective coverings placed over exposed cable ends or connections in suspension and cable-stayed bridges to prevent corrosion and mechanical damage.",
+    definition: "Protective coverings placed over exposed cable ends or connections in suspension and cable-stayed bridges to prevent corrosion and mechanical damage.",
     discipline: "bridge design",
     filter: ["bridge"],
   },
   {
     term: "camber",
-    definition:
-      "An intentional upward curve built into structural elements to offset deflection from loading, helping maintain proper alignment over time.",
+    definition: "An intentional upward curve built into structural elements to offset deflection from loading, helping maintain proper alignment over time.",
     discipline: "bridge design",
     filter: ["design"],
   },
@@ -644,15 +631,13 @@ const glossaryMain = [
   },
   {
     term: "cavitation",
-    definition:
-      "The formation of vapor bubbles in the water that collapse near a surface, leading to localized erosion, often seen around hydraulic structures like gates or valves.",
+    definition: "The formation of vapor bubbles in the water that collapse near a surface, leading to localized erosion, often seen around hydraulic structures like gates or valves.",
     discipline: "bridge design",
     filter: ["channel", "defects"],
   },
   {
     term: "cement",
-    definition:
-      "A binding material, typically Portland cement, that reacts chemically with water to form a hardened paste, providing cohesion in concrete and mortar.",
+    definition: "A binding material, typically Portland cement, that reacts chemically with water to form a hardened paste, providing cohesion in concrete and mortar.",
     discipline: "bridge design",
     filter: ["materials"],
   },
@@ -674,8 +659,7 @@ const glossaryMain = [
   },
   {
     term: "chamfer",
-    definition:
-      "A beveled edge cut along a corner to reduce sharpness, improve durability, minimize stress concentration, or create a cleaner visual transition.",
+    definition: "A beveled edge cut along a corner to reduce sharpness, improve durability, minimize stress concentration, or create a cleaner visual transition.",
     discipline: "bridge design",
     filter: ["design"],
   },
@@ -710,8 +694,7 @@ const glossaryMain = [
   },
   {
     term: "Charpy V-notch (CVN) impact test",
-    definition:
-      "A standardized test that measures a material's toughness by determining the energy absorbed during fracture of a notched specimen under impact loading.",
+    definition: "A standardized test that measures a material's toughness by determining the energy absorbed during fracture of a notched specimen under impact loading.",
     search: ``,
     discipline: "materials engineering",
     filter: ["NDT", "NSTM"],
@@ -738,6 +721,15 @@ const glossaryMain = [
     search: ``,
     discipline: "highway maintenance",
     filter: ["design", "roadway", "materials"],
+  },
+
+  {
+    term: "chloride contamination",
+    definition:
+      "The ingress and accumulation of chloride ions into concrete or on steel surfaces, exceeding a specific threshold known as the chloride corrosion limit. The primary source on bridges is de-icing salts, but it can also come from seawater or industrial exposure. When chlorides reach the depth of the reinforcing steel, they destroy the naturally protective oxide layer, triggering and accelerating the corrosion process.",
+    search: ``,
+    discipline: "bridge inspection and maintenance",
+    filter: ["defects", "materials"],
   },
 
   {
@@ -843,8 +835,7 @@ const glossaryMain = [
   },
   {
     term: "connection plate",
-    definition:
-      "A flat steel plate used to join two or more structural members, typically with bolts or welds. It allows forces to transfer between components like beams, girders, or bracing.",
+    definition: "A flat steel plate used to join two or more structural members, typically with bolts or welds. It allows forces to transfer between components like beams, girders, or bracing.",
     search: ``,
     discipline: "bridge construction",
     filter: ["bridge", "components", "NSTM"],
@@ -903,8 +894,7 @@ const glossaryMain = [
   },
   {
     term: "coping",
-    definition:
-      "The overhanging portion of a bridge deck or structure, designed to protect the supporting elements and direct water away from the core of the structure.",
+    definition: "The overhanging portion of a bridge deck or structure, designed to protect the supporting elements and direct water away from the core of the structure.",
     search: ``,
     discipline: "bridge design",
     filter: ["bridge", "components"],
@@ -981,8 +971,7 @@ const glossaryMain = [
   },
   {
     term: "crest vertical curve",
-    definition:
-      "A curve in the roadway profile that connects an ascending grade to a descending grade, typically used to smooth transitions at the crest of a hill.",
+    definition: "A curve in the roadway profile that connects an ascending grade to a descending grade, typically used to smooth transitions at the crest of a hill.",
     discipline: "bridge design",
     filter: ["design", "roadway"],
   },
@@ -996,8 +985,7 @@ const glossaryMain = [
   },
   {
     term: "critical find",
-    definition:
-      "A defect or condition discovered during inspection that poses a significant structural or safety concern, requiring prompt evaluation and potential remediation.",
+    definition: "A defect or condition discovered during inspection that poses a significant structural or safety concern, requiring prompt evaluation and potential remediation.",
     discipline: "bridge design",
     filter: ["bridge", "defects"],
   },
@@ -1067,8 +1055,7 @@ const glossaryMain = [
   },
   {
     term: "curved girders",
-    definition:
-      "Girders fabricated with a horizontal or vertical curvature to accommodate roadway alignment or aesthetic considerations, requiring specialized design and analysis.",
+    definition: "Girders fabricated with a horizontal or vertical curvature to accommodate roadway alignment or aesthetic considerations, requiring specialized design and analysis.",
     discipline: "bridge design",
     filter: ["bridge", "components"],
   },
@@ -1129,8 +1116,7 @@ const glossaryMain = [
   },
   {
     term: "deflection",
-    definition:
-      "The displacement of a structural element (such as a beam or bridge deck) under load. Excessive deflection can indicate overstressed components or insufficient stiffness.",
+    definition: "The displacement of a structural element (such as a beam or bridge deck) under load. Excessive deflection can indicate overstressed components or insufficient stiffness.",
     search: ``,
     discipline: "bridge design",
     filter: ["design"],
@@ -1144,8 +1130,7 @@ const glossaryMain = [
   },
   {
     term: "degradation",
-    definition:
-      "The process of erosion or removal of sediment from the riverbed or streambed, leading to a lowering of the watercourse or shoreline.",
+    definition: "The process of erosion or removal of sediment from the riverbed or streambed, leading to a lowering of the watercourse or shoreline.",
     discipline: "bridge design",
     filter: ["channel", "defects"],
   },
@@ -1159,8 +1144,7 @@ const glossaryMain = [
   },
   {
     term: "delamination",
-    definition:
-      "A separation within concrete that forms parallel to the surface, often due to internal cracking, corrosion of embedded steel, or poor bonding between layers.",
+    definition: "A separation within concrete that forms parallel to the surface, often due to internal cracking, corrosion of embedded steel, or poor bonding between layers.",
     search: ``,
     discipline: "bridge design",
     filter: ["defects"],
@@ -1189,8 +1173,7 @@ const glossaryMain = [
   },
   {
     term: "detention ponds",
-    definition:
-      "Engineered basins designed to temporarily store stormwater runoff, controlling peak discharge rates and allowing sediment to settle before releasing water at a controlled rate.",
+    definition: "Engineered basins designed to temporarily store stormwater runoff, controlling peak discharge rates and allowing sediment to settle before releasing water at a controlled rate.",
     discipline: "bridge design",
     filter: ["channel", "components", "design", "culvert"],
   },
@@ -1350,16 +1333,14 @@ const glossaryMain = [
   },
   {
     term: "earthwork",
-    definition:
-      "The process of moving, excavating, or compacting soil, rock, or other materials to prepare a site for construction or engineering projects.",
+    definition: "The process of moving, excavating, or compacting soil, rock, or other materials to prepare a site for construction or engineering projects.",
     search: ``,
     discipline: "bridge design",
     filter: ["design"],
   },
   {
     term: "east / west / north / south",
-    definition:
-      "Cardinal directions used for general orientation or description. Not capitalized unless part of a proper noun or at the beginning of a sentence.",
+    definition: "Cardinal directions used for general orientation or description. Not capitalized unless part of a proper noun or at the beginning of a sentence.",
     search: ``,
     discipline: "bridge design",
     filter: ["design", "roadway"],
@@ -1374,16 +1355,14 @@ const glossaryMain = [
   },
   {
     term: "eastbound (EB) / westbound (WB) / northbound (NB) / southbound (SB)",
-    definition:
-      "Indicate movement in the specified direction, typically referring to traffic lanes or transportation routes. Not capitalized unless they begin a sentence.",
+    definition: "Indicate movement in the specified direction, typically referring to traffic lanes or transportation routes. Not capitalized unless they begin a sentence.",
     search: ``,
     discipline: "bridge design",
     filter: ["acronyms", "design", "compounds", "roadway"],
   },
   {
     term: "eddy current testing (ET)",
-    definition:
-      "An electromagnetic NDT technique used to detect surface and near-surface defects in conductive materials by measuring changes in electrical resistance.",
+    definition: "An electromagnetic NDT technique used to detect surface and near-surface defects in conductive materials by measuring changes in electrical resistance.",
     discipline: "bridge design",
     filter: ["acronyms", "NDT"],
   },
@@ -1405,16 +1384,14 @@ const glossaryMain = [
   },
   {
     term: "element level bridge inspection data",
-    definition:
-      "Quantitative condition assessment data, collected during bridge inspections, that indicates the severity and extent of defects in bridge elements.",
+    definition: "Quantitative condition assessment data, collected during bridge inspections, that indicates the severity and extent of defects in bridge elements.",
     search: ``,
     discipline: "bridge design",
     filter: ["bridge"],
   },
   {
     term: "elevated platform",
-    definition:
-      "A fixed or mobile work surface used to provide safe access to elevated bridge components during inspection, maintenance, or repair operations.",
+    definition: "A fixed or mobile work surface used to provide safe access to elevated bridge components during inspection, maintenance, or repair operations.",
     discipline: "bridge design",
     filter: ["design"],
   },
@@ -1444,15 +1421,13 @@ const glossaryMain = [
   },
   {
     term: "eminent domain",
-    definition:
-      "The legal power to compel the sale of private property for public use, typically with compensation determined by fair market value and due process protections.",
+    definition: "The legal power to compel the sale of private property for public use, typically with compensation determined by fair market value and due process protections.",
     discipline: "bridge design",
     filter: ["design", "roadway"],
   },
   {
     term: "end treatment (culvert)",
-    definition:
-      "Specially designed components at the ends of a culvert that help direct water flow, stabilize the culvert, and protect the surrounding area from erosion or damage.",
+    definition: "Specially designed components at the ends of a culvert that help direct water flow, stabilize the culvert, and protect the surrounding area from erosion or damage.",
     discipline: "bridge design",
     filter: ["roadway"],
   },
@@ -1493,8 +1468,7 @@ const glossaryMain = [
   },
   {
     term: "erosion",
-    definition:
-      "The gradual removal of soil, rock, or other surface materials by natural forces such as wind, water, or ice. Scour is a type of erosion.",
+    definition: "The gradual removal of soil, rock, or other surface materials by natural forces such as wind, water, or ice. Scour is a type of erosion.",
     search: ``,
     discipline: "bridge design",
     filter: ["channel", "defects"],
@@ -1628,8 +1602,7 @@ const glossaryMain = [
   },
   {
     term: "fillet weld",
-    definition:
-      "A triangular cross-section weld joining two surfaces at an angle, commonly used in bridge fabrication for attaching stiffeners, plates, and structural elements.",
+    definition: "A triangular cross-section weld joining two surfaces at an angle, commonly used in bridge fabrication for attaching stiffeners, plates, and structural elements.",
     discipline: "bridge design",
     filter: ["welds"],
   },
@@ -1687,8 +1660,7 @@ const glossaryMain = [
   },
   {
     term: "floodplain",
-    definition:
-      "The flat, often expansive area adjacent to a channel that is subject to periodic flooding, typically formed by sediment deposition during high-water events.",
+    definition: "The flat, often expansive area adjacent to a channel that is subject to periodic flooding, typically formed by sediment deposition during high-water events.",
     search: ``,
     discipline: "bridge design",
     filter: ["channel", "compounds"],
@@ -1746,15 +1718,13 @@ const glossaryMain = [
   },
   {
     term: "friable material",
-    definition:
-      "A material that is easily crumbled or broken, especially when dry, often referring to substances like asbestos that pose health risks when disturbed.",
+    definition: "A material that is easily crumbled or broken, especially when dry, often referring to substances like asbestos that pose health risks when disturbed.",
     discipline: "bridge design",
     filter: ["design", "materials"],
   },
   {
     term: "functionally obsolete",
-    definition:
-      "A classification for structures that no longer meet current design standards for width, clearance, or capacity, despite being safe for limited use.",
+    definition: "A classification for structures that no longer meet current design standards for width, clearance, or capacity, despite being safe for limited use.",
     discipline: "bridge design",
     filter: ["bridge", "design"],
   },
@@ -1763,8 +1733,7 @@ const glossaryMain = [
 
   {
     term: "gabion",
-    definition:
-      "A cage, wire container, cylinder, or similar type box filled with rocks, broken concrete, or granular soil used in retaining wall and erosion control applications.",
+    definition: "A cage, wire container, cylinder, or similar type box filled with rocks, broken concrete, or granular soil used in retaining wall and erosion control applications.",
     search: `What is "Gabion" in retaining wall design?`,
     discipline: "retaining wall design",
     letter: "letter-jump-g",
@@ -1818,16 +1787,14 @@ const glossaryMain = [
   },
   {
     term: "gravity wall",
-    definition:
-      "A wall typically built with stone masonry, mass concrete, or other heavy material that depends on its overall mass, or weight, to resist earth pressure from behind.",
+    definition: "A wall typically built with stone masonry, mass concrete, or other heavy material that depends on its overall mass, or weight, to resist earth pressure from behind.",
     search: `What is "Gravity Wall" in retaining wall design?`,
     discipline: "retaining wall design",
     filter: ["wall"],
   },
   {
     term: "grommets",
-    definition:
-      "Rubber or metal rings used to seal and protect cables or fasteners passing through holes in bridge components, preventing wear and moisture intrusion.",
+    definition: "Rubber or metal rings used to seal and protect cables or fasteners passing through holes in bridge components, preventing wear and moisture intrusion.",
     discipline: "bridge design",
     filter: ["bridge", "components"],
   },
@@ -1858,8 +1825,7 @@ const glossaryMain = [
   },
   {
     term: "guardrail rail",
-    definition:
-      "The main horizontal part of the guardrail that absorbs the force of a collision. It can be W-beam, box beam, or thrie beam, depending on the type.",
+    definition: "The main horizontal part of the guardrail that absorbs the force of a collision. It can be W-beam, box beam, or thrie beam, depending on the type.",
     discipline: "bridge design",
     filter: ["roadway"],
   },
@@ -1896,8 +1862,7 @@ const glossaryMain = [
   },
   {
     term: "hands-on",
-    definition:
-      "A proximity requirement meaning the inspector must be within arm’s reach of a component to reliably detect defects that may not be visible from a distance.",
+    definition: "A proximity requirement meaning the inspector must be within arm’s reach of a component to reliably detect defects that may not be visible from a distance.",
     search: ``,
     discipline: "bridge inspection",
     filter: ["design", "compounds", "NSTM"],
@@ -1928,8 +1893,7 @@ const glossaryMain = [
   },
   {
     term: "headcutting",
-    definition:
-      "The erosion of the upstream end of a channel, often occurring when a sudden drop in elevation (such as a waterfall) leads to rapid erosion and deepening.",
+    definition: "The erosion of the upstream end of a channel, often occurring when a sudden drop in elevation (such as a waterfall) leads to rapid erosion and deepening.",
     discipline: "bridge design",
     filter: ["channel", "compounds", "defects"],
   },
@@ -1942,8 +1906,7 @@ const glossaryMain = [
   },
   {
     term: "heat-affected zone (HAZ)",
-    definition:
-      "The portion of base metal adjacent to a weld that undergoes microstructural changes due to welding heat, affecting mechanical properties.",
+    definition: "The portion of base metal adjacent to a weld that undergoes microstructural changes due to welding heat, affecting mechanical properties.",
     discipline: "bridge design",
     filter: ["acronyms", "welds"],
   },
@@ -1971,8 +1934,7 @@ const glossaryMain = [
   },
   {
     term: "high-strength low-alloy (HSLA) steel",
-    definition:
-      "A type of steel with added alloying elements that enhance strength without increasing weight. Can be sensitive to welding procedures and may require preheating to prevent cracking.",
+    definition: "A type of steel with added alloying elements that enhance strength without increasing weight. Can be sensitive to welding procedures and may require preheating to prevent cracking.",
     discipline: "bridge design",
     filter: ["acronyms", "materials"],
   },
@@ -1994,8 +1956,7 @@ const glossaryMain = [
   },
   {
     term: "Highway Performance Monitoring System (HPMS)",
-    definition:
-      "A national level highway information system that includes data on the extent, condition, performance, use, and operating characteristics of the nation's highways.",
+    definition: "A national level highway information system that includes data on the extent, condition, performance, use, and operating characteristics of the nation's highways.",
     source: "http://www.fhwa.dot.gov/policyinformation/hpms/fieldmanual/",
     search: ``,
     discipline: "bridge design",
@@ -2011,8 +1972,7 @@ const glossaryMain = [
   },
   {
     term: "honeycombing",
-    definition:
-      "The appearance of voids or gaps within concrete due to improper mixing or poor compaction. It often occurs near the surface of poured concrete.",
+    definition: "The appearance of voids or gaps within concrete due to improper mixing or poor compaction. It often occurs near the surface of poured concrete.",
     search: ``,
     discipline: "bridge design",
     filter: ["defects"],
@@ -2060,8 +2020,7 @@ const glossaryMain = [
   },
   {
     term: "hydraulics",
-    definition:
-      "The study of fluid behavior in motion, focusing on the forces and flow patterns of water through channels, around obstacles, and within confined systems.",
+    definition: "The study of fluid behavior in motion, focusing on the forces and flow patterns of water through channels, around obstacles, and within confined systems.",
     discipline: "bridge design",
     filter: ["channel", "design"],
   },
@@ -2075,8 +2034,7 @@ const glossaryMain = [
   },
   {
     term: "hydrology",
-    definition:
-      "The science of water occurrence, distribution, and movement across Earth's surface and subsurface, including rainfall, runoff, infiltration, and storage behavior.",
+    definition: "The science of water occurrence, distribution, and movement across Earth's surface and subsurface, including rainfall, runoff, infiltration, and storage behavior.",
     discipline: "bridge design",
     filter: ["channel", "design"],
   },
@@ -2165,8 +2123,7 @@ const glossaryMain = [
   },
   {
     term: "inlet",
-    definition:
-      "The upstream entry point of a culvert where flow first enters the structure, often designed with features to guide water and reduce erosion.",
+    definition: "The upstream entry point of a culvert where flow first enters the structure, often designed with features to guide water and reduce erosion.",
     search: ``,
     discipline: "bridge design",
     filter: ["channel", "design", "culvert"],
@@ -2195,8 +2152,7 @@ const glossaryMain = [
   },
   {
     term: "inspection report",
-    definition:
-      "The document which summarizes the bridge inspection findings, recommendations, and identifies the team leader responsible for the inspection and report.",
+    definition: "The document which summarizes the bridge inspection findings, recommendations, and identifies the team leader responsible for the inspection and report.",
     search: ``,
     discipline: "bridge design",
     filter: ["bridge"],
@@ -2269,8 +2225,7 @@ const glossaryMain = [
   },
   {
     term: "invert",
-    definition:
-      "The lowest interior surface of a pipe or culvert, where water flows and sediment may accumulate, typically following the designed slope for hydraulic efficiency.",
+    definition: "The lowest interior surface of a pipe or culvert, where water flows and sediment may accumulate, typically following the designed slope for hydraulic efficiency.",
     search: ``,
     discipline: "bridge design",
     filter: ["channel", "components", "culvert"],
@@ -2304,8 +2259,7 @@ const glossaryMain = [
     term: "iterate",
     definition:
       "A process of repeating a procedure or calculation, typically with updated inputs, to approach a desired result, refine accuracy, or solve complex problems through successive approximation.",
-    definition:
-      "A method of refining ideas or solutions through deliberate repetition, where each pass builds on the last to sharpen focus, enhance clarity, or drive innovation.",
+    definition: "A method of refining ideas or solutions through deliberate repetition, where each pass builds on the last to sharpen focus, enhance clarity, or drive innovation.",
     discipline: "bridge design",
   },
 
@@ -2321,8 +2275,7 @@ const glossaryMain = [
   },
   {
     term: "Jersey Barrier",
-    definition:
-      "A modular concrete or plastic barrier employed to separate lanes of traffic. Designed to minimize vehicle damage in cases of incidental contact while preventing vehicle crossovers.",
+    definition: "A modular concrete or plastic barrier employed to separate lanes of traffic. Designed to minimize vehicle damage in cases of incidental contact while preventing vehicle crossovers.",
     search: ``,
     discipline: "roadway safety",
     filter: ["roadway"],
@@ -2362,8 +2315,7 @@ const glossaryMain = [
   },
   {
     term: "keystone",
-    definition:
-      "The central, topmost stone or concrete block of an arch that locks the other blocks or sections in place. Without the keystone the arch would lose its structural integrity.",
+    definition: "The central, topmost stone or concrete block of an arch that locks the other blocks or sections in place. Without the keystone the arch would lose its structural integrity.",
     search: ``,
     discipline: "arch design",
     letter: "letter-jump-k",
@@ -2397,8 +2349,7 @@ const glossaryMain = [
   },
   {
     term: "LaPorte",
-    definition:
-      "The INDOT district name and county name are written as one word with a capital P: LaPorte. The city name is written as two words: La Porte.",
+    definition: "The INDOT district name and county name are written as one word with a capital P: LaPorte. The city name is written as two words: La Porte.",
     search: `INDOT LaPorte District`,
     discipline: "bridge design",
     link: `https://entapps.indot.in.gov/dotmaps/districtmaps/`,
@@ -2439,8 +2390,7 @@ const glossaryMain = [
   },
   {
     term: "legal load",
-    definition:
-      "The maximum load for each vehicle configuration, including the weight of the vehicle and its payload, permitted by law for the State in which the bridge is located.",
+    definition: "The maximum load for each vehicle configuration, including the weight of the vehicle and its payload, permitted by law for the State in which the bridge is located.",
     search: ``,
     discipline: "bridge design",
     filter: ["bridge"],
@@ -2455,23 +2405,20 @@ const glossaryMain = [
   },
   {
     term: "legally enforceable load posting",
-    definition:
-      "Posting of a load restriction sign (or signs) at a bridge in accordance with State law that is legally enforceable by law enforcement personnel.",
+    definition: "Posting of a load restriction sign (or signs) at a bridge in accordance with State law that is legally enforceable by law enforcement personnel.",
     search: ``,
     discipline: "bridge design",
     filter: ["bridge"],
   },
   {
     term: "LiDAR (light detection and ranging",
-    definition:
-      "A remote sensing technology that uses laser pulses to generate precise three-dimensional models of structures, commonly used in bridge inspections and terrain mapping.",
+    definition: "A remote sensing technology that uses laser pulses to generate precise three-dimensional models of structures, commonly used in bridge inspections and terrain mapping.",
     discipline: "bridge design",
     filter: ["acronyms"],
   },
   {
     term: "limestone",
-    definition:
-      "A sedimentary rock primarily composed of calcium carbonate, commonly used in aggregate production and as a raw material for cement manufacturing.",
+    definition: "A sedimentary rock primarily composed of calcium carbonate, commonly used in aggregate production and as a raw material for cement manufacturing.",
     discipline: "bridge design",
     filter: ["design", "materials"],
   },
@@ -2508,8 +2455,7 @@ const glossaryMain = [
   },
   {
     term: "load-bearing",
-    definition:
-      "A structural element, such as a wall or beam, that supports and transfers loads from above to the foundation or other supporting members.",
+    definition: "A structural element, such as a wall or beam, that supports and transfers loads from above to the foundation or other supporting members.",
     search: ``,
     discipline: "bridge design",
     filter: ["design"],
@@ -2581,8 +2527,7 @@ const glossaryMain = [
 
   {
     term: "magnetic particle testing (MT)",
-    definition:
-      "An NDT method that uses magnetic fields and fine iron particles to detect surface and near-surface cracks in ferromagnetic materials.",
+    definition: "An NDT method that uses magnetic fields and fine iron particles to detect surface and near-surface cracks in ferromagnetic materials.",
     discipline: "bridge design",
     letter: "letter-jump-m",
     filter: ["acronyms", "NDT"],
@@ -2598,16 +2543,14 @@ const glossaryMain = [
   },
   {
     term: "major rehabilitation",
-    definition:
-      "The major work required to restore the structural integrity or serviceability of a bridge as well as work necessary to correct major safety defects.",
+    definition: "The major work required to restore the structural integrity or serviceability of a bridge as well as work necessary to correct major safety defects.",
     search: ``,
     discipline: "bridge design",
     filter: ["design"],
   },
   {
     term: "man lift",
-    definition:
-      "A powered aerial lift used to elevate inspectors or workers to difficult-to-reach areas of bridges and structures, improving accessibility and safety.",
+    definition: "A powered aerial lift used to elevate inspectors or workers to difficult-to-reach areas of bridges and structures, improving accessibility and safety.",
     discipline: "bridge design",
     filter: ["compounds", "design"],
   },
@@ -2621,8 +2564,7 @@ const glossaryMain = [
   },
   {
     term: "meander",
-    definition:
-      "A curve or bend in a channel, typically occurring in low-gradient rivers or streams, where the water flow erodes one bank and deposits sediment on the other.",
+    definition: "A curve or bend in a channel, typically occurring in low-gradient rivers or streams, where the water flow erodes one bank and deposits sediment on the other.",
     discipline: "bridge design",
     filter: ["channel"],
   },
@@ -2663,8 +2605,7 @@ const glossaryMain = [
   },
   {
     term: "minor rehabilitation",
-    definition:
-      "The minor work required to preserve or restore the structural integrity of a bridge or serviceability as well as the work necessary to correct minor safety defects.",
+    definition: "The minor work required to preserve or restore the structural integrity of a bridge or serviceability as well as the work necessary to correct minor safety defects.",
     search: ``,
     discipline: "bridge design",
     filter: ["design"],
@@ -2757,8 +2698,7 @@ const glossaryMain = [
 
   {
     term: "multi-level interchange",
-    definition:
-      "A multilevel highway intersection or junction of intersecting roads and bridges arranged so that vehicles may move from one road to another without crossing the streams of traffic.",
+    definition: "A multilevel highway intersection or junction of intersecting roads and bridges arranged so that vehicles may move from one road to another without crossing the streams of traffic.",
     search: ``,
     discipline: "bridge design",
     filter: ["design", "roadway"],
@@ -2831,8 +2771,7 @@ const glossaryMain = [
   },
   {
     term: "neutral axis",
-    definition:
-      "The imaginary line in a cross-section of a beam where the material experiences zero stress during bending. It separates the tension and compression zones.",
+    definition: "The imaginary line in a cross-section of a beam where the material experiences zero stress during bending. It separates the tension and compression zones.",
     search: ``,
     discipline: "structural mechanics",
     filter: ["design", "NSTM"],
@@ -2846,8 +2785,7 @@ const glossaryMain = [
   },
   {
     term: "nominal",
-    definition:
-      "Referring to an approximate or standard value, typically used when the exact measurement may vary slightly but is considered close to the stated value.",
+    definition: "Referring to an approximate or standard value, typically used when the exact measurement may vary slightly but is considered close to the stated value.",
     search: ``,
     discipline: "bridge design",
     filter: ["design"],
@@ -2861,8 +2799,7 @@ const glossaryMain = [
   },
   {
     term: "non-destructive testing (NDT)",
-    definition:
-      "A range of inspection techniques used to evaluate materials and welds without causing damage, including ultrasonic, radiographic, magnetic particle, and dye penetrant testing.",
+    definition: "A range of inspection techniques used to evaluate materials and welds without causing damage, including ultrasonic, radiographic, magnetic particle, and dye penetrant testing.",
     discipline: "bridge design",
     filter: ["acronyms", "NDT"],
   },
@@ -2883,8 +2820,7 @@ const glossaryMain = [
   },
   {
     term: "normal line",
-    definition:
-      "A line that is perpendicular to a surface at a given point, often used in geometry or structural analysis for defining angles and forces.",
+    definition: "A line that is perpendicular to a surface at a given point, often used in geometry or structural analysis for defining angles and forces.",
     discipline: "bridge design",
     filter: ["design"],
   },
@@ -2999,8 +2935,7 @@ const glossaryMain = [
   },
   {
     term: "outlet",
-    definition:
-      "The downstream exit point of a culvert where flow exits the structure, often designed with features to control flow and prevent erosion.",
+    definition: "The downstream exit point of a culvert where flow exits the structure, often designed with features to control flow and prevent erosion.",
     search: ``,
     discipline: "bridge design",
     filter: ["channel", "culvert"],
@@ -3023,7 +2958,7 @@ const glossaryMain = [
   {
     term: "oxbow",
     definition:
-    "A sharp, U-shaped bend or loop in a river's course, typically found on a mature floodplain. It represents a highly active area where erosion occurs on the outer bank (cut bank) and deposition occurs on the inner bank (point bar), causing the river's channel to continuously migrate. Understanding its movement is vital for designing bridge foundations and abutments to resist scour and erosion.",
+      "A sharp, U-shaped bend or loop in a river's course, typically found on a mature floodplain. It represents a highly active area where erosion occurs on the outer bank (cut bank) and deposition occurs on the inner bank (point bar), causing the river's channel to continuously migrate. Understanding its movement is vital for designing bridge foundations and abutments to resist scour and erosion.",
     search: "",
     discipline: "bridge design",
     filter: ["channel"],
@@ -3031,7 +2966,7 @@ const glossaryMain = [
   {
     term: "oxbow lake",
     definition:
-    "A crescent-shaped body of water that forms on a floodplain when a river's meander (oxbow) is cut off from the main channel by the river establishing a shorter, straighter path during a flood event. The presence of an oxbow lake signals a history of channel instability and indicates a floodplain composed of soft, low-bearing-capacity soils, which must be considered in geotechnical analysis for bridge foundations.",
+      "A crescent-shaped body of water that forms on a floodplain when a river's meander (oxbow) is cut off from the main channel by the river establishing a shorter, straighter path during a flood event. The presence of an oxbow lake signals a history of channel instability and indicates a floodplain composed of soft, low-bearing-capacity soils, which must be considered in geotechnical analysis for bridge foundations.",
     search: "",
     discipline: "bridge design",
     filter: ["channel"],
@@ -3071,8 +3006,7 @@ const glossaryMain = [
   },
   {
     term: "peening",
-    definition:
-      "A process of mechanically working a weld surface using controlled hammering or blasting to reduce residual stresses and improve fatigue resistance.",
+    definition: "A process of mechanically working a weld surface using controlled hammering or blasting to reduce residual stresses and improve fatigue resistance.",
     discipline: "bridge design",
     filter: ["defects", "NSTM", "welds"],
   },
@@ -3119,8 +3053,7 @@ const glossaryMain = [
   },
   {
     term: "pile",
-    definition:
-      "A structural element driven or drilled into the ground to resist vertical and/or horizontal loads. Piles are usually rolled steel shapes, concrete, or timber.",
+    definition: "A structural element driven or drilled into the ground to resist vertical and/or horizontal loads. Piles are usually rolled steel shapes, concrete, or timber.",
     search: `What is "Pile" in retaining wall design?`,
     discipline: "retaining wall design",
     filter: ["bridge", "components", "design"],
@@ -3173,8 +3106,7 @@ const glossaryMain = [
   },
   {
     term: "plastic deformation",
-    definition:
-      "A permanent change in the shape of a material under stress, where the material does not return to its original shape after the load is removed.",
+    definition: "A permanent change in the shape of a material under stress, where the material does not return to its original shape after the load is removed.",
     search: ``,
     discipline: "materials engineering",
     filter: ["design", "defects", "NSTM"],
@@ -3203,8 +3135,7 @@ const glossaryMain = [
   },
   {
     term: "portal",
-    definition:
-      "The entrance or exit frame of a bridge, tunnel, or culvert, often consisting of a rigid frame structure that supports loads and resists lateral forces.",
+    definition: "The entrance or exit frame of a bridge, tunnel, or culvert, often consisting of a rigid frame structure that supports loads and resists lateral forces.",
     discipline: "bridge design",
     filter: ["bridge", "components"],
   },
@@ -3225,8 +3156,7 @@ const glossaryMain = [
   },
   {
     term: "post-tensioned",
-    definition:
-      "A type of concrete construction where the concrete is tensioned after it has been poured, typically using steel tendons to enhance its strength.",
+    definition: "A type of concrete construction where the concrete is tensioned after it has been poured, typically using steel tendons to enhance its strength.",
     search: ``,
     discipline: "bridge design",
     filter: ["compounds", "design"],
@@ -3287,8 +3217,7 @@ const glossaryMain = [
   },
   {
     term: "procurement",
-    definition:
-      "The structured process of acquiring goods or services, often governed by regulations to ensure fairness, transparency, and cost-effectiveness in public or private sectors.",
+    definition: "The structured process of acquiring goods or services, often governed by regulations to ensure fairness, transparency, and cost-effectiveness in public or private sectors.",
     discipline: "bridge design",
     filter: ["design"],
   },
@@ -3310,8 +3239,7 @@ const glossaryMain = [
   },
   {
     term: "public road",
-    definition:
-      "As defined in 23 U.S.C. 101(a)(21) as any road or street under the jurisdiction of and maintained by a public authority and open to public travel.",
+    definition: "As defined in 23 U.S.C. 101(a)(21) as any road or street under the jurisdiction of and maintained by a public authority and open to public travel.",
     search: ``,
     discipline: "bridge design",
     filter: ["roadway"],
@@ -3371,8 +3299,7 @@ const glossaryMain = [
 
   {
     term: "radiographic testing (RT)",
-    definition:
-      "A non-destructive testing method using X-rays or gamma rays to detect internal flaws in welds by producing an image on a radiographic film or digital sensor.",
+    definition: "A non-destructive testing method using X-rays or gamma rays to detect internal flaws in welds by producing an image on a radiographic film or digital sensor.",
     discipline: "bridge design",
     letter: "letter-jump-r",
     filter: ["acronyms", "NDT"],
@@ -3386,8 +3313,7 @@ const glossaryMain = [
   },
   {
     term: "railroad flat car",
-    definition:
-      "A salvaged flatbed railroad car used as a bridge superstructure, typically on low-volume roads. This type of bridge often has NSTMs.",
+    definition: "A salvaged flatbed railroad car used as a bridge superstructure, typically on low-volume roads. This type of bridge often has NSTMs.",
     search: ``,
     discipline: "bridge design",
     filter: ["bridge", "components", "NSTM"],
@@ -3409,8 +3335,7 @@ const glossaryMain = [
   },
   {
     term: "regulatory signs",
-    definition:
-      "Legally enforceable traffic controls that dictate specific actions or restrictions, often using a white background with black or red lettering.",
+    definition: "Legally enforceable traffic controls that dictate specific actions or restrictions, often using a white background with black or red lettering.",
     discipline: "bridge design",
     filter: ["roadway"],
   },
@@ -3424,8 +3349,7 @@ const glossaryMain = [
   },
   {
     term: "reinforced concrete",
-    definition:
-      "Concrete in which reinforcement, typically steel bars or mesh, is embedded to enhance its tensile strength, making it suitable for structural applications.",
+    definition: "Concrete in which reinforcement, typically steel bars or mesh, is embedded to enhance its tensile strength, making it suitable for structural applications.",
     search: ``,
     discipline: "materials engineering",
     filter: ["materials"],
@@ -3447,16 +3371,14 @@ const glossaryMain = [
   },
   {
     term: "retaining wall",
-    definition:
-      "A permanent, relatively rigid structure that supports a soil mass at slopes steeper than their angle of rest to provide usable space both above and in front of the wall.",
+    definition: "A permanent, relatively rigid structure that supports a soil mass at slopes steeper than their angle of rest to provide usable space both above and in front of the wall.",
     search: `What is "Retaining Wall" in retaining wall design?`,
     discipline: "retaining wall design",
     filter: ["components", "wall"],
   },
   {
     term: "retention ponds",
-    definition:
-      "Permanent basins designed to hold stormwater runoff indefinitely, allowing pollutants to settle and water to be released through infiltration or controlled discharge.",
+    definition: "Permanent basins designed to hold stormwater runoff indefinitely, allowing pollutants to settle and water to be released through infiltration or controlled discharge.",
     discipline: "bridge design",
     filter: ["channel", "components", "design"],
   },
@@ -3483,16 +3405,14 @@ const glossaryMain = [
   },
   {
     term: "rideability",
-    definition:
-      "A measure of surface smoothness based on how comfortably vehicles travel over it; influenced by bumps, dips, joint alignment, and pavement texture.",
+    definition: "A measure of surface smoothness based on how comfortably vehicles travel over it; influenced by bumps, dips, joint alignment, and pavement texture.",
     discipline: "bridge design",
     filter: ["defects", "roadway"],
   },
 
   {
     term: "right-of-way",
-    definition:
-      "The land designated for the roadway and its components, including the traveled way, shoulders, and any additional space required for construction and maintenance.",
+    definition: "The land designated for the roadway and its components, including the traveled way, shoulders, and any additional space required for construction and maintenance.",
     search: ``,
     discipline: "bridge design",
     filter: ["acronyms", "compounds", "design"],
@@ -3537,8 +3457,7 @@ const glossaryMain = [
   },
   {
     term: "rise",
-    definition:
-      "The vertical distance from the base of the arch to the highest point of the arch, influencing the curvature and load distribution of the arch.",
+    definition: "The vertical distance from the base of the arch to the highest point of the arch, influencing the curvature and load distribution of the arch.",
     discipline: "bridge design",
     filter: ["bridge", "design"],
   },
@@ -3605,7 +3524,7 @@ const glossaryMain = [
   {
     term: "rubric",
     definition:
-    "A set of established rules, criteria, or guidelines used to govern a process, ensure compliance, and evaluate the quality or condition of an item or activity. In bridge engineering, a rubric is a structured scoring tool that clearly defines the standards and expectations for inspection ratings, design submittals, or maintenance work. It ensures consistency, objectivity, and transparency in assessment.",
+      "A set of established rules, criteria, or guidelines used to govern a process, ensure compliance, and evaluate the quality or condition of an item or activity. In bridge engineering, a rubric is a structured scoring tool that clearly defines the standards and expectations for inspection ratings, design submittals, or maintenance work. It ensures consistency, objectivity, and transparency in assessment.",
     search: "",
     discipline: "inspection and quality assurance",
     filter: ["bridge", "design"],
@@ -3620,8 +3539,7 @@ const glossaryMain = [
   },
   {
     term: "rust",
-    definition:
-      "The reddish-brown corrosion product formed on iron or steel due to prolonged exposure to moisture and oxygen, potentially leading to section loss and structural degradation.",
+    definition: "The reddish-brown corrosion product formed on iron or steel due to prolonged exposure to moisture and oxygen, potentially leading to section loss and structural degradation.",
     discipline: "bridge design",
     filter: ["defects", "materials"],
   },
@@ -3670,8 +3588,7 @@ const glossaryMain = [
   },
   {
     term: "sag vertical curve",
-    definition:
-      "A curve in the roadway profile that connects a descending grade to an ascending grade, typically used to smooth transitions at the bottom of a dip or valley.",
+    definition: "A curve in the roadway profile that connects a descending grade to an ascending grade, typically used to smooth transitions at the bottom of a dip or valley.",
     discipline: "bridge design",
     filter: ["design", "roadway"],
   },
@@ -3692,8 +3609,7 @@ const glossaryMain = [
   },
   {
     term: "scaling",
-    definition:
-      "The breakdown of concrete surfaces due to chemical reactions or freeze-thaw cycles, which causes the outer layer of the material to peel or flake off, weakening the structure.",
+    definition: "The breakdown of concrete surfaces due to chemical reactions or freeze-thaw cycles, which causes the outer layer of the material to peel or flake off, weakening the structure.",
     search: ``,
     discipline: "bridge design",
     filter: ["defects"],
@@ -3724,8 +3640,7 @@ const glossaryMain = [
   },
   {
     term: "scour assessment",
-    definition:
-      "The determination of an existing bridge’s vulnerability to scour which considers stream stability and scour potential as described in HEC 20 and other scour-related data sources.",
+    definition: "The determination of an existing bridge’s vulnerability to scour which considers stream stability and scour potential as described in HEC 20 and other scour-related data sources.",
     search: ``,
     discipline: "bridge design",
     filter: ["bridge", "channel", "design"],
@@ -3747,24 +3662,21 @@ const glossaryMain = [
   },
   {
     term: "scour evaluation",
-    definition:
-      "The application of hydraulic analysis as described in HEC 18 and HEC 20 to estimate scour depths and determine bridge and substructure stability considering potential scour.",
+    definition: "The application of hydraulic analysis as described in HEC 18 and HEC 20 to estimate scour depths and determine bridge and substructure stability considering potential scour.",
     search: ``,
     discipline: "bridge design",
     filter: ["bridge", "channel", "design"],
   },
   {
     term: "scour monitoring inspection",
-    definition:
-      "An inspection performed during or after a triggering storm event as required by a Scour Plan of Action (POA), by personnel with qualifications required by the agency.",
+    definition: "An inspection performed during or after a triggering storm event as required by a Scour Plan of Action (POA), by personnel with qualifications required by the agency.",
     search: ``,
     discipline: "bridge design",
     filter: ["bridge", "channel"],
   },
   {
     term: "Scour Plan of Action (POA)",
-    definition:
-      "Procedures for bridge inspectors and engineers in managing each bridge determined to be scour critical or that has unknown foundations.",
+    definition: "Procedures for bridge inspectors and engineers in managing each bridge determined to be scour critical or that has unknown foundations.",
     search: ``,
     discipline: "bridge design",
     filter: ["acronyms", "bridge", "channel"],
@@ -3779,8 +3691,7 @@ const glossaryMain = [
   },
   {
     term: "scupper",
-    definition:
-      "An opening in a bridge deck or parapet designed to drain water off the structure, preventing ponding and reducing the risk of deterioration caused by moisture buildup.",
+    definition: "An opening in a bridge deck or parapet designed to drain water off the structure, preventing ponding and reducing the risk of deterioration caused by moisture buildup.",
     discipline: "bridge design",
     filter: ["bridge", "components", "design"],
   },
@@ -3794,8 +3705,7 @@ const glossaryMain = [
   },
   {
     term: "section loss",
-    definition:
-      "The reduction in thickness of steel caused by corrosion or other forms of degradation, leading to a weakening of the material and a potential loss of structural capacity.",
+    definition: "The reduction in thickness of steel caused by corrosion or other forms of degradation, leading to a weakening of the material and a potential loss of structural capacity.",
     search: ``,
     discipline: "bridge design",
     filter: ["defects"],
@@ -3840,8 +3750,7 @@ const glossaryMain = [
   },
   {
     term: "service inspection",
-    definition:
-      "An inspection to identify major deficiencies and safety issues, performed by personnel with general knowledge of bridge maintenance or bridge inspection.",
+    definition: "An inspection to identify major deficiencies and safety issues, performed by personnel with general knowledge of bridge maintenance or bridge inspection.",
     search: ``,
     discipline: "bridge design",
     filter: ["bridge"],
@@ -3862,8 +3771,7 @@ const glossaryMain = [
   },
   {
     term: "shale",
-    definition:
-      "A sedimentary rock composed of fine-grained clay minerals that can degrade when exposed to moisture, leading to foundation instability or material breakdown.",
+    definition: "A sedimentary rock composed of fine-grained clay minerals that can degrade when exposed to moisture, leading to foundation instability or material breakdown.",
     discipline: "bridge design",
     filter: ["materials"],
   },
@@ -3891,8 +3799,7 @@ const glossaryMain = [
   },
   {
     term: "shear key",
-    definition:
-      "A recessed or protruding element cast into concrete or built into structural joints to improve shear resistance and prevent movement between connected components.",
+    definition: "A recessed or protruding element cast into concrete or built into structural joints to improve shear resistance and prevent movement between connected components.",
     discipline: "bridge design",
     filter: ["bridge", "components", "design"],
   },
@@ -3937,8 +3844,7 @@ const glossaryMain = [
   },
   {
     term: "sidehill bridge",
-    definition:
-      "A structure built on a sloping terrain where one end is significantly higher than the other, often requiring asymmetric substructure and foundation adjustments.",
+    definition: "A structure built on a sloping terrain where one end is significantly higher than the other, often requiring asymmetric substructure and foundation adjustments.",
     discipline: "bridge design",
     filter: ["bridge", "compounds", "design"],
   },
@@ -3951,15 +3857,13 @@ const glossaryMain = [
   },
   {
     term: "silt",
-    definition:
-      "Fine-grained soil particles smaller than sand but larger than clay, often problematic in foundation stability due to poor drainage and susceptibility to erosion.",
+    definition: "Fine-grained soil particles smaller than sand but larger than clay, often problematic in foundation stability due to poor drainage and susceptibility to erosion.",
     discipline: "bridge design",
     filter: ["channel", "materials"],
   },
   {
     term: "silt fence",
-    definition:
-      "A temporary sediment control device made of geotextile fabric stretched between stakes, used to trap silt and prevent erosion during construction.",
+    definition: "A temporary sediment control device made of geotextile fabric stretched between stakes, used to trap silt and prevent erosion during construction.",
     discipline: "bridge design",
     filter: ["channel", "components", "design"],
   },
@@ -4005,8 +3909,7 @@ const glossaryMain = [
   },
   {
     term: "slabbing",
-    definition:
-      "The deterioration of concrete surfaces, typically in curved sections, where the material begins to delaminate in thin layers, often accompanied by cracking and spalling.",
+    definition: "The deterioration of concrete surfaces, typically in curved sections, where the material begins to delaminate in thin layers, often accompanied by cracking and spalling.",
     search: ``,
     discipline: "bridge design",
     filter: ["defects"],
@@ -4109,8 +4012,7 @@ const glossaryMain = [
   },
   {
     term: "soil nails",
-    definition:
-      "Steel rods providing soil reinforcement into embankments that are either grouted into drilled holes or driven into soil at close spacing.",
+    definition: "Steel rods providing soil reinforcement into embankments that are either grouted into drilled holes or driven into soil at close spacing.",
     search: `What is "Soil Nails" in retaining wall design?`,
     discipline: "retaining wall design",
     filter: ["components", "design", "wall"],
@@ -4148,8 +4050,7 @@ const glossaryMain = [
   },
   {
     term: "spandrel wall",
-    definition:
-      "The vertical wall or partition that supports the arch ring and fills the space between the arch and the roadbed, providing additional stability to the structure.",
+    definition: "The vertical wall or partition that supports the arch ring and fills the space between the arch and the roadbed, providing additional stability to the structure.",
     discipline: "bridge design",
     filter: ["bridge", "components", "culvert"],
   },
@@ -4192,8 +4093,7 @@ const glossaryMain = [
   },
   {
     term: "spurs",
-    definition:
-      "A river training countermeasure that extends from the bank to control flow direction and reduce erosion by deflecting water away from vulnerable areas.",
+    definition: "A river training countermeasure that extends from the bank to control flow direction and reduce erosion by deflecting water away from vulnerable areas.",
     discipline: "bridge design",
     filter: ["channel", "components"],
   },
@@ -4220,8 +4120,7 @@ const glossaryMain = [
   },
   {
     term: "stay-in-place forms",
-    definition:
-      "Permanent formwork, often made of steel or fiber-reinforced polymer, left in place after concrete placement to provide additional support and reduce construction time.",
+    definition: "Permanent formwork, often made of steel or fiber-reinforced polymer, left in place after concrete placement to provide additional support and reduce construction time.",
     discipline: "bridge design",
     filter: ["bridge", "components", "compounds", "design"],
   },
@@ -4247,8 +4146,7 @@ const glossaryMain = [
   },
   {
     term: "stiffness",
-    definition:
-      "A measure of a material’s resistance to deformation under applied load. It is defined as the ratio of the applied force to the resulting displacement.",
+    definition: "A measure of a material’s resistance to deformation under applied load. It is defined as the ratio of the applied force to the resulting displacement.",
     search: ``,
     discipline: "materials engineering",
     filter: ["design", "NSTM"],
@@ -4309,8 +4207,7 @@ const glossaryMain = [
   },
   {
     term: "stress-strain curve",
-    definition:
-      "A graphical representation that shows the relationship between stress and strain for a material, indicating key properties such as elasticity, yield strength, and tensile strength.",
+    definition: "A graphical representation that shows the relationship between stress and strain for a material, indicating key properties such as elasticity, yield strength, and tensile strength.",
     search: ``,
     discipline: "materials engineering",
     filter: ["design", "NSTM"],
@@ -4340,16 +4237,14 @@ const glossaryMain = [
   },
   {
     term: "structural steel",
-    definition:
-      "A category of steel used for making construction materials in various shapes. It is designed to have high strength and ductility, making it suitable for structural applications.",
+    definition: "A category of steel used for making construction materials in various shapes. It is designed to have high strength and ductility, making it suitable for structural applications.",
     search: ``,
     discipline: "materials engineering",
     filter: ["materials"],
   },
   {
     term: "structurally deficient",
-    definition:
-      "A condition indicating deterioration in key load-bearing elements, often requiring repair, load restriction, or increased inspection frequency.",
+    definition: "A condition indicating deterioration in key load-bearing elements, often requiring repair, load restriction, or increased inspection frequency.",
     discipline: "bridge design",
     filter: ["bridge", "design"],
   },
@@ -4426,8 +4321,7 @@ const glossaryMain = [
   },
   {
     term: "swales",
-    definition:
-      "Shallow, sloped channels designed to convey and filter stormwater, reducing runoff velocity and promoting infiltration. Often vegetated to enhance erosion control and water quality.",
+    definition: "Shallow, sloped channels designed to convey and filter stormwater, reducing runoff velocity and promoting infiltration. Often vegetated to enhance erosion control and water quality.",
     discipline: "bridge design",
     filter: ["channel", "components", "design"],
   },
@@ -4475,8 +4369,7 @@ const glossaryMain = [
   },
   {
     term: "team leader",
-    definition:
-      "The on-site, nationally certified bridge inspector in charge of an inspection team and responsible for planning, preparing, performing, and reporting on bridge field inspections.",
+    definition: "The on-site, nationally certified bridge inspector in charge of an inspection team and responsible for planning, preparing, performing, and reporting on bridge field inspections.",
     search: ``,
     discipline: "bridge design",
     filter: ["bridge"],
@@ -4543,8 +4436,7 @@ const glossaryMain = [
   },
   {
     term: "thalweg",
-    definition:
-      "The line of lowest elevation within a channel, often following the natural flow path of water, marking the deepest part of the channel.",
+    definition: "The line of lowest elevation within a channel, often following the natural flow path of water, marking the deepest part of the channel.",
     discipline: "bridge design",
     filter: ["channel", "design"],
   },
@@ -4725,8 +4617,7 @@ const glossaryMain = [
 
   {
     term: "ultrasonic testing (UT)",
-    definition:
-      "A non-destructive testing method that uses high-frequency sound waves to detect internal flaws, discontinuities, and thickness variations in welds and structural components.",
+    definition: "A non-destructive testing method that uses high-frequency sound waves to detect internal flaws, discontinuities, and thickness variations in welds and structural components.",
     discipline: "bridge design",
     letter: "letter-jump-u",
     filter: ["acronyms", "NDT"],
@@ -4740,8 +4631,7 @@ const glossaryMain = [
   },
   {
     term: "undercutting",
-    definition:
-      "The erosion of the base of a channel's bank or bed, causing instability and leading to the collapse or sloughing of the bank material.",
+    definition: "The erosion of the base of a channel's bank or bed, causing instability and leading to the collapse or sloughing of the bank material.",
     discipline: "bridge design",
     filter: ["channel", "defects"],
   },
@@ -4815,8 +4705,7 @@ const glossaryMain = [
   },
   {
     term: "upheaval",
-    definition:
-      "A localized rise in a surface often caused by expanding soils, frost heave, or subgrade movement, leading to irregular elevation changes.",
+    definition: "A localized rise in a surface often caused by expanding soils, frost heave, or subgrade movement, leading to irregular elevation changes.",
     discipline: "bridge design",
     filter: ["defects"],
   },
@@ -4884,8 +4773,7 @@ const glossaryMain = [
 
   {
     term: "w-beam guardrail",
-    definition:
-      "A common guardrail type with a W-shaped cross-section, typically used on highways. It’s effective in absorbing impact and redirecting vehicles.",
+    definition: "A common guardrail type with a W-shaped cross-section, typically used on highways. It’s effective in absorbing impact and redirecting vehicles.",
     discipline: "bridge design",
     letter: "letter-jump-w",
     filter: ["roadway"],
@@ -4900,8 +4788,7 @@ const glossaryMain = [
   },
   {
     term: "warning signs",
-    definition:
-      "Visual indicators used to alert drivers to unexpected road conditions or hazards ahead, typically using a yellow background with black symbols or text.",
+    definition: "Visual indicators used to alert drivers to unexpected road conditions or hazards ahead, typically using a yellow background with black symbols or text.",
     discipline: "bridge design",
     filter: ["roadway"],
   },
@@ -4921,8 +4808,7 @@ const glossaryMain = [
   },
   {
     term: "wattle",
-    definition:
-      "A cylindrical erosion control device made from straw, coir, or synthetic material, placed along slopes or drainage areas to slow water flow and trap sediment.",
+    definition: "A cylindrical erosion control device made from straw, coir, or synthetic material, placed along slopes or drainage areas to slow water flow and trap sediment.",
     discipline: "bridge design",
     filter: ["channel", "components", "design"],
   },
@@ -4943,8 +4829,7 @@ const glossaryMain = [
   },
   {
     term: "web",
-    definition:
-      "The central portion of a beam that connects the top and bottom flanges. It carries shear forces and provides stability to the beam structure.",
+    definition: "The central portion of a beam that connects the top and bottom flanges. It carries shear forces and provides stability to the beam structure.",
     search: ``,
     discipline: "bridge design",
     filter: ["bridge", "components", "NSTM"],
@@ -4959,8 +4844,7 @@ const glossaryMain = [
   },
   {
     term: "weep hole",
-    definition:
-      "A small drainage opening in retaining walls, bridge abutments, or concrete structures that allows trapped water to escape, reducing hydrostatic pressure.",
+    definition: "A small drainage opening in retaining walls, bridge abutments, or concrete structures that allows trapped water to escape, reducing hydrostatic pressure.",
     discipline: "bridge design",
     filter: ["bridge", "components", "culvert", "wall"],
   },
@@ -5001,8 +4885,7 @@ const glossaryMain = [
   },
   {
     term: "widening (roadway)",
-    definition:
-      "The expansion of an existing roadway or bridge deck to increase capacity, improve safety, or accommodate additional lanes and traffic loads.",
+    definition: "The expansion of an existing roadway or bridge deck to increase capacity, improve safety, or accommodate additional lanes and traffic loads.",
     discipline: "bridge design",
     filter: ["design", "roadway"],
   },
@@ -5211,24 +5094,21 @@ const indianaCounties = [
 const glossaryBIRM = [
   {
     term: "AASHTO",
-    definition:
-      "An organization that develops and publishes standards for transportation infrastructure, evolving from its earlier form, AASHO, to address broader highway and transportation needs.",
+    definition: "An organization that develops and publishes standards for transportation infrastructure, evolving from its earlier form, AASHO, to address broader highway and transportation needs.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "American Association of State Highway and Transportation Officials (AASHTO) Manual",
-    definition:
-      "A reference document outlining procedures and criteria for evaluating existing structures, recognized in federal regulation and used as a benchmark in condition assessments.",
+    definition: "A reference document outlining procedures and criteria for evaluating existing structures, recognized in federal regulation and used as a benchmark in condition assessments.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "abrasion",
-    definition:
-      "The progressive loss of material from a surface due to friction, commonly caused by particles carried by water, wind, or contact with other surfaces.",
+    definition: "The progressive loss of material from a surface due to friction, commonly caused by particles carried by water, wind, or contact with other surfaces.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -5249,144 +5129,126 @@ const glossaryBIRM = [
 
   {
     term: "ADT",
-    definition:
-      "A statistical measure representing the average number of vehicles passing a point in both directions on a roadway over the span of a typical 24-hour day.",
+    definition: "A statistical measure representing the average number of vehicles passing a point in both directions on a roadway over the span of a typical 24-hour day.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "ADTT",
-    definition:
-      "A metric tracking the average daily number of commercial or heavy trucks using a specific segment of roadway, often used in load-related evaluations.",
+    definition: "A metric tracking the average daily number of commercial or heavy trucks using a specific segment of roadway, often used in load-related evaluations.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "admixture",
-    definition:
-      "A supplementary material added to a concrete mix to modify properties such as workability, setting time, durability, or resistance to environmental factors.",
+    definition: "A supplementary material added to a concrete mix to modify properties such as workability, setting time, durability, or resistance to environmental factors.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "aggradation",
-    definition:
-      "A natural process where sediment builds up over time, raising the bed of a stream or river and potentially affecting water flow and channel stability.",
+    definition: "A natural process where sediment builds up over time, raising the bed of a stream or river and potentially affecting water flow and channel stability.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "aggregate",
-    definition:
-      "A collection of mineral particles such as sand, gravel, or crushed stone, commonly used to enhance volume, strength, and durability in composite materials.",
+    definition: "A collection of mineral particles such as sand, gravel, or crushed stone, commonly used to enhance volume, strength, and durability in composite materials.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "air entrainment",
-    definition:
-      "The intentional inclusion of tiny air bubbles in a material mixture to increase resistance to freeze-thaw cycles and reduce cracking from thermal expansion.",
+    definition: "The intentional inclusion of tiny air bubbles in a material mixture to increase resistance to freeze-thaw cycles and reduce cracking from thermal expansion.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "alkali silica reactivity (ASR)",
-    definition:
-      "A chemical reaction between alkalis and certain siliceous aggregates that produces a gel, which absorbs moisture and expands, leading to internal cracking.",
+    definition: "A chemical reaction between alkalis and certain siliceous aggregates that produces a gel, which absorbs moisture and expands, leading to internal cracking.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "alignment",
-    definition:
-      "The geometric relationship between elements along horizontal and vertical planes, influencing fit, function, and overall continuity of connected components.",
+    definition: "The geometric relationship between elements along horizontal and vertical planes, influencing fit, function, and overall continuity of connected components.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "alignment bearing",
-    definition:
-      "A fixed device placed to restrict lateral displacement and maintain positional integrity between structural parts under movement or load.",
+    definition: "A fixed device placed to restrict lateral displacement and maintain positional integrity between structural parts under movement or load.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "alligator cracking",
-    definition:
-      "A pattern of interconnecting surface cracks caused by structural fatigue or poor support conditions, typically forming rectangular or blocky segments.",
+    definition: "A pattern of interconnecting surface cracks caused by structural fatigue or poor support conditions, typically forming rectangular or blocky segments.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "alloy",
-    definition:
-      "A uniform blend of metals or metal with other elements that results in enhanced strength, corrosion resistance, or other mechanical properties.",
+    definition: "A uniform blend of metals or metal with other elements that results in enhanced strength, corrosion resistance, or other mechanical properties.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "anchorage",
-    definition:
-      "An integrated set of components embedded into stable material, designed to restrain or transfer forces and keep structural elements in place.",
+    definition: "An integrated set of components embedded into stable material, designed to restrain or transfer forces and keep structural elements in place.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "anchor bolt",
-    definition:
-      "A steel rod embedded in concrete and fitted with hardware to secure connected parts, ensuring structural stability under load or vibration.",
+    definition: "A steel rod embedded in concrete and fitted with hardware to secure connected parts, ensuring structural stability under load or vibration.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "anchor span",
-    definition:
-      "A counterbalancing segment that offsets the weight or moment of a cantilevered section, maintaining equilibrium across adjoining spans.",
+    definition: "A counterbalancing segment that offsets the weight or moment of a cantilevered section, maintaining equilibrium across adjoining spans.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "angle",
-    definition:
-      "A structural shape featuring two flat legs joined at a right angle, offering resistance to bending and torsional forces in two planes.",
+    definition: "A structural shape featuring two flat legs joined at a right angle, offering resistance to bending and torsional forces in two planes.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "anisotropy",
-    definition:
-      "A material property indicating directional variation in strength or behavior, often resulting from internal structure or manufacturing processes.",
+    definition: "A material property indicating directional variation in strength or behavior, often resulting from internal structure or manufacturing processes.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "anode",
-    definition:
-      "The location within a corrosion system where metal loss occurs due to electrochemical oxidation, typically the sacrificial part of a circuit.",
+    definition: "The location within a corrosion system where metal loss occurs due to electrochemical oxidation, typically the sacrificial part of a circuit.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "anti-friction bearing",
-    definition:
-      "A mechanical device using rolling elements to minimize resistance between moving parts, improving motion and reducing wear under load.",
+    definition: "A mechanical device using rolling elements to minimize resistance between moving parts, improving motion and reducing wear under load.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -5400,8 +5262,7 @@ const glossaryBIRM = [
 
   {
     term: "approach",
-    definition:
-      "The transition segment of roadway immediately adjoining a structure, forming the connection between the main surface and the crossing feature.",
+    definition: "The transition segment of roadway immediately adjoining a structure, forming the connection between the main surface and the crossing feature.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -5415,8 +5276,7 @@ const glossaryBIRM = [
 
   {
     term: "approach slab",
-    definition:
-      "A reinforced platform bridging the transition from roadway to structure, designed to distribute loads and reduce settlement impacts.",
+    definition: "A reinforced platform bridging the transition from roadway to structure, designed to distribute loads and reduce settlement impacts.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -5430,8 +5290,7 @@ const glossaryBIRM = [
 
   {
     term: "apron",
-    definition:
-      "A protective surface placed to shield foundations or banks from scour, using durable materials to absorb or redirect erosive forces.",
+    definition: "A protective surface placed to shield foundations or banks from scour, using durable materials to absorb or redirect erosive forces.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -5473,8 +5332,7 @@ const glossaryBIRM = [
 
   {
     term: "as-built plans",
-    definition:
-      "A record of the final construction layout showing all deviations from the original design, used to document actual field conditions.",
+    definition: "A record of the final construction layout showing all deviations from the original design, used to document actual field conditions.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -5495,8 +5353,7 @@ const glossaryBIRM = [
 
   {
     term: "auger",
-    definition:
-      "A helical tool used to bore into soil or rock, typically in preparation for placing deep foundations or evaluating subsurface conditions.",
+    definition: "A helical tool used to bore into soil or rock, typically in preparation for placing deep foundations or evaluating subsurface conditions.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -5510,8 +5367,7 @@ const glossaryBIRM = [
 
   {
     term: "axial force",
-    definition:
-      "A push or pull that acts along the central axis of a component, creating either compression or tension depending on the load direction.",
+    definition: "A push or pull that acts along the central axis of a component, creating either compression or tension depending on the load direction.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -5532,24 +5388,21 @@ const glossaryBIRM = [
 
   {
     term: "backfill",
-    definition:
-      "A material used to refill excavated space around structures, providing support, drainage, or stability behind structural walls or foundations.",
+    definition: "A material used to refill excavated space around structures, providing support, drainage, or stability behind structural walls or foundations.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "backstay",
-    definition:
-      "A tensioned support line that counteracts overturning forces by transferring load to an anchorage point beyond the main support structure.",
+    definition: "A tensioned support line that counteracts overturning forces by transferring load to an anchorage point beyond the main support structure.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "backwall",
-    definition:
-      "The uppermost portion of a supporting structure that contains retained material and may limit movement or support adjacent elements.",
+    definition: "The uppermost portion of a supporting structure that contains retained material and may limit movement or support adjacent elements.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -5563,16 +5416,14 @@ const glossaryBIRM = [
 
   {
     term: "bank",
-    definition:
-      "A natural or constructed slope defining the edge of a channel, embankment, or roadway, typically angled to support drainage or load.",
+    definition: "A natural or constructed slope defining the edge of a channel, embankment, or roadway, typically angled to support drainage or load.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "bascule bridge",
-    definition:
-      "A movable span that pivots vertically to provide clearance for waterway traffic, using counterweights to balance the rotating section.",
+    definition: "A movable span that pivots vertically to provide clearance for waterway traffic, using counterweights to balance the rotating section.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -5593,72 +5444,63 @@ const glossaryBIRM = [
 
   {
     term: "base plate",
-    definition:
-      "A flat steel component that spreads concentrated loads across a support surface and facilitates secure connection to structural members.",
+    definition: "A flat steel component that spreads concentrated loads across a support surface and facilitates secure connection to structural members.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "batten plate",
-    definition:
-      "A flat connector fastened across paired elements in a built-up member, improving lateral stability and resisting buckling or twisting forces.",
+    definition: "A flat connector fastened across paired elements in a built-up member, improving lateral stability and resisting buckling or twisting forces.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "batter",
-    definition:
-      "An intentional slope applied to a surface or structural face, often described as a horizontal-to-vertical ratio for layout or formwork control.",
+    definition: "An intentional slope applied to a surface or structural face, often described as a horizontal-to-vertical ratio for layout or formwork control.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "battered pile",
-    definition:
-      "A deep foundation element driven at an angle to resist lateral or inclined loads, increasing overall resistance to movement or overturning.",
+    definition: "A deep foundation element driven at an angle to resist lateral or inclined loads, increasing overall resistance to movement or overturning.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "bay",
-    definition:
-      "An area defined by repeating structural spacing between beams or frames, typically used to describe layout and distribution of loads.",
+    definition: "An area defined by repeating structural spacing between beams or frames, typically used to describe layout and distribution of loads.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "beam",
-    definition:
-      "A straight structural member that supports vertical loads across a span by resisting bending through internal tension and compression.",
+    definition: "A straight structural member that supports vertical loads across a span by resisting bending through internal tension and compression.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "bearing",
-    definition:
-      "A mechanical device placed between connected components to allow controlled movement while transferring loads through a defined path.",
+    definition: "A mechanical device placed between connected components to allow controlled movement while transferring loads through a defined path.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "bearing capacity",
-    definition:
-      "The maximum pressure that a material or surface can support before shear failure, excessive settlement, or other forms of instability.",
+    definition: "The maximum pressure that a material or surface can support before shear failure, excessive settlement, or other forms of instability.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "bearing failure",
-    definition:
-      "The crushing or deformation of material at a point of contact due to excessive load, typically seen where concentrated forces are applied.",
+    definition: "The crushing or deformation of material at a point of contact due to excessive load, typically seen where concentrated forces are applied.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -5728,8 +5570,7 @@ const glossaryBIRM = [
 
   {
     term: "bending moment",
-    definition:
-      "An internal force effect caused by external loads that results in curvature and a combination of tension and compression within a member.",
+    definition: "An internal force effect caused by external loads that results in curvature and a combination of tension and compression within a member.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -5757,8 +5598,7 @@ const glossaryBIRM = [
 
   {
     term: "bitumen",
-    definition:
-      "A viscous, black hydrocarbon material used in pavement and waterproofing applications for its adhesive and water-resistant properties.",
+    definition: "A viscous, black hydrocarbon material used in pavement and waterproofing applications for its adhesive and water-resistant properties.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -5821,16 +5661,14 @@ const glossaryBIRM = [
 
   {
     term: "box beam",
-    definition:
-      "A hollow structural member with a rectangular or trapezoidal cross-section, offering high torsional stiffness and efficient load distribution.",
+    definition: "A hollow structural member with a rectangular or trapezoidal cross-section, offering high torsional stiffness and efficient load distribution.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "box culvert",
-    definition:
-      "A rigid, rectangular conduit used to carry water under roadways or embankments, typically constructed from precast or cast-in-place concrete.",
+    definition: "A rigid, rectangular conduit used to carry water under roadways or embankments, typically constructed from precast or cast-in-place concrete.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -5879,8 +5717,7 @@ const glossaryBIRM = [
 
   {
     term: "bridge elements",
-    definition:
-      "The individual structural or functional components that make up a full crossing system, typically inspected and rated independently.",
+    definition: "The individual structural or functional components that make up a full crossing system, typically inspected and rated independently.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -5901,8 +5738,7 @@ const glossaryBIRM = [
 
   {
     term: "Bridge Inspector's Reference Manual (BIRM)",
-    definition:
-      "A federal training manual covering the evaluation of in-service crossings, including procedures, terminology, and safety principles.",
+    definition: "A federal training manual covering the evaluation of in-service crossings, including procedures, terminology, and safety principles.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -6028,8 +5864,7 @@ const glossaryBIRM = [
 
   {
     term: "cable",
-    definition:
-      "A tension element made from numerous strands twisted into a rope-like form, offering high strength and flexibility in long-span applications.",
+    definition: "A tension element made from numerous strands twisted into a rope-like form, offering high strength and flexibility in long-span applications.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -6043,8 +5878,7 @@ const glossaryBIRM = [
 
   {
     term: "cable-stayed bridge",
-    definition:
-      "A structure with straight cables anchored to towers, directly supporting the deck and distributing loads without requiring main suspension cables.",
+    definition: "A structure with straight cables anchored to towers, directly supporting the deck and distributing loads without requiring main suspension cables.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -6170,16 +6004,14 @@ const glossaryBIRM = [
 
   {
     term: "cathodic protection",
-    definition:
-      "A corrosion control method using electrical current or sacrificial metals to shift electrochemical activity away from the protected surface.",
+    definition: "A corrosion control method using electrical current or sacrificial metals to shift electrochemical activity away from the protected surface.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "catwalk",
-    definition:
-      "A narrow, elevated walkway used to access otherwise unreachable parts of a structure for inspection, maintenance, or construction tasks.",
+    definition: "A narrow, elevated walkway used to access otherwise unreachable parts of a structure for inspection, maintenance, or construction tasks.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -6193,8 +6025,7 @@ const glossaryBIRM = [
 
   {
     term: "cellular abutment",
-    definition:
-      "A hollow abutment structure with internal voids or chambers that reduce material use while maintaining load-bearing and retaining capacity.",
+    definition: "A hollow abutment structure with internal voids or chambers that reduce material use while maintaining load-bearing and retaining capacity.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -6285,8 +6116,7 @@ const glossaryBIRM = [
 
   {
     term: "chipping hammer",
-    definition:
-      "A hand tool with a pointed or chisel tip used to remove loose material, rust, or slag from surfaces during inspection or fabrication.",
+    definition: "A hand tool with a pointed or chisel tip used to remove loose material, rust, or slag from surfaces during inspection or fabrication.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -6447,8 +6277,7 @@ const glossaryBIRM = [
 
   {
     term: "comprehensive bridge inspection training",
-    definition:
-      "Formal instruction that covers all aspects of evaluation, documentation, and criteria interpretation, ensuring inspection proficiency.",
+    definition: "Formal instruction that covers all aspects of evaluation, documentation, and criteria interpretation, ensuring inspection proficiency.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -6574,16 +6403,14 @@ const glossaryBIRM = [
 
   {
     term: "continuous span",
-    definition:
-      "A structural configuration where adjacent spans are linked over intermediate supports, enabling moment redistribution and efficiency.",
+    definition: "A structural configuration where adjacent spans are linked over intermediate supports, enabling moment redistribution and efficiency.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "continuous truss",
-    definition:
-      "A triangulated structure without hinges that spans uninterrupted across two or more supports, distributing live and dead loads efficiently.",
+    definition: "A triangulated structure without hinges that spans uninterrupted across two or more supports, distributing live and dead loads efficiently.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -6730,8 +6557,7 @@ const glossaryBIRM = [
 
   {
     term: "crack",
-    definition:
-      "A visible or hidden fracture within a material where internal stress exceeds local strength, often indicating movement, aging, or stress.",
+    definition: "A visible or hidden fracture within a material where internal stress exceeds local strength, often indicating movement, aging, or stress.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -6745,8 +6571,7 @@ const glossaryBIRM = [
 
   {
     term: "cracking (reflection)",
-    definition:
-      "A surface flaw in overlays that follows the pattern of existing cracks beneath, often due to differential movement or stress transfer.",
+    definition: "A surface flaw in overlays that follows the pattern of existing cracks beneath, often due to differential movement or stress transfer.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -6921,16 +6746,14 @@ const glossaryBIRM = [
 
   {
     term: "cutwater",
-    definition:
-      "A structure with a sharp edge designed to deflect flow and debris, protecting a component from the impact of moving water and obstructed materials.",
+    definition: "A structure with a sharp edge designed to deflect flow and debris, protecting a component from the impact of moving water and obstructed materials.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "cyclic stress",
-    definition:
-      "Stress that fluctuates as a result of repeated forces, often due to varying load conditions over time, impacting material durability and structural integrity.",
+    definition: "Stress that fluctuates as a result of repeated forces, often due to varying load conditions over time, impacting material durability and structural integrity.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -6945,128 +6768,112 @@ const glossaryBIRM = [
 
   {
     term: "dead load",
-    definition:
-      "A static load resulting from the weight of the structure itself, which remains constant over time and does not vary with use or environmental conditions.",
+    definition: "A static load resulting from the weight of the structure itself, which remains constant over time and does not vary with use or environmental conditions.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "debris",
-    definition:
-      "Materials, such as floating wood, trash, or suspended sediment, moved by the current of a flowing stream, often posing a hazard to structures or navigation.",
+    definition: "Materials, such as floating wood, trash, or suspended sediment, moved by the current of a flowing stream, often posing a hazard to structures or navigation.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "decay",
-    definition:
-      "The degradation of organic material, caused by fungi that break down the cell walls, leading to the deterioration of the affected material over time.",
+    definition: "The degradation of organic material, caused by fungi that break down the cell walls, leading to the deterioration of the affected material over time.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "deck",
-    definition:
-      "The horizontal surface of a structure that directly supports traffic, providing a stable platform for vehicles and pedestrians to cross.",
+    definition: "The horizontal surface of a structure that directly supports traffic, providing a stable platform for vehicles and pedestrians to cross.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "deck arch",
-    definition:
-      "A type of arch bridge where the deck is positioned above the top of the arch, allowing for increased clearance and load distribution.",
+    definition: "A type of arch bridge where the deck is positioned above the top of the arch, allowing for increased clearance and load distribution.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "deck bridge",
-    definition:
-      "A bridge where all supporting members are located beneath the roadway, often used to provide a clear span for traffic or to minimize structural interference.",
+    definition: "A bridge where all supporting members are located beneath the roadway, often used to provide a clear span for traffic or to minimize structural interference.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "decking",
-    definition:
-      "Bridge flooring made up of individual panels or components, such as timber planks, that form the surface layer of the deck and support traffic load.",
+    definition: "Bridge flooring made up of individual panels or components, such as timber planks, that form the surface layer of the deck and support traffic load.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "deck joint",
-    definition:
-      "A gap incorporated into the bridge deck to allow for rotation or horizontal movement between spans or the connection between the span and the approach.",
+    definition: "A gap incorporated into the bridge deck to allow for rotation or horizontal movement between spans or the connection between the span and the approach.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "deficiency",
-    definition:
-      "A condition indicating that a structure does not meet the necessary standards, often reflecting a need for repairs or improvements to ensure safety and functionality.",
+    definition: "A condition indicating that a structure does not meet the necessary standards, often reflecting a need for repairs or improvements to ensure safety and functionality.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "deflection",
-    definition:
-      "The elastic movement of a structural component when subjected to a load, often resulting in bending or shifting of the material under pressure.",
+    definition: "The elastic movement of a structural component when subjected to a load, often resulting in bending or shifting of the material under pressure.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "deformation",
-    definition:
-      "The alteration in shape or size of a structural element under load, which can be either reversible (elastic) or permanent (inelastic).",
+    definition: "The alteration in shape or size of a structural element under load, which can be either reversible (elastic) or permanent (inelastic).",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "deformed bars",
-    definition:
-      "Steel reinforcement bars featuring indentations or projections that enhance the bond between steel and concrete, increasing the strength and stability of the structure.",
+    definition: "Steel reinforcement bars featuring indentations or projections that enhance the bond between steel and concrete, increasing the strength and stability of the structure.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "degradation",
-    definition:
-      "The gradual decline in quality of a material or structure due to environmental or chemical factors, leading to a loss of function or strength over time.",
+    definition: "The gradual decline in quality of a material or structure due to environmental or chemical factors, leading to a loss of function or strength over time.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "delamination",
-    definition:
-      "The separation of a surface layer from the underlying material, often occurring in concrete or laminated timber due to stress, moisture, or chemical reactions.",
+    definition: "The separation of a surface layer from the underlying material, often occurring in concrete or laminated timber due to stress, moisture, or chemical reactions.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "design load",
-    definition:
-      "The maximum force or combination of forces for which a structure is designed to withstand, considering factors such as safety, durability, and performance under expected conditions.",
+    definition: "The maximum force or combination of forces for which a structure is designed to withstand, considering factors such as safety, durability, and performance under expected conditions.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "distributed loads",
-    definition:
-      "Forces applied evenly across a large area of a structure, such as the weight of traffic or other environmental factors, which can affect the overall stability of the system.",
+    definition: "Forces applied evenly across a large area of a structure, such as the weight of traffic or other environmental factors, which can affect the overall stability of the system.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -7081,8 +6888,7 @@ const glossaryBIRM = [
 
   {
     term: "diagonal",
-    definition:
-      "A structural component that slopes at an angle, often used in truss systems or bracing to provide support and resist forces acting on the structure.",
+    definition: "A structural component that slopes at an angle, often used in truss systems or bracing to provide support and resist forces acting on the structure.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -7097,24 +6903,21 @@ const glossaryBIRM = [
 
   {
     term: "diagonal tension",
-    definition:
-      "The tensile force that arises from shear stresses in a structural component, especially in beams subjected to both vertical and horizontal forces.",
+    definition: "The tensile force that arises from shear stresses in a structural component, especially in beams subjected to both vertical and horizontal forces.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "diaphragm",
-    definition:
-      "A transverse structural member placed within a framework to distribute forces, enhance stability, and improve the rigidity of the system, often used in combination with bracing.",
+    definition: "A transverse structural member placed within a framework to distribute forces, enhance stability, and improve the rigidity of the system, often used in combination with bracing.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "diaphragm wall",
-    definition:
-      "A vertical wall built across the centerline of an arch bridge to reinforce spandrel walls, support the floor system, and provide additional lateral strength.",
+    definition: "A vertical wall built across the centerline of an arch bridge to reinforce spandrel walls, support the floor system, and provide additional lateral strength.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -7129,8 +6932,7 @@ const glossaryBIRM = [
 
   {
     term: "dike",
-    definition:
-      "An embankment built to control or redirect water flow, often used to prevent erosion or localized scour around structures, and guide stream currents away from critical areas.",
+    definition: "An embankment built to control or redirect water flow, often used to prevent erosion or localized scour around structures, and guide stream currents away from critical areas.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -7144,16 +6946,14 @@ const glossaryBIRM = [
 
   {
     term: "displacement induced stress",
-    definition:
-      "Stresses generated by differential movement between adjacent parts of a structure, resulting from uneven deflection or shifting under load.",
+    definition: "Stresses generated by differential movement between adjacent parts of a structure, resulting from uneven deflection or shifting under load.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "distributed load",
-    definition:
-      "A load that is uniformly applied across the length of a structural element, such as a beam or deck, affecting the overall behavior and performance of the component.",
+    definition: "A load that is uniformly applied across the length of a structural element, such as a beam or deck, affecting the overall behavior and performance of the component.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -7167,8 +6967,7 @@ const glossaryBIRM = [
 
   {
     term: "diver",
-    definition:
-      "A trained individual specializing in underwater inspections, responsible for evaluating the condition of submerged structural components and the surrounding environment.",
+    definition: "A trained individual specializing in underwater inspections, responsible for evaluating the condition of submerged structural components and the surrounding environment.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -7196,8 +6995,7 @@ const glossaryBIRM = [
 
   {
     term: "drainage",
-    definition:
-      "A system designed to remove excess water from a structure, preventing water accumulation that could affect the integrity or functionality of the system.",
+    definition: "A system designed to remove excess water from a structure, preventing water accumulation that could affect the integrity or functionality of the system.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -7211,8 +7009,7 @@ const glossaryBIRM = [
 
   {
     term: "drain hole",
-    definition:
-      "A hole placed in a structural component, such as a box girder or wall, to allow accumulated water or liquid to exit the system, preventing damage or deterioration.",
+    definition: "A hole placed in a structural component, such as a box girder or wall, to allow accumulated water or liquid to exit the system, preventing damage or deterioration.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -7247,16 +7044,14 @@ const glossaryBIRM = [
 
   {
     term: "drip notch",
-    definition:
-      "A cast recess on the underside of a structure's overhang, designed to prevent water from flowing onto supporting components and causing damage.",
+    definition: "A cast recess on the underside of a structure's overhang, designed to prevent water from flowing onto supporting components and causing damage.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "drop inlet",
-    definition:
-      "A type of inlet structure used to convey water from a higher elevation to a lower outlet, designed to allow smooth water flow without free fall at the discharge point.",
+    definition: "A type of inlet structure used to convey water from a higher elevation to a lower outlet, designed to allow smooth water flow without free fall at the discharge point.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -7270,32 +7065,28 @@ const glossaryBIRM = [
 
   {
     term: "ductile",
-    definition:
-      "A material property that allows a material to be deformed significantly without breaking, making it flexible and capable of absorbing stresses.",
+    definition: "A material property that allows a material to be deformed significantly without breaking, making it flexible and capable of absorbing stresses.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "ductile fracture",
-    definition:
-      "A type of fracture characterized by significant plastic deformation before failure, indicating that the material was able to absorb energy prior to breaking.",
+    definition: "A type of fracture characterized by significant plastic deformation before failure, indicating that the material was able to absorb energy prior to breaking.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "ductility",
-    definition:
-      "The ability of a material to undergo significant deformation without breaking, often allowing it to withstand forces or stresses before failure.",
+    definition: "The ability of a material to undergo significant deformation without breaking, often allowing it to withstand forces or stresses before failure.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "dumbbell pier",
-    definition:
-      "A pier with two cylindrical or rectangular columns connected by an integral web, often used in structures where central support is necessary.",
+    definition: "A pier with two cylindrical or rectangular columns connected by an integral web, often used in structures where central support is necessary.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -7317,96 +7108,84 @@ const glossaryBIRM = [
 
   {
     term: "efflorescence",
-    definition:
-      "A white, powdery deposit found on masonry surfaces caused by the migration of soluble salts within materials, which crystallize when moisture evaporates from the surface.",
+    definition: "A white, powdery deposit found on masonry surfaces caused by the migration of soluble salts within materials, which crystallize when moisture evaporates from the surface.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "elastic",
-    definition:
-      "The ability of a material to return to its original shape after being stretched or deformed, without permanent damage when the external forces are removed.",
+    definition: "The ability of a material to return to its original shape after being stretched or deformed, without permanent damage when the external forces are removed.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "elastic strain",
-    definition:
-      "A temporary deformation in a material under stress that is fully recoverable once the load is removed, without causing permanent changes to the material's structure.",
+    definition: "A temporary deformation in a material under stress that is fully recoverable once the load is removed, without causing permanent changes to the material's structure.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "elastic deformation",
-    definition:
-      "A non-permanent distortion of a material that occurs under stress, which fully recovers its original shape once the applied load is removed.",
+    definition: "A non-permanent distortion of a material that occurs under stress, which fully recovers its original shape once the applied load is removed.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "elasticity",
-    definition:
-      "The ability of a material to undergo reversible deformation when subjected to external forces, returning to its initial shape once the forces are no longer applied.",
+    definition: "The ability of a material to undergo reversible deformation when subjected to external forces, returning to its initial shape once the forces are no longer applied.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "elastomer",
-    definition:
-      "A type of polymer material with rubber-like properties, capable of large elastic deformations, often used for seals, bearings, and vibration-damping applications.",
+    definition: "A type of polymer material with rubber-like properties, capable of large elastic deformations, often used for seals, bearings, and vibration-damping applications.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "elastomeric pad",
-    definition:
-      "A rubber-like material pad used in structural supports, designed to compress under load while allowing for movement, helping to manage forces such as expansion or vibration.",
+    definition: "A rubber-like material pad used in structural supports, designed to compress under load while allowing for movement, helping to manage forces such as expansion or vibration.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "electrolyte",
-    definition:
-      "A conductive medium, such as air, water, or soil, that facilitates the flow of ions between two metal electrodes, playing a critical role in corrosion and electrochemical processes.",
+    definition: "A conductive medium, such as air, water, or soil, that facilitates the flow of ions between two metal electrodes, playing a critical role in corrosion and electrochemical processes.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "electrolytic cell",
-    definition:
-      "A system that allows for the process of electrolysis, using an electrolyte and electrodes to drive chemical reactions that would not occur spontaneously.",
+    definition: "A system that allows for the process of electrolysis, using an electrolyte and electrodes to drive chemical reactions that would not occur spontaneously.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "electrolytic corrosion",
-    definition:
-      "A type of metal corrosion that occurs due to the flow of electric current through an electrolyte, accelerating the degradation of metal surfaces in contact with the medium.",
+    definition: "A type of metal corrosion that occurs due to the flow of electric current through an electrolyte, accelerating the degradation of metal surfaces in contact with the medium.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "elevation view",
-    definition:
-      "A drawing that represents the side perspective of a structure, showing vertical dimensions and features that are not visible in plan view.",
+    definition: "A drawing that represents the side perspective of a structure, showing vertical dimensions and features that are not visible in plan view.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "elliptic arch",
-    definition:
-      "An arch with a shape based on the upper half of an elliptical cylinder, designed to distribute forces more efficiently across its structure compared to traditional curved arches.",
+    definition: "An arch with a shape based on the upper half of an elliptical cylinder, designed to distribute forces more efficiently across its structure compared to traditional curved arches.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -7421,80 +7200,70 @@ const glossaryBIRM = [
 
   {
     term: "embankment",
-    definition:
-      "A raised mound of earth designed to carry roads or prevent water from spreading beyond a certain boundary, providing stability or protection from flooding.",
+    definition: "A raised mound of earth designed to carry roads or prevent water from spreading beyond a certain boundary, providing stability or protection from flooding.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "end block",
-    definition:
-      "A reinforced section at the end of a prestressed concrete beam, designed to anchor the post-tensioning steel and resist shear stresses for improved structural performance.",
+    definition: "A reinforced section at the end of a prestressed concrete beam, designed to anchor the post-tensioning steel and resist shear stresses for improved structural performance.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "end post",
-    definition:
-      "A structural member that forms the end compression of a truss system, providing support between the top and bottom chords at the boundary of the structure.",
+    definition: "A structural member that forms the end compression of a truss system, providing support between the top and bottom chords at the boundary of the structure.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "end rotation",
-    definition:
-      "The deflection or twisting of a structure's end when subjected to external loads, leading to movement at the connection points of structural members.",
+    definition: "The deflection or twisting of a structure's end when subjected to external loads, leading to movement at the connection points of structural members.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "end section",
-    definition:
-      "A structural addition to the end of a culvert, used for hydraulic efficiency or structural anchorage, often improving flow control and reducing erosion risks.",
+    definition: "A structural addition to the end of a culvert, used for hydraulic efficiency or structural anchorage, often improving flow control and reducing erosion risks.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "end span",
-    definition:
-      "The portion of a bridge that spans between the last support and the abutment, typically experiencing more movement due to temperature changes and load distribution.",
+    definition: "The portion of a bridge that spans between the last support and the abutment, typically experiencing more movement due to temperature changes and load distribution.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "epoxy",
-    definition:
-      "A synthetic resin known for its strong adhesive properties, commonly used in bonding materials or providing surface protection through chemical hardening after mixing components.",
+    definition: "A synthetic resin known for its strong adhesive properties, commonly used in bonding materials or providing surface protection through chemical hardening after mixing components.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "epoxy coated reinforcement",
-    definition:
-      "Steel reinforcement coated with a layer of epoxy to prevent corrosion, particularly in environments exposed to moisture or chemicals that could degrade the material's integrity.",
+    definition: "Steel reinforcement coated with a layer of epoxy to prevent corrosion, particularly in environments exposed to moisture or chemicals that could degrade the material's integrity.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "equilibrium",
-    definition:
-      "A state in which the sum of forces and moments acting on a structure results in no movement or acceleration, ensuring stability in static conditions.",
+    definition: "A state in which the sum of forces and moments acting on a structure results in no movement or acceleration, ensuring stability in static conditions.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "equivalent uniform load",
-    definition:
-      "A simplified representation of a variable live load, converted into a constant uniform load that results in the same structural effects, aiding in analysis and design efficiency.",
+    definition: "A simplified representation of a variable live load, converted into a constant uniform load that results in the same structural effects, aiding in analysis and design efficiency.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -7509,8 +7278,7 @@ const glossaryBIRM = [
 
   {
     term: "expansion",
-    definition:
-      "The increase in the size or volume of a material or structure due to factors like temperature rise or internal pressure, often requiring mechanisms to accommodate the changes.",
+    definition: "The increase in the size or volume of a material or structure due to factors like temperature rise or internal pressure, often requiring mechanisms to accommodate the changes.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -7525,8 +7293,7 @@ const glossaryBIRM = [
 
   {
     term: "expansion dam",
-    definition:
-      "A component of an expansion joint that prevents the structure from moving at the joint and provides a controlled space for concrete placement during construction.",
+    definition: "A component of an expansion joint that prevents the structure from moving at the joint and provides a controlled space for concrete placement during construction.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -7549,40 +7316,35 @@ const glossaryBIRM = [
 
   {
     term: "expansion roller",
-    definition:
-      "A cylindrical device used in bearing systems that allows for the accommodation of movement due to expansion or contraction, typically in response to temperature or loading changes.",
+    definition: "A cylindrical device used in bearing systems that allows for the accommodation of movement due to expansion or contraction, typically in response to temperature or loading changes.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "expansion shoe",
-    definition:
-      "A metal component used in bearing systems to accommodate movements resulting from temperature changes and external forces, ensuring smooth operation and stability of the structure.",
+    definition: "A metal component used in bearing systems to accommodate movements resulting from temperature changes and external forces, ensuring smooth operation and stability of the structure.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "exterior girder",
-    definition:
-      "The outermost structural beams that support the bridge deck, providing stability and carrying the load from the deck to the supporting piers or abutments.",
+    definition: "The outermost structural beams that support the bridge deck, providing stability and carrying the load from the deck to the supporting piers or abutments.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "extrados",
-    definition:
-      "The uppermost curve of an arch, typically referring to the exterior or outer surface, which plays a role in distributing forces across the structure.",
+    definition: "The uppermost curve of an arch, typically referring to the exterior or outer surface, which plays a role in distributing forces across the structure.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "eyebar",
-    definition:
-      "A structural member made from a rectangular bar with forged ends, designed to be connected using pins to form a tension member in suspension and other bridge types.",
+    definition: "A structural member made from a rectangular bar with forged ends, designed to be connected using pins to form a tension member in suspension and other bridge types.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -7597,8 +7359,7 @@ const glossaryBIRM = [
 
   {
     term: "falsework",
-    definition:
-      "A temporary framework, typically made of wood or metal, used to support the weight of a structure during construction until it becomes self-supporting.",
+    definition: "A temporary framework, typically made of wood or metal, used to support the weight of a structure during construction until it becomes self-supporting.",
     discipline: "bridge inspection",
     page: ["glossary-additional-tab"],
   },
@@ -7613,16 +7374,14 @@ const glossaryBIRM = [
 
   {
     term: "fascia girder",
-    definition:
-      "The outermost exposed girder of a span, which may be treated architecturally for aesthetic purposes, contributing to the visual appeal of the structure.",
+    definition: "The outermost exposed girder of a span, which may be treated architecturally for aesthetic purposes, contributing to the visual appeal of the structure.",
     discipline: "bridge inspection",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "fatigue",
-    definition:
-      "The tendency of a material or member to fail at stress levels lower than its yield point when subjected to repeated loading cycles, often leading to the initiation of cracks.",
+    definition: "The tendency of a material or member to fail at stress levels lower than its yield point when subjected to repeated loading cycles, often leading to the initiation of cracks.",
     discipline: "bridge inspection",
     page: ["glossary-additional-tab"],
   },
@@ -7637,8 +7396,7 @@ const glossaryBIRM = [
 
   {
     term: "fatigue damage",
-    definition:
-      "The degradation of a structure due to repeated loading, often manifesting as crack formation, which progressively weakens the material or member involved.",
+    definition: "The degradation of a structure due to repeated loading, often manifesting as crack formation, which progressively weakens the material or member involved.",
     discipline: "bridge inspection",
     page: ["glossary-additional-tab"],
   },
@@ -7653,96 +7411,84 @@ const glossaryBIRM = [
 
   {
     term: "fender",
-    definition:
-      "A protective structure designed to absorb and dissipate the energy of impacts from floating debris or waterborne traffic, preventing damage to exposed portions of a bridge.",
+    definition: "A protective structure designed to absorb and dissipate the energy of impacts from floating debris or waterborne traffic, preventing damage to exposed portions of a bridge.",
     discipline: "bridge inspection",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "fender pier",
-    definition:
-      "A structure similar to a pier but specifically designed to serve as a buffer against impact forces, providing additional protection to the bridge and its components.",
+    definition: "A structure similar to a pier but specifically designed to serve as a buffer against impact forces, providing additional protection to the bridge and its components.",
     discipline: "bridge inspection",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "field coat",
-    definition:
-      "A layer of paint applied to a structure after assembly, typically part of the field erection process, providing additional protection and sometimes contributing to aesthetics.",
+    definition: "A layer of paint applied to a structure after assembly, typically part of the field erection process, providing additional protection and sometimes contributing to aesthetics.",
     discipline: "bridge inspection",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "fill",
-    definition:
-      "Earth or other material used to alter the surface contour of an area, commonly employed to build embankments or raise the elevation of a site for construction.",
+    definition: "Earth or other material used to alter the surface contour of an area, commonly employed to build embankments or raise the elevation of a site for construction.",
     discipline: "bridge inspection",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "filler",
-    definition:
-      "A piece or material used to fill gaps or spaces in structural connections, such as beneath a batten, splice plate, or stiffener, ensuring proper alignment and load transfer.",
+    definition: "A piece or material used to fill gaps or spaces in structural connections, such as beneath a batten, splice plate, or stiffener, ensuring proper alignment and load transfer.",
     discipline: "bridge inspection",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "filler metal",
-    definition:
-      "A metal material, such as wire, rod, or electrode, used in the welding process to fuse two metal pieces together, forming a joint and ensuring strength and integrity.",
+    definition: "A metal material, such as wire, rod, or electrode, used in the welding process to fuse two metal pieces together, forming a joint and ensuring strength and integrity.",
     discipline: "bridge inspection",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "filler plate",
-    definition:
-      "A type of filler used to close gaps or add material to structural elements, ensuring proper fit and function in connections like splices or gussets.",
+    definition: "A type of filler used to close gaps or add material to structural elements, ensuring proper fit and function in connections like splices or gussets.",
     discipline: "bridge inspection",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "fillet",
-    definition:
-      "A curved junction formed between two surfaces that would otherwise meet at an angle, designed to facilitate a smooth transition and improve the structural connection.",
+    definition: "A curved junction formed between two surfaces that would otherwise meet at an angle, designed to facilitate a smooth transition and improve the structural connection.",
     discipline: "bridge inspection",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "fillet weld",
-    definition:
-      "A type of weld with a triangular cross-section, typically used to join two pieces of material at right angles, commonly found in structural connections.",
+    definition: "A type of weld with a triangular cross-section, typically used to join two pieces of material at right angles, commonly found in structural connections.",
     discipline: "bridge inspection",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "filling",
-    definition:
-      "Material used to close or seal gaps or voids in construction elements, often involving the addition of filler to improve fit or to reinforce structural components.",
+    definition: "Material used to close or seal gaps or voids in construction elements, often involving the addition of filler to improve fit or to reinforce structural components.",
     discipline: "bridge inspection",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "fine aggregate",
-    definition:
-      "Sand or fine-grained material used in concrete or mortar mixes, passing through a No. 4 sieve (4.75 mm), contributing to the material's strength and workability.",
+    definition: "Sand or fine-grained material used in concrete or mortar mixes, passing through a No. 4 sieve (4.75 mm), contributing to the material's strength and workability.",
     discipline: "bridge inspection",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "finger dam",
-    definition:
-      "An expansion joint system that utilizes interlocking steel fingers or teeth to bridge the opening between two elements, allowing movement while maintaining structural integrity.",
+    definition: "An expansion joint system that utilizes interlocking steel fingers or teeth to bridge the opening between two elements, allowing movement while maintaining structural integrity.",
     discipline: "bridge inspection",
     page: ["glossary-additional-tab"],
   },
@@ -7757,24 +7503,21 @@ const glossaryBIRM = [
 
   {
     term: "fixed beam",
-    definition:
-      "A beam with a fixed end, restricting movement and rotation at that point, designed to carry loads and resist bending under applied forces.",
+    definition: "A beam with a fixed end, restricting movement and rotation at that point, designed to carry loads and resist bending under applied forces.",
     discipline: "bridge inspection",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "fixed bearing",
-    definition:
-      "A bearing that allows rotation but restricts translational movement, ensuring stability while accommodating for changes in angle due to thermal or other forces.",
+    definition: "A bearing that allows rotation but restricts translational movement, ensuring stability while accommodating for changes in angle due to thermal or other forces.",
     discipline: "bridge inspection",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "fixed bridge",
-    definition:
-      "A bridge designed to remain stationary, typically without mechanisms to allow for adjustments to navigation clearance, often employed where no movement is needed.",
+    definition: "A bridge designed to remain stationary, typically without mechanisms to allow for adjustments to navigation clearance, often employed where no movement is needed.",
     discipline: "bridge inspection",
     page: ["glossary-additional-tab"],
   },
@@ -7809,32 +7552,28 @@ const glossaryBIRM = [
 
   {
     term: "flange",
-    definition:
-      "The horizontal parts of a beam or girder extending across the top and bottom of the web, contributing to the structural integrity by providing lateral support.",
+    definition: "The horizontal parts of a beam or girder extending across the top and bottom of the web, contributing to the structural integrity by providing lateral support.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "flange angle",
-    definition:
-      "An angled component used in the assembly of flanges for built-up members, providing structural strength and stability to girders or columns.",
+    definition: "An angled component used in the assembly of flanges for built-up members, providing structural strength and stability to girders or columns.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "floating bridge",
-    definition:
-      "A type of bridge supported by floating structures, typically used in bodies of water where other foundation options are impractical.",
+    definition: "A type of bridge supported by floating structures, typically used in bodies of water where other foundation options are impractical.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "floating foundation",
-    definition:
-      "A foundation system that distributes loads across a wide area, typically using low-pressure soil-supported elements like mats or rafts.",
+    definition: "A foundation system that distributes loads across a wide area, typically using low-pressure soil-supported elements like mats or rafts.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -7875,8 +7614,7 @@ const glossaryBIRM = [
 
   {
     term: "flow capacity",
-    definition:
-      "The maximum volume of water or other fluid that can be effectively managed by a channel or culvert structure without causing overflow or blockage.",
+    definition: "The maximum volume of water or other fluid that can be effectively managed by a channel or culvert structure without causing overflow or blockage.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -7918,16 +7656,14 @@ const glossaryBIRM = [
 
   {
     term: "force",
-    definition:
-      "An influence that causes an object to accelerate, decelerate, or change its direction, commonly quantified in terms of mass and acceleration.",
+    definition: "An influence that causes an object to accelerate, decelerate, or change its direction, commonly quantified in terms of mass and acceleration.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "forms",
-    definition:
-      "Temporary molds used in the construction of concrete structures, ensuring that the material hardens into the desired shape and dimensions.",
+    definition: "Temporary molds used in the construction of concrete structures, ensuring that the material hardens into the desired shape and dimensions.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -8118,168 +7854,147 @@ const glossaryBIRM = [
 
   {
     term: "gabion",
-    definition:
-      "A wire basket filled with rocks that provides structural support and controls erosion by stabilizing the soil and preventing surface runoff.",
+    definition: "A wire basket filled with rocks that provides structural support and controls erosion by stabilizing the soil and preventing surface runoff.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "galvanic action",
-    definition:
-      "The occurrence of electrical current flow between two different metals when they are in contact with each other, leading to corrosion in the more reactive metal.",
+    definition: "The occurrence of electrical current flow between two different metals when they are in contact with each other, leading to corrosion in the more reactive metal.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "galvanize",
-    definition:
-      "The process of coating steel or iron with a layer of zinc to protect the metal from corrosion by creating a barrier and through sacrificial protection.",
+    definition: "The process of coating steel or iron with a layer of zinc to protect the metal from corrosion by creating a barrier and through sacrificial protection.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "gauge",
-    definition:
-      "A measurement used to determine the distance between parallel lines, such as rail tracks or rivet holes, or to describe the thickness of materials like sheet metal or wire.",
+    definition: "A measurement used to determine the distance between parallel lines, such as rail tracks or rivet holes, or to describe the thickness of materials like sheet metal or wire.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "general scour",
-    definition:
-      "The process of streambed erosion around a structure, typically caused by flowing water, which may result in an uneven lowering of the riverbed in the vicinity of the structure.",
+    definition: "The process of streambed erosion around a structure, typically caused by flowing water, which may result in an uneven lowering of the riverbed in the vicinity of the structure.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "geometry",
-    definition:
-      "The study of the shape, form, and spatial relationships between elements within a structure, which are used to determine its stability and functionality.",
+    definition: "The study of the shape, form, and spatial relationships between elements within a structure, which are used to determine its stability and functionality.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "girder",
-    definition:
-      "A primary structural component that provides horizontal support for a structure, typically made of steel, concrete, or wood, and is designed to resist bending and shear forces.",
+    definition: "A primary structural component that provides horizontal support for a structure, typically made of steel, concrete, or wood, and is designed to resist bending and shear forces.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "girder bridge",
-    definition:
-      "A type of bridge where the superstructure consists of multiple girders supporting a separate floor system, providing stability through horizontal and vertical components.",
+    definition: "A type of bridge where the superstructure consists of multiple girders supporting a separate floor system, providing stability through horizontal and vertical components.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "girder span",
-    definition:
-      "A bridge span supported primarily by girders as the major longitudinal components, providing strength and support across the gap or opening.",
+    definition: "A bridge span supported primarily by girders as the major longitudinal components, providing strength and support across the gap or opening.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "glue laminated",
-    definition:
-      "A process of bonding layers of wood together using adhesive to create a composite member that is stronger and more stable than individual wood pieces.",
+    definition: "A process of bonding layers of wood together using adhesive to create a composite member that is stronger and more stable than individual wood pieces.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "grade",
-    definition:
-      "The slope or incline of a surface, typically expressed as a ratio or percentage, used to describe the rise or fall of roadways or other structures over a given horizontal distance.",
+    definition: "The slope or incline of a surface, typically expressed as a ratio or percentage, used to describe the rise or fall of roadways or other structures over a given horizontal distance.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "grade crossing",
-    definition:
-      "The point at which two transportation routes, such as a roadway and railroad, intersect at the same level, commonly known as a level crossing.",
+    definition: "The point at which two transportation routes, such as a roadway and railroad, intersect at the same level, commonly known as a level crossing.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "grade intersection",
-    definition:
-      "The point where two roadway slopes meet in profile, often requiring a vertical curve for a smooth transition between different road grades.",
+    definition: "The point where two roadway slopes meet in profile, often requiring a vertical curve for a smooth transition between different road grades.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "grade separation",
-    definition:
-      "The design of roadways or railways at different elevations, allowing independent movement without interference, typically achieved by building overpasses or underpasses.",
+    definition: "The design of roadways or railways at different elevations, allowing independent movement without interference, typically achieved by building overpasses or underpasses.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "gradient",
-    definition:
-      "The ratio of vertical rise to horizontal distance, typically expressed as a percentage, used to describe the slope of a surface or roadway.",
+    definition: "The ratio of vertical rise to horizontal distance, typically expressed as a percentage, used to describe the slope of a surface or roadway.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "gravity abutment",
-    definition:
-      "A solid, weighty structure that resists horizontal earth pressure using its own mass and does not rely on active or passive resistance mechanisms.",
+    definition: "A solid, weighty structure that resists horizontal earth pressure using its own mass and does not rely on active or passive resistance mechanisms.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "gravity wall",
-    definition:
-      "A type of retaining wall that prevents sliding or overturning through its own weight, without relying on external anchoring or support systems.",
+    definition: "A type of retaining wall that prevents sliding or overturning through its own weight, without relying on external anchoring or support systems.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "grid flooring",
-    definition:
-      "A floor system made of steel or concrete arranged in a lattice or grid pattern, providing a strong, durable surface for the structure's support or pedestrian traffic.",
+    definition: "A floor system made of steel or concrete arranged in a lattice or grid pattern, providing a strong, durable surface for the structure's support or pedestrian traffic.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "grillage",
-    definition:
-      "A foundation system consisting of parallel beams, typically steel or concrete, arranged in layers with alternating directions to distribute concentrated loads over a large area.",
+    definition: "A foundation system consisting of parallel beams, typically steel or concrete, arranged in layers with alternating directions to distribute concentrated loads over a large area.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "groin",
-    definition:
-      "A structure built outward from a riverbank, designed to alter the direction of flow and prevent erosion or scour near the riverbank or bridge.",
+    definition: "A structure built outward from a riverbank, designed to alter the direction of flow and prevent erosion or scour near the riverbank or bridge.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "grout",
-    definition:
-      "A cement-based mixture, often including water, sand, and other additives, used to fill gaps, secure anchor bolts, or seal masonry joints.",
+    definition: "A cement-based mixture, often including water, sand, and other additives, used to fill gaps, secure anchor bolts, or seal masonry joints.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -8293,24 +8008,21 @@ const glossaryBIRM = [
 
   {
     term: "guard pier",
-    definition:
-      "A protective structure designed to shield a movable span from collisions with debris or passing vessels, often equipped with a latch to secure the span in its open position.",
+    definition: "A protective structure designed to shield a movable span from collisions with debris or passing vessels, often equipped with a latch to secure the span in its open position.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "guardrail",
-    definition:
-      "A safety feature that redirects errant vehicles away from hazardous areas, typically installed along roadways or at the edge of bridges.",
+    definition: "A safety feature that redirects errant vehicles away from hazardous areas, typically installed along roadways or at the edge of bridges.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "guide banks",
-    definition:
-      "Structures placed alongside a waterway opening to direct the flow of water through the bridge or culvert, often built from earth or stone.",
+    definition: "Structures placed alongside a waterway opening to direct the flow of water through the bridge or culvert, often built from earth or stone.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -8324,8 +8036,7 @@ const glossaryBIRM = [
 
   {
     term: "gunite",
-    definition:
-      "A process of applying mortar or concrete to a surface by spraying it with compressed air, often used for waterproofing or reinforcing structures.",
+    definition: "A process of applying mortar or concrete to a surface by spraying it with compressed air, often used for waterproofing or reinforcing structures.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -8339,16 +8050,14 @@ const glossaryBIRM = [
 
   {
     term: "gutter",
-    definition:
-      "A channel, often paved, designed to collect and direct water away from a roadway or bridge, helping to prevent flooding and erosion.",
+    definition: "A channel, often paved, designed to collect and direct water away from a roadway or bridge, helping to prevent flooding and erosion.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "guy",
-    definition:
-      "A tensioned cable used to anchor a structure, ensuring its stability and preventing movement caused by environmental forces such as wind or loads.",
+    definition: "A tensioned cable used to anchor a structure, ensuring its stability and preventing movement caused by environmental forces such as wind or loads.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -8362,8 +8071,7 @@ const glossaryBIRM = [
 
   {
     term: "hairline cracks",
-    definition:
-      "Very narrow fractures that form in a surface due to stress or tension from applied loads, often visible only under close inspection.",
+    definition: "Very narrow fractures that form in a surface due to stress or tension from applied loads, often visible only under close inspection.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -8524,16 +8232,14 @@ const glossaryBIRM = [
 
   {
     term: "hinged joint",
-    definition:
-      "A joint designed to allow rotational movement through a pin or other rotational device, often used to accommodate structural expansion.",
+    definition: "A joint designed to allow rotational movement through a pin or other rotational device, often used to accommodate structural expansion.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "honeycomb",
-    definition:
-      "Areas in concrete where the mortar has failed to bond properly, leaving voids between aggregates, often due to improper mixing or placement.",
+    definition: "Areas in concrete where the mortar has failed to bond properly, leaving voids between aggregates, often due to improper mixing or placement.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -8575,8 +8281,7 @@ const glossaryBIRM = [
 
   {
     term: "hybrid girder",
-    definition:
-      "A beam with flanges and a web made from different grades of steel, designed to optimize the structural performance and cost-effectiveness.",
+    definition: "A beam with flanges and a web made from different grades of steel, designed to optimize the structural performance and cost-effectiveness.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -8597,8 +8302,7 @@ const glossaryBIRM = [
 
   {
     term: "hydrology",
-    definition:
-      "The study of water distribution, movement, and properties in a given area, particularly focusing on precipitation, runoff, and groundwater.",
+    definition: "The study of water distribution, movement, and properties in a given area, particularly focusing on precipitation, runoff, and groundwater.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -8612,8 +8316,7 @@ const glossaryBIRM = [
 
   {
     term: "I-beam",
-    definition:
-      "A rolled or fabricated steel member with wide flanges and a narrow web, designed for high bending strength with minimal material use.",
+    definition: "A rolled or fabricated steel member with wide flanges and a narrow web, designed for high bending strength with minimal material use.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -8641,16 +8344,14 @@ const glossaryBIRM = [
 
   {
     term: "in-depth inspection",
-    definition:
-      "A detailed examination focusing on hard-to-detect flaws in structural members, often requiring direct contact and specialized tools.",
+    definition: "A detailed examination focusing on hard-to-detect flaws in structural members, often requiring direct contact and specialized tools.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "indeterminate stress",
-    definition:
-      "A force condition within a member that can’t be solved by static equilibrium alone, often requiring iterative or computational analysis.",
+    definition: "A force condition within a member that can’t be solved by static equilibrium alone, often requiring iterative or computational analysis.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -8790,288 +8491,252 @@ const glossaryBIRM = [
 
   {
     term: "jack arch",
-    definition:
-      "A shallow masonry or concrete arch built between steel beams, designed to span short distances by transferring load through compression rather than bending.",
+    definition: "A shallow masonry or concrete arch built between steel beams, designed to span short distances by transferring load through compression rather than bending.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "jacking",
-    definition:
-      "The use of mechanical force, often hydraulic, to lift or reposition structural components, typically for load transfer, alignment, or temporary relief during repairs.",
+    definition: "The use of mechanical force, often hydraulic, to lift or reposition structural components, typically for load transfer, alignment, or temporary relief during repairs.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "jack stringer",
-    definition:
-      "The beam located along the outermost floor bay, often carrying less load than interior members but still important for supporting edges and distributing deck forces.",
+    definition: "The beam located along the outermost floor bay, often carrying less load than interior members but still important for supporting edges and distributing deck forces.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "jacket",
-    definition:
-      "A surrounding layer applied to piles for protection or reinforcement, often used to shield against impact, corrosion, or environmental degradation.",
+    definition: "A surrounding layer applied to piles for protection or reinforcement, often used to shield against impact, corrosion, or environmental degradation.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "jersey barrier",
-    definition:
-      "A modular concrete barrier with a sloped profile that redirects impacting vehicles while minimizing rollover risk and preserving traffic separation.",
+    definition: "A modular concrete barrier with a sloped profile that redirects impacting vehicles while minimizing rollover risk and preserving traffic separation.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "joint",
-    definition:
-      "A break in continuity between structural units that allows for movement, stress relief, or construction sequencing, common in both rigid and flexible systems.",
+    definition: "A break in continuity between structural units that allows for movement, stress relief, or construction sequencing, common in both rigid and flexible systems.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "keeper plate",
-    definition:
-      "A steel restraint fixed near a bearing to prevent lateral displacement of a supported member, ensuring it remains seated during dynamic or thermal movement.",
+    definition: "A steel restraint fixed near a bearing to prevent lateral displacement of a supported member, ensuring it remains seated during dynamic or thermal movement.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "key",
-    definition:
-      "A protruding shape formed in concrete to interlock with adjacent pours, enhancing shear transfer and preventing relative movement across joints.",
+    definition: "A protruding shape formed in concrete to interlock with adjacent pours, enhancing shear transfer and preventing relative movement across joints.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "keystone",
-    definition:
-      "The final piece placed at the crown of an arch, locking the voussoirs into compression and completing structural continuity across the span.",
+    definition: "The final piece placed at the crown of an arch, locking the voussoirs into compression and completing structural continuity across the span.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "king-post",
-    definition:
-      "A vertical compression element used in simple truss systems to transfer load from the apex to the bottom chord, stabilizing two angled members.",
+    definition: "A vertical compression element used in simple truss systems to transfer load from the apex to the bottom chord, stabilizing two angled members.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "king-post truss",
-    definition:
-      "A basic triangular structural frame with a central vertical post connecting the apex to the base, often used for short spans or simple framing needs.",
+    definition: "A basic triangular structural frame with a central vertical post connecting the apex to the base, often used for short spans or simple framing needs.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "kip",
-    definition:
-      "A unit of force equal to 1,000 pounds-force, commonly used in structural analysis to simplify large load values in calculations and design.",
+    definition: "A unit of force equal to 1,000 pounds-force, commonly used in structural analysis to simplify large load values in calculations and design.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "knee brace",
-    definition:
-      "A diagonal stiffening component placed between intersecting members at an angle to reinforce the joint and reduce flexural deformation under load.",
+    definition: "A diagonal stiffening component placed between intersecting members at an angle to reinforce the joint and reduce flexural deformation under load.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "knee wall",
-    definition:
-      "A low return wall enclosing a seat on three sides to contain bearing assemblies and reduce exposure to runoff or debris from adjoining surfaces.",
+    definition: "A low return wall enclosing a seat on three sides to contain bearing assemblies and reduce exposure to runoff or debris from adjoining surfaces.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "knife edge",
-    definition:
-      "A deterioration pattern where corrosion thins steel to a sharp ridge, increasing stress concentration and risk of fracture under load.",
+    definition: "A deterioration pattern where corrosion thins steel to a sharp ridge, increasing stress concentration and risk of fracture under load.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "knuckle",
-    definition:
-      "A pivoting connection at the anchorage of a suspension system allowing slight motion to accommodate shifts in cable tension or alignment.",
+    definition: "A pivoting connection at the anchorage of a suspension system allowing slight motion to accommodate shifts in cable tension or alignment.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "knots",
-    definition:
-      "Natural wood defects formed when branches are enveloped by trunk growth, creating hard, circular grain interruptions that affect strength and appearance.",
+    definition: "Natural wood defects formed when branches are enveloped by trunk growth, creating hard, circular grain interruptions that affect strength and appearance.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "K-truss",
-    definition:
-      "A web configuration where diagonals and verticals form repeating 'K' shapes within each panel, balancing shear forces and minimizing buckling length.",
+    definition: "A web configuration where diagonals and verticals form repeating 'K' shapes within each panel, balancing shear forces and minimizing buckling length.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "L-abutment",
-    definition:
-      "A cantilever configuration where the stem and footing form an L-shaped profile, offering resistance to lateral earth pressure while allowing direct load transfer into the footing.",
+    definition: "A cantilever configuration where the stem and footing form an L-shaped profile, offering resistance to lateral earth pressure while allowing direct load transfer into the footing.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "laced column",
-    definition:
-      "A built-up steel section using diagonal connectors to tie the main vertical elements together, enhancing lateral stability and distributing compressive forces more evenly.",
+    definition: "A built-up steel section using diagonal connectors to tie the main vertical elements together, enhancing lateral stability and distributing compressive forces more evenly.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "lacing",
-    definition:
-      "A system of slender cross-connecting elements that unify individual parts of a structural member, reducing buckling and helping maintain alignment under load.",
+    definition: "A system of slender cross-connecting elements that unify individual parts of a structural member, reducing buckling and helping maintain alignment under load.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "lagging",
-    definition:
-      "A temporary or permanent barrier made of boards or panels placed between retaining supports to hold soil or concrete in place during excavation or forming.",
+    definition: "A temporary or permanent barrier made of boards or panels placed between retaining supports to hold soil or concrete in place during excavation or forming.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "lamellar tear",
-    definition:
-      "A subsurface fracture aligned parallel to the rolled surface of steel, typically caused by through-thickness stress interacting with inclusions or segregation zones.",
+    definition: "A subsurface fracture aligned parallel to the rolled surface of steel, typically caused by through-thickness stress interacting with inclusions or segregation zones.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "laminated timber",
-    definition:
-      "An engineered wood element made by gluing multiple boards together in parallel, creating a stronger, more dimensionally stable unit resistant to warping or splitting.",
+    definition: "An engineered wood element made by gluing multiple boards together in parallel, creating a stronger, more dimensionally stable unit resistant to warping or splitting.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "lane loading",
-    definition:
-      "A design simulation representing concentrated traffic forces along designated travel paths, accounting for vehicle spacing, axle weights, and lateral distribution.",
+    definition: "A design simulation representing concentrated traffic forces along designated travel paths, accounting for vehicle spacing, axle weights, and lateral distribution.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "lap joint",
-    definition:
-      "A structural connection where two elements overlap and are fastened to ensure load transfer through shear or friction, commonly used in steel or timber assemblies.",
+    definition: "A structural connection where two elements overlap and are fastened to ensure load transfer through shear or friction, commonly used in steel or timber assemblies.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "lateral",
-    definition:
-      "A secondary component oriented roughly perpendicular to a primary member, often serving to transfer shear, provide stability, or resist torsional effects.",
+    definition: "A secondary component oriented roughly perpendicular to a primary member, often serving to transfer shear, provide stability, or resist torsional effects.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "lateral bracing",
-    definition:
-      "An arrangement of members that limits sideways displacement and maintains geometric integrity, especially under wind, seismic, or dynamic loads.",
+    definition: "An arrangement of members that limits sideways displacement and maintains geometric integrity, especially under wind, seismic, or dynamic loads.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "lateral stream migration",
-    definition:
-      "The gradual horizontal shift of a stream channel due to erosion and deposition along banks, potentially altering flow paths and affecting nearby structures.",
+    definition: "The gradual horizontal shift of a stream channel due to erosion and deposition along banks, potentially altering flow paths and affecting nearby structures.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "lattice",
-    definition:
-      "A repetitive pattern of diagonally intersecting members that distribute load and maintain alignment, often used in lightweight or redundant support systems.",
+    definition: "A repetitive pattern of diagonally intersecting members that distribute load and maintain alignment, often used in lightweight or redundant support systems.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "lattice truss",
-    definition:
-      "A truss configuration utilizing interlaced diagonal systems without verticals, forming a dense mesh that disperses loads and offers redundancy in web resistance.",
+    definition: "A truss configuration utilizing interlaced diagonal systems without verticals, forming a dense mesh that disperses loads and offers redundancy in web resistance.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "leaching",
-    definition:
-      "The process by which water removes soluble substances from materials, leading to degradation or change in material composition over time.",
+    definition: "The process by which water removes soluble substances from materials, leading to degradation or change in material composition over time.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "lead line",
-    definition:
-      "A marked cord with a weighted end used to gauge water depth by lowering it until it touches bottom, historically used for navigation and site assessment.",
+    definition: "A marked cord with a weighted end used to gauge water depth by lowering it until it touches bottom, historically used for navigation and site assessment.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "leaf",
-    definition:
-      "A pivoting or rotating span element in movable structures, allowing clearance for navigation or traffic below when raised or rotated.",
+    definition: "A pivoting or rotating span element in movable structures, allowing clearance for navigation or traffic below when raised or rotated.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "legal load",
-    definition:
-      "The maximum vehicle weight allowed by law for a specific roadway or structure, typically determined by axle configuration and jurisdictional regulations.",
+    definition: "The maximum vehicle weight allowed by law for a specific roadway or structure, typically determined by axle configuration and jurisdictional regulations.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "lenticular truss",
-    definition:
-      "A curved truss form with opposing arches for top and bottom chords that meet at jointed ends, distributing loads efficiently through compression and tension.",
+    definition: "A curved truss form with opposing arches for top and bottom chords that meet at jointed ends, distributing loads efficiently through compression and tension.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -9085,192 +8750,168 @@ const glossaryBIRM = [
 
   {
     term: "leveling course",
-    definition:
-      "A preparatory asphalt or concrete layer used to smooth out surface irregularities before placing the final pavement or overlay system.",
+    definition: "A preparatory asphalt or concrete layer used to smooth out surface irregularities before placing the final pavement or overlay system.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "light-weight concrete",
-    definition:
-      "A reduced-density mix achieved using specialized aggregates or void-forming techniques, offering lower dead load while maintaining structural performance.",
+    definition: "A reduced-density mix achieved using specialized aggregates or void-forming techniques, offering lower dead load while maintaining structural performance.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "link",
-    definition:
-      "A shaped metal component, typically with widened ends and a pinhole, used in assemblies where controlled rotation or tension transfer is required.",
+    definition: "A shaped metal component, typically with widened ends and a pinhole, used in assemblies where controlled rotation or tension transfer is required.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "link and roller",
-    definition:
-      "A compound mechanism combining pivoting links and rolling supports to manage structural movement, especially in swing or movable span systems.",
+    definition: "A compound mechanism combining pivoting links and rolling supports to manage structural movement, especially in swing or movable span systems.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "live load",
-    definition:
-      "A transient force from traffic, equipment, or temporary storage that changes in magnitude or location over time, often requiring dynamic analysis.",
+    definition: "A transient force from traffic, equipment, or temporary storage that changes in magnitude or location over time, often requiring dynamic analysis.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "load",
-    definition:
-      "A force applied to a structural component or system, encompassing weight, pressure, wind, or impact that induces stress or displacement.",
+    definition: "A force applied to a structural component or system, encompassing weight, pressure, wind, or impact that induces stress or displacement.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "load factor design",
-    definition:
-      "A safety-based approach using amplified loads and material limits to ensure structures perform under worst-case scenarios without exceeding failure thresholds.",
+    definition: "A safety-based approach using amplified loads and material limits to ensure structures perform under worst-case scenarios without exceeding failure thresholds.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "load indicating washer",
-    definition:
-      "A specialized washer with crushable protrusions that flatten under bolt tension, providing a visual cue that correct tightening force has been reached.",
+    definition: "A specialized washer with crushable protrusions that flatten under bolt tension, providing a visual cue that correct tightening force has been reached.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "load path redundancy",
-    definition:
-      "A structural arrangement offering alternate routes for load transfer if one element fails, improving resilience against progressive collapse.",
+    definition: "A structural arrangement offering alternate routes for load transfer if one element fails, improving resilience against progressive collapse.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "load rating",
-    definition:
-      "An engineering evaluation determining the safe capacity for carrying live traffic, factoring in condition, design, and analysis method.",
+    definition: "An engineering evaluation determining the safe capacity for carrying live traffic, factoring in condition, design, and analysis method.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "load and resistance factor design (LRFD)",
-    definition:
-      "A probabilistic method incorporating load variability and material strength limitations, ensuring reliability through calibrated safety factors.",
+    definition: "A probabilistic method incorporating load variability and material strength limitations, ensuring reliability through calibrated safety factors.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "local buckling",
-    definition:
-      "A failure mode where thin plate sections deform out of plane under compression, often preceding full member collapse in inadequately braced systems.",
+    definition: "A failure mode where thin plate sections deform out of plane under compression, often preceding full member collapse in inadequately braced systems.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "local scour",
-    definition:
-      "A concentrated erosion pattern near structural obstructions caused by increased flow velocity and turbulence, often exposing foundations.",
+    definition: "A concentrated erosion pattern near structural obstructions caused by increased flow velocity and turbulence, often exposing foundations.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "longitudinal bracing",
-    definition:
-      "A system of aligned members running parallel to the primary span, counteracting longitudinal forces and maintaining spacing between transversely oriented elements.",
+    definition: "A system of aligned members running parallel to the primary span, counteracting longitudinal forces and maintaining spacing between transversely oriented elements.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "loss of prestress",
-    definition:
-      "A reduction in applied force within tendons due to factors like creep, shrinkage, friction, or relaxation, decreasing effective internal stress over time.",
+    definition: "A reduction in applied force within tendons due to factors like creep, shrinkage, friction, or relaxation, decreasing effective internal stress over time.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "low-carbon steel",
-    definition:
-      "A common form of mild steel with limited carbon content, offering high ductility, weldability, and ease of fabrication for general construction use.",
+    definition: "A common form of mild steel with limited carbon content, offering high ductility, weldability, and ease of fabrication for general construction use.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "lower chord",
-    definition:
-      "The bottom horizontal element of a truss, typically subjected to tension forces, acting in concert with the top chord to resist bending.",
+    definition: "The bottom horizontal element of a truss, typically subjected to tension forces, acting in concert with the top chord to resist bending.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "luminaire",
-    definition:
-      "A complete lighting unit including lamp, housing, reflector, and mounting hardware, designed to deliver and direct illumination efficiently.",
+    definition: "A complete lighting unit including lamp, housing, reflector, and mounting hardware, designed to deliver and direct illumination efficiently.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "macadam",
-    definition:
-      "A type of pavement built with layers of crushed stone compacted into place, often open-graded and historically bound with tar or asphalt to improve cohesion and durability.",
+    definition: "A type of pavement built with layers of crushed stone compacted into place, often open-graded and historically bound with tar or asphalt to improve cohesion and durability.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "main beam",
-    definition:
-      "A primary horizontal support that transfers structural loads directly to piers, abutments, or other vertical elements within a span system.",
+    definition: "A primary horizontal support that transfers structural loads directly to piers, abutments, or other vertical elements within a span system.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "maintenance",
-    definition:
-      "The routine preservation or minor repair of a facility intended to sustain functionality and prevent further degradation or costly damage.",
+    definition: "The routine preservation or minor repair of a facility intended to sustain functionality and prevent further degradation or costly damage.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "maintenance and protection of traffic",
-    definition:
-      "The temporary arrangement of signs, barriers, signals, and lane shifts designed to guide and protect road users and workers during construction activities.",
+    definition: "The temporary arrangement of signs, barriers, signals, and lane shifts designed to guide and protect road users and workers during construction activities.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "marine borers",
-    definition:
-      "Organisms such as shipworms and gribbles that inhabit saltwater environments and cause structural damage by tunneling through submerged timber.",
+    definition: "Organisms such as shipworms and gribbles that inhabit saltwater environments and cause structural damage by tunneling through submerged timber.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "masonry",
-    definition:
-      "The structural assembly of units like stone, brick, or block laid in bonded courses and typically joined with mortar to form stable load-bearing sections.",
+    definition: "The structural assembly of units like stone, brick, or block laid in bonded courses and typically joined with mortar to form stable load-bearing sections.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -9284,32 +8925,28 @@ const glossaryBIRM = [
 
   {
     term: "masonry plate",
-    definition:
-      "A steel element used to distribute bearing loads from superstructure components across the surface of underlying stone or blockwork.",
+    definition: "A steel element used to distribute bearing loads from superstructure components across the surface of underlying stone or blockwork.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "mattress",
-    definition:
-      "A flexible scour control layer composed of interconnected elements like gabions, concrete units, or wood used to resist water-induced erosion.",
+    definition: "A flexible scour control layer composed of interconnected elements like gabions, concrete units, or wood used to resist water-induced erosion.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "meander",
-    definition:
-      "A natural, sinuous flow path typically found in low-gradient streams across broad floodplains, often associated with sediment deposition and lateral migration.",
+    definition: "A natural, sinuous flow path typically found in low-gradient streams across broad floodplains, often associated with sediment deposition and lateral migration.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "median",
-    definition:
-      "A designated separation between opposing lanes that may consist of a barrier, landscaping, or paved area to improve traffic safety and flow.",
+    definition: "A designated separation between opposing lanes that may consist of a barrier, landscaping, or paved area to improve traffic safety and flow.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -9323,8 +8960,7 @@ const glossaryBIRM = [
 
   {
     term: "metal corrosion",
-    definition:
-      "The gradual deterioration of metal surfaces caused by electrochemical reactions with moisture and oxygen, often resulting in rust or pitting.",
+    definition: "The gradual deterioration of metal surfaces caused by electrochemical reactions with moisture and oxygen, often resulting in rust or pitting.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -9345,24 +8981,21 @@ const glossaryBIRM = [
 
   {
     term: "military loading",
-    definition:
-      "A prescribed vehicle configuration used to simulate the effects of heavy tactical equipment crossing a structure during design evaluation.",
+    definition: "A prescribed vehicle configuration used to simulate the effects of heavy tactical equipment crossing a structure during design evaluation.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "mill scale",
-    definition:
-      "A hard, brittle oxide layer that forms on the surface of steel during hot rolling or forging, typically removed before painting or welding.",
+    definition: "A hard, brittle oxide layer that forms on the surface of steel during hot rolling or forging, typically removed before painting or welding.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "modular joint",
-    definition:
-      "A multi-element expansion device designed for large movements, incorporating seal assemblies and steel edge beams to maintain deck continuity.",
+    definition: "A multi-element expansion device designed for large movements, incorporating seal assemblies and steel edge beams to maintain deck continuity.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -9411,8 +9044,7 @@ const glossaryBIRM = [
 
   {
     term: "movable span",
-    definition:
-      "A structural segment that shifts or lifts from its service position to increase vertical or horizontal clearance for navigation or access.",
+    definition: "A structural segment that shifts or lifts from its service position to increase vertical or horizontal clearance for navigation or access.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -9471,8 +9103,7 @@ const glossaryBIRM = [
 
   {
     term: "NCHRP",
-    definition:
-      "A research program administered by the Transportation Research Board that funds practical studies addressing transportation system needs, materials, and methods.",
+    definition: "A research program administered by the Transportation Research Board that funds practical studies addressing transportation system needs, materials, and methods.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -9494,8 +9125,7 @@ const glossaryBIRM = [
 
   {
     term: "NDT",
-    definition:
-      "A category of inspection techniques used to assess internal or surface-level flaws without altering or destroying the material being tested.",
+    definition: "A category of inspection techniques used to assess internal or surface-level flaws without altering or destroying the material being tested.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -9509,40 +9139,35 @@ const glossaryBIRM = [
 
   {
     term: "negative bending",
-    definition:
-      "A flexural condition where the surface nearest the load goes into tension and the opposite face into compression, usually near intermediate supports.",
+    definition: "A flexural condition where the surface nearest the load goes into tension and the opposite face into compression, usually near intermediate supports.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "negative moment",
-    definition:
-      "The bending action that results in compression at the bottom and tension at the top of a member, often occurring at the support of a continuous span.",
+    definition: "The bending action that results in compression at the bottom and tension at the top of a member, often occurring at the support of a continuous span.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "neoprene",
-    definition:
-      "A durable, synthetic elastomer resistant to weather, oil, and chemicals, commonly used where flexible movement and long-term performance are required.",
+    definition: "A durable, synthetic elastomer resistant to weather, oil, and chemicals, commonly used where flexible movement and long-term performance are required.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "neutral axis",
-    definition:
-      "The theoretical line within a cross-section of a flexed member where fibers experience no strain, separating regions under tension from those under compression.",
+    definition: "The theoretical line within a cross-section of a flexed member where fibers experience no strain, separating regions under tension from those under compression.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "non-homogeneous",
-    definition:
-      "Describes a material or structure composed of differing constituents or properties, resulting in varied strength, stiffness, or behavior throughout its volume.",
+    definition: "Describes a material or structure composed of differing constituents or properties, resulting in varied strength, stiffness, or behavior throughout its volume.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -9556,112 +9181,98 @@ const glossaryBIRM = [
 
   {
     term: "notch effect",
-    definition:
-      "The increase in localized stress caused by abrupt changes in geometry such as holes, grooves, or cracks, which can lead to early failure.",
+    definition: "The increase in localized stress caused by abrupt changes in geometry such as holes, grooves, or cracks, which can lead to early failure.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "offset",
-    definition:
-      "A perpendicular measurement used to locate a point relative to a reference line, often for plotting or marking positions accurately during layout or surveying.",
+    definition: "A perpendicular measurement used to locate a point relative to a reference line, often for plotting or marking positions accurately during layout or surveying.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "on center",
-    definition:
-      "The typical spacing between repeated elements, measured from the central axis of one unit to the next, ensuring consistent alignment and load distribution.",
+    definition: "The typical spacing between repeated elements, measured from the central axis of one unit to the next, ensuring consistent alignment and load distribution.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "open spandrel arch",
-    definition:
-      "A type of arch structure where vertical or diagonal supports carry the deck, leaving the space between the arch and deck visually and structurally open.",
+    definition: "A type of arch structure where vertical or diagonal supports carry the deck, leaving the space between the arch and deck visually and structurally open.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "open spandrel ribbed arch",
-    definition:
-      "An arch composed of separate curved ribs connected by lateral braces, with vertical supports rising from the ribs to hold the deck above open voids.",
+    definition: "An arch composed of separate curved ribs connected by lateral braces, with vertical supports rising from the ribs to hold the deck above open voids.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "operating rating",
-    definition:
-      "The maximum safe live load that a structure can support under standard loading conditions, based on a higher stress threshold than for routine use.",
+    definition: "The maximum safe live load that a structure can support under standard loading conditions, based on a higher stress threshold than for routine use.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "operator's house",
-    definition:
-      "A control structure equipped with mechanical and electrical systems that allow personnel to raise, lower, or rotate movable spans as needed.",
+    definition: "A control structure equipped with mechanical and electrical systems that allow personnel to raise, lower, or rotate movable spans as needed.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "orthotropic",
-    definition:
-      "A material characteristic defined by directional dependence, where strength, stiffness, or elasticity varies based on the axis of applied force.",
+    definition: "A material characteristic defined by directional dependence, where strength, stiffness, or elasticity varies based on the axis of applied force.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "outlet",
-    definition:
-      "The discharge point where water exits a pipe, culvert, or drainage system, often shaped or reinforced to control flow velocity and erosion.",
+    definition: "The discharge point where water exits a pipe, culvert, or drainage system, often shaped or reinforced to control flow velocity and erosion.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "out-of-plane distortion",
-    definition:
-      "A form of deformation where a member bends or twists outside its intended load-resisting direction, often reducing stiffness and structural reliability.",
+    definition: "A form of deformation where a member bends or twists outside its intended load-resisting direction, often reducing stiffness and structural reliability.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "overlay",
-    definition:
-      "A layer of material added over an existing surface to improve ride quality, restore elevation, or extend service life without full reconstruction.",
+    definition: "A layer of material added over an existing surface to improve ride quality, restore elevation, or extend service life without full reconstruction.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "overload",
-    definition:
-      "An imposed weight or force that exceeds the intended design capacity, potentially causing overstress, cracking, or permanent deformation.",
+    definition: "An imposed weight or force that exceeds the intended design capacity, potentially causing overstress, cracking, or permanent deformation.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "overload damage",
-    definition:
-      "The condition resulting from excessive stress or weight, often indicated by cracking, deflection, or material failure in structural elements.",
+    definition: "The condition resulting from excessive stress or weight, often indicated by cracking, deflection, or material failure in structural elements.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "overpass",
-    definition:
-      "A grade-separated crossing that allows one route to pass uninterrupted over another, improving traffic flow and reducing conflict points.",
+    definition: "A grade-separated crossing that allows one route to pass uninterrupted over another, improving traffic flow and reducing conflict points.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -9675,88 +9286,77 @@ const glossaryBIRM = [
 
   {
     term: "oxidation",
-    definition:
-      "A chemical reaction involving oxygen that alters a material’s composition, often resulting in surface corrosion, scaling, or weakened properties.",
+    definition: "A chemical reaction involving oxygen that alters a material’s composition, often resulting in surface corrosion, scaling, or weakened properties.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "oxidized steel",
-    definition:
-      "A metal surface that has reacted with oxygen and moisture to form rust, reducing both aesthetic appearance and mechanical strength over time.",
+    definition: "A metal surface that has reacted with oxygen and moisture to form rust, reducing both aesthetic appearance and mechanical strength over time.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "pack",
-    definition:
-      "A steel shim used to close minor gaps between structural elements, ensuring tight fit-up and even load transfer across joined components.",
+    definition: "A steel shim used to close minor gaps between structural elements, ensuring tight fit-up and even load transfer across joined components.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "pack rust",
-    definition:
-      "A corrosion product that forms between tightly pressed metal surfaces, expanding and forcing them apart, often leading to deformation or loss of bearing.",
+    definition: "A corrosion product that forms between tightly pressed metal surfaces, expanding and forcing them apart, often leading to deformation or loss of bearing.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "paddleboard",
-    definition:
-      "A roadside marker shaped like a vertical paddle with diagonal stripes, placed in advance of narrow passages to signal reduced width or clearance.",
+    definition: "A roadside marker shaped like a vertical paddle with diagonal stripes, placed in advance of narrow passages to signal reduced width or clearance.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "panel",
-    definition:
-      "The structural bay between two adjacent joints along the length of a truss, bounded by vertical or diagonal members and the chords they connect.",
+    definition: "The structural bay between two adjacent joints along the length of a truss, bounded by vertical or diagonal members and the chords they connect.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "panel point",
-    definition:
-      "The location where vertical or diagonal elements intersect with the upper or lower boundary members, serving as a major load transfer node.",
+    definition: "The location where vertical or diagonal elements intersect with the upper or lower boundary members, serving as a major load transfer node.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "parabolic arch",
-    definition:
-      "An arch shape optimized for uniform vertical loading, following the curve of a parabola to minimize bending and maximize axial compression.",
+    definition: "An arch shape optimized for uniform vertical loading, following the curve of a parabola to minimize bending and maximize axial compression.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "parabolic truss",
-    definition:
-      "A curved-frame truss layout with top members following a parabolic arc for efficient load distribution and lower members kept linear for simplicity.",
+    definition: "A curved-frame truss layout with top members following a parabolic arc for efficient load distribution and lower members kept linear for simplicity.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "parapet",
-    definition:
-      "A low protective barrier along the edge of a road or platform that prevents vehicles or pedestrians from accidentally leaving the surface.",
+    definition: "A low protective barrier along the edge of a road or platform that prevents vehicles or pedestrians from accidentally leaving the surface.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "pedestal",
-    definition:
-      "An intermediate block that elevates a bearing surface above its supporting seat, often used to provide a precise elevation for proper load transfer.",
+    definition: "An intermediate block that elevates a bearing surface above its supporting seat, often used to provide a precise elevation for proper load transfer.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -9795,32 +9395,28 @@ const glossaryBIRM = [
 
   {
     term: "physical testing",
-    definition:
-      "The process of evaluating the behavior and performance of bridge components in the field or laboratory under controlled conditions to assess their strength, durability, and safety.",
+    definition: "The process of evaluating the behavior and performance of bridge components in the field or laboratory under controlled conditions to assess their strength, durability, and safety.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "pier",
-    definition:
-      "A vertical support structure used to bear the load of a bridge superstructure, typically positioned between the abutments to distribute the weight across the span.",
+    definition: "A vertical support structure used to bear the load of a bridge superstructure, typically positioned between the abutments to distribute the weight across the span.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "pier cap",
-    definition:
-      "The horizontal structural element at the top of a pier, which serves to distribute loads from the bridge superstructure to the vertical pier supports beneath.",
+    definition: "The horizontal structural element at the top of a pier, which serves to distribute loads from the bridge superstructure to the vertical pier supports beneath.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "pile",
-    definition:
-      "A long, slender structural member driven deep into the ground to transfer loads to stable soil or rock strata, providing foundation support for structures such as bridges.",
+    definition: "A long, slender structural member driven deep into the ground to transfer loads to stable soil or rock strata, providing foundation support for structures such as bridges.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -9835,96 +9431,84 @@ const glossaryBIRM = [
 
   {
     term: "pile bridge",
-    definition:
-      "A type of bridge supported by piles or pile bents, with the piles serving as the main support structure beneath the superstructure to ensure stability.",
+    definition: "A type of bridge supported by piles or pile bents, with the piles serving as the main support structure beneath the superstructure to ensure stability.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "pile cap",
-    definition:
-      "A thick concrete or steel slab placed atop piles, connecting them together laterally and transferring the loads from the bridge superstructure to the piles beneath.",
+    definition: "A thick concrete or steel slab placed atop piles, connecting them together laterally and transferring the loads from the bridge superstructure to the piles beneath.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "pile foundation",
-    definition:
-      "A type of foundation where piles are driven into the ground to support a structure, providing stability by transferring loads to deeper, more solid soil or rock layers.",
+    definition: "A type of foundation where piles are driven into the ground to support a structure, providing stability by transferring loads to deeper, more solid soil or rock layers.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "pile pier",
-    definition:
-      "A type of pier consisting of driven piles grouped together to support a pile cap, which in turn bears the load of the bridge superstructure.",
+    definition: "A type of pier consisting of driven piles grouped together to support a pile cap, which in turn bears the load of the bridge superstructure.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "piling",
-    definition:
-      "The collective term for a group of piles used in construction to provide deep foundation support by transferring loads to stable soil or rock.",
+    definition: "The collective term for a group of piles used in construction to provide deep foundation support by transferring loads to stable soil or rock.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "pin",
-    definition:
-      "A cylindrical bar used to connect elements of a structure, allowing rotational movement between parts while maintaining structural integrity.",
+    definition: "A cylindrical bar used to connect elements of a structure, allowing rotational movement between parts while maintaining structural integrity.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "pin-connected truss",
-    definition:
-      "A truss where the web and chord members are connected at each panel point by a pin, allowing rotational movement and simplifying the design.",
+    definition: "A truss where the web and chord members are connected at each panel point by a pin, allowing rotational movement and simplifying the design.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "pin and hanger",
-    definition:
-      "A connection detail that allows for expansion and rotation between structural elements, typically used in cantilevered and suspended spans to facilitate movement under load.",
+    definition: "A connection detail that allows for expansion and rotation between structural elements, typically used in cantilevered and suspended spans to facilitate movement under load.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "pin joint",
-    definition:
-      "A joint in a structural frame where members are connected by a cylindrical pin, allowing rotation while transferring loads between components.",
+    definition: "A joint in a structural frame where members are connected by a cylindrical pin, allowing rotation while transferring loads between components.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "pin packing",
-    definition:
-      "The arrangement of structural members on a pin in a pinned joint, ensuring proper alignment and load distribution while allowing movement between connected parts.",
+    definition: "The arrangement of structural members on a pin in a pinned joint, ensuring proper alignment and load distribution while allowing movement between connected parts.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "pin plate",
-    definition:
-      "A rigid plate attached to the end of a member to ensure proper bearing on a pin, providing additional strength and rigidity to the connection.",
+    definition: "A rigid plate attached to the end of a member to ensure proper bearing on a pin, providing additional strength and rigidity to the connection.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "pintle",
-    definition:
-      "A small steel pin that engages the rocker of an expansion bearing, typically used in a sole plate or masonry plate to prevent the sliding of the rocker.",
+    definition: "A small steel pin that engages the rocker of an expansion bearing, typically used in a sole plate or masonry plate to prevent the sliding of the rocker.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -9938,64 +9522,56 @@ const glossaryBIRM = [
 
   {
     term: "piping",
-    definition:
-      "The process where fine particles within a soil mass are carried away by flowing water, potentially affecting the stability of the foundation.",
+    definition: "The process where fine particles within a soil mass are carried away by flowing water, potentially affecting the stability of the foundation.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "plain concrete",
-    definition:
-      "A material consisting primarily of cement, water, and aggregates, with minimal or no reinforcement, sometimes using light steel to reduce shrinkage and temperature cracking.",
+    definition: "A material consisting primarily of cement, water, and aggregates, with minimal or no reinforcement, sometimes using light steel to reduce shrinkage and temperature cracking.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "plan and profile",
-    definition:
-      "A drawing that combines both the top view and elevation of a road or structure, providing a clear representation of its layout and vertical dimensions at the same scale.",
+    definition: "A drawing that combines both the top view and elevation of a road or structure, providing a clear representation of its layout and vertical dimensions at the same scale.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "plan view",
-    definition:
-      "A drawing representing the top-down perspective of a road or structure, typically showing dimensions, alignment, and layout without vertical information.",
+    definition: "A drawing representing the top-down perspective of a road or structure, typically showing dimensions, alignment, and layout without vertical information.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "plastic deformation",
-    definition:
-      "A permanent change in the shape or size of a material that occurs when the applied stress exceeds the material’s elastic limit, causing irreversible distortion.",
+    definition: "A permanent change in the shape or size of a material that occurs when the applied stress exceeds the material’s elastic limit, causing irreversible distortion.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "plastic strain",
-    definition:
-      "The irreversible alteration of a material's shape due to stress beyond its elastic limit, which cannot be recovered once the load is removed.",
+    definition: "The irreversible alteration of a material's shape due to stress beyond its elastic limit, which cannot be recovered once the load is removed.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "plate",
-    definition:
-      "A flat, thick sheet of metal commonly used in construction, thicker than sheet steel, often cut or welded into structural components.",
+    definition: "A flat, thick sheet of metal commonly used in construction, thicker than sheet steel, often cut or welded into structural components.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "plate girder",
-    definition:
-      "A large beam used in structural applications, consisting of a solid web plate and flange plates, which are attached using fillet welds or flange angles.",
+    definition: "A large beam used in structural applications, consisting of a solid web plate and flange plates, which are attached using fillet welds or flange angles.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -10023,24 +9599,21 @@ const glossaryBIRM = [
 
   {
     term: "pneumatic caisson",
-    definition:
-      "A submerged, air-tight chamber used in underwater construction, where compressed air is used to keep the working area dry despite external water pressure.",
+    definition: "A submerged, air-tight chamber used in underwater construction, where compressed air is used to keep the working area dry despite external water pressure.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "point loads",
-    definition:
-      "Concentrated forces applied to a small, localized area, which can have a significant impact on the structural integrity of the material at that point.",
+    definition: "Concentrated forces applied to a small, localized area, which can have a significant impact on the structural integrity of the material at that point.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "pointing",
-    definition:
-      "The process of compacting mortar into the outer portion of a joint and smoothing the surface to ensure water-tightness or achieve a desired aesthetic effect.",
+    definition: "The process of compacting mortar into the outer portion of a joint and smoothing the surface to ensure water-tightness or achieve a desired aesthetic effect.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -10054,40 +9627,35 @@ const glossaryBIRM = [
 
   {
     term: "pontoon bridge",
-    definition:
-      "A type of floating bridge supported by pontoons, which are moored to the riverbed, often designed for temporary use with parts removable to allow navigation.",
+    definition: "A type of floating bridge supported by pontoons, which are moored to the riverbed, often designed for temporary use with parts removable to allow navigation.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "pony truss",
-    definition:
-      "A truss design where the top chord is not braced laterally, with the trusses arranged in a through configuration, typically used in short-span structures.",
+    definition: "A truss design where the top chord is not braced laterally, with the trusses arranged in a through configuration, typically used in short-span structures.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "pop-out",
-    definition:
-      "A defect in concrete where a small conical fragment breaks out of the surface due to pressure from reactive aggregate particles, typically caused by chemical reactions.",
+    definition: "A defect in concrete where a small conical fragment breaks out of the surface due to pressure from reactive aggregate particles, typically caused by chemical reactions.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "portable bridge",
-    definition:
-      "A bridge designed for easy assembly and disassembly, allowing it to be relocated for temporary transportation or communication purposes.",
+    definition: "A bridge designed for easy assembly and disassembly, allowing it to be relocated for temporary transportation or communication purposes.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "portal",
-    definition:
-      "The clear, unobstructed opening in a through truss bridge, forming the entrance to the structure and providing space for vehicles or pedestrians to pass through.",
+    definition: "The clear, unobstructed opening in a through truss bridge, forming the entrance to the structure and providing space for vehicles or pedestrians to pass through.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -10101,200 +9669,175 @@ const glossaryBIRM = [
 
   {
     term: "portland cement",
-    definition:
-      "A finely ground powder derived from limestone that reacts chemically with water to form a solid mass, used as a primary ingredient in concrete.",
+    definition: "A finely ground powder derived from limestone that reacts chemically with water to form a solid mass, used as a primary ingredient in concrete.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "portland cement concrete",
-    definition:
-      "A mixture of aggregates, portland cement, water, and usually chemical admixtures, commonly used for construction due to its durability and strength.",
+    definition: "A mixture of aggregates, portland cement, water, and usually chemical admixtures, commonly used for construction due to its durability and strength.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "positive moment",
-    definition:
-      "A bending moment that results in compression at the top of a beam and tension at the bottom, typically caused by applied forces acting along the beam’s length.",
+    definition: "A bending moment that results in compression at the top of a beam and tension at the bottom, typically caused by applied forces acting along the beam’s length.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "post",
-    definition:
-      "A vertical structural member used to resist compressive forces, often found in truss systems, and can sometimes be referred to interchangeably with a column.",
+    definition: "A vertical structural member used to resist compressive forces, often found in truss systems, and can sometimes be referred to interchangeably with a column.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "posting",
-    definition:
-      "A system of limitations placed on a bridge to ensure safe usage, indicating maximum allowable dimensions, speeds, or loads for the structure.",
+    definition: "A system of limitations placed on a bridge to ensure safe usage, indicating maximum allowable dimensions, speeds, or loads for the structure.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "post-stressing",
-    definition:
-      "The process of applying stress to tendons in concrete after it has cured, in order to improve its ability to carry live loads effectively.",
+    definition: "The process of applying stress to tendons in concrete after it has cured, in order to improve its ability to carry live loads effectively.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "posttensioning",
-    definition:
-      "A method of prestressing concrete by applying tension to tendons after the concrete has hardened, providing internal compression to improve load resistance.",
+    definition: "A method of prestressing concrete by applying tension to tendons after the concrete has hardened, providing internal compression to improve load resistance.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "pot bearing",
-    definition:
-      "A bearing system that allows multi-dimensional rotation, typically using a piston supported by elastomer or spherical elements within a cylindrical 'pot' structure.",
+    definition: "A bearing system that allows multi-dimensional rotation, typically using a piston supported by elastomer or spherical elements within a cylindrical 'pot' structure.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "pot holes",
-    definition:
-      "Irregularly shaped, worn-out areas on a concrete or pavement surface, often caused by the failure of the top layer material under repeated traffic or environmental stress.",
+    definition: "Irregularly shaped, worn-out areas on a concrete or pavement surface, often caused by the failure of the top layer material under repeated traffic or environmental stress.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "Pratt truss",
-    definition:
-      "A truss design where vertical posts are connected by diagonal ties slanting outward and upward, forming a distinct 'X' pattern from the bottom chord to the truss ends.",
+    definition: "A truss design where vertical posts are connected by diagonal ties slanting outward and upward, forming a distinct 'X' pattern from the bottom chord to the truss ends.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "precast concrete",
-    definition:
-      "Concrete components that are cast and cured in a controlled factory environment before being transported and assembled at their final construction site.",
+    definition: "Concrete components that are cast and cured in a controlled factory environment before being transported and assembled at their final construction site.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "prestressed concrete",
-    definition:
-      "Concrete that is intentionally compressed using tendons or strands, which are stressed before the concrete is loaded to enhance its strength and durability.",
+    definition: "Concrete that is intentionally compressed using tendons or strands, which are stressed before the concrete is loaded to enhance its strength and durability.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "prestressing",
-    definition:
-      "The application of forces to a structure to induce controlled deformation, thereby enhancing its ability to handle load stresses more effectively.",
+    definition: "The application of forces to a structure to induce controlled deformation, thereby enhancing its ability to handle load stresses more effectively.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "pretensioning",
-    definition:
-      "A method of prestressing where tendons are stretched before concrete is poured, creating internal compression once the tendons are released after curing.",
+    definition: "A method of prestressing where tendons are stretched before concrete is poured, creating internal compression once the tendons are released after curing.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "primary member",
-    definition:
-      "A structural component designed to resist significant bending and shear forces, used for distributing live and dead loads across the structure.",
+    definition: "A structural component designed to resist significant bending and shear forces, used for distributing live and dead loads across the structure.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "priming coat",
-    definition:
-      "The initial layer of protective coating applied to a metal or other material, designed to enhance adhesion and prevent corrosion before further coating layers are added.",
+    definition: "The initial layer of protective coating applied to a metal or other material, designed to enhance adhesion and prevent corrosion before further coating layers are added.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "probing",
-    definition:
-      "A technique used to examine submerged or concealed materials, typically involving a rod or tool to assess conditions such as decay or structural integrity.",
+    definition: "A technique used to examine submerged or concealed materials, typically involving a rod or tool to assess conditions such as decay or structural integrity.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "Professional engineer (PE)",
-    definition:
-      "A licensed individual who has met educational, experience, and exam requirements, permitting them to legally provide engineering services to the public within their jurisdiction.",
+    definition: "A licensed individual who has met educational, experience, and exam requirements, permitting them to legally provide engineering services to the public within their jurisdiction.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "profile",
-    definition:
-      "A cross-sectional drawing of a road or waterway, showing ground levels before and after construction, providing a clear depiction of the terrain’s elevation changes.",
+    definition: "A cross-sectional drawing of a road or waterway, showing ground levels before and after construction, providing a clear depiction of the terrain’s elevation changes.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "program manager",
-    definition:
-      "The individual responsible for overseeing the bridge inspection and reporting program, offering guidance and leadership to ensure compliance and effective operations.",
+    definition: "The individual responsible for overseeing the bridge inspection and reporting program, offering guidance and leadership to ensure compliance and effective operations.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "programmed repair",
-    definition:
-      "Repairs that are scheduled in advance as part of a planned maintenance program, typically based on anticipated needs rather than immediate or emergency actions.",
+    definition: "Repairs that are scheduled in advance as part of a planned maintenance program, typically based on anticipated needs rather than immediate or emergency actions.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "protective system",
-    definition:
-      "A coating or treatment applied to materials to prevent deterioration caused by environmental factors, such as corrosion in steel or decay in timber.",
+    definition: "A coating or treatment applied to materials to prevent deterioration caused by environmental factors, such as corrosion in steel or decay in timber.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "PS&E",
-    definition:
-      "Plans, Specifications, and Estimates; the final package of documents submitted by designers to the project owner, outlining detailed plans and costs for construction.",
+    definition: "Plans, Specifications, and Estimates; the final package of documents submitted by designers to the project owner, outlining detailed plans and costs for construction.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "public road",
-    definition:
-      "A roadway maintained by a public authority and open for use by the general public, typically subject to regulations and standards for safety and accessibility.",
+    definition: "A roadway maintained by a public authority and open for use by the general public, typically subject to regulations and standards for safety and accessibility.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "punching shear",
-    definition:
-      "A type of shear stress that occurs in slabs when a concentrated load is applied, causing localized failure at the point of contact between the load and the surface.",
+    definition: "A type of shear stress that occurs in slabs when a concentrated load is applied, causing localized failure at the point of contact between the load and the surface.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -10325,40 +9868,35 @@ const glossaryBIRM = [
 
   {
     term: "railing",
-    definition:
-      "A protective barrier constructed at the outer edge of a roadway or walkway, designed to safeguard pedestrians and vehicles from falling off or driving off the edge of the structure.",
+    definition: "A protective barrier constructed at the outer edge of a roadway or walkway, designed to safeguard pedestrians and vehicles from falling off or driving off the edge of the structure.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "rake",
-    definition:
-      "An angle formed between a surface and a vertical plane, typically used to describe the slant of a member or structure in relation to the vertical.",
+    definition: "An angle formed between a surface and a vertical plane, typically used to describe the slant of a member or structure in relation to the vertical.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "ramp",
-    definition:
-      "An inclined pathway that connects different levels or elevations, often used to allow smooth transition between vertical or horizontal surfaces.",
+    definition: "An inclined pathway that connects different levels or elevations, often used to allow smooth transition between vertical or horizontal surfaces.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "range of stress",
-    definition:
-      "The difference between the maximum and minimum stress levels experienced by a member during loading conditions, indicating the magnitude of stress variation.",
+    definition: "The difference between the maximum and minimum stress levels experienced by a member during loading conditions, indicating the magnitude of stress variation.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "raveling",
-    definition:
-      "The progressive loss of small aggregates from a surface due to the action of weather, traffic, or environmental factors, leading to surface degradation.",
+    definition: "The progressive loss of small aggregates from a surface due to the action of weather, traffic, or environmental factors, leading to surface degradation.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -10386,48 +9924,42 @@ const glossaryBIRM = [
 
   {
     term: "redundant member",
-    definition:
-      "An element in a structure that is not essential for stability but serves to reduce stresses on the primary elements, making the structure statically indeterminate.",
+    definition: "An element in a structure that is not essential for stability but serves to reduce stresses on the primary elements, making the structure statically indeterminate.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "rehabilitation",
-    definition:
-      "Major repair or improvement work conducted to restore a structure to its original condition or enhance its functionality and safety.",
+    definition: "Major repair or improvement work conducted to restore a structure to its original condition or enhance its functionality and safety.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "reinforced concrete",
-    definition:
-      "Concrete embedded with steel bars or mesh to increase its tensile strength and overall durability, allowing it to withstand greater loads.",
+    definition: "Concrete embedded with steel bars or mesh to increase its tensile strength and overall durability, allowing it to withstand greater loads.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "reinforced concrete pipe",
-    definition:
-      "Concrete pipes that are reinforced with steel bars or mesh to enhance their strength and ability to withstand internal and external pressures.",
+    definition: "Concrete pipes that are reinforced with steel bars or mesh to enhance their strength and ability to withstand internal and external pressures.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "Reinforced Earth",
-    definition:
-      "A retaining structure composed of layers of steel strips interwoven with earth, connected to a concrete facing, providing stability and support.",
+    definition: "A retaining structure composed of layers of steel strips interwoven with earth, connected to a concrete facing, providing stability and support.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "reinforcement",
-    definition:
-      "Steel rods or mesh incorporated within concrete to increase its tensile strength, enabling it to carry heavier loads and resist cracking.",
+    definition: "Steel rods or mesh incorporated within concrete to increase its tensile strength, enabling it to carry heavier loads and resist cracking.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -10441,64 +9973,56 @@ const glossaryBIRM = [
 
   {
     term: "relaxation",
-    definition:
-      "A reduction in the internal stress of a material over time due to deformation under constant strain, often observed in materials under load.",
+    definition: "A reduction in the internal stress of a material over time due to deformation under constant strain, often observed in materials under load.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "residual stress",
-    definition:
-      "Internal stress that remains in a material after it has been formed or processed, potentially affecting its performance and stability.",
+    definition: "Internal stress that remains in a material after it has been formed or processed, potentially affecting its performance and stability.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "resistivity of soil",
-    definition:
-      "A measurement of a soil's ability to resist the flow of electrical current, which can indicate its potential for corrosion in structures.",
+    definition: "A measurement of a soil's ability to resist the flow of electrical current, which can indicate its potential for corrosion in structures.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "resurfacing",
-    definition:
-      "The process of applying a new layer of material over a worn or damaged surface to restore its functionality and improve its performance.",
+    definition: "The process of applying a new layer of material over a worn or damaged surface to restore its functionality and improve its performance.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "Retained Earth",
-    definition:
-      "A system of retaining walls made from layers of geosynthetic materials and steel reinforcements, providing support for earth embankments.",
+    definition: "A system of retaining walls made from layers of geosynthetic materials and steel reinforcements, providing support for earth embankments.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "retaining wall",
-    definition:
-      "A structure designed to resist lateral pressure from soil or water, preventing the movement or erosion of earth in areas like slopes or embankments.",
+    definition: "A structure designed to resist lateral pressure from soil or water, preventing the movement or erosion of earth in areas like slopes or embankments.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "retractile draw bridge",
-    definition:
-      "A bridge with a movable superstructure that can shift horizontally along rollers, opening to allow passage while maintaining support at the closed position.",
+    definition: "A bridge with a movable superstructure that can shift horizontally along rollers, opening to allow passage while maintaining support at the closed position.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "rib",
-    definition:
-      "A structural component used to support a curved surface or shape, often seen in arches or domes, to distribute loads more effectively.",
+    definition: "A structural component used to support a curved surface or shape, often seen in arches or domes, to distribute loads more effectively.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -10513,32 +10037,28 @@ const glossaryBIRM = [
 
   {
     term: "rigid frame",
-    definition:
-      "A structural system where bending moments are transferred between horizontal and vertical elements, typically used to resist lateral forces such as wind or seismic activity.",
+    definition: "A structural system where bending moments are transferred between horizontal and vertical elements, typically used to resist lateral forces such as wind or seismic activity.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "rigid frame bridge",
-    definition:
-      "A bridge design in which the joints between the superstructure and vertical or inclined supports resist bending, allowing for better force distribution across the structure.",
+    definition: "A bridge design in which the joints between the superstructure and vertical or inclined supports resist bending, allowing for better force distribution across the structure.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "rigid frame pier",
-    definition:
-      "A type of pier constructed as a frame, combining vertical supports and horizontal beams to form a solid, monolithic structure that resists bending moments.",
+    definition: "A type of pier constructed as a frame, combining vertical supports and horizontal beams to form a solid, monolithic structure that resists bending moments.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "riprap",
-    definition:
-      "A layer of stones, blocks of concrete, or other materials placed on river and stream beds, banks, or shores to mitigate erosion caused by water flow or wave action.",
+    definition: "A layer of stones, blocks of concrete, or other materials placed on river and stream beds, banks, or shores to mitigate erosion caused by water flow or wave action.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -10587,24 +10107,21 @@ const glossaryBIRM = [
 
   {
     term: "rocker bent",
-    definition:
-      "A structural component designed to allow for movement along the longitudinal axis, typically providing flexibility to accommodate temperature variations or heavy loads.",
+    definition: "A structural component designed to allow for movement along the longitudinal axis, typically providing flexibility to accommodate temperature variations or heavy loads.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "rolled shape",
-    definition:
-      "Steel forms created by hot-rolling processes into specific cross-sectional shapes, such as 'I', 'H', 'C', or 'Z' for structural applications.",
+    definition: "Steel forms created by hot-rolling processes into specific cross-sectional shapes, such as 'I', 'H', 'C', or 'Z' for structural applications.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "rolled-steel section",
-    definition:
-      "A hot-rolled steel product available in various forms like wide flange shapes, channels, and angles, used for structural reinforcement.",
+    definition: "A hot-rolled steel product available in various forms like wide flange shapes, channels, and angles, used for structural reinforcement.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -10618,40 +10135,35 @@ const glossaryBIRM = [
 
   {
     term: "roller bearing",
-    definition:
-      "A device that uses a single or multiple rollers to allow a structure to move longitudinally while supporting its weight and minimizing friction.",
+    definition: "A device that uses a single or multiple rollers to allow a structure to move longitudinally while supporting its weight and minimizing friction.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "roller nest",
-    definition:
-      "A set of steel cylinders arranged to permit smooth longitudinal movement of a structure in response to temperature changes or applied loads.",
+    definition: "A set of steel cylinders arranged to permit smooth longitudinal movement of a structure in response to temperature changes or applied loads.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "rolling lift bridge",
-    definition:
-      "A bascule-type bridge designed to move horizontally on supporting girders in a rolling motion to open and close, providing clearance for vessels.",
+    definition: "A bascule-type bridge designed to move horizontally on supporting girders in a rolling motion to open and close, providing clearance for vessels.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "routine inspection",
-    definition:
-      "A regularly scheduled inspection that assesses the condition of a structure, noting any changes from previous conditions to ensure it remains functional and safe.",
+    definition: "A regularly scheduled inspection that assesses the condition of a structure, noting any changes from previous conditions to ensure it remains functional and safe.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "routine permit load",
-    definition:
-      "A live load exceeding legal weight or axle limits but authorized for repeated travel under specific conditions, typically for specialized transport of heavy goods.",
+    definition: "A live load exceeding legal weight or axle limits but authorized for repeated travel under specific conditions, typically for specialized transport of heavy goods.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -10665,8 +10177,7 @@ const glossaryBIRM = [
 
   {
     term: "runoff",
-    definition:
-      "The amount of precipitation that flows over the surface of a catchment area and passes a given point, usually measured over a specified time frame.",
+    definition: "The amount of precipitation that flows over the surface of a catchment area and passes a given point, usually measured over a specified time frame.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -10689,32 +10200,28 @@ const glossaryBIRM = [
 
   {
     term: "sacrificial protection",
-    definition:
-      "Refers to the use of sacrificial anodes or coatings in a cathodic protection system, where a less noble material corrodes instead of the protected structure.",
+    definition: "Refers to the use of sacrificial anodes or coatings in a cathodic protection system, where a less noble material corrodes instead of the protected structure.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "sacrificial thickness",
-    definition:
-      "An additional material thickness added to a structural element to extend its service life, particularly in environments prone to aggressive corrosion or wear.",
+    definition: "An additional material thickness added to a structural element to extend its service life, particularly in environments prone to aggressive corrosion or wear.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "saddle",
-    definition:
-      "A structural component on a suspension bridge tower that provides a bearing surface for the catenary cable, allowing it to pass smoothly over the top.",
+    definition: "A structural component on a suspension bridge tower that provides a bearing surface for the catenary cable, allowing it to pass smoothly over the top.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "safe load",
-    definition:
-      "The maximum load that a structure can carry safely, calculated with a suitable factor of safety to account for uncertainties in material properties and loading conditions.",
+    definition: "The maximum load that a structure can carry safely, calculated with a suitable factor of safety to account for uncertainties in material properties and loading conditions.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -10729,16 +10236,14 @@ const glossaryBIRM = [
 
   {
     term: "safety curb",
-    definition:
-      "A curb between 9 and 24 inches wide, providing a refuge or walkway for pedestrians crossing a bridge, typically placed along bridge edges to enhance safety.",
+    definition: "A curb between 9 and 24 inches wide, providing a refuge or walkway for pedestrians crossing a bridge, typically placed along bridge edges to enhance safety.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "safety factor",
-    definition:
-      "The ratio between the ultimate strength of a material or structure and the expected maximum load, providing a margin of safety against failure under design conditions.",
+    definition: "The ratio between the ultimate strength of a material or structure and the expected maximum load, providing a margin of safety against failure under design conditions.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -10760,64 +10265,56 @@ const glossaryBIRM = [
 
   {
     term: "scab",
-    definition:
-      "A reinforcing piece, such as a plank or metal section, attached to a timber or metal structure to strengthen or realign joints, or to resist penetration in certain applications.",
+    definition: "A reinforcing piece, such as a plank or metal section, attached to a timber or metal structure to strengthen or realign joints, or to resist penetration in certain applications.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "scaling",
-    definition:
-      "The gradual deterioration of concrete surfaces due to chemical attack or freeze-thaw cycles, leading to the flaking or peeling of the surface layer.",
+    definition: "The gradual deterioration of concrete surfaces due to chemical attack or freeze-thaw cycles, leading to the flaking or peeling of the surface layer.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "scour",
-    definition:
-      "The erosion of a streambed or bank caused by the flow of water, often localized around bridge piers and abutments, which can undermine foundation stability.",
+    definition: "The erosion of a streambed or bank caused by the flow of water, often localized around bridge piers and abutments, which can undermine foundation stability.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "scour critical bridge",
-    definition:
-      "A bridge whose foundation is determined to be at risk of failure under evaluated scour conditions, posing a significant safety hazard.",
+    definition: "A bridge whose foundation is determined to be at risk of failure under evaluated scour conditions, posing a significant safety hazard.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "scour protection",
-    definition:
-      "Methods such as sheet piling, riprap, or concrete lining used to prevent the erosion of streambeds and banks around bridge foundations and piers.",
+    definition: "Methods such as sheet piling, riprap, or concrete lining used to prevent the erosion of streambeds and banks around bridge foundations and piers.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "scuba",
-    definition:
-      "A portable self-contained underwater breathing apparatus used by divers for underwater exploration, inspection, and construction activities.",
+    definition: "A portable self-contained underwater breathing apparatus used by divers for underwater exploration, inspection, and construction activities.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "scupper",
-    definition:
-      "An opening in a bridge deck designed to allow accumulated water to drain from the roadway, preventing flooding and water damage to the structure.",
+    definition: "An opening in a bridge deck designed to allow accumulated water to drain from the roadway, preventing flooding and water damage to the structure.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "seam weld",
-    definition:
-      "A weld joining the edges of two members placed in contact, typically not intended to carry significant stresses but to provide alignment or sealing.",
+    definition: "A weld joining the edges of two members placed in contact, typically not intended to carry significant stresses but to provide alignment or sealing.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -10831,24 +10328,21 @@ const glossaryBIRM = [
 
   {
     term: "seat angle",
-    definition:
-      "A piece of angle iron or steel attached to a member to provide temporary or permanent support for another member, such as during erection or in the final structure.",
+    definition: "A piece of angle iron or steel attached to a member to provide temporary or permanent support for another member, such as during erection or in the final structure.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "secondary member",
-    definition:
-      "A structural component that does not directly carry live loads, but serves functions such as bracing, lateral support, or stiffening of the main load-bearing members.",
+    definition: "A structural component that does not directly carry live loads, but serves functions such as bracing, lateral support, or stiffening of the main load-bearing members.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "section loss",
-    definition:
-      "The reduction in the cross-sectional area of a structural member, typically due to corrosion, decay, or wear, which can compromise the strength of the component.",
+    definition: "The reduction in the cross-sectional area of a structural member, typically due to corrosion, decay, or wear, which can compromise the strength of the component.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -10890,24 +10384,21 @@ const glossaryBIRM = [
 
   {
     term: "seismic",
-    definition:
-      "Relating to earthquakes or the forces they generate, often considered when designing bridges for structural integrity under seismic activity.",
+    definition: "Relating to earthquakes or the forces they generate, often considered when designing bridges for structural integrity under seismic activity.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "semi-stub abutment",
-    definition:
-      "A cantilever abutment, intermediate in size between a full-height abutment and a stub abutment, typically founded halfway up a slope.",
+    definition: "A cantilever abutment, intermediate in size between a full-height abutment and a stub abutment, typically founded halfway up a slope.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "service load design",
-    definition:
-      "The method of design, as described by AASHTO, using working stress theory to ensure structures can carry specified service loads safely.",
+    definition: "The method of design, as described by AASHTO, using working stress theory to ensure structures can carry specified service loads safely.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -10921,48 +10412,42 @@ const glossaryBIRM = [
 
   {
     term: "shadow vehicle",
-    definition:
-      "A vehicle positioned to prevent traffic from entering a work zone, often placed in advance of a lane closure to block unintended access.",
+    definition: "A vehicle positioned to prevent traffic from entering a work zone, often placed in advance of a lane closure to block unintended access.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "shakes",
-    definition:
-      "Wood separations occurring parallel to the grain, typically between the annual growth rings, which can affect timber strength and durability.",
+    definition: "Wood separations occurring parallel to the grain, typically between the annual growth rings, which can affect timber strength and durability.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "shear",
-    definition:
-      "A load applied across a beam near its support, causing internal forces that tend to slide one section of the beam past the adjacent section.",
+    definition: "A load applied across a beam near its support, causing internal forces that tend to slide one section of the beam past the adjacent section.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "shear connectors",
-    definition:
-      "Devices extending from the top flange of a beam and embedded in an overlying concrete slab, creating a composite action between the two.",
+    definition: "Devices extending from the top flange of a beam and embedded in an overlying concrete slab, creating a composite action between the two.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "shear force",
-    definition:
-      "Opposing forces acting across a beam that tend to slide one section past the adjacent section, usually near supports or points of concentrated load.",
+    definition: "Opposing forces acting across a beam that tend to slide one section past the adjacent section, usually near supports or points of concentrated load.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "shear spiral",
-    definition:
-      "A coiled component welded to a beam's top flange, used as a shear connector to provide bond between the beam and the concrete slab above.",
+    definition: "A coiled component welded to a beam's top flange, used as a shear connector to provide bond between the beam and the concrete slab above.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -10976,64 +10461,56 @@ const glossaryBIRM = [
 
   {
     term: "shear stud",
-    definition:
-      "A type of shear connector, often a steel stud welded to a beam, which helps bond the beam to the concrete slab above it for composite action.",
+    definition: "A type of shear connector, often a steel stud welded to a beam, which helps bond the beam to the concrete slab above it for composite action.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "sheet pile cofferdam",
-    definition:
-      "A temporary structure formed by interlocking sheet piles to enclose an area for dewatering and excavation, typically used during foundation work.",
+    definition: "A temporary structure formed by interlocking sheet piles to enclose an area for dewatering and excavation, typically used during foundation work.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "sheet piles",
-    definition:
-      "Interlocking Z-shaped piles driven into the ground to prevent earth or water from entering an excavation or protect against erosion.",
+    definition: "Interlocking Z-shaped piles driven into the ground to prevent earth or water from entering an excavation or protect against erosion.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "sheet piling",
-    definition:
-      "A term used collectively for a series of sheet piles installed to create barriers such as cofferdams or bulkheads for excavation and protection purposes.",
+    definition: "A term used collectively for a series of sheet piles installed to create barriers such as cofferdams or bulkheads for excavation and protection purposes.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "sheet steel",
-    definition:
-      "A thin flat sheet or plate of steel, classified by thickness, and used in various construction applications including sheeting and formwork.",
+    definition: "A thin flat sheet or plate of steel, classified by thickness, and used in various construction applications including sheeting and formwork.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "shelf angle",
-    definition:
-      "A steel angle member used to support a structure or serve as a support for masonry or other materials, typically placed on the exterior of a building.",
+    definition: "A steel angle member used to support a structure or serve as a support for masonry or other materials, typically placed on the exterior of a building.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "shim",
-    definition:
-      "A thin plate inserted between two elements to adjust their position or to distribute bearing stress more evenly across the contact area.",
+    definition: "A thin plate inserted between two elements to adjust their position or to distribute bearing stress more evenly across the contact area.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "shoe",
-    definition:
-      "A steel or iron member that transmits and distributes loads from the superstructure bearing to the substructure bearing area, often used in bridge foundations.",
+    definition: "A steel or iron member that transmits and distributes loads from the superstructure bearing to the substructure bearing area, often used in bridge foundations.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -11047,256 +10524,224 @@ const glossaryBIRM = [
 
   {
     term: "shop drawings",
-    definition:
-      "Detailed drawings created from design drawings, used in the fabrication of bridge components, including precise measurements and construction instructions.",
+    definition: "Detailed drawings created from design drawings, used in the fabrication of bridge components, including precise measurements and construction instructions.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "shoring",
-    definition:
-      "A temporary structure used to support or stabilize a building or other structure, typically made of props or braces, until it can be permanently supported or repaired.",
+    definition: "A temporary structure used to support or stabilize a building or other structure, typically made of props or braces, until it can be permanently supported or repaired.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "shoulder abutment",
-    definition:
-      "A type of support structure designed to extend from the road grade to the road overhead, often positioned beside the shoulder to bear loads while maintaining traffic flow.",
+    definition: "A type of support structure designed to extend from the road grade to the road overhead, often positioned beside the shoulder to bear loads while maintaining traffic flow.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "shoulder area",
-    definition:
-      "The lateral strip of a roadway adjacent to the traffic lanes, designed to provide space for emergency stopping or for pedestrians and cyclists in some cases.",
+    definition: "The lateral strip of a roadway adjacent to the traffic lanes, designed to provide space for emergency stopping or for pedestrians and cyclists in some cases.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "shrinkage",
-    definition:
-      "The reduction in volume that occurs as moisture evaporates from materials like concrete or timber during the drying process, affecting their stability and strength.",
+    definition: "The reduction in volume that occurs as moisture evaporates from materials like concrete or timber during the drying process, affecting their stability and strength.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "sidewalk",
-    definition:
-      "A path or surface designated for pedestrian use, often located beside or on a bridge, providing safe passage across or along the structure.",
+    definition: "A path or surface designated for pedestrian use, often located beside or on a bridge, providing safe passage across or along the structure.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "sidewalk bracket",
-    definition:
-      "A frame structure attached to the exterior of a bridge girder, designed to support components such as sidewalk stringers, floor sections, and railings or parapets.",
+    definition: "A frame structure attached to the exterior of a bridge girder, designed to support components such as sidewalk stringers, floor sections, and railings or parapets.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "sight distance",
-    definition:
-      "The visible distance along the road that a driver can clearly see ahead, critical for safe driving, particularly in areas of curves or changes in elevation.",
+    definition: "The visible distance along the road that a driver can clearly see ahead, critical for safe driving, particularly in areas of curves or changes in elevation.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "silt",
-    definition:
-      "A fine-grained material, often made up of particles from siliceous rocks, that is transported by water and deposited in various environments like riverbeds or reservoirs.",
+    definition: "A fine-grained material, often made up of particles from siliceous rocks, that is transported by water and deposited in various environments like riverbeds or reservoirs.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "simple span",
-    definition:
-      "A type of structure supported by two fixed points without intermediate restraints, typically referring to beams or trusses used in basic bridge construction.",
+    definition: "A type of structure supported by two fixed points without intermediate restraints, typically referring to beams or trusses used in basic bridge construction.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "S-I-P forms",
-    definition:
-      "A method of forming concrete where the mold itself remains in place as part of the finished structure, typically used in the construction of decks and walls.",
+    definition: "A method of forming concrete where the mold itself remains in place as part of the finished structure, typically used in the construction of decks and walls.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "skew angle",
-    definition:
-      "The angle formed between the longitudinal axis of a bridge and a line perpendicular to the substructure, affecting the geometry and design of the structure.",
+    definition: "The angle formed between the longitudinal axis of a bridge and a line perpendicular to the substructure, affecting the geometry and design of the structure.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "skewback",
-    definition:
-      "The sloped support at either end of an arch structure, designed to distribute the forces exerted by the arch to the supporting substructure.",
+    definition: "The sloped support at either end of an arch structure, designed to distribute the forces exerted by the arch to the supporting substructure.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "skewback shoe",
-    definition:
-      "A component that transfers the thrust from an arch to the skewback, typically in the form of a cushion or pedestal used in stone or concrete arches.",
+    definition: "A component that transfers the thrust from an arch to the skewback, typically in the form of a cushion or pedestal used in stone or concrete arches.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "slab",
-    definition:
-      "A flat, broad section of material, typically concrete, that bears weight through flexural forces, commonly used in floors and decks of bridges for load distribution.",
+    definition: "A flat, broad section of material, typically concrete, that bears weight through flexural forces, commonly used in floors and decks of bridges for load distribution.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "slab bridge",
-    definition:
-      "A type of bridge with a deck composed of large concrete slabs, either as a continuous unit or as individual segments placed parallel to the roadway, spanning between supports.",
+    definition: "A type of bridge with a deck composed of large concrete slabs, either as a continuous unit or as individual segments placed parallel to the roadway, spanning between supports.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "slide",
-    definition:
-      "A type of mass movement in which material such as soil or rock shifts down a slope, often triggered by changes in weight or support at the base of the slope.",
+    definition: "A type of mass movement in which material such as soil or rock shifts down a slope, often triggered by changes in weight or support at the base of the slope.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "slip form",
-    definition:
-      "A technique used in concrete construction where a movable mold is advanced incrementally to form vertical structures such as walls and decks.",
+    definition: "A technique used in concrete construction where a movable mold is advanced incrementally to form vertical structures such as walls and decks.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "slope",
-    definition:
-      "The steepness or incline of a surface, expressed as the ratio of vertical rise or fall to the horizontal distance over which the rise or fall occurs.",
+    definition: "The steepness or incline of a surface, expressed as the ratio of vertical rise or fall to the horizontal distance over which the rise or fall occurs.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "slope protection",
-    definition:
-      "A method used to prevent the erosion or disintegration of a sloped surface, typically involving the application of materials like stone or concrete to stabilize the area.",
+    definition: "A method used to prevent the erosion or disintegration of a sloped surface, typically involving the application of materials like stone or concrete to stabilize the area.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "slot weld",
-    definition:
-      "A type of weld used to fill a slot or groove between two pieces of material, typically in structural applications, to create a secure joint.",
+    definition: "A type of weld used to fill a slot or groove between two pieces of material, typically in structural applications, to create a secure joint.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "slump",
-    definition:
-      "A test used to measure the consistency or stiffness of fresh concrete, typically by observing the loss in height after a conical mold is removed.",
+    definition: "A test used to measure the consistency or stiffness of fresh concrete, typically by observing the loss in height after a conical mold is removed.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "soffit",
-    definition:
-      "The underside surface of a bridge deck or arch, often critical for visual inspection and structural assessment of the bridge's integrity.",
+    definition: "The underside surface of a bridge deck or arch, often critical for visual inspection and structural assessment of the bridge's integrity.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "soldier beam",
-    definition:
-      "A vertical steel beam driven into the ground to provide temporary or permanent support, often used in retaining walls or other foundation applications.",
+    definition: "A vertical steel beam driven into the ground to provide temporary or permanent support, often used in retaining walls or other foundation applications.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "soldier pile wall",
-    definition:
-      "A retaining wall system consisting of vertical soldier beams and horizontal lagging used to support excavations or prevent soil movement.",
+    definition: "A retaining wall system consisting of vertical soldier beams and horizontal lagging used to support excavations or prevent soil movement.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "soil interaction structure",
-    definition:
-      "A type of subsurface structure that relies on the combined strength of both the soil surrounding it and the flexible nature of the structure itself to support loads.",
+    definition: "A type of subsurface structure that relies on the combined strength of both the soil surrounding it and the flexible nature of the structure itself to support loads.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "sole plate",
-    definition:
-      "A steel plate attached to the bottom of a structural beam, distributing the load from the bearing to the beam and ensuring even pressure distribution.",
+    definition: "A steel plate attached to the bottom of a structural beam, distributing the load from the bearing to the beam and ensuring even pressure distribution.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "solid sawn beam",
-    definition:
-      "A beam made by cutting a log to size at a sawmill, as opposed to engineered wood products, providing natural strength and durability in construction.",
+    definition: "A beam made by cutting a log to size at a sawmill, as opposed to engineered wood products, providing natural strength and durability in construction.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "sounding",
-    definition:
-      "A method of measuring water depth using devices like echo sounders or lead lines, also refers to tapping surfaces to check for weaknesses like delaminations or decay.",
+    definition: "A method of measuring water depth using devices like echo sounders or lead lines, also refers to tapping surfaces to check for weaknesses like delaminations or decay.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "spall",
-    definition:
-      "A defect in concrete where a small section of the surface breaks off, usually caused by internal stresses, revealing fractures aligned with the surface.",
+    definition: "A defect in concrete where a small section of the surface breaks off, usually caused by internal stresses, revealing fractures aligned with the surface.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "span",
-    definition:
-      "The distance between two supports of a bridge or structural beam, representing the space covered by the bridge or the distance across a gap.",
+    definition: "The distance between two supports of a bridge or structural beam, representing the space covered by the bridge or the distance across a gap.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "spandrel",
-    definition:
-      "The triangular space between the top of an arch and the horizontal structure above it, often filled with material to support the deck or additional load.",
+    definition: "The triangular space between the top of an arch and the horizontal structure above it, often filled with material to support the deck or additional load.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -11331,16 +10776,14 @@ const glossaryBIRM = [
 
   {
     term: "special inspection",
-    definition:
-      "An inspection conducted outside of regular schedules, often in response to specific concerns or to monitor known deficiencies in a structure.",
+    definition: "An inspection conducted outside of regular schedules, often in response to specific concerns or to monitor known deficiencies in a structure.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "specifications",
-    definition:
-      "A detailed set of written requirements outlining the materials, methods, tolerances, and other construction parameters necessary for the completion of a project.",
+    definition: "A detailed set of written requirements outlining the materials, methods, tolerances, and other construction parameters necessary for the completion of a project.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -11355,48 +10798,42 @@ const glossaryBIRM = [
 
   {
     term: "spillway",
-    definition:
-      "A structure designed to carry excess water from a slope or embankment to prevent erosion or flooding by diverting the flow to a safe outlet.",
+    definition: "A structure designed to carry excess water from a slope or embankment to prevent erosion or flooding by diverting the flow to a safe outlet.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "splice",
-    definition:
-      "A joint used to connect two structural members together, often to extend their length or repair damaged sections, ensuring continuity of strength and stability.",
+    definition: "A joint used to connect two structural members together, often to extend their length or repair damaged sections, ensuring continuity of strength and stability.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "splits",
-    definition:
-      "Cracks or separations that extend completely through a piece of wood, often indicating stress or damage that could compromise its structural integrity.",
+    definition: "Cracks or separations that extend completely through a piece of wood, often indicating stress or damage that could compromise its structural integrity.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "spread footing",
-    definition:
-      "A type of foundation that spreads the load of a structure over a wide area, typically using a reinforced concrete slab to distribute the weight to the soil or rock below.",
+    definition: "A type of foundation that spreads the load of a structure over a wide area, typically using a reinforced concrete slab to distribute the weight to the soil or rock below.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "spring line",
-    definition:
-      "The horizontal line at the base of an arch structure where the curve of the arch begins, marking the transition from the vertical support to the arch's curved shape.",
+    definition: "The horizontal line at the base of an arch structure where the curve of the arch begins, marking the transition from the vertical support to the arch's curved shape.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "spurs",
-    definition:
-      "Projected structures, often placed near embankments or abutments, designed to prevent the erosion of the riverbed or support the structural integrity of the surrounding soil.",
+    definition: "Projected structures, often placed near embankments or abutments, designed to prevent the erosion of the riverbed or support the structural integrity of the surrounding soil.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -11459,8 +10896,7 @@ const glossaryBIRM = [
 
   {
     term: "stay plate",
-    definition:
-      "A plate or brace used to prevent movement within a structure. It is typically used to provide additional stability and prevent shifting of components under load.",
+    definition: "A plate or brace used to prevent movement within a structure. It is typically used to provide additional stability and prevent shifting of components under load.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -11475,8 +10911,7 @@ const glossaryBIRM = [
 
   {
     term: "stem",
-    definition:
-      "The vertical wall portion of a retaining wall or pier, typically found in an abutment. It is responsible for providing stability and support for the structure.",
+    definition: "The vertical wall portion of a retaining wall or pier, typically found in an abutment. It is responsible for providing stability and support for the structure.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -11515,24 +10950,21 @@ const glossaryBIRM = [
 
   {
     term: "stone masonry",
-    definition:
-      "A construction method involving stone blocks, typically arranged in courses and held together with mortar. It provides durability and strength, often used in traditional structures.",
+    definition: "A construction method involving stone blocks, typically arranged in courses and held together with mortar. It provides durability and strength, often used in traditional structures.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "straight abutment",
-    definition:
-      "An abutment with a stem and wings that are aligned in the same plane or with a stem incorporated into a retaining wall. This design ensures structural efficiency and support.",
+    definition: "An abutment with a stem and wings that are aligned in the same plane or with a stem incorporated into a retaining wall. This design ensures structural efficiency and support.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "strain",
-    definition:
-      "The change in length or deformation of a material when external forces are applied. It is measured as the ratio of the change in length to the original length of the material.",
+    definition: "The change in length or deformation of a material when external forces are applied. It is measured as the ratio of the change in length to the original length of the material.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -11547,24 +10979,21 @@ const glossaryBIRM = [
 
   {
     term: "strand",
-    definition:
-      "A group of wires twisted together to form a larger, stronger unit. Strands are commonly used in the construction of cables for bridges and other large structures.",
+    definition: "A group of wires twisted together to form a larger, stronger unit. Strands are commonly used in the construction of cables for bridges and other large structures.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "streambanks",
-    definition:
-      "The sloped sides of a river or stream channel. Streambanks help contain water flow and prevent erosion, stabilizing the surrounding landscape.",
+    definition: "The sloped sides of a river or stream channel. Streambanks help contain water flow and prevent erosion, stabilizing the surrounding landscape.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "streambed",
-    definition:
-      "The bottom of a river or stream channel, where water flows. The composition and stability of the streambed are important for maintaining water flow and preventing erosion.",
+    definition: "The bottom of a river or stream channel, where water flows. The composition and stability of the streambed are important for maintaining water flow and preventing erosion.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -11579,16 +11008,14 @@ const glossaryBIRM = [
 
   {
     term: "strengthening",
-    definition:
-      "The process of increasing the load-bearing capacity of a structural element, typically by reinforcing or adding material to improve its performance under load.",
+    definition: "The process of increasing the load-bearing capacity of a structural element, typically by reinforcing or adding material to improve its performance under load.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "stress",
-    definition:
-      "The internal force per unit area within a material caused by external loads or forces. Stress is critical for analyzing the behavior of materials under different loading conditions.",
+    definition: "The internal force per unit area within a material caused by external loads or forces. Stress is critical for analyzing the behavior of materials under different loading conditions.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -11611,16 +11038,14 @@ const glossaryBIRM = [
 
   {
     term: "stress raiser",
-    definition:
-      "A detail or feature that causes localized increases in stress, typically due to a sudden change in geometry or a discontinuity in a structure.",
+    definition: "A detail or feature that causes localized increases in stress, typically due to a sudden change in geometry or a discontinuity in a structure.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "stress reversal",
-    definition:
-      "The change in stress type at a point from tension to compression or vice versa. It occurs during cyclic loading, impacting material behavior and fatigue life.",
+    definition: "The change in stress type at a point from tension to compression or vice versa. It occurs during cyclic loading, impacting material behavior and fatigue life.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -11635,16 +11060,14 @@ const glossaryBIRM = [
 
   {
     term: "stress-laminated timber",
-    definition:
-      "A construction method where multiple planks are mechanically clamped together to act as a single, integrated unit, enhancing strength and stability.",
+    definition: "A construction method where multiple planks are mechanically clamped together to act as a single, integrated unit, enhancing strength and stability.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "stringer",
-    definition:
-      "A longitudinal beam positioned between transverse floorbeams to support a deck. It is a key structural component in maintaining deck stability.",
+    definition: "A longitudinal beam positioned between transverse floorbeams to support a deck. It is a key structural component in maintaining deck stability.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -11658,32 +11081,28 @@ const glossaryBIRM = [
 
   {
     term: "structural analysis",
-    definition:
-      "The engineering process used to calculate the load-bearing capacity of a structure, ensuring it can support expected forces without failure.",
+    definition: "The engineering process used to calculate the load-bearing capacity of a structure, ensuring it can support expected forces without failure.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "structural member",
-    definition:
-      "An individual part, such as a beam or strut, that contributes to the overall structure's ability to resist loads and maintain stability.",
+    definition: "An individual part, such as a beam or strut, that contributes to the overall structure's ability to resist loads and maintain stability.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "structural redundancy",
-    definition:
-      "The ability of a structure, particularly an interior continuous span, to resist total collapse by redistributing forces when one element fails.",
+    definition: "The ability of a structure, particularly an interior continuous span, to resist total collapse by redistributing forces when one element fails.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "structural shapes",
-    definition:
-      "Various cross-sectional shapes of rolled iron and steel, such as flat, round, angle, channel, 'I', 'H', and 'Z', adapted for use in heavy construction.",
+    definition: "Various cross-sectional shapes of rolled iron and steel, such as flat, round, angle, channel, 'I', 'H', and 'Z', adapted for use in heavy construction.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -11719,16 +11138,14 @@ const glossaryBIRM = [
 
   {
     term: "strut",
-    definition:
-      "A structural member that resists axial compressive stress, typically serving as a secondary element to enhance stability and load resistance.",
+    definition: "A structural member that resists axial compressive stress, typically serving as a secondary element to enhance stability and load resistance.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "stub abutment",
-    definition:
-      "A small abutment found at the topmost part of an embankment or slope, typically supported by piles or spread footings, with limited vertical height.",
+    definition: "A small abutment found at the topmost part of an embankment or slope, typically supported by piles or spread footings, with limited vertical height.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -11751,80 +11168,70 @@ const glossaryBIRM = [
 
   {
     term: "sub-panel",
-    definition:
-      "A truss panel that is divided into two parts by an intermediate web member, often a subdiagonal or hanger, which helps distribute forces more efficiently across the structure.",
+    definition: "A truss panel that is divided into two parts by an intermediate web member, often a subdiagonal or hanger, which helps distribute forces more efficiently across the structure.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "substructure",
-    definition:
-      "The part of a structure that supports the span, including the abutments and piers. It transfers loads from the superstructure to the foundation or natural ground.",
+    definition: "The part of a structure that supports the span, including the abutments and piers. It transfers loads from the superstructure to the foundation or natural ground.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "superelevation",
-    definition:
-      "The difference in elevation between the inside and outside edges of a roadway curve. It is designed to counteract centrifugal forces and improve vehicle stability on curves.",
+    definition: "The difference in elevation between the inside and outside edges of a roadway curve. It is designed to counteract centrifugal forces and improve vehicle stability on curves.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "superimposed dead load",
-    definition:
-      "The additional load applied to a structure after the initial construction, such as the weight of parapets or railings added after the main deck has cured.",
+    definition: "The additional load applied to a structure after the initial construction, such as the weight of parapets or railings added after the main deck has cured.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "superstructure",
-    definition:
-      "The portion of a structure that directly supports and transfers traffic loads to the substructure. It includes elements like beams, decks, and girders.",
+    definition: "The portion of a structure that directly supports and transfers traffic loads to the substructure. It includes elements like beams, decks, and girders.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "surface breakdown",
-    definition:
-      "A form of deterioration where the outer surface of a material begins to degrade, often seen as scaling. This process results in the loosening or flaking of surface layers.",
+    definition: "A form of deterioration where the outer surface of a material begins to degrade, often seen as scaling. This process results in the loosening or flaking of surface layers.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "surface corrosion",
-    definition:
-      "The initial stage of rust formation, where the metal begins to oxidize but has not yet resulted in significant loss of material. It affects the surface appearance and integrity.",
+    definition: "The initial stage of rust formation, where the metal begins to oxidize but has not yet resulted in significant loss of material. It affects the surface appearance and integrity.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "suspended span",
-    definition:
-      "A bridge span that is supported from the free ends of cantilevers. This design allows for longer spans with fewer supports along the deck.",
+    definition: "A bridge span that is supported from the free ends of cantilevers. This design allows for longer spans with fewer supports along the deck.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "suspender",
-    definition:
-      "A vertical cable, rod, or bar that connects the catenary cable or arch rib to the bridge floor system. It helps transfer loads from the deck to the main structural members.",
+    definition: "A vertical cable, rod, or bar that connects the catenary cable or arch rib to the bridge floor system. It helps transfer loads from the deck to the main structural members.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "suspension bridge",
-    definition:
-      "A type of bridge where the floor system is supported by catenary cables, which are hung from towers and anchored at their ends, allowing for longer spans over wide spaces.",
+    definition: "A type of bridge where the floor system is supported by catenary cables, which are hung from towers and anchored at their ends, allowing for longer spans over wide spaces.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -11838,48 +11245,42 @@ const glossaryBIRM = [
 
   {
     term: "swale",
-    definition:
-      "A drainage ditch with moderately sloping sides, often used to direct water runoff or to manage stormwater in landscaping and civil infrastructure.",
+    definition: "A drainage ditch with moderately sloping sides, often used to direct water runoff or to manage stormwater in landscaping and civil infrastructure.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "sway anchorage",
-    definition:
-      "A guy, stay cable, or chain attached to the floor system of a suspension bridge, anchored to an abutment or pier. It helps resist lateral movement of the suspension span.",
+    definition: "A guy, stay cable, or chain attached to the floor system of a suspension bridge, anchored to an abutment or pier. It helps resist lateral movement of the suspension span.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "sway bracing",
-    definition:
-      "Diagonal braces located at the top of a through truss, positioned transverse to the truss. These braces help resist lateral forces, providing stability against horizontal movement.",
+    definition: "Diagonal braces located at the top of a through truss, positioned transverse to the truss. These braces help resist lateral forces, providing stability against horizontal movement.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "sway frame",
-    definition:
-      "A complete panel or frame of sway bracing that helps resist transverse horizontal forces, contributing to the structural stability of the truss system.",
+    definition: "A complete panel or frame of sway bracing that helps resist transverse horizontal forces, contributing to the structural stability of the truss system.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "swedged anchor bolt",
-    definition:
-      "An anchor bolt designed with deformations to enhance bonding with concrete, improving the overall strength and stability of the anchor connection.",
+    definition: "An anchor bolt designed with deformations to enhance bonding with concrete, improving the overall strength and stability of the anchor connection.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "swing span bridge",
-    definition:
-      "A movable bridge in which the span rotates horizontally on a pivot pier, allowing marine traffic to pass through by opening the bridge's path.",
+    definition: "A movable bridge in which the span rotates horizontally on a pivot pier, allowing marine traffic to pass through by opening the bridge's path.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -11918,16 +11319,14 @@ const glossaryBIRM = [
 
   {
     term: "tee beam",
-    definition:
-      "A rolled steel section or reinforced concrete beam shaped like the letter 'T'. Its cross-sectional shape provides resistance to bending and supports vertical loads efficiently.",
+    definition: "A rolled steel section or reinforced concrete beam shaped like the letter 'T'. Its cross-sectional shape provides resistance to bending and supports vertical loads efficiently.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "temperature steel",
-    definition:
-      "Reinforcement used in concrete members to control the formation of cracks caused by temperature-induced stresses. It helps distribute thermal movements and prevents cracking.",
+    definition: "Reinforcement used in concrete members to control the formation of cracks caused by temperature-induced stresses. It helps distribute thermal movements and prevents cracking.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -11950,40 +11349,35 @@ const glossaryBIRM = [
 
   {
     term: "tensile force",
-    definition:
-      "A force that acts to stretch or pull apart a material, creating tension along the length of the member. It is a fundamental type of force in structural analysis.",
+    definition: "A force that acts to stretch or pull apart a material, creating tension along the length of the member. It is a fundamental type of force in structural analysis.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "tensile strength / ultimate strength",
-    definition:
-      "The highest amount of tensile stress a material can handle before breaking. This property is critical for evaluating the durability and performance of structural materials.",
+    definition: "The highest amount of tensile stress a material can handle before breaking. This property is critical for evaluating the durability and performance of structural materials.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "tension",
-    definition:
-      "The stress induced in a material when it is pulled apart. It results in elongation and is the opposite of compression in the behavior of structural elements.",
+    definition: "The stress induced in a material when it is pulled apart. It results in elongation and is the opposite of compression in the behavior of structural elements.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "thalweg elevation",
-    definition:
-      "The lowest point of the streambed, often used in hydrological studies to describe the flow path of a river or stream. It is typically used to define the flow line of a watercourse.",
+    definition: "The lowest point of the streambed, often used in hydrological studies to describe the flow path of a river or stream. It is typically used to define the flow line of a watercourse.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "thermal movement",
-    definition:
-      "The expansion or contraction of materials due to temperature changes. This movement must be accounted for in the design to prevent structural damage or failure.",
+    definition: "The expansion or contraction of materials due to temperature changes. This movement must be accounted for in the design to prevent structural damage or failure.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -11998,8 +11392,7 @@ const glossaryBIRM = [
 
   {
     term: "through arch",
-    definition:
-      "An arch bridge design where the deck passes through the arches, creating a clear span above the roadway for greater clearance and structural efficiency.",
+    definition: "An arch bridge design where the deck passes through the arches, creating a clear span above the roadway for greater clearance and structural efficiency.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -12014,8 +11407,7 @@ const glossaryBIRM = [
 
   {
     term: "tie",
-    definition:
-      "A structural member that is designed to resist tension. It is often used in frames or trusses to transfer forces and maintain stability in a structure.",
+    definition: "A structural member that is designed to resist tension. It is often used in frames or trusses to transfer forces and maintain stability in a structure.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -12030,48 +11422,42 @@ const glossaryBIRM = [
 
   {
     term: "tie rod",
-    definition:
-      "A rod-like member used in a frame to transmit tensile stress. It helps resist tension forces and maintain the overall stability of the structure.",
+    definition: "A rod-like member used in a frame to transmit tensile stress. It helps resist tension forces and maintain the overall stability of the structure.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "tie walls",
-    definition:
-      "Walls built at intervals above an arch ring to connect and support the spandrel walls. They prevent bulging and distortion by serving as restraining members.",
+    definition: "Walls built at intervals above an arch ring to connect and support the spandrel walls. They prevent bulging and distortion by serving as restraining members.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "timber",
-    definition:
-      "Wood that is suitable for use in construction. It is chosen for its strength, durability, and ease of processing for structural and aesthetic purposes.",
+    definition: "Wood that is suitable for use in construction. It is chosen for its strength, durability, and ease of processing for structural and aesthetic purposes.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "toe",
-    definition:
-      "The front portion of a footing, located from the intersection of the wall face to the front edge. It helps distribute the load to the supporting ground.",
+    definition: "The front portion of a footing, located from the intersection of the wall face to the front edge. It helps distribute the load to the supporting ground.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "toe of slope",
-    definition:
-      "The point where the embankment slope intersects with the existing ground surface at a lower elevation. It marks the transition between the slope and the flat ground.",
+    definition: "The point where the embankment slope intersects with the existing ground surface at a lower elevation. It marks the transition between the slope and the flat ground.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "toe wall",
-    definition:
-      "A low retaining wall placed at the toe of a slope to protect against erosion or to prevent the accumulation of debris, such as rocks or vegetation.",
+    definition: "A low retaining wall placed at the toe of a slope to protect against erosion or to prevent the accumulation of debris, such as rocks or vegetation.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -12085,40 +11471,35 @@ const glossaryBIRM = [
 
   {
     term: "torque",
-    definition:
-      "The force that causes an object to rotate about an axis. It is measured as the product of force and the distance from the axis of rotation.",
+    definition: "The force that causes an object to rotate about an axis. It is measured as the product of force and the distance from the axis of rotation.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "torque wrench",
-    definition:
-      "A tool used to apply a specific amount of torque to a fastener, ensuring that bolts or nuts are tightened to the correct specification without over-tightening.",
+    definition: "A tool used to apply a specific amount of torque to a fastener, ensuring that bolts or nuts are tightened to the correct specification without over-tightening.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "torsion",
-    definition:
-      "The twisting of a material or structural member caused by an applied torque. It is an important consideration in the design of beams and shafts subjected to rotational forces.",
+    definition: "The twisting of a material or structural member caused by an applied torque. It is an important consideration in the design of beams and shafts subjected to rotational forces.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "torsional force",
-    definition:
-      "An external force that causes a member to twist about its longitudinal axis. This type of force is important when considering the stability and rigidity of structural elements.",
+    definition: "An external force that causes a member to twist about its longitudinal axis. This type of force is important when considering the stability and rigidity of structural elements.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "torsional rigidity",
-    definition:
-      "The capacity of a beam or member to resist twisting forces. A higher torsional rigidity results in greater resistance to deformation when subjected to rotational loads.",
+    definition: "The capacity of a beam or member to resist twisting forces. A higher torsional rigidity results in greater resistance to deformation when subjected to rotational loads.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -12133,16 +11514,14 @@ const glossaryBIRM = [
 
   {
     term: "tower",
-    definition:
-      "A vertical structure that supports the main cables of a suspension bridge. It transfers the loads from the cables to the foundation or substructure.",
+    definition: "A vertical structure that supports the main cables of a suspension bridge. It transfers the loads from the cables to the foundation or substructure.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "traffic control",
-    definition:
-      "The modification of normal traffic patterns through the use of signs, barriers, cones, and flagmen to ensure safe flow and minimize disruptions during construction or maintenance.",
+    definition: "The modification of normal traffic patterns through the use of signs, barriers, cones, and flagmen to ensure safe flow and minimize disruptions during construction or maintenance.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -12156,8 +11535,7 @@ const glossaryBIRM = [
 
   {
     term: "transient loads",
-    definition:
-      "Loads that vary over time, such as moving traffic or wind gusts. These loads must be considered in the design to ensure the structure can withstand them without failure.",
+    definition: "Loads that vary over time, such as moving traffic or wind gusts. These loads must be considered in the design to ensure the structure can withstand them without failure.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -12172,24 +11550,21 @@ const glossaryBIRM = [
 
   {
     term: "transverse girder",
-    definition:
-      "A horizontal structural element placed perpendicular to the primary load-bearing beams. It supports loads from other components and distributes forces across the structure.",
+    definition: "A horizontal structural element placed perpendicular to the primary load-bearing beams. It supports loads from other components and distributes forces across the structure.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "travel way",
-    definition:
-      "The designated path or area on a structure where vehicles or pedestrians pass. It is typically paved or otherwise prepared to accommodate the passage of traffic.",
+    definition: "The designated path or area on a structure where vehicles or pedestrians pass. It is typically paved or otherwise prepared to accommodate the passage of traffic.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "tremie",
-    definition:
-      "A device, typically a pipe or funnel, used to place concrete underwater. It allows the concrete to be delivered directly to the submerged area, preventing contamination by water.",
+    definition: "A device, typically a pipe or funnel, used to place concrete underwater. It allows the concrete to be delivered directly to the submerged area, preventing contamination by water.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -12220,24 +11595,21 @@ const glossaryBIRM = [
 
   {
     term: "truss bridge",
-    definition:
-      "A type of bridge that incorporates a pair of trusses in its superstructure to bear the load. The trusses distribute forces and provide a stable framework for the deck and roadway.",
+    definition: "A type of bridge that incorporates a pair of trusses in its superstructure to bear the load. The trusses distribute forces and provide a stable framework for the deck and roadway.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "trussed beam",
-    definition:
-      "A beam reinforced with a tie-rod that helps reduce deflection. The tie-rod is held a short distance from the beam by struts, enhancing its stiffness and load-carrying capacity.",
+    definition: "A beam reinforced with a tie-rod that helps reduce deflection. The tie-rod is held a short distance from the beam by struts, enhancing its stiffness and load-carrying capacity.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "truss panel",
-    definition:
-      "A section of a truss, typically framed by multiple interconnected members, forming a triangular shape. These panels are the primary load-bearing units of a truss structure.",
+    definition: "A section of a truss, typically framed by multiple interconnected members, forming a triangular shape. These panels are the primary load-bearing units of a truss structure.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -12252,16 +11624,14 @@ const glossaryBIRM = [
 
   {
     term: "tubular truss",
-    definition:
-      "A type of truss where the chords and struts are made from cylindrical pipes or tubes. This construction method offers high strength while keeping the structure lightweight.",
+    definition: "A type of truss where the chords and struts are made from cylindrical pipes or tubes. This construction method offers high strength while keeping the structure lightweight.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "tunnel",
-    definition:
-      "An underground passage that is open at both ends. Tunnels are typically used to facilitate transportation or utilities where surface routes are impractical or too costly.",
+    definition: "An underground passage that is open at both ends. Tunnels are typically used to facilitate transportation or utilities where surface routes are impractical or too costly.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -12292,8 +11662,7 @@ const glossaryBIRM = [
 
   {
     term: "ultimate strength",
-    definition:
-      "The maximum stress a material can endure before failure. It represents the material's resistance to breaking, stretching, or yielding under extreme conditions.",
+    definition: "The maximum stress a material can endure before failure. It represents the material's resistance to breaking, stretching, or yielding under extreme conditions.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -12316,8 +11685,7 @@ const glossaryBIRM = [
 
   {
     term: "undermining",
-    definition:
-      "The erosion or removal of supporting material beneath a structure’s base, often caused by water flow. It can lead to instability if the foundation is compromised.",
+    definition: "The erosion or removal of supporting material beneath a structure’s base, often caused by water flow. It can lead to instability if the foundation is compromised.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -12348,112 +11716,98 @@ const glossaryBIRM = [
 
   {
     term: "uniform load",
-    definition:
-      "A load that is evenly distributed along the length of a structural element. It applies constant force throughout the area, ensuring consistent stress distribution across the member.",
+    definition: "A load that is evenly distributed along the length of a structural element. It applies constant force throughout the area, ensuring consistent stress distribution across the member.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "unit stress",
-    definition:
-      "The amount of force exerted per unit of surface area or cross-sectional area of a material. It is used to assess how much load a material can handle relative to its size.",
+    definition: "The amount of force exerted per unit of surface area or cross-sectional area of a material. It is used to assess how much load a material can handle relative to its size.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "uplift",
-    definition:
-      "A force that acts upwards on a structure, often caused by pressure differences or load distributions, potentially lifting elements such as beams or foundations off their supports.",
+    definition: "A force that acts upwards on a structure, often caused by pressure differences or load distributions, potentially lifting elements such as beams or foundations off their supports.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "upper chord",
-    definition:
-      "The topmost longitudinal element of a truss. It bears tension or compression forces and connects the truss’s vertical or diagonal members to form a complete load-bearing framework.",
+    definition: "The topmost longitudinal element of a truss. It bears tension or compression forces and connects the truss’s vertical or diagonal members to form a complete load-bearing framework.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "vertical",
-    definition:
-      "Describes an axis that is perpendicular to a flat surface, typically used to reference alignment or positioning in relation to the horizon.",
+    definition: "Describes an axis that is perpendicular to a flat surface, typically used to reference alignment or positioning in relation to the horizon.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "vertical alignment",
-    definition:
-      "The configuration of a roadway’s centerline in the vertical plane, including changes in elevation, such as crests and depressions, to facilitate smooth traffic flow.",
+    definition: "The configuration of a roadway’s centerline in the vertical plane, including changes in elevation, such as crests and depressions, to facilitate smooth traffic flow.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "vertical clearance",
-    definition:
-      "The vertical distance between the underside of a structure and the surface below, ensuring sufficient space for vehicles or other elements passing underneath.",
+    definition: "The vertical distance between the underside of a structure and the surface below, ensuring sufficient space for vehicles or other elements passing underneath.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "vertical curve",
-    definition:
-      "A transition curve, often parabolic, that connects two sections of a roadway with different gradients, used to create a smooth change in elevation.",
+    definition: "A transition curve, often parabolic, that connects two sections of a roadway with different gradients, used to create a smooth change in elevation.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "vertical lift bridge",
-    definition:
-      "A bridge where the span is raised and lowered vertically to allow for passage of ships or other tall vehicles, while maintaining parallel alignment with the roadway.",
+    definition: "A bridge where the span is raised and lowered vertically to allow for passage of ships or other tall vehicles, while maintaining parallel alignment with the roadway.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "viaduct",
-    definition:
-      "A structure made up of multiple spans supported by piers placed at regular intervals, typically used to cross over valleys or other types of terrain.",
+    definition: "A structure made up of multiple spans supported by piers placed at regular intervals, typically used to cross over valleys or other types of terrain.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "vibration",
-    definition:
-      "The process of agitating concrete to enhance its compaction, eliminating air pockets and ensuring more uniform consistency throughout the material.",
+    definition: "The process of agitating concrete to enhance its compaction, eliminating air pockets and ensuring more uniform consistency throughout the material.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "Vierendeel truss",
-    definition:
-      "A type of truss made solely from horizontal and vertical members connected with rigid joints, designed to carry bending moments rather than shear forces.",
+    definition: "A type of truss made solely from horizontal and vertical members connected with rigid joints, designed to carry bending moments rather than shear forces.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "voided slab",
-    definition:
-      "A precast concrete unit that incorporates cylindrical voids within its structure, reducing the overall dead load without compromising strength.",
+    definition: "A precast concrete unit that incorporates cylindrical voids within its structure, reducing the overall dead load without compromising strength.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "voids",
-    definition:
-      "Empty or unfilled spaces within concrete, often created intentionally for reducing weight or improving the material's properties, such as thermal insulation.",
+    definition: "Empty or unfilled spaces within concrete, often created intentionally for reducing weight or improving the material's properties, such as thermal insulation.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -12467,32 +11821,28 @@ const glossaryBIRM = [
 
   {
     term: "voussoir arch",
-    definition:
-      "An arch made of interlocking wedge-shaped blocks, which distribute loads evenly across the structure, forming a curved shape that supports weight.",
+    definition: "An arch made of interlocking wedge-shaped blocks, which distribute loads evenly across the structure, forming a curved shape that supports weight.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "wale, waler",
-    definition:
-      "Horizontal bracing elements used inside cofferdams or pits, providing support to prevent inward movement of sheet piles or walls under pressure.",
+    definition: "Horizontal bracing elements used inside cofferdams or pits, providing support to prevent inward movement of sheet piles or walls under pressure.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "Warren truss",
-    definition:
-      "A triangular truss design where sloping members are placed between top and bottom chords, and no vertical members are used, creating a W-shaped pattern.",
+    definition: "A triangular truss design where sloping members are placed between top and bottom chords, and no vertical members are used, creating a W-shaped pattern.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "washer",
-    definition:
-      "A small metal ring placed under the nut or bolt head to distribute the load over a larger area and to prevent damage to the surface being fastened.",
+    definition: "A small metal ring placed under the nut or bolt head to distribute the load over a larger area and to prevent damage to the surface being fastened.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -12506,24 +11856,21 @@ const glossaryBIRM = [
 
   {
     term: "waterproofing membrane",
-    definition:
-      "A protective layer placed between the concrete deck and the wearing surface to prevent water penetration and protect the structure from corrosion.",
+    definition: "A protective layer placed between the concrete deck and the wearing surface to prevent water penetration and protect the structure from corrosion.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "waterway area",
-    definition:
-      "The total open area beneath a bridge that facilitates the flow of water, essential for maintaining proper drainage and preventing flooding.",
+    definition: "The total open area beneath a bridge that facilitates the flow of water, essential for maintaining proper drainage and preventing flooding.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "waterway opening",
-    definition:
-      "The clear width beneath a bridge available for water flow, critical for ensuring adequate discharge capacity to prevent backwater or flooding.",
+    definition: "The clear width beneath a bridge available for water flow, critical for ensuring adequate discharge capacity to prevent backwater or flooding.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -12537,40 +11884,35 @@ const glossaryBIRM = [
 
   {
     term: "wearing surface",
-    definition:
-      "The top layer of material applied to the roadway, designed to withstand traffic wear and protect the underlying structure from damage.",
+    definition: "The top layer of material applied to the roadway, designed to withstand traffic wear and protect the underlying structure from damage.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "web",
-    definition:
-      "The central part of a beam or truss, connecting the top and bottom flanges, often responsible for carrying shear forces within the structure.",
+    definition: "The central part of a beam or truss, connecting the top and bottom flanges, often responsible for carrying shear forces within the structure.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "web crippling",
-    definition:
-      "Damage occurring in a beam's web due to high compressive forces, typically from concentrated loads that exceed the material's capacity.",
+    definition: "Damage occurring in a beam's web due to high compressive forces, typically from concentrated loads that exceed the material's capacity.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "web members",
-    definition:
-      "The intermediate members of a truss or frame that are positioned between the end posts, typically carrying shear forces and contributing to the overall stability.",
+    definition: "The intermediate members of a truss or frame that are positioned between the end posts, typically carrying shear forces and contributing to the overall stability.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "web plate",
-    definition:
-      "The vertical or inclined plate that forms the web of a plate girder, providing shear resistance and transferring loads between the top and bottom flanges.",
+    definition: "The vertical or inclined plate that forms the web of a plate girder, providing shear resistance and transferring loads between the top and bottom flanges.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -12584,8 +11926,7 @@ const glossaryBIRM = [
 
   {
     term: "weephole",
-    definition:
-      "A small drainage hole built into a retaining or abutment wall to allow water to escape, preventing pressure buildup behind the structure.",
+    definition: "A small drainage hole built into a retaining or abutment wall to allow water to escape, preventing pressure buildup behind the structure.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -12606,8 +11947,7 @@ const glossaryBIRM = [
 
   {
     term: "welded bridge structure",
-    definition:
-      "A structure whose components are joined using welding techniques, as opposed to mechanical fasteners, to provide a continuous and often stronger connection.",
+    definition: "A structure whose components are joined using welding techniques, as opposed to mechanical fasteners, to provide a continuous and often stronger connection.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -12621,16 +11961,14 @@ const glossaryBIRM = [
 
   {
     term: "welding",
-    definition:
-      "The process of joining metal pieces by heating them to their melting point and applying pressure or filler material to create a solid bond.",
+    definition: "The process of joining metal pieces by heating them to their melting point and applying pressure or filler material to create a solid bond.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "weld layer",
-    definition:
-      "A layer of weld metal deposited to join metal components, which can consist of multiple beads laid over one another to form a strong connection.",
+    definition: "A layer of weld metal deposited to join metal components, which can consist of multiple beads laid over one another to form a strong connection.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -12658,16 +11996,14 @@ const glossaryBIRM = [
 
   {
     term: "welding procedure specification (WPS)",
-    definition:
-      "A formal document detailing the welding parameters, techniques, and standards for a specific welding process, ensuring quality and consistency in welds.",
+    definition: "A formal document detailing the welding parameters, techniques, and standards for a specific welding process, ensuring quality and consistency in welds.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "weld toe",
-    definition:
-      "The thin end of a taper in a fillet weld, positioned furthest from the center of the weld cross section, which can be prone to stress concentration and potential fatigue failure.",
+    definition: "The thin end of a taper in a fillet weld, positioned furthest from the center of the weld cross section, which can be prone to stress concentration and potential fatigue failure.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -12698,8 +12034,7 @@ const glossaryBIRM = [
 
   {
     term: "Whipple truss",
-    definition:
-      "A type of truss featuring double-intersecting diagonals that span across two panels, providing efficient load distribution and stability in long-span bridge structures.",
+    definition: "A type of truss featuring double-intersecting diagonals that span across two panels, providing efficient load distribution and stability in long-span bridge structures.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -12714,8 +12049,7 @@ const glossaryBIRM = [
 
   {
     term: "wind bracing",
-    definition:
-      "A structural system designed to resist lateral forces caused by wind pressure, ensuring the stability and safety of elevated structures or bridges during strong winds.",
+    definition: "A structural system designed to resist lateral forces caused by wind pressure, ensuring the stability and safety of elevated structures or bridges during strong winds.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -12738,8 +12072,7 @@ const glossaryBIRM = [
 
   {
     term: "wire mesh reinforcement",
-    definition:
-      "A grid made of steel wires welded at their intersections, used to reinforce concrete and improve its tensile strength, commonly referred to as welded wire fabric.",
+    definition: "A grid made of steel wires welded at their intersections, used to reinforce concrete and improve its tensile strength, commonly referred to as welded wire fabric.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -12762,24 +12095,21 @@ const glossaryBIRM = [
 
   {
     term: "working stress design",
-    definition:
-      "A design approach that ensures safety by applying a factor of safety to the yield stress of materials, determining the maximum allowable stress levels during service conditions.",
+    definition: "A design approach that ensures safety by applying a factor of safety to the yield stress of materials, determining the maximum allowable stress levels during service conditions.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "wrought iron",
-    definition:
-      "A form of iron that has been refined by mechanical working to remove slag and excess carbon, resulting in a malleable, durable material often used in structural applications.",
+    definition: "A form of iron that has been refined by mechanical working to remove slag and excess carbon, resulting in a malleable, durable material often used in structural applications.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "wythe",
-    definition:
-      "A single layer of masonry units, such as brick or stone, laid in the thickness direction of a wall, often contributing to the wall’s strength and stability.",
+    definition: "A single layer of masonry units, such as brick or stone, laid in the thickness direction of a wall, often contributing to the wall’s strength and stability.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
@@ -12794,40 +12124,35 @@ const glossaryBIRM = [
 
   {
     term: "yield",
-    definition:
-      "The point at which a material undergoes permanent deformation due to stresses exceeding its elastic limit, resulting in a change in shape that does not revert upon load removal.",
+    definition: "The point at which a material undergoes permanent deformation due to stresses exceeding its elastic limit, resulting in a change in shape that does not revert upon load removal.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "yield point",
-    definition:
-      "The stress level at which a material experiences a sudden increase in strain, marking the onset of plastic deformation under gradually applied load.",
+    definition: "The stress level at which a material experiences a sudden increase in strain, marking the onset of plastic deformation under gradually applied load.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "yield stress",
-    definition:
-      "The amount of stress required to cause noticeable, permanent deformation in a material, often used as a critical design limit to ensure structural safety.",
+    definition: "The amount of stress required to cause noticeable, permanent deformation in a material, often used as a critical design limit to ensure structural safety.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "yield strength",
-    definition:
-      "The maximum stress a material can withstand without undergoing permanent deformation, serving as a key factor in ensuring the safety and durability of structural components.",
+    definition: "The maximum stress a material can withstand without undergoing permanent deformation, serving as a key factor in ensuring the safety and durability of structural components.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
 
   {
     term: "zee",
-    definition:
-      "A structural steel member shaped like a modified 'Z' in cross-section, often used for load-bearing applications due to its efficiency in resisting bending and torsion forces.",
+    definition: "A structural steel member shaped like a modified 'Z' in cross-section, often used for load-bearing applications due to its efficiency in resisting bending and torsion forces.",
     discipline: "bridge design",
     page: ["glossary-additional-tab"],
   },
