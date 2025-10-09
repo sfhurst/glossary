@@ -4612,6 +4612,14 @@ const glossaryMain = [
     discipline: "bridge design",
     filter: ["components", "roadway"],
   },
+  {
+    term: "Type IL cement",
+    definition:
+      "A type of portland-limestone cement that is a blend of standard portland cement clinker and between 5% to 15% raw limestone powder. Classified under ASTM C595 and AASHTO M 240, it is a sustainable alternative to traditional Type I/II cement, offering a comparable final performance but with an approximately 10% lower carbon footprint due to the reduced clinker content. Its increased fineness compared to Type I/II cement often leads to a reduction in bleed water and can result in practical issues like higher shrinkage cracking, difficulty achieving a smooth finish, and slower early strength gain if not properly mixed and cured. It is also commonly referred to as L1 and 1L.",
+    search: ``,
+    discipline: "bridge materials and maintenance",
+    filter: ["acronyms", "defects", "materials"],
+  },
 
   // :::::
 
