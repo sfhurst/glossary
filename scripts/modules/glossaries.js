@@ -462,6 +462,14 @@ const glossaryMain = [
     filter: ["components", "design", "NSTM"],
   },
   {
+    term: "boulder",
+    definition:
+      "A large stone greater than about 256 millimeters in diameter. Boulders anchor the bed and dissipate flow energy, often forming stable, high-energy channels. Their presence indicates strong flow conditions and high resistance to bed erosion.",
+    search: ``,
+    discipline: "bridge inspection",
+    filter: ["channel", "materials"],
+  },
+  {
     term: "box beam",
     definition:
       "A type of beam that has a hollow rectangular or square cross-section, commonly used in bridge construction. Box beams are typically made of concrete or steel and are valued for their strength and ability to handle heavy loads. They are often used for highway or railroad bridges.",
@@ -740,6 +748,14 @@ const glossaryMain = [
     filter: ["materials"],
   },
   {
+    term: "clay",
+    definition:
+      "A fine-grained soil composed of microscopic particles that compact tightly and resist water flow. It holds its shape when wet and can form a smooth, firm surface on the channel bed. Clay indicates very low flow velocity and minimal erosion potential, though it can retain moisture that affects nearby foundations.",
+    search: ``,
+    discipline: "bridge inspection",
+    filter: ["channel", "materials"],
+  },
+  {
     term: "clear water scour",
     definition:
       "Erosion around a pier or abutment that occurs when the approach flow is not carrying sediment and the bed material is initially stable. Scour begins because the local flow accelerates near the structure, removing sediment that was otherwise at rest. This condition is common when flow velocity exceeds the threshold needed to mobilize bed particles.",
@@ -767,6 +783,14 @@ const glossaryMain = [
     search: ``,
     discipline: "bridge design",
     filter: ["bridge", "design", "roadway"],
+  },
+  {
+    term: "cobble",
+    definition:
+      "A rounded or irregular stone larger than a pebble, generally 64 to 256 millimeters in diameter. Cobble beds resist erosion under normal flow and protect the channel from degradation. A cobble bed indicates a stable, high-energy channel that can withstand strong currents.",
+    search: ``,
+    discipline: "bridge inspection",
+    filter: ["channel", "materials"],
   },
   {
     term: "cold joint",
@@ -2485,6 +2509,14 @@ const glossaryMain = [
     filter: ["bridge"],
   },
   {
+    term: "loam",
+    definition:
+      "A balanced soil mixture of sand, silt, clay, and organic matter that supports vegetation. It typically occurs on overbanks or in areas not exposed to sustained flow. In bridge inspection, loam near the channel bed indicates a dry or inactive flow path where soil processes dominate over hydraulic transport.",
+    search: ``,
+    discipline: "bridge inspection",
+    filter: ["channel", "materials"],
+  },
+  {
     term: "Local Public Agency (LPA)",
     definition:
       "An entity, such as a city, county, or local government agency, responsible for managing public infrastructure, including bridges, within a defined geographic area. LPAs typically oversee the planning, funding, and maintenance of bridge projects. They work within federal and state guidelines to ensure safe and functional transportation systems.",
@@ -2695,6 +2727,14 @@ const glossaryMain = [
     discipline: "bridge design",
     filter: ["bridge", "components"],
   },
+  {
+    term: "muck",
+    definition:
+      "A dark, soft deposit made of decomposed vegetation and fine sediment that emits a sulfur or decayed odor. It forms in stagnant or ponded areas with little to no water movement. Deposits indicate very low flow velocity and poor drainage, which can trap debris and restrict channel capacity.",
+    search: ``,
+    discipline: "bridge inspection",
+    filter: ["channel", "materials"],
+  },
 
   {
     term: "multi-level interchange",
@@ -2897,6 +2937,14 @@ const glossaryMain = [
     filter: ["bridge", "design"],
   },
   {
+    term: "organic silt",
+    definition:
+      "A fine sediment that contains a mix of mineral particles and decayed plant matter. It forms in slow or stagnant water where organic debris settles with silt. Organic silt indicates poor drainage and limited sediment transport, often found in backwater or floodplain areas.",
+    search: ``,
+    discipline: "bridge inspection",
+    filter: ["channel", "materials"],
+  },
+  {
     term: "orthotropic deck",
     definition:
       "An orthotropic deck consists of a flat, thin steel plate stiffened by a series of closely spaced longitudinal ribs at right angles to the floor beams. The deck acts integrally with the steel superstructure.",
@@ -3009,6 +3057,14 @@ const glossaryMain = [
     definition: "A process of mechanically working a weld surface using controlled hammering or blasting to reduce residual stresses and improve fatigue resistance.",
     discipline: "bridge design",
     filter: ["defects", "NSTM", "welds"],
+  },
+  {
+    term: "pebble",
+    definition:
+      "A small, rounded stone that typically measures between 4 and 64 millimeters in diameter. Pebbles form where flow velocity is high enough to remove finer material but not strong enough to carry larger stones. Their presence under a bridge suggests a moderately stable bed with periodic movement during high flows.",
+    search: ``,
+    discipline: "bridge inspection",
+    filter: ["channel", "materials"],
   },
   {
     term: "perpendicular",
@@ -3591,6 +3647,14 @@ const glossaryMain = [
     definition: "A curve in the roadway profile that connects a descending grade to an ascending grade, typically used to smooth transitions at the bottom of a dip or valley.",
     discipline: "bridge design",
     filter: ["design", "roadway"],
+  },
+  {
+    term: "sand",
+    definition:
+      "A loose, granular material composed mainly of small rock or mineral particles. It is easily moved by running water and reshaped during floods. Sand indicates moderate flow velocity and potential for bed movement or scour around foundations.",
+    search: ``,
+    discipline: "bridge inspection",
+    filter: ["channel", "materials"],
   },
   {
     term: "sand container",
@@ -4616,7 +4680,6 @@ const glossaryMain = [
     term: "Type IL cement",
     definition:
       "A type of portland-limestone cement that is a blend of standard portland cement clinker and between 5% to 15% raw limestone powder. Classified under ASTM C595 and AASHTO M 240, it is a sustainable alternative to traditional Type I/II cement, offering a comparable final performance but with an approximately 10% lower carbon footprint due to the reduced clinker content. Its increased fineness compared to Type I/II cement often leads to a reduction in bleed water and can result in practical issues like higher shrinkage cracking, difficulty achieving a smooth finish, and slower early strength gain if not properly mixed and cured. It is also commonly referred to as L1 and 1L.",
-    search: ``,
     discipline: "bridge materials and maintenance",
     filter: ["acronyms", "defects", "materials"],
   },
@@ -4646,7 +4709,6 @@ const glossaryMain = [
   {
     term: "underdrain",
     definition: "A drainage system placed below the surface of the ground to remove excess water and prevent soil erosion or saturation.",
-    search: ``,
     discipline: "bridge design",
     filter: ["channel", "compounds"],
   },
