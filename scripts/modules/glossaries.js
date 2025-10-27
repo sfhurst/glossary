@@ -4432,6 +4432,22 @@ const glossaryMain = [
     filter: ["design"],
   },
   {
+    term: "TBC transition",
+    definition:
+      "A concrete bridge rail transition, known as the Common Thrie Beam Transition, that connects a concrete bridge railing to a standard-height thrie beam guardrail, as shown in INDOT Standard Drawing E 706-TTBC-02. It provides a continuous, impact-safe connection between the rigid concrete barrier and the common thrie beam system, often used with a metal transition.",
+    search: ``,
+    discipline: "bridge design",
+    filter: ["acronyms", "bridge", "components", "roadway"],
+  },
+  {
+    term: "TBT transition",
+    definition:
+      "A concrete bridge rail transition, known as the Truck Thrie Beam Transition, that connects a concrete bridge railing to a truck-height thrie beam guardrail, as shown in INDOT Standard Drawing E 706-TTBT-01. It provides a smooth, safe transition between the rigid concrete barrier and the higher thrie beam system designed for heavy-vehicle impacts. Typically used with a metal transition.",
+    search: ``,
+    discipline: "bridge design",
+    filter: ["acronyms", "bridge", "components", "roadway"],
+  },
+  {
     term: "team leader",
     definition: "The on-site, nationally certified bridge inspector in charge of an inspection team and responsible for planning, preparing, performing, and reporting on bridge field inspections.",
     search: ``,
@@ -4938,7 +4954,7 @@ const glossaryMain = [
       "A guardrail transition system used to connect rigid concrete bridge railings to W-beam approach rails. This transition ensures a smooth and safe shift between the more rigid concrete barrier and the flexible W-beam rail, enhancing vehicle containment and impact absorption.",
     search: `What is "W-Beam to Rigid Bridge Rail Transition" in bridge design?`,
     discipline: "bridge design",
-    filter: ["acronyms", "roadway"],
+    filter: ["acronyms", "bridge", "components", "roadway"],
   },
   {
     term: "wide-width cracks",
@@ -5005,7 +5021,7 @@ const glossaryMain = [
       "A guardrail transition system designed to connect Thrie Beam bridge rail to W-Beam approach guardrail. This transition provides a smooth and safe connection between the rigid Thrie Beam barrier and the more flexible W-Beam rail, ensuring proper vehicle containment and impact resistance. This does not transition to a concrete barrier wall.",
     serach: `What is "Thrie Beam to W-Beam Transition" in bridge design?`,
     discipline: "bridge design",
-    filter: ["components", "roadway"],
+    filter: ["acronyms", "bridge", "components", "roadway"],
   },
   {
     term: "yield strength / yield point / elastic limit",
