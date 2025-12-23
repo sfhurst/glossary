@@ -1218,7 +1218,8 @@ const glossaryMain = [
   },
   {
     term: "diaphragm",
-    definition: "A structural element that distributes loads across the width of a bridge, preventing distortion or movement of the deck.",
+    definition:
+      "A secondary structural member that distributes loads across the width of a bridge and provides lateral structural support, helping limit horizontal distortion or movement of the deck and girders.",
     discipline: "bridge design",
     filter: ["bridge", "components"],
   },
@@ -3249,6 +3250,13 @@ const glossaryMain = [
     filter: ["components", "materials"],
   },
   {
+    term: "primary member",
+    definition: "A structural member, typically in the superstructure, that carries the main loads of a bridge and transfers forces directly to the supports or foundations.",
+    search: ``,
+    discipline: "bridge design",
+    filter: ["bridge", "components"],
+  },
+  {
     term: "private bridge",
     definition: "A bridge open to public travel and not owned by a public authority as defined in 23 U.S.C. 101.",
     search: ``,
@@ -3758,6 +3766,14 @@ const glossaryMain = [
     definition: "An opening in a bridge deck or parapet designed to drain water off the structure, preventing ponding and reducing the risk of deterioration caused by moisture buildup.",
     discipline: "bridge design",
     filter: ["bridge", "components", "design"],
+  },
+  {
+    term: "secondary member",
+    definition:
+      "A structural member, typically in the superstructure, that does not carry primary loads but provides support, stability, or load distribution to the main structural components of a bridge.",
+    search: ``,
+    discipline: "bridge design",
+    filter: ["bridge", "components"],
   },
   {
     term: "secondary stresses",
