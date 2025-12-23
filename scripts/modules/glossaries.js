@@ -88,7 +88,7 @@ const glossaryMain = [
   {
     term: "abutment",
     definition:
-      "A structure at the end of a bridge that supports the bridge's deck and transfers loads to the foundation. It resists vertical and horizontal forces, anchors the superstructure, and prevents displacement. Abutments are designed to withstand environmental factors like soil pressure and water flow.",
+      "A structural component located at each end of a bridge that supports the deck and superstructure and retains the approach fill. It transfers loads from the bridge into the ground, provides vertical and lateral support, and resists earth pressure, water forces, and thermal expansion. Abutments are sometimes called end bents and are not interior piers.",
     discipline: "bridge design",
     filter: ["bridge", "components"],
   },
