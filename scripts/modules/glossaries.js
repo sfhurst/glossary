@@ -744,6 +744,14 @@ const glossaryMain = [
     filter: ["channel", "components"],
   },
   {
+    term: "checks",
+    definition:
+      "A lengthwise separation of the wood fibers that extends across the growth rings. These cracks typically form along the grain during the seasoning process as the outer layers of timber dry and shrink faster than the inner core. They are usually shallow and localized, meaning they rarely penetrate through the entire thickness of the member. In bridge inspection, they are monitored to ensure they do not deepen into splits, capture moisture, or trap debris, which can accelerate internal decay and compromise the structural integrity of timber piles or stringers.",
+    search: ``,
+    discipline: "bridge inspection",
+    filter: ["bridge", "defects", "materials"],
+  },
+  {
     term: "cheek wall",
     definition:
       "A vertical wall perpendicular to the end of a bridge abutment, enclosing three sides of the bridge seat. Cheek walls help retain the embankment, support the bridge structure at the approach, and protect fascia bearings from the elements. Unlike wingwalls, which are angled, cheek walls form a right angle with the abutment. Sometimes called a knee wall.",
@@ -1176,6 +1184,14 @@ const glossaryMain = [
     search: ``,
     discipline: "bridge design",
     filter: ["design"],
+  },
+  {
+    term: "decay",
+    definition:
+      "The degradation and destruction of wood tissue caused by wood-destroying fungi. This condition develops when timber is exposed to a combination of moisture, oxygen, warmth, and a food source. It softens the wood structure, causing a severe loss of density and load-bearing capacity before visual evidence is always obvious. Bridge inspectors use sounding techniques with a hammer or specialized drilling tools to locate internal pockets, as it diminishes the safety of timber substructures and piling.",
+    search: ``,
+    discipline: "bridge inspection",
+    filter: ["bridge", "defects", "materials"],
   },
   {
     term: "deck slab",
@@ -4029,6 +4045,14 @@ const glossaryMain = [
     filter: ["bridge", "defects"],
   },
   {
+    term: "shakes",
+    definition:
+      "A lengthwise separation of the wood fibers that occurs between and parallel to the growth rings. This structural defect develops in the living tree due to mechanical stresses from wind, frost, or growth characteristics, rather than from uneven drying after harvest. It reduces the horizontal shear resistance of a timber beam. Inspectors evaluate its length and depth because it can cause the wood layers to delaminate under heavy bridge traffic loads.",
+    search: ``,
+    discipline: "bridge inspection",
+    filter: ["bridge", "defects", "materials"],
+  },
+  {
     term: "shale",
     definition:
       "A sedimentary rock composed of fine-grained clay minerals that can degrade when exposed to moisture, leading to foundation instability or material breakdown.",
@@ -4348,6 +4372,14 @@ const glossaryMain = [
       "A steel plate used to join two structural members end-to-end, transferring loads across the connection and maintaining continuity in the structure. Splice plates are typically bolted and help preserve structural integrity, especially in long spans or areas that need additional reinforcement.",
     discipline: "bridge design",
     filter: ["bridge", "components", "NSTM"],
+  },
+  {
+    term: "splits",
+    definition:
+      "A complete lengthwise separation of wood fibers that extends entirely through a piece of timber from one surface to another. This defect often develops from severe checking or mechanical overloading along the grain. Unlike a shallow check, it significantly reduces the shear strength and load-bearing capacity of the structural member. In bridge maintenance and inspection, it requires immediate evaluation because it can cause timber stringers or caps to fail under traffic loads, often necessitating remedial actions like clamping, bolting, or component replacement.",
+    search: ``,
+    discipline: "bridge inspection",
+    filter: ["bridge", "defects", "materials"],
   },
   {
     term: "spread box beams",
